@@ -1,0 +1,15 @@
+{
+  "name": "weflair-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WeFlair Growth Marketing Agency - Static site built on the Dapper Agency template",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5994",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5995"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
