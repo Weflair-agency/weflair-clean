@@ -414,7 +414,6 @@
 </div>
 <div style="padding-top:var(--nav-bar-height,5rem)">
 
-<main>
 
 <!-- ══ HERO ═════════════════════════════════════════════════ -->
 <section class="c-hero" style="position:relative;overflow:hidden">
@@ -848,20 +847,74 @@
 </section>
 
 <!-- ══ FOOTER ════════════════════════════════════════════════ -->
-<footer class="c-footer">
+<footer class="c-footer" style="display:none" aria-hidden="true">
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:62rem;margin:0 auto;padding:0 1.5rem">
     <p style="color:rgba(246,243,238,.28);font-size:.72rem;margin:0">© 2026 WeFlair LLC</p>
-    <div style="display:flex;gap:1.5rem">
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
       <a href="../index.html" style="color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none">Home</a>
       <a href="../cases.html" style="color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none">Cases</a>
       <a href="../about.html" style="color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none">About</a>
       <a href="../contact.html" style="color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none">Contact</a>
+      <a href="../sitemap.html" style="color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<footer style="background:#0e100e;border-top:1px solid rgba(246,243,238,.06)">
+  <div style="max-width:72rem;margin:0 auto;padding:3rem 2rem">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,243,238,.06)">
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Services</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/services/paid-media-performance.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Paid Media &amp; Performance</a></li>
+          <li><a href="/services/outbound-gtm.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Outbound &amp; GTM Engineering</a></li>
+          <li><a href="/services/revops-ai.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">RevOps &amp; AI Workflows</a></li>
+          <li><a href="/services/strategy-creative.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Creative &amp; Production</a></li>
+          <li><a href="/services/content-seo.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Content &amp; AEO</a></li>
+          <li><a href="/services/cro-performance-design.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Performance Design &amp; CRO</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Expertise</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/expertise/b2b-saas.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B SaaS</a></li>
+          <li><a href="/expertise/b2b-services.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Services</a></li>
+          <li><a href="/expertise/b2b-hardware.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Hardware</a></li>
+          <li><a href="/expertise/fintech.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Fintech</a></li>
+          <li><a href="/expertise/ecommerce.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">E-commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Resources</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/resources/calculators.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Calculators</a></li>
+          <li><a href="/resources/guides.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Guides</a></li>
+          <li><a href="/resources/playbooks.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Playbooks</a></li>
+          <li><a href="/resources/ai-tools.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">AI Tools</a></li>
+          <li><a href="/blog.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Marketing Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Company</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/about.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">About Us</a></li>
+          <li><a href="/careers.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Careers</a></li>
+          <li><a href="/contact.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem">
+      <p style="color:rgba(246,243,238,.36);font-size:.78rem;margin:0">&copy; 2026 WeFlair LLC</p>
+      <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap">
+        <a href="/legal/privacy.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Privacy Policy</a>
+        <a href="/legal/terms.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Terms and Conditions</a>
+        <a href="/sitemap.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
 
 </div><!-- /padding-top wrapper -->
-</main>
+</main><!-- /.main -->
 
 <!-- ══ SCRIPT ════════════════════════════════════════════════ -->
 <script>

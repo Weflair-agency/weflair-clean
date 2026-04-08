@@ -3,65 +3,831 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case Studies — WeFlair</title>
-  <meta name="description" content="Real-world examples of how we have helped ambitious brands reach new heights with data-driven strategies and expert execution." />
-  <meta property="og:title" content="Case Studies — WeFlair" />
-  <meta property="og:description" content="Real-world examples of how we have helped ambitious brands reach new heights with data-driven strategies and expert execution." />
+  <title>Case Studies &mdash; WeFlair</title>
+  <meta name="description" content="Real results across B2B, real estate, logistics, SaaS, and Web3. See how WeFlair builds systems that compound." />
+  <meta property="og:title" content="Case Studies &mdash; WeFlair" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Case Studies — WeFlair" />
-  <meta name="twitter:description" content="Real-world examples of how we have helped ambitious brands reach new heights with data-driven strategies and expert execution." />
-  <meta name="theme-color" content="#151515" />
+  <meta name="theme-color" content="#111111" />
   <link rel="icon" href="./brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./foundation-styles.css" />
   <link rel="stylesheet" href="./foundation-slater.css" />
   <link rel="stylesheet" href="./weflair-hero.css" />
   <script src="./foundation.js" defer></script>
   <script src="./weflair-hero.js" defer></script>
+  <style>
+    :root{--g:#3eff68;--g-tint:rgba(62,255,104,.07);--g-tint2:rgba(62,255,104,.12);--g-border:rgba(62,255,104,.22);--bg:#111;--card:#191919;--ink:#f6f3ee;--ink-dim:rgba(246,243,238,.55);--ink-fade:rgba(246,243,238,.32);--ink-ghost:rgba(246,243,238,.18);--border:rgba(246,243,238,.08);--border-s:rgba(246,243,238,.05);--font:'Helvetica Now Display','Helvetica Neue',Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased}
+    .nav-bar__link-simple{color:#f6f3ee!important;text-decoration:none}
+    .nav-bar__link-simple .nav-bar__link-text-span{color:#f6f3ee}
+    .weflair-logo{display:inline-flex;align-items:center;gap:.58rem;color:#f6f3ee;text-decoration:none}
+    .weflair-logo__mark{width:.85rem;height:.85rem;display:inline-flex;color:#3eff68;filter:drop-shadow(0 0 10px rgba(62,255,104,.3))}
+    .weflair-logo__word{font-size:1.6rem;font-weight:700;letter-spacing:-.05em;color:#f6f3ee}
+    .cs-hero{max-width:56rem;margin:0 auto;padding:8rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
+    .cs-hero__glow{pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(62,255,104,.13) 0%,transparent 70%);z-index:0}
+    .cs-hero__inner{position:relative;z-index:1}
+    .cs-eyebrow{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-fade);margin-bottom:1.5rem}
+    .cs-eyebrow svg{width:.68rem;height:.68rem;color:var(--g)}
+    .cs-hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem);font-weight:800;letter-spacing:-.06em;line-height:.94;color:var(--ink);margin-bottom:1rem}
+    .cs-hero p{font-size:1rem;line-height:1.65;color:var(--ink-dim);max-width:32rem;margin:0 auto 2.5rem}
+    .cs-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;padding:1.5rem 2rem 3rem;border-bottom:1px solid var(--border)}
+    .cs-stat strong{display:block;font-size:1.9rem;font-weight:800;letter-spacing:-.05em;color:var(--g);line-height:1}
+    .cs-stat span{display:block;font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-fade);margin-top:.3rem}
+    .cs-filters-wrap{display:flex;justify-content:center;padding:2.5rem 2rem 0;gap:.45rem;flex-wrap:wrap}
+    .cs-filter{padding:.5rem 1.1rem;border-radius:999px;border:1px solid var(--border);background:none;font-family:var(--font);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-fade);cursor:pointer;transition:all .18s}
+    .cs-filter:hover{border-color:rgba(246,243,238,.2);color:var(--ink-dim)}
+    .cs-filter.active{background:var(--g-tint);border-color:var(--g-border);color:var(--g)}
+    .cs-grid{max-width:68rem;margin:0 auto;padding:2.5rem 1.5rem 6rem;display:grid;gap:1.5rem}
+    .cs-card{background:var(--card);border:1px solid var(--border);border-radius:1.25rem;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;transition:border-color .2s}
+    .cs-card:hover{border-color:rgba(246,243,238,.14)}
+    @media(max-width:768px){.cs-card{grid-template-columns:1fr}}
+    .cs-card__left{padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem;border-right:1px solid var(--border)}
+    @media(max-width:768px){.cs-card__left{border-right:none;border-bottom:1px solid var(--border)}}
+    .cs-card__logo-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .cs-card__logo{height:2rem;max-width:8rem;object-fit:contain;object-position:left;filter:brightness(0) invert(1);opacity:.85}
+    .cs-card__logo-wordmark{font-size:1.05rem;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+    .cs-card__badge{display:inline-flex;align-items:center;padding:.3rem .65rem;border-radius:999px;border:1px solid var(--g-border);background:var(--g-tint);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g);white-space:nowrap}
+    .cs-card__tags{display:flex;flex-wrap:wrap;gap:.35rem}
+    .cs-card__tag{padding:.25rem .6rem;border-radius:999px;border:1px solid var(--border-s);font-size:.65rem;font-weight:600;color:var(--ink-ghost)}
+    .cs-card__sector{font-size:.72rem;color:var(--ink-fade);letter-spacing:.04em}
+    .cs-card__headline{font-size:1.08rem;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.35}
+    .cs-card__body{font-size:.85rem;color:var(--ink-dim);line-height:1.65}
+    .cs-card__metrics{display:flex;gap:.6rem;flex-wrap:wrap}
+    .cs-card__metric{padding:.7rem 1rem;background:rgba(246,243,238,.03);border:1px solid var(--border-s);border-radius:.75rem;text-align:center}
+    .cs-card__metric strong{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.04em;color:var(--g);line-height:1}
+    .cs-card__metric span{display:block;font-size:.62rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-fade);margin-top:.2rem}
+    .cs-card__right{padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem}
+    .cs-card__psr{display:grid;gap:1rem}
+    .cs-card__psr-item{padding:1rem;background:rgba(246,243,238,.025);border:1px solid var(--border-s);border-radius:.75rem}
+    .cs-card__psr-item h4{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-ghost);margin-bottom:.5rem}
+    .cs-card__psr-item p{font-size:.82rem;color:var(--ink-dim);line-height:1.6}
+    .cs-card__result-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    .cs-card__result-num{padding:.75rem .6rem;background:var(--g-tint);border:1px solid var(--g-border);border-radius:.65rem;text-align:center}
+    .cs-card__result-num strong{display:block;font-size:1.15rem;font-weight:800;letter-spacing:-.04em;color:var(--g);line-height:1}
+    .cs-card__result-num span{display:block;font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(62,255,104,.6);margin-top:.2rem}
+    @media(max-width:420px){.cs-card__result-nums{grid-template-columns:1fr 1fr}}
+    .cs-card__quote{padding:1rem 1.1rem;background:rgba(246,243,238,.025);border:1px solid var(--border-s);border-left:2px solid var(--g);border-radius:0 .65rem .65rem 0}
+    .cs-card__quote blockquote{font-size:.82rem;color:var(--ink-dim);line-height:1.65;font-style:italic}
+    .cs-card__quote cite{display:block;margin-top:.6rem;font-size:.68rem;font-weight:700;color:var(--ink-fade);font-style:normal}
+    .cs-cta{max-width:48rem;margin:0 auto;padding:2rem 2rem 7rem;text-align:center}
+    .cs-cta h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;letter-spacing:-.055em;line-height:.97;color:var(--ink);margin-bottom:.9rem}
+    .cs-cta p{font-size:.95rem;color:var(--ink-dim);line-height:1.65;max-width:28rem;margin:0 auto 2rem}
+    .cs-cta-btn{display:inline-block;padding:.9rem 2.2rem;background:var(--ink);color:#111;font-family:var(--font);font-size:.92rem;font-weight:800;letter-spacing:-.01em;border-radius:.55rem;text-decoration:none;transition:all .18s}
+    .cs-cta-btn:hover{background:#fff;transform:translateY(-1px)}
+    .cs-fine{font-size:.7rem;color:var(--ink-ghost);margin-top:.65rem}
+    .cs-footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
+    .cs-footer__inner{max-width:62rem;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .cs-footer p{color:rgba(246,243,238,.28);font-size:.72rem}
+    .cs-footer a{color:rgba(246,243,238,.3);font-size:.72rem;text-decoration:none}
+    .cs-footer a:hover{color:var(--ink-fade)}
+</style>
 </head>
-<body data-theme="dark" class="body">
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body">
 <main class="main">
-
-  <!-- ═══ NAV (shared across all pages) ═══ -->
-  <header class="header" style="position:fixed;top:0;left:0;right:0;z-index:100">
-    <nav class="nav">
-      <div class="nav-bar" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(21,21,21,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(246,243,238,.06)">
-        <a href="./index.html" class="weflair-logo" style="text-decoration:none;color:#f6f3ee">
-          <span class="weflair-logo__mark" style="width:.85rem;height:.85rem;display:inline-flex;color:#3eff68">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-          </span>
-          <span class="weflair-logo__word" style="font-size:1.6rem;font-weight:700;letter-spacing:-.05em">WeFlair</span>
-        </a>
-        <a href="./index.html" style="color:rgba(246,243,238,.6);text-decoration:none;font-size:.88rem">← Back to Home</a>
+<div class="floating-elements-main"><div class="calc-header-padding-height"></div><div data-navigation-toggle="close" class="nav-fade"></div><header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="./index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Campaigns tied to qualified revenue.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound &amp; GTM Engineering</h3><p class="nav-dropdown-tile__p">Signals, sequencing, and GTM logic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Revenue Operations &amp; Automations</h3><p class="nav-dropdown-tile__p">Routing, dashboards, and AI-enabled automation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Content &amp; AEO</h3><p class="nav-dropdown-tile__p">Sharper positioning, copy, and visual direction.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Pages and funnels that convert harder.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Hardware</h3><p class="nav-dropdown-tile__p">Longer sales cycles with more buying friction.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">FinTech</h3><p class="nav-dropdown-tile__p">Trust-heavy categories where precision matters.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="cases.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Case Studies</h3><p class="nav-dropdown-tile__p">Proof that the systems work in the real world.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Playbooks</h3><p class="nav-dropdown-tile__p">How WeFlair runs paid, outbound, CRM, and conversion together.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Tools</h3><p class="nav-dropdown-tile__p">Operator-grade tools and workflows.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="resources/calculators.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Calculators</h3><p class="nav-dropdown-tile__p">Simple planning tools for growth decisions.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Marketing Blog</h3><p class="nav-dropdown-tile__p">Perspective on modern growth work.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div>
+<div data-dropdown-status="not-active" class="nav-bar__link">
+  <div data-dropdown-click="" class="nav-bar__link-inner">
+    <div class="nav-bar__link-bg"></div>
+    <div class="nav-bar__link-text">
+      <span class="nav-bar__link-text-span">Tools</span>
+      <div class="nav-bar__link-chevron">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
+          <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path>
+        </svg>
       </div>
-    </nav>
-  </header>
-
-  <!-- ═══ PAGE CONTENT ═══ -->
-  <div style="padding-top:5rem">
-    <section style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem">
-      <div style="max-width:42rem;text-align:center">
-        <div class="eyebrow" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9);margin-bottom:1.5rem">
-          <span style="width:.85rem;height:.85rem;display:inline-flex;color:#3eff68">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-          </span>
-          <p style="margin:0">Results</p>
-        </div>
-        <h1 style="font-size:clamp(2.4rem,4.5vw,4rem);font-weight:700;letter-spacing:-.06em;line-height:.96;color:#f6f3ee;margin:0 0 1.5rem">Case Studies</h1>
-        <p style="font-size:1.08rem;line-height:1.5;color:rgba(246,243,238,.68);max-width:34rem;margin:0 auto 2.5rem">Real-world examples of how we have helped ambitious brands reach new heights with data-driven strategies and expert execution.</p>
-        <div style="display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.25rem;border:1px solid rgba(62,255,104,.18);border-radius:.8rem;background:rgba(62,255,104,.06);color:#3eff68;font-size:.88rem;font-weight:600">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Coming soon — page under construction
-        </div>
-      </div>
-    </section>
+    </div>
   </div>
+  <div class="nav-dropdown">
+    <div class="nav-dropdown__overflow">
+      <div class="nav-dropdown__overflow-inner">
+        <div class="nav-dropdown__grid">
+          <div class="nav-dropdown__grid-row">
+            <a data-hover="" data-arrow="diagonal" href="/tools.html#sales" class="nav-dropdown-tile w-inline-block">
+              <div class="nav-dropdown-tile__bg"></div>
+              <div class="nav-dropdown-tile__text">
+                <h3 class="nav-dropdown-tile__h">Sales Tools</h3>
+                <p class="nav-dropdown-tile__p">AI outbound and CRM engines.</p>
+              </div>
+              <div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div>
+            </a>
+            <a data-hover="" data-arrow="diagonal" href="/tools.html#marketing" class="nav-dropdown-tile w-inline-block">
+              <div class="nav-dropdown-tile__bg"></div>
+              <div class="nav-dropdown-tile__text">
+                <h3 class="nav-dropdown-tile__h">AI Marketing Tools</h3>
+                <p class="nav-dropdown-tile__p">Content, creative and scaling apps.</p>
+              </div>
+              <div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div>
+            </a>
+          </div>
+          <div class="nav-dropdown__grid-row">
+            <a data-hover="" data-arrow="diagonal" href="/tools.html#gtm" class="nav-dropdown-tile w-inline-block">
+              <div class="nav-dropdown-tile__bg"></div>
+              <div class="nav-dropdown-tile__text">
+                <h3 class="nav-dropdown-tile__h">Free GTM Tools</h3>
+                <p class="nav-dropdown-tile__p">Operator-grade tools, zero cost.</p>
+              </div>
+              <div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="#audit" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header><div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99935 15.833C10.2035 15.833 10.4005 15.908 10.553 16.0436C10.7055 16.1792 10.803 16.3661 10.8268 16.5688L10.8327 16.6663V17.4997C10.8324 17.7121 10.7511 17.9164 10.6053 18.0708C10.4595 18.2253 10.2602 18.3182 10.0482 18.3307C9.83615 18.3431 9.62737 18.2741 9.46449 18.1378C9.30161 18.0015 9.19694 17.8081 9.17185 17.5972L9.16602 17.4997V16.6663C9.16602 16.4453 9.25381 16.2334 9.41009 16.0771C9.56637 15.9208 9.77834 15.833 9.99935 15.833Z" fill="currentColor"></path><path d="M15.2606 14.0906L15.3389 14.1598L15.9223 14.7431C16.0717 14.8931 16.1585 15.0943 16.165 15.306C16.1714 15.5176 16.0971 15.7237 15.9571 15.8825C15.817 16.0413 15.6218 16.1409 15.411 16.161C15.2003 16.1811 14.9898 16.1202 14.8223 15.9906L14.7439 15.9215L14.1606 15.3381C14.0168 15.1946 13.9304 15.0034 13.9177 14.8006C13.9049 14.5979 13.9667 14.3974 14.0914 14.237C14.2161 14.0765 14.3951 13.9672 14.5948 13.9295C14.7944 13.8918 15.001 13.9284 15.1756 14.0323L15.2606 14.0906Z" fill="currentColor"></path><path d="M5.84086 14.16C5.98434 14.3035 6.07053 14.4944 6.08327 14.6969C6.096 14.8995 6.0344 15.0997 5.91003 15.26L5.84086 15.3383L5.25753 15.9217C5.10756 16.0711 4.90633 16.1579 4.69471 16.1644C4.48308 16.1708 4.27693 16.0965 4.11813 15.9565C3.95932 15.8164 3.85977 15.6212 3.8397 15.4104C3.81962 15.1997 3.88052 14.9892 4.01003 14.8217L4.07919 14.7433L4.66253 14.16C4.8188 14.0038 5.03072 13.916 5.25169 13.916C5.47266 13.916 5.68459 14.0038 5.84086 14.16Z" fill="currentColor"></path><path d="M3.33371 9.16699C3.54611 9.16723 3.75041 9.24856 3.90485 9.39437C4.0593 9.54017 4.15224 9.73945 4.16469 9.95149C4.17714 10.1635 4.10815 10.3723 3.97182 10.5352C3.8355 10.6981 3.64213 10.8027 3.43121 10.8278L3.33371 10.8337H2.50038C2.28798 10.8334 2.08369 10.7521 1.92924 10.6063C1.77479 10.4605 1.68185 10.2612 1.6694 10.0492C1.65695 9.83713 1.72594 9.62834 1.86227 9.46547C1.99859 9.30259 2.19197 9.19791 2.40288 9.17283L2.50038 9.16699H3.33371Z" fill="currentColor"></path><path d="M17.5017 9.16699C17.7141 9.16723 17.9184 9.24856 18.0728 9.39437C18.2273 9.54017 18.3202 9.73945 18.3327 9.95149C18.3451 10.1635 18.2761 10.3723 18.1398 10.5352C18.0035 10.6981 17.8101 10.8027 17.5992 10.8278L17.5017 10.8337H16.6683C16.4559 10.8334 16.2517 10.7521 16.0972 10.6063C15.9428 10.4605 15.8498 10.2612 15.8374 10.0492C15.8249 9.83713 15.8939 9.62834 16.0302 9.46547C16.1666 9.30259 16.3599 9.19791 16.5708 9.17283L16.6683 9.16699H17.5017Z" fill="currentColor"></path><path d="M5.17931 4.00935L5.25765 4.07852L5.84098 4.66185C5.99044 4.81181 6.07721 5.01304 6.08367 5.22467C6.09013 5.43629 6.0158 5.64244 5.87577 5.80125C5.73575 5.96005 5.54052 6.0596 5.32975 6.07968C5.11898 6.09976 4.90847 6.03886 4.74098 5.90935L4.66265 5.84018L4.07931 5.25685C3.93606 5.11325 3.85009 4.92233 3.83754 4.71988C3.82498 4.51742 3.8867 4.31735 4.01112 4.15714C4.13554 3.99694 4.31411 3.88762 4.51337 3.84968C4.71263 3.81173 4.91889 3.84776 5.09348 3.95102L5.17931 4.00935Z" fill="currentColor"></path><path d="M15.9229 4.07895C16.0664 4.22244 16.1526 4.41336 16.1653 4.61588C16.178 4.8184 16.1164 5.01861 15.9921 5.17895L15.9229 5.25728L15.3396 5.84062C15.1896 5.99007 14.9884 6.07684 14.7767 6.08331C14.5651 6.08977 14.359 6.01544 14.2002 5.87541C14.0414 5.73538 13.9418 5.54016 13.9217 5.32939C13.9016 5.11862 13.9625 4.90811 14.0921 4.74062L14.1612 4.66228L14.7446 4.07895C14.9008 3.92272 15.1128 3.83496 15.3337 3.83496C15.5547 3.83496 15.7666 3.92272 15.9229 4.07895Z" fill="currentColor"></path><path d="M9.99935 1.66699C10.2035 1.66702 10.4005 1.74196 10.553 1.87759C10.7055 2.01322 10.803 2.20012 10.8268 2.40283L10.8327 2.50033V3.33366C10.8324 3.54606 10.7511 3.75035 10.6053 3.9048C10.4595 4.05925 10.2602 4.15219 10.0482 4.16464C9.83615 4.17708 9.62737 4.1081 9.46449 3.97177C9.30161 3.83545 9.19694 3.64207 9.17185 3.43116L9.16602 3.33366V2.50033C9.16602 2.27931 9.25381 2.06735 9.41009 1.91107C9.56637 1.75479 9.77834 1.66699 9.99935 1.66699Z" fill="currentColor"></path><path d="M10.0007 5.83301C10.817 5.83296 11.6155 6.07275 12.2968 6.52259C12.978 6.97243 13.5122 7.6125 13.8328 8.36331C14.1534 9.11411 14.2464 9.94256 14.1002 10.7458C13.954 11.549 13.5751 12.2915 13.0105 12.8812C12.4459 13.4709 11.7205 13.8817 10.9244 14.0627C10.1283 14.2437 9.29663 14.1868 8.5326 13.8991C7.76857 13.6114 7.10589 13.1056 6.62687 12.4445C6.14784 11.7834 5.87358 10.9961 5.83815 10.1805L5.83398 9.99967L5.83815 9.81884C5.88475 8.74613 6.34366 7.73282 7.11917 6.99022C7.89468 6.24763 8.92693 5.83307 10.0007 5.83301Z" fill="currentColor"></path></svg></div></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme" data-codex-theme-mounted="true">Switch Theme</button></div><div class="noise is--small"></div></div>
 
-  <!-- ═══ FOOTER BAR ═══ -->
-  <footer style="padding:2rem;border-top:1px solid rgba(246,243,238,.06);text-align:center">
-    <p style="color:rgba(246,243,238,.4);font-size:.78rem;margin:0">© 2026 WeFlair LLC</p>
-  </footer>
+<div style="padding-top:var(--nav-bar-height,5rem)">
 
+<section class="cs-hero">
+  <div class="cs-hero__glow"></div>
+  <div class="cs-hero__inner">
+    <div class="cs-eyebrow"><svg viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg> Results</div>
+    <h1>The work.<br>The numbers.</h1>
+    <p>Real results across e-commerce, B2B, travel, and SaaS. Every engagement starts with a system problem and ends with measurable revenue.</p>
+  </div>
+</section>
+
+<div class="cs-stats">
+  <div class="cs-stat"><strong>&pound;32M+</strong><span>Value delivered (5 yrs)</span></div>
+  <div class="cs-stat"><strong>5.53x</strong><span>Best ROAS</span></div>
+  <div class="cs-stat"><strong>+70%</strong><span>Best conversion uplift</span></div>
+  <div class="cs-stat"><strong>3,000%</strong><span>Local search growth</span></div>
+  <div class="cs-stat"><strong>&pound;4.5m</strong><span>From personalization</span></div>
+  <div class="cs-stat"><strong>20+</strong><span>Brands transformed</span></div>
+</div>
+
+<div class="cs-filters-wrap">
+  <button class="cs-filter active" data-filter="all">All</button>
+  <button class="cs-filter" data-filter="ecommerce">E-commerce</button>
+  <button class="cs-filter" data-filter="b2b">B2B</button>
+  <button class="cs-filter" data-filter="crm">CRM &amp; Retention</button>
+  <button class="cs-filter" data-filter="cro">CRO &amp; UX</button>
+  <button class="cs-filter" data-filter="travel">Travel</button>
+  <button class="cs-filter" data-filter="saas">SaaS</button>
+  <button class="cs-filter" data-filter="real-estate">Real Estate</button>
+  <button class="cs-filter" data-filter="logistics">Logistics</button>
+</div>
+
+<div class="cs-grid">
+
+  <article class="cs-card" data-industries="ecommerce paid-media">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/harrier-white.png" alt="Harrier Trail Running" />
+        <span class="cs-card__badge">E-commerce &middot; Paid Media</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Harrier Trail Running &middot; Specialist Apparel &amp; Gear</p>
+        <h3 class="cs-card__headline">5.53x ROAS and 7,724 new subscribers from &pound;6,199 in paid social spend.</h3>
+      </div>
+      <p class="cs-card__body">Organic-only growth was capped at 200&ndash;250 new subscribers per month. With product launches approaching and no paid acquisition engine, Harrier was leaving significant demand on the table.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Facebook Ads</span>
+        <span class="cs-card__tag">Instagram</span>
+        <span class="cs-card__tag">Lead Generation</span>
+        <span class="cs-card__tag">Lookalike Audiences</span>
+        <span class="cs-card__tag">Full-Funnel</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>5.53x</strong><span>ROAS</span></div>
+        <div class="cs-card__metric"><strong>7,724</strong><span>New subscribers</span></div>
+        <div class="cs-card__metric"><strong>121%</strong><span>ROI</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Organic channels couldn&rsquo;t scale at the pace the brand needed. Cold audience launches for new products had no paid backing. Subscriber growth was stuck at a fraction of what a structured paid programme could unlock.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Full-funnel Facebook and Instagram campaign &mdash; awareness via trail running content, consideration through retargeting, conversion with direct product messaging. Interest targeting, lookalike audiences, and continuous creative testing throughout to maximise spend efficiency.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>5.53x</strong><span>ROAS</span></div>
+          <div class="cs-card__result-num"><strong>&pound;34,293</strong><span>Revenue</span></div>
+          <div class="cs-card__result-num"><strong>7,724</strong><span>New leads</span></div>
+        </div>
+      </div>
+      <div class="cs-card__quote">
+        <blockquote>&pound;6,199 spent. &pound;34,293 revenue generated. 5.53x ROAS &mdash; 38% above industry benchmark. 7,724 new subscribers at &pound;0.81 CPL (46% below benchmark). Projected LTV of new subscriber base: &pound;154,480. Net profit after ad spend: &pound;7,518 &rarr; 121% ROI.</blockquote>
+        <cite>&mdash; Campaign results, Harrier Trail Running</cite>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce crm retail">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/tofs.png" alt="TOFS" />
+        <span class="cs-card__badge">E-commerce &middot; CRM</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">The Original Factory Shop &middot; Value Retail</p>
+        <h3 class="cs-card__headline">+25% YOY second-order growth after rebuilding a flat, one-size-fits-all email programme.</h3>
+      </div>
+      <p class="cs-card__body">A small team managing day-to-day operations with no structured CRM. The main approach was a flat broadcast pushing in-store sales &mdash; active online customers received the same message as dormant ones, and neither was converting well.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">CRM</span>
+        <span class="cs-card__tag">Email Marketing</span>
+        <span class="cs-card__tag">Segmentation</span>
+        <span class="cs-card__tag">Retention</span>
+        <span class="cs-card__tag">Personalization</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+25%</strong><span>2nd orders YOY</span></div>
+        <div class="cs-card__metric"><strong>&uarr;</strong><span>Repeat purchase rate</span></div>
+        <div class="cs-card__metric"><strong>&uarr;</strong><span>Customer LTV</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>No CRM beyond a single untargeted broadcast. No segmentation. Data existed but wasn&rsquo;t being used. Online was an afterthought in a business built around physical retail, and the email programme reflected that.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>KPI-driven framework built around second-order rate, repeat purchase rate, and lifetime value. Launched structured segmentation with personalized communications for first-time buyers, active customers, and at-risk segments. Optimized the customer journey across web, email, and loyalty with ongoing data-driven iteration.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+25%</strong><span>2nd orders YOY</span></div>
+          <div class="cs-card__result-num"><strong>Better</strong><span>Email engagement</span></div>
+          <div class="cs-card__result-num"><strong>Scalable</strong><span>Growth foundation</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce cro retail">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/conran-shop.png" alt="The Conran Shop" />
+        <span class="cs-card__badge">E-commerce &middot; Peak Trading</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">The Conran Shop &middot; Premium Design Retail</p>
+        <h3 class="cs-card__headline">2x YOY Christmas sales. 166% peak trading growth from a full digital overhaul.</h3>
+      </div>
+      <p class="cs-card__body">After two consecutive quarters of declining sales, the Commercial Director brought the team in specifically to reverse performance heading into the most critical trading window of the year.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">CRO</span>
+        <span class="cs-card__tag">UX</span>
+        <span class="cs-card__tag">Personalization</span>
+        <span class="cs-card__tag">Email Marketing</span>
+        <span class="cs-card__tag">Peak Trading</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>2x</strong><span>YOY Christmas sales</span></div>
+        <div class="cs-card__metric"><strong>+166%</strong><span>Peak growth</span></div>
+        <div class="cs-card__metric"><strong>&uarr; AOV</strong><span>Higher basket value</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Two quarters of declining sales with Christmas approaching. Digital journey underoptimized &mdash; no cross-sell or upsell strategy, no personalized recommendations, and in-store customer data completely siloed from online marketing.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Upsell and cross-sell strategies across product pages and checkout. Personalized product recommendations to lift AOV. Optimized landing pages and mobile experience. In-store data capture programme feeding personalized email and remarketing. Premium product curation to attract high-value buyers ahead of peak.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>2x</strong><span>YOY sales</span></div>
+          <div class="cs-card__result-num"><strong>&uarr; AOV</strong><span>Higher basket</span></div>
+          <div class="cs-card__result-num"><strong>&uarr;</strong><span>Repeat buyers</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce cro retail">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/fragrance-shop.png" alt="The Fragrance Shop" />
+        <span class="cs-card__badge">E-commerce &middot; CRO</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">The Fragrance Shop &middot; 200+ UK Stores &amp; Online</p>
+        <h3 class="cs-card__headline">+20% conversion rate from targeted UX fixes after a full Hotjar drop-off analysis.</h3>
+      </div>
+      <p class="cs-card__body">Heavy investment in paid social, paid search, and SEO was generating traffic that wasn&rsquo;t converting. In a highly competitive market where pricing margins are tight, the site needed to do the work.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">CRO</span>
+        <span class="cs-card__tag">UX Analysis</span>
+        <span class="cs-card__tag">Hotjar</span>
+        <span class="cs-card__tag">Checkout Optimization</span>
+        <span class="cs-card__tag">Product Pages</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+20%</strong><span>Conversion rate</span></div>
+        <div class="cs-card__metric"><strong>+10%</strong><span>CTR to checkout</span></div>
+        <div class="cs-card__metric"><strong>More revenue</strong><span>Same traffic</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Complex product selection and a cluttered checkout were creating friction at the critical decision moment. Visitors were arriving but abandoning &mdash; in a market where you&rsquo;re already paying hard to win the click.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>End-to-end Hotjar review to identify exact drop-off points. Simplified product pages to streamline selection. Stripped back checkout copy removing confusion. Optimized navigation from homepage to product. Strong CTAs added throughout. Product imagery enriched and copy rewritten to improve engagement and click-through.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+20%</strong><span>Conversion</span></div>
+          <div class="cs-card__result-num"><strong>+10%</strong><span>CTR to checkout</span></div>
+          <div class="cs-card__result-num"><strong>Same traffic</strong><span>More revenue</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce acquisition retail">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/pink-boutique.png" alt="Pink Boutique" />
+        <span class="cs-card__badge">E-commerce &middot; Acquisition</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Pink Boutique &middot; Online Fashion Retail</p>
+        <h3 class="cs-card__headline">Budget moved from underperforming paid social to RAF &mdash; &pound;1.3m uplift and 15% more new customers at &pound;11 CPA.</h3>
+      </div>
+      <p class="cs-card__body">Paid social was contributing only 11% incremental sales despite significant spend. The business needed a higher-ROI route to new customers &mdash; one that turned the brand&rsquo;s loyal base into a growth engine.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Referral Marketing</span>
+        <span class="cs-card__tag">RAF Programme</span>
+        <span class="cs-card__tag">Mention Me</span>
+        <span class="cs-card__tag">Budget Reallocation</span>
+        <span class="cs-card__tag">CPA Reduction</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>&pound;1.3m</strong><span>Revenue uplift</span></div>
+        <div class="cs-card__metric"><strong>+15%</strong><span>New customers</span></div>
+        <div class="cs-card__metric"><strong>&pound;11</strong><span>CPA</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Paid social delivering 11% incremental sales contribution &mdash; significantly below the cost of the spend. Budget was locked into a channel that couldn&rsquo;t compete on unit economics. An engaged loyal customer base sat unused as an acquisition asset.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Reallocated paid social budget into a Referral a Friend programme via Mention Me. Designed to activate existing customers to recruit new ones at a fraction of the paid acquisition cost. Embedded as a permanent channel delivering ongoing ROAS-focused new customer growth from an audience already warm to the brand.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>&pound;1.3m</strong><span>Incremental revenue</span></div>
+          <div class="cs-card__result-num"><strong>+15%</strong><span>New customers</span></div>
+          <div class="cs-card__result-num"><strong>&pound;11</strong><span>CPA</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="b2b personalization cro">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/farnell.png" alt="Farnell" />
+        <span class="cs-card__badge">B2B &middot; Personalization</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Premier Farnell (Avnet) &middot; Global Electronic Components</p>
+        <h3 class="cs-card__headline">&pound;4.5m in incremental annual revenue from a dedicated Personalization Squad built alongside a McKinsey digital transformation.</h3>
+      </div>
+      <p class="cs-card__body">A global B2B distributor needed Agile CRO execution to back a McKinsey-led transformation. No dedicated optimization team, no personalization capability, no structured testing programme &mdash; and digital revenue significantly below potential.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">A/B Testing</span>
+        <span class="cs-card__tag">Adobe Analytics</span>
+        <span class="cs-card__tag">CRO</span>
+        <span class="cs-card__tag">Personalization</span>
+        <span class="cs-card__tag">Agile</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>&pound;4.5m</strong><span>Incremental revenue</span></div>
+        <div class="cs-card__metric"><strong>+5%</strong><span>Conversion (test segments)</span></div>
+        <div class="cs-card__metric"><strong>40%</strong><span>CRO success rate</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Fragmented site optimization with no dedicated CRO team. McKinsey transformation needed Agile delivery capability that didn&rsquo;t exist. No structured personalization strategy, and no testing programme to validate improvements before scaling them.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Built and led a dedicated Personalization Squad &mdash; UX/UI designers, Scrum Master, analytics experts, and CRO specialists. Product roadmap introduced and tied to commercial KPIs: conversion rate, engagement, AOV, and incremental revenue. Continuous Adobe A/B testing across five major feature releases improving UX, targeting, and digital touchpoints throughout the site.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>&pound;4.5m</strong><span>Incremental revenue</span></div>
+          <div class="cs-card__result-num"><strong>+5%</strong><span>Conversion lift</span></div>
+          <div class="cs-card__result-num"><strong>5</strong><span>Major releases</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce crm dtc">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/vip-vaping.svg" alt="VIP Vaping" />
+        <span class="cs-card__badge">E-commerce &middot; Turnaround</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">VIP Vaping (acq. British American Tobacco) &middot; Vaping &amp; Nicotine Retail</p>
+        <h3 class="cs-card__headline">From &minus;43% to +32% new customers. 3,000% Google Maps growth. Full commercial turnaround in 18 months.</h3>
+      </div>
+      <p class="cs-card__body">An acquired brand in decline across every metric. No CRM framework, 120+ store locations invisible in local search, a website with 40% bounce rate, and no structured approach to retention or reactivation.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">CRM &amp; Email</span>
+        <span class="cs-card__tag">Local SEO</span>
+        <span class="cs-card__tag">Website Redesign</span>
+        <span class="cs-card__tag">5-KPI Framework</span>
+        <span class="cs-card__tag">Google My Business</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+32%</strong><span>New customers (was &minus;43%)</span></div>
+        <div class="cs-card__metric"><strong>3,000%</strong><span>Google Maps views</span></div>
+        <div class="cs-card__metric"><strong>&minus;32%</strong><span>Bounce rate</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>New customers declining at &minus;43% YOY. No KPI framework guiding CRM activity. 120+ store locations on a single static page &mdash; invisible in local search. Website bounce rate at 40%. Won-back and lapsed rates deteriorating with no targeted recovery programmes.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Five-KPI CRM framework targeting new acquisition, second orders, at-risk, lapsed, and won-back segments &mdash; each with dedicated segmentation and tailored campaigns. Full mobile-first website redesign. Local SEO programme: 120+ dynamic indexed store pages, full GMB optimization, NAP standardization, review acquisition, structured data, and local backlinks.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+32%</strong><span>New customers</span></div>
+          <div class="cs-card__result-num"><strong>3,000%</strong><span>Map views</span></div>
+          <div class="cs-card__result-num"><strong>+153%</strong><span>Won-back customers</span></div>
+        </div>
+      </div>
+      <div class="cs-card__quote">
+        <blockquote>2nd orders +19%. At-risk customers reduced 30%. Lapsed improved from &minus;6% to +30%. Won-back grew from +46% to +153%. New customers moved from &minus;43% to +32% YOY. Phone call actions from local search up 800%. Store footfall up YOY across the estate.</blockquote>
+        <cite>&mdash; Programme results &middot; VIP Vaping / British American Tobacco</cite>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="ecommerce crm retail">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/notcutts.svg" alt="Notcutts" />
+        <span class="cs-card__badge">E-commerce &middot; CRM &amp; Conversion</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Notcutts &middot; Garden Centre Retail (Est. 1897)</p>
+        <h3 class="cs-card__headline">+40% email database and +70% conversion improvement &mdash; turning a data gap into a growth engine.</h3>
+      </div>
+      <p class="cs-card__body">400,000 loyalty members, but only 60% had email addresses on file. 240,000 customers were completely unreachable digitally. Conversion was also underperforming against clear commercial ambition for online growth.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Email Capture</span>
+        <span class="cs-card__tag">Loyalty Programme</span>
+        <span class="cs-card__tag">Conversion Optimization</span>
+        <span class="cs-card__tag">UX</span>
+        <span class="cs-card__tag">CRM</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+40%</strong><span>Email database</span></div>
+        <div class="cs-card__metric"><strong>+70%</strong><span>Conversion YOY</span></div>
+        <div class="cs-card__metric"><strong>160K &rarr; 224K</strong><span>Subscribers</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>240,000 loyalty members with no email address meant no ability to run personalized campaigns, retention programmes, or targeted promotions for nearly half the customer base. Data capture was outdated, staff engagement was low, and there was no compelling reason for customers to share their information.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Numbered scratchcard prize draw at checkout &mdash; customers entered details on a landing page to win monthly prizes up to &pound;500. Simple for staff, compelling for customers. Simultaneously, a full ecommerce improvement plan covering stock expansion online, UX improvements, trust signal additions, product reviews, and upgraded CRM segmentation drove the conversion uplift.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+40%</strong><span>Email database</span></div>
+          <div class="cs-card__result-num"><strong>+70%</strong><span>Conversion YOY</span></div>
+          <div class="cs-card__result-num"><strong>224K</strong><span>Subscribers</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="travel ecommerce">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <span class="cs-card__logo-wordmark">Just You &amp; Travelsphere</span>
+        <span class="cs-card__badge">Travel &middot; E-commerce</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Just You &amp; Travelsphere &middot; UK Group &amp; Escorted Tours</p>
+        <h3 class="cs-card__headline">+25% YOY ecommerce growth from a full digital reset across two travel brands &mdash; &pound;2.5m incremental revenue.</h3>
+      </div>
+      <p class="cs-card__body">Two brands with strong offline recognition but underperforming digital channels. Conversion below potential, destination pages under-optimized, acquisition campaigns inefficient, and no product roadmap driving iterative improvement.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Google PMAX</span>
+        <span class="cs-card__tag">CRO</span>
+        <span class="cs-card__tag">UX</span>
+        <span class="cs-card__tag">Lead Generation</span>
+        <span class="cs-card__tag">Ecommerce Trading</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+25%</strong><span>YOY sales growth</span></div>
+        <div class="cs-card__metric"><strong>+15%</strong><span>Conversion rate uplift</span></div>
+        <div class="cs-card__metric"><strong>&pound;2.5m</strong><span>Incremental revenue</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Fragmented ecommerce trading with inconsistent UX across destination pages. No structured product roadmap. Digital acquisition campaigns underutilised relative to brand scale. Conversion rates below industry benchmarks despite significant marketing investment.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Christmas PMAX campaign planned and executed for peak trading. UX and CRO analysis of destination pages with content enrichment and merchandising improvements. Targeted lead generation aligned to demographic performance data. Product roadmap reset focusing on high-impact onboarding and new functionality on the Umbraco platform. Cross-functional leadership across a team of 5 on both sites.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+25%</strong><span>YOY ecom sales</span></div>
+          <div class="cs-card__result-num"><strong>+15%</strong><span>Conversion uplift</span></div>
+          <div class="cs-card__result-num"><strong>+10%</strong><span>Lead growth</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="b2b saas">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/cellpoint-digital.png" alt="CellPoint Digital" />
+        <span class="cs-card__badge">B2B &middot; Fintech</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">CellPoint Digital &middot; Payments Platform</p>
+        <h3 class="cs-card__headline">Zero-to-one GTM infrastructure for a payments brand scaling beyond vendor support.</h3>
+      </div>
+      <p class="cs-card__body">Signal workflows, lead scoring, Apollo enrichment, HubSpot RevOps, and executive demo infrastructure built from scratch &mdash; turning disconnected ops into a strategic anchor partnership.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Apollo Enrichment</span>
+        <span class="cs-card__tag">HubSpot RevOps</span>
+        <span class="cs-card__tag">n8n Workflows</span>
+        <span class="cs-card__tag">Lead Scoring</span>
+        <span class="cs-card__tag">GTM Infrastructure</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>0&rarr;1</strong><span>GTM infrastructure</span></div>
+        <div class="cs-card__metric"><strong>Anchor</strong><span>Partnership secured</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>A scaling payments brand with no CRM, no signal workflows, no lead scoring, and no structured demo infrastructure for executive-level conversations. The sales motion existed. The system behind it didn&rsquo;t.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Built signal workflows and lead scoring from scratch. Connected Apollo, HubSpot, and automation into one integrated motion. Sharpened demo and executive follow-up infrastructure. Turned disconnected ops work into a compounding growth foundation.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>0&rarr;1</strong><span>GTM system</span></div>
+          <div class="cs-card__result-num"><strong>Full</strong><span>Pipeline infra</span></div>
+          <div class="cs-card__result-num"><strong>Anchor</strong><span>Partnership</span></div>
+        </div>
+      </div>
+      <div class="cs-card__quote">
+        <blockquote>WeFlair is not our vendor. They are our marketing team.</blockquote>
+        <cite>&mdash; Steven Osei, CMO &middot; CellPoint Digital</cite>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="saas b2b">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/molahin.png" alt="Molahin" />
+        <span class="cs-card__badge">SaaS &middot; B2B</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Molahin &middot; Music SaaS Platform</p>
+        <h3 class="cs-card__headline">Audience intelligence and localized messaging translated into +128% ROAS and $114K in new revenue.</h3>
+      </div>
+      <p class="cs-card__body">A SaaS music platform struggled to scale outbound and reach the right buyers. Ineffective targeting limited conversion of artists, agencies, and content creators into paying customers.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Google Ads</span>
+        <span class="cs-card__tag">LinkedIn</span>
+        <span class="cs-card__tag">Meta Ads</span>
+        <span class="cs-card__tag">Retargeting</span>
+        <span class="cs-card__tag">Localized Messaging</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+128%</strong><span>ROAS</span></div>
+        <div class="cs-card__metric"><strong>2,612+</strong><span>Signups</span></div>
+        <div class="cs-card__metric"><strong>$114K</strong><span>New revenue</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>A growing catalog but ineffective targeting. The platform struggled to communicate its value proposition and convert artists, agencies, and content creators into paying customers at scale.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Multi-channel strategy combining audience intelligence with localized messaging across Google, LinkedIn, and Facebook. Dynamic retargeting and optimized follow-up ensuring sustained engagement with high-intent prospects throughout the funnel.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+128%</strong><span>ROAS</span></div>
+          <div class="cs-card__result-num"><strong>2,612+</strong><span>Signups</span></div>
+          <div class="cs-card__result-num"><strong>$114K</strong><span>Revenue</span></div>
+        </div>
+      </div>
+      <div class="cs-card__quote">
+        <blockquote>WeFlair didn&rsquo;t just help us grow; they transformed how we approach our audience. Their team understood our challenges deeply and crafted a strategy that spoke directly to our market.</blockquote>
+        <cite>&mdash; John Abbadi, Founder &middot; Molahin</cite>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="real-estate b2b">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <img class="cs-card__logo" src="./brand-assets/client-logos/rct.png" alt="RCT" />
+        <span class="cs-card__badge">Real Estate</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">RCT &middot; Real Estate Agency</p>
+        <h3 class="cs-card__headline">Google Ads restructure lifted ROAS 36%, cut spend 17%, and increased total deals 15%.</h3>
+      </div>
+      <p class="cs-card__body">A prominent real estate agency wasting significant ad spend on keywords that clicked but never closed. Despite heavy investment in paid search, the campaigns were missing qualified buyers entirely.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Google Ads</span>
+        <span class="cs-card__tag">Salesforce Analysis</span>
+        <span class="cs-card__tag">Keyword Reallocation</span>
+        <span class="cs-card__tag">Budget Optimization</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>+36%</strong><span>ROAS</span></div>
+        <div class="cs-card__metric"><strong>&minus;17%</strong><span>Ad spend</span></div>
+        <div class="cs-card__metric"><strong>+15%</strong><span>Total deals</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Ad spend wasted on keywords generating clicks but no closed sales. Campaigns lacked precision, resulting in poor ROI and missed opportunities with the buyers most likely to convert.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Pulled Salesforce reports and built pivot tables identifying the top closing keywords. Restructured keyword strategy around closed-sale patterns, reallocated budget to high-converting terms, and cut waste from underperforming campaigns entirely.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>+36%</strong><span>ROAS</span></div>
+          <div class="cs-card__result-num"><strong>&minus;17%</strong><span>Ad spend</span></div>
+          <div class="cs-card__result-num"><strong>+15%</strong><span>Deals</span></div>
+        </div>
+      </div>
+      <div class="cs-card__quote">
+        <blockquote>WeFlair completely transformed our ad strategy. They helped us target the right audience, improved lead quality, and drove real results. The account finally reflected what was happening in the business, not just what was happening in Google Ads.</blockquote>
+        <cite>&mdash; Hisham Alqaisi, CMO &middot; RCT</cite>
+      </div>
+    </div>
+  </article>
+
+  <article class="cs-card" data-industries="logistics b2b">
+    <div class="cs-card__left">
+      <div class="cs-card__logo-row">
+        <span class="cs-card__logo-wordmark">Merna for Shipping</span>
+        <span class="cs-card__badge">Logistics &middot; B2B</span>
+      </div>
+      <div>
+        <p class="cs-card__sector">Merna for Shipping &middot; Freight &amp; Logistics</p>
+        <h3 class="cs-card__headline">36 positive replies and 4 deals moved into pipeline from a tighter outbound motion.</h3>
+      </div>
+      <p class="cs-card__body">A regional freight company needed to move beyond referrals and build a repeatable pipeline. Existing messaging was generic, the ICP was too broad, and outreach was returning near-zero results.</p>
+      <div class="cs-card__tags">
+        <span class="cs-card__tag">Outbound</span>
+        <span class="cs-card__tag">ICP Definition</span>
+        <span class="cs-card__tag">Sequencing</span>
+        <span class="cs-card__tag">Copywriting</span>
+      </div>
+      <div class="cs-card__metrics">
+        <div class="cs-card__metric"><strong>36</strong><span>Positive replies</span></div>
+        <div class="cs-card__metric"><strong>4</strong><span>Deals in pipeline</span></div>
+      </div>
+    </div>
+    <div class="cs-card__right">
+      <div class="cs-card__psr">
+        <div class="cs-card__psr-item">
+          <h4>The Problem</h4>
+          <p>Outbound running but generating nothing. Messages too broad, lists unqualified, no sequencing strategy. The pipeline was 100% referral-dependent with zero systematic acquisition.</p>
+        </div>
+        <div class="cs-card__psr-item">
+          <h4>The Solution</h4>
+          <p>Tightened ICP to high-fit segments. Rewrote messaging around specific freight and logistics pain points. Built a multi-touch sequence with relevant follow-up. Removed noise from the list to focus effort on buyers most likely to convert.</p>
+        </div>
+        <div class="cs-card__result-nums">
+          <div class="cs-card__result-num"><strong>36</strong><span>Positive replies</span></div>
+          <div class="cs-card__result-num"><strong>4</strong><span>Pipeline deals</span></div>
+          <div class="cs-card__result-num"><strong>Repeatable</strong><span>Outbound motion</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<div class="cs-cta">
+  <h2>Ready to be the next case study?</h2>
+  <p>Book a free strategy call and we&rsquo;ll identify the biggest growth lever in your business within 30 minutes.</p>
+  <a href="./contact.html" class="cs-cta-btn">Book your free audit</a>
+  <p class="cs-fine">Free first-look audit &bull; No commitment required &bull; No hard sell</p>
+</div>
+
+</div>
+<footer style="background:#0e100e;border-top:1px solid rgba(246,243,238,.06)">
+  <div style="max-width:72rem;margin:0 auto;padding:3rem 2rem">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,243,238,.06)">
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Services</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/services/paid-media-performance.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Paid Media &amp; Performance</a></li>
+          <li><a href="/services/outbound-gtm.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Outbound &amp; GTM Engineering</a></li>
+          <li><a href="/services/revops-ai.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">RevOps &amp; AI Workflows</a></li>
+          <li><a href="/services/strategy-creative.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Creative &amp; Production</a></li>
+          <li><a href="/services/content-seo.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Content &amp; AEO</a></li>
+          <li><a href="/services/cro-performance-design.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Performance Design &amp; CRO</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Expertise</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/expertise/b2b-saas.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B SaaS</a></li>
+          <li><a href="/expertise/b2b-services.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Services</a></li>
+          <li><a href="/expertise/b2b-hardware.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Hardware</a></li>
+          <li><a href="/expertise/fintech.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Fintech</a></li>
+          <li><a href="/expertise/ecommerce.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">E-commerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Resources</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/resources/calculators.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Calculators</a></li>
+          <li><a href="/resources/guides.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Guides</a></li>
+          <li><a href="/resources/playbooks.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Playbooks</a></li>
+          <li><a href="/resources/ai-tools.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">AI Tools</a></li>
+          <li><a href="/blog.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Marketing Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Company</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+          <li><a href="/about.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">About Us</a></li>
+          <li><a href="/careers.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Careers</a></li>
+          <li><a href="/contact.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem">
+      <p style="color:rgba(246,243,238,.36);font-size:.78rem;margin:0">&copy; 2026 WeFlair LLC</p>
+      <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap">
+        <a href="/legal/privacy.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Privacy Policy</a>
+        <a href="/legal/terms.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Terms and Conditions</a>
+        <a href="/sitemap.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
 </main>
+<script>
+(function(){
+  var filters = document.querySelectorAll('.cs-filter');
+  var cards = document.querySelectorAll('.cs-card');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.dataset.filter;
+      cards.forEach(function(card){
+        var show = f === 'all' || (card.dataset.industries && card.dataset.industries.indexOf(f) > -1);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

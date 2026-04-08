@@ -157,10 +157,38 @@
     },
   ];
 
-  const CAL_NAMESPACE = "1st";
-  const CAL_ORIGIN = "https://app.cal.com";
-  const CAL_LINK = "weflair/1st";
-  const CAL_DIRECT_URL = "https://cal.com/weflair/1st";
+  const SITE_ORIGIN = "https://weflair.com";
+  const ROUTES = {
+    home: "/index.html",
+    about: "/about.html",
+    careers: "/careers.html",
+    contact: "/contact.html",
+    blog: "/blog.html",
+    results: "/cases.html",
+    sitemap: "/sitemap.html",
+    servicesPaid: "/services/paid-media-performance.html",
+    servicesOutbound: "/services/outbound-gtm.html",
+    servicesRevops: "/services/revops-ai.html",
+    servicesContent: "/services/content-seo.html",
+    servicesCro: "/services/cro-performance-design.html",
+    servicesStrategy: "/services/strategy-creative.html",
+    expertiseSaas: "/expertise/b2b-saas.html",
+    expertiseServices: "/expertise/b2b-services.html",
+    expertiseHardware: "/expertise/b2b-hardware.html",
+    expertiseFintech: "/expertise/fintech.html",
+    expertiseEcommerce: "/expertise/ecommerce.html",
+    resourcesGuides: "/resources/guides.html",
+    resourcesPlaybooks: "/resources/playbooks.html",
+    resourcesAiTools: "/resources/ai-tools.html",
+    resourcesCalculators: "/resources/calculators.html",
+    legalPrivacy: "/legal/privacy.html",
+    legalTerms: "/legal/terms.html",
+  };
+
+  const CAL_NAMESPACE = "contact";
+  const CAL_ORIGIN = "";
+  const CAL_LINK = "";
+  const CAL_DIRECT_URL = ROUTES.contact;
   const CAL_CONFIG = '{"layout":"week_view","useSlotsViewOnSmallScreen":"true"}';
 
   const CONTENT = {
@@ -180,8 +208,9 @@
         ["Paid Media & Performance", "Campaigns tied to qualified revenue."],
         ["Outbound & GTM Engineering", "Signals, sequencing, and GTM logic."],
         ["Revenue Operations & AI Workflows", "Routing, dashboards, and AI-enabled automation."],
-        ["Content & Creative", "Sharper positioning, copy, and visual direction."],
-        ["Conversion Design & CRO", "Pages and funnels that convert harder."],
+        ["Strategy & Creative", "Offers, messaging, and creative direction that sharpen demand."],
+        ["Content & SEO", "Content systems and search visibility that compound pipeline."],
+        ["CRO & Performance Design", "Pages and funnels that convert harder."],
       ],
       expertise: [
         ["B2B SaaS", "Software teams under pressure to prove pipeline."],
@@ -191,6 +220,7 @@
         ["FinTech", "Trust-heavy categories where precision matters."],
       ],
       resources: [
+        ["Case Studies", "Proof that the systems work in the real world."],
         ["Guides", "Practical explainers for the systems behind growth."],
         ["Playbooks", "How WeFlair runs paid, outbound, CRM, and conversion together."],
         ["AI Tools", "Operator-grade tools and workflows."],
@@ -301,7 +331,7 @@
           body:
             "Sharper targeting, stronger creative, cleaner structure, and tighter optimization — built to turn active demand into pipeline and revenue, not just clicks, spend, and reports.",
           linkLabel: "Discover details",
-          linkHref: "#services",
+          linkHref: ROUTES.servicesPaid,
           lead: { name: "Project Director", img: "https://i.pravatar.cc/150?u=lead1" },
           roles: [
             { label: "Media Buyer", img: "https://i.pravatar.cc/150?u=member1" },
@@ -319,7 +349,7 @@
           body:
             "Better targeting, sequencing, messaging, and follow-up — built to create qualified conversations, keep outreach focused, and move the right accounts into pipeline.",
           linkLabel: "Discover details",
-          linkHref: "#services",
+          linkHref: ROUTES.servicesOutbound,
           lead: { name: "Head of Growth", img: "https://i.pravatar.cc/150?u=lead2" },
           roles: [
             { label: "Outbound SDR", img: "https://i.pravatar.cc/150?u=user5" },
@@ -337,7 +367,7 @@
           body:
             "CRM, routing, workflows, reporting, and AI-enabled automation — built to cut manual work, clean up execution, and keep leads, data, and follow-up moving properly.",
           linkLabel: "Discover details",
-          linkHref: "#services",
+          linkHref: ROUTES.servicesRevops,
           lead: { name: "Head of Operations", img: "https://i.pravatar.cc/150?u=lead3" },
           roles: [
             { label: "CRM Expert", img: "https://i.pravatar.cc/150?u=user9" },
@@ -354,7 +384,7 @@
           body:
             "Clearer offers, sharper positioning, stronger messaging, and creative direction — built to make campaigns, pages, and outreach feel specific, coherent, and harder to ignore.",
           linkLabel: "Discover details",
-          linkHref: "#method",
+          linkHref: ROUTES.servicesStrategy,
           lead: { name: "Creative Director", img: "https://i.pravatar.cc/150?u=lead4" },
           roles: [
             { label: "UX/UI Expert", img: "https://i.pravatar.cc/150?u=user12" },
@@ -371,9 +401,8 @@
         'Tailored Solutions,<br><span class="weflair-section-accent weflair-section-accent--solid">Tangible Results</span>',
       body:
         "Dive into real-world examples of how we've helped Ambitious brands reach new heights with data-driven strategies and expert execution.",
-      moreHref: "cases.html",
+      moreHref: ROUTES.results,
       filters: [
-        "All Cases",
         "B2B",
         "E-commerce",
         "Real Estate",
@@ -406,7 +435,7 @@
             "Sharpened demo and executive follow-up infrastructure.",
             "Turned disconnected ops work into a growth foundation.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Harrier Trail Running",
@@ -431,7 +460,7 @@
             "Connected acquisition to lifecycle capture and follow-up.",
             "Scaled revenue without letting spend drift.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Molahin",
@@ -456,7 +485,7 @@
             "Improved signup efficiency without muddying the offer.",
             "Turned media learning into measurable revenue growth.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "RCT",
@@ -481,7 +510,7 @@
             "Reduced waste without shrinking commercial intent.",
             "Lifted efficiency while improving total deals.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Merna for Shipping",
@@ -505,7 +534,7 @@
             "Sharpened messaging for higher-quality replies.",
             "Moved outreach from activity to real pipeline.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Meta Estate Empire",
@@ -529,7 +558,7 @@
             "Expanded visibility with coordinated crypto PR coverage.",
             "Turned attention into booked conversations.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Premier Farnell / Avnet",
@@ -553,7 +582,7 @@
             "Optimized APAC performance without breaking the wider system.",
             "Shifted more revenue through the web channel.",
           ],
-          href: "cases.html",
+          href: ROUTES.results,
         },
       ],
       testimonials: [
@@ -648,15 +677,41 @@
         'The <span class="weflair-section-accent">fragmented vendor stack</span> vs <span class="weflair-section-accent weflair-section-accent--solid">WeFlair</span>',
       body:
         "The difference is not just who does the work. It is who keeps the work moving.",
-      left: "Fragmented vendor stack",
-      right: "WeFlair",
+      left: "What You Experience Now",
+      right: "What You Experience With WeFlair",
       rows: [
-        ["Different vendors own different pieces.", "One team owns the moving parts together."],
-        ["Nobody owns the full commercial outcome.", "One team stays accountable for what happens after the click."],
-        ["Requests sit in different queues.", "Changes move in days, not weeks."],
-        ["Insights are trapped in disconnected tools.", "One operating view across spend, pipeline, and revenue."],
-        ["Multiple retainers plus hidden coordination cost.", "Starts at EUR 4K for a focused capability."],
-        ["Knowledge leaves when a freelancer or vendor disappears.", "The system stays inside your stack."],
+        [
+          "Monthly reports full of impressions and click data you can't action",
+          "Quarterly business reviews showing pipeline influenced, CAC, and revenue attributed",
+        ],
+        [
+          "Your account manager changes every 6 months. New person, same onboarding deck.",
+          "Your dedicated senior strategist knows your business, your competitors, and your board metrics",
+        ],
+        [
+          "Agency recommends the same playbook they use for every client",
+          "Custom strategies built from your actual GSC data, competitor gaps, and market position",
+        ],
+        [
+          "Agency says 'we use AI' but can't explain how",
+          "Every WeFlair hire must pass an AI proficiency test - AI isn't hype here, it's a hiring requirement",
+        ],
+        [
+          "Five vendors, five Slack channels, nobody owns the outcome",
+          "One team across paid, outbound, RevOps, content, and CRO - with one point of contact",
+        ],
+        [
+          "You ask what's working and get a traffic report",
+          "You ask what's working and we show you pipeline sourced, deals influenced, and cost per opportunity",
+        ],
+        [
+          "Scaling means adding headcount to the agency and paying for their ramp",
+          "Scaling means deploying automations that multiply output without multiplying cost",
+        ],
+        [
+          "Knowledge disappears when a freelancer or vendor churns",
+          "Every workflow, playbook, and automation lives in your systems - you own it all",
+        ],
       ],
     },
     process: {
@@ -724,45 +779,49 @@
       services: {
         heading: "Services",
         links: [
-          { label: "Paid Media & Performance", href: "/services/paid-media-performance" },
-          { label: "Outbound & GTM", href: "/services/outbound-gtm" },
-          { label: "RevOps & AI", href: "/services/revops-ai" },
-          { label: "Strategy & Creative", href: "/services/strategy-creative" },
+          { label: "Paid Media & Performance", href: ROUTES.servicesPaid },
+          { label: "Outbound & GTM", href: ROUTES.servicesOutbound },
+          { label: "RevOps & AI", href: ROUTES.servicesRevops },
+          { label: "Strategy & Creative", href: ROUTES.servicesStrategy },
+          { label: "Content & SEO", href: ROUTES.servicesContent },
+          { label: "CRO & Performance Design", href: ROUTES.servicesCro },
         ],
       },
       expertise: {
         heading: "Expertise",
         links: [
-          { label: "B2B SaaS", href: "/expertise/b2b-saas" },
-          { label: "B2B Services", href: "/expertise/b2b-services" },
-          { label: "B2B Hardware", href: "/expertise/b2b-hardware" },
-          { label: "Fintech", href: "/expertise/fintech" },
-          { label: "E-commerce", href: "/expertise/ecommerce" },
+          { label: "B2B SaaS", href: ROUTES.expertiseSaas },
+          { label: "B2B Services", href: ROUTES.expertiseServices },
+          { label: "B2B Hardware", href: ROUTES.expertiseHardware },
+          { label: "Fintech", href: ROUTES.expertiseFintech },
+          { label: "E-commerce", href: ROUTES.expertiseEcommerce },
         ],
       },
       resources: {
         heading: "Resources",
         links: [
-          { label: "Calculators", href: "/resources/calculators" },
-          { label: "Guides", href: "/resources/guides" },
-          { label: "Playbooks", href: "/resources/playbooks" },
-          { label: "AI Tools", href: "/resources/ai-tools" },
-          { label: "Marketing Blog", href: "/blog" },
+          { label: "Case Studies", href: ROUTES.results },
+          { label: "Calculators", href: ROUTES.resourcesCalculators },
+          { label: "Guides", href: ROUTES.resourcesGuides },
+          { label: "Playbooks", href: ROUTES.resourcesPlaybooks },
+          { label: "AI Tools", href: ROUTES.resourcesAiTools },
+          { label: "Marketing Blog", href: ROUTES.blog },
         ],
       },
       company: {
         heading: "Company",
         links: [
-          { label: "About Us", href: "/about" },
-          { label: "Careers", href: "/careers" },
-          { label: "Contact", href: "/contact" },
+          { label: "About Us", href: ROUTES.about },
+          { label: "Careers", href: ROUTES.careers },
+          { label: "Contact", href: ROUTES.contact },
         ],
       },
       legal: {
         copyright: "© 2026 WeFlair",
         links: [
-          { label: "Privacy Policy", href: "/legal/privacy" },
-          { label: "Terms and Conditions", href: "/legal/terms" },
+          { label: "Privacy Policy", href: ROUTES.legalPrivacy },
+          { label: "Terms and Conditions", href: ROUTES.legalTerms },
+          { label: "Sitemap", href: ROUTES.sitemap },
         ],
       },
       social: [
@@ -775,6 +834,317 @@
 
   const q = (selector, scope = document) => scope.querySelector(selector);
   const qa = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+
+  const PATH_ROUTE_MAP = {
+    index: ROUTES.home,
+    about: ROUTES.about,
+    careers: ROUTES.careers,
+    contact: ROUTES.contact,
+    blog: ROUTES.blog,
+    cases: ROUTES.results,
+    sitemap: ROUTES.sitemap,
+    "services/paid-media-performance": ROUTES.servicesPaid,
+    "services/outbound-gtm": ROUTES.servicesOutbound,
+    "services/revops-ai": ROUTES.servicesRevops,
+    "services/content-seo": ROUTES.servicesContent,
+    "services/cro-performance-design": ROUTES.servicesCro,
+    "services/strategy-creative": ROUTES.servicesStrategy,
+    "expertise/b2b-saas": ROUTES.expertiseSaas,
+    "expertise/b2b-services": ROUTES.expertiseServices,
+    "expertise/b2b-hardware": ROUTES.expertiseHardware,
+    "expertise/fintech": ROUTES.expertiseFintech,
+    "expertise/ecommerce": ROUTES.expertiseEcommerce,
+    "resources/guides": ROUTES.resourcesGuides,
+    "resources/playbooks": ROUTES.resourcesPlaybooks,
+    "resources/ai-tools": ROUTES.resourcesAiTools,
+    "resources/calculators": ROUTES.resourcesCalculators,
+    "legal/privacy": ROUTES.legalPrivacy,
+    "legal/terms": ROUTES.legalTerms,
+  };
+
+  const LABEL_ROUTE_MAP = {
+    "paid media performance": ROUTES.servicesPaid,
+    "outbound gtm engineering": ROUTES.servicesOutbound,
+    "outbound gtm": ROUTES.servicesOutbound,
+    "revenue operations ai workflows": ROUTES.servicesRevops,
+    "revenue operations ai": ROUTES.servicesRevops,
+    "revenue operations automations": ROUTES.servicesRevops,
+    "revops ai": ROUTES.servicesRevops,
+    "strategy creative": ROUTES.servicesStrategy,
+    "content creative": ROUTES.servicesStrategy,
+    "content seo": ROUTES.servicesContent,
+    "cro performance design": ROUTES.servicesCro,
+    "conversion design cro": ROUTES.servicesCro,
+    "conversion design and cro": ROUTES.servicesCro,
+    "b2b saas": ROUTES.expertiseSaas,
+    "b2b services": ROUTES.expertiseServices,
+    "b2b hardware": ROUTES.expertiseHardware,
+    fintech: ROUTES.expertiseFintech,
+    ecommerce: ROUTES.expertiseEcommerce,
+    "e commerce": ROUTES.expertiseEcommerce,
+    "case studies": ROUTES.results,
+    calculators: ROUTES.resourcesCalculators,
+    guides: ROUTES.resourcesGuides,
+    playbooks: ROUTES.resourcesPlaybooks,
+    "ai tools": ROUTES.resourcesAiTools,
+    "marketing blog": ROUTES.blog,
+    "about us": ROUTES.about,
+    careers: ROUTES.careers,
+    contact: ROUTES.contact,
+    sitemap: ROUTES.sitemap,
+    "privacy policy": ROUTES.legalPrivacy,
+    "terms and conditions": ROUTES.legalTerms,
+    "discover all our resources": ROUTES.sitemap,
+    "discover all resources": ROUTES.sitemap,
+    "see more success stories": ROUTES.results,
+    "explore all case studies": ROUTES.results,
+    "read the full case study": ROUTES.results,
+    "read more": ROUTES.results,
+    "book intro call": ROUTES.contact,
+    "book a free growth audit": ROUTES.contact,
+    "book your free strategy call": ROUTES.contact,
+    "request a growth audit": ROUTES.contact,
+    "get your free marketing audit": ROUTES.contact,
+    "talk to us": ROUTES.contact,
+  };
+
+  const CONTACT_HASHES = new Set([
+    "#audit",
+    "#book",
+    "#book-starter",
+    "#book-growth",
+    "#book-enterprise",
+    "#contact",
+  ]);
+
+  const HOMEPAGE_HASHES = new Set([
+    "#hero",
+    "#logos",
+    "#services",
+    "#problems",
+    "#method",
+    "#team",
+    "#process",
+    "#results",
+    "#testimonials",
+    "#comparison",
+    "#playbooks",
+  ]);
+
+  function normalizeLabel(value = "") {
+    return value
+      .replace(/&/g, " and ")
+      .replace(/[\u2013\u2014]/g, " ")
+      .replace(/[^\w\s]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+  }
+
+  function routeForLabel(label = "") {
+    return LABEL_ROUTE_MAP[normalizeLabel(label)] || "";
+  }
+
+  function mapKnownPath(rawPath = "") {
+    const cleaned = rawPath
+      .replace(/^[a-z]+:\/\/[^/]+/i, "")
+      .replace(/^\/+/, "")
+      .replace(/^(\.\/)+/, "")
+      .replace(/^(?:\.\.\/)+/, "")
+      .replace(/\.html$/i, "")
+      .replace(/\/+$/, "")
+      .toLowerCase();
+    return PATH_ROUTE_MAP[cleaned] || "";
+  }
+
+  function resolveInternalHref(href = "", label = "") {
+    const rawHref = href.trim();
+    if (!rawHref) return routeForLabel(label) || rawHref;
+    if (/^(mailto:|tel:|javascript:|https?:|\/\/)/i.test(rawHref)) return rawHref;
+    if (rawHref.startsWith("#")) {
+      const hash = rawHref.toLowerCase();
+      if (CONTACT_HASHES.has(hash)) return ROUTES.contact;
+      if (HOMEPAGE_HASHES.has(hash)) {
+        if (q(hash)) return hash;
+        return routeForLabel(label) || (hash === "#results" ? ROUTES.results : `${ROUTES.home}${hash}`);
+      }
+      return routeForLabel(label) || ROUTES.contact;
+    }
+
+    const [pathPart, hashPart] = rawHref.split("#");
+    const mapped = mapKnownPath(pathPart);
+    if (mapped) {
+      const hash = hashPart ? `#${hashPart.toLowerCase()}` : "";
+      if (hash && mapped === ROUTES.home && HOMEPAGE_HASHES.has(hash)) {
+        return `${mapped}${hash}`;
+      }
+      return mapped;
+    }
+
+    return routeForLabel(label) || rawHref;
+  }
+
+  function appendSitemapLink(container, className, inlineStyles = null) {
+    if (!container || container.querySelector(`a[href="${ROUTES.sitemap}"]`)) return;
+    const link = document.createElement("a");
+    link.href = ROUTES.sitemap;
+    link.textContent = "Sitemap";
+    if (className) link.className = className;
+    if (inlineStyles) Object.assign(link.style, inlineStyles);
+    container.appendChild(link);
+  }
+
+  function normalizeSiteLinks(scope = document) {
+    qa("a[href]", scope).forEach((link) => {
+      const label =
+        q(".btn__span", link)?.textContent ||
+        link.getAttribute("aria-label") ||
+        link.getAttribute("title") ||
+        link.textContent ||
+        "";
+      const currentHref = link.getAttribute("href") || "";
+      const nextHref = resolveInternalHref(currentHref, label);
+      if (nextHref && nextHref !== currentHref) {
+        link.setAttribute("href", nextHref);
+      }
+      if (nextHref === ROUTES.contact) {
+        [
+          "data-cal-link",
+          "data-cal-namespace",
+          "data-cal-config",
+          "data-cal-source",
+          "aria-haspopup",
+        ].forEach((attr) => link.removeAttribute(attr));
+      }
+    });
+
+    appendSitemapLink(q(".weflair-footer__legal"), "weflair-footer__legal-link");
+    const simpleLegal = qa("footer div").find(
+      (node) =>
+        /privacy policy/i.test(node.textContent || "") &&
+        /terms/i.test(node.textContent || "")
+    );
+    appendSitemapLink(simpleLegal, "", {
+      color: "rgba(246,243,238,.36)",
+      textDecoration: "none",
+      fontSize: ".78rem",
+    });
+  }
+
+  function renderThemeSwitch() {
+    return `<div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><circle cx="10" cy="10" r="3.2" fill="currentColor"></circle><path d="M10 1.9V3.8M10 16.2V18.1M3.8 10H1.9M18.1 10H16.2M4.1 4.1L5.5 5.5M14.5 14.5L15.9 15.9M15.9 4.1L14.5 5.5M5.5 14.5L4.1 15.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme">Switch Theme</button></div><div class="noise is--small"></div></div>`;
+  }
+
+  function syncInjectedThemeButtons(scope = document) {
+    const isLight = document.body?.getAttribute("data-theme") === "light";
+    qa("[data-theme-toggle]", scope).forEach((button) => {
+      button.setAttribute("aria-pressed", String(isLight));
+      button.setAttribute(
+        "aria-label",
+        isLight ? "Switch to dark theme" : "Switch to light theme"
+      );
+    });
+  }
+
+  function mountInjectedThemeButtons(scope = document) {
+    qa("[data-theme-toggle]", scope).forEach((button) => {
+      if (button.dataset.codexThemeMounted === "true") return;
+      button.dataset.codexThemeMounted = "true";
+      button.addEventListener("click", () => {
+        const nextTheme =
+          document.body?.getAttribute("data-theme") === "light" ? "dark" : "light";
+        document.body?.setAttribute("data-theme", nextTheme);
+        document.documentElement?.setAttribute("data-theme", nextTheme);
+        try {
+          localStorage.setItem("weflair-theme", nextTheme);
+        } catch (_error) {
+          // Ignore storage failures in static preview mode.
+        }
+        syncInjectedThemeButtons(document);
+      });
+    });
+    syncInjectedThemeButtons(scope);
+  }
+
+  function mountInjectedShellClosers(scope = document) {
+    qa('[data-navigation-toggle="close"]', scope).forEach((closer) => {
+      if (closer.dataset.codexNavMounted === "true") return;
+      closer.dataset.codexNavMounted = "true";
+      closer.addEventListener("click", () => {
+        document.body?.setAttribute("data-navigation-status", "not-active");
+        document.documentElement?.setAttribute("data-navigation-status", "not-active");
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+        qa('[data-navigation-toggle="toggle"]').forEach((toggle) => {
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Open navigation menu");
+          toggle.setAttribute("role", "button");
+          if (!toggle.hasAttribute("tabindex")) toggle.setAttribute("tabindex", "0");
+        });
+        qa("[data-dropdown-status]").forEach((dropdown) => {
+          dropdown.setAttribute("data-dropdown-status", "not-active");
+          const trigger = q("[data-dropdown-click]", dropdown);
+          if (trigger) trigger.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  }
+
+  function ensurePageShell() {
+    if (!document.body) return;
+    if (!document.body.hasAttribute("data-navigation-status")) {
+      document.body.setAttribute("data-navigation-status", "not-active");
+    }
+
+    const main = q("main.main");
+    if (!main) {
+      mountInjectedThemeButtons();
+      return;
+    }
+
+    let shell = q(".floating-elements-main", main);
+    if (!shell) {
+      const directHeader = Array.from(document.body.children).find((node) =>
+        node.matches?.("header.header")
+      );
+      if (directHeader) {
+        shell = document.createElement("div");
+        shell.className = "floating-elements-main";
+        main.prepend(shell);
+        shell.appendChild(directHeader);
+      }
+    }
+
+    if (!shell) {
+      mountInjectedThemeButtons();
+      return;
+    }
+
+    if (!q(".calc-header-padding-height", shell)) {
+      const spacer = document.createElement("div");
+      spacer.className = "calc-header-padding-height";
+      shell.prepend(spacer);
+    }
+
+    if (!q(".nav-fade", shell)) {
+      const fade = document.createElement("div");
+      fade.className = "nav-fade";
+      fade.dataset.navigationToggle = "close";
+      const header = q("header.header", shell);
+      if (header) {
+        header.before(fade);
+      } else {
+        shell.prepend(fade);
+      }
+    }
+
+    if (!q(".theme-switch", shell)) {
+      shell.insertAdjacentHTML("beforeend", renderThemeSwitch());
+    }
+
+    mountInjectedShellClosers(shell);
+    mountInjectedThemeButtons(shell);
+  }
 
   function flareSvg(extraClass = "") {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="${extraClass}"><path d="${FLARE_PATH}" fill="currentColor"></path></svg>`;
@@ -802,7 +1172,7 @@
   }
 
   function calTriggerAttributes(extraAttrs = "") {
-    return `href="${CAL_DIRECT_URL}" data-cal-link="${CAL_LINK}" data-cal-namespace="${CAL_NAMESPACE}" data-cal-config='${CAL_CONFIG}' aria-haspopup="dialog" ${extraAttrs}`.trim();
+    return `href="${CAL_DIRECT_URL}" ${extraAttrs}`.trim();
   }
 
   function calButton(label, variant = "primary", extraAttrs = "", arrowType = "default") {
@@ -815,51 +1185,7 @@
   }
 
   function ensureCalEmbed() {
-    if (window.__weflairCalEmbedReady) return;
-    window.__weflairCalEmbedReady = true;
-    (function (C, A, L) {
-      const push = function (api, args) {
-        api.q.push(args);
-      };
-      const d = C.document;
-      C.Cal =
-        C.Cal ||
-        function () {
-          const cal = C.Cal;
-          const args = arguments;
-          if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
-            d.head.appendChild(d.createElement("script")).src = A;
-            cal.loaded = true;
-          }
-          if (args[0] === L) {
-            const api = function () {
-              push(api, arguments);
-            };
-            const namespace = args[1];
-            api.q = api.q || [];
-            if (typeof namespace === "string") {
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              push(cal.ns[namespace], args);
-              push(cal, ["initNamespace", namespace]);
-            } else {
-              push(cal, args);
-            }
-            return;
-          }
-          push(cal, args);
-        };
-    })(window, `${CAL_ORIGIN}/embed/embed.js`, "init");
-    window.Cal("init", CAL_NAMESPACE, { origin: CAL_ORIGIN });
-    window.Cal.ns[CAL_NAMESPACE]("ui", {
-      cssVarsPerTheme: {
-        light: { "cal-brand": "#032700" },
-        dark: { "cal-brand": "#15d04d" },
-      },
-      hideEventTypeDetails: false,
-      layout: "week_view",
-    });
+    return;
   }
 
   function renderAuditWidgetMarkup() {
@@ -868,7 +1194,7 @@
       "primary",
       'data-cal-source="hero-widget"',
       "diagonal"
-    )}</div><div class="weflair-audit-widget__foot">Opens the live calendar in a popup. If there is no fit, we will say so.</div></div></div>`;
+    )}</div><div class="weflair-audit-widget__foot">Takes you to the contact page so you can request the brief without leaving the site.</div></div></div>`;
   }
 
   function tags(items, className = "weflair-tag") {
@@ -929,17 +1255,17 @@
     )}</div>${teamPlaceholderMarkup(pod)}</div>`;
   }
 
-    let _activeResultsFilter = "All Cases";
+    let _activeResultsFilter = "";
   let _activeResultsIndex = 0;
   const CASES_PER_VIEW = 1;
 
   function getFilteredResults() {
     const cards = CONTENT.results.cards.filter(
       (card) =>
-        _activeResultsFilter === "All Cases" || card.industries.includes(_activeResultsFilter)
+        !_activeResultsFilter || card.industries.includes(_activeResultsFilter)
     );
     if (cards.length) return cards;
-    _activeResultsFilter = "All Cases";
+    _activeResultsFilter = "";
     return CONTENT.results.cards;
   }
 
@@ -1084,7 +1410,7 @@
     const status = q("[data-case-filter-status]", section);
     if (status) {
       status.textContent =
-        _activeResultsFilter === "All Cases"
+        !_activeResultsFilter
           ? `${filteredCards.length} case studies`
           : `${_activeResultsFilter} · ${filteredCards.length} case studies`;
     }
@@ -1123,6 +1449,8 @@
       .weflair-headline .weflair-hero__accent,.weflair-section-accent{font-style:italic}
       .weflair-headline .weflair-hero__accent{font-weight:400;letter-spacing:-.045em}
       .weflair-section-accent{white-space:nowrap}
+      .weflair-framework__head .h3{font-size:clamp(2.2rem,4.4vw,4.5rem)!important;line-height:.95;letter-spacing:-.075em;text-wrap:balance}
+      .home-header__row-title .h1{font-size:clamp(2.8rem,6vw,6.5rem)!important;text-wrap:balance}
       .weflair-hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
       #hero .eyebrow{margin-bottom:1.15rem}
       .weflair-btn--ghost{opacity:.78}
@@ -1132,19 +1460,19 @@
       #hero .p-l{max-width:36rem!important;font-size:clamp(1.08rem,1.35vw,1.35rem)!important;line-height:1.36!important}
       #hero .home-header__content{padding-bottom:clamp(3rem,6vw,4.75rem)}
       .weflair-hero-widget-wrap{display:flex;align-items:flex-end;justify-content:flex-end;min-height:1px}
-      .weflair-audit-widget{position:fixed;right:clamp(.9rem,2vw,1.4rem);bottom:clamp(.9rem,2vw,1.4rem);z-index:70;width:min(calc(100vw - 1.8rem),22rem);margin-left:0}
+      .weflair-audit-widget{position:fixed;right:clamp(.9rem,2vw,1.4rem);bottom:clamp(.9rem,2vw,1.4rem);z-index:70;width:min(calc(100vw - 1.8rem),22rem);margin-left:0;transition:opacity .24s ease,transform .24s ease,visibility .24s ease}
       .weflair-audit-widget__launcher{display:grid;place-items:center;width:4.25rem;height:4.25rem;margin-left:auto;border:1px solid rgba(246,243,238,.12);border-radius:999px;background:linear-gradient(180deg,rgba(18,19,18,.96) 0%,rgba(12,13,12,.98) 100%);color:#f6f3ee;box-shadow:0 16px 36px rgba(0,0,0,.32);cursor:pointer}
       .weflair-audit-widget__launcher .arrow{width:1.4rem;height:1.4rem}
-      .weflair-audit-widget__panel{display:grid;gap:1rem;padding:1.05rem 1.05rem 1.1rem;border:1px solid rgba(246,243,238,.08);border-radius:1.25rem;background:linear-gradient(180deg,rgba(17,17,17,.96) 0%,rgba(11,12,11,.98) 100%);box-shadow:0 22px 48px rgba(0,0,0,.34)}
+      .weflair-audit-widget__panel{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;padding:1.05rem 1.05rem 1.1rem;border:1px solid rgba(246,243,238,.08);border-radius:1.25rem;background:linear-gradient(180deg,rgba(17,17,17,.96) 0%,rgba(11,12,11,.98) 100%);box-shadow:0 22px 48px rgba(0,0,0,.34)}
       .weflair-audit-widget.is-collapsed .weflair-audit-widget__panel{display:none}
       .weflair-audit-widget:not(.is-collapsed) .weflair-audit-widget__launcher{display:none}
-      .weflair-audit-widget__head{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem}
+      .weflair-audit-widget__head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:flex-start;column-gap:.8rem;width:100%;min-width:0}
       .weflair-audit-widget__profile{display:flex;align-items:center;gap:.8rem;min-width:0}
       .weflair-audit-widget__avatar{display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:999px;background:rgba(62,255,104,.14);border:1px solid rgba(62,255,104,.22);font-size:.92rem;font-weight:700;color:#f6f3ee}
       .weflair-audit-widget__meta{min-width:0}
       .weflair-audit-widget__name{display:block;font-size:1rem;font-weight:700;line-height:1.1}
       .weflair-audit-widget__role{display:block;margin-top:.12rem;color:rgba(246,243,238,.62);font-size:.82rem;line-height:1.2}
-      .weflair-audit-widget__close{display:grid;place-items:center;width:2rem;height:2rem;border:none;background:transparent;color:rgba(246,243,238,.72);cursor:pointer}
+      .weflair-audit-widget__close{display:grid;place-items:center;width:2rem;height:2rem;border:none;background:transparent;color:rgba(246,243,238,.72);cursor:pointer;flex:0 0 auto;justify-self:end}
       .weflair-audit-widget__eyebrow{display:inline-flex;align-items:center;gap:.35rem;padding:.34rem .62rem;border:1px solid rgba(62,255,104,.18);border-radius:999px;background:rgba(62,255,104,.08);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9dffb6}
       .weflair-audit-widget__title{margin:0;font-size:1.72rem;line-height:.98;letter-spacing:-.05em;text-wrap:balance}
       .weflair-audit-widget__body{margin:0;color:rgba(246,243,238,.82);font-size:.95rem;line-height:1.46}
@@ -1183,7 +1511,7 @@
       #services .services-overview__row-text{column-gap:clamp(2.7rem,4vw,3.8rem)}
       #services .services-overview__col-eyebrow{width:clamp(8rem,12vw,10rem)!important;padding-top:0!important}
       #services .services-overview__col-text{max-width:74rem!important;padding-top:clamp(2.8rem,3.2vw,3.3rem)!important}
-      #services .services-overview__col-text .h3{max-width:none!important}
+      #services .services-overview__col-text .h3{max-width:none!important;font-size:clamp(2.2rem,4.4vw,4.5rem)!important;line-height:.95;letter-spacing:-.075em;text-wrap:balance}
       #services .services-overview__row-text{align-items:flex-start!important}
       #services .services-overview__col-eyebrow .eyebrow{margin-bottom:0}
       .weflair-section-accent--solid{color:#3eff68;font-style:normal!important;font-weight:700}
@@ -1208,11 +1536,11 @@
       .weflair-services-native .growing-tiles__row.is-single{justify-content:center}
       .weflair-services-native .growing-tiles__row.is-single .growing-tiles__col{flex:0 1 calc(50% - .3rem);max-width:calc(50% - .3rem)}
       .weflair-services-cta-wrap{display:flex;justify-content:center;margin-top:2.4rem}
-      .weflair-services-cta{display:flex;align-items:center;justify-content:space-between;gap:1.6rem;width:min(100%,56rem);margin:0 auto;padding:.85rem 2rem;border:1px solid rgba(62,255,104,.15);border-radius:.65rem;background:rgba(62,255,104,.03)}
-      .weflair-services-cta-text{display:flex;flex-direction:column;gap:.25rem}
+      .weflair-services-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;width:min(100%,38rem);margin:0 auto;padding:1.4rem 2rem;border:1px solid rgba(62,255,104,.15);border-radius:.65rem;background:rgba(62,255,104,.03);text-align:center}
+      .weflair-services-cta-text{display:flex;flex-direction:column;gap:.25rem;align-items:center}
       .weflair-services-cta h3{margin:0;font-size:.88rem;font-weight:500;line-height:1.2;letter-spacing:-.01em;color:rgba(246,243,238,.4)}
       .weflair-services-cta p{margin:0;font-family:"Helvetica Now Text",Arial,sans-serif;font-size:.92rem;font-weight:600;line-height:1.3;color:rgba(246,243,238,.88)}
-      .weflair-services-cta-actions{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+      .weflair-services-cta-actions{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex-shrink:0}
       .weflair-services-cta .btn{min-width:auto;flex-shrink:0}
       .weflair-services-cta .arrow{transform:rotate(0deg)!important}
       .weflair-services-cta-note{font-size:.74rem!important;line-height:1.2!important;color:rgba(62,255,104,.45)!important;white-space:nowrap;flex-shrink:0}
@@ -1221,35 +1549,36 @@
       .weflair-challenges .weflair-challenges__col-eyebrow{width:clamp(8.8rem,12vw,10.8rem);padding-top:.15rem;flex:0 0 auto}
       .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow{margin-bottom:0}
       .weflair-challenges .weflair-challenges__col-text{max-width:76rem;padding-top:clamp(3.25rem,4vw,4.1rem)}
-      .weflair-challenges .weflair-challenges__col-text .h3{max-width:none;margin-bottom:1.8rem;line-height:.96;letter-spacing:-.075em}
+      .weflair-challenges .weflair-challenges__col-text .h3,.weflair-framework-section .weflair-challenges__col-text .h3{max-width:none;margin-bottom:1.8rem;font-size:clamp(2.2rem,4.4vw,4.5rem);line-height:.96;letter-spacing:-.075em;text-wrap:balance}
       .weflair-challenges .weflair-section__body{max-width:50rem;margin:0;color:rgba(246,243,238,.72);font-size:1rem;line-height:1.52}
       .weflair-problems-native{display:flex;justify-content:center;margin-top:clamp(2.35rem,3.9vw,3.2rem)}
-      .weflair-problems-native .growing-tiles{width:min(100%,76rem);gap:.65rem}
+      .weflair-problems-native .growing-tiles{width:min(100%,76rem);gap:.65rem;height:auto}
       .weflair-problems-native .growing-tiles__row{display:flex;gap:.65rem}
       .weflair-problems-native .growing-tiles__col{flex:1 1 0;min-width:0}
-      .weflair-problems-native .growing-tile{min-height:10.6rem;padding:1rem 1.06rem;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:default;text-align:center}
-      .weflair-problems-native .growing-tile__start{display:flex;flex-direction:column;gap:.78rem;align-items:center;width:100%}
-      .weflair-problems-native .growing-tile__end{display:grid;align-content:center;justify-items:center;min-height:auto;padding-top:.7rem;width:100%}
-      .weflair-problems-native .growing-tile .h5{margin:0;max-width:16ch;text-wrap:pretty;font-size:clamp(1.06rem,1.12vw,1.18rem);line-height:1.16;letter-spacing:-.035em}
-      .weflair-problems-native .growing-tile .p-s{max-width:16.25rem;font-size:.86rem;line-height:1.5;color:rgba(246,243,238,.7);text-align:center}
-      .weflair-problems-native .growing-tile__text{display:grid;gap:.56rem;justify-items:center}
+      .weflair-problems-native .growing-tile{min-height:11rem;padding:1.15rem 1.2rem;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;cursor:default;text-align:left}
+      .weflair-problems-native .growing-tile__start{display:flex;flex-direction:column;gap:.9rem;align-items:flex-start;width:100%}
+      .weflair-problems-native .growing-tile__end{display:flex;align-items:flex-start;justify-content:flex-start;min-height:auto;padding-top:.95rem;width:100%}
+      .weflair-problems-native .growing-tile .h5{margin:0;max-width:none;text-wrap:pretty;font-size:clamp(1.08rem,1.14vw,1.22rem);line-height:1.18;letter-spacing:-.035em}
+      .weflair-problems-native .growing-tile .p-s{margin:0;max-width:none;font-size:.88rem;line-height:1.52;color:rgba(246,243,238,.7);text-align:left}
+      .weflair-problems-native .growing-tile__text{display:grid;gap:.58rem;justify-items:start;width:100%}
       .weflair-problems-native .growing-tile__end .growing-tile__text{opacity:1!important;transform:none!important}
-      .weflair-problem-tile__start-row{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%}
-      .weflair-problem-tile__title{max-width:none}
+      .weflair-problem-tile__start-row{display:flex;align-items:center;justify-content:flex-start;gap:.7rem;width:100%}
+      .weflair-problem-tile__title{max-width:none;text-align:left}
       .weflair-problem-tile__icon{width:2.2rem;height:2.2rem;border:1px solid rgba(62,255,104,.2);border-radius:.65rem;background:rgba(62,255,104,.07);display:grid;place-items:center;color:#3eff68;flex:0 0 auto;transition:background .22s ease,border-color .22s ease}
       .weflair-problem-tile__icon svg{width:1.05rem;height:1.05rem}
       .weflair-problems-native .growing-tile:hover .weflair-problem-tile__icon{background:rgba(62,255,104,.14);border-color:rgba(62,255,104,.36)}
       .weflair-framework-section .weflair-challenges__row-text{margin-bottom:0;padding-bottom:0}
-      .weflair-ring-split{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(2rem,3.5vw,3.5rem);align-items:stretch;margin-top:clamp(2rem,3vw,2.8rem)}
-      .weflair-ring-wrap{position:relative;width:100%;max-width:clamp(28rem,100%,46rem);margin:0 auto;display:flex;align-items:center}
-      .weflair-steps{display:flex;flex-direction:column;gap:0;padding:1.4rem 1.2rem;border:1px solid rgba(246,243,238,.06);border-radius:1.1rem;background:linear-gradient(180deg,rgba(20,22,20,.65) 0%,rgba(16,18,16,.82) 100%);backdrop-filter:blur(8px)}
-      .weflair-step{display:grid;grid-template-columns:2.2rem 1fr;gap:.75rem;padding:.65rem .55rem;border-radius:.65rem;cursor:pointer;transition:background .25s ease,border-color .25s ease;border:1px solid transparent}
+      .weflair-ring-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2rem,3.5vw,3.5rem);align-items:center;margin-top:clamp(2rem,3vw,2.8rem)}
+      .weflair-ring-wrap{position:relative;width:100%;max-width:54rem;margin:0 auto;display:flex;align-items:center;justify-content:center}
+      .weflair-ring-wrap .wf-fv5-svg{width:100%;height:auto;overflow:visible}
+      .weflair-steps{display:flex;flex-direction:column;gap:0;padding:1.45rem 1.3rem;border:1px solid rgba(246,243,238,.06);border-radius:1.1rem;background:linear-gradient(180deg,rgba(20,22,20,.65) 0%,rgba(16,18,16,.82) 100%);backdrop-filter:blur(8px)}
+      .weflair-step{display:grid;grid-template-columns:2.2rem 1fr;gap:.75rem;padding:.72rem .85rem .72rem .62rem;border-radius:.65rem;cursor:pointer;transition:background .25s ease,border-color .25s ease;border:1px solid transparent}
       .weflair-step:hover{background:rgba(246,243,238,.03)}
       .weflair-step.is-active{background:rgba(246,243,238,.04);border-color:rgba(246,243,238,.06)}
       .weflair-step__num{width:2.1rem;height:2.1rem;border-radius:999px;display:grid;place-items:center;font-size:.75rem;font-weight:800;transition:background .25s ease,box-shadow .25s ease,border-color .25s ease,color .25s ease}
-      .weflair-step__body{display:grid;gap:.25rem}
+      .weflair-step__body{display:grid;gap:.28rem;padding-right:.18rem}
       .weflair-step__name{font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,243,238,.45);transition:color .25s ease}
-      .weflair-step__desc{font-size:.88rem;line-height:1.45;color:rgba(246,243,238,.45);margin:0;transition:color .25s ease}
+      .weflair-step__desc{font-size:.88rem;line-height:1.45;color:rgba(246,243,238,.45);margin:0;transition:color .25s ease;text-wrap:pretty}
       .weflair-step.is-active .weflair-step__desc{color:rgba(246,243,238,.78)}
       .weflair-step__tags{display:flex;flex-wrap:wrap;gap:.32rem;margin-top:.12rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .3s ease,margin .3s ease}
       .weflair-step.is-active .weflair-step__tags{max-height:5rem;opacity:1;margin-top:.35rem}
@@ -1357,14 +1686,20 @@
         .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow{margin-bottom:.25rem}
         .weflair-challenges .weflair-challenges__col-text{padding-top:0}
         .weflair-ring-split{grid-template-columns:1fr;gap:2rem}
+        .weflair-ring-wrap{max-width:46rem}
         .weflair-services-cta{flex-direction:column;gap:.8rem;padding:.9rem 1.6rem;text-align:center}
         .weflair-services-cta-actions{flex-direction:column;gap:.6rem}
         .weflair-services-cta h3,.weflair-services-cta p{white-space:normal}
+        .weflair-services-title-main,.weflair-services-title-sub{white-space:normal!important}
+        .weflair-section-accent{white-space:normal!important}
         .weflair-ring-visual{max-width:20rem}
         .weflair-steps{gap:0}
-        .weflair-problems-native .growing-tiles__row{flex-wrap:wrap}
-        .weflair-problems-native .growing-tiles__col{flex:1 1 calc(50% - .325rem)}
+        .weflair-problems-native .growing-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;height:auto}
+        .weflair-problems-native .growing-tiles__row{display:contents}
+        .weflair-problems-native .growing-tiles__col{flex:none;width:auto;height:auto;min-height:0}
+        .weflair-problems-native .growing-tile{min-height:0}
         .weflair-audit-widget{width:min(calc(100vw - 1.6rem),20rem)}
+        body[data-navigation-status="active"] .weflair-audit-widget{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(.75rem)}
         .weflair-proof-card--feature{grid-row:auto;grid-column:1/-1}
         .weflair-footer__cta-panel{width:min(100%,62rem)}
         .weflair-footer__top{grid-template-columns:1fr}
@@ -1383,7 +1718,12 @@
         .weflair-services-cta{flex-direction:column;gap:.6rem;padding:.9rem 1.2rem;text-align:center}
         .weflair-services-cta-actions{flex-direction:column;gap:.5rem}
         .weflair-services-cta h3,.weflair-services-cta p,.weflair-services-cta-note{white-space:normal!important;text-align:center}
-        .weflair-problems-native .growing-tiles__col{flex-basis:100%}
+        .weflair-section-accent{white-space:normal}
+        .weflair-problems-native .growing-tiles{grid-template-columns:1fr;gap:.9rem;height:auto}
+        .weflair-problems-native .growing-tiles__col{flex:none;width:auto}
+        .weflair-problems-native .growing-tile{padding:1.35rem 1.25rem;min-height:0}
+        .weflair-problems-native .growing-tile .h5{font-size:clamp(1.02rem,4.8vw,1.16rem)}
+        .weflair-problems-native .growing-tile .p-s{font-size:.9rem}
         .weflair-services-grid .is-span-2{grid-column:auto}
         .weflair-logos-head .h3{max-width:none;font-size:.82rem}
         .weflair-logo-stack{gap:.82rem}
@@ -1432,9 +1772,9 @@
 .weflair-demand-team__copy-block h3 { text-wrap: balance; }
 
 
-.weflair-demand-team__tab-label { white-space: nowrap !important; }
+.weflair-demand-team__tab-label { white-space: normal !important; text-wrap: balance; overflow-wrap: anywhere; }
 .weflair-demand-team__panel-plain { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important; gap: 2rem !important; }
-.weflair-demand-team__copy-block h3.h4 { white-space: nowrap !important; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
+.weflair-demand-team__copy-block h3.h4 { white-space: normal !important; text-wrap: balance; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
 
 }
     `;
@@ -1484,7 +1824,7 @@
             `<div class="nav-dropdown__grid-row">${row
               .map(
                 ([title, body]) =>
-                  `<a data-hover="" data-arrow="diagonal" href="#services" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">${title}</h3><p class="nav-dropdown-tile__p">${body}</p></div><div class="nav-dropdown-tile__arrow">${arrowMarkup()}</div></a>`
+                  `<a data-hover="" data-arrow="diagonal" href="${routeForLabel(title) || ROUTES.sitemap}" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">${title}</h3><p class="nav-dropdown-tile__p">${body}</p></div><div class="nav-dropdown-tile__arrow">${arrowMarkup()}</div></a>`
               )
               .join("")}</div>`
         )
@@ -1500,11 +1840,14 @@
 
     const talkButton = q(".nav-bar__btn a");
     if (talkButton) {
-      talkButton.setAttribute("href", CAL_DIRECT_URL);
-      talkButton.setAttribute("data-cal-link", CAL_LINK);
-      talkButton.setAttribute("data-cal-namespace", CAL_NAMESPACE);
-      talkButton.setAttribute("data-cal-config", CAL_CONFIG);
-      talkButton.setAttribute("aria-haspopup", "dialog");
+      talkButton.setAttribute("href", ROUTES.contact);
+      [
+        "data-cal-link",
+        "data-cal-namespace",
+        "data-cal-config",
+        "data-cal-source",
+        "aria-haspopup",
+      ].forEach((attr) => talkButton.removeAttribute(attr));
       const span = q(".btn__span", talkButton);
       if (span) span.textContent = "Talk to us";
     }
@@ -1593,7 +1936,19 @@
     };
     launcher?.addEventListener("click", () => setCollapsed(false));
     closer?.addEventListener("click", () => setCollapsed(true));
-    setCollapsed(window.matchMedia("(max-width: 767px)").matches);
+    const compactQuery = window.matchMedia("(max-width: 991px)");
+    setCollapsed(compactQuery.matches);
+    const handleCompactChange = (event) => {
+      if (event.matches) setCollapsed(true);
+    };
+    if (typeof compactQuery.addEventListener === "function") {
+      compactQuery.addEventListener("change", handleCompactChange);
+    } else if (typeof compactQuery.addListener === "function") {
+      compactQuery.addListener(handleCompactChange);
+    }
+    document.addEventListener("weflair:navigation", (event) => {
+      if (event.detail?.active) setCollapsed(true);
+    });
   }
 
   function renderServicesSection(section) {
@@ -2016,7 +2371,7 @@
       if (node.dataset.wireReady) return;
       node.dataset.wireReady = "true";
       node.addEventListener("click", () => {
-        _activeResultsFilter = node.dataset.caseFilter || "All Cases";
+        _activeResultsFilter = node.dataset.caseFilter || "";
         _activeResultsIndex = 0;
         renderActiveCaseStudy();
       });
@@ -2072,7 +2427,9 @@
     ensureCalEmbed();
     injectRuntimeStyles();
     replaceLogo();
+    ensurePageShell();
     updateNav();
+    normalizeSiteLinks();
     transformHero();
 
     const logosSection = q(".home-results");
@@ -2116,6 +2473,7 @@
     renderPod(0);
     wireInteractions();
     wireAuditWidget();
+    normalizeSiteLinks();
     return true;
   }
 
@@ -2124,6 +2482,8 @@
     ensureCalEmbed();
     injectRuntimeStyles();
     replaceLogo();
+    ensurePageShell();
+    normalizeSiteLinks();
     const logosSection = q("#logos") || q(".home-results");
     if (logosSection) {
       renderLogosSection(logosSection);
@@ -2151,6 +2511,7 @@
     wireInteractions();
     wireAuditWidget();
     syncTestimonialNav();
+    normalizeSiteLinks();
     return true;
   }
 
@@ -2213,8 +2574,8 @@
 .weflair-demand-team__avatar:hover { transform: translateY(-3px); z-index: 10; border-color: rgba(62,255,104,0.4); }
 
 .weflair-demand-team__copy-block { max-width: 32rem !important; }
-.weflair-demand-team__copy-block h3.h4 { text-wrap: balance; white-space: nowrap !important; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
-.weflair-demand-team__tab-label { white-space: nowrap !important; }
+.weflair-demand-team__copy-block h3.h4 { text-wrap: balance; white-space: normal !important; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
+.weflair-demand-team__tab-label { white-space: normal !important; text-wrap: balance; overflow-wrap: anywhere; }
 .weflair-demand-team__panel-plain { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important; gap: 2rem !important; }
   `;
   document.head.appendChild(style);
