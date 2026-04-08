@@ -3,13 +3,165 @@
     "M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z";
 
   const LOGOS = [
-    { type: "text", label: "CellPoint Digital" },
-    { type: "image", label: "Harrier", src: "./brand-assets/client-logos/harrier-white.png" },
-    { type: "image", label: "RCT", src: "./brand-assets/client-logos/rct.png" },
-    { type: "image", label: "Molahin", src: "./brand-assets/client-logos/molahin.png" },
-    { type: "image", label: "HQ Software", src: "./brand-assets/client-logos/hq-software.png" },
-    { type: "image", label: "Mawsim", src: "./brand-assets/client-logos/mawsim.png" },
+    {
+      type: "image",
+      label: "CellPoint Digital",
+      src: "./brand-assets/client-logos/cellpoint-digital.png",
+      size: "xl",
+      width: "104%",
+      height: "90%",
+    },
+    {
+      type: "image",
+      label: "HQ Software",
+      src: "./brand-assets/client-logos/hq-software.png",
+      size: "xl",
+      width: "102%",
+      height: "78%",
+    },
+    {
+      type: "image",
+      label: "EMAX",
+      src: "./brand-assets/client-logos/emax.png",
+      size: "xl",
+      width: "98%",
+      height: "78%",
+    },
+    {
+      type: "image",
+      label: "Harrier",
+      src: "./brand-assets/client-logos/harrier-white.png",
+      size: "xl",
+      width: "98%",
+      height: "74%",
+    },
+    {
+      type: "image",
+      label: "RCT",
+      src: "./brand-assets/client-logos/rct.png",
+      size: "xl",
+      width: "106%",
+      height: "78%",
+    },
+    {
+      type: "image",
+      label: "Mawsim",
+      src: "./brand-assets/client-logos/mawsim.png",
+      size: "xl",
+      width: "104%",
+      height: "84%",
+    },
+    {
+      type: "image",
+      label: "Molahin",
+      src: "./brand-assets/client-logos/molahin.png",
+      size: "xl",
+      width: "102%",
+      height: "78%",
+    },
+    {
+      type: "image",
+      label: "Farnell",
+      src: "./brand-assets/client-logos/farnell.png",
+      size: "xl",
+      width: "160%",
+      height: "110%",
+    },
+    {
+      type: "image",
+      label: "CPC",
+      src: "./brand-assets/client-logos/cpc.png",
+      size: "xl",
+      width: "152%",
+      height: "108%",
+    },
+    {
+      type: "image",
+      label: "Santander",
+      src: "./brand-assets/client-logos/santander.png",
+      size: "xl",
+      width: "160%",
+      height: "112%",
+    },
+    {
+      type: "image",
+      label: "Royal Mint",
+      src: "./brand-assets/client-logos/royal-mint.png",
+      size: "xl",
+      width: "158%",
+      height: "114%",
+    },
+    {
+      type: "image",
+      label: "Focus DIY",
+      src: "./brand-assets/client-logos/focus-diy.png",
+      size: "xl",
+      width: "152%",
+      height: "108%",
+    },
+    {
+      type: "image",
+      label: "JDW",
+      src: "./brand-assets/client-logos/jdw.png",
+      size: "xl",
+      width: "158%",
+      height: "110%",
+    },
+    {
+      type: "image",
+      label: "Jacamo",
+      src: "./brand-assets/client-logos/jacamo.png",
+      size: "xl",
+      width: "158%",
+      height: "100%",
+    },
+    {
+      type: "image",
+      label: "Pink Boutique",
+      src: "./brand-assets/client-logos/pink-boutique.png",
+      size: "xl",
+      width: "154%",
+      height: "110%",
+    },
+    {
+      type: "image",
+      label: "The Fragrance Shop",
+      src: "./brand-assets/client-logos/fragrance-shop.png",
+      size: "xl",
+      width: "160%",
+      height: "114%",
+    },
+    {
+      type: "image",
+      label: "The Conran Shop",
+      src: "./brand-assets/client-logos/conran-shop.png",
+      size: "xl",
+      width: "158%",
+      height: "108%",
+    },
+    {
+      type: "image",
+      label: "TOFS",
+      src: "./brand-assets/client-logos/tofs.png",
+      size: "xl",
+      width: "150%",
+      height: "110%",
+    },
+    {
+      type: "image",
+      label: "Yours",
+      src: "./brand-assets/client-logos/yours.png",
+      size: "xl",
+      width: "154%",
+      height: "108%",
+    },
   ];
+
+  const CAL_NAMESPACE = "1st";
+  const CAL_ORIGIN = "https://app.cal.com";
+  const CAL_LINK = "weflair/1st";
+  const CAL_DIRECT_URL = "https://cal.com/weflair/1st";
+  const CAL_CONFIG = '{"layout":"week_view","useSlotsViewOnSmallScreen":"true"}';
 
   const CONTENT = {
     hero: {
@@ -20,13 +172,16 @@
         "For ambitious companies facing real go-to-market and revenue challenges, we build end-to-end marketing engines to drive measurable growth.",
       primary: "Discover more",
     },
+    logos: {
+      title: "Sales and marketing leaders in ambitious companies worldwide trust WeFlair.",
+    },
     nav: {
       services: [
         ["Paid Media & Performance", "Campaigns tied to qualified revenue."],
         ["Outbound & GTM Engineering", "Signals, sequencing, and GTM logic."],
-        ["Revenue Operations & Automations", "Routing, dashboards, and workflow design."],
-        ["Content & SEO", "Search, proof, and compounding authority."],
-        ["CRO & Performance Design", "Pages and funnels that convert harder."],
+        ["Revenue Operations & AI Workflows", "Routing, dashboards, and AI-enabled automation."],
+        ["Content & Creative", "Sharper positioning, copy, and visual direction."],
+        ["Conversion Design & CRO", "Pages and funnels that convert harder."],
       ],
       expertise: [
         ["B2B SaaS", "Software teams under pressure to prove pipeline."],
@@ -61,17 +216,17 @@
           tags: ["Prospecting", "Enrichment", "Sequences"],
         },
         {
-          title: "Revenue Operations & Automations",
-          body: "Connected CRM, routing, and automation that keep growth moving without manual drag.",
-          tags: ["HubSpot", "Routing", "Automation"],
+          title: "Revenue Operations & AI Workflows",
+          body: "Connected CRM, routing, and AI-enabled automation that keep growth moving without manual drag.",
+          tags: ["HubSpot", "Routing", "AI Workflows"],
         },
         {
-          title: "Content & SEO",
-          body: "Content and search that make you harder to ignore in your niche.",
-          tags: ["SEO", "Positioning", "Case Studies"],
+          title: "Content & Creative",
+          body: "Clearer offers, sharper positioning, and creative direction that make you harder to ignore in your niche.",
+          tags: ["Positioning", "Copywriting", "Design"],
         },
         {
-          title: "CRO & Performance Design",
+          title: "Conversion Design & CRO",
           body: "Landing pages and funnels that convert more of the traffic you already paid for.",
           tags: ["Landing Pages", "Offers", "Testing"],
         },
@@ -147,7 +302,13 @@
             "Sharper targeting, stronger creative, cleaner structure, and tighter optimization — built to turn active demand into pipeline and revenue, not just clicks, spend, and reports.",
           linkLabel: "Discover details",
           linkHref: "#services",
-          roles: ["Targeting", "Creative", "Optimization"],
+          lead: { name: "Project Director", img: "https://i.pravatar.cc/150?u=lead1" },
+          roles: [
+            { label: "Media Buyer", img: "https://i.pravatar.cc/150?u=member1" },
+            { label: "Creative", img: "https://i.pravatar.cc/150?u=member2" },
+            { label: "Copywriter", img: "https://i.pravatar.cc/150?u=member3" },
+            { label: "Analytics", img: "https://i.pravatar.cc/150?u=member4" }
+          ],
         },
         {
           name: "Outbound & GTM",
@@ -159,7 +320,13 @@
             "Better targeting, sequencing, messaging, and follow-up — built to create qualified conversations, keep outreach focused, and move the right accounts into pipeline.",
           linkLabel: "Discover details",
           linkHref: "#services",
-          roles: ["Targeting", "Sequencing", "Follow-up"],
+          lead: { name: "Head of Growth", img: "https://i.pravatar.cc/150?u=lead2" },
+          roles: [
+            { label: "Outbound SDR", img: "https://i.pravatar.cc/150?u=user5" },
+            { label: "RevOps Engine", img: "https://i.pravatar.cc/150?u=user6" },
+            { label: "AI Developer", img: "https://i.pravatar.cc/150?u=user7" },
+            { label: "GTM Engineer", img: "https://i.pravatar.cc/150?u=user8" }
+          ],
         },
         {
           name: "RevOps & AI",
@@ -171,7 +338,12 @@
             "CRM, routing, workflows, reporting, and AI-enabled automation — built to cut manual work, clean up execution, and keep leads, data, and follow-up moving properly.",
           linkLabel: "Discover details",
           linkHref: "#services",
-          roles: ["CRM", "Automation", "Reporting"],
+          lead: { name: "Head of Operations", img: "https://i.pravatar.cc/150?u=lead3" },
+          roles: [
+            { label: "CRM Expert", img: "https://i.pravatar.cc/150?u=user9" },
+            { label: "Automation", img: "https://i.pravatar.cc/150?u=user10" },
+            { label: "AI Engineer", img: "https://i.pravatar.cc/150?u=user11" }
+          ],
         },
         {
           name: "Strategy & Creative",
@@ -183,7 +355,13 @@
             "Clearer offers, sharper positioning, stronger messaging, and creative direction — built to make campaigns, pages, and outreach feel specific, coherent, and harder to ignore.",
           linkLabel: "Discover details",
           linkHref: "#method",
-          roles: ["Offers", "Positioning", "Messaging"],
+          lead: { name: "Creative Director", img: "https://i.pravatar.cc/150?u=lead4" },
+          roles: [
+            { label: "UX/UI Expert", img: "https://i.pravatar.cc/150?u=user12" },
+            { label: "Graphic Designer", img: "https://i.pravatar.cc/150?u=user13" },
+            { label: "Copywriter", img: "https://i.pravatar.cc/150?u=user14" },
+            { label: "Project Manager", img: "https://i.pravatar.cc/150?u=user15" }
+          ],
         },
       ],
     },
@@ -204,7 +382,7 @@
         "SaaS",
         "Fintech",
       ],
-      moreLabel: "Explore all case studies",
+      moreLabel: "See more success stories",
       cards: [
         {
           company: "CellPoint Digital",
@@ -222,6 +400,12 @@
           ],
           services: ["Apollo Enrichment", "HubSpot RevOps", "n8n Workflows"],
           industries: ["B2B", "Fintech"],
+          highlights: [
+            "Built signal workflows and lead scoring from scratch.",
+            "Connected Apollo, HubSpot, and automation into one motion.",
+            "Sharpened demo and executive follow-up infrastructure.",
+            "Turned disconnected ops work into a growth foundation.",
+          ],
           href: "cases.html",
         },
         {
@@ -241,6 +425,12 @@
           ],
           services: ["Meta Ads", "Google/Bing PPC", "GA4 + GTM"],
           industries: ["E-commerce"],
+          highlights: [
+            "Rebuilt paid acquisition across Meta, Google, and Bing.",
+            "Fixed tracking gaps with cleaner GA4 and GTM setup.",
+            "Connected acquisition to lifecycle capture and follow-up.",
+            "Scaled revenue without letting spend drift.",
+          ],
           href: "cases.html",
         },
         {
@@ -260,6 +450,12 @@
           ],
           services: ["Google + LinkedIn", "Retargeting", "Localized Messaging"],
           industries: ["SaaS"],
+          highlights: [
+            "Refined audience strategy across Google, LinkedIn, and Meta.",
+            "Localized messaging to match market intent more closely.",
+            "Improved signup efficiency without muddying the offer.",
+            "Turned media learning into measurable revenue growth.",
+          ],
           href: "cases.html",
         },
         {
@@ -279,6 +475,12 @@
           ],
           services: ["Google Ads", "Salesforce Analysis", "Keyword Reallocation"],
           industries: ["B2B", "Real Estate"],
+          highlights: [
+            "Restructured search around closed-sale keyword patterns.",
+            "Used Salesforce deal data to guide budget decisions.",
+            "Reduced waste without shrinking commercial intent.",
+            "Lifted efficiency while improving total deals.",
+          ],
           href: "cases.html",
         },
         {
@@ -297,6 +499,12 @@
           ],
           services: ["LinkedIn Campaigns", "Cold Email", "Clay Enrichment"],
           industries: ["B2B", "Logistics"],
+          highlights: [
+            "Blended LinkedIn ads and outbound into one ABM motion.",
+            "Improved targeting with Clay enrichment and segmentation.",
+            "Sharpened messaging for higher-quality replies.",
+            "Moved outreach from activity to real pipeline.",
+          ],
           href: "cases.html",
         },
         {
@@ -315,6 +523,12 @@
           ],
           services: ["Investor Outreach", "Crypto PR", "Tailored Messaging"],
           industries: ["Web3", "Real Estate"],
+          highlights: [
+            "Combined investor outreach with Web3 media placements.",
+            "Tailored messaging for higher-intent meeting conversion.",
+            "Expanded visibility with coordinated crypto PR coverage.",
+            "Turned attention into booked conversations.",
+          ],
           href: "cases.html",
         },
         {
@@ -333,6 +547,12 @@
           ],
           services: ["Personalization", "UX Journeys", "APAC Optimization"],
           industries: ["B2B"],
+          highlights: [
+            "Rolled out personalization across a global ecommerce journey.",
+            "Improved UX flows for stronger self-serve buying behavior.",
+            "Optimized APAC performance without breaking the wider system.",
+            "Shifted more revenue through the web channel.",
+          ],
           href: "cases.html",
         },
       ],
@@ -478,11 +698,11 @@
     },
     footer: {
       cta: {
-        eyebrow: "Next step",
-        title: "Request a growth audit.",
-        body: "We will show you what is leaking, what needs fixing first, and whether there is a real fit.",
-        reassurance: "If there is no fit, we will say so.",
-        ctaLabel: "Request a growth audit",
+        eyebrow: "",
+        title: "Let's do this.",
+        body: "Let's get in touch to see if we're a good fit to help you reach your business goals.",
+        reassurance: "Free first-look audit. Clear next steps. No hard sell.",
+        ctaLabel: "Get your free marketing audit",
       },
       columns: [
         {
@@ -570,10 +790,85 @@
     return `<div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>`;
   }
 
-  function button(label, href, variant = "primary") {
+  function diagonalArrowMarkup() {
+    return `<div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>`;
+  }
+
+  function button(label, href, variant = "primary", arrowType = "default") {
+    const arrow = arrowType === "diagonal" ? diagonalArrowMarkup() : arrowMarkup();
     return `<a data-hover="" data-btn-theme="${
       variant === "ghost" ? "transparent" : "primary"
-    }" href="${href}" class="btn w-inline-block weflair-btn weflair-btn--${variant}"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">${label}</span></div>${arrowMarkup()}</a>`;
+    }" href="${href}" class="btn w-inline-block weflair-btn weflair-btn--${variant}"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">${label}</span></div>${arrow}</a>`;
+  }
+
+  function calTriggerAttributes(extraAttrs = "") {
+    return `href="${CAL_DIRECT_URL}" data-cal-link="${CAL_LINK}" data-cal-namespace="${CAL_NAMESPACE}" data-cal-config='${CAL_CONFIG}' aria-haspopup="dialog" ${extraAttrs}`.trim();
+  }
+
+  function calButton(label, variant = "primary", extraAttrs = "", arrowType = "default") {
+    const arrow = arrowType === "diagonal" ? diagonalArrowMarkup() : arrowMarkup();
+    return `<a data-hover="" data-btn-theme="${
+      variant === "ghost" ? "transparent" : "primary"
+    }" ${calTriggerAttributes(
+      extraAttrs
+    )} class="btn w-inline-block weflair-btn weflair-btn--${variant}"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">${label}</span></div>${arrow}</a>`;
+  }
+
+  function ensureCalEmbed() {
+    if (window.__weflairCalEmbedReady) return;
+    window.__weflairCalEmbedReady = true;
+    (function (C, A, L) {
+      const push = function (api, args) {
+        api.q.push(args);
+      };
+      const d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          const cal = C.Cal;
+          const args = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (args[0] === L) {
+            const api = function () {
+              push(api, arguments);
+            };
+            const namespace = args[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              push(cal.ns[namespace], args);
+              push(cal, ["initNamespace", namespace]);
+            } else {
+              push(cal, args);
+            }
+            return;
+          }
+          push(cal, args);
+        };
+    })(window, `${CAL_ORIGIN}/embed/embed.js`, "init");
+    window.Cal("init", CAL_NAMESPACE, { origin: CAL_ORIGIN });
+    window.Cal.ns[CAL_NAMESPACE]("ui", {
+      cssVarsPerTheme: {
+        light: { "cal-brand": "#032700" },
+        dark: { "cal-brand": "#15d04d" },
+      },
+      hideEventTypeDetails: false,
+      layout: "week_view",
+    });
+  }
+
+  function renderAuditWidgetMarkup() {
+    return `<div class="weflair-audit-widget" id="audit-widget"><button type="button" class="weflair-audit-widget__launcher" data-audit-toggle aria-expanded="false" aria-controls="weflair-audit-panel" aria-label="Open strategy call widget">${diagonalArrowMarkup()}</button><div class="weflair-audit-widget__panel" id="weflair-audit-panel"><div class="weflair-audit-widget__head"><div class="weflair-audit-widget__profile"><div class="weflair-audit-widget__avatar">SM</div><div class="weflair-audit-widget__meta"><span class="weflair-audit-widget__name">Sami Madi</span><span class="weflair-audit-widget__role">Founder, WeFlair</span></div></div><button type="button" class="weflair-audit-widget__close" data-audit-close aria-label="Close strategy call card">&times;</button></div><div class="weflair-audit-widget__eyebrow">Free 30 min strategy call</div><h3 class="weflair-audit-widget__title">See where your growth engine is leaking.</h3><p class="weflair-audit-widget__body">We&rsquo;ll review your funnel, channels, and follow-up, then show you the next 1-3 moves most likely to improve pipeline.</p><div class="weflair-audit-widget__proof"><span class="weflair-audit-widget__proof-pill">30 min</span><span class="weflair-audit-widget__proof-pill">Free</span><span class="weflair-audit-widget__proof-pill">No hard sell</span></div><div class="weflair-audit-widget__slots"><strong>Hands-on intro calls only</strong><span class="weflair-audit-widget__countdown">Limited each week</span></div><ul class="weflair-audit-widget__list"><li>Spot the biggest leak in paid, outbound, or CRM.</li><li>Leave with clear next steps, not a vague pitch.</li><li>Best for teams already investing in growth.</li></ul><div class="weflair-audit-widget__cta">${calButton(
+      "Book your free strategy call",
+      "primary",
+      'data-cal-source="hero-widget"',
+      "diagonal"
+    )}</div><div class="weflair-audit-widget__foot">Opens the live calendar in a popup. If there is no fit, we will say so.</div></div></div>`;
   }
 
   function tags(items, className = "weflair-tag") {
@@ -603,28 +898,40 @@
   }
 
   function teamPlaceholderMarkup(pod) {
-    return `<div class="weflair-demand-team__showcase is-${pod.tone}"><span class="weflair-demand-team__showcase-label">Diagram placeholder</span><div class="weflair-demand-team__placeholder"><div class="weflair-demand-team__placeholder-core"><span class="weflair-demand-team__placeholder-core-icon">${teamTabIcon(
-      pod.icon
-    )}</span><span class="weflair-demand-team__placeholder-core-label">${pod.name}</span></div><div class="weflair-demand-team__placeholder-rail" aria-hidden="true"></div><div class="weflair-demand-team__placeholder-roles">${pod.roles
-      .map(
-        (role) =>
-          `<div class="weflair-demand-team__placeholder-role"><span class="weflair-demand-team__placeholder-role-dot" aria-hidden="true"></span><span>${role}</span></div>`
-      )
-      .join("")}</div><p class="weflair-demand-team__placeholder-note">Custom operating diagram coming here.</p></div></div>`;
+    return `<div class="weflair-demand-team__showcase is-${pod.tone}">
+      <div class="weflair-org-chart">
+        <div class="weflair-org-lead">
+          <div class="weflair-org-avatar" style="background-image: url('${pod.lead.img}')"></div>
+          <span class="weflair-org-name">${pod.lead.name}</span>
+        </div>
+        <div class="weflair-org-connector"></div>
+        <div class="weflair-org-child-nodes">
+          ${pod.roles
+            .map(
+              (role) =>
+                `<div class="weflair-org-node">
+                  <div class="weflair-org-avatar is-sm" style="background-image: url('${role.img}')"></div>
+                  <span class="weflair-org-label">${role.label}</span>
+                </div>`
+            )
+            .join("")}
+        </div>
+      </div>
+    </div>`;
   }
 
   function teamPanelMarkup(pod) {
-    return `<div class="weflair-demand-team__detail-shell"><div class="weflair-demand-team__copy-block"><p class="weflair-demand-team__panel-eyebrow">${pod.eyebrow}</p><h3 class="h4">${pod.title}</h3><p class="weflair-demand-team__panel-body">${pod.body}</p><div class="weflair-demand-team__role-list">${pod.roles
-      .map((role) => `<span class="weflair-demand-team__role-chip">${role}</span>`)
+    return `<div class="weflair-demand-team__detail-shell"><div class="weflair-demand-team__copy-block"><p class="weflair-demand-team__panel-eyebrow">${pod.eyebrow}</p><h3 class="h4">${pod.title}</h3><p class="weflair-demand-team__panel-body">${pod.body}</p><div class="weflair-demand-team__avatars">${pod.roles
+      .map((role) => `<div class="weflair-demand-team__avatar" style="background-image: url('${role.img}')" title="${role.label}"></div>`)
       .join("")}</div>${teamLinkMarkup(
       pod.linkLabel,
       pod.linkHref
     )}</div>${teamPlaceholderMarkup(pod)}</div>`;
   }
 
-  let _activeResultsFilter = "All Cases";
+    let _activeResultsFilter = "All Cases";
   let _activeResultsIndex = 0;
-  const CASES_PER_VIEW = 2;
+  const CASES_PER_VIEW = 1;
 
   function getFilteredResults() {
     const cards = CONTENT.results.cards.filter(
@@ -698,19 +1005,24 @@
           `<span class="weflair-case-card__tag is-muted">${industry}</span>`
       )
       .join("");
-
-    return `<article class="weflair-case-card"><div class="weflair-case-card__top"><span class="weflair-case-card__badge">Case Study</span><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(
-      card
-    )}</div></div><div class="weflair-case-card__metrics">${card.metrics
+    const metricsMarkup = card.metrics
       .map(
         ([value, label]) =>
           `<div class="weflair-case-card__metric"><strong>${value}</strong><span>${label}</span></div>`
       )
-      .join("")}</div><div class="weflair-case-card__content"><p class="weflair-case-card__sector">${card.company} &middot; ${
+      .join("");
+    const highlightsMarkup = (card.highlights || [])
+      .slice(0, 4)
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    return `<article class="weflair-case-card"><div class="weflair-case-card__shell"><div class="weflair-case-card__brand"><div class="weflair-case-card__brand-tags"><span class="weflair-case-card__badge">Case Study</span>${industriesMarkup}</div><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(
+      card
+    )}</div><p class="weflair-case-card__sector">${card.company} &middot; ${
       card.sector
-    }</p><h3 class="h4">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p></div><div class="weflair-case-card__taxonomy"><div class="weflair-case-card__tag-row">${servicesMarkup}</div><div class="weflair-case-card__tag-row is-secondary">${industriesMarkup}</div></div><div class="weflair-case-card__actions"><a href="${
+    }</p><div class="weflair-case-card__metrics">${metricsMarkup}</div></div><div class="weflair-case-card__main"><div class="weflair-case-card__service-row">${servicesMarkup}</div><h3 class="weflair-case-card__headline">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p><ul class="weflair-case-card__highlights">${highlightsMarkup}</ul><div class="weflair-case-card__actions"><a href="${
       card.href || "cases.html"
-    }" class="weflair-case-card__readmore">Read more</a></div></article>`;
+    }" class="weflair-case-card__readmore">Read the full case study <span class="weflair-case-card__readmore-arrow">${diagonalArrowMarkup()}</span></a></div></div></div></article>`;
   }
 
   function testimonialCardMarkup(item) {
@@ -792,9 +1104,12 @@
   }
 
   function injectRuntimeStyles() {
-    if (q("#weflair-runtime-css")) return;
-    const style = document.createElement("style");
-    style.id = "weflair-runtime-css";
+    let style = q("#weflair-runtime-css");
+    if (!style) {
+      style = document.createElement("style");
+      style.id = "weflair-runtime-css";
+      document.head.appendChild(style);
+    }
     style.textContent = `
       .weflair-logo{display:inline-flex;align-items:center;gap:.58rem;color:#f6f3ee}
       .eyebrow{display:inline-flex;align-items:center;justify-self:start;gap:.45rem;font-size:.78rem;line-height:1.14;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9)}
@@ -816,11 +1131,11 @@
       .weflair-hero-glow{position:absolute;right:4%;top:16%;width:32rem;height:32rem;border-radius:50%;background:radial-gradient(circle,rgba(62,255,104,.18),rgba(62,255,104,.08) 28%,rgba(62,255,104,0) 68%);filter:blur(18px);pointer-events:none}
       #hero .p-l{max-width:36rem!important;font-size:clamp(1.08rem,1.35vw,1.35rem)!important;line-height:1.36!important}
       #hero .home-header__content{padding-bottom:clamp(3rem,6vw,4.75rem)}
-      .weflair-hero-widget-wrap{display:flex;align-items:flex-end;justify-content:flex-end}
-      .weflair-audit-widget{position:relative;width:min(100%,21.25rem);margin-left:auto}
-      .weflair-audit-widget__launcher{display:grid;place-items:center;width:4rem;height:4rem;margin-left:auto;border:none;border-radius:1.1rem;background:rgba(17,17,17,.88);color:#f6f3ee;box-shadow:0 12px 30px rgba(0,0,0,.24);cursor:pointer}
+      .weflair-hero-widget-wrap{display:flex;align-items:flex-end;justify-content:flex-end;min-height:1px}
+      .weflair-audit-widget{position:fixed;right:clamp(.9rem,2vw,1.4rem);bottom:clamp(.9rem,2vw,1.4rem);z-index:70;width:min(calc(100vw - 1.8rem),22rem);margin-left:0}
+      .weflair-audit-widget__launcher{display:grid;place-items:center;width:4.25rem;height:4.25rem;margin-left:auto;border:1px solid rgba(246,243,238,.12);border-radius:999px;background:linear-gradient(180deg,rgba(18,19,18,.96) 0%,rgba(12,13,12,.98) 100%);color:#f6f3ee;box-shadow:0 16px 36px rgba(0,0,0,.32);cursor:pointer}
       .weflair-audit-widget__launcher .arrow{width:1.4rem;height:1.4rem}
-      .weflair-audit-widget__panel{display:grid;gap:1rem;padding:1rem 1rem 1.05rem;border:1px solid rgba(246,243,238,.08);border-radius:1.2rem;background:rgba(17,17,17,.94);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+      .weflair-audit-widget__panel{display:grid;gap:1rem;padding:1.05rem 1.05rem 1.1rem;border:1px solid rgba(246,243,238,.08);border-radius:1.25rem;background:linear-gradient(180deg,rgba(17,17,17,.96) 0%,rgba(11,12,11,.98) 100%);box-shadow:0 22px 48px rgba(0,0,0,.34)}
       .weflair-audit-widget.is-collapsed .weflair-audit-widget__panel{display:none}
       .weflair-audit-widget:not(.is-collapsed) .weflair-audit-widget__launcher{display:none}
       .weflair-audit-widget__head{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem}
@@ -830,26 +1145,41 @@
       .weflair-audit-widget__name{display:block;font-size:1rem;font-weight:700;line-height:1.1}
       .weflair-audit-widget__role{display:block;margin-top:.12rem;color:rgba(246,243,238,.62);font-size:.82rem;line-height:1.2}
       .weflair-audit-widget__close{display:grid;place-items:center;width:2rem;height:2rem;border:none;background:transparent;color:rgba(246,243,238,.72);cursor:pointer}
-      .weflair-audit-widget__title{margin:0;font-size:1.7rem;line-height:.98;letter-spacing:-.045em}
-      .weflair-audit-widget__body{margin:0;color:rgba(246,243,238,.82);font-size:.95rem;line-height:1.42}
+      .weflair-audit-widget__eyebrow{display:inline-flex;align-items:center;gap:.35rem;padding:.34rem .62rem;border:1px solid rgba(62,255,104,.18);border-radius:999px;background:rgba(62,255,104,.08);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9dffb6}
+      .weflair-audit-widget__title{margin:0;font-size:1.72rem;line-height:.98;letter-spacing:-.05em;text-wrap:balance}
+      .weflair-audit-widget__body{margin:0;color:rgba(246,243,238,.82);font-size:.95rem;line-height:1.46}
+      .weflair-audit-widget__proof{display:flex;flex-wrap:wrap;gap:.45rem}
+      .weflair-audit-widget__proof-pill{display:inline-flex;align-items:center;min-height:1.95rem;padding:.35rem .62rem;border:1px solid rgba(246,243,238,.08);border-radius:999px;background:rgba(23,24,23,.96);font-size:.76rem;font-weight:700;line-height:1;color:rgba(246,243,238,.88)}
       .weflair-audit-widget__slots{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.88rem .95rem;border:1px solid rgba(246,243,238,.08);border-radius:.95rem;background:rgba(23,24,23,.96)}
       .weflair-audit-widget__slots strong{font-size:.98rem;line-height:1.15}
       .weflair-audit-widget__countdown{color:#3eff68;font-weight:700}
-      .weflair-audit-widget__dates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.55rem}
-      .weflair-audit-widget__date{display:grid;place-items:center;min-height:3.9rem;padding:.35rem;border:1px solid rgba(246,243,238,.1);border-radius:.85rem;background:transparent}
-      .weflair-audit-widget__date span{display:block;font-size:.8rem;color:rgba(246,243,238,.72)}
-      .weflair-audit-widget__date strong{display:block;margin-top:.08rem;font-size:1.32rem;line-height:1;color:#f6f3ee}
-      .weflair-audit-widget__date.is-active{border-color:rgba(62,255,104,.28);background:rgba(62,255,104,.08)}
+      .weflair-audit-widget__list{display:grid;gap:.55rem;margin:0;padding:0;list-style:none}
+      .weflair-audit-widget__list li{position:relative;padding-left:1.15rem;color:rgba(246,243,238,.76);font-size:.84rem;line-height:1.45}
+      .weflair-audit-widget__list li::before{content:"";position:absolute;left:0;top:.46rem;width:.42rem;height:.42rem;border-radius:999px;background:#3eff68;box-shadow:0 0 0 .18rem rgba(62,255,104,.12)}
       .weflair-audit-widget__cta .btn{width:100%}
-      .weflair-audit-widget__foot{font-size:.77rem;line-height:1.2;color:rgba(246,243,238,.48);text-align:center}
-      .weflair-logos-rail{position:relative;margin-top:1.1rem;padding-top:1.55rem}
-      .weflair-logos-rail::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(246,243,238,.12)}
-      .weflair-logos-label{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);padding:0 .9rem;background:transparent;color:rgba(246,243,238,.86);font-size:1rem;font-weight:700;text-align:center;white-space:nowrap}
-      .weflair-logo-marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent)}
-      .weflair-logo-marquee__track{display:flex;align-items:center;gap:2.8rem;width:max-content;animation:weflairMarquee 24s linear infinite}
-      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;min-height:2.25rem;color:rgba(246,243,238,.58);font-size:1.02rem;font-weight:700;letter-spacing:-.03em;white-space:nowrap}
-      .weflair-logo-mark img{display:block;max-width:8rem;max-height:1.45rem;opacity:.72;filter:grayscale(1) brightness(1.1)}
-      @keyframes weflairMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+      .weflair-audit-widget__foot{font-size:.77rem;line-height:1.3;color:rgba(246,243,238,.48);text-align:center}
+      .weflair-logos-shell{width:100%;margin:0;padding:clamp(.75rem,1vw,1rem) 0 0;display:grid;gap:clamp(1rem,1.8vw,1.4rem)}
+      .weflair-logos-head{gap:.8rem;text-align:center}
+      .weflair-logos-head .h3{max-width:none;margin:0 auto;font-size:.88rem;font-weight:400;line-height:1.4;letter-spacing:.01em;color:rgba(246,243,238,.52)}
+      .weflair-logos-head .eyebrow,.weflair-logos-head .eyebrow__p{color:#f6f3ee}
+      .weflair-logos-divider{width:100%;height:1px;background:rgba(246,243,238,.11)}
+      .weflair-logos-rail{position:relative;width:100%;margin:0;padding:0}
+      .weflair-logo-stack{display:grid;gap:1.1rem;width:100%}
+      .weflair-logo-marquee{position:relative;width:100%;padding-inline:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 4%,black 96%,transparent)}
+      .weflair-logo-marquee:hover .weflair-logo-marquee__track,.weflair-logo-marquee:focus-within .weflair-logo-marquee__track{animation-play-state:paused}
+      .weflair-logo-marquee__track{display:flex;align-items:center;gap:0;width:max-content;animation:weflairMarqueeLeft 72s linear infinite;will-change:transform}
+      .weflair-logo-marquee.is-reverse .weflair-logo-marquee__track{animation-name:weflairMarqueeRight}
+      .weflair-logo-marquee__group{display:flex;align-items:center;flex:0 0 auto;gap:clamp(1rem,1.3vw,1.22rem);padding-inline:clamp(.8rem,1.2vw,1.05rem);white-space:nowrap}
+      .weflair-logo-marquee__item{display:flex;align-items:center;flex:0 0 auto}
+      .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(12.35rem,13.4vw,14.8rem);height:clamp(4.9rem,5.45vw,5.5rem);padding:.6rem 1rem;border:1px solid rgba(246,243,238,.14);border-radius:999px;background:rgba(246,243,238,.04);box-shadow:inset 0 1px 0 rgba(246,243,238,.04);backdrop-filter:blur(8px);transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
+      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0 .12rem;white-space:nowrap;--logo-width:94%;--logo-height:82%}
+      .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.94;filter:grayscale(1) brightness(1.72) contrast(1.12);transform:scale(1);transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
+      .weflair-logo-mark.is-xl{--logo-width:100%;--logo-height:88%}
+      .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.22);background:rgba(246,243,238,.04);box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(246,243,238,.04)}
+      .weflair-logo-pill:hover img,.weflair-logo-pill:focus-within img{opacity:1;filter:none;transform:scale(1.02)}
+      .weflair-logo-mark:focus-visible{outline:none}
+      @keyframes weflairMarqueeLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+      @keyframes weflairMarqueeRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
       #services .services-overview__row-text{column-gap:clamp(2.7rem,4vw,3.8rem)}
       #services .services-overview__col-eyebrow{width:clamp(8rem,12vw,10rem)!important;padding-top:0!important}
       #services .services-overview__col-text{max-width:74rem!important;padding-top:clamp(2.8rem,3.2vw,3.3rem)!important}
@@ -871,20 +1201,27 @@
       .weflair-services-native .growing-tile:hover .growing-tile__end .growing-tile__text,.weflair-services-native .growing-tile:focus-visible .growing-tile__end .growing-tile__text{opacity:1;visibility:visible;transform:translateY(0)}
       .weflair-services-native .growing-tile:hover .arrow,.weflair-services-native .growing-tile:focus-visible .arrow{background-color:#f3f3f3}
       .weflair-services-native .growing-tile:hover .arrow__box,.weflair-services-native .growing-tile:focus-visible .arrow__box{color:#1b1b1b}
+      .weflair-services-native .growing-tiles__row.weflair-services-center{justify-content:center}
+      .weflair-services-native .growing-tiles .growing-tiles__row.weflair-services-center .growing-tiles__col,.weflair-services-native .growing-tiles .growing-tiles__row.weflair-services-center .growing-tiles__col:hover{flex:0 0 calc(50% - .3rem)!important;width:calc(50% - .3rem)!important;max-width:calc(50% - .3rem)!important}
+      .weflair-services-center .growing-tile{border-color:rgba(62,255,104,0.12);background:linear-gradient(180deg,rgba(22,28,22,.98) 0%,rgba(16,20,16,.98) 100%)}
+      .weflair-services-center .growing-tile:hover,.weflair-services-center .growing-tile:focus-visible{border-color:rgba(62,255,104,0.25);background:linear-gradient(180deg,rgba(26,34,26,.98) 0%,rgba(18,24,18,.98) 100%)}
       .weflair-services-native .growing-tiles__row.is-single{justify-content:center}
       .weflair-services-native .growing-tiles__row.is-single .growing-tiles__col{flex:0 1 calc(50% - .3rem);max-width:calc(50% - .3rem)}
-      .weflair-services-cta-wrap{display:flex;justify-content:center;margin-top:3.2rem}
-      .weflair-services-cta{display:grid;justify-items:center;gap:.8rem;width:min(100%,34rem);margin:0 auto;padding:1.3rem 1.35rem 1.15rem;border:1px solid rgba(246,243,238,.08);border-radius:1.2rem;background:linear-gradient(180deg,rgba(26,26,26,.9) 0%,rgba(19,19,19,.94) 100%);backdrop-filter:blur(10px);box-shadow:0 18px 40px rgba(0,0,0,.2),inset 0 1px 0 rgba(246,243,238,.03);text-align:center}
-      .weflair-services-cta h3{margin:0;font-size:clamp(1rem,1.1vw,1.14rem);line-height:1.08;letter-spacing:-.03em}
-      .weflair-services-cta p{margin:0;max-width:26rem;font-family:"Helvetica Now Text",Arial,sans-serif;font-size:clamp(.98rem,1.04vw,1.08rem);line-height:1.45;color:rgba(246,243,238,.74)}
-      .weflair-services-cta .btn{min-width:min(100%,16rem)}
-      .weflair-services-cta-note{font-size:.76rem!important;line-height:1.3!important;color:rgba(246,243,238,.5)!important}
+      .weflair-services-cta-wrap{display:flex;justify-content:center;margin-top:2.4rem}
+      .weflair-services-cta{display:flex;align-items:center;justify-content:space-between;gap:1.6rem;width:min(100%,56rem);margin:0 auto;padding:.85rem 2rem;border:1px solid rgba(62,255,104,.15);border-radius:.65rem;background:rgba(62,255,104,.03)}
+      .weflair-services-cta-text{display:flex;flex-direction:column;gap:.25rem}
+      .weflair-services-cta h3{margin:0;font-size:.88rem;font-weight:500;line-height:1.2;letter-spacing:-.01em;color:rgba(246,243,238,.4)}
+      .weflair-services-cta p{margin:0;font-family:"Helvetica Now Text",Arial,sans-serif;font-size:.92rem;font-weight:600;line-height:1.3;color:rgba(246,243,238,.88)}
+      .weflair-services-cta-actions{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+      .weflair-services-cta .btn{min-width:auto;flex-shrink:0}
+      .weflair-services-cta .arrow{transform:rotate(0deg)!important}
+      .weflair-services-cta-note{font-size:.74rem!important;line-height:1.2!important;color:rgba(62,255,104,.45)!important;white-space:nowrap;flex-shrink:0}
       .weflair-tag{display:inline-flex;align-items:center;min-height:2rem;padding:.38rem .72rem;border:1px solid rgba(246,243,238,.08);border-radius:999px;background:rgba(28,31,28,.92);font-size:.86rem;font-weight:700;line-height:1;color:rgba(246,243,238,.88)}
       .weflair-challenges .weflair-challenges__row-text{display:flex;column-gap:clamp(3.1rem,4.6vw,4.9rem);align-items:flex-start}
       .weflair-challenges .weflair-challenges__col-eyebrow{width:clamp(8.8rem,12vw,10.8rem);padding-top:.15rem;flex:0 0 auto}
       .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow{margin-bottom:0}
       .weflair-challenges .weflair-challenges__col-text{max-width:76rem;padding-top:clamp(3.25rem,4vw,4.1rem)}
-      .weflair-challenges .weflair-challenges__col-text .h3{max-width:none;margin-bottom:1.15rem;line-height:.96;letter-spacing:-.075em}
+      .weflair-challenges .weflair-challenges__col-text .h3{max-width:none;margin-bottom:1.8rem;line-height:.96;letter-spacing:-.075em}
       .weflair-challenges .weflair-section__body{max-width:50rem;margin:0;color:rgba(246,243,238,.72);font-size:1rem;line-height:1.52}
       .weflair-problems-native{display:flex;justify-content:center;margin-top:clamp(2.35rem,3.9vw,3.2rem)}
       .weflair-problems-native .growing-tiles{width:min(100%,76rem);gap:.65rem}
@@ -903,7 +1240,8 @@
       .weflair-problem-tile__icon svg{width:1.05rem;height:1.05rem}
       .weflair-problems-native .growing-tile:hover .weflair-problem-tile__icon{background:rgba(62,255,104,.14);border-color:rgba(62,255,104,.36)}
       .weflair-framework-section .weflair-challenges__row-text{margin-bottom:0;padding-bottom:0}
-      .weflair-ring-split{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,3.5vw,3.5rem);align-items:center;margin-top:clamp(2rem,3vw,2.8rem)}
+      .weflair-ring-split{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(2rem,3.5vw,3.5rem);align-items:stretch;margin-top:clamp(2rem,3vw,2.8rem)}
+      .weflair-ring-wrap{position:relative;width:100%;max-width:clamp(28rem,100%,46rem);margin:0 auto;display:flex;align-items:center}
       .weflair-steps{display:flex;flex-direction:column;gap:0;padding:1.4rem 1.2rem;border:1px solid rgba(246,243,238,.06);border-radius:1.1rem;background:linear-gradient(180deg,rgba(20,22,20,.65) 0%,rgba(16,18,16,.82) 100%);backdrop-filter:blur(8px)}
       .weflair-step{display:grid;grid-template-columns:2.2rem 1fr;gap:.75rem;padding:.65rem .55rem;border-radius:.65rem;cursor:pointer;transition:background .25s ease,border-color .25s ease;border:1px solid transparent}
       .weflair-step:hover{background:rgba(246,243,238,.03)}
@@ -921,7 +1259,6 @@
       .weflair-step__loop{display:flex;align-items:center;gap:.45rem;padding:.3rem 0 0 .6rem}
       .weflair-step__loop svg{width:1rem;height:1rem}
       .weflair-step__loop span{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.28)}
-      .weflair-ring-wrap{position:relative;width:100%;max-width:34rem;margin:0 auto}
       .weflair-ring-visual{width:100%;aspect-ratio:1/1}
       .weflair-ring-visual svg{width:100%;height:100%;overflow:visible}
       .weflair-ring-segment{cursor:pointer;transition:opacity .3s ease,filter .3s ease}
@@ -963,9 +1300,16 @@
 
       /* ─── FOOTER ─── */
       .weflair-footer{background:#0e100e}
-      .weflair-footer__cta-banner{position:relative;padding:clamp(4rem,7vw,6.5rem) 0;background:linear-gradient(180deg,rgba(14,16,14,0) 0%,rgba(14,16,14,.96) 100%)}
-      .weflair-footer__cta-inner{display:grid;gap:1.1rem;justify-items:center;text-align:center;max-width:42rem;margin:0 auto}
-      .weflair-footer__cta-inner .weflair-section__body.is--muted{color:rgba(246,243,238,.48);font-size:.95rem}
+      .weflair-footer__cta-banner{position:relative;padding:clamp(4.2rem,7vw,7rem) 0 clamp(3rem,5vw,4.4rem);background:linear-gradient(180deg,rgba(14,16,14,0) 0%,rgba(14,16,14,.4) 28%,rgba(14,16,14,.96) 100%)}
+      .weflair-footer__cta-panel{position:relative;overflow:hidden;width:min(100%,58rem);margin:0 auto;padding:clamp(2.7rem,4.6vw,4rem) clamp(1.6rem,3vw,2.8rem);border:1px solid rgba(246,243,238,.08);border-radius:1.55rem;background:linear-gradient(140deg,rgba(34,42,34,.96) 0%,rgba(17,19,17,.98) 46%,rgba(10,11,10,.99) 100%);box-shadow:0 30px 70px rgba(0,0,0,.28)}
+      .weflair-footer__cta-panel::before{content:"";position:absolute;inset:auto -8% -18% 32%;height:58%;background:linear-gradient(135deg,rgba(62,255,104,.22) 0%,rgba(62,255,104,.08) 42%,rgba(62,255,104,0) 100%);transform:skewY(-8deg);pointer-events:none}
+      .weflair-footer__cta-panel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 18%,rgba(62,255,104,.16),rgba(62,255,104,0) 34%);pointer-events:none}
+      .weflair-footer__cta-inner{position:relative;z-index:1;display:grid;gap:1.2rem;justify-items:center;text-align:center;max-width:42rem;margin:0 auto}
+      .weflair-footer__cta-title{margin:0;font-size:clamp(3rem,6vw,5rem);line-height:.92;letter-spacing:-.08em;text-wrap:balance}
+      .weflair-footer__cta-copy{max-width:40rem;margin:0;color:#f6f3ee;font-size:clamp(.95rem,1.15vw,1.08rem);font-weight:700;line-height:1.28;letter-spacing:.08em;text-transform:uppercase;text-wrap:balance}
+      .weflair-footer__cta-inner .weflair-section__body.is--muted{max-width:30rem;color:rgba(246,243,238,.6);font-size:.86rem;line-height:1.45}
+      .weflair-footer__cta-inner .btn{min-width:clamp(18rem,28vw,24rem);justify-self:center}
+      .weflair-footer__cta-inner .arrow{transform:rotate(0deg)!important}
       .weflair-footer__main{padding:clamp(3rem,5vw,4.5rem) 0 clamp(1.8rem,3vw,2.4rem);border-top:1px solid rgba(246,243,238,.06)}
       .weflair-footer__top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,4vw,4rem)}
       .weflair-footer__info-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.5vw,2.2rem)}
@@ -1013,12 +1357,16 @@
         .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow{margin-bottom:.25rem}
         .weflair-challenges .weflair-challenges__col-text{padding-top:0}
         .weflair-ring-split{grid-template-columns:1fr;gap:2rem}
+        .weflair-services-cta{flex-direction:column;gap:.8rem;padding:.9rem 1.6rem;text-align:center}
+        .weflair-services-cta-actions{flex-direction:column;gap:.6rem}
+        .weflair-services-cta h3,.weflair-services-cta p{white-space:normal}
         .weflair-ring-visual{max-width:20rem}
         .weflair-steps{gap:0}
         .weflair-problems-native .growing-tiles__row{flex-wrap:wrap}
         .weflair-problems-native .growing-tiles__col{flex:1 1 calc(50% - .325rem)}
-        .weflair-audit-widget{width:min(100%,19rem)}
+        .weflair-audit-widget{width:min(calc(100vw - 1.6rem),20rem)}
         .weflair-proof-card--feature{grid-row:auto;grid-column:1/-1}
+        .weflair-footer__cta-panel{width:min(100%,62rem)}
         .weflair-footer__top{grid-template-columns:1fr}
         .weflair-footer__info-row{grid-template-columns:repeat(3,1fr)}
         .weflair-footer__nav-row{grid-template-columns:repeat(4,1fr)}
@@ -1032,12 +1380,24 @@
         .weflair-challenges .weflair-challenges__col-text .h3{max-width:none}
         .weflair-challenges .weflair-section__body{font-size:.96rem}
         .weflair-ring-visual{max-width:18rem}
+        .weflair-services-cta{flex-direction:column;gap:.6rem;padding:.9rem 1.2rem;text-align:center}
+        .weflair-services-cta-actions{flex-direction:column;gap:.5rem}
+        .weflair-services-cta h3,.weflair-services-cta p,.weflair-services-cta-note{white-space:normal!important;text-align:center}
         .weflair-problems-native .growing-tiles__col{flex-basis:100%}
         .weflair-services-grid .is-span-2{grid-column:auto}
-        .weflair-logo-marquee__track{gap:1.8rem;animation-duration:20s}
-        .weflair-logos-label{font-size:.92rem}
-        .weflair-audit-widget{width:100%}
-        .weflair-audit-widget__dates{grid-template-columns:repeat(5,minmax(0,1fr))}
+        .weflair-logos-head .h3{max-width:none;font-size:.82rem}
+        .weflair-logo-stack{gap:.82rem}
+        .weflair-logo-marquee__track{animation-duration:42s}
+        .weflair-logo-marquee__group{gap:.72rem;padding-inline:.56rem}
+        .weflair-logo-pill{width:10.6rem;height:4.25rem;padding:.46rem .68rem}
+        .weflair-logo-mark{--logo-width:96%;--logo-height:78%}
+        .weflair-logo-mark.is-xl{--logo-width:100%;--logo-height:86%}
+        .weflair-audit-widget{right:.8rem;bottom:.8rem;width:min(calc(100vw - 1.6rem),22rem)}
+        .weflair-footer__cta-banner{padding:3.4rem 0 2.7rem}
+        .weflair-footer__cta-panel{padding:2.15rem 1.15rem 2rem;border-radius:1.2rem}
+        .weflair-footer__cta-title{font-size:clamp(2.4rem,11vw,3.45rem)}
+        .weflair-footer__cta-copy{font-size:.88rem;letter-spacing:.055em}
+        .weflair-footer__cta-inner .btn{width:100%;min-width:0}
         .weflair-footer__top{grid-template-columns:1fr}
         .weflair-footer__info-row{grid-template-columns:1fr 1fr}
         .weflair-footer__nav-row{grid-template-columns:1fr 1fr}
@@ -1046,9 +1406,38 @@
         .weflair-process__num{display:none}
         .weflair-process__title::before{content:attr(data-num) '. ';color:rgba(246,243,238,.3);font-weight:600}
         .weflair-process__body{grid-column:1/-1}
-      }
+      
+/* ORG CHART AND AVATAR STYLES */
+.weflair-org-chart { display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; animation: weflairOrgFadeIn 0.6s ease-out forwards; }
+@keyframes weflairOrgFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.weflair-org-lead { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; text-align: center; }
+.weflair-org-avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; background-color: rgba(62,255,104,0.15); border: 2px solid rgba(62,255,104,0.4); background-size: cover; background-position: center; box-shadow: 0 4px 12px rgba(62,255,104,0.1); }
+.weflair-org-avatar.is-sm { width: 3rem; height: 3rem; border-width: 1px; border-color: rgba(246,243,238,0.2); background-color: rgba(246,243,238,0.05); box-shadow: none; }
+.weflair-org-name { font-weight: 700; font-size: 0.95rem; color: #f6f3ee; letter-spacing: -0.01em; }
+.weflair-org-label { font-size: 0.72rem; color: rgba(246,243,238,0.6); font-weight: 600; text-align: center; max-width: 6rem; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.weflair-org-connector { width: 1px; height: 1.5rem; background: rgba(246,243,238,0.15); position: relative; }
+.weflair-org-connector::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: clamp(14rem, 100%, 20rem); height: 1px; background: rgba(246,243,238,0.15); }
+
+.weflair-org-child-nodes { display: flex; gap: clamp(0.5rem, 1.5vw, 1.5rem); align-items: flex-start; justify-content: center; position: relative; width: 100%; max-width: 22rem; }
+.weflair-org-node { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; position: relative; padding-top: 1rem; flex: 1; }
+.weflair-org-node::before { content: ""; position: absolute; top: 0; left: 50%; width: 1px; height: 1rem; background: rgba(246,243,238,0.15); transform: translateX(-50%); }
+
+.weflair-demand-team__avatars { display: flex; align-items: center; margin: 1rem 0 1.5rem; }
+.weflair-demand-team__avatar { width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 2px solid #111; background-size: cover; background-position: center; background-color: rgba(246,243,238,0.1); margin-left: -0.65rem; transition: transform 0.2s ease, border-color 0.25s ease; position: relative; cursor: pointer; }
+.weflair-demand-team__avatar:first-child { margin-left: 0; }
+.weflair-demand-team__avatar:hover { transform: translateY(-3px); z-index: 10; border-color: rgba(62,255,104,0.4); }
+
+.weflair-demand-team__copy-block { max-width: 33rem !important; }
+.weflair-demand-team__copy-block h3 { text-wrap: balance; }
+
+
+.weflair-demand-team__tab-label { white-space: nowrap !important; }
+.weflair-demand-team__panel-plain { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important; gap: 2rem !important; }
+.weflair-demand-team__copy-block h3.h4 { white-space: nowrap !important; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
+
+}
     `;
-    document.head.appendChild(style);
   }
 
   function replaceLogo() {
@@ -1111,7 +1500,11 @@
 
     const talkButton = q(".nav-bar__btn a");
     if (talkButton) {
-      talkButton.setAttribute("href", "#audit");
+      talkButton.setAttribute("href", CAL_DIRECT_URL);
+      talkButton.setAttribute("data-cal-link", CAL_LINK);
+      talkButton.setAttribute("data-cal-namespace", CAL_NAMESPACE);
+      talkButton.setAttribute("data-cal-config", CAL_CONFIG);
+      talkButton.setAttribute("aria-haspopup", "dialog");
       const span = q(".btn__span", talkButton);
       if (span) span.textContent = "Talk to us";
     }
@@ -1153,25 +1546,39 @@
       }
     }
     if (cardSlot && !q(".weflair-audit-widget", cardSlot)) {
-      cardSlot.innerHTML = `<div class="weflair-audit-widget" id="audit-widget"><button type="button" class="weflair-audit-widget__launcher" data-audit-toggle aria-expanded="false" aria-controls="weflair-audit-panel">${arrowMarkup()}</button><div class="weflair-audit-widget__panel" id="weflair-audit-panel"><div class="weflair-audit-widget__head"><div class="weflair-audit-widget__profile"><div class="weflair-audit-widget__avatar">SM</div><div class="weflair-audit-widget__meta"><span class="weflair-audit-widget__name">Sami Madi</span><span class="weflair-audit-widget__role">Growth audit, 30 min</span></div></div><button type="button" class="weflair-audit-widget__close" data-audit-close aria-label="Close growth audit card">×</button></div><h3 class="weflair-audit-widget__title">Request a growth audit</h3><p class="weflair-audit-widget__body">Book a 30 min session to see how we would engineer a stronger growth system around your goals, channels, and workflow.</p><div class="weflair-audit-widget__slots"><strong>Only a few spots are open.</strong><span class="weflair-audit-widget__countdown">This week</span></div><div class="weflair-audit-widget__dates"><div class="weflair-audit-widget__date is-active"><span>Tue</span><strong>08</strong></div><div class="weflair-audit-widget__date"><span>Wed</span><strong>09</strong></div><div class="weflair-audit-widget__date"><span>Thu</span><strong>10</strong></div><div class="weflair-audit-widget__date"><span>Fri</span><strong>11</strong></div><div class="weflair-audit-widget__date"><span>Mon</span><strong>14</strong></div></div><div class="weflair-audit-widget__cta">${button(
-        "Request a growth audit",
-        "#audit",
-        "primary"
-      )}</div><div class="weflair-audit-widget__foot">One point of view. Clear next steps. No hard sell.</div></div></div>`;
+      cardSlot.innerHTML = renderAuditWidgetMarkup();
     }
   }
 
   function renderLogosSection(section) {
     section.id = "logos";
     section.className = "home-results weflair-section";
-    const items = [...LOGOS, ...LOGOS]
-      .map((item) =>
+    const rotateLogos = (items, offset = 0) => {
+      if (!items.length) return items;
+      const normalizedOffset = ((offset % items.length) + items.length) % items.length;
+      return [...items.slice(normalizedOffset), ...items.slice(0, normalizedOffset)];
+    };
+    const splitIndex = Math.ceil(LOGOS.length / 2);
+    const topRow = LOGOS.slice(0, splitIndex);
+    const rawBottomRow = LOGOS.slice(splitIndex);
+    const bottomRow = rotateLogos(rawBottomRow.length ? rawBottomRow : topRow, 2);
+    const logoMarkup = (items) =>
+      items.map((item) =>
         item.type === "image"
-          ? `<span class="weflair-logo-mark"><img src="${item.src}" alt="${item.label}"></span>`
-          : `<span class="weflair-logo-mark">${item.label}</span>`
-      )
-      .join("");
-    section.innerHTML = `<div class="container"><div class="weflair-logos-rail"><p class="weflair-logos-label">Trusted by sales and marketing leaders</p><div class="weflair-logo-marquee"><div class="weflair-logo-marquee__track">${items}</div></div></div></div>`;
+          ? `<span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark${
+              item.size ? ` is-${item.size}` : ""
+            }" tabindex="0"${
+              item.width || item.height
+                ? ` style="${item.width ? `--logo-width:${item.width};` : ""}${item.height ? `--logo-height:${item.height};` : ""}"`
+                : ""
+            }><img src="${item.src}" alt="${item.label}" loading="lazy" decoding="async"></span></span></span>`
+          : `<span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark${
+              item.size ? ` is-${item.size}` : ""
+            }" tabindex="0">${item.label}</span></span></span>`
+      ).join("");
+    const topGroup = logoMarkup(topRow);
+    const bottomGroup = logoMarkup(bottomRow);
+    section.innerHTML = `<div class="container"><div class="weflair-logos-shell"><div class="weflair-section__head weflair-logos-head"><h2 class="h3">${CONTENT.logos.title}</h2></div><div class="weflair-logos-rail"><div class="weflair-logo-stack"><div class="weflair-logo-marquee"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group">${topGroup}</div><div class="weflair-logo-marquee__group" aria-hidden="true">${topGroup}</div></div></div><div class="weflair-logo-marquee is-reverse"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group">${bottomGroup}</div><div class="weflair-logo-marquee__group" aria-hidden="true">${bottomGroup}</div></div></div></div></div></div></div>`;
   }
 
   function wireAuditWidget() {
@@ -1186,6 +1593,7 @@
     };
     launcher?.addEventListener("click", () => setCollapsed(false));
     closer?.addEventListener("click", () => setCollapsed(true));
+    setCollapsed(window.matchMedia("(max-width: 767px)").matches);
   }
 
   function renderServicesSection(section) {
@@ -1207,11 +1615,12 @@
             )
             .join("")}</div>`
       )
-      .join("")}</div></div></div><div class="weflair-services-cta-wrap"><div class="weflair-services-cta"><h3 class="h5">Not sure which service you need?</h3><p>Book a call and we&rsquo;ll help you figure out the best approach for your specific situation.</p>${button(
-      "Book a free strategy call",
-      "#audit",
-      "primary"
-    )}<p class="weflair-services-cta-note">Free audit included • No commitment required</p></div></div></div>`;
+      .join("")}</div></div></div><div class="weflair-services-cta-wrap"><div class="weflair-services-cta"><div class="weflair-services-cta-text"><h3 class="h5">Not sure which service you need?</h3><p>Book a call and we&rsquo;ll figure out the best approach.</p></div><div class="weflair-services-cta-actions">${calButton(
+      "Book a free growth audit",
+      "primary",
+      'data-cal-source="services-cta"',
+      "diagonal"
+    )}<p class="weflair-services-cta-note">Free audit included &bull; No commitment required</p></div></div></div></div>`;
   }
 
   function challengeIcon(index) {
@@ -1412,15 +1821,16 @@
             filter === _activeResultsFilter ? "true" : "false"
           }">${filter}</button>`
       )
-      .join("")}</div><div class="weflair-case-studies__frame"><div data-case-panel></div><div class="weflair-case-studies__footer"><div class="weflair-case-studies__footer-meta"><span class="weflair-case-studies__progress" data-case-progress></span><span class="weflair-case-studies__status" data-case-filter-status></span></div><div class="weflair-case-studies__footer-actions">${button(
+      .join("")}</div><div class="weflair-case-studies__frame"><div data-case-panel></div><div class="weflair-case-studies__footer"><div class="weflair-case-studies__footer-link">${button(
       CONTENT.results.moreLabel,
       CONTENT.results.moreHref || "cases.html",
-      "ghost"
-    )}<div class="weflair-case-studies__nav"><button type="button" class="weflair-case-studies__nav-btn" data-case-nav="prev" aria-label="Previous case study">${resultsNavIcon(
+      "ghost",
+      "diagonal"
+    )}</div><div class="weflair-case-studies__nav"><button type="button" class="weflair-case-studies__nav-btn" data-case-nav="prev" aria-label="Previous case study">${resultsNavIcon(
       "prev"
     )}</button><button type="button" class="weflair-case-studies__nav-btn" data-case-nav="next" aria-label="Next case study">${resultsNavIcon(
       "next"
-    )}</button></div></div></div></div></div>`;
+    )}</button></div></div></div></div>`;
     renderActiveCaseStudy();
     return section;
   }
@@ -1428,8 +1838,11 @@
   function renderTestimonialsSection(section) {
     section.id = "testimonials";
     section.className = "quotes-slider weflair-section weflair-results-testimonials";
-    const loopedTestimonials = [...CONTENT.results.testimonials, ...CONTENT.results.testimonials];
-    section.innerHTML = `<div class="container"><div class="weflair-results-testimonials__rail"><div class="weflair-results-testimonials__slider"><div class="weflair-results-testimonials__track" data-testimonial-track>${loopedTestimonials
+    section.innerHTML = `<div class="container"><div class="weflair-results-testimonials__rail"><div class="weflair-results-testimonials__head"><div class="weflair-results-testimonials__eyebrow">Client notes</div><div class="weflair-results-testimonials__nav"><button type="button" class="weflair-results-testimonials__nav-btn" data-testimonial-nav="prev" aria-label="Previous testimonial">${resultsNavIcon(
+      "prev"
+    )}</button><button type="button" class="weflair-results-testimonials__nav-btn" data-testimonial-nav="next" aria-label="Next testimonial">${resultsNavIcon(
+      "next"
+    )}</button></div></div><div class="weflair-results-testimonials__slider"><div class="weflair-results-testimonials__track" data-testimonial-track>${CONTENT.results.testimonials
       .map((item) => testimonialCardMarkup(item))
       .join("")}</div></div></div></div>`;
     requestAnimationFrame(() => syncTestimonialNav(section));
@@ -1437,20 +1850,40 @@
 
   function renderCompareSection(section) {
     section.id = "comparison";
-    section.className = "compare weflair-section";
-    section.innerHTML = `<div class="container"><div class="weflair-section__head">${eyebrow(
-      CONTENT.comparison.eyebrow
-    )}<h2 class="h3">${CONTENT.comparison.title}</h2><p class="weflair-section__body">${CONTENT.comparison.body}</p></div><div class="weflair-compare-grid"><div class="weflair-compare-col"><h3 class="h5 is--center">${CONTENT.comparison.left}</h3>${CONTENT.comparison.rows
-      .map(
-        ([left]) =>
-          `<div class="weflair-compare-item"><span class="weflair-compare-mark is-bad"></span><p class="compare__p">${left}</p></div>`
-      )
-      .join("")}</div><div class="weflair-compare-col"><h3 class="h5 is--center">${CONTENT.comparison.right}</h3>${CONTENT.comparison.rows
-      .map(
-        ([, right]) =>
-          `<div class="weflair-compare-item"><span class="weflair-compare-mark is-good"></span><p class="compare__p">${right}</p></div>`
-      )
-      .join("")}</div></div></div>`;
+    section.className = "compare weflair-section weflair-compare-tablar";
+    
+    const goodHeader = "WITH WEFLAIR";
+    const badHeader = "WITHOUT WEFLAIR";
+    
+    const rowsHtml = CONTENT.comparison.rows.map(([badText, goodText]) => {
+      // Good text (index 1) on left, Bad text (index 0) on right
+      return `<div class="weflair-tabular-row">
+        <div class="weflair-tabular-cell is-good">${goodText}</div>
+        <div class="weflair-tabular-cell is-bad">${badText}</div>
+      </div>`;
+    }).join("");
+
+    section.innerHTML = `<div class="container container--sm">
+      <div class="weflair-section__head weflair-compare-head" style="justify-items: center; text-align: center;">
+        ${eyebrow(CONTENT.comparison.eyebrow, true)}
+        <h2 class="h3" style="margin-top:0.4rem; margin-bottom:1.5rem; max-width:100%; white-space:nowrap;">${CONTENT.comparison.title}</h2>
+        <p class="weflair-section__body" style="margin:0 auto; max-width:48rem;">${CONTENT.comparison.body}</p>
+      </div>
+      <div class="weflair-tabular-grid">
+        <div class="weflair-tabular-header">
+          <div class="weflair-tabular-head-cell is-good">${goodHeader}</div>
+          <div class="weflair-tabular-head-cell is-bad">${badHeader}</div>
+        </div>
+        <div class="weflair-tabular-body">
+          ${rowsHtml}
+        </div>
+      </div>
+      <div class="weflair-compare-cta">
+        <a href="#results" class="weflair-btn-glowing-glow" ${calTriggerAttributes('data-cal-source="comparison-cta"')}>
+          <span class="weflair-btn-glowing__text">CHECK IF WE'RE A FIT</span>
+        </a>
+      </div>
+    </div>`;
   }
 
   function processStepIcon(num) {
@@ -1487,11 +1920,13 @@
     const d = CONTENT.footer;
     section.className = "footer weflair-footer";
 
-    const ctaHtml = `<div class="weflair-footer__cta-banner" id="audit"><div class="container"><div class="weflair-footer__cta-inner">${eyebrow(
-      d.cta.eyebrow, true
-    )}<h2 class="h3">${d.cta.title}</h2><p class="weflair-section__body">${d.cta.body}</p><p class="weflair-section__body is--muted">${d.cta.reassurance}</p>${button(
-      d.cta.ctaLabel, "#audit", "primary"
-    )}</div></div></div>`;
+    const eyebrowHtml = d.cta.eyebrow ? eyebrow(d.cta.eyebrow, true) : "";
+    const ctaHtml = `<div class="weflair-footer__cta-banner" id="audit"><div class="container"><div class="weflair-footer__cta-panel"><div class="weflair-footer__cta-inner">${eyebrowHtml}<h2 class="h3 weflair-footer__cta-title">${d.cta.title}</h2><p class="weflair-footer__cta-copy">${d.cta.body}</p><p class="weflair-section__body is--muted">${d.cta.reassurance}</p>${calButton(
+      d.cta.ctaLabel,
+      "primary",
+      'data-cal-source="footer-cta"',
+      "diagonal"
+    )}</div></div></div></div>`;
 
     const infoColsHtml = d.columns.map(col => {
       const body = col.links
@@ -1634,6 +2069,7 @@
 
   function applyTransforms() {
     document.title = "WeFlair - Growth Marketing Agency";
+    ensureCalEmbed();
     injectRuntimeStyles();
     replaceLogo();
     updateNav();
@@ -1685,11 +2121,29 @@
 
   function bootStaticHomepage() {
     document.title = "WeFlair - Growth Marketing Agency";
+    ensureCalEmbed();
+    injectRuntimeStyles();
+    replaceLogo();
+    const logosSection = q("#logos") || q(".home-results");
+    if (logosSection) {
+      renderLogosSection(logosSection);
+    }
     if (q("[data-pod-detail]")) {
       renderPod(0);
     }
-    if (q("#results [data-case-panel]")) {
+    const processSection = q("#process");
+    if (processSection) {
+      renderResultsSection(processSection);
+    } else if (q("#results [data-case-panel]")) {
       renderActiveCaseStudy();
+    }
+    const testimonialsSection = q(".quotes-slider");
+    if (testimonialsSection) {
+      renderTestimonialsSection(testimonialsSection);
+    }
+    const compareSection = q(".compare");
+    if (compareSection) {
+      renderCompareSection(compareSection);
     }
     if (q("[data-ring-index]")) {
       renderMethod(0);
@@ -1727,4 +2181,82 @@
 
   window.__weflairDapper = { applyTransforms };
   schedule();
+  setTimeout(() => {
+    const firstTab = document.querySelector('.weflair-demand-team__tab[data-pod-index="0"]');
+    if (firstTab) {
+      firstTab.click();
+    }
+  }, 100);
+
+  // Injected CSS for ORG CHART
+  const style = document.createElement('style');
+  style.textContent = `
+/* ORG CHART AND AVATAR STYLES */
+.weflair-org-chart { display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; animation: weflairOrgFadeIn 0.6s ease-out forwards; }
+@keyframes weflairOrgFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.weflair-org-lead { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; text-align: center; }
+.weflair-org-avatar { width: 3.5rem; height: 3.5rem; border-radius: 50%; background-color: rgba(62,255,104,0.15); border: 2px solid rgba(62,255,104,0.4); background-size: cover; background-position: center; box-shadow: 0 4px 12px rgba(62,255,104,0.1); }
+.weflair-org-avatar.is-sm { width: 3rem; height: 3rem; border-width: 1px; border-color: rgba(246,243,238,0.2); background-color: rgba(246,243,238,0.05); box-shadow: none; }
+.weflair-org-name { font-weight: 700; font-size: 0.95rem; color: #f6f3ee; letter-spacing: -0.01em; }
+.weflair-org-label { font-size: 0.72rem; color: rgba(246,243,238,0.6); font-weight: 600; text-align: center; max-width: 6rem; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.weflair-org-connector { width: 1px; height: 1.5rem; background: rgba(246,243,238,0.15); position: relative; }
+.weflair-org-connector::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: clamp(14rem, 80%, 20rem); height: 1px; background: rgba(246,243,238,0.15); }
+
+.weflair-org-child-nodes { display: flex; gap: clamp(0.5rem, 1.5vw, 1.5rem); align-items: flex-start; justify-content: center; position: relative; width: 100%; max-width: 22rem; }
+.weflair-org-node { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; position: relative; padding-top: 1rem; flex: 1; }
+.weflair-org-node::before { content: ""; position: absolute; top: 0; left: 50%; width: 1px; height: 1rem; background: rgba(246,243,238,0.15); transform: translateX(-50%); }
+
+.weflair-demand-team__avatars { display: flex; align-items: center; margin: 1rem 0 1.5rem; }
+.weflair-demand-team__avatar { width: 2.2rem; height: 2.2rem; border-radius: 50%; border: 2px solid #111; background-size: cover; background-position: center; background-color: rgba(246,243,238,0.1); margin-left: -0.65rem; transition: transform 0.2s ease, border-color 0.25s ease; position: relative; cursor: pointer; }
+.weflair-demand-team__avatar:first-child { margin-left: 0; }
+.weflair-demand-team__avatar:hover { transform: translateY(-3px); z-index: 10; border-color: rgba(62,255,104,0.4); }
+
+.weflair-demand-team__copy-block { max-width: 32rem !important; }
+.weflair-demand-team__copy-block h3.h4 { text-wrap: balance; white-space: nowrap !important; font-size: clamp(1.8rem, 2vw, 2.2rem) !important; }
+.weflair-demand-team__tab-label { white-space: nowrap !important; }
+.weflair-demand-team__panel-plain { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important; gap: 2rem !important; }
+  `;
+  document.head.appendChild(style);
+
+  // Injected CSS for TABULAR COMPARE OVERHAUL
+  const styleComp = document.createElement('style');
+  styleComp.textContent = `
+.weflair-compare-tablar { padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(4rem, 8vw, 6rem); }
+.weflair-compare-head { margin-bottom: clamp(3.5rem, 5vw, 4.5rem); text-align: center !important; justify-items: center !important; align-items: center !important; }
+.weflair-compare-head .h3 { max-width: none !important; text-wrap: wrap !important; margin: 0 auto !important; }
+.weflair-compare-head .eyebrow { justify-self: center !important; }
+.weflair-compare-head .weflair-section__body { margin: 0 auto !important; text-align: center !important; }
+.weflair-tabular-grid { width: 100%; max-width: 58rem; margin: 0 auto; }
+.weflair-tabular-header { display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(246, 243, 238, 0.05); gap: 2rem; }
+.weflair-tabular-head-cell { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.weflair-tabular-head-cell.is-good { color: #3eff68; text-shadow: 0 0 12px rgba(62, 255, 104, 0.4); }
+.weflair-tabular-head-cell.is-bad { color: rgba(246, 243, 238, 0.25); text-align: left; }
+.weflair-tabular-body { display: flex; flex-direction: column; }
+.weflair-tabular-row { display: grid; grid-template-columns: 1fr 1fr; padding: 1.6rem 0; border-bottom: 1px solid rgba(246, 243, 238, 0.06); gap: 2rem; transition: background-color 0.2s ease; }
+.weflair-tabular-row:hover { background-color: rgba(246, 243, 238, 0.015); }
+.weflair-tabular-cell { font-size: clamp(0.9rem, 1.2vw, 1.05rem); line-height: 1.5; font-weight: 500; }
+.weflair-tabular-cell.is-good { color: rgba(246, 243, 238, 0.95); letter-spacing: -0.01em; }
+.weflair-tabular-cell.is-bad { color: rgba(246, 243, 238, 0.4); }
+.weflair-compare-cta { display: flex; justify-content: center; align-items: center; margin-top: clamp(3rem, 5vw, 4.5rem); }
+.weflair-btn-glowing-glow { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 2.8rem; background: rgba(10, 12, 10, 0.8); border: 1px solid rgba(62, 255, 104, 0.35); border-radius: 5px; color: #f6f3ee; text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s ease; overflow: hidden; box-shadow: 0 0 20px rgba(62, 255, 104, 0.05), inset 0 0 10px rgba(62, 255, 104, 0.02); cursor: pointer; }
+.weflair-btn-glowing-glow::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(62, 255, 104, 0.15) 0%, transparent 60%); opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; transform: scale(0.8); z-index: 0; }
+.weflair-btn-glowing-glow:hover { border-color: rgba(62, 255, 104, 0.7); box-shadow: 0 0 30px rgba(62, 255, 104, 0.25), inset 0 0 15px rgba(62, 255, 104, 0.1); color: #3eff68; }
+.weflair-btn-glowing-glow:hover::before { opacity: 1; transform: scale(1); }
+.weflair-btn-glowing__text { position: relative; z-index: 1; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+@media screen and (max-width: 767px) {
+  .weflair-compare-head .h3 { white-space: normal !important; text-wrap: pretty !important; font-size: clamp(2rem, 8vw, 2.7rem) !important; }
+  .weflair-tabular-grid { padding: 0 1rem; }
+  .weflair-tabular-header { display: none; }
+  .weflair-tabular-row { grid-template-columns: 1fr; padding: 1.5rem 0; gap: 0.5rem; position: relative; }
+  .weflair-tabular-cell.is-good { margin-bottom: 0.25rem; font-weight: 600; color: #3eff68; }
+  .weflair-tabular-cell.is-bad { font-size: 0.85rem; color: rgba(246, 243, 238, 0.5); }
+  .weflair-tabular-cell.is-good::before { content: "WITH WEFLAIR: "; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(62, 255, 104, 0.6); margin-right: 0.5rem; }
+  .weflair-tabular-cell.is-bad::before { content: "WITHOUT WEFLAIR: "; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(246, 243, 238, 0.3); margin-right: 0.5rem; }
+}
+  `;
+  document.head.appendChild(styleComp);
+
+
+
 })();

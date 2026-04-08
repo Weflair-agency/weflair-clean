@@ -1,0 +1,80 @@
+<svg viewBox="0 0 480 580" xmlns="http://www.w3.org/2000/svg" fill="none">
+<defs>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="stageGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(35,38,35,1)"/>
+    <stop offset="100%" stop-color="rgba(25,27,25,1)"/>
+  </linearGradient>
+</defs>
+
+<!-- ══════ FLYWHEEL — 4 chunky green curved arrows ══════ -->
+<g filter="url(#glow)">
+  <!-- Right arrow going DOWN -->
+  <path d="M420,95 C480,190 480,370 420,480" stroke="#3eff68" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <polygon points="420,480 403,456 437,456" fill="#3eff68" opacity="0.85"/>
+
+  <!-- Bottom arrow going LEFT -->
+  <path d="M400,500 C340,555 160,555 90,500" stroke="#3eff68" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <polygon points="90,500 114,513 114,487" fill="#3eff68" opacity="0.7"/>
+
+  <!-- Left arrow going UP -->
+  <path d="M60,480 C5,370 5,190 60,95" stroke="#3eff68" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.75"/>
+  <polygon points="60,95 43,119 77,119" fill="#3eff68" opacity="0.85"/>
+
+  <!-- Top arrow going RIGHT -->
+  <path d="M80,78 C160,25 320,25 400,78" stroke="#3eff68" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <polygon points="400,78 376,65 376,91" fill="#3eff68" opacity="0.7"/>
+</g>
+
+<!-- ══════ FUNNEL STAGES — all dark ══════ -->
+
+<!-- Stage 0: Uncover -->
+<path d="M108,68 L372,68 L362,138 L118,138 Z" fill="url(#stageGrad)" stroke="rgba(246,243,238,0.10)" stroke-width="1"/>
+<text x="148" y="96" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.06em" fill="rgba(246,243,238,0.35)">01</text>
+<text x="240" y="112" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="18" font-weight="700" fill="rgba(246,243,238,0.88)">Uncover</text>
+
+<!-- Chevron 0-1 -->
+<polygon points="225,138 255,138 240,152" fill="rgba(246,243,238,0.05)"/>
+<text x="240" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="400" letter-spacing="0.03em" fill="rgba(246,243,238,0.22)">Impressions</text>
+
+<!-- Stage 1: Generate -->
+<path d="M122,180 L358,180 L348,250 L132,250 Z" fill="url(#stageGrad)" stroke="rgba(246,243,238,0.07)" stroke-width="1"/>
+<text x="158" y="208" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.06em" fill="rgba(246,243,238,0.28)">02</text>
+<text x="240" y="224" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" fill="rgba(246,243,238,0.6)">Generate</text>
+
+<!-- Chevron 1-2 -->
+<polygon points="228,250 252,250 240,264" fill="rgba(246,243,238,0.04)"/>
+<text x="240" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="400" letter-spacing="0.03em" fill="rgba(246,243,238,0.22)">Clicks</text>
+
+<!-- Stage 2: Capture -->
+<path d="M138,292 L342,292 L332,362 L148,362 Z" fill="url(#stageGrad)" stroke="rgba(246,243,238,0.07)" stroke-width="1"/>
+<text x="170" y="320" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.06em" fill="rgba(246,243,238,0.28)">03</text>
+<text x="240" y="336" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" fill="rgba(246,243,238,0.6)">Capture</text>
+
+<!-- Chevron 2-3 -->
+<polygon points="231,362 249,362 240,376" fill="rgba(246,243,238,0.04)"/>
+<text x="240" y="392" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="400" letter-spacing="0.03em" fill="rgba(246,243,238,0.22)">Leads</text>
+
+<!-- Stage 3: Convert -->
+<path d="M154,404 L326,404 L316,474 L164,474 Z" fill="url(#stageGrad)" stroke="rgba(246,243,238,0.07)" stroke-width="1"/>
+<text x="182" y="432" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.06em" fill="rgba(246,243,238,0.28)">04</text>
+<text x="240" y="448" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" fill="rgba(246,243,238,0.6)">Convert</text>
+
+<!-- Chevron 3-4 -->
+<polygon points="234,474 246,474 240,488" fill="rgba(246,243,238,0.04)"/>
+<text x="240" y="502" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="400" letter-spacing="0.03em" fill="rgba(246,243,238,0.22)">Pipeline</text>
+
+<!-- Stage 4: Compound -->
+<path d="M170,514 L310,514 L298,570 L182,570 Z" fill="url(#stageGrad)" stroke="rgba(246,243,238,0.10)" stroke-width="1"/>
+<text x="198" y="535" font-family="Inter, sans-serif" font-size="10" font-weight="500" letter-spacing="0.06em" fill="rgba(246,243,238,0.35)">05</text>
+<text x="240" y="552" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" fill="rgba(246,243,238,0.88)">Compound</text>
+
+<!-- ══════ GROWTH LOOPS box ══════ -->
+<rect x="392" y="255" width="78" height="38" rx="6" fill="rgba(14,16,14,0.95)" stroke="rgba(62,255,104,0.3)" stroke-width="1.2"/>
+<text x="431" y="270" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.08em" text-transform="uppercase" fill="#3eff68">Growth</text>
+<text x="431" y="284" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.08em" fill="#3eff68">Loops</text>
+
+</svg>
