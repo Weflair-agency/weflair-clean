@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeFlair Growth Engine Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    background: #0a0a0a;
+    color: #f6f3ee;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ─── SECTION CONTAINER ─── */
+  .ge-section {
+    padding: 6rem 0 7rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .ge-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(62,255,104,.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .ge-container {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ─── HEADER ─── */
+  .ge-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .ge-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .4rem .9rem;
+    border: 1px solid rgba(62,255,104,.2);
+    border-radius: 999px;
+    background: rgba(62,255,104,.06);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #9dffb6;
+    margin-bottom: 1.5rem;
+  }
+  .ge-eyebrow svg { width: 1rem; height: 1rem; }
+  .ge-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.04em;
+    color: #f6f3ee;
+    max-width: 38ch;
+    margin: 0 auto .8rem;
+  }
+  .ge-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, #3eff68 0%, #5eead4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .ge-subtitle {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: rgba(246,243,238,.55);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  /* ─── MAIN GRID ─── */
+  .ge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  /* ─── LEFT: ORBIT FLYWHEEL ─── */
+  .ge-orbit {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+  .ge-orbit__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .ge-orbit__line {
+    stroke: var(--node-color, #3eff68);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+  .ge-orbit__line.is-active {
+    opacity: .5;
+  }
+
+  /* Ring */
+  .ge-orbit__ring {
+    position: absolute;
+    inset: 14%;
+    border: 1.5px solid rgba(62,255,104,.1);
+    border-radius: 50%;
+    transition: border-color .4s ease;
+  }
+  .ge-orbit__ring::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1.5px dashed rgba(62,255,104,.06);
+    border-radius: 50%;
+    animation: orbitSpin 40s linear infinite;
+  }
+  @keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+  /* Center hub */
+  .ge-orbit__hub {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7rem; height: 7rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(62,255,104,.12) 0%, rgba(62,255,104,.02) 70%);
+    border: 1px solid rgba(62,255,104,.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    z-index: 2;
+  }
+  .ge-orbit__hub-icon {
+    width: 1.3rem; height: 1.3rem; color: #3eff68;
+  }
+  .ge-orbit__hub-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(62,255,104,.7);
+  }
+  .ge-orbit__hub-pulse {
+    position: absolute;
+    inset: -8px;
+    border: 1px solid rgba(62,255,104,.15);
+    border-radius: 50%;
+    animation: hubPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes hubPulse {
+    0%, 100% { transform: scale(1); opacity: .4; }
+    50% { transform: scale(1.15); opacity: 0; }
+  }
+
+  /* Orbital nodes */
+  .ge-orbit__node {
+    position: absolute;
+    width: 5.5rem; height: 5.5rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    cursor: pointer;
+    transition: all .4s cubic-bezier(.16,1,.3,1);
+    z-index: 3;
+    border: 1.5px solid rgba(246,243,238,.08);
+    background: rgba(17,17,17,.9);
+    backdrop-filter: blur(8px);
+  }
+  .ge-orbit__node:hover {
+    transform: scale(1.08);
+  }
+  .ge-orbit__node.is-active {
+    border-color: var(--node-color);
+    background: rgba(17,17,17,.95);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--node-color) 25%, transparent),
+                0 0 0 1px var(--node-color);
+  }
+  .ge-orbit__node:not(.is-active) {
+    opacity: .6;
+  }
+  .ge-orbit__node-icon {
+    width: 1.2rem; height: 1.2rem;
+    color: var(--node-color);
+    opacity: .7;
+    transition: opacity .3s;
+  }
+  .ge-orbit__node.is-active .ge-orbit__node-icon { opacity: 1; }
+  .ge-orbit__node-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(246,243,238,.6);
+    text-align: center;
+    line-height: 1.2;
+    transition: color .3s;
+  }
+  .ge-orbit__node.is-active .ge-orbit__node-label { color: var(--node-color); }
+
+  /* Connection lines — from each node to center */
+  .ge-orbit__connector {
+    position: absolute;
+    top: 50%; left: 50%;
+    height: 1px;
+    transform-origin: 0 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+  .ge-orbit__connector.is-active {
+    opacity: 1;
+  }
+  .ge-orbit__connector::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(62,255,104,.3), rgba(62,255,104,.05));
+  }
+
+  /* Node positions — set via JS for perfect pentagon math */
+  .ge-orbit__node:nth-child(1) { --node-color: #3eff68; }
+  .ge-orbit__node:nth-child(2) { --node-color: #5eead4; }
+  .ge-orbit__node:nth-child(3) { --node-color: #818cf8; }
+  .ge-orbit__node:nth-child(4) { --node-color: #fbbf24; }
+  .ge-orbit__node:nth-child(5) { --node-color: #f472b6; }
+
+  /* ─── RIGHT: SERVICE CARDS ─── */
+  .ge-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ge-card {
+    padding: 1.3rem 1.5rem;
+    border: 1px solid rgba(246,243,238,.06);
+    border-radius: 1rem;
+    background: rgba(17,17,17,.6);
+    cursor: pointer;
+    transition: all .4s cubic-bezier(.16,1,.3,1);
+    overflow: hidden;
+    margin-bottom: .5rem;
+  }
+  .ge-card:hover:not(.is-active) {
+    border-color: rgba(246,243,238,.1);
+    background: rgba(17,17,17,.8);
+  }
+  .ge-card.is-active {
+    border-color: var(--card-color, rgba(62,255,104,.25));
+    background: rgba(17,17,17,.9);
+    box-shadow: 0 8px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.03);
+  }
+
+  .ge-card__header {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+  }
+  .ge-card__icon {
+    width: 2.2rem; height: 2.2rem;
+    border-radius: .55rem;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: color-mix(in srgb, var(--card-color, #3eff68) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--card-color, #3eff68) 20%, transparent);
+    transition: all .3s;
+  }
+  .ge-card.is-active .ge-card__icon {
+    background: color-mix(in srgb, var(--card-color, #3eff68) 18%, transparent);
+    border-color: color-mix(in srgb, var(--card-color, #3eff68) 35%, transparent);
+  }
+  .ge-card__icon svg { width: 1.05rem; height: 1.05rem; color: var(--card-color, #3eff68); }
+
+  .ge-card__title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: rgba(246,243,238,.75);
+    letter-spacing: -.01em;
+    transition: color .3s;
+  }
+  .ge-card.is-active .ge-card__title { color: #f6f3ee; }
+
+  .ge-card__arrow {
+    margin-left: auto;
+    width: 1.2rem; height: 1.2rem;
+    color: rgba(246,243,238,.2);
+    transition: all .3s;
+    flex-shrink: 0;
+  }
+  .ge-card.is-active .ge-card__arrow { 
+    color: var(--card-color, #3eff68); 
+    transform: rotate(90deg); 
+  }
+
+  .ge-card__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s cubic-bezier(.16,1,.3,1), opacity .3s ease;
+    opacity: 0;
+  }
+  .ge-card.is-active .ge-card__body {
+    max-height: 20rem;
+    opacity: 1;
+  }
+
+  .ge-card__desc {
+    margin-top: 1rem;
+    font-size: .88rem;
+    line-height: 1.55;
+    color: rgba(246,243,238,.6);
+    max-width: 32rem;
+  }
+
+  .ge-card__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: .9rem;
+  }
+  .ge-card__chip {
+    padding: .28rem .65rem;
+    border-radius: 999px;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+    border: 1px solid color-mix(in srgb, var(--card-color, #3eff68) 15%, transparent);
+    background: color-mix(in srgb, var(--card-color, #3eff68) 5%, transparent);
+    color: color-mix(in srgb, var(--card-color, #3eff68) 70%, #f6f3ee);
+  }
+
+  .ge-card__stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(246,243,238,.05);
+  }
+  .ge-card__stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--card-color, #3eff68);
+    line-height: 1;
+  }
+  .ge-card__stat-label {
+    font-size: .68rem;
+    color: rgba(246,243,238,.4);
+    margin-top: .2rem;
+  }
+
+  /* ─── TESTIMONIAL ─── */
+  .ge-testimonial {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid rgba(246,243,238,.06);
+    border-radius: .9rem;
+    background: rgba(17,17,17,.5);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all .5s cubic-bezier(.16,1,.3,1);
+  }
+  .ge-testimonial.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .ge-testimonial__quote {
+    font-size: .85rem;
+    line-height: 1.5;
+    color: rgba(246,243,238,.7);
+    font-style: italic;
+    margin-bottom: .9rem;
+  }
+  .ge-testimonial__author {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+  }
+  .ge-testimonial__avatar {
+    width: 2rem; height: 2rem;
+    border-radius: 50%;
+    background: rgba(62,255,104,.12);
+    border: 1px solid rgba(62,255,104,.2);
+    display: grid;
+    place-items: center;
+    font-size: .65rem;
+    font-weight: 700;
+    color: #3eff68;
+  }
+  .ge-testimonial__name {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #f6f3ee;
+  }
+  .ge-testimonial__role {
+    font-size: .7rem;
+    color: rgba(246,243,238,.4);
+  }
+
+  /* ─── AUTO-ROTATE PROGRESS BAR ─── */
+  .ge-progress {
+    display: flex;
+    gap: .35rem;
+    margin-top: 1.2rem;
+    padding: 0 .2rem;
+  }
+  .ge-progress__bar {
+    flex: 1;
+    height: 2px;
+    background: rgba(246,243,238,.06);
+    border-radius: 999px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .ge-progress__fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: var(--bar-color, #3eff68);
+    transition: width .1s linear;
+  }
+  .ge-progress__bar.is-done .ge-progress__fill { width: 100%; transition: none; }
+  .ge-progress__bar.is-active .ge-progress__fill { 
+    animation: progressFill 5s linear forwards; 
+  }
+  @keyframes progressFill { to { width: 100%; } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 991px) {
+    .ge-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .ge-orbit { max-width: 22rem; }
+  }
+  @media (max-width: 640px) {
+    .ge-section { padding: 4rem 0 5rem; }
+    .ge-orbit { max-width: 18rem; }
+    .ge-orbit__node { width: 4.5rem; height: 4.5rem; }
+    .ge-orbit__node-label { font-size: .5rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="ge-section">
+  <div class="ge-container">
+    
+    <!-- Header -->
+    <div class="ge-header">
+      <div class="ge-eyebrow">
+        <svg viewBox="0 0 34 45" fill="currentColor"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"/></svg>
+        The Growth Engine
+      </div>
+      <h2 class="ge-title">We Don't Deliver Services —<br>We <em>Engineer Growth Systems</em></h2>
+      <p class="ge-subtitle">Every capability we bring connects back to one thing: building an integrated growth engine that compounds. Here's what powers it.</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="ge-grid">
+      
+      <!-- LEFT: Orbit Flywheel -->
+      <div class="ge-orbit" id="ge-orbit">
+        <svg class="ge-orbit__svg" id="ge-orbit-svg"></svg>
+        <div class="ge-orbit__ring"></div>
+        <div class="ge-orbit__hub">
+          <div class="ge-orbit__hub-pulse"></div>
+          <svg class="ge-orbit__hub-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span class="ge-orbit__hub-label">Your<br>Revenue</span>
+        </div>
+
+        <!-- Node 1: Paid Media -->
+        <div class="ge-orbit__node is-active" data-service="0" style="--node-color: #3eff68">
+          <svg class="ge-orbit__node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20V16"/></svg>
+          <span class="ge-orbit__node-label">Paid<br>Media</span>
+        </div>
+        <!-- Node 2: Outbound -->
+        <div class="ge-orbit__node" data-service="1" style="--node-color: #5eead4">
+          <svg class="ge-orbit__node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L20 4L15 20L11 13L4 12Z"/><path d="M11 13L20 4"/></svg>
+          <span class="ge-orbit__node-label">Outbound<br>& GTM</span>
+        </div>
+        <!-- Node 3: RevOps -->
+        <div class="ge-orbit__node" data-service="2" style="--node-color: #818cf8">
+          <svg class="ge-orbit__node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <span class="ge-orbit__node-label">RevOps<br>& AI</span>
+        </div>
+        <!-- Node 4: Design & CRO -->
+        <div class="ge-orbit__node" data-service="3" style="--node-color: #fbbf24">
+          <svg class="ge-orbit__node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9H21M9 21V9"/></svg>
+          <span class="ge-orbit__node-label">Design<br>& CRO</span>
+        </div>
+        <!-- Node 5: Content & AEO -->
+        <div class="ge-orbit__node" data-service="4" style="--node-color: #f472b6">
+          <svg class="ge-orbit__node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span class="ge-orbit__node-label">Content<br>& AEO</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Service Cards -->
+      <div class="ge-cards" id="ge-cards">
+
+        <!-- Card 0: Paid Media -->
+        <div class="ge-card is-active" data-service="0" style="--card-color: #3eff68">
+          <div class="ge-card__header">
+            <div class="ge-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20V16"/></svg>
+            </div>
+            <span class="ge-card__title">Paid Media & Performance</span>
+            <svg class="ge-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div class="ge-card__body">
+            <p class="ge-card__desc">Data-driven ad campaigns across Google, Meta, LinkedIn, and programmatic — engineered to convert demand into revenue, not just clicks and reports.</p>
+            <div class="ge-card__chips">
+              <span class="ge-card__chip">Google Ads</span>
+              <span class="ge-card__chip">Meta Ads</span>
+              <span class="ge-card__chip">LinkedIn</span>
+              <span class="ge-card__chip">Programmatic</span>
+              <span class="ge-card__chip">Shopping</span>
+            </div>
+            <div class="ge-card__stats">
+              <div><div class="ge-card__stat-value">+36%</div><div class="ge-card__stat-label">ROAS lift</div></div>
+              <div><div class="ge-card__stat-value">-17%</div><div class="ge-card__stat-label">Wasted spend</div></div>
+              <div><div class="ge-card__stat-value">+15%</div><div class="ge-card__stat-label">Closed deals</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1: Outbound -->
+        <div class="ge-card" data-service="1" style="--card-color: #5eead4">
+          <div class="ge-card__header">
+            <div class="ge-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L20 4L15 20L11 13L4 12Z"/><path d="M11 13L20 4"/></svg>
+            </div>
+            <span class="ge-card__title">Outbound & GTM Engineering</span>
+            <svg class="ge-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div class="ge-card__body">
+            <p class="ge-card__desc">Signal-based outbound systems built to create qualified meetings — Clay enrichment, Apollo sequences, intent data, and multi-touch campaigns that actually get replies.</p>
+            <div class="ge-card__chips">
+              <span class="ge-card__chip">Clay Enrichment</span>
+              <span class="ge-card__chip">Apollo Sequences</span>
+              <span class="ge-card__chip">Intent Signals</span>
+              <span class="ge-card__chip">LinkedIn Outreach</span>
+            </div>
+            <div class="ge-card__stats">
+              <div><div class="ge-card__stat-value">3X</div><div class="ge-card__stat-label">Meeting velocity</div></div>
+              <div><div class="ge-card__stat-value">36</div><div class="ge-card__stat-label">Positive replies</div></div>
+              <div><div class="ge-card__stat-value">4</div><div class="ge-card__stat-label">Deals in pipeline</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: RevOps -->
+        <div class="ge-card" data-service="2" style="--card-color: #818cf8">
+          <div class="ge-card__header">
+            <div class="ge-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+            <span class="ge-card__title">Revenue Operations & Automations</span>
+            <svg class="ge-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div class="ge-card__body">
+            <p class="ge-card__desc">Connected CRM, lead routing, scoring logic, and AI-enabled automation — so your growth operations actually scale without manual drag holding everything back.</p>
+            <div class="ge-card__chips">
+              <span class="ge-card__chip">CRM Architecture</span>
+              <span class="ge-card__chip">Lead Routing</span>
+              <span class="ge-card__chip">n8n Workflows</span>
+              <span class="ge-card__chip">AI Automation</span>
+            </div>
+            <div class="ge-card__stats">
+              <div><div class="ge-card__stat-value">4→1</div><div class="ge-card__stat-label">Vendor consolidation</div></div>
+              <div><div class="ge-card__stat-value">80%</div><div class="ge-card__stat-label">Manual work cut</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Design & CRO -->
+        <div class="ge-card" data-service="3" style="--card-color: #fbbf24">
+          <div class="ge-card__header">
+            <div class="ge-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9H21M9 21V9"/></svg>
+            </div>
+            <span class="ge-card__title">Performance Design & CRO</span>
+            <svg class="ge-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div class="ge-card__body">
+            <p class="ge-card__desc">Landing pages, funnels, and user journeys built to convert — not just look pretty. Every element is optimized for action, tested for performance, and tied to revenue.</p>
+            <div class="ge-card__chips">
+              <span class="ge-card__chip">Landing Pages</span>
+              <span class="ge-card__chip">A/B Testing</span>
+              <span class="ge-card__chip">Funnel Design</span>
+              <span class="ge-card__chip">UX Optimization</span>
+            </div>
+            <div class="ge-card__stats">
+              <div><div class="ge-card__stat-value">5.53X</div><div class="ge-card__stat-label">ROAS</div></div>
+              <div><div class="ge-card__stat-value">336</div><div class="ge-card__stat-label">Customers</div></div>
+              <div><div class="ge-card__stat-value">7,724</div><div class="ge-card__stat-label">Subscribers</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Content & AEO -->
+        <div class="ge-card" data-service="4" style="--card-color: #f472b6">
+          <div class="ge-card__header">
+            <div class="ge-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="ge-card__title">Content & AEO</span>
+            <svg class="ge-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </div>
+          <div class="ge-card__body">
+            <p class="ge-card__desc">Content built for humans, search engines, and AI engines — positioning, messaging, and creative direction that makes you impossible to ignore in your market.</p>
+            <div class="ge-card__chips">
+              <span class="ge-card__chip">SEO Content</span>
+              <span class="ge-card__chip">AI Optimization</span>
+              <span class="ge-card__chip">Copywriting</span>
+              <span class="ge-card__chip">Brand Messaging</span>
+            </div>
+            <div class="ge-card__stats">
+              <div><div class="ge-card__stat-value">2,612</div><div class="ge-card__stat-label">Signups</div></div>
+              <div><div class="ge-card__stat-value">$114K</div><div class="ge-card__stat-label">New revenue</div></div>
+              <div><div class="ge-card__stat-value">+128%</div><div class="ge-card__stat-label">ROAS lift</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress bars -->
+        <div class="ge-progress" id="ge-progress">
+          <div class="ge-progress__bar is-active" data-service="0" style="--bar-color: #3eff68"><div class="ge-progress__fill"></div></div>
+          <div class="ge-progress__bar" data-service="1" style="--bar-color: #5eead4"><div class="ge-progress__fill"></div></div>
+          <div class="ge-progress__bar" data-service="2" style="--bar-color: #818cf8"><div class="ge-progress__fill"></div></div>
+          <div class="ge-progress__bar" data-service="3" style="--bar-color: #fbbf24"><div class="ge-progress__fill"></div></div>
+          <div class="ge-progress__bar" data-service="4" style="--bar-color: #f472b6"><div class="ge-progress__fill"></div></div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="ge-testimonial is-visible" id="ge-testimonial">
+          <p class="ge-testimonial__quote" id="ge-test-quote">"The account finally reflected what was happening in the business, not just what was happening in Google Ads."</p>
+          <div class="ge-testimonial__author">
+            <div class="ge-testimonial__avatar" id="ge-test-avatar">HA</div>
+            <div>
+              <div class="ge-testimonial__name" id="ge-test-name">Hisham Alqaisi</div>
+              <div class="ge-testimonial__role" id="ge-test-role">CMO, RCT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const SERVICES = [
+    { quote: '"The account finally reflected what was happening in the business, not just what was happening in Google Ads."', avatar: 'HA', name: 'Hisham Alqaisi', role: 'CMO, RCT' },
+    { quote: '"WeFlair is not our vendor. They are our marketing team."', avatar: 'SO', name: 'Steven Osei', role: 'CMO, CellPoint Digital' },
+    { quote: '"They replaced four vendors and gave us one system that actually works together."', avatar: 'SO', name: 'Steven Osei', role: 'CMO, CellPoint Digital' },
+    { quote: '"From £6,199 spend to £34,293 revenue in 55 days. The rebuild paid for itself immediately."', avatar: 'DH', name: 'Dominic', role: 'Director, Harrier Trail Running' },
+    { quote: '"The difference was not just better ads. It was a much sharper system behind the campaigns."', avatar: 'JA', name: 'John Abbadi', role: 'Founder, Molahin' },
+  ];
+
+  let current = 0;
+  let autoTimer = null;
+  let paused = false;
+
+  const nodes = document.querySelectorAll('.ge-orbit__node');
+  const cards = document.querySelectorAll('.ge-card');
+  const bars = document.querySelectorAll('.ge-progress__bar');
+
+  function activate(idx) {
+    current = idx;
+    // Nodes
+    nodes.forEach((n, i) => n.classList.toggle('is-active', i === idx));
+    // Cards
+    cards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+    // Progress bars
+    bars.forEach((b, i) => {
+      b.classList.remove('is-active', 'is-done');
+      if (i < idx) b.classList.add('is-done');
+      if (i === idx) b.classList.add('is-active');
+    });
+    // Testimonial
+    const s = SERVICES[idx];
+    document.getElementById('ge-test-quote').textContent = s.quote;
+    document.getElementById('ge-test-avatar').textContent = s.avatar;
+    document.getElementById('ge-test-name').textContent = s.name;
+    document.getElementById('ge-test-role').textContent = s.role;
+  }
+
+  function next() {
+    activate((current + 1) % 5);
+  }
+
+  function startAutoPlay() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => { if (!paused) next(); }, 5000);
+  }
+
+  // Click handlers
+  nodes.forEach(n => n.addEventListener('click', () => { activate(+n.dataset.service); startAutoPlay(); }));
+  cards.forEach(c => c.addEventListener('click', () => { activate(+c.dataset.service); startAutoPlay(); }));
+  bars.forEach(b => b.addEventListener('click', () => { activate(+b.dataset.service); startAutoPlay(); }));
+
+  // Pause on hover
+  const section = document.querySelector('.ge-section');
+  section.addEventListener('mouseenter', () => paused = true);
+  section.addEventListener('mouseleave', () => { paused = false; startAutoPlay(); });
+
+  // Position nodes in a perfect pentagon + draw SVG connectors
+  const COLORS = ['#3eff68','#5eead4','#818cf8','#fbbf24','#f472b6'];
+  const svgEl = document.getElementById('ge-orbit-svg');
+  const lines = [];
+
+  function buildConnectors() {
+    svgEl.innerHTML = '';
+    const orbit = document.getElementById('ge-orbit');
+    const w = orbit.offsetWidth;
+    const h = orbit.offsetHeight;
+    const cx = w / 2;
+    const cy = h / 2;
+
+    nodes.forEach((node, i) => {
+      const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1', cx);
+      line.setAttribute('y1', cy);
+      line.setAttribute('stroke', COLORS[i]);
+      line.setAttribute('stroke-width','1.5');
+      line.setAttribute('stroke-dasharray','4 4');
+      line.style.opacity = '0';
+      line.style.transition = 'opacity .4s ease';
+      svgEl.appendChild(line);
+      lines[i] = line;
+    });
+  }
+
+  function positionNodes() {
+    const orbit = document.getElementById('ge-orbit');
+    const w = orbit.offsetWidth;
+    const h = orbit.offsetHeight;
+    const cx = w / 2;
+    const cy = h / 2;
+    const radius = w * 0.38;
+    const nodeW = nodes[0].offsetWidth;
+    const nodeH = nodes[0].offsetHeight;
+    
+    nodes.forEach((node, i) => {
+      const angle = (-90 + i * 72) * (Math.PI / 180);
+      const x = cx + radius * Math.cos(angle) - nodeW / 2;
+      const y = cy + radius * Math.sin(angle) - nodeH / 2;
+      node.style.left = x + 'px';
+      node.style.top = y + 'px';
+
+      // Update connector line endpoints
+      if (lines[i]) {
+        lines[i].setAttribute('x2', x + nodeW / 2);
+        lines[i].setAttribute('y2', y + nodeH / 2);
+      }
+    });
+  }
+
+  // Also update ring border color on activate
+  const ring = document.querySelector('.ge-orbit__ring');
+  const origActivate = activate;
+  activate = function(idx) {
+    origActivate(idx);
+    // Toggle connector lines
+    lines.forEach((l, i) => l.style.opacity = i === idx ? '.4' : '0');
+    // Update ring border color
+    ring.style.borderColor = COLORS[idx].replace(')', ',.15)').replace('#', 'rgba(');
+    ring.style.borderColor = `color-mix(in srgb, ${COLORS[idx]} 15%, transparent)`;
+  };
+
+  buildConnectors();
+  positionNodes();
+  window.addEventListener('resize', () => { buildConnectors(); positionNodes(); activate(current); });
+
+  activate(0);
+  startAutoPlay();
+})();
+</script>
+
+</body>
+</html>

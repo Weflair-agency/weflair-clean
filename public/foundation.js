@@ -1,5 +1,9 @@
 (() => {
   const STORAGE_KEY = 'weflair-theme';
+  const THEME_META_COLORS = {
+    dark: '#151515',
+    light: '#f4f1ea',
+  };
   const NAV_BREAKPOINT = '(max-width: 991px)';
   const NAV_ACTIVE = 'active';
   const NAV_INACTIVE = 'not-active';
@@ -9,6 +13,10 @@
     if (!document.body) return;
     document.body.setAttribute('data-theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute('content', THEME_META_COLORS[theme] || THEME_META_COLORS.dark);
+    }
     document
       .querySelectorAll('[data-theme-toggle]')
       .forEach((button) => {
@@ -17,7 +25,13 @@
           'aria-label',
           theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
         );
+        button.dataset.codexThemeMounted = 'true';
       });
+    document.dispatchEvent(
+      new CustomEvent('weflair:themechange', {
+        detail: { theme },
+      })
+    );
   };
 
   const getStoredTheme = () => {
@@ -40,14 +54,22 @@
     document.body?.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
 
   const mountThemeToggle = () => {
+    if (document.documentElement.dataset.codexThemeDelegated !== 'true') {
+      document.documentElement.dataset.codexThemeDelegated = 'true';
+      document.addEventListener(
+        'click',
+        (event) => {
+          const button = event.target.closest?.('[data-theme-toggle]');
+          if (!button) return;
+          const nextTheme = getNextTheme();
+          applyTheme(nextTheme);
+          persistTheme(nextTheme);
+        },
+        true
+      );
+    }
     document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
-      if (button.dataset.codexThemeMounted === 'true') return;
       button.dataset.codexThemeMounted = 'true';
-      button.addEventListener('click', () => {
-        const nextTheme = getNextTheme();
-        applyTheme(nextTheme);
-        persistTheme(nextTheme);
-      });
     });
   };
 

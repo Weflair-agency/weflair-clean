@@ -2547,7 +2547,7 @@ strong {
 
 .btn__span {
   white-space: nowrap;
-  font-size: 1.25em;
+  font-size: 1.35em;
   font-weight: 700;
 }
 
@@ -2592,7 +2592,7 @@ strong {
 
 .nav {
   left: var(--container-padding);
-  top: 0;
+  top: 1.5em;
   right: var(--container-padding);
   height: var(--nav-bar-height);
   pointer-events: none;
@@ -2607,7 +2607,9 @@ strong {
   pointer-events: auto;
   justify-content: flex-start;
   align-items: center;
-  height: 4.5em;
+  width: 100%;
+  max-width: 55.5em;
+  height: 4.8em;
   padding: .5em;
   display: flex;
   position: relative;
@@ -2695,7 +2697,7 @@ strong {
 
 .nav-bar__link-text-span {
   letter-spacing: -.03em;
-  font-size: 1.25em;
+  font-size: 1.35em;
   font-weight: 700;
 }
 
@@ -2708,6 +2710,10 @@ strong {
 
 .nav-bar__link-chevron-svg {
   position: relative;
+}
+
+.nav-bar__btn {
+  margin-left: auto;
 }
 
 .noise {

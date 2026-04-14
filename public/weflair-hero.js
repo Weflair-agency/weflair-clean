@@ -5,14 +5,6 @@
   const LOGOS = [
     {
       type: "image",
-      label: "CellPoint Digital",
-      src: "./brand-assets/client-logos/cellpoint-digital.png",
-      size: "xl",
-      width: "104%",
-      height: "90%",
-    },
-    {
-      type: "image",
       label: "HQ Software",
       src: "./brand-assets/client-logos/hq-software.png",
       size: "xl",
@@ -21,19 +13,75 @@
     },
     {
       type: "image",
-      label: "EMAX",
-      src: "./brand-assets/client-logos/emax.png",
+      label: "CellPoint Digital",
+      src: "./brand-assets/client-logos/cellpoint-digital.png",
       size: "xl",
-      width: "98%",
-      height: "78%",
+      width: "104%",
+      height: "90%",
+    },
+    {
+      type: "image",
+      label: "Royal Mint",
+      src: "./brand-assets/client-logos/royal-mint.png",
+      size: "xl",
+      width: "158%",
+      height: "114%",
+    },
+    {
+      type: "image",
+      label: "VIP Vaping",
+      src: "./brand-assets/client-logos/vip-vaping.svg",
+      size: "xl",
+      width: "124%",
+      height: "88%",
+    },
+    {
+      type: "image",
+      label: "The Fragrance Shop",
+      src: "./brand-assets/client-logos/fragrance-shop.png",
+      size: "xl",
+      width: "160%",
+      height: "114%",
+    },
+    {
+      type: "image",
+      label: "The Conran Shop",
+      src: "./brand-assets/client-logos/conran-shop.png",
+      size: "xl",
+      width: "158%",
+      height: "108%",
+    },
+    {
+      type: "image",
+      label: "Yours",
+      src: "./brand-assets/client-logos/yours.png",
+      size: "xl",
+      width: "154%",
+      height: "108%",
     },
     {
       type: "image",
       label: "Harrier",
       src: "./brand-assets/client-logos/harrier-white.png",
       size: "xl",
+      width: "132%",
+      height: "82%",
+    },
+    {
+      type: "image",
+      label: "Santander",
+      src: "./brand-assets/client-logos/santander.png",
+      size: "xl",
+      width: "182%",
+      height: "116%",
+    },
+    {
+      type: "image",
+      label: "EMAX",
+      src: "./brand-assets/client-logos/emax.png",
+      size: "xl",
       width: "98%",
-      height: "74%",
+      height: "78%",
     },
     {
       type: "image",
@@ -77,22 +125,6 @@
     },
     {
       type: "image",
-      label: "Santander",
-      src: "./brand-assets/client-logos/santander.png",
-      size: "xl",
-      width: "160%",
-      height: "112%",
-    },
-    {
-      type: "image",
-      label: "Royal Mint",
-      src: "./brand-assets/client-logos/royal-mint.png",
-      size: "xl",
-      width: "158%",
-      height: "114%",
-    },
-    {
-      type: "image",
       label: "Focus DIY",
       src: "./brand-assets/client-logos/focus-diy.png",
       size: "xl",
@@ -125,35 +157,11 @@
     },
     {
       type: "image",
-      label: "The Fragrance Shop",
-      src: "./brand-assets/client-logos/fragrance-shop.png",
-      size: "xl",
-      width: "160%",
-      height: "114%",
-    },
-    {
-      type: "image",
-      label: "The Conran Shop",
-      src: "./brand-assets/client-logos/conran-shop.png",
-      size: "xl",
-      width: "158%",
-      height: "108%",
-    },
-    {
-      type: "image",
       label: "TOFS",
       src: "./brand-assets/client-logos/tofs.png",
       size: "xl",
       width: "150%",
       height: "110%",
-    },
-    {
-      type: "image",
-      label: "Yours",
-      src: "./brand-assets/client-logos/yours.png",
-      size: "xl",
-      width: "154%",
-      height: "108%",
     },
   ];
 
@@ -166,6 +174,7 @@
     blog: "/blog.html",
     results: "/cases.html",
     sitemap: "/sitemap.html",
+    tools: "/tools.html",
     servicesPaid: "/services/paid-media-performance.html",
     servicesOutbound: "/services/outbound-gtm.html",
     servicesRevops: "/services/revops-ai.html",
@@ -179,7 +188,7 @@
     expertiseEcommerce: "/expertise/ecommerce.html",
     resourcesGuides: "/resources/guides.html",
     resourcesPlaybooks: "/resources/playbooks.html",
-    resourcesAiTools: "/resources/ai-tools.html",
+    resourcesAiTools: "/tools.html",
     resourcesCalculators: "/resources/calculators.html",
     legalPrivacy: "/legal/privacy.html",
     legalTerms: "/legal/terms.html",
@@ -208,9 +217,8 @@
         ["Paid Media & Performance", "Campaigns tied to qualified revenue."],
         ["Outbound & GTM Engineering", "Signals, sequencing, and GTM logic."],
         ["Revenue Operations & AI Workflows", "Routing, dashboards, and AI-enabled automation."],
-        ["Strategy & Creative", "Offers, messaging, and creative direction that sharpen demand."],
-        ["Content & SEO", "Content systems and search visibility that compound pipeline."],
-        ["CRO & Performance Design", "Pages and funnels that convert harder."],
+        ["Content & AEO", "Content systems built for search and AI visibility."],
+        ["Performance Design & CRO", "Pages and funnels that convert harder."],
       ],
       expertise: [
         ["B2B SaaS", "Software teams under pressure to prove pipeline."],
@@ -220,12 +228,12 @@
         ["FinTech", "Trust-heavy categories where precision matters."],
       ],
       resources: [
-        ["Case Studies", "Proof that the systems work in the real world."],
+        ["Free GTM Tools", "Free tools to boost your sales and marketing performance."],
+        ["AI Sales Tools", "AI-powered prospecting and pipeline acceleration."],
+        ["AI Marketing Tools", "AI tools that scale campaigns and improve performance."],
+        ["Calculators", "Simple planning tools for growth decisions."],
         ["Guides", "Practical explainers for the systems behind growth."],
         ["Playbooks", "How WeFlair runs paid, outbound, CRM, and conversion together."],
-        ["AI Tools", "Operator-grade tools and workflows."],
-        ["Calculators", "Simple planning tools for growth decisions."],
-        ["Marketing Blog", "Perspective on modern growth work."],
       ],
     },
     services: {
@@ -400,7 +408,7 @@
       titleHtml:
         'Tailored Solutions,<br><span class="weflair-section-accent weflair-section-accent--solid">Tangible Results</span>',
       body:
-        "Dive into real-world examples of how we've helped Ambitious brands reach new heights with data-driven strategies and expert execution.",
+        "Real results from brands that stopped guessing and started building systems that scale.",
       moreHref: ROUTES.results,
       filters: [
         "B2B",
@@ -415,6 +423,7 @@
       cards: [
         {
           company: "CellPoint Digital",
+          color: "#4d8af0",
           logo: {
             type: "text",
             label: "CellPoint Digital",
@@ -439,6 +448,7 @@
         },
         {
           company: "Harrier Trail Running",
+          color: "#f5a623",
           logo: {
             type: "image",
             src: "/brand-assets/client-logos/harrier-white.png",
@@ -464,6 +474,7 @@
         },
         {
           company: "Molahin",
+          color: "#a855f7",
           logo: {
             type: "image",
             src: "/brand-assets/client-logos/molahin.png",
@@ -489,6 +500,7 @@
         },
         {
           company: "RCT",
+          color: "#14b8a6",
           logo: {
             type: "image",
             src: "/brand-assets/client-logos/rct.png",
@@ -514,6 +526,7 @@
         },
         {
           company: "Merna for Shipping",
+          color: "#f06050",
           logo: {
             type: "text",
             label: "Merna",
@@ -538,6 +551,7 @@
         },
         {
           company: "Meta Estate Empire",
+          color: "#6366f1",
           logo: {
             type: "text",
             label: "Meta Estate",
@@ -562,6 +576,7 @@
         },
         {
           company: "Premier Farnell / Avnet",
+          color: "#10b981",
           logo: {
             type: "text",
             label: "Premier Farnell",
@@ -588,6 +603,7 @@
       testimonials: [
         {
           mode: "quote",
+          color: "#4d8af0",
           quote: "WeFlair is not our vendor. They are our marketing team.",
           author: "Steven Osei",
           role: "CMO, CellPoint Digital",
@@ -601,6 +617,7 @@
         },
         {
           mode: "quote",
+          color: "#14b8a6",
           quote:
             "The account finally reflected what was happening in the business, not just what was happening in Google Ads.",
           author: "Hisham Alqaisi",
@@ -616,6 +633,7 @@
         },
         {
           mode: "quote",
+          color: "#a855f7",
           quote:
             "The difference was not just better ads. It was a much sharper system behind the campaigns.",
           author: "John Abbadi",
@@ -631,6 +649,7 @@
         },
         {
           mode: "proof",
+          color: "#f06050",
           quote: "36 positive replies and 4 deals moved into pipeline from a tighter outbound motion.",
           author: "Merna for Shipping",
           role: "Outbound & GTM",
@@ -644,6 +663,7 @@
         },
         {
           mode: "proof",
+          color: "#f5a623",
           quote: "5.53X ROAS in 55 days, plus 7,724 new subscribers after rebuilding performance and tracking.",
           author: "Harrier Trail Running",
           role: "Paid Media & Performance",
@@ -658,6 +678,7 @@
         },
         {
           mode: "proof",
+          color: "#6366f1",
           quote: "44 booked meetings and 3.8M+ impressions from investor outreach and Web3 PR.",
           author: "Meta Estate Empire",
           role: "PR + Outbound",
@@ -674,43 +695,35 @@
     comparison: {
       eyebrow: "Comparison",
       title:
-        'The <span class="weflair-section-accent">fragmented vendor stack</span> vs <span class="weflair-section-accent weflair-section-accent--solid">WeFlair</span>',
+        '<em>Traditional agency setup</em> vs <span class="weflair-section-accent weflair-section-accent--solid">WeFlair</span>',
       body:
-        "The difference is not just who does the work. It is who keeps the work moving.",
-      left: "What You Experience Now",
-      right: "What You Experience With WeFlair",
+        "You do not need more disconnected channel activity. You need strategy, execution, and reporting tied to pipeline and revenue.",
+      left: "Traditional agency setup",
+      right: "WeFlair",
       rows: [
         [
-          "Monthly reports full of impressions and click data you can't action",
-          "Quarterly business reviews showing pipeline influenced, CAC, and revenue attributed",
+          "Channel specialists work in silos.",
+          "Strategy and execution move in one system.",
         ],
         [
-          "Your account manager changes every 6 months. New person, same onboarding deck.",
-          "Your dedicated senior strategist knows your business, your competitors, and your board metrics",
+          "Reporting stops at platform metrics.",
+          "Reporting ties work to pipeline, CAC, and revenue.",
         ],
         [
-          "Agency recommends the same playbook they use for every client",
-          "Custom strategies built from your actual GSC data, competitor gaps, and market position",
+          "Generic playbooks get reused across clients.",
+          "The plan is built from your market, funnel, and data.",
         ],
         [
-          "Agency says 'we use AI' but can't explain how",
-          "Every WeFlair hire must pass an AI proficiency test - AI isn't hype here, it's a hiring requirement",
+          "Changes stall in handoffs and queues.",
+          "Iteration moves fast without vendor ping-pong.",
         ],
         [
-          "Five vendors, five Slack channels, nobody owns the outcome",
-          "One team across paid, outbound, RevOps, content, and CRO - with one point of contact",
+          "AI gets sold as a buzzword.",
+          "AI is built into delivery and operations.",
         ],
         [
-          "You ask what's working and get a traffic report",
-          "You ask what's working and we show you pipeline sourced, deals influenced, and cost per opportunity",
-        ],
-        [
-          "Scaling means adding headcount to the agency and paying for their ramp",
-          "Scaling means deploying automations that multiply output without multiplying cost",
-        ],
-        [
-          "Knowledge disappears when a freelancer or vendor churns",
-          "Every workflow, playbook, and automation lives in your systems - you own it all",
+          "Knowledge stays with the vendor.",
+          "Workflows and assets stay in your stack.",
         ],
       ],
     },
@@ -780,11 +793,10 @@
         heading: "Services",
         links: [
           { label: "Paid Media & Performance", href: ROUTES.servicesPaid },
-          { label: "Outbound & GTM", href: ROUTES.servicesOutbound },
-          { label: "RevOps & AI", href: ROUTES.servicesRevops },
-          { label: "Strategy & Creative", href: ROUTES.servicesStrategy },
-          { label: "Content & SEO", href: ROUTES.servicesContent },
-          { label: "CRO & Performance Design", href: ROUTES.servicesCro },
+          { label: "Outbound & GTM Engineering", href: ROUTES.servicesOutbound },
+          { label: "Revenue Operations & AI Workflows", href: ROUTES.servicesRevops },
+          { label: "Content & AEO", href: ROUTES.servicesContent },
+          { label: "Performance Design & CRO", href: ROUTES.servicesCro },
         ],
       },
       expertise: {
@@ -843,6 +855,7 @@
     blog: ROUTES.blog,
     cases: ROUTES.results,
     sitemap: ROUTES.sitemap,
+    tools: ROUTES.tools,
     "services/paid-media-performance": ROUTES.servicesPaid,
     "services/outbound-gtm": ROUTES.servicesOutbound,
     "services/revops-ai": ROUTES.servicesRevops,
@@ -884,6 +897,9 @@
     "e commerce": ROUTES.expertiseEcommerce,
     "case studies": ROUTES.results,
     calculators: ROUTES.resourcesCalculators,
+    "free gtm tools": ROUTES.tools,
+    "ai sales tools": ROUTES.tools,
+    "ai marketing tools": ROUTES.tools,
     guides: ROUTES.resourcesGuides,
     playbooks: ROUTES.resourcesPlaybooks,
     "ai tools": ROUTES.resourcesAiTools,
@@ -1035,8 +1051,55 @@
     return `<div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><circle cx="10" cy="10" r="3.2" fill="currentColor"></circle><path d="M10 1.9V3.8M10 16.2V18.1M3.8 10H1.9M18.1 10H16.2M4.1 4.1L5.5 5.5M14.5 14.5L15.9 15.9M15.9 4.1L14.5 5.5M5.5 14.5L4.1 15.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme">Switch Theme</button></div><div class="noise is--small"></div></div>`;
   }
 
+  const THEME_STORAGE_KEY = "weflair-theme";
+  const THEME_META_COLORS = {
+    dark: "#151515",
+    light: "#f4f1ea",
+  };
+
+  function getStoredTheme() {
+    try {
+      const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      return storedTheme === "light" || storedTheme === "dark" ? storedTheme : null;
+    } catch (_error) {
+      return null;
+    }
+  }
+
+  function getActiveTheme() {
+    const activeTheme =
+      document.body?.getAttribute("data-theme") ||
+      document.documentElement?.getAttribute("data-theme");
+    return activeTheme === "light" ? "light" : "dark";
+  }
+
+  function applyTheme(theme, { persist = true } = {}) {
+    const nextTheme = theme === "light" ? "light" : "dark";
+    document.documentElement?.setAttribute("data-theme", nextTheme);
+    document.body?.setAttribute("data-theme", nextTheme);
+    const themeMeta = q('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute("content", THEME_META_COLORS[nextTheme]);
+    }
+    if (persist) {
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+      } catch (_error) {
+        // Ignore storage failures in static preview mode.
+      }
+    }
+    window.dispatchEvent(
+      new CustomEvent("weflair:themechange", { detail: { theme: nextTheme } })
+    );
+    syncInjectedThemeButtons(document);
+  }
+
+  function hydrateStoredTheme() {
+    applyTheme(getStoredTheme() || getActiveTheme(), { persist: false });
+  }
+
   function syncInjectedThemeButtons(scope = document) {
-    const isLight = document.body?.getAttribute("data-theme") === "light";
+    const isLight = getActiveTheme() === "light";
     qa("[data-theme-toggle]", scope).forEach((button) => {
       button.setAttribute("aria-pressed", String(isLight));
       button.setAttribute(
@@ -1048,20 +1111,8 @@
 
   function mountInjectedThemeButtons(scope = document) {
     qa("[data-theme-toggle]", scope).forEach((button) => {
-      if (button.dataset.codexThemeMounted === "true") return;
-      button.dataset.codexThemeMounted = "true";
-      button.addEventListener("click", () => {
-        const nextTheme =
-          document.body?.getAttribute("data-theme") === "light" ? "dark" : "light";
-        document.body?.setAttribute("data-theme", nextTheme);
-        document.documentElement?.setAttribute("data-theme", nextTheme);
-        try {
-          localStorage.setItem("weflair-theme", nextTheme);
-        } catch (_error) {
-          // Ignore storage failures in static preview mode.
-        }
-        syncInjectedThemeButtons(document);
-      });
+      if (button.dataset.themeListenerBound === "true") return;
+      button.dataset.themeListenerBound = "true";
     });
     syncInjectedThemeButtons(scope);
   }
@@ -1255,6 +1306,11 @@
     )}</div>${teamPlaceholderMarkup(pod)}</div>`;
   }
 
+  function hexToRgb(hex) {
+    const h = hex.replace("#", "");
+    return [parseInt(h.substring(0, 2), 16), parseInt(h.substring(2, 4), 16), parseInt(h.substring(4, 6), 16)].join(",");
+  }
+
     let _activeResultsFilter = "";
   let _activeResultsIndex = 0;
   const CASES_PER_VIEW = 1;
@@ -1322,41 +1378,26 @@
   }
 
   function caseStudyCardMarkup(card) {
-    const servicesMarkup = card.services
-      .map((service) => `<span class="weflair-case-card__tag">${service}</span>`)
-      .join("");
-    const industriesMarkup = card.industries
-      .map(
-        (industry) =>
-          `<span class="weflair-case-card__tag is-muted">${industry}</span>`
-      )
-      .join("");
+    const rgb = hexToRgb(card.color || "#3eff68");
+    const accent = card.color || "#3eff68";
     const metricsMarkup = card.metrics
       .map(
         ([value, label]) =>
           `<div class="weflair-case-card__metric"><strong>${value}</strong><span>${label}</span></div>`
       )
       .join("");
-    const highlightsMarkup = (card.highlights || [])
-      .slice(0, 4)
-      .map((item) => `<li>${item}</li>`)
-      .join("");
 
-    return `<article class="weflair-case-card"><div class="weflair-case-card__shell"><div class="weflair-case-card__brand"><div class="weflair-case-card__brand-tags"><span class="weflair-case-card__badge">Case Study</span>${industriesMarkup}</div><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(
-      card
-    )}</div><p class="weflair-case-card__sector">${card.company} &middot; ${
-      card.sector
-    }</p><div class="weflair-case-card__metrics">${metricsMarkup}</div></div><div class="weflair-case-card__main"><div class="weflair-case-card__service-row">${servicesMarkup}</div><h3 class="weflair-case-card__headline">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p><ul class="weflair-case-card__highlights">${highlightsMarkup}</ul><div class="weflair-case-card__actions"><a href="${
-      card.href || "cases.html"
-    }" class="weflair-case-card__readmore">Read the full case study <span class="weflair-case-card__readmore-arrow">${diagonalArrowMarkup()}</span></a></div></div></div></article>`;
+    return `<article class="weflair-case-card" style="--card-accent:${accent};--card-accent-rgb:${rgb}"><div class="weflair-case-card__shell"><div class="weflair-case-card__content"><div class="weflair-case-card__top"><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(card)}</div><span class="weflair-case-card__sector">${card.sector}</span></div><h3 class="weflair-case-card__headline">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p><div class="weflair-case-card__metrics">${metricsMarkup}</div><div class="weflair-case-card__actions"><a href="${card.href || "cases.html"}" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div></div><div class="weflair-case-card__visual" aria-hidden="true"><div class="weflair-case-card__mesh"></div></div></div></article>`;
   }
 
   function testimonialCardMarkup(item) {
+    const rgb = hexToRgb(item.color || "#3eff68");
+    const accent = item.color || "#3eff68";
     const statementTag = item.mode === "quote" ? "blockquote" : "p";
     const statementClass = `weflair-results-testimonials__statement${
       item.mode === "quote" ? " is-quote" : ""
     }`;
-    return `<article class="weflair-results-testimonials__card is-${item.mode || "quote"}"><div class="weflair-results-testimonials__card-top"><span class="weflair-results-testimonials__label">${
+    return `<article class="weflair-results-testimonials__card is-${item.mode || "quote"}" style="--card-accent:${accent};--card-accent-rgb:${rgb}"><div class="weflair-results-testimonials__card-top"><span class="weflair-results-testimonials__label">${
       item.label || item.company
     }</span><div class="weflair-results-testimonials__logo">${testimonialLogoMarkup(
       item
@@ -1440,8 +1481,8 @@
       .weflair-logo{display:inline-flex;align-items:center;gap:.58rem;color:#f6f3ee}
       .eyebrow{display:inline-flex;align-items:center;justify-self:start;gap:.45rem;font-size:.78rem;line-height:1.14;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9)}
       .eyebrow.is-centered{justify-self:start}
-      .weflair-logo__mark,.weflair-eyebrow-icon,.weflair-method__icon{width:.85rem;height:.85rem;display:inline-flex;color:#3eff68;filter:drop-shadow(0 0 12px rgba(62,255,104,.18))}
-      .weflair-logo__word{font-size:clamp(1.95rem,1.65vw,2.35rem);line-height:.95;font-weight:700;letter-spacing:-.05em}
+      .weflair-logo__mark,.weflair-eyebrow-icon,.weflair-method__icon{width:.78rem;height:.78rem;display:inline-flex;color:#3eff68;filter:drop-shadow(0 0 12px rgba(62,255,104,.18))}
+      .weflair-logo__word{font-size:clamp(1.8rem,1.52vw,2.15rem);line-height:.95;font-weight:700;letter-spacing:-.05em}
       .weflair-section__head{display:grid;justify-items:start;gap:1.85rem}
       .weflair-section__head.is-centered{text-align:left;justify-items:start}
       .weflair-section__head .h3{margin:0;max-width:14ch;font-size:clamp(2.7rem,4.7vw,4.6rem);line-height:.95;letter-spacing:-.075em;text-wrap:balance}
@@ -1501,7 +1542,7 @@
       .weflair-logo-marquee__item{display:flex;align-items:center;flex:0 0 auto}
       .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(12.35rem,13.4vw,14.8rem);height:clamp(4.9rem,5.45vw,5.5rem);padding:.6rem 1rem;border:1px solid rgba(246,243,238,.14);border-radius:999px;background:rgba(246,243,238,.04);box-shadow:inset 0 1px 0 rgba(246,243,238,.04);backdrop-filter:blur(8px);transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
       .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0 .12rem;white-space:nowrap;--logo-width:94%;--logo-height:82%}
-      .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.94;filter:grayscale(1) brightness(1.72) contrast(1.12);transform:scale(1);transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
+      .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.96;filter:none;transform:scale(1);transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
       .weflair-logo-mark.is-xl{--logo-width:100%;--logo-height:88%}
       .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.22);background:rgba(246,243,238,.04);box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(246,243,238,.04)}
       .weflair-logo-pill:hover img,.weflair-logo-pill:focus-within img{opacity:1;filter:none;transform:scale(1.02)}
@@ -1793,10 +1834,8 @@
     const topLabels = {
       Services: "Services",
       Expertise: "Expertise",
-      Cases: "Results",
       Resources: "Resources",
-      About: "Team",
-      Careers: "FAQ",
+      About: "About",
       "Talk to us": "Talk to us",
     };
 
@@ -1808,7 +1847,6 @@
     const dropdownMap = {
       Services: CONTENT.nav.services,
       Expertise: CONTENT.nav.expertise,
-      Resources: CONTENT.nav.resources,
     };
 
     qa(".nav-bar__link").forEach((link) => {
@@ -1833,9 +1871,7 @@
 
     qa(".nav-bar__link[href]").forEach((link) => {
       const text = link.textContent.trim();
-      if (text === "Results") link.setAttribute("href", "#results");
-      if (text === "Team") link.setAttribute("href", "#team");
-      if (text === "FAQ") link.remove();
+      if (text === "Results") link.setAttribute("href", ROUTES.results);
     });
 
     const talkButton = q(".nav-bar__btn a");
@@ -2205,38 +2241,47 @@
 
   function renderCompareSection(section) {
     section.id = "comparison";
-    section.className = "compare weflair-section weflair-compare-tablar";
-    
-    const goodHeader = "WITH WEFLAIR";
-    const badHeader = "WITHOUT WEFLAIR";
-    
-    const rowsHtml = CONTENT.comparison.rows.map(([badText, goodText]) => {
-      // Good text (index 1) on left, Bad text (index 0) on right
-      return `<div class="weflair-tabular-row">
-        <div class="weflair-tabular-cell is-good">${goodText}</div>
-        <div class="weflair-tabular-cell is-bad">${badText}</div>
-      </div>`;
-    }).join("");
+    section.className = "compare weflair-section weflair-compare-block";
 
-    section.innerHTML = `<div class="container container--sm">
-      <div class="weflair-section__head weflair-compare-head" style="justify-items: center; text-align: center;">
-        ${eyebrow(CONTENT.comparison.eyebrow, true)}
-        <h2 class="h3" style="margin-top:0.4rem; margin-bottom:1.5rem; max-width:100%; white-space:nowrap;">${CONTENT.comparison.title}</h2>
-        <p class="weflair-section__body" style="margin:0 auto; max-width:48rem;">${CONTENT.comparison.body}</p>
-      </div>
-      <div class="weflair-tabular-grid">
-        <div class="weflair-tabular-header">
-          <div class="weflair-tabular-head-cell is-good">${goodHeader}</div>
-          <div class="weflair-tabular-head-cell is-bad">${badHeader}</div>
+    const itemMarkup = (text, tone) => {
+      const isLeft = tone === "left";
+      return `<div data-ease-bg="" data-animation-target="" class="compare__item">
+        <div ${isLeft ? 'data-ease="" ' : ""}class="compare__icon${isLeft ? " is--dark" : ""}">
+          <div class="compare__icon-bar"></div>
+          ${isLeft ? "" : '<div class="compare__icon-bar is--duplicate"></div>'}
         </div>
-        <div class="weflair-tabular-body">
-          ${rowsHtml}
+        <p class="compare__p">${text}</p>
+      </div>`;
+    };
+
+    const leftItems = CONTENT.comparison.rows
+      .map(([leftText]) => itemMarkup(leftText, "left"))
+      .join("");
+
+    const rightItems = CONTENT.comparison.rows
+      .map(([, rightText]) => itemMarkup(rightText, "right"))
+      .join("");
+
+    section.innerHTML = `<div class="container">
+      <div class="compare__content weflair-compare-block__content">
+        <div class="weflair-compare-pixels" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="compare__row-eyebrow">${eyebrow(CONTENT.comparison.eyebrow, true)}</div>
+        <div class="compare__row-title">
+          <h2 class="h3">${CONTENT.comparison.title}</h2>
         </div>
-      </div>
-      <div class="weflair-compare-cta">
-        <a href="#results" class="weflair-btn-glowing-glow" ${calTriggerAttributes('data-cal-source="comparison-cta"')}>
-          <span class="weflair-btn-glowing__text">CHECK IF WE'RE A FIT</span>
-        </a>
+        <div class="compare__row-text">
+          <p>${CONTENT.comparison.body}</p>
+        </div>
+        <div class="compare__row-list weflair-compare-block__list">
+          <div class="compare__list">
+            <h3 class="h5 is--center">${CONTENT.comparison.left}</h3>
+            ${leftItems}
+          </div>
+          <div class="compare__list">
+            <h3 class="h5 is--center">${CONTENT.comparison.right}</h3>
+            ${rightItems}
+          </div>
+        </div>
       </div>
     </div>`;
   }
@@ -2253,6 +2298,7 @@
   }
 
   function renderProcessSection(section) {
+    if (section.querySelector("[data-process-accordion]")) return;
     section.id = "process";
     section.className = "weflair-section weflair-process";
     const d = CONTENT.process;
@@ -2424,6 +2470,7 @@
 
   function applyTransforms() {
     document.title = "WeFlair - Growth Marketing Agency";
+    hydrateStoredTheme();
     ensureCalEmbed();
     injectRuntimeStyles();
     replaceLogo();
@@ -2479,6 +2526,7 @@
 
   function bootStaticHomepage() {
     document.title = "WeFlair - Growth Marketing Agency";
+    hydrateStoredTheme();
     ensureCalEmbed();
     injectRuntimeStyles();
     replaceLogo();
@@ -2580,40 +2628,40 @@
   `;
   document.head.appendChild(style);
 
-  // Injected CSS for TABULAR COMPARE OVERHAUL
+  // Injected CSS for compare section alignment with the Dapper reference.
   const styleComp = document.createElement('style');
   styleComp.textContent = `
-.weflair-compare-tablar { padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(4rem, 8vw, 6rem); }
-.weflair-compare-head { margin-bottom: clamp(3.5rem, 5vw, 4.5rem); text-align: center !important; justify-items: center !important; align-items: center !important; }
-.weflair-compare-head .h3 { max-width: none !important; text-wrap: wrap !important; margin: 0 auto !important; }
-.weflair-compare-head .eyebrow { justify-self: center !important; }
-.weflair-compare-head .weflair-section__body { margin: 0 auto !important; text-align: center !important; }
-.weflair-tabular-grid { width: 100%; max-width: 58rem; margin: 0 auto; }
-.weflair-tabular-header { display: grid; grid-template-columns: 1fr 1fr; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(246, 243, 238, 0.05); gap: 2rem; }
-.weflair-tabular-head-cell { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-.weflair-tabular-head-cell.is-good { color: #3eff68; text-shadow: 0 0 12px rgba(62, 255, 104, 0.4); }
-.weflair-tabular-head-cell.is-bad { color: rgba(246, 243, 238, 0.25); text-align: left; }
-.weflair-tabular-body { display: flex; flex-direction: column; }
-.weflair-tabular-row { display: grid; grid-template-columns: 1fr 1fr; padding: 1.6rem 0; border-bottom: 1px solid rgba(246, 243, 238, 0.06); gap: 2rem; transition: background-color 0.2s ease; }
-.weflair-tabular-row:hover { background-color: rgba(246, 243, 238, 0.015); }
-.weflair-tabular-cell { font-size: clamp(0.9rem, 1.2vw, 1.05rem); line-height: 1.5; font-weight: 500; }
-.weflair-tabular-cell.is-good { color: rgba(246, 243, 238, 0.95); letter-spacing: -0.01em; }
-.weflair-tabular-cell.is-bad { color: rgba(246, 243, 238, 0.4); }
-.weflair-compare-cta { display: flex; justify-content: center; align-items: center; margin-top: clamp(3rem, 5vw, 4.5rem); }
-.weflair-btn-glowing-glow { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 2.8rem; background: rgba(10, 12, 10, 0.8); border: 1px solid rgba(62, 255, 104, 0.35); border-radius: 5px; color: #f6f3ee; text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s ease; overflow: hidden; box-shadow: 0 0 20px rgba(62, 255, 104, 0.05), inset 0 0 10px rgba(62, 255, 104, 0.02); cursor: pointer; }
-.weflair-btn-glowing-glow::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(62, 255, 104, 0.15) 0%, transparent 60%); opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; transform: scale(0.8); z-index: 0; }
-.weflair-btn-glowing-glow:hover { border-color: rgba(62, 255, 104, 0.7); box-shadow: 0 0 30px rgba(62, 255, 104, 0.25), inset 0 0 15px rgba(62, 255, 104, 0.1); color: #3eff68; }
-.weflair-btn-glowing-glow:hover::before { opacity: 1; transform: scale(1); }
-.weflair-btn-glowing__text { position: relative; z-index: 1; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.weflair-compare-block { padding-top: clamp(4rem, 8vw, 6rem); padding-bottom: clamp(4rem, 8vw, 6rem); }
+.weflair-compare-block .container { position: relative; }
+.weflair-compare-block__content { position: relative; }
+.weflair-compare-block .compare__row-eyebrow { position: relative; z-index: 1; }
+.weflair-compare-block .compare__row-title .h3 { max-width: 12ch; margin: 0 auto; text-wrap: balance; font-size: clamp(3rem, 5.8vw, 5.9rem); line-height: .92; letter-spacing: -.08em; }
+.weflair-compare-block .compare__row-title .h3 em { font-weight: 400; }
+.weflair-compare-block .compare__row-text { max-width: 48rem; margin: 0 auto; padding-top: clamp(1.5rem, 2.5vw, 2rem); padding-bottom: clamp(3.25rem, 5vw, 4.75rem); }
+.weflair-compare-block .compare__row-text p { margin: 0 auto; max-width: 40rem; color: #f6f3ee; font-size: clamp(1.04rem, 1.45vw, 1.32rem); font-weight: 700; line-height: 1.45; text-wrap: balance; }
+.weflair-compare-block .compare__row-list { gap: 1rem; align-items: stretch; }
+.weflair-compare-block .compare__list { gap: 1rem; }
+.weflair-compare-block .compare__list > .h5 { margin: 0 0 .35rem; font-size: clamp(2rem, 2.75vw, 2.85rem); line-height: .98; letter-spacing: -.06em; }
+.weflair-compare-block .compare__item { background: rgba(22, 22, 22, .92); border: 1px solid rgba(246, 243, 238, .07); padding-left: 1.15rem; padding-right: 1.45rem; min-height: 6.8rem; box-shadow: inset 0 1px 0 rgba(246, 243, 238, .02); }
+.weflair-compare-block .compare__icon { background: #69df8a; color: #0f120f; box-shadow: 0 0 0 1px rgba(105, 223, 138, .18); }
+.weflair-compare-block .compare__icon.is--dark { background: #f6f3ee; color: #141414; box-shadow: 0 0 0 1px rgba(246, 243, 238, .08); }
+.weflair-compare-block .compare__p { margin: 0; color: #f6f3ee; font-size: clamp(1rem, 1.28vw, 1.22rem); font-weight: 700; line-height: 1.28; letter-spacing: -.03em; }
+.weflair-compare-pixels { position: absolute; top: 0; right: 0; z-index: 0; display: grid; grid-template-columns: repeat(3, 2.95rem); grid-auto-rows: 2.95rem; transform: translate(14%, -10%); opacity: .9; pointer-events: none; }
+.weflair-compare-pixels span { display: block; background: rgba(105, 223, 138, .24); }
+.weflair-compare-pixels span:nth-child(2),
+.weflair-compare-pixels span:nth-child(4),
+.weflair-compare-pixels span:nth-child(6) { background: rgba(105, 223, 138, .68); }
+.weflair-compare-pixels span:nth-child(3) { background: rgba(105, 223, 138, .52); }
+.weflair-compare-pixels span:nth-child(5) { background: rgba(105, 223, 138, .14); }
+@media screen and (max-width: 991px) {
+  .weflair-compare-block .compare__row-title .h3 { max-width: 11ch; font-size: clamp(2.8rem, 8vw, 4.8rem); }
+  .weflair-compare-pixels { transform: translate(8%, -6%) scale(.82); }
+}
 @media screen and (max-width: 767px) {
-  .weflair-compare-head .h3 { white-space: normal !important; text-wrap: pretty !important; font-size: clamp(2rem, 8vw, 2.7rem) !important; }
-  .weflair-tabular-grid { padding: 0 1rem; }
-  .weflair-tabular-header { display: none; }
-  .weflair-tabular-row { grid-template-columns: 1fr; padding: 1.5rem 0; gap: 0.5rem; position: relative; }
-  .weflair-tabular-cell.is-good { margin-bottom: 0.25rem; font-weight: 600; color: #3eff68; }
-  .weflair-tabular-cell.is-bad { font-size: 0.85rem; color: rgba(246, 243, 238, 0.5); }
-  .weflair-tabular-cell.is-good::before { content: "WITH WEFLAIR: "; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(62, 255, 104, 0.6); margin-right: 0.5rem; }
-  .weflair-tabular-cell.is-bad::before { content: "WITHOUT WEFLAIR: "; font-size: 0.7em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(246, 243, 238, 0.3); margin-right: 0.5rem; }
+  .weflair-compare-block .compare__row-title .h3 { max-width: 10ch; font-size: clamp(2.35rem, 10vw, 3.5rem); }
+  .weflair-compare-block .compare__row-text { padding-bottom: 2rem; }
+  .weflair-compare-block .compare__p { font-size: 1.08rem; }
+  .weflair-compare-pixels { display: none; }
 }
   `;
   document.head.appendChild(styleComp);

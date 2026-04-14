@@ -4,96 +4,500 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Outbound & GTM Engineering — WeFlair</title>
-  <meta name="description" content="Signals, sequencing, and GTM logic. Outbound systems built to create qualified meetings and real sales conversations." />
+  <meta name="description" content="We engineer technical outbound systems that replace SDR headcount with data-driven pipelines, automated sequences, and AI-powered prospecting at scale." />
   <meta property="og:title" content="Outbound & GTM Engineering — WeFlair" />
-  <meta property="og:description" content="Signals, sequencing, and GTM logic. Outbound systems built to create qualified meetings and real sales conversations." />
+  <meta property="og:description" content="We engineer technical outbound systems that replace SDR headcount with data-driven pipelines, automated sequences, and AI-powered prospecting at scale." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Outbound & GTM Engineering — WeFlair" />
-  <meta name="twitter:description" content="Signals, sequencing, and GTM logic. Outbound systems built to create qualified meetings and real sales conversations." />
+  <meta name="twitter:description" content="We engineer technical outbound systems that replace SDR headcount with data-driven pipelines, automated sequences, and AI-powered prospecting at scale." />
   <meta name="theme-color" content="#151515" />
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
   <link rel="stylesheet" href="../foundation-slater.css" />
   <link rel="stylesheet" href="../weflair-hero.css" />
+  <link rel="stylesheet" href="../services-shared.css" />
   <script src="../foundation.js" defer></script>
   <script src="../weflair-hero.js" defer></script>
+
+  <style>
+    /* ── PAGE-SPECIFIC: OUTBOUND GTM ─────────────────────── */
+
+    /* Tech Stack Section */
+    .ob-stack-grid {
+      max-width: var(--sv-max-w, 72rem);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+    @media(max-width:991px) { .ob-stack-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media(max-width:600px) { .ob-stack-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .ob-stack-card {
+      background: rgba(246,243,238,0.03);
+      border: 1px solid rgba(246,243,238,0.06);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .ob-stack-card:hover {
+      border-color: rgba(62,255,104,0.2);
+      background: rgba(62,255,104,0.03);
+    }
+    .ob-stack-card__icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
+      background: rgba(246,243,238,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .ob-stack-card__text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+    .ob-stack-card__name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #f6f3ee;
+    }
+    .ob-stack-card__cat {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(246,243,238,0.4);
+    }
+
+    /* Stack section header accent */
+    .ob-stack-header {
+      margin-bottom: 3rem;
+    }
+    .ob-stack-header__sup {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(62,255,104,0.7);
+      margin-bottom: 0.75rem;
+    }
+    .ob-stack-header__title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #f6f3ee;
+      line-height: 1.1;
+    }
+    .ob-stack-header__title em {
+      font-style: normal;
+      color: #3eff68;
+    }
+    .ob-stack-footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: rgba(246,243,238,0.4);
+    }
+
+    /* Nav fix for service pages */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; background: rgba(21,21,21,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(246,243,238,0.06); }
+  </style>
 </head>
-<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body">
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body sv-page">
+<header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/outbound-gtm.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound &amp; GTM</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/revops-ai.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">RevOps &amp; AI Workflows</h3><p class="nav-dropdown-tile__p">Connected CRM, routing, and AI automation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/content-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Content &amp; AEO</h3><p class="nav-dropdown-tile__p">Content built for humans, search, and AI engines.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/cro-performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Pages and funnels that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/strategy-creative.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Strategy &amp; Creative</h3><p class="nav-dropdown-tile__p">Positioning, messaging, and creative direction.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../resources/guides.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Guides</h3><p class="nav-dropdown-tile__p">Deep-dive marketing guides and frameworks.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../resources/playbooks.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Playbooks</h3><p class="nav-dropdown-tile__p">Operator-grade playbooks you can run today.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../blog.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Blog</h3><p class="nav-dropdown-tile__p">Insights on GTM, growth, and revenue systems.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../resources/calculators.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Calculators</h3><p class="nav-dropdown-tile__p">ROI, CAC and pipeline planning tools.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div onclick="window.location.href='../tools.html'" style="cursor:pointer" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Tools</span></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../cases.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Case Studies</h3><p class="nav-dropdown-tile__p">Real results from real engagements.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
 <main class="main">
-<div class="floating-elements-main"><div class="calc-header-padding-height"></div><div data-navigation-toggle="close" class="nav-fade"></div><header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="./index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/outbound-gtm.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound &amp; GTM</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/revops-ai.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">RevOps &amp; AI Workflows</h3><p class="nav-dropdown-tile__p">Connected CRM, routing, and AI automation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/content-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Content &amp; AEO</h3><p class="nav-dropdown-tile__p">Content built for humans, search, and AI engines.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/cro-performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Pages and funnels that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/strategy-creative.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Strategy &amp; Creative</h3><p class="nav-dropdown-tile__p">Positioning, messaging, and creative direction.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../resources/guides.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Guides</h3><p class="nav-dropdown-tile__p">Deep-dive marketing guides and frameworks.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../resources/playbooks.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Playbooks</h3><p class="nav-dropdown-tile__p">Operator-grade playbooks you can run today.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../blog.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Blog</h3><p class="nav-dropdown-tile__p">Insights on GTM, growth, and revenue systems.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../resources/calculators.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Calculators</h3><p class="nav-dropdown-tile__p">ROI, CAC and pipeline planning tools.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div onclick="window.location.href='../tools.html'" style="cursor:pointer" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Tools</span></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../cases.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Case Studies</h3><p class="nav-dropdown-tile__p">Real results from real engagements.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header><div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99935 15.833C10.2035 15.833 10.4005 15.908 10.553 16.0436C10.7055 16.1792 10.803 16.3661 10.8268 16.5688L10.8327 16.6663V17.4997C10.8324 17.7121 10.7511 17.9164 10.6053 18.0708C10.4595 18.2253 10.2602 18.3182 10.0482 18.3307C9.83615 18.3431 9.62737 18.2741 9.46449 18.1378C9.30161 18.0015 9.19694 17.8081 9.17185 17.5972L9.16602 17.4997V16.6663C9.16602 16.4453 9.25381 16.2334 9.41009 16.0771C9.56637 15.9208 9.77834 15.833 9.99935 15.833Z" fill="currentColor"></path><path d="M15.2606 14.0906L15.3389 14.1598L15.9223 14.7431C16.0717 14.8931 16.1585 15.0943 16.165 15.306C16.1714 15.5176 16.0971 15.7237 15.9571 15.8825C15.817 16.0413 15.6218 16.1409 15.411 16.161C15.2003 16.1811 14.9898 16.1202 14.8223 15.9906L14.7439 15.9215L14.1606 15.3381C14.0168 15.1946 13.9304 15.0034 13.9177 14.8006C13.9049 14.5979 13.9667 14.3974 14.0914 14.237C14.2161 14.0765 14.3951 13.9672 14.5948 13.9295C14.7944 13.8918 15.001 13.9284 15.1756 14.0323L15.2606 14.0906Z" fill="currentColor"></path><path d="M5.84086 14.16C5.98434 14.3035 6.07053 14.4944 6.08327 14.6969C6.096 14.8995 6.0344 15.0997 5.91003 15.26L5.84086 15.3383L5.25753 15.9217C5.10756 16.0711 4.90633 16.1579 4.69471 16.1644C4.48308 16.1708 4.27693 16.0965 4.11813 15.9565C3.95932 15.8164 3.85977 15.6212 3.8397 15.4104C3.81962 15.1997 3.88052 14.9892 4.01003 14.8217L4.07919 14.7433L4.66253 14.16C4.8188 14.0038 5.03072 13.916 5.25169 13.916C5.47266 13.916 5.68459 14.0038 5.84086 14.16Z" fill="currentColor"></path><path d="M3.33371 9.16699C3.54611 9.16723 3.75041 9.24856 3.90485 9.39437C4.0593 9.54017 4.15224 9.73945 4.16469 9.95149C4.17714 10.1635 4.10815 10.3723 3.97182 10.5352C3.8355 10.6981 3.64213 10.8027 3.43121 10.8278L3.33371 10.8337H2.50038C2.28798 10.8334 2.08369 10.7521 1.92924 10.6063C1.77479 10.4605 1.68185 10.2612 1.6694 10.0492C1.65695 9.83713 1.72594 9.62834 1.86227 9.46547C1.99859 9.30259 2.19197 9.19791 2.40288 9.17283L2.50038 9.16699H3.33371Z" fill="currentColor"></path><path d="M17.5017 9.16699C17.7141 9.16723 17.9184 9.24856 18.0728 9.39437C18.2273 9.54017 18.3202 9.73945 18.3327 9.95149C18.3451 10.1635 18.2761 10.3723 18.1398 10.5352C18.0035 10.6981 17.8101 10.8027 17.5992 10.8278L17.5017 10.8337H16.6683C16.4559 10.8334 16.2517 10.7521 16.0972 10.6063C15.9428 10.4605 15.8498 10.2612 15.8374 10.0492C15.8249 9.83713 15.8939 9.62834 16.0302 9.46547C16.1666 9.30259 16.3599 9.19791 16.5708 9.17283L16.6683 9.16699H17.5017Z" fill="currentColor"></path><path d="M5.17931 4.00935L5.25765 4.07852L5.84098 4.66185C5.99044 4.81181 6.07721 5.01304 6.08367 5.22467C6.09013 5.43629 6.0158 5.64244 5.87577 5.80125C5.73575 5.96005 5.54052 6.0596 5.32975 6.07968C5.11898 6.09976 4.90847 6.03886 4.74098 5.90935L4.66265 5.84018L4.07931 5.25685C3.93606 5.11325 3.85009 4.92233 3.83754 4.71988C3.82498 4.51742 3.8867 4.31735 4.01112 4.15714C4.13554 3.99694 4.31411 3.88762 4.51337 3.84968C4.71263 3.81173 4.91889 3.84776 5.09348 3.95102L5.17931 4.00935Z" fill="currentColor"></path><path d="M15.9229 4.07895C16.0664 4.22244 16.1526 4.41336 16.1653 4.61588C16.178 4.8184 16.1164 5.01861 15.9921 5.17895L15.9229 5.25728L15.3396 5.84062C15.1896 5.99007 14.9884 6.07684 14.7767 6.08331C14.5651 6.08977 14.359 6.01544 14.2002 5.87541C14.0414 5.73538 13.9418 5.54016 13.9217 5.32939C13.9016 5.11862 13.9625 4.90811 14.0921 4.74062L14.1612 4.66228L14.7446 4.07895C14.9008 3.92272 15.1128 3.83496 15.3337 3.83496C15.5547 3.83496 15.7666 3.92272 15.9229 4.07895Z" fill="currentColor"></path><path d="M9.99935 1.66699C10.2035 1.66702 10.4005 1.74196 10.553 1.87759C10.7055 2.01322 10.803 2.20012 10.8268 2.40283L10.8327 2.50033V3.33366C10.8324 3.54606 10.7511 3.75035 10.6053 3.9048C10.4595 4.05925 10.2602 4.15219 10.0482 4.16464C9.83615 4.17708 9.62737 4.1081 9.46449 3.97177C9.30161 3.83545 9.19694 3.64207 9.17185 3.43116L9.16602 3.33366V2.50033C9.16602 2.27931 9.25381 2.06735 9.41009 1.91107C9.56637 1.75479 9.77834 1.66699 9.99935 1.66699Z" fill="currentColor"></path><path d="M10.0007 5.83301C10.817 5.83296 11.6155 6.07275 12.2968 6.52259C12.978 6.97243 13.5122 7.6125 13.8328 8.36331C14.1534 9.11411 14.2464 9.94256 14.1002 10.7458C13.954 11.549 13.5751 12.2915 13.0105 12.8812C12.4459 13.4709 11.7205 13.8817 10.9244 14.0627C10.1283 14.2437 9.29663 14.1868 8.5326 13.8991C7.76857 13.6114 7.10589 13.1056 6.62687 12.4445C6.14784 11.7834 5.87358 10.9961 5.83815 10.1805L5.83398 9.99967L5.83815 9.81884C5.88475 8.74613 6.34366 7.73282 7.11917 6.99022C7.89468 6.24763 8.92693 5.83307 10.0007 5.83301Z" fill="currentColor"></path></svg></div></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme" data-codex-theme-mounted="true">Switch Theme</button></div><div class="noise is--small"></div></div>
-<div style="padding-top:var(--nav-bar-height,5rem)">
-<div style="padding-top:5rem">
-    <section style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem">
-      <div style="max-width:42rem;text-align:center">
-        <div class="eyebrow" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9);margin-bottom:1.5rem">
-          <span style="width:.85rem;height:.85rem;display:inline-flex;color:#3eff68">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-          </span>
-          <p style="margin:0">Service</p>
-        </div>
-        <h1 style="font-size:clamp(2.4rem,4.5vw,4rem);font-weight:700;letter-spacing:-.06em;line-height:.96;color:#f6f3ee;margin:0 0 1.5rem">Outbound & GTM Engineering</h1>
-        <p style="font-size:1.08rem;line-height:1.5;color:rgba(246,243,238,.68);max-width:34rem;margin:0 auto 2.5rem">Signals, sequencing, and GTM logic. Outbound systems built to create qualified meetings and real sales conversations.</p>
-        <div style="display:inline-flex;align-items:center;gap:.6rem;padding:.75rem 1.25rem;border:1px solid rgba(62,255,104,.18);border-radius:.8rem;background:rgba(62,255,104,.06);color:#3eff68;font-size:.88rem;font-weight:600">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          Coming soon — page under construction
-        </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       1. HERO
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-hero" data-sv-reveal>
+    <div class="sv-hero__inner">
+      <div class="eyebrow" style="margin-bottom:1.5rem; justify-content:center;">
+        <p class="eyebrow__p">Outbound & GTM Engineering</p>
       </div>
-    </section>
+      <h1 class="sv-hero__title">Replace your SDRs with <span class="accent">systemic velocity.</span></h1>
+      <p class="sv-hero__sub">Manual prospecting is dead. We build automated data-waterfalls, hyper-personalized email architectures, and rigorous outbound playbooks that fill AE calendars — without burning headcount.</p>
+      <div class="sv-hero__pills">
+        <span class="sv-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Clay Workflows</span>
+        <span class="sv-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> AI Sequencing</span>
+        <span class="sv-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Intent Signals</span>
+        <span class="sv-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg> Domain Protection</span>
+      </div>
+      <div class="sv-hero__actions">
+        <a href="../contact.html" class="weflair-btn--primary">Book a GTM Audit</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       2. STAT RIBBON
+       ══════════════════════════════════════════════════════ -->
+  <div class="sv-stats" data-sv-reveal="scale">
+    <div class="sv-stat">
+      <p class="sv-stat__num">3.2<span>×</span></p>
+      <p class="sv-stat__label">More Pipeline per Rep</p>
+    </div>
+    <div class="sv-stat">
+      <p class="sv-stat__num">68<span>%</span></p>
+      <p class="sv-stat__label">Lower CAC vs. Manual SDRs</p>
+    </div>
+    <div class="sv-stat">
+      <p class="sv-stat__num">14<span>d</span></p>
+      <p class="sv-stat__label">Avg. Time to First Meeting</p>
+    </div>
   </div>
-</div>
-<footer style="background:#0e100e;border-top:1px solid rgba(246,243,238,.06)">
-  <div style="max-width:72rem;margin:0 auto;padding:3rem 2rem">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,243,238,.06)">
-      <div>
-        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Services</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
-          <li><a href="../services/paid-media-performance.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Paid Media &amp; Performance</a></li>
-          <li><a href="../services/outbound-gtm.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Outbound &amp; GTM Engineering</a></li>
-          <li><a href="/services/revops-ai.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">RevOps &amp; AI Workflows</a></li>
-          <li><a href="/services/strategy-creative.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Creative &amp; Production</a></li>
-          <li><a href="../services/content-seo.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Content &amp; AEO</a></li>
-          <li><a href="../services/cro-performance-design.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Performance Design &amp; CRO</a></li>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       3. MANIFESTO CALLOUT
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section sv-section--alt" data-sv-reveal>
+    <div class="sv-callout sv-callout--red">
+      <h2>Your $80K SDR is copying and pasting from Apollo.</h2>
+      <p>The days of "more headcount = more revenue" are over. B2B outbound has completely changed — if you're paying humans to manually scrape data, guess emails, and blast the same templates, your CAC is fatally flawed. We engineer technical outbound systems that ingest buyer intent data at scale and automatically weave it into hyper-personalized, high-deliverability sequences that actually book meetings.</p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       4. BEFORE/AFTER TRANSFORM
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section" data-sv-reveal>
+    <div class="sv-section__header">
+      <h2 class="sv-section__title">The Sales Paradigm Shift</h2>
+      <p class="sv-section__sub">The sales floor of the future runs on systems, not spreadsheets.</p>
+    </div>
+    <div class="sv-transform" data-sv-stagger>
+      <div class="sv-transform__col sv-transform__col--bad">
+        <h3><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Legacy Outbound</h3>
+        <ul class="sv-transform__list">
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Manual list building from stale databases.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Spray-and-pray templates that burn your domain.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Entire pipeline dependent on entry-level reps.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> No signal intelligence — guessing who's in-market.</li>
         </ul>
       </div>
-      <div>
-        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Expertise</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
-          <li><a href="/expertise/b2b-saas.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B SaaS</a></li>
-          <li><a href="/expertise/b2b-services.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Services</a></li>
-          <li><a href="/expertise/b2b-hardware.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">B2B Hardware</a></li>
-          <li><a href="/expertise/fintech.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Fintech</a></li>
-          <li><a href="/expertise/ecommerce.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">E-commerce</a></li>
-        </ul>
-      </div>
-      <div>
-        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Resources</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
-          <li><a href="/resources/calculators.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Calculators</a></li>
-          <li><a href="/resources/guides.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Guides</a></li>
-          <li><a href="/resources/playbooks.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Playbooks</a></li>
-          <li><a href="../tools.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">AI Tools</a></li>
-          <li><a href="/blog.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Marketing Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Company</p>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
-          <li><a href="/about.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">About Us</a></li>
-          <li><a href="/careers.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Careers</a></li>
-          <li><a href="/contact.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Contact</a></li>
+      <div class="sv-transform__col sv-transform__col--good">
+        <h3><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> WeFlair GTM Engine</h3>
+        <ul class="sv-transform__list">
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> IP-level intent data + waterfall enrichment.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> AI-driven 1-to-1 personalized cadences at scale.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Automated multi-thread architectures across orgs.</li>
+          <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Real-time buying signals piped into your CRM.</li>
         </ul>
       </div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem">
-      <p style="color:rgba(246,243,238,.36);font-size:.78rem;margin:0">© 2026 WeFlair LLC</p>
-      <div style="display:flex;gap:1.25rem;align-items:center">
-        <a href="/legal/privacy.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Privacy Policy</a>
-        <a href="/legal/terms.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Terms and Conditions</a>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       5. GTM PROCESS GRID (4 Cards)
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section sv-section--alt" data-sv-reveal>
+    <div class="sv-section__header">
+      <h2 class="sv-section__title">Our GTM Engineering Process</h2>
+      <p class="sv-section__sub">We're systems thinkers. Every engagement starts with mapping, then moves to engineering, leverage, and rapid iteration.</p>
+    </div>
+    <div class="sv-card-grid sv-card-grid--2col" data-sv-stagger>
+      <div class="sv-card">
+        <div class="sv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        </div>
+        <h3 class="sv-card__title">Map the Entire Pipeline</h3>
+        <p class="sv-card__desc">We begin with a thorough process mapping exercise — current state analysis, ideal state design, and a clear roadmap to close the gap. No assumptions. Just data.</p>
+      </div>
+      <div class="sv-card">
+        <div class="sv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="sv-card__title">Automate & AI-Enable</h3>
+        <p class="sv-card__desc">Still writing emails from scratch? Still manually researching before every cold call? We leverage AI and build automated processes to streamline your entire GTM workflow.</p>
+      </div>
+      <div class="sv-card">
+        <div class="sv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <h3 class="sv-card__title">Find Leverage Points</h3>
+        <p class="sv-card__desc">B2B GTM motions at established orgs are complex, cumbersome systems. We identify the leverage points that remove bottlenecks and drive large, lasting improvements.</p>
+      </div>
+      <div class="sv-card">
+        <div class="sv-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <h3 class="sv-card__title">Tight Feedback Loops</h3>
+        <p class="sv-card__desc">Feedback is the lifeblood of a GTM motion. We leverage tight feedback loops that lead to rapid prototyping, constant evolution, and actionable outputs in days — not quarters.</p>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       6. STRATEGIC EXECUTION (Numbered Steps)
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section sv-section--deep" data-sv-reveal>
+    <div class="sv-section__header">
+      <h2 class="sv-section__title">Strategic GTM <em>execution</em></h2>
+      <p class="sv-section__sub">Built from the inside out by operators who've done it at scale.</p>
+    </div>
+    <div class="sv-steps" data-sv-stagger>
+      <div class="sv-step">
+        <span class="sv-step__num">01</span>
+        <div class="sv-step__body">
+          <h3>CRM Architecture & Data Hygiene</h3>
+          <p>Turn messy data into revenue clarity. We architect Salesforce and HubSpot environments that your team actually loves using — deduplication, custom reporting, and clean pipelines that make attribution real.</p>
+        </div>
+      </div>
+      <div class="sv-step">
+        <span class="sv-step__num">02</span>
+        <div class="sv-step__body">
+          <h3>AI-Powered Scoring & Intent Signals</h3>
+          <p>Leverage AI to surface buying intent, score leads in real time, and deliver actionable signals that help your team focus on the deals that matter most — funding rounds, champion moves, hiring spikes, and intent surges.</p>
+        </div>
+      </div>
+      <div class="sv-step">
+        <span class="sv-step__num">03</span>
+        <div class="sv-step__body">
+          <h3>Inbound & Outbound Automation</h3>
+          <p>Improve your lead response time and scale outbound with efficient automation tailored to your business. Automated prospecting sequences, multi-channel outreach at scale, and inbound routing that converts within minutes — not days.</p>
+        </div>
+      </div>
+      <div class="sv-step">
+        <span class="sv-step__num">04</span>
+        <div class="sv-step__body">
+          <h3>Advanced Clay & Enrichment Pipelines</h3>
+          <p>As one of Clay's earliest power users, we build sophisticated enrichment workflows, automated prospecting sequences, and real-time data pipelines that power your entire GTM engine from signal to booked meeting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       7. TECH STACK GRID
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section sv-section--alt" data-sv-reveal>
+    <div class="ob-stack-header">
+      <p class="ob-stack-header__sup">Our Stack</p>
+      <h2 class="ob-stack-header__title">The tools we know <em>inside and out</em></h2>
+    </div>
+    <div class="ob-stack-grid" data-sv-stagger>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🧱</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Clay</span><span class="ob-stack-card__cat">Orchestration</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🟠</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">HubSpot</span><span class="ob-stack-card__cat">CRM</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">☁️</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Salesforce</span><span class="ob-stack-card__cat">CRM</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🅰️</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Apollo</span><span class="ob-stack-card__cat">Prospecting</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">📧</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Smartlead</span><span class="ob-stack-card__cat">Outbound</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">⚡</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Instantly</span><span class="ob-stack-card__cat">Outbound</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🎯</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Outreach</span><span class="ob-stack-card__cat">Engagement</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🔔</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Gong</span><span class="ob-stack-card__cat">Intelligence</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🔀</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">LeanData</span><span class="ob-stack-card__cat">Routing</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🌶️</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Chili Piper</span><span class="ob-stack-card__cat">Scheduling</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">📞</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Salesloft</span><span class="ob-stack-card__cat">Engagement</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🤝</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">HeyReach</span><span class="ob-stack-card__cat">LinkedIn</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">💬</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Intercom</span><span class="ob-stack-card__cat">Support</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">🧹</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Koalify</span><span class="ob-stack-card__cat">Data Hygiene</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">📍</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Default</span><span class="ob-stack-card__cat">Routing</span></div>
+      </div>
+      <div class="ob-stack-card">
+        <div class="ob-stack-card__icon">📱</div>
+        <div class="ob-stack-card__text"><span class="ob-stack-card__name">Nooks</span><span class="ob-stack-card__cat">Dialer</span></div>
+      </div>
+    </div>
+    <p class="ob-stack-footer">…and many others</p>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       8. ENGAGEMENT MODES
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-section" data-sv-reveal>
+    <div class="sv-section__header">
+      <h2 class="sv-section__title">Two ways to engage</h2>
+      <p class="sv-section__sub">Whether you need a full GTM overhaul or surgical outbound execution, we've got a model for you.</p>
+    </div>
+    <div class="sv-modes" data-sv-stagger>
+      <div class="sv-mode sv-mode--highlight">
+        <span class="sv-mode__tag">Most Popular</span>
+        <h3 class="sv-mode__name">GTM Build</h3>
+        <p class="sv-mode__desc">Full-stack GTM engineering — CRM architecture, intent signal infrastructure, Clay workflows, outbound sequences, and ongoing optimization. We build the entire engine.</p>
+        <ul class="sv-checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Full outbound infrastructure build</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> CRM + enrichment pipeline setup</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> AI-powered sequence architecture</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Bi-weekly strategy & iteration calls</li>
+        </ul>
+        <div style="margin-top:auto">
+          <a href="../contact.html" class="weflair-btn--primary">Book a Call</a>
+        </div>
+      </div>
+      <div class="sv-mode">
+        <h3 class="sv-mode__name">Outbound Sprint</h3>
+        <p class="sv-mode__desc">Focused 90-day engagement to stand up a specific outbound channel or fix a broken sequence. Fast, surgical, outcome-defined.</p>
+        <ul class="sv-checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Single-channel outbound buildout</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 90-day defined engagement</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Playbook + SOP handoff</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Weekly progress syncs</li>
+        </ul>
+        <div style="margin-top:auto">
+          <a href="../contact.html" class="weflair-btn--ghost" style="border-color:rgba(246,243,238,0.2)">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       9. CTA BAND
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-cta-band" data-sv-reveal>
+    <h2>Ready to engineer your outbound?</h2>
+    <p>Book a 30-minute GTM audit. We'll map your current pipeline and show you exactly where the leverage is.</p>
+    <a href="../contact.html" class="weflair-btn--primary">Book Your GTM Audit</a>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       10. SERVICE CROSS-LINKS
+       ══════════════════════════════════════════════════════ -->
+  <section class="sv-subnav" data-sv-reveal>
+    <div class="sv-subnav__inner">
+      <p class="sv-subnav__label">Explore Core Capabilities</p>
+      <div class="sv-subnav__grid">
+        <a href="../services/paid-media-performance.html" class="sv-subnav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Paid Media & Performance
+        </a>
+        <a href="../services/revops-ai.html" class="sv-subnav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          RevOps & AI Workflows
+        </a>
+        <a href="../services/content-seo.html" class="sv-subnav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Content & AEO
+        </a>
+        <a href="../services/cro-performance-design.html" class="sv-subnav__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Performance Design & CRO
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+  <footer style="background:#0e100e;border-top:1px solid rgba(246,243,238,.06)">
+    <div style="max-width:72rem;margin:0 auto;padding:3rem 2rem">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(246,243,238,.06)">
+        <div>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Services</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+            <li><a href="../services/paid-media-performance.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Paid Media &amp; Performance</a></li>
+            <li><a href="../services/outbound-gtm.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Outbound &amp; GTM Engineering</a></li>
+            <li><a href="../services/revops-ai.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">RevOps &amp; AI Workflows</a></li>
+            <li><a href="../services/content-seo.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Content &amp; AEO</a></li>
+            <li><a href="../services/cro-performance-design.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Performance Design &amp; CRO</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Resources</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+            <li><a href="../resources/guides.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Guides</a></li>
+            <li><a href="../resources/playbooks.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Playbooks</a></li>
+            <li><a href="../resources/calculators.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Calculators</a></li>
+            <li><a href="../blog.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Blog</a></li>
+            <li><a href="../tools.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">AI Tools</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,243,238,.38);margin:0 0 1rem">Company</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem">
+            <li><a href="../about.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">About Us</a></li>
+            <li><a href="../cases.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Case Studies</a></li>
+            <li><a href="../careers.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Careers</a></li>
+            <li><a href="../contact.html" style="color:rgba(246,243,238,.58);text-decoration:none;font-size:.88rem">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:1.5rem">
+        <p style="color:rgba(246,243,238,.36);font-size:.78rem;margin:0">&copy; 2026 WeFlair LLC</p>
+        <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap">
+          <a href="../legal/privacy.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Privacy Policy</a>
+          <a href="../legal/terms.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Terms and Conditions</a>
+          <a href="../sitemap.html" style="color:rgba(246,243,238,.36);text-decoration:none;font-size:.78rem">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </main>
+
+<!-- Scroll reveal observer -->
+<script>
+(function(){
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('sv-revealed'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-sv-reveal],[data-sv-stagger]').forEach(function(el){ obs.observe(el); });
+})();
+</script>
 </body>
 </html>
