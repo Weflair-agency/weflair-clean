@@ -32,7 +32,7 @@
   <rect x="60" y="84" width="156" height="28" rx="8" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
   <rect x="72" y="93" width="10" height="10" rx="2.5" fill="#22b84a" fill-opacity=".1" stroke="#22b84a" stroke-opacity=".35" stroke-width=".8"/>
   <path d="M75 98l2 2 3-3" stroke="#22b84a" stroke-opacity=".7" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="90" y="102" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600" fill="#2a2d32" fill-opacity=".78">Account access</text>
+  <text x="90" y="102" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600" fill="#2a2d32" fill-opacity=".78">Accounts access</text>
 
   <!-- Row 3: Audit deck -->
   <rect x="60" y="134" width="156" height="28" rx="8" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
