@@ -2221,6 +2221,964 @@
 .weflair-handoff__media{aspect-ratio:1/1}
 }
   </style>
+    <style id="weflair-new-sections-css">
+      /* ═══ WHY WEFLAIR + CREDENTIALS ═══ */
+      .weflair-why-us {
+        padding: clamp(6rem, 8vw, 7.8rem) 0;
+        background: linear-gradient(180deg, #fbf7ef 0%, #fffdfa 100%);
+        color: #16324a
+      }
+
+      .weflair-why-us .container { max-width: 90rem }
+
+      .weflair-why-us .weflair-section__head {
+        max-width: 60rem;
+        margin: 0 auto;
+        text-align: center
+      }
+
+      .weflair-why-us .eyebrow__p,
+      .weflair-why-us .h3,
+      .weflair-why-us .weflair-section__body { color: #16324a }
+
+      .weflair-why-us .weflair-section__body {
+        max-width: 42rem;
+        margin: 1rem auto 0;
+        color: rgba(22, 50, 74, .74)
+      }
+
+      .weflair-why-us__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.3rem;
+        max-width: 70rem;
+        margin: clamp(2.35rem, 3.9vw, 3.1rem) auto 0
+      }
+
+      .weflair-why-us__card {
+        --why-accent: #b692ff;
+        min-height: 15rem;
+        padding: 1.75rem 1.7rem;
+        border: 1px solid rgba(24, 50, 74, .1);
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, .92);
+        box-shadow: 0 16px 34px rgba(17, 34, 51, .07);
+        display: flex;
+        flex-direction: column;
+        gap: .95rem;
+        transition: transform .2s ease, box-shadow .2s ease
+      }
+
+      .weflair-why-us__card:nth-child(2),
+      .weflair-why-us__card:nth-child(5) { --why-accent: #87b9ff }
+
+      .weflair-why-us__card:nth-child(3),
+      .weflair-why-us__card:nth-child(6) { --why-accent: #efb06d }
+
+      .weflair-why-us__card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 42px rgba(17, 34, 51, .1)
+      }
+
+      .weflair-why-us__icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .95rem;
+        background: color-mix(in srgb, var(--why-accent) 18%, white);
+        color: var(--why-accent);
+        flex-shrink: 0
+      }
+
+      .weflair-why-us__icon svg { width: 1.5rem; height: 1.5rem }
+
+      .weflair-why-us__card h3 {
+        margin: 0;
+        font-size: clamp(1.28rem, 1.6vw, 1.55rem);
+        line-height: 1.08;
+        letter-spacing: -.04em;
+        font-weight: 800;
+        color: #16324a
+      }
+
+      .weflair-why-us__card p {
+        margin: 0;
+        font-size: .98rem;
+        line-height: 1.56;
+        color: rgba(22, 50, 74, .78);
+        text-wrap: pretty
+      }
+
+      .weflair-why-us__cred {
+        max-width: 70rem;
+        margin: clamp(3.8rem, 5vw, 5rem) auto 0;
+        text-align: center
+      }
+
+      .weflair-why-us__cred .weflair-credentials__stats {
+        margin-top: 2rem;
+      }
+
+      .weflair-why-us__cred .weflair-credentials__slider {
+        margin-top: 2rem;
+      }
+
+      .weflair-why-us__cred .weflair-credentials__slider-track {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .weflair-why-us__cred .weflair-credentials__dots {
+        margin-top: 1.25rem;
+      }
+
+      .weflair-why-us__cred-title {
+        margin: 0 auto;
+        max-width: 52rem;
+        font-size: clamp(2rem, 3.1vw, 3.05rem);
+        line-height: 1.08;
+        letter-spacing: -.05em;
+        font-weight: 800;
+        color: #16324a
+      }
+
+      @media (max-width: 991px) {
+        .weflair-why-us__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+        .weflair-why-us__cred .weflair-credentials__slider-track { grid-template-columns: repeat(3, minmax(0, 1fr)) }
+      }
+
+      @media (max-width: 560px) {
+        .weflair-why-us__grid { grid-template-columns: 1fr }
+        .weflair-why-us__card { min-height: auto; padding: 1.55rem 1.4rem }
+        .weflair-why-us__cred-title { font-size: clamp(1.75rem, 7vw, 2.35rem) }
+        .weflair-why-us__cred .weflair-credentials__slider-track { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+      }
+
+      /* ═══ SECTORS ═══ */
+      .weflair-sectors {
+        padding: clamp(6rem, 8vw, 7.75rem) 0;
+        background: linear-gradient(180deg, #fbf7ef 0%, #fffdfa 100%);
+        color: #16324a
+      }
+
+      .weflair-sectors .container { max-width: 90rem }
+
+      .weflair-sectors .weflair-section__head {
+        max-width: 70rem;
+        margin: 0 auto
+      }
+
+      .weflair-sectors .eyebrow__p,
+      .weflair-sectors .weflair-section__body,
+      .weflair-sectors .h3 { color: #16324a }
+
+      .weflair-sectors .weflair-section__body {
+        max-width: 40rem;
+        color: rgba(22, 50, 74, .74)
+      }
+
+      .weflair-sectors__tabs {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.45rem;
+        max-width: 70rem;
+        margin: clamp(2.2rem, 4vw, 2.8rem) auto 0
+      }
+
+      .weflair-sectors__tab {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: .95rem;
+        width: 100%;
+        padding: .15rem 0 1rem;
+        border: 0;
+        border-bottom: 2px solid rgba(39, 67, 93, .16);
+        background: transparent;
+        color: rgba(22, 50, 74, .74);
+        font-family: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition: color .2s ease, border-color .2s ease
+      }
+
+      .weflair-sectors__tab::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: transparent;
+        transition: background .2s ease
+      }
+
+      .weflair-sectors__tab:hover,
+      .weflair-sectors__tab.is-active {
+        color: var(--sector-color)
+      }
+
+      .weflair-sectors__tab.is-active::after { background: var(--sector-color) }
+
+      .weflair-sectors__tab-icon {
+        width: 2.95rem;
+        height: 2.95rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--sector-color)
+      }
+
+      .weflair-sectors__tab-icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor
+      }
+
+      .weflair-sectors__tab-label {
+        font-size: clamp(1rem, 1.25vw, 1.45rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -.02em
+      }
+
+      .weflair-sectors__panel {
+        display: none;
+        max-width: 70rem;
+        margin: 2.35rem auto 0
+      }
+
+      .weflair-sectors__panel.is-active { display: block }
+
+      .weflair-sectors__panel-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(19rem, .95fr);
+        gap: 1.45rem 1.55rem;
+        align-items: start
+      }
+
+      .weflair-sectors__hero {
+        position: relative;
+        min-height: 12.2rem;
+        border-radius: 1.4rem;
+        overflow: hidden;
+        border: 1px solid rgba(24, 50, 74, .08);
+        background-image:
+          linear-gradient(135deg, rgba(var(--sector-tint), .22) 0%, rgba(var(--sector-tint), .06) 60%, rgba(255, 255, 255, .08) 100%),
+          url('/brand-assets/office.png');
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 18px 44px rgba(17, 34, 51, .09)
+      }
+
+      .weflair-sectors__hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, .05) 0%, rgba(255, 255, 255, 0) 40%),
+          linear-gradient(135deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 62%)
+      }
+
+      .weflair-sectors__hero-pill {
+        position: absolute;
+        left: 1.15rem;
+        bottom: 1.15rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
+        padding: .62rem .9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .9);
+        color: #16324a;
+        font-size: .82rem;
+        font-weight: 700;
+        box-shadow: 0 10px 25px rgba(17, 34, 51, .12)
+      }
+
+      .weflair-sectors__hero-pill::before {
+        content: '';
+        width: .58rem;
+        height: .58rem;
+        border-radius: 999px;
+        background: var(--sector-color)
+      }
+
+      .weflair-sectors__logos {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem
+      }
+
+      .weflair-sectors__logo-card {
+        min-height: 9.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, .88);
+        border: 1px solid rgba(24, 50, 74, .1);
+        box-shadow: 0 14px 32px rgba(17, 34, 51, .07)
+      }
+
+      .weflair-sectors__logo-card img {
+        max-width: 100%;
+        max-height: 3.4rem;
+        object-fit: contain
+      }
+
+      .weflair-sectors__content { padding: .2rem .15rem 0 }
+
+      .weflair-sectors__content h3 {
+        margin: 0 0 .95rem;
+        color: #16324a;
+        font-size: clamp(1.9rem, 2.5vw, 2.55rem);
+        line-height: 1.08;
+        letter-spacing: -.04em;
+        font-weight: 800
+      }
+
+      .weflair-sectors__content p {
+        margin: 0 0 1rem;
+        max-width: 36rem;
+        color: rgba(22, 50, 74, .82);
+        font-size: 1.02rem;
+        line-height: 1.58
+      }
+
+      .weflair-sectors__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 10.8rem;
+        margin-top: .7rem;
+        padding: .95rem 1.55rem;
+        border-radius: .95rem;
+        background: var(--sector-color);
+        border: 1px solid transparent;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 12px 28px rgba(var(--sector-tint), .2);
+        transition: transform .2s ease, box-shadow .2s ease
+      }
+
+      .weflair-sectors__cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 34px rgba(var(--sector-tint), .26)
+      }
+
+      .weflair-sectors__optimize {
+        padding: 1.6rem 1.45rem;
+        border-radius: 1.35rem;
+        background: var(--sector-soft);
+        border: 1px solid rgba(24, 50, 74, .08);
+        box-shadow: 0 14px 30px rgba(17, 34, 51, .06)
+      }
+
+      .weflair-sectors__optimize h4 {
+        margin: 0 0 1.3rem;
+        color: #16324a;
+        font-size: clamp(1.2rem, 1.75vw, 1.8rem);
+        line-height: 1.08;
+        letter-spacing: -.03em;
+        font-weight: 800;
+        text-align: center
+      }
+
+      .weflair-sectors__optimize ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: .9rem;
+        justify-items: center
+      }
+
+      .weflair-sectors__optimize li {
+        display: inline-flex;
+        align-items: center;
+        gap: .7rem;
+        padding: .74rem 1.05rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .92);
+        color: rgba(22, 50, 74, .88);
+        font-size: .98rem;
+        font-weight: 600;
+        box-shadow: 0 10px 22px rgba(17, 34, 51, .06)
+      }
+
+      .weflair-sectors__optimize li::before {
+        content: '';
+        width: 1.05rem;
+        height: 1.05rem;
+        flex-shrink: 0;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at center, #fff 0 28%, transparent 30%),
+          var(--sector-color)
+      }
+
+      @media (max-width: 991px) {
+        .weflair-sectors__tabs { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+        .weflair-sectors__panel-grid { grid-template-columns: 1fr }
+        .weflair-sectors__logos { order: 2 }
+        .weflair-sectors__content { order: 3 }
+        .weflair-sectors__optimize { order: 4 }
+      }
+
+      @media (max-width: 767px) {
+        .weflair-sectors__tabs { gap: 1rem .85rem }
+        .weflair-sectors__tab { padding-bottom: .8rem }
+        .weflair-sectors__tab-icon { width: 2.45rem; height: 2.45rem }
+        .weflair-sectors__logo-card { min-height: 7.2rem }
+        .weflair-sectors__hero { min-height: 10rem }
+      }
+
+      @media (max-width: 560px) {
+        .weflair-sectors__tabs { grid-template-columns: 1fr }
+        .weflair-sectors__logos { grid-template-columns: 1fr }
+        .weflair-sectors__optimize li {
+          width: 100%;
+          justify-content: center;
+          text-align: center
+        }
+      }
+
+      /* ═══ ENGAGEMENT MODEL ═══ */
+      .weflair-engagement {
+        padding: clamp(6rem, 8vw, 7.75rem) 0;
+        background: linear-gradient(180deg, #fbf7ef 0%, #fffdfa 100%);
+        color: #16324a
+      }
+
+      .weflair-engagement .container { max-width: 90rem }
+
+      .weflair-engagement .weflair-section__head {
+        max-width: 70rem;
+        margin: 0 auto;
+        text-align: left
+      }
+
+      .weflair-engagement .h3,
+      .weflair-engagement .weflair-section__body { color: #16324a }
+
+      .weflair-engagement .weflair-section__body {
+        max-width: 52rem;
+        margin-top: 1.2rem;
+        color: rgba(22, 50, 74, .78)
+      }
+
+      .weflair-engagement__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.45rem;
+        max-width: 70rem;
+        margin: clamp(2.5rem, 4vw, 3.25rem) auto 0
+      }
+
+      .weflair-engagement__card {
+        --engagement-accent: #18ace9;
+        min-height: 20rem;
+        padding: 2rem 2rem 1.9rem;
+        border: 1px solid rgba(24, 50, 74, .1);
+        border-left: 2px solid var(--engagement-accent);
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, .92);
+        box-shadow: 0 16px 36px rgba(17, 34, 51, .07);
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease
+      }
+
+      .weflair-engagement__card:nth-child(5) { --engagement-accent: #c68b39 }
+
+      .weflair-engagement__card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 42px rgba(17, 34, 51, .1)
+      }
+
+      .weflair-engagement__icon {
+        width: 4.1rem;
+        height: 4.1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--engagement-accent);
+        flex-shrink: 0
+      }
+
+      .weflair-engagement__icon svg {
+        width: 100%;
+        height: 100%;
+        stroke: currentColor
+      }
+
+      .weflair-engagement__card h3 {
+        margin: 0;
+        max-width: 13rem;
+        font-size: clamp(1.8rem, 2vw, 2.2rem);
+        line-height: 1.08;
+        letter-spacing: -.045em;
+        font-weight: 800;
+        color: #16324a
+      }
+
+      .weflair-engagement__card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: .95rem
+      }
+
+      .weflair-engagement__card li {
+        display: flex;
+        align-items: flex-start;
+        gap: .8rem;
+        font-size: 1rem;
+        line-height: 1.46;
+        color: rgba(22, 50, 74, .84)
+      }
+
+      .weflair-engagement__card li::before {
+        content: '';
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-top: .18rem;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: var(--engagement-accent);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8l2.4 2.4L12 4.8' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: .72rem
+      }
+
+      @media (max-width: 991px) {
+        .weflair-engagement__grid { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+      }
+
+      @media (max-width: 560px) {
+        .weflair-engagement__grid { grid-template-columns: 1fr }
+        .weflair-engagement__card { min-height: auto; padding: 1.7rem 1.45rem }
+      }
+
+      /* ═══ CREDENTIALS ═══ */
+      .weflair-credentials { padding: clamp(5.8rem, 8vw, 7.5rem) 0 }
+
+      .weflair-credentials__stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .7rem;
+        margin-top: clamp(2.35rem, 3.9vw, 3.2rem)
+      }
+
+      .weflair-credentials__stat {
+        padding: 1.5rem 1.25rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: 1.2rem;
+        background: rgba(23, 24, 23, .96);
+        text-align: center
+      }
+
+      .weflair-credentials__stat-num {
+        display: block;
+        font-size: clamp(2rem, 3.6vw, 2.8rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -.04em;
+        color: #3eff68;
+        filter: drop-shadow(0 0 16px rgba(62, 255, 104, .18))
+      }
+
+      .weflair-credentials__stat-label {
+        display: block;
+        margin-top: .4rem;
+        font-size: .86rem;
+        font-weight: 600;
+        line-height: 1.2;
+        color: rgba(246, 243, 238, .6)
+      }
+
+      .weflair-credentials__badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .6rem;
+        margin-top: 1.8rem
+      }
+
+      .weflair-credentials__badge {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        padding: .72rem 1.2rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: .95rem;
+        background: rgba(17, 17, 17, .86);
+        font-size: .84rem;
+        font-weight: 700;
+        color: rgba(246, 243, 238, .82);
+        transition: border-color .22s, transform .22s
+      }
+
+      .weflair-credentials__badge:hover {
+        border-color: rgba(62, 255, 104, .22);
+        transform: translateY(-2px)
+      }
+
+      .weflair-credentials__badge-icon {
+        width: 1.4rem;
+        height: 1.4rem;
+        display: grid;
+        place-items: center;
+        color: #3eff68;
+        flex-shrink: 0
+      }
+
+      .weflair-credentials__badge-icon svg { width: 1.15rem; height: 1.15rem }
+
+      @media (max-width: 700px) {
+        .weflair-credentials__stats { grid-template-columns: repeat(2, 1fr) }
+      }
+      @media (max-width: 400px) {
+        .weflair-credentials__stats { grid-template-columns: 1fr }
+      }
+
+      /* ═══ CREDENTIALS SLIDER + BADGE TILES ═══ */
+      .weflair-credentials__slider {
+        margin-top: 2.2rem;
+        overflow: hidden
+      }
+
+      .weflair-credentials__slider-track {
+        display: flex;
+        gap: .6rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: .25rem 0 1rem
+      }
+
+      .weflair-credentials__badge-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .35rem;
+        width: 7.8rem;
+        min-height: 6.5rem;
+        padding: 1rem .75rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: 1rem;
+        background: rgba(17, 17, 17, .86);
+        text-align: center;
+        transition: border-color .22s, transform .22s
+      }
+
+      .weflair-credentials__badge-tile:hover {
+        border-color: rgba(62, 255, 104, .22);
+        transform: translateY(-2px)
+      }
+
+      .weflair-credentials__badge-logo {
+        width: 2.2rem;
+        height: 2.2rem;
+        display: grid;
+        place-items: center;
+        color: #3eff68;
+        filter: drop-shadow(0 0 8px rgba(62, 255, 104, .15))
+      }
+
+      .weflair-credentials__badge-logo svg { width: 1.5rem; height: 1.5rem }
+
+      .weflair-credentials__badge-name {
+        font-size: .76rem;
+        font-weight: 700;
+        color: rgba(246, 243, 238, .88);
+        line-height: 1.15
+      }
+
+      .weflair-credentials__badge-sub {
+        font-size: .6rem;
+        font-weight: 600;
+        color: rgba(246, 243, 238, .42);
+        letter-spacing: .04em;
+        line-height: 1.2;
+        text-transform: uppercase
+      }
+
+      .weflair-credentials__dots {
+        display: flex;
+        justify-content: center;
+        gap: .45rem;
+        padding-top: .75rem
+      }
+
+      .weflair-credentials__dot {
+        width: .45rem;
+        height: .45rem;
+        border-radius: 50%;
+        background: rgba(246, 243, 238, .2)
+      }
+
+      .weflair-credentials__dot.is-active { background: #3eff68 }
+
+      /* ═══ FAQ ═══ */
+      .weflair-faq { padding: clamp(5.8rem, 8vw, 7.5rem) 0 }
+
+      .weflair-faq__list {
+        max-width: 54rem;
+        margin-top: clamp(2.35rem, 3.9vw, 3.2rem)
+      }
+
+      .weflair-faq__item {
+        border-bottom: 1px solid rgba(246, 243, 238, .08)
+      }
+
+      .weflair-faq__item:first-child {
+        border-top: 1px solid rgba(246, 243, 238, .08)
+      }
+
+      .weflair-faq__item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding: 1.35rem 0;
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -.02em;
+        color: #f6f3ee;
+        cursor: pointer;
+        list-style: none;
+        transition: color .2s
+      }
+
+      .weflair-faq__item summary::-webkit-details-marker { display: none }
+
+      .weflair-faq__item summary::after {
+        content: '+';
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: #3eff68;
+        flex-shrink: 0;
+        width: 1.6rem;
+        text-align: center;
+        transition: transform .25s
+      }
+
+      .weflair-faq__item[open] summary::after {
+        content: '\2212';
+        transform: rotate(180deg)
+      }
+
+      .weflair-faq__item summary:hover { color: #3eff68 }
+
+      .weflair-faq__answer {
+        padding: 0 0 1.45rem;
+        font-size: .92rem;
+        line-height: 1.62;
+        color: rgba(246, 243, 238, .68);
+        max-width: 48rem
+      }
+
+      /* ═══ QUESTIONNAIRE HOOK ═══ */
+      .weflair-questionnaire-hook .weflair-questionnaire-hook__questions {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: 1.35rem
+      }
+
+      .weflair-questionnaire-hook__q {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        padding: .85rem 1.15rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: .95rem;
+        background: rgba(23, 24, 23, .96);
+        font-size: .9rem;
+        color: rgba(246, 243, 238, .82);
+        cursor: pointer;
+        transition: transform .22s, border-color .22s, background .22s, box-shadow .22s
+      }
+
+      .weflair-questionnaire-hook__q:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, .22);
+        background: rgba(28, 31, 28, .96);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .16)
+      }
+
+      .weflair-questionnaire-hook__num {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: grid;
+        place-items: center;
+        border-radius: .5rem;
+        border: 1px solid rgba(62, 255, 104, .2);
+        background: rgba(62, 255, 104, .07);
+        color: #3eff68;
+        font-weight: 800;
+        font-size: .78rem;
+        flex-shrink: 0;
+        transition: background .22s, border-color .22s
+      }
+
+      .weflair-questionnaire-hook__q:hover .weflair-questionnaire-hook__num {
+        background: rgba(62, 255, 104, .14);
+        border-color: rgba(62, 255, 104, .36)
+      }
+
+      .weflair-questionnaire-hook__start {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        margin-top: .85rem;
+        padding: .72rem 1.8rem;
+        border-radius: 999px;
+        background: #3eff68;
+        color: #0b0d0e;
+        font-size: .88rem;
+        font-weight: 800;
+        text-decoration: none;
+        transition: opacity .2s, box-shadow .2s;
+        align-self: flex-start;
+        box-shadow: 0 0 24px rgba(62, 255, 104, .15)
+      }
+
+      .weflair-questionnaire-hook__start:hover {
+        opacity: .88;
+        box-shadow: 0 0 36px rgba(62, 255, 104, .28)
+      }
+
+      /* ═══ LIGHT THEME — NEW SECTIONS ═══ */
+      html[data-theme="light"] #why-us,
+      html[data-theme="light"] #sectors,
+      html[data-theme="light"] #engagement-model,
+      html[data-theme="light"] #credentials,
+      html[data-theme="light"] #faq {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(62, 255, 104, .05), transparent 24%),
+          radial-gradient(circle at 88% 14%, rgba(111, 136, 255, .08), transparent 26%),
+          linear-gradient(180deg, #f4f1ea 0%, #ece7dd 100%);
+        color: var(--wf-theme-text)
+      }
+
+      html[data-theme="light"] .weflair-why-us__card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, .92) 0%, rgba(255, 255, 255, .78) 100%);
+        border-color: var(--wf-theme-border);
+        box-shadow: var(--wf-theme-shadow)
+      }
+
+      html[data-theme="light"] .weflair-why-us__card:hover {
+        border-color: rgba(34, 197, 94, .18);
+        box-shadow: 0 26px 46px rgba(88, 72, 50, .16), 0 0 0 1px rgba(34, 197, 94, .08)
+      }
+
+      html[data-theme="light"] .weflair-why-us__card h3,
+      html[data-theme="light"] .weflair-faq__item summary {
+        color: var(--wf-theme-text)
+      }
+
+      html[data-theme="light"] .weflair-why-us__card p,
+      html[data-theme="light"] .weflair-faq__answer,
+      html[data-theme="light"] .weflair-questionnaire-hook__q {
+        color: var(--wf-theme-text-soft)
+      }
+
+      html[data-theme="light"] .weflair-why-us__icon {
+        background: rgba(34, 197, 94, .08);
+        border-color: rgba(34, 197, 94, .18)
+      }
+
+      html[data-theme="light"] .weflair-credentials__stat {
+        background: rgba(255, 255, 255, .84);
+        border-color: var(--wf-theme-border);
+        box-shadow: var(--wf-theme-shadow)
+      }
+
+      html[data-theme="light"] .weflair-credentials__stat-num {
+        color: #22c55e;
+        filter: none
+      }
+
+      html[data-theme="light"] .weflair-credentials__stat-label {
+        color: var(--wf-theme-text-muted)
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge {
+        background: rgba(255, 255, 255, .84);
+        border-color: var(--wf-theme-border);
+        box-shadow: var(--wf-theme-shadow);
+        color: var(--wf-theme-text)
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge-icon { color: #22c55e }
+
+      html[data-theme="light"] .weflair-faq__item {
+        border-color: var(--wf-theme-border)
+      }
+
+      html[data-theme="light"] .weflair-faq__item summary::after { color: #22c55e }
+      html[data-theme="light"] .weflair-faq__item summary:hover { color: #167a36 }
+
+      html[data-theme="light"] .weflair-questionnaire-hook__q {
+        background: rgba(255, 255, 255, .84);
+        border-color: var(--wf-theme-border);
+        box-shadow: var(--wf-theme-shadow)
+      }
+
+      html[data-theme="light"] .weflair-questionnaire-hook__q:hover {
+        border-color: rgba(34, 197, 94, .2);
+        box-shadow: 0 12px 32px rgba(88, 72, 50, .14)
+      }
+
+      html[data-theme="light"] .weflair-questionnaire-hook__num {
+        background: rgba(34, 197, 94, .08);
+        border-color: rgba(34, 197, 94, .18);
+        color: #167a36
+      }
+
+      html[data-theme="light"] .weflair-questionnaire-hook__start {
+        background: #22c55e;
+        box-shadow: 0 0 24px rgba(34, 197, 94, .15)
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge-tile {
+        background: rgba(255, 255, 255, .84);
+        border-color: var(--wf-theme-border);
+        box-shadow: var(--wf-theme-shadow)
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge-tile:hover {
+        border-color: rgba(34, 197, 94, .18)
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge-logo {
+        color: #22c55e;
+        filter: none
+      }
+
+      html[data-theme="light"] .weflair-credentials__badge-name { color: var(--wf-theme-text) }
+
+      html[data-theme="light"] .weflair-credentials__badge-sub { color: var(--wf-theme-text-muted) }
+
+      html[data-theme="light"] .weflair-credentials__dot { background: rgba(23, 21, 17, .15) }
+      html[data-theme="light"] .weflair-credentials__dot.is-active { background: #22c55e }
+    </style>
 </head>
 
 <body data-weflair-static="true" data-navigation-status="not-active" data-scrolling-started="true"
@@ -2816,16 +3774,15 @@
                     d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
                     fill="currentColor"></path>
                 </svg></span>
-              <p class="eyebrow__p">What we do</p>
+              <p class="eyebrow__p">Services</p>
             </div>
           </div>
           <div class="services-overview__col-text">
-            <h2 class="h3"><span class="weflair-services-title-main">All the services you’d expect,</span><br><span
-                class="weflair-services-title-sub">executed <span
-                  class="weflair-section-accent weflair-section-accent--solid">beyond expectations.</span></span></h2>
+            <h2 class="h3"><span class="weflair-services-title-main">Full-funnel services,</span><br><span
+                class="weflair-services-title-sub">built to <span
+                  class="weflair-section-accent weflair-section-accent--solid">move revenue.</span></span></h2>
             <div class="services-overview__col-text-p">
-              <p>From strategy to execution, we help ambitious brands strengthen the work that drives growth,
-                performance, and revenue.</p>
+              <p>Paid media, GTM systems, AI search, and performance design working as one operating layer.</p>
             </div>
           </div>
         </div>
@@ -3495,8 +4452,7 @@
                 </div>
                 <div class="svc-info">
                   <h3 class="svc-title">Paid Media &amp; Performance</h3>
-                  <p class="svc-desc">Data-backed ad campaigns across every channel that turn active demand into
-                    revenue.</p>
+                  <p class="svc-desc">Paid search, paid social, programmatic, measurement, creative testing</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
                       <polyline points="9 18 15 12 9 6"></polyline>
@@ -3520,9 +4476,8 @@
                   </div>
                 </div>
                 <div class="svc-info">
-                  <h3 class="svc-title">GTM Engineering</h3>
-                  <p class="svc-desc">Outbound systems built to surface qualified prospects and fill your pipeline with
-                    real conversations.</p>
+                  <h3 class="svc-title">GTM Systems</h3>
+                  <p class="svc-desc">Outbound engineering, RevOps, AI workflows, CRM automation</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
                       <polyline points="9 18 15 12 9 6"></polyline>
@@ -3567,9 +4522,8 @@
                   </div>
                 </div>
                 <div class="svc-info">
-                  <h3 class="svc-title">Operations &amp; Automation</h3>
-                  <p class="svc-desc">Connected CRM, routing, and AI automation that keep growth moving without the
-                    manual drag.</p>
+                  <h3 class="svc-title">AI Search &amp; SEO</h3>
+                  <p class="svc-desc">SEO, AEO, GEO, LLM visibility, content-for-search</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
                       <polyline points="9 18 15 12 9 6"></polyline>
@@ -3602,8 +4556,7 @@
                 </div>
                 <div class="svc-info">
                   <h3 class="svc-title">Performance Design &amp; Content</h3>
-                  <p class="svc-desc">Landing pages, creative, and content that convert more of the traffic you already paid for.
-                  </p>
+                  <p class="svc-desc">Landing pages, creative systems, conversion design, performance content</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
                       <polyline points="9 18 15 12 9 6"></polyline>
@@ -3633,34 +4586,25 @@
           </script>
         </div>
         <div class="weflair-services-cta-wrap">
-          <div class="weflair-services-cta">
+          <div class="weflair-services-cta weflair-questionnaire-hook">
             <div class="weflair-services-cta-text">
               <h3>Not sure which service you need?</h3>
-              <p>Book a call and we’ll help you figure out the best approach for your specific situation.</p>
+              <p>Answer three quick questions and we will recommend the right starting point for your business.</p>’              <p>Answer three quick questions and we will recommend the right starting point for your business.</p>
             </div>
-            <div class="weflair-services-cta-actions"><a data-hover="" data-btn-theme="primary" href="#audit"
-                data-audit-toggle="" class="btn w-inline-block weflair-btn weflair-btn--primary">
-                <div class="btn__bg"></div>
-                <div class="btn__text"><span class="btn__span">Book a free strategy call</span></div>
-                <div class="arrow">
-                  <div class="arrow__bg"></div>
-                  <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                      viewBox="0 0 24 24" fill="none" class="feather feather-arrow-right">
-                      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round"></line>
-                      <polyline points="12 5 19 12 12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round"></polyline>
-                    </svg></div>
-                  <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                      fill="none" class="feather feather-arrow-right">
-                      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round"></line>
-                      <polyline points="12 5 19 12 12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round"></polyline>
-                    </svg></div>
-                </div>
-              </a>
-              <p class="weflair-services-cta-note">Free audit included • No commitment required</p>
+            <div class="weflair-questionnaire-hook__questions">
+              <div class="weflair-questionnaire-hook__q">
+                <span class="weflair-questionnaire-hook__num">1</span>
+                <span>What is your primary growth challenge right now?</span>
+              </div>
+              <div class="weflair-questionnaire-hook__q">
+                <span class="weflair-questionnaire-hook__num">2</span>
+                <span>What channels are you currently running?</span>
+              </div>
+              <div class="weflair-questionnaire-hook__q">
+                <span class="weflair-questionnaire-hook__num">3</span>
+                <span>What does your in-house marketing team look like?</span>
+              </div>
+              <a href="#audit" class="weflair-questionnaire-hook__start">Find your starting point &rarr;</a>
             </div>
           </div>
         </div>
@@ -3675,15 +4619,13 @@
                     d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
                     fill="currentColor"></path>
                 </svg></span>
-              <p class="eyebrow__p">Where teams get stuck</p>
+              <p class="eyebrow__p">Problems</p>
             </div>
           </div>
           <div class="weflair-challenges__col-text">
-            <h2 class="h3">If you’re facing any of these challenges<br><span
+            <h2 class="h3">If these issues are showing up at once,<br><span
                 class="weflair-section-accent weflair-section-accent--solid">we can help.</span></h2>
-            <p class="weflair-section__body">When several of these show up at once, the problem usually is not one
-              channel. It is wasted spend, messy CRM, weak follow-up, broken handoffs, and too much manual work dragging
-              the whole system down.</p>
+            <p class="weflair-section__body">The problem usually is not one channel. It is wasted spend, weak follow-up, messy handoffs, and too much manual work slowing the whole system down.</p>
           </div>
         </div>
         <div class="weflair-problems-native">
@@ -3834,6 +4776,47 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHY WEFLAIR GRID ═══ -->
+    <section class="weflair-section weflair-why-us" id="why-us-legacy" hidden aria-hidden="true">
+      <div class="container">
+        <div class="weflair-section__head">
+          <h2 class="h3">Why WeFlair</h2>
+        </div>
+        <div class="weflair-why-us__grid">
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Proven expertise in tech and growth marketing</h3>
+            <p>WeFlair scaled 100+ tech brands, $30M+ in managed ad spend, and over a decade in this space. We know what works.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h3>Data-Driven Strategies That Deliver</h3>
+            <p>We run on data, not guesses. With expert insights and clear analytics, you'll always know what works.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <h3>A Partner for the Long Run</h3>
+            <p>Our clients stay with us for years. Why? Because we act like part of your in-house team, with clear structure and long-term focus.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
+            <h3>Personalized Service</h3>
+            <p>We take on fewer clients so we can go deep. Weekly reports, direct communication, and max 3 projects per team — just focus on your business goals.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>Transparent Reporting</h3>
+            <p>Real-time dashboards, weekly stand-ups, and monthly deep-dives. You always know what is running, what is working, and what is next.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <h3>Senior-Led, Dedicated Teams</h3>
+            <p>No junior hand-offs. Every account is led by a senior strategist who has managed seven-figure budgets and owns outcomes end to end.</p>
           </div>
         </div>
       </div>
@@ -4437,7 +5420,7 @@
         }
       }
     </style>
-    <style id="weflair-why-scroll-css">
+    <style id="weflair-why-scroll-css" media="not all">
       .weflair-why {
         position: relative;
         overflow: clip;
@@ -4465,7 +5448,7 @@
       }
 
       .weflair-why__layout {
-        width: min(100%, 78rem);
+        width: min(100%, 82rem);
         margin: 0 auto;
         display: grid;
         gap: clamp(2.6rem, 5vw, 4rem);
@@ -4491,8 +5474,8 @@
 
       .weflair-why__grid {
         display: grid;
-        grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
-        gap: clamp(2rem, 4vw, 3.5rem);
+        grid-template-columns: minmax(0, .69fr) minmax(0, 1.31fr);
+        gap: clamp(4rem, 7vw, 6.25rem);
         align-items: start;
       }
 
@@ -4507,21 +5490,24 @@
 
       .weflair-why__chapters {
         display: grid;
+        max-width: 29rem;
+        padding-top: clamp(1.75rem, 4vh, 2.75rem);
       }
 
       .weflair-why__chapter {
         --why-accent: #6e8aff;
         position: relative;
-        min-height: 60vh;
-        padding: clamp(1.7rem, 2vw, 2.2rem) 0 clamp(2.6rem, 4vw, 4rem);
+        min-height: 46vh;
+        padding: clamp(.85rem, 1.4vw, 1.2rem) 0 clamp(1.45rem, 2.3vw, 2.15rem);
         display: grid;
         align-content: center;
-        gap: 1.15rem;
-        scroll-margin-top: 26vh;
+        gap: 1rem;
+        scroll-margin-top: 18vh;
       }
 
       .weflair-why__chapter + .weflair-why__chapter {
-        border-top: 1px solid rgba(23, 21, 17, .12);
+        margin-top: clamp(.7rem, 2vh, 1.35rem);
+        border-top: 0;
       }
 
       .weflair-why.is-enhanced .weflair-why__chapter {
@@ -4543,7 +5529,7 @@
       .weflair-why__chapter-track {
         display: flex;
         align-items: center;
-        gap: .9rem;
+        gap: .75rem;
         min-width: 0;
       }
 
@@ -4557,7 +5543,8 @@
       }
 
       .weflair-why__chapter-line {
-        flex: 1;
+        flex: none;
+        width: clamp(4.25rem, 8vw, 7.25rem);
         height: 1px;
         background: linear-gradient(90deg, color-mix(in srgb, var(--why-accent) 55%, transparent), rgba(23, 21, 17, .08));
       }
@@ -4599,7 +5586,7 @@
       }
 
       .weflair-why__chapter-body {
-        max-width: 32rem;
+        max-width: 28rem;
         margin: 0;
         font-size: 1.02rem;
         line-height: 1.72;
@@ -4608,17 +5595,21 @@
       }
 
       .weflair-why__stage-wrap {
-        min-height: calc(60vh * 6);
+        width: min(100%, 44rem);
+        min-height: calc(46vh * 6);
+        padding-top: clamp(1rem, 3vh, 1.75rem);
+        justify-self: end;
       }
 
       .weflair-why__sticky {
         position: sticky;
-        top: clamp(5.8rem, 12vh, 8.25rem);
+        top: clamp(16rem, 25.5vh, 19rem);
+        transform: translateX(clamp(1.4rem, 2.7vw, 3rem));
       }
 
       .weflair-why__stage {
         position: relative;
-        min-height: clamp(29rem, 68vh, 38rem);
+        min-height: clamp(30rem, 62vh, 36rem);
         padding: 1rem;
         border-radius: 2.25rem;
         background: rgba(255, 255, 255, .44);
@@ -4699,8 +5690,8 @@
 
       .weflair-why__visuals {
         position: relative;
-        min-height: clamp(28rem, 68vh, 37rem);
-        margin-top: 1rem;
+        min-height: clamp(28.5rem, 61vh, 35rem);
+        margin-top: .85rem;
       }
 
       .weflair-why__visual {
@@ -5249,7 +6240,8 @@
 
       @media screen and (max-width: 1180px) {
         .weflair-why__grid {
-          grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+          grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+          gap: clamp(3rem, 5vw, 4.5rem);
         }
 
         .weflair-why__chapter-title {
@@ -5277,12 +6269,15 @@
         }
 
         .weflair-why__stage-wrap {
+          width: 100%;
           min-height: auto;
+          justify-self: stretch;
         }
 
         .weflair-why__sticky {
           position: relative;
           top: auto;
+          transform: none;
         }
 
         .weflair-why__stage {
@@ -5291,7 +6286,8 @@
 
         .weflair-why__chapter {
           min-height: auto;
-          padding: 1.6rem 0 2rem;
+          padding: 1.25rem 0 1.6rem;
+          align-content: start;
         }
 
         .weflair-why.is-enhanced .weflair-why__chapter:not(.is-active) {
@@ -6150,7 +7146,7 @@
         }
       }
     </style>
-    <section class="weflair-section weflair-why" id="why-weflair" data-why-section>
+    <section class="weflair-section weflair-why" id="why-weflair" data-why-section style="display:none!important">
       <div class="container container--large">
         <div class="weflair-why__layout">
           <div class="weflair-section__head weflair-why__head">
@@ -6235,7 +7231,41 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">Growth architecture</div></div>
-                            <img src="images/hww/scope.png" alt="Growth planning workspace" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--strategy" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Growth map</span>
+                                <div class="weflair-why-ui-grid weflair-why-ui-grid--3">
+                                  <div class="weflair-why-ui-tile"><span>Paid</span><b>Demand</b></div>
+                                  <div class="weflair-why-ui-tile"><span>Outbound</span><b>Intent</b></div>
+                                  <div class="weflair-why-ui-tile"><span>CRO</span><b>Conversion</b></div>
+                                </div>
+                                <div class="weflair-why-ui-surface">
+                                  <div class="weflair-why-ui-note">
+                                    <b>One commercial plan</b>
+                                    <p>Channels, budgets, and handoffs aligned.</p>
+                                  </div>
+                                  <div class="weflair-why-ui-bars">
+                                    <span class="weflair-why-ui-bar" style="--bar-width:88%;"></span>
+                                    <span class="weflair-why-ui-bar" style="--bar-width:72%;"></span>
+                                    <span class="weflair-why-ui-bar" style="--bar-width:81%;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <span class="weflair-why-ui-label">Priorities</span>
+                                <div class="weflair-why-ui-stack">
+                                  <div class="weflair-why-ui-row"><span>ICP</span><b>Locked</b></div>
+                                  <div class="weflair-why-ui-row"><span>Budget</span><b>Focused</b></div>
+                                  <div class="weflair-why-ui-row"><span>Timeline</span><b>90 days</b></div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Shared scorecard</b>
+                                  <p>Pipeline, CAC, and conversion in one readout.</p>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
                           <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.75rem; right:.9rem; width:14rem;">
                             <span class="weflair-why-card__eyebrow">Connected motions</span>
@@ -6263,7 +7293,41 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">Creative system</div></div>
-                            <img src="images/hww/launch.png" alt="Creative launch board" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--creative" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Creative board</span>
+                                <div class="weflair-why-ui-grid weflair-why-ui-grid--2">
+                                  <div class="weflair-why-ui-tile"><span>Ads</span><b>Hook set</b></div>
+                                  <div class="weflair-why-ui-tile"><span>Pages</span><b>Offer test</b></div>
+                                  <div class="weflair-why-ui-tile"><span>Content</span><b>Angles</b></div>
+                                  <div class="weflair-why-ui-tile"><span>Feedback</span><b>Fast loop</b></div>
+                                </div>
+                                <div class="weflair-why-ui-surface">
+                                  <div class="weflair-why-ui-tags">
+                                    <span class="weflair-why-ui-tag">Hooks</span>
+                                    <span class="weflair-why-ui-tag">Offers</span>
+                                    <span class="weflair-why-ui-tag">Pages</span>
+                                  </div>
+                                  <div class="weflair-why-ui-bars" style="margin-top:.7rem;">
+                                    <span class="weflair-why-ui-bar" style="--bar-width:76%;"></span>
+                                    <span class="weflair-why-ui-bar" style="--bar-width:63%;"></span>
+                                    <span class="weflair-why-ui-bar" style="--bar-width:84%;"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Testing loop</b>
+                                  <p>Launch, read, tighten, repeat.</p>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Creative moves numbers</b>
+                                  <p>Winning variants stay in motion.</p>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
                           <span class="weflair-why__orb weflair-why-float-fast" style="top:6rem; left:2.2rem; width:3.8rem; height:3.8rem;"></span>
                           <aside class="weflair-why-card weflair-why-float-slow" style="top:4.7rem; right:.9rem; width:14.25rem;">
@@ -6289,23 +7353,80 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">Automation layer</div></div>
-                            <img src="images/hww/optimize.png" alt="Optimization workspace" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--ai" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Automation view</span>
+                                <div class="weflair-why-ui-chart">
+                                  <svg viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="419" height="239" rx="24" fill="url(#aiBg)" stroke="rgba(23,21,17,.08)"/>
+                                    <path d="M28 190C68 188 92 148 136 148C173 148 184 184 221 184C274 184 294 84 339 84C367 84 386 105 392 114V212H28V190Z" fill="url(#aiWave)"/>
+                                    <path d="M28 177C68 177 98 128 136 128C175 128 186 166 221 166C270 166 290 102 339 102C363 102 379 113 392 126" stroke="rgba(74,201,116,.9)" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M28 174C66 180 96 168 136 168C172 168 188 146 221 146C266 146 294 164 339 164C364 164 379 160 392 156" stroke="rgba(23,21,17,.42)" stroke-width="3" stroke-linecap="round"/>
+                                    <circle cx="104" cy="168" r="6" fill="white" stroke="rgba(23,21,17,.35)" stroke-width="2"/>
+                                    <circle cx="266" cy="146" r="6" fill="#314f31" stroke="white" stroke-width="2"/>
+                                    <text x="38" y="48" fill="rgba(23,21,17,.78)" font-size="17" font-weight="600" font-family="system-ui, sans-serif">CAC vs. CTR</text>
+                                    <text x="38" y="68" fill="rgba(23,21,17,.46)" font-size="12" font-weight="500" font-family="system-ui, sans-serif">Monthly analysis</text>
+                                    <defs>
+                                      <linearGradient id="aiBg" x1="0" y1="0" x2="420" y2="240" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="rgba(241,246,239,1)"/>
+                                        <stop offset="1" stop-color="rgba(166,239,135,.9)"/>
+                                      </linearGradient>
+                                      <linearGradient id="aiWave" x1="210" y1="84" x2="210" y2="212" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="rgba(124,255,120,.82)"/>
+                                        <stop offset="1" stop-color="rgba(73,226,91,.42)"/>
+                                      </linearGradient>
+                                    </defs>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Q2 targets</b>
+                                  <p>Signals and goals update automatically.</p>
+                                </div>
+                                <div class="weflair-why-ui-chart" style="min-height:7rem;">
+                                  <svg viewBox="0 0 180 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="179" height="95" rx="16" fill="white" stroke="rgba(23,21,17,.08)"/>
+                                    <path d="M18 64C35 63 42 44 61 44C76 44 81 58 98 58C120 58 131 31 150 31C160 31 167 38 172 45" stroke="rgba(74,201,116,.92)" stroke-width="3.2" stroke-linecap="round"/>
+                                    <path d="M18 68C37 68 46 61 61 61C78 61 88 54 98 54C120 54 132 61 150 61C160 61 167 59 172 57" stroke="rgba(23,21,17,.38)" stroke-width="2.2" stroke-linecap="round"/>
+                                    <rect x="122" y="30" width="40" height="24" rx="8" fill="#506b4f"/>
+                                    <text x="132" y="46" fill="#eff4ee" font-size="11" font-weight="700" font-family="system-ui, sans-serif">103%</text>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Meta ROAS</b>
+                                  <p>Live reporting without manual lag.</p>
+                                </div>
+                                <div class="weflair-why-ui-chart" style="min-height:7rem;">
+                                  <svg viewBox="0 0 180 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="179" height="95" rx="16" fill="#3d533d" stroke="rgba(255,255,255,.06)"/>
+                                    <path d="M18 76L42 69L66 50L90 58L114 31L138 42L162 18" stroke="#b0ff92" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="18" cy="76" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="42" cy="69" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="66" cy="50" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="90" cy="58" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="114" cy="31" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="138" cy="42" r="3.8" fill="#b0ff92"/>
+                                    <circle cx="162" cy="18" r="3.8" fill="#b0ff92"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
-                          <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.6rem; right:.85rem; width:13.5rem;">
-                            <span class="weflair-why-card__eyebrow">Live from week one</span>
-                            <h4 class="weflair-why-card__title">Automations, enrichment, reporting, and workflows already inside the account.</h4>
-                            <div class="weflair-why-pill-list"><span class="weflair-why-pill">Enrichment</span><span class="weflair-why-pill">Workflows</span><span class="weflair-why-pill">Reporting</span></div>
+                          <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.35rem; right:1rem; width:13.25rem;">
+                            <span class="weflair-why-card__eyebrow">Automation layer</span>
+                            <h4 class="weflair-why-card__title">Live workflows for enrichment, reporting, and audience updates.</h4>
+                            <div class="weflair-why-pill-list"><span class="weflair-why-pill">Workflows</span><span class="weflair-why-pill">Enrichment</span><span class="weflair-why-pill">Reporting</span></div>
                           </aside>
-                          <div class="weflair-why-flow weflair-why-card--secondary" style="right:.9rem; bottom:1rem;">
-                            <div class="weflair-why-flow__node">Signal capture</div>
-                            <div class="weflair-why-flow__link"></div>
-                            <div class="weflair-why-flow__node">Audience update</div>
-                            <div class="weflair-why-flow__link"></div>
-                            <div class="weflair-why-flow__node">Report pushed</div>
-                          </div>
-                          <aside class="weflair-why-card weflair-why-float-fast" style="left:1.05rem; bottom:1rem; width:14.6rem;">
+                          <aside class="weflair-why-card weflair-why-float-fast" style="left:1.05rem; bottom:1rem; width:14.1rem;">
                             <span class="weflair-why-card__eyebrow">Operator control</span>
-                            <p class="weflair-why-card__body">The machines handle repetition. Senior operators still make every strategic decision.</p>
+                            <div class="weflair-why-metric-row">
+                              <div class="weflair-why-metric"><span>Trigger speed</span><b>Instant</b></div>
+                              <div class="weflair-why-metric"><span>Weekly output</span><b>Always on</b></div>
+                              <div class="weflair-why-metric"><span>Strategic review</span><b>Human-led</b></div>
+                            </div>
                           </aside>
                         </div>
                       </div>
@@ -6320,7 +7441,39 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">Operator pod</div></div>
-                            <img src="images/hww/audit.png" alt="Operator pod workspace" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--operators" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Operator pod</span>
+                                <div class="weflair-why-ui-stack">
+                                  <div class="weflair-why-ui-row">
+                                    <div class="weflair-why-ui-avatar-row"><span class="weflair-why-ui-avatar"></span><div><b>Strategist</b><span>Commercial lead</span></div></div>
+                                    <b>Direct</b>
+                                  </div>
+                                  <div class="weflair-why-ui-row">
+                                    <div class="weflair-why-ui-avatar-row"><span class="weflair-why-ui-avatar"></span><div><b>Creative lead</b><span>Testing and offer work</span></div></div>
+                                    <b>Active</b>
+                                  </div>
+                                  <div class="weflair-why-ui-row">
+                                    <div class="weflair-why-ui-avatar-row"><span class="weflair-why-ui-avatar"></span><div><b>Operator</b><span>Execution and QA</span></div></div>
+                                    <b>Weekly</b>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <span class="weflair-why-ui-label">Access</span>
+                                <div class="weflair-why-ui-tags">
+                                  <span class="weflair-why-ui-tag">Slack</span>
+                                  <span class="weflair-why-ui-tag">Review</span>
+                                  <span class="weflair-why-ui-tag">Account</span>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>No layers</b>
+                                  <p>The same operators stay in the work every week.</p>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
                           <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.55rem; right:.9rem; width:14.1rem;">
                             <span class="weflair-why-card__eyebrow">Your actual team</span>
@@ -6348,7 +7501,39 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">90-day review</div></div>
-                            <img src="images/hww/review.png" alt="Revenue review workspace" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--revenue" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Commercial review</span>
+                                <div class="weflair-why-ui-chart">
+                                  <svg viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <rect x="0.5" y="0.5" width="419" height="239" rx="24" fill="rgba(255,255,255,.92)" stroke="rgba(23,21,17,.08)"/>
+                                    <path d="M34 175L86 152L140 160L194 121L248 130L302 92L386 64" stroke="rgba(225,111,98,.94)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M34 188H386" stroke="rgba(23,21,17,.1)" stroke-width="2" stroke-linecap="round"/>
+                                    <rect x="34" y="88" width="54" height="84" rx="14" fill="rgba(225,111,98,.12)"/>
+                                    <rect x="96" y="112" width="54" height="60" rx="14" fill="rgba(225,111,98,.18)"/>
+                                    <rect x="158" y="74" width="54" height="98" rx="14" fill="rgba(225,111,98,.14)"/>
+                                    <rect x="220" y="96" width="54" height="76" rx="14" fill="rgba(225,111,98,.2)"/>
+                                    <rect x="282" y="58" width="54" height="114" rx="14" fill="rgba(225,111,98,.16)"/>
+                                    <text x="34" y="36" fill="rgba(23,21,17,.76)" font-size="17" font-weight="600" font-family="system-ui, sans-serif">Revenue impact</text>
+                                    <text x="34" y="56" fill="rgba(23,21,17,.46)" font-size="12" font-weight="500" font-family="system-ui, sans-serif">Pipeline, CAC, and conversion</text>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <span class="weflair-why-ui-label">View</span>
+                                <div class="weflair-why-ui-stack">
+                                  <div class="weflair-why-ui-row"><span>Pipeline</span><b>3.4x</b></div>
+                                  <div class="weflair-why-ui-row"><span>Payback</span><b>7 mo</b></div>
+                                  <div class="weflair-why-ui-row"><span>Cadence</span><b>Weekly</b></div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Board-ready</b>
+                                  <p>Real commercial numbers, not vanity noise.</p>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
                           <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.6rem; right:.95rem; width:14.15rem;">
                             <span class="weflair-why-card__eyebrow">Board-ready view</span>
@@ -6376,7 +7561,40 @@
                         <div class="weflair-why__visual-shell">
                           <figure class="weflair-why-window weflair-why-window--wide">
                             <div class="weflair-why-window__bar"><div class="weflair-why-dots"><span></span><span></span><span></span></div><div class="weflair-why-window__label">Weekly visibility</div></div>
-                            <img src="images/hww/audit.png" alt="Weekly reporting workspace" loading="lazy" decoding="async">
+                            <div class="weflair-why-illus weflair-why-illus--visibility" aria-hidden="true">
+                              <div class="weflair-why-illus__card weflair-why-illus__card--hero">
+                                <span class="weflair-why-ui-label">Weekly visibility</span>
+                                <div class="weflair-why-ui-surface">
+                                  <div class="weflair-why-ui-avatar-row">
+                                    <span class="weflair-why-ui-avatar"></span>
+                                    <div><b>Strategist</b><span>Here’s the weekly report.</span></div>
+                                  </div>
+                                  <div class="weflair-why-ui-lines" style="margin-top:.8rem;">
+                                    <span class="weflair-why-ui-line"></span>
+                                    <span class="weflair-why-ui-line"></span>
+                                    <span class="weflair-why-ui-line"></span>
+                                    <span class="weflair-why-ui-line"></span>
+                                  </div>
+                                </div>
+                                <div class="weflair-why-ui-grid weflair-why-ui-grid--2">
+                                  <div class="weflair-why-ui-tile"><span>Slack</span><b>Direct</b></div>
+                                  <div class="weflair-why-ui-tile"><span>Recaps</span><b>Written</b></div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--compact">
+                                <span class="weflair-why-ui-label">Cadence</span>
+                                <div class="weflair-why-ui-stack">
+                                  <div class="weflair-why-ui-row"><span>Updates</span><b>Same day</b></div>
+                                  <div class="weflair-why-ui-row"><span>Reporting</span><b>Weekly</b></div>
+                                </div>
+                              </div>
+                              <div class="weflair-why-illus__card weflair-why-illus__card--dark weflair-why-illus__card--compact">
+                                <div class="weflair-why-ui-note">
+                                  <b>Clear next move</b>
+                                  <p>Every call ends with decisions and owners.</p>
+                                </div>
+                              </div>
+                            </div>
                           </figure>
                           <aside class="weflair-why-card weflair-why-card--dark weflair-why-float-slow" style="top:4.6rem; right:.95rem; width:13.95rem;">
                             <span class="weflair-why-card__eyebrow">Same-day recaps</span>
@@ -6498,13 +7716,83 @@
         }
       })();
     </script>
+    <section class="weflair-section weflair-why-us" id="why-us">
+      <div class="container">
+        <div class="weflair-section__head">
+          <div class="eyebrow is-centered">
+            <span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span>
+            <p class="eyebrow__p">Why WeFlair</p>
+          </div>
+          <h2 class="h3">Why teams bring WeFlair in when growth needs to tighten up.</h2>
+          <p class="weflair-section__body">Strategy, creative, execution, reporting, and operating systems built around one commercial outcome.</p>
+        </div>
+        <div class="weflair-why-us__grid">
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/><circle cx="12" cy="12" r="8.5"/></svg></div>
+            <h3>Full-funnel strategy. Commercially applied.</h3>
+            <p>Paid, outbound, creative, CRO, content, and operations all point at the same revenue goal instead of drifting into channel-level activity.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5.5-5.5L13 17l7-7"/><path d="M15 10h5v5"/></svg></div>
+            <h3>Creative that reinvigorates. Not just decorates.</h3>
+            <p>Landing pages, ad creative, and content are engineered around conversion data so every asset exists to move a number, not just fill a feed.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+            <h3>AI runs the engine. Experts steer it.</h3>
+            <p>Automations, workflows, enrichment, audience builds, and reporting go live quickly, while senior operators still make the strategic calls.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Senior operators in your accounts. Not layers.</h3>
+            <p>The strategist in your onboarding call is the same person inside the account, inside the workflow, and in the channel with your team.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20v-3"/><path d="M2 20h20"/></svg></div>
+            <h3>Revenue impact. Not vanity metrics.</h3>
+            <p>Reporting stays tied to revenue, acquisition costs, conversion, and margin so you know what is working, what is not, and what changes next.</p>
+          </div>
+          <div class="weflair-why-us__card">
+            <div class="weflair-why-us__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+            <h3>Built for visibility. Not black boxes.</h3>
+            <p>Slack access, written recaps, and weekly reporting keep the work visible in real time instead of hidden behind update calls and vague summaries.</p>
+          </div>
+        </div>
+        <div class="weflair-why-us__cred" id="credentials">
+          <h3 class="weflair-why-us__cred-title">Achieve your goals with the expertise of a full-funnel marketing partner.</h3>
+          <div class="weflair-credentials__stats">
+            <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">$30M+</span><span class="weflair-credentials__stat-label">Managed ad spend</span></div>
+            <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">10+</span><span class="weflair-credentials__stat-label">Years operating across channels</span></div>
+            <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">100+</span><span class="weflair-credentials__stat-label">Growth stories delivered</span></div>
+            <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">4.93/5</span><span class="weflair-credentials__stat-label">Average client satisfaction</span></div>
+          </div>
+          <div class="weflair-credentials__slider">
+            <div class="weflair-credentials__slider-track">
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="weflair-credentials__badge-name">Google Partner</span><span class="weflair-credentials__badge-sub">Premier 2026</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span><span class="weflair-credentials__badge-name">Meta</span><span class="weflair-credentials__badge-sub">Business partner</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><span class="weflair-credentials__badge-name">LinkedIn</span><span class="weflair-credentials__badge-sub">Marketing insider</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="weflair-credentials__badge-name">Clutch</span><span class="weflair-credentials__badge-sub">Performance partner</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19l5.5-5.5L13 17l7-7"/><path d="M15 10h5v5"/></svg></span><span class="weflair-credentials__badge-name">G2</span><span class="weflair-credentials__badge-sub">High performer</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><span class="weflair-credentials__badge-name">Microsoft Ads</span><span class="weflair-credentials__badge-sub">Certified expert</span></div>
+              <div class="weflair-credentials__badge-tile"><span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span><span class="weflair-credentials__badge-name">HubSpot</span><span class="weflair-credentials__badge-sub">Solutions partner</span></div>
+            </div>
+            <div class="weflair-credentials__dots" aria-hidden="true">
+              <span class="weflair-credentials__dot is-active"></span>
+              <span class="weflair-credentials__dot"></span>
+              <span class="weflair-credentials__dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="weflair-section weflair-process" id="process">
       <div class="container">
         <div class="weflair-process__layout">
           <div class="weflair-section__head">
-            <div class="eyebrow"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><p class="eyebrow__p">The process</p></div>
-            <h2 class="h3">From first call to pipeline growth in 90 days.</h2>
-            <p class="weflair-section__body">Onboarding built for momentum in month one. No six-month ramp.</p>
+            <div class="eyebrow"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><p class="eyebrow__p">FLAIR Method</p></div>
+            <h2 class="h3">How engagements move from first call to momentum.</h2>
+            <p class="weflair-section__body">Four stages. Clear owners. Fast setup. Reporting tied to revenue.</p>
           </div>
 
           <div class="weflair-process__numbers">
@@ -7447,7 +8735,6 @@
       html[data-theme="light"] #services,
       html[data-theme="light"] #problems,
       html[data-theme="light"] #where-we-come-in,
-      html[data-theme="light"] #process,
       html[data-theme="light"] #proof,
       html[data-theme="light"] #resources-teaser,
       html[data-theme="light"] .weflair-footer__cta-banner,
@@ -7491,7 +8778,21 @@
       }
 
       html[data-theme="light"] .weflair-audit-widget__panel {
-        background: rgba(255, 255, 255, .95);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .96) 0%, rgba(245, 241, 232, .94) 100%) !important;
+        border-color: var(--wf-theme-border) !important;
+        box-shadow: 0 20px 40px rgba(88, 72, 50, .16) !important;
+      }
+
+      html[data-theme="light"] .weflair-audit-widget__avatar {
+        background: rgba(62, 255, 104, .12);
+        border-color: rgba(62, 255, 104, .22);
+        color: var(--wf-theme-text);
+      }
+
+      html[data-theme="light"] .weflair-audit-widget__eyebrow {
+        background: rgba(62, 255, 104, .08);
+        border-color: rgba(62, 255, 104, .18);
+        color: #167a36;
       }
 
       html[data-theme="light"] .weflair-audit-widget__name,
@@ -7503,9 +8804,23 @@
 
       html[data-theme="light"] .weflair-audit-widget__role,
       html[data-theme="light"] .weflair-audit-widget__body,
-      html[data-theme="light"] .weflair-audit-widget__countdown,
-      html[data-theme="light"] .weflair-audit-widget__foot {
+      html[data-theme="light"] .weflair-audit-widget__foot,
+      html[data-theme="light"] .weflair-audit-widget__list li {
         color: var(--wf-theme-text-muted);
+      }
+
+      html[data-theme="light"] .weflair-audit-widget__countdown {
+        color: #167a36;
+      }
+
+      html[data-theme="light"] .weflair-audit-widget__proof-pill,
+      html[data-theme="light"] .weflair-audit-widget__slots {
+        background: rgba(23, 21, 17, .04);
+        border-color: var(--wf-theme-border);
+      }
+
+      html[data-theme="light"] .weflair-audit-widget__proof-pill {
+        color: var(--wf-theme-text);
       }
 
       html[data-theme="light"] .weflair-audit-widget__close,
@@ -7527,6 +8842,11 @@
         color: var(--wf-theme-text);
       }
 
+      html[data-theme="light"] #services .svc-item {
+        opacity: 1;
+        transform: none;
+      }
+
       html[data-theme="light"] .svc-card:hover {
         box-shadow: 0 26px 46px rgba(88, 72, 50, .16), 0 0 0 1px rgba(34, 197, 94, .08);
       }
@@ -7540,6 +8860,24 @@
 
       html[data-theme="light"] .svc-link {
         color: var(--wf-theme-text-dim);
+      }
+
+      html[data-theme="light"] .weflair-services-cta {
+        background: linear-gradient(135deg, rgba(255, 255, 255, .9) 0%, rgba(239, 235, 226, .88) 100%);
+        border-color: rgba(34, 197, 94, .16);
+        box-shadow: var(--wf-theme-shadow);
+      }
+
+      html[data-theme="light"] .weflair-services-cta h3 {
+        color: var(--wf-theme-text);
+      }
+
+      html[data-theme="light"] .weflair-services-cta p {
+        color: var(--wf-theme-text-soft);
+      }
+
+      html[data-theme="light"] .weflair-services-cta-note {
+        color: var(--wf-theme-text-muted) !important;
       }
 
       html[data-theme="light"] .pm-bar,
@@ -7615,6 +8953,60 @@
 
       html[data-theme="light"] #problems .weflair-problem-tile__icon svg {
         color: #3eff68;
+      }
+
+      html[data-theme="light"] #process {
+        background:
+          radial-gradient(circle at 16% 18%, rgba(62, 255, 104, .08), transparent 24%),
+          radial-gradient(circle at 82% 72%, rgba(111, 136, 255, .08), transparent 28%),
+          linear-gradient(180deg, #101010 0%, #090909 100%);
+        color: #f6f3ee;
+      }
+
+      html[data-theme="light"] #process .h3,
+      html[data-theme="light"] #process .weflair-process__step-title {
+        color: #f6f3ee;
+      }
+
+      html[data-theme="light"] #process .weflair-section__body {
+        color: rgba(246, 243, 238, .62);
+      }
+
+      html[data-theme="light"] #process .eyebrow__p,
+      html[data-theme="light"] #process .weflair-eyebrow-icon {
+        color: #3eff68;
+      }
+
+      html[data-theme="light"] #process .weflair-process__step {
+        opacity: 1;
+        transform: none;
+        background:
+          radial-gradient(ellipse at 50% 0%, rgba(62, 255, 104, .08), transparent 58%),
+          rgba(255, 255, 255, .035);
+        border-color: rgba(255, 255, 255, .08);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, .24);
+      }
+
+      html[data-theme="light"] #process .weflair-process__num {
+        color: rgba(246, 243, 238, .24);
+      }
+
+      html[data-theme="light"] #process .weflair-process__tag {
+        color: rgba(246, 243, 238, .6);
+      }
+
+      html[data-theme="light"] #process .weflair-process__tag-icon {
+        background: rgba(255, 255, 255, .04);
+        border-color: rgba(255, 255, 255, .08);
+      }
+
+      html[data-theme="light"] #process .weflair-process__tag-icon svg {
+        color: rgba(246, 243, 238, .56);
+      }
+
+      html[data-theme="light"] #process .weflair-process__illus {
+        background: linear-gradient(145deg, #1a1c20, #141518);
+        border-color: rgba(255, 255, 255, .06);
       }
 
       html[data-theme="light"] .weflair-handoff__intro .h3,
@@ -7716,6 +9108,10 @@
         color: var(--wf-theme-text-muted);
       }
 
+      html[data-theme="light"] .weflair-resource-card__link {
+        color: #167a36;
+      }
+
       html[data-theme="light"] .weflair-proof-quote__avatar,
       html[data-theme="light"] .weflair-proof-quote__buttons button {
         background: rgba(23, 21, 17, .05);
@@ -7740,6 +9136,10 @@
         border-color: var(--wf-theme-border);
         color: var(--wf-theme-text-muted);
         background: rgba(255, 255, 255, .56);
+      }
+
+      html[data-theme="light"] .weflair-footer__cta-copy {
+        color: var(--wf-theme-text-soft);
       }
 
       html[data-theme="dark"] #why-weflair {
@@ -7845,6 +9245,546 @@
         background: rgba(255, 255, 255, .08);
       }
     </style>
+    <style id="weflair-why-visual-cleanup" media="not all">
+      #why-weflair .weflair-why__visual {
+        gap: .85rem;
+        padding: 1.15rem 1.15rem 1.05rem;
+      }
+
+      #why-weflair .weflair-why__visual-head {
+        gap: .75rem;
+        margin-bottom: .1rem;
+      }
+
+      #why-weflair .weflair-why__visual-kicker strong {
+        max-width: 10ch;
+        font-size: clamp(1.35rem, 1.75vw, 1.75rem);
+      }
+
+      #why-weflair .weflair-why__badge-row {
+        max-width: 12rem;
+        gap: .35rem;
+      }
+
+      #why-weflair .weflair-why__badge-row .weflair-why__badge:nth-child(n+3) {
+        display: none;
+      }
+
+      #why-weflair .weflair-why__badge {
+        padding: .38rem .58rem;
+        border-radius: .85rem;
+        font-size: .58rem;
+        letter-spacing: .1em;
+        background: rgba(255, 255, 255, .72);
+      }
+
+      #why-weflair .weflair-why__visual-foot,
+      #why-weflair .weflair-why__orb,
+      #why-weflair .weflair-why-flow {
+        display: none !important;
+      }
+
+      #why-weflair .weflair-why__visual-shell {
+        min-height: clamp(22rem, 48vh, 27rem);
+      }
+
+      #why-weflair .weflair-why-window,
+      #why-weflair .weflair-why-window--wide {
+        inset: .45rem .75rem .75rem .75rem !important;
+        border-radius: 1.35rem;
+      }
+
+      #why-weflair .weflair-why-window__bar {
+        padding: .7rem .82rem;
+        background: transparent;
+        color: #171511;
+      }
+
+      #why-weflair .weflair-why-window__label {
+        padding: .3rem .56rem;
+        font-size: .58rem;
+        background: rgba(var(--why-accent-rgb), .12);
+        border: 1px solid rgba(var(--why-accent-rgb), .18);
+        color: color-mix(in srgb, var(--why-accent) 68%, #171511);
+      }
+
+      #why-weflair .weflair-why-dots span {
+        background: rgba(var(--why-accent-rgb), .26);
+      }
+
+      #why-weflair .weflair-why-window img {
+        display: none !important;
+      }
+
+      #why-weflair .weflair-why-illus {
+        position: absolute;
+        inset: 3.5rem .95rem 1rem .95rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1.28fr) minmax(0, .82fr);
+        grid-template-rows: minmax(0, 1fr) auto;
+        gap: .78rem;
+      }
+
+      #why-weflair .weflair-why-illus__card {
+        min-width: 0;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(23, 21, 17, .08);
+        background: rgba(255, 255, 255, .9);
+        box-shadow: 0 14px 28px rgba(63, 53, 40, .1);
+        padding: .92rem;
+      }
+
+      #why-weflair .weflair-why-illus__card--hero {
+        grid-row: 1 / span 2;
+        display: grid;
+        gap: .8rem;
+        align-content: start;
+        background: linear-gradient(180deg, rgba(255, 255, 255, .95) 0%, rgba(247, 242, 234, .9) 100%);
+      }
+
+      #why-weflair .weflair-why-illus__card--dark {
+        background: rgba(56, 65, 56, .94);
+        border-color: rgba(255, 255, 255, .06);
+        color: #eff4ee;
+      }
+
+      #why-weflair .weflair-why-illus__card--compact {
+        padding: .82rem;
+      }
+
+      #why-weflair .weflair-why-ui-label {
+        display: inline-flex;
+        align-items: center;
+        gap: .36rem;
+        width: fit-content;
+        padding: .34rem .58rem;
+        border-radius: .9rem;
+        background: rgba(var(--why-accent-rgb), .1);
+        border: 1px solid rgba(var(--why-accent-rgb), .16);
+        color: color-mix(in srgb, var(--why-accent) 72%, #171511);
+        font-size: .58rem;
+        line-height: 1;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      #why-weflair .weflair-why-ui-label::before {
+        content: "";
+        width: .34rem;
+        height: .34rem;
+        border-radius: 999px;
+        background: var(--why-accent);
+      }
+
+      #why-weflair .weflair-why-ui-grid {
+        display: grid;
+        gap: .62rem;
+      }
+
+      #why-weflair .weflair-why-ui-grid--3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      #why-weflair .weflair-why-ui-grid--2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #why-weflair .weflair-why-ui-tile {
+        min-width: 0;
+        padding: .75rem .72rem;
+        border-radius: .98rem;
+        background: rgba(244, 240, 233, .95);
+        border: 1px solid rgba(23, 21, 17, .07);
+        display: grid;
+        gap: .28rem;
+      }
+
+      #why-weflair .weflair-why-ui-tile span {
+        font-size: .6rem;
+        line-height: 1;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: rgba(23, 21, 17, .5);
+      }
+
+      #why-weflair .weflair-why-ui-tile b {
+        font-size: .88rem;
+        line-height: 1.2;
+        letter-spacing: -.03em;
+        color: #171511;
+      }
+
+      #why-weflair .weflair-why-ui-stack {
+        display: grid;
+        gap: .52rem;
+      }
+
+      #why-weflair .weflair-why-ui-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: .55rem;
+        align-items: center;
+        padding: .62rem .68rem;
+        border-radius: .9rem;
+        background: rgba(244, 240, 233, .82);
+        border: 1px solid rgba(23, 21, 17, .06);
+      }
+
+      #why-weflair .weflair-why-ui-row span,
+      #why-weflair .weflair-why-ui-row small {
+        font-size: .68rem;
+        line-height: 1.2;
+        color: rgba(23, 21, 17, .64);
+      }
+
+      #why-weflair .weflair-why-ui-row b {
+        font-size: .74rem;
+        line-height: 1;
+        letter-spacing: -.02em;
+        color: #171511;
+      }
+
+      #why-weflair .weflair-why-ui-bars {
+        display: grid;
+        gap: .56rem;
+      }
+
+      #why-weflair .weflair-why-ui-bar {
+        height: .56rem;
+        border-radius: 999px;
+        background: rgba(var(--why-accent-rgb), .12);
+        overflow: hidden;
+      }
+
+      #why-weflair .weflair-why-ui-bar::before {
+        content: "";
+        display: block;
+        width: var(--bar-width, 70%);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, rgba(var(--why-accent-rgb), .92), rgba(var(--why-accent-rgb), .36));
+      }
+
+      #why-weflair .weflair-why-ui-chart {
+        width: 100%;
+        height: 100%;
+        min-height: 12.5rem;
+      }
+
+      #why-weflair .weflair-why-ui-chart svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      #why-weflair .weflair-why-ui-surface {
+        padding: .85rem;
+        border-radius: 1rem;
+        background: linear-gradient(180deg, rgba(246, 243, 238, .96) 0%, rgba(238, 232, 223, .88) 100%);
+        border: 1px solid rgba(23, 21, 17, .06);
+      }
+
+      #why-weflair .weflair-why-ui-surface--dark {
+        background: linear-gradient(180deg, rgba(35, 39, 35, .98) 0%, rgba(27, 30, 27, .98) 100%);
+        border-color: rgba(255, 255, 255, .05);
+      }
+
+      #why-weflair .weflair-why-ui-avatar-row {
+        display: flex;
+        gap: .58rem;
+        align-items: center;
+      }
+
+      #why-weflair .weflair-why-ui-avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .76), rgba(var(--why-accent-rgb), .7));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .42);
+      }
+
+      #why-weflair .weflair-why-ui-avatar-row b {
+        display: block;
+        font-size: .82rem;
+        line-height: 1.15;
+        color: #171511;
+      }
+
+      #why-weflair .weflair-why-ui-avatar-row span {
+        display: block;
+        margin-top: .12rem;
+        font-size: .65rem;
+        line-height: 1.2;
+        color: rgba(23, 21, 17, .58);
+      }
+
+      #why-weflair .weflair-why-ui-note {
+        display: grid;
+        gap: .38rem;
+      }
+
+      #why-weflair .weflair-why-ui-note b {
+        font-size: .92rem;
+        line-height: 1.15;
+        color: inherit;
+      }
+
+      #why-weflair .weflair-why-ui-note p {
+        margin: 0;
+        font-size: .72rem;
+        line-height: 1.45;
+        color: rgba(23, 21, 17, .66);
+      }
+
+      #why-weflair .weflair-why-ui-surface--dark .weflair-why-ui-note p {
+        color: rgba(244, 241, 234, .68);
+      }
+
+      #why-weflair .weflair-why-ui-lines {
+        display: grid;
+        gap: .46rem;
+      }
+
+      #why-weflair .weflair-why-ui-line {
+        height: .56rem;
+        border-radius: 999px;
+        background: rgba(23, 21, 17, .08);
+      }
+
+      #why-weflair .weflair-why-ui-line:nth-child(1) { width: 92%; }
+      #why-weflair .weflair-why-ui-line:nth-child(2) { width: 78%; }
+      #why-weflair .weflair-why-ui-line:nth-child(3) { width: 86%; }
+      #why-weflair .weflair-why-ui-line:nth-child(4) { width: 64%; }
+
+      #why-weflair .weflair-why-ui-surface--dark .weflair-why-ui-line {
+        background: rgba(244, 241, 234, .14);
+      }
+
+      #why-weflair .weflair-why-ui-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .42rem;
+      }
+
+      #why-weflair .weflair-why-ui-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: .34rem;
+        padding: .34rem .52rem;
+        border-radius: .78rem;
+        background: rgba(255, 255, 255, .72);
+        border: 1px solid rgba(23, 21, 17, .06);
+        font-size: .56rem;
+        line-height: 1;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: rgba(23, 21, 17, .58);
+      }
+
+      #why-weflair .weflair-why-ui-tag::before {
+        content: "";
+        width: .3rem;
+        height: .3rem;
+        border-radius: 50%;
+        background: var(--why-accent);
+      }
+
+      #why-weflair .weflair-why__visual-shell > .weflair-why-card {
+        display: none !important;
+      }
+
+      #why-weflair .weflair-why-card {
+        padding: .85rem .9rem;
+        border-radius: 1rem;
+        box-shadow: 0 16px 28px rgba(63, 53, 40, .12);
+        backdrop-filter: none;
+      }
+
+      #why-weflair .weflair-why__visual-shell > .weflair-why-card {
+        max-width: 13.75rem;
+      }
+
+      #why-weflair .weflair-why-card--dark {
+        background: rgba(30, 33, 30, .92);
+      }
+
+      #why-weflair .weflair-why-card__eyebrow {
+        margin: 0 0 .45rem;
+        font-size: .62rem;
+        letter-spacing: .14em;
+      }
+
+      #why-weflair .weflair-why-card__title {
+        font-size: .84rem;
+        line-height: 1.3;
+      }
+
+      #why-weflair .weflair-why-card__body {
+        margin-top: .35rem;
+        font-size: .74rem;
+        line-height: 1.45;
+      }
+
+      #why-weflair .weflair-why-pill-list {
+        gap: .32rem;
+        margin-top: .55rem;
+      }
+
+      #why-weflair .weflair-why-pill {
+        padding: .3rem .48rem;
+        border-radius: .8rem;
+        font-size: .56rem;
+        letter-spacing: .08em;
+      }
+
+      #why-weflair .weflair-why-bars {
+        gap: .42rem;
+        margin-top: .55rem;
+      }
+
+      #why-weflair .weflair-why-bars span {
+        height: .36rem;
+      }
+
+      #why-weflair .weflair-why-metric-row {
+        gap: .4rem;
+        margin-top: .55rem;
+      }
+
+      #why-weflair .weflair-why-metric {
+        gap: .45rem;
+        font-size: .62rem;
+      }
+
+      #why-weflair .weflair-why-metric b {
+        font-size: .74rem;
+      }
+
+      #why-weflair .weflair-why-thread {
+        gap: .42rem;
+        margin-top: .55rem;
+      }
+
+      #why-weflair .weflair-why-thread__line {
+        height: .42rem;
+      }
+
+      #why-weflair .weflair-why-doc {
+        gap: .4rem;
+        margin-top: .55rem;
+        padding: .65rem;
+      }
+
+      #why-weflair .weflair-why-doc__row {
+        font-size: .66rem;
+      }
+
+      #why-weflair .weflair-why-avatars {
+        margin-top: .6rem;
+      }
+
+      #why-weflair .weflair-why-avatar {
+        width: 1.95rem;
+        height: 1.95rem;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-window {
+        background: #141614;
+        border-color: rgba(246, 243, 238, .08);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-window__bar {
+        color: #f4f1ea;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-window__label {
+        background: rgba(var(--why-accent-rgb), .16);
+        color: rgba(244, 241, 234, .92);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-window img {
+        filter: saturate(.76) contrast(1.02) brightness(.92);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why__badge {
+        background: rgba(255, 255, 255, .05);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-card {
+        background: rgba(248, 244, 236, .94);
+        color: #171511;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-card__body,
+      html[data-theme="dark"] #why-weflair .weflair-why-metric,
+      html[data-theme="dark"] #why-weflair .weflair-why-doc__row {
+        color: rgba(23, 21, 17, .68);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-card--dark {
+        background: rgba(29, 33, 29, .96);
+        color: #f4f1ea;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-card--dark .weflair-why-card__body,
+      html[data-theme="dark"] #why-weflair .weflair-why-card--dark .weflair-why-metric {
+        color: rgba(244, 241, 234, .72);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-card--dark .weflair-why-metric b {
+        color: #fff;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-illus__card {
+        background: rgba(248, 244, 236, .94);
+        color: #171511;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-illus__card--dark {
+        background: rgba(36, 41, 36, .98);
+        color: #f4f1ea;
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-tile,
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-row,
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-surface {
+        background: rgba(247, 242, 234, .92);
+      }
+
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-row b,
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-tile b,
+      html[data-theme="dark"] #why-weflair .weflair-why-ui-avatar-row b {
+        color: #171511;
+      }
+
+      @media screen and (max-width: 767px) {
+        #why-weflair .weflair-why__badge-row .weflair-why__badge:nth-child(n+3) {
+          display: inline-flex;
+        }
+
+        #why-weflair .weflair-why__visual-shell {
+          min-height: 20rem;
+        }
+
+        #why-weflair .weflair-why-illus {
+          inset: 4.75rem .55rem .7rem .55rem;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+        }
+
+        #why-weflair .weflair-why-illus__card--hero {
+          grid-row: auto;
+        }
+
+        #why-weflair .weflair-why-window,
+        #why-weflair .weflair-why-window--wide {
+          inset: 4.9rem .45rem 1rem .45rem !important;
+        }
+      }
+    </style>
     <section class="weflair-section weflair-proof weflair-proof--legacy" id="proof-legacy">
 
 
@@ -7870,7 +9810,7 @@
             class="weflair-case-studies__filter" data-case-filter="Logistics"
             aria-pressed="false">Logistics</button><button type="button" class="weflair-case-studies__filter"
             data-case-filter="Web3" aria-pressed="false">Web3</button><button type="button"
-            class="weflair-case-studies__filter" data-case-filter="SaaS" aria-pressed="false">SaaS</button><button
+            class="weflair-case-studies__filter" data-case-filter="Tech" aria-pressed="false">Tech</button><button
             type="button" class="weflair-case-studies__filter" data-case-filter="Fintech"
             aria-pressed="false">Fintech</button></div>
         <div class="weflair-case-studies__frame">
@@ -8827,7 +10767,828 @@
         }
       }
     </style>
-    <section class="weflair-section weflair-proof" id="proof">
+    <style id="weflair-proof-switcher-css">
+      #proof.weflair-proof--switcher {
+        padding: clamp(5.8rem, 8vw, 7.2rem) 0;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__layout {
+        width: min(100%, 80rem);
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head {
+        width: min(100%, 42rem);
+        gap: .9rem;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head .h3 {
+        max-width: 11ch;
+      }
+
+      .weflair-proof-switcher {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .weflair-proof-switcher__nav {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 243, 238, .12);
+        background: rgba(246, 243, 238, .04);
+        color: #f6f3ee;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+
+      .weflair-proof-switcher__nav:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, .26);
+        background: rgba(62, 255, 104, .08);
+      }
+
+      .weflair-proof-switcher__nav svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .weflair-proof-switcher__shell {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 5rem 5rem 5rem;
+        gap: 1.05rem;
+        align-items: stretch;
+      }
+
+      .weflair-proof-feature {
+        display: grid;
+        gap: 1.45rem;
+        padding: 1.65rem;
+        border-radius: 1.9rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        background: linear-gradient(180deg, rgba(24, 24, 24, .98) 0%, rgba(15, 15, 15, .98) 100%);
+        box-shadow: 0 20px 38px rgba(0, 0, 0, .22);
+      }
+
+      .weflair-proof-feature__top {
+        display: grid;
+        grid-template-columns: minmax(0, 11.25rem) minmax(0, 1fr) minmax(0, 11rem);
+        gap: 1.65rem;
+        align-items: start;
+      }
+
+      .weflair-proof-feature__brand {
+        display: grid;
+        gap: .95rem;
+        align-content: start;
+      }
+
+      .weflair-proof-feature__badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-width: 6.5rem;
+        padding: .48rem .82rem;
+        border-radius: 999px;
+        background: rgba(62, 255, 104, .16);
+        border: 1px solid rgba(62, 255, 104, .22);
+        color: #b7ff7a;
+        font-size: .66rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .weflair-proof-feature__logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.4rem;
+      }
+
+      .weflair-proof-feature__logo img {
+        max-width: 9.25rem;
+        max-height: 2.4rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-feature__eyeline {
+        margin: 0;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, .42);
+      }
+
+      .weflair-proof-feature__headline {
+        margin: 0;
+        max-width: 10ch;
+        font-size: clamp(2rem, 3.1vw, 3.15rem);
+        line-height: .94;
+        letter-spacing: -.07em;
+      }
+
+      .weflair-proof-feature__visual {
+        position: relative;
+        min-height: 16.6rem;
+        padding: 0;
+        border-radius: 1.6rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        background: #d9d1c5;
+        overflow: hidden;
+      }
+
+      .weflair-proof-feature__photo {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: #d9d1c5;
+        background-image:
+          linear-gradient(180deg, rgba(19, 18, 16, .08) 0%, rgba(19, 18, 16, .16) 100%),
+          url("/brand-assets/office.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transform: scale(1.01);
+      }
+
+      .weflair-proof-feature__photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(0deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .06)),
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, .18), transparent 28%);
+      }
+
+      .weflair-proof-feature__photo-card {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        display: grid;
+        gap: .55rem;
+        padding: .95rem 1rem;
+        border-radius: 1.15rem;
+        border: 1px solid rgba(255, 255, 255, .44);
+        background: rgba(246, 243, 238, .86);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 14px 24px rgba(34, 28, 20, .14);
+      }
+
+      .weflair-proof-feature__photo-card p,
+      .weflair-proof-feature__photo-card strong {
+        margin: 0;
+        color: #171511;
+      }
+
+      .weflair-proof-feature__photo-card p {
+        font-size: .69rem;
+        line-height: 1.25;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        color: rgba(23, 21, 17, .54);
+      }
+
+      .weflair-proof-feature__photo-card strong {
+        font-size: 1rem;
+        line-height: 1.2;
+        letter-spacing: -.03em;
+      }
+
+      .weflair-proof-feature__visual-shell,
+      .weflair-proof-feature__visual-bar,
+      .weflair-proof-feature__visual-dots,
+      .weflair-proof-feature__visual-label,
+      .weflair-proof-feature__visual-stage,
+      .weflair-proof-feature__visual-mark,
+      .weflair-proof-feature__visual-tags {
+        display: none;
+      }
+
+      .weflair-proof-feature__service {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: .42rem .68rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 243, 238, .1);
+        background: rgba(246, 243, 238, .04);
+        font-size: .63rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, .7);
+      }
+
+      .weflair-proof-feature__metrics {
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+      }
+
+      .weflair-proof-feature__metric {
+        display: grid;
+        gap: .32rem;
+        padding: 0;
+        border: none;
+        background: transparent;
+      }
+
+      .weflair-proof-feature__metric + .weflair-proof-feature__metric {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(246, 243, 238, .09);
+      }
+
+      .weflair-proof-feature__metric strong {
+        font-size: clamp(2.45rem, 3.7vw, 3.15rem);
+        line-height: .92;
+        letter-spacing: -.07em;
+        color: #f6f3ee;
+      }
+
+      .weflair-proof-feature__metric span {
+        font-size: .88rem;
+        line-height: 1.35;
+        color: rgba(246, 243, 238, .68);
+      }
+
+      .weflair-proof-feature__summary {
+        margin: 0;
+        max-width: 44rem;
+        font-size: .98rem;
+        line-height: 1.55;
+        color: rgba(246, 243, 238, .74);
+      }
+
+      .weflair-proof-feature__meta {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr);
+        gap: 1.1rem 1.5rem;
+      }
+
+      .weflair-proof-feature__detail {
+        display: grid;
+        gap: .8rem;
+      }
+
+      .weflair-proof-feature__detail-label {
+        font-size: .78rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, .44);
+      }
+
+      .weflair-proof-feature__services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .55rem;
+      }
+
+      .weflair-proof-feature__duration {
+        font-size: 1.35rem;
+        line-height: 1.1;
+        letter-spacing: -.04em;
+      }
+
+      .weflair-proof-feature__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .85rem;
+      }
+
+      .weflair-proof-feature__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.45rem;
+        min-width: 15.75rem;
+        padding: .9rem 1.4rem;
+        border-radius: 999px;
+        background: #f6f3ee;
+        border: 1px solid transparent;
+        color: #171511;
+        text-decoration: none;
+        font-size: .82rem;
+        line-height: 1;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        font-weight: 800;
+        transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      }
+
+      .weflair-proof-feature__cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px rgba(0, 0, 0, .2);
+      }
+
+      .weflair-proof-feature__cta.is-secondary {
+        min-width: 13.5rem;
+        background: transparent;
+        border-color: rgba(246, 243, 238, .14);
+        color: #f6f3ee;
+      }
+
+      .weflair-proof-feature__cta.is-secondary:hover {
+        border-color: rgba(246, 243, 238, .24);
+        background: rgba(246, 243, 238, .05);
+      }
+
+      .weflair-proof-switcher__rails {
+        display: contents;
+      }
+
+      .weflair-proof-rail {
+        width: 100%;
+        min-height: 100%;
+        padding: 1rem .6rem .85rem;
+        border-radius: 1.45rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        background: rgba(246, 243, 238, .03);
+        display: grid;
+        justify-items: center;
+        align-content: space-between;
+        gap: .9rem;
+        color: #f6f3ee;
+        cursor: pointer;
+        transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+
+      .weflair-proof-rail:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, .22);
+        background: rgba(246, 243, 238, .05);
+      }
+
+      .weflair-proof-rail__logo {
+        display: grid;
+        place-items: center;
+        min-height: 2.5rem;
+        width: 100%;
+      }
+
+      .weflair-proof-rail__logo img {
+        max-width: 3.2rem;
+        max-height: 1.7rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-rail__meta {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: .64rem;
+        line-height: 1;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, .46);
+      }
+
+      .weflair-proof-rail__toggle {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid rgba(246, 243, 238, .12);
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        line-height: 1;
+        color: #8fa082;
+      }
+
+      .weflair-proof-switcher__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .55rem;
+      }
+
+      .weflair-proof-switcher__dot {
+        width: .78rem;
+        height: .78rem;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(246, 243, 238, .22);
+        cursor: pointer;
+      }
+
+      .weflair-proof-switcher__dot.is-active {
+        background: #3eff68;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(62, 255, 104, .04), transparent 24%),
+          radial-gradient(circle at 88% 14%, rgba(111, 136, 255, .06), transparent 26%),
+          linear-gradient(180deg, #f4f1ea 0%, #ece7dd 100%);
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof__head .weflair-section__body,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__summary,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__metric span,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__detail-label,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__eyeline,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-rail__meta {
+        color: rgba(23, 21, 17, .58);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-rail {
+        border-color: rgba(23, 21, 17, .09);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .92) 0%, rgba(250, 247, 241, .92) 100%);
+        box-shadow: 0 22px 38px rgba(88, 72, 50, .12);
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__visual,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__photo-card,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__service {
+        border-color: rgba(23, 21, 17, .09);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-rail,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__service {
+        background: rgba(255, 255, 255, .74);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__photo {
+        background-color: #dfd7ca;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__metric strong {
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__metric + .weflair-proof-feature__metric {
+        border-top-color: rgba(23, 21, 17, .09);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-switcher__nav {
+        border-color: rgba(23, 21, 17, .1);
+        background: rgba(255, 255, 255, .76);
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__badge {
+        color: #167a36;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__cta {
+        background: #171511;
+        color: #f6f3ee;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__cta.is-secondary {
+        background: transparent;
+        color: #171511;
+        border-color: rgba(23, 21, 17, .12);
+      }
+
+      @media screen and (max-width: 991px) {
+        .weflair-proof-switcher {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-switcher__nav {
+          display: none;
+        }
+
+        .weflair-proof-switcher__shell {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature__top,
+        .weflair-proof-feature__meta {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature__headline {
+          max-width: none;
+        }
+
+        .weflair-proof-switcher__rails {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: .85rem;
+        }
+
+        .weflair-proof-rail {
+          min-height: 10rem;
+          align-content: space-between;
+        }
+
+        .weflair-proof-rail__meta {
+          writing-mode: initial;
+          transform: none;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .weflair-proof-feature {
+          padding: 1.2rem;
+          gap: 1.2rem;
+        }
+
+        .weflair-proof-feature__visual {
+          min-height: 13.5rem;
+        }
+
+        .weflair-proof-feature__summary {
+          font-size: .94rem;
+        }
+
+        .weflair-proof-switcher__rails {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature__actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .weflair-proof-feature__cta {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    </style>
+    <section class="weflair-section weflair-proof weflair-proof--switcher" id="proof">
+      <div class="container">
+        <div class="weflair-proof__layout">
+          <div class="weflair-proof__head">
+            <div class="eyebrow">
+              <span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span>
+              <p class="eyebrow__p">Case studies</p>
+            </div>
+            <h2 class="h3">Selected wins, without the long version.</h2>
+            <p class="weflair-section__body">A tighter look at the work before you jump into the full case studies.</p>
+          </div>
+          <div class="weflair-proof-switcher" data-proof-switcher>
+            <button type="button" class="weflair-proof-switcher__nav is-prev" data-proof-nav-prev aria-label="Show previous case study">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="weflair-proof-switcher__shell">
+              <article class="weflair-proof-feature">
+                <div class="weflair-proof-feature__top">
+                  <div class="weflair-proof-feature__brand">
+                    <span class="weflair-proof-feature__badge">Case study</span>
+                    <div class="weflair-proof-feature__logo" data-proof-logo></div>
+                    <p class="weflair-proof-feature__eyeline" data-proof-eyeline></p>
+                    <h3 class="weflair-proof-feature__headline" data-proof-headline></h3>
+                  </div>
+                  <div class="weflair-proof-feature__visual">
+                    <div class="weflair-proof-feature__photo" data-proof-photo>
+                      <div class="weflair-proof-feature__photo-card">
+                        <p>Selected result</p>
+                        <strong data-proof-photo-copy></strong>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="weflair-proof-feature__metrics" data-proof-metrics></div>
+                </div>
+                <p class="weflair-proof-feature__summary" data-proof-summary></p>
+                <div class="weflair-proof-feature__meta">
+                  <div class="weflair-proof-feature__detail">
+                    <span class="weflair-proof-feature__detail-label">Services delivered</span>
+                    <div class="weflair-proof-feature__services" data-proof-services></div>
+                  </div>
+                  <div class="weflair-proof-feature__detail">
+                    <span class="weflair-proof-feature__detail-label">Partnership duration</span>
+                    <strong class="weflair-proof-feature__duration" data-proof-duration></strong>
+                  </div>
+                </div>
+                <div class="weflair-proof-feature__actions">
+                  <a href="/cases.html" class="weflair-proof-feature__cta" data-proof-link>Read full case study</a>
+                  <a href="/cases.html" class="weflair-proof-feature__cta is-secondary">See all case studies</a>
+                </div>
+                <div class="weflair-proof-switcher__dots" data-proof-dots></div>
+              </article>
+              <div class="weflair-proof-switcher__rails" data-proof-rails></div>
+            </div>
+            <button type="button" class="weflair-proof-switcher__nav is-next" data-proof-nav-next aria-label="Show next case study">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      (function () {
+        var root = document.querySelector("[data-proof-switcher]");
+        if (!root) return;
+
+        var proofCases = [
+          {
+            logo: "/brand-assets/client-logos/vip-vaping.svg",
+            alt: "VIP Vaping logo",
+            eyeline: "VIP Vaping · Retail turnaround",
+            headline: "120+ locations turned around.",
+            summary: "Rebuilt local search, CRM, and site conversion into one commercial recovery program.",
+            duration: "18 months",
+            services: ["Local SEO", "CRM rebuild", "Site UX"],
+            photo: "/brand-assets/office.png",
+            photoPosition: "center center",
+            photoCopy: "Local growth engine rebuilt around search, CRM, and conversion.",
+            metrics: [
+              { value: "+32%", label: "New customers" },
+              { value: "+153%", label: "Won-back customers" }
+            ],
+            link: "/cases.html"
+          },
+          {
+            logo: "/brand-assets/client-logos/rct.png",
+            alt: "RCT logo",
+            eyeline: "RCT · Real estate",
+            headline: "Search rebuilt for closed deals.",
+            summary: "Paid search and reporting were tightened around qualified deals, not platform vanity metrics.",
+            duration: "12 months",
+            services: ["Paid search", "Landing pages", "Reporting"],
+            photo: "/brand-assets/office.png",
+            photoPosition: "center 42%",
+            photoCopy: "The account was restructured around deal quality and profitable demand.",
+            metrics: [
+              { value: "+36%", label: "ROAS" },
+              { value: "+15%", label: "Total deals" }
+            ],
+            link: "/cases.html"
+          },
+          {
+            logo: "/brand-assets/client-logos/molahin.png",
+            alt: "Molahin logo",
+            eyeline: "Molahin · Music platform",
+            headline: "Paid efficiency up.",
+            summary: "Sharper messaging and cleaner audience structure lifted paid efficiency without bloating spend.",
+            duration: "9 months",
+            services: ["Paid media", "Creative testing", "CRO"],
+            photo: "/brand-assets/office.png",
+            photoPosition: "center 55%",
+            photoCopy: "Audience intelligence and localized messaging improved paid efficiency.",
+            metrics: [
+              { value: "+128%", label: "ROAS" },
+              { value: "$114K", label: "New revenue" }
+            ],
+            link: "/cases.html"
+          },
+          {
+            logo: "/brand-assets/client-logos/notcutts.svg",
+            alt: "Notcutts logo",
+            eyeline: "Notcutts · Retail CRM",
+            headline: "Capture up. Conversion up.",
+            summary: "A cleaner capture flow and lifecycle setup turned list growth into measurable conversion lift.",
+            duration: "14 months",
+            services: ["CRM", "Lifecycle email", "Onsite capture"],
+            photo: "/brand-assets/office.png",
+            photoPosition: "center 48%",
+            photoCopy: "List growth and lifecycle conversion were rebuilt into one repeatable loop.",
+            metrics: [
+              { value: "+40%", label: "Email database" },
+              { value: "+70%", label: "Conversion YOY" }
+            ],
+            link: "/cases.html"
+          },
+          {
+            logo: "/brand-assets/client-logos/harrier-white.png",
+            alt: "Harrier Trail Running logo",
+            eyeline: "Harrier · E-commerce launches",
+            headline: "Paid social made launches work.",
+            summary: "A full-funnel paid program turned product launches into efficient revenue growth.",
+            duration: "10 months",
+            services: ["Paid social", "Launch strategy", "Creative testing"],
+            photo: "/brand-assets/office.png",
+            photoPosition: "center 36%",
+            photoCopy: "Launch campaigns were turned into efficient demand and revenue generation.",
+            metrics: [
+              { value: "5.53x", label: "ROAS" },
+              { value: "121%", label: "ROI" }
+            ],
+            link: "/cases.html"
+          }
+        ];
+
+        var activeIndex = 0;
+        var prevButton = root.querySelector("[data-proof-nav-prev]");
+        var nextButton = root.querySelector("[data-proof-nav-next]");
+        var logoTarget = root.querySelector("[data-proof-logo]");
+        var photoTarget = root.querySelector("[data-proof-photo]");
+        var photoCopyTarget = root.querySelector("[data-proof-photo-copy]");
+        var eyelineTarget = root.querySelector("[data-proof-eyeline]");
+        var headlineTarget = root.querySelector("[data-proof-headline]");
+        var summaryTarget = root.querySelector("[data-proof-summary]");
+        var durationTarget = root.querySelector("[data-proof-duration]");
+        var servicesTarget = root.querySelector("[data-proof-services]");
+        var metricsTarget = root.querySelector("[data-proof-metrics]");
+        var railsTarget = root.querySelector("[data-proof-rails]");
+        var dotsTarget = root.querySelector("[data-proof-dots]");
+        var linkTarget = root.querySelector("[data-proof-link]");
+
+        function logoHtml(item) {
+          return '<img src="' + item.logo + '" alt="' + item.alt + '" loading="lazy" decoding="async">';
+        }
+
+        function metricHtml(metric) {
+          return '<div class="weflair-proof-feature__metric"><strong>' + metric.value + '</strong><span>' + metric.label + '</span></div>';
+        }
+
+        function serviceHtml(service) {
+          return '<span class="weflair-proof-feature__service">' + service + '</span>';
+        }
+
+        function railHtml(item, index) {
+          var meta = item.eyeline.split("·");
+          var label = meta.length > 1 ? meta[1].trim() : item.eyeline;
+          return '<button type="button" class="weflair-proof-rail" data-proof-select="' + index + '" aria-label="Show ' + item.alt.replace(" logo", "") + ' case study"><span class="weflair-proof-rail__logo">' + logoHtml(item) + '</span><span class="weflair-proof-rail__meta">' + label + '</span><span class="weflair-proof-rail__toggle" aria-hidden="true">+</span></button>';
+        }
+
+        function dotHtml(index) {
+          return '<button type="button" class="weflair-proof-switcher__dot' + (index === activeIndex ? ' is-active' : '') + '" data-proof-dot="' + index + '" aria-label="Show case study ' + (index + 1) + '"></button>';
+        }
+
+        function nextIndexes(start) {
+          var indexes = [];
+          for (var offset = 1; offset <= 3; offset += 1) {
+            indexes.push((start + offset) % proofCases.length);
+          }
+          return indexes;
+        }
+
+        function render() {
+          var item = proofCases[activeIndex];
+
+          if (logoTarget) logoTarget.innerHTML = logoHtml(item);
+          if (photoTarget) {
+            photoTarget.style.backgroundImage = 'linear-gradient(180deg, rgba(19, 18, 16, .08) 0%, rgba(19, 18, 16, .16) 100%), url("' + item.photo + '")';
+            photoTarget.style.backgroundPosition = item.photoPosition || "center center";
+          }
+          if (photoCopyTarget) photoCopyTarget.textContent = item.photoCopy || item.headline;
+          if (eyelineTarget) eyelineTarget.textContent = item.eyeline;
+          if (headlineTarget) headlineTarget.textContent = item.headline;
+          if (summaryTarget) summaryTarget.textContent = item.summary;
+          if (durationTarget) durationTarget.textContent = item.duration;
+          if (servicesTarget) servicesTarget.innerHTML = item.services.map(serviceHtml).join("");
+          if (metricsTarget) metricsTarget.innerHTML = item.metrics.map(metricHtml).join("");
+          if (linkTarget) linkTarget.setAttribute("href", item.link);
+
+          if (railsTarget) {
+            railsTarget.innerHTML = nextIndexes(activeIndex).map(function (index) {
+              return railHtml(proofCases[index], index);
+            }).join("");
+          }
+
+          if (dotsTarget) {
+            dotsTarget.innerHTML = proofCases.map(function (_, index) {
+              return dotHtml(index);
+            }).join("");
+          }
+
+          Array.prototype.forEach.call(root.querySelectorAll("[data-proof-select]"), function (button) {
+            button.addEventListener("click", function () {
+              activeIndex = Number(button.getAttribute("data-proof-select"));
+              render();
+            });
+          });
+
+          Array.prototype.forEach.call(root.querySelectorAll("[data-proof-dot]"), function (button) {
+            button.addEventListener("click", function () {
+              activeIndex = Number(button.getAttribute("data-proof-dot"));
+              render();
+            });
+          });
+        }
+
+        prevButton.addEventListener("click", function () {
+          activeIndex = (activeIndex - 1 + proofCases.length) % proofCases.length;
+          render();
+        });
+
+        nextButton.addEventListener("click", function () {
+          activeIndex = (activeIndex + 1) % proofCases.length;
+          render();
+        });
+
+        render();
+      })();
+    </script>
+    <section class="weflair-section weflair-proof weflair-proof--legacy-old" id="proof-legacy-accordion" hidden aria-hidden="true">
       <div class="container">
         <div class="weflair-proof__layout">
           <div class="weflair-proof__head">
@@ -8958,7 +11719,7 @@
                     <img class="weflair-proof-panel__logo-image" src="/brand-assets/client-logos/molahin.png" alt="Molahin logo" loading="lazy" decoding="async">
                   </span>
                 </div>
-                <p class="weflair-proof-panel__eyeline">Molahin · Music SaaS</p>
+                <p class="weflair-proof-panel__eyeline">Molahin · Music platform</p>
                 <h3 class="weflair-proof-panel__headline">Paid efficiency up.</h3>
                 <div class="weflair-proof-panel__metrics">
                   <div class="weflair-proof-panel__metric">
@@ -9042,7 +11803,7 @@
                 </div>
               </article>
               <article class="weflair-results-testimonials__card is-quote" style="--card-accent:#a855f7;--card-accent-rgb:168,85,247">
-                <div class="weflair-results-testimonials__card-top"><span class="weflair-results-testimonials__label">SaaS / Performance</span>
+                <div class="weflair-results-testimonials__card-top"><span class="weflair-results-testimonials__label">Tech / Performance</span>
                   <div class="weflair-results-testimonials__logo"><img class="weflair-results-testimonials__logo-image" src="/brand-assets/client-logos/molahin.png" alt="Molahin logo" loading="lazy" decoding="async"></div>
                 </div>
                 <blockquote class="weflair-results-testimonials__statement is-quote">The difference was not just better ads. It was a much sharper system behind the campaigns.</blockquote>
@@ -9386,6 +12147,317 @@
           </a></div>
       </div>
     </section>
+    <!-- ═══ SECTORS ═══ -->
+    <section class="weflair-section weflair-sectors" id="sectors">
+      <div class="container">
+        <div class="weflair-section__head">
+          <div class="eyebrow"><span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span><p class="eyebrow__p">Sectors</p></div>
+          <h2 class="h3">Industries we drive growth in.</h2>
+          <p class="weflair-section__body">Four focus areas, one operating system. We adapt the playbook to how your market actually buys.</p>
+        </div>
+        <div class="weflair-sectors__tabs" role="tablist">
+          <button class="weflair-sectors__tab is-active" data-sector="ecommerce" role="tab" aria-selected="true" style="--sector-color:#f08a2d; --sector-tint:240,138,45;">
+            <span class="weflair-sectors__tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="10" width="32" height="26" rx="4"></rect>
+                <path d="M16 18h16"></path>
+                <path d="M16 24h7"></path>
+                <path d="M28.5 21.5a4.5 4.5 0 1 1 0 9"></path>
+                <path d="M13 38h22"></path>
+              </svg>
+            </span>
+            <span class="weflair-sectors__tab-label">E-commerce</span>
+          </button>
+          <button class="weflair-sectors__tab" data-sector="saas" role="tab" aria-selected="false" style="--sector-color:#26a3ff; --sector-tint:38,163,255;">
+            <span class="weflair-sectors__tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 10v10"></path>
+                <path d="M24 28v10"></path>
+                <path d="M10 24h10"></path>
+                <path d="M28 24h10"></path>
+                <circle cx="24" cy="24" r="6.5"></circle>
+                <circle cx="14" cy="14" r="3.5"></circle>
+                <circle cx="34" cy="14" r="3.5"></circle>
+                <circle cx="14" cy="34" r="3.5"></circle>
+                <circle cx="34" cy="34" r="3.5"></circle>
+              </svg>
+            </span>
+            <span class="weflair-sectors__tab-label">B2B Tech</span>
+          </button>
+          <button class="weflair-sectors__tab" data-sector="fintech" role="tab" aria-selected="false" style="--sector-color:#16a8d9; --sector-tint:22,168,217;">
+            <span class="weflair-sectors__tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="10" width="32" height="26" rx="4"></rect>
+                <path d="M16 28v-7"></path>
+                <path d="M24 28V16"></path>
+                <path d="M32 28v-4"></path>
+                <path d="M13 36h22"></path>
+                <circle cx="36" cy="14" r="4"></circle>
+              </svg>
+            </span>
+            <span class="weflair-sectors__tab-label">Fintech</span>
+          </button>
+          <button class="weflair-sectors__tab" data-sector="services" role="tab" aria-selected="false" style="--sector-color:#2aa0d8; --sector-tint:42,160,216;">
+            <span class="weflair-sectors__tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18h18"></path>
+                <path d="M24 18v18"></path>
+                <path d="M11 22c3.2 0 5.6 2.6 5.6 5.8S14.2 33.6 11 33.6"></path>
+                <path d="M37 22c-3.2 0-5.6 2.6-5.6 5.8s2.4 5.8 5.6 5.8"></path>
+                <path d="M18.5 10.5 24 18l5.5-7.5"></path>
+                <path d="M15 38h18"></path>
+              </svg>
+            </span>
+            <span class="weflair-sectors__tab-label">B2B Services</span>
+          </button>
+        </div>
+        <div class="weflair-sectors__panel is-active" data-sector-panel="ecommerce" role="tabpanel" style="--sector-color:#f08a2d; --sector-tint:240,138,45; --sector-soft:#fbe5d2;">
+          <div class="weflair-sectors__panel-grid">
+            <div class="weflair-sectors__hero" style="background-position:center 44%;">
+              <span class="weflair-sectors__hero-pill">Retention + ROAS</span>
+            </div>
+            <div class="weflair-sectors__logos">
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/notcutts.svg" alt="Notcutts"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/pink-boutique.png" alt="Pink Boutique"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/fragrance-shop.png" alt="The Fragrance Shop"></div>
+            </div>
+            <div class="weflair-sectors__content">
+              <h3>300+ growth projects in e-commerce</h3>
+              <p>We implement multichannel programs that directly impact revenue, from paid acquisition and feed performance through retention, CRO, and marketplace expansion.</p>
+              <p>As a long-term growth partner, we keep the operation commercially tight, channel by channel, without losing sight of AOV, margin, and repeat purchase behavior.</p>
+              <a href="/expertise/ecommerce.html" class="weflair-sectors__cta">Learn more</a>
+            </div>
+            <aside class="weflair-sectors__optimize">
+              <h4>We help you optimize:</h4>
+              <ul>
+                <li>Average order value</li>
+                <li>Customer lifetime value</li>
+                <li>Product return rates</li>
+                <li>Customer conversion rates</li>
+                <li>Cart abandonment rates</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="weflair-sectors__panel" data-sector-panel="saas" role="tabpanel" style="--sector-color:#26a3ff; --sector-tint:38,163,255; --sector-soft:#e9f4ff;">
+          <div class="weflair-sectors__panel-grid">
+            <div class="weflair-sectors__hero" style="background-position:center 34%;">
+              <span class="weflair-sectors__hero-pill">Pipeline + activation</span>
+            </div>
+            <div class="weflair-sectors__logos">
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/molahin.png" alt="Molahin"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/hq-software.png" alt="HQ Software"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/mawsim.png" alt="Mawsim"></div>
+            </div>
+            <div class="weflair-sectors__content">
+              <h3>Growth systems built for B2B tech teams</h3>
+              <p>From self-serve motions to enterprise sales cycles, we build demand capture, activation, and revenue operations around how modern software teams actually grow.</p>
+              <p>The focus is not vanity lead volume. It is qualified pipeline, activation quality, expansion revenue, and cleaner visibility from spend to close.</p>
+              <a href="/expertise/b2b-saas.html" class="weflair-sectors__cta">Learn more</a>
+            </div>
+            <aside class="weflair-sectors__optimize">
+              <h4>We help you optimize:</h4>
+              <ul>
+                <li>Demo-to-close rate</li>
+                <li>Trial activation</li>
+                <li>Pipeline velocity</li>
+                <li>CAC payback</li>
+                <li>Expansion revenue</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="weflair-sectors__panel" data-sector-panel="fintech" role="tabpanel" style="--sector-color:#16a8d9; --sector-tint:22,168,217; --sector-soft:#e5f7fc;">
+          <div class="weflair-sectors__panel-grid">
+            <div class="weflair-sectors__hero" style="background-position:center 28%;">
+              <span class="weflair-sectors__hero-pill">Trust + activation</span>
+            </div>
+            <div class="weflair-sectors__logos">
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/cellpoint-digital.png" alt="CellPoint Digital"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/santander.png" alt="Santander"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/royal-mint.png" alt="Royal Mint"></div>
+            </div>
+            <div class="weflair-sectors__content">
+              <h3>Fintech growth without losing trust</h3>
+              <p>We help fintech brands balance acquisition, onboarding, and retention inside more complex buying journeys where trust, clarity, and compliance all matter.</p>
+              <p>The operating model is built to improve qualified application volume, activation, and commercial visibility without turning the front end into generic finance marketing.</p>
+              <a href="/expertise/fintech.html" class="weflair-sectors__cta">Learn more</a>
+            </div>
+            <aside class="weflair-sectors__optimize">
+              <h4>We help you optimize:</h4>
+              <ul>
+                <li>Approved applications</li>
+                <li>Activation rate</li>
+                <li>CAC efficiency</li>
+                <li>Qualified account volume</li>
+                <li>Retention quality</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        <div class="weflair-sectors__panel" data-sector-panel="services" role="tabpanel" style="--sector-color:#2aa0d8; --sector-tint:42,160,216; --sector-soft:#e8f6fc;">
+          <div class="weflair-sectors__panel-grid">
+            <div class="weflair-sectors__hero" style="background-position:center 40%;">
+              <span class="weflair-sectors__hero-pill">Qualified pipeline</span>
+            </div>
+            <div class="weflair-sectors__logos">
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/rct.png" alt="RCT"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/cpc.png" alt="CPC"></div>
+              <div class="weflair-sectors__logo-card"><img src="/brand-assets/client-logos/farnell.png" alt="Farnell"></div>
+            </div>
+            <div class="weflair-sectors__content">
+              <h3>Demand generation for B2B services teams</h3>
+              <p>For agencies, consultancies, and specialist operators, we build structured lead generation that supports longer sales cycles, stronger qualification, and better close rates.</p>
+              <p>That usually means fixing the handoff between traffic, forms, sales conversations, and revenue tracking so the pipeline behaves like a system instead of a set of isolated channels.</p>
+              <a href="/expertise/b2b-services.html" class="weflair-sectors__cta">Learn more</a>
+            </div>
+            <aside class="weflair-sectors__optimize">
+              <h4>We help you optimize:</h4>
+              <ul>
+                <li>Qualified opportunities</li>
+                <li>Lead-to-meeting rate</li>
+                <li>Win rate</li>
+                <li>Pipeline coverage</li>
+                <li>Sales cycle length</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ENGAGEMENT MODEL ═══ -->
+    <section class="weflair-section weflair-engagement" id="engagement-model">
+      <div class="container">
+        <div class="weflair-section__head">
+          <div class="eyebrow"><span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span><p class="eyebrow__p">Engagement</p></div>
+          <h2 class="h3">Flexible engagement models.</h2>
+          <p class="weflair-section__body">Structured around scope, pace, and commercial reality, so the relationship fits the work instead of forcing the work to fit the contract.</p>
+        </div>
+        <div class="weflair-engagement__grid">
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <h3>Monthly Retainer</h3>
+            <ul>
+              <li>Ongoing access to diverse expertise</li>
+              <li>Flexible service set composition</li>
+              <li>Adaptability to changing requirements</li>
+              <li>Cost-effective long-term partnership</li>
+            </ul>
+          </div>
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3>Hour-based Engagement</h3>
+            <ul>
+              <li>Adaptability to changing requirements</li>
+              <li>Easy to scale</li>
+              <li>Precise financial planning</li>
+              <li>No long-term commitment</li>
+            </ul>
+          </div>
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+            <h3>Project-based Pricing</h3>
+            <ul>
+              <li>Transparent project scope and deliverables</li>
+              <li>Predictable project budget</li>
+              <li>Seamless performance evaluation</li>
+              <li>No long-term commitment</li>
+            </ul>
+          </div>
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l5.5-5.5L13 17l7-7"/><path d="M15 10h5v5"/></svg></div>
+            <h3>Performance-based Pricing</h3>
+            <ul>
+              <li>Agency compensation is tied to performance</li>
+              <li>Growth-driven cooperation</li>
+              <li>Seamless performance evaluation</li>
+              <li>Seamless accountability</li>
+            </ul>
+          </div>
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <h3>Percentage or Ad Spent</h3>
+            <ul>
+              <li>Growth-oriented pricing structure</li>
+              <li>Clear expectations and budgeting</li>
+              <li>Seamless ROI measurement</li>
+              <li>Easy engagement scalability</li>
+            </ul>
+          </div>
+          <div class="weflair-engagement__card">
+            <div class="weflair-engagement__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+            <h3>Custom Pricing Model</h3>
+            <ul>
+              <li>Tailored service sets</li>
+              <li>Maximized cost-efficiency</li>
+              <li>Smooth engagement scaling up and down</li>
+              <li>Seamless integration with your team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CREDENTIALS ═══ -->
+    <section class="weflair-section weflair-credentials" id="credentials-legacy" hidden aria-hidden="true">
+      <div class="container">
+        <div class="weflair-section__head" style="text-align:center">
+          <h2 class="h3">WeFlair credentials</h2>
+        </div>
+        <div class="weflair-credentials__stats">
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">$30M+</span><span class="weflair-credentials__stat-label">In managed Ad Spend</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">10+</span><span class="weflair-credentials__stat-label">Years of experience</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">100+</span><span class="weflair-credentials__stat-label">Success stories</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">4.93/5</span><span class="weflair-credentials__stat-label">Client satisfaction rate</span></div>
+        </div>
+        <div class="weflair-credentials__slider">
+          <div class="weflair-credentials__slider-track">
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+              <span class="weflair-credentials__badge-name">Google Partner</span>
+              <span class="weflair-credentials__badge-sub">PREMIER 2026</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span>
+              <span class="weflair-credentials__badge-name">Meta</span>
+              <span class="weflair-credentials__badge-sub">Business Partners Member</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+              <span class="weflair-credentials__badge-name">Certified</span>
+              <span class="weflair-credentials__badge-sub">Marketing Insider</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+              <span class="weflair-credentials__badge-name">Clutch</span>
+              <span class="weflair-credentials__badge-sub">Top PPC Company</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19l5.5-5.5L13 17l7-7"/><path d="M15 10h5v5"/></svg></span>
+              <span class="weflair-credentials__badge-name">High Performer</span>
+              <span class="weflair-credentials__badge-sub">Winter 2026</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              <span class="weflair-credentials__badge-name">Microsoft Ads</span>
+              <span class="weflair-credentials__badge-sub">Certified Expert</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+              <span class="weflair-credentials__badge-name">HubSpot</span>
+              <span class="weflair-credentials__badge-sub">Solutions Partner</span>
+            </div>
+          </div>
+          <div class="weflair-credentials__dots" aria-hidden="true">
+            <span class="weflair-credentials__dot is-active"></span>
+            <span class="weflair-credentials__dot"></span>
+            <span class="weflair-credentials__dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="weflair-section weflair-resources-teaser" id="resources-teaser">
       <div class="container">
         <div class="weflair-resources-teaser__layout">
@@ -9394,8 +12466,8 @@
               <span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span>
               <p class="eyebrow__p">Resources</p>
             </div>
-            <h2 class="h3">Frameworks, calculators, and workflows you can use without us.</h2>
-            <p class="weflair-section__body">A cleaner resource teaser. Four clear entry points into the pages you already built, with stronger framing around what each section is actually for.</p>
+            <h2 class="h3">Tools, playbooks, and calculators you can use right away.</h2>
+            <p class="weflair-section__body">Four clear entry points into the frameworks, workflows, and practical resources your team can actually use.</p>
           </div>
           <div class="weflair-resources-teaser__grid">
             <a href="/resources/calculators.html" class="weflair-resource-card" aria-label="Get calculators">
@@ -9466,6 +12538,43 @@
         </div>
       </div>
     </section>
+    <!-- ═══ FAQ ═══ -->
+    <section class="weflair-section weflair-faq" id="faq">
+      <div class="container">
+        <div class="weflair-section__head">
+          <div class="eyebrow"><span class="weflair-eyebrow-icon"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span><p class="eyebrow__p">FAQ</p></div>
+          <h2 class="h3">Questions that usually come up before we start.</h2>
+          <p class="weflair-section__body">The practical questions teams ask when they are deciding fit, scope, and pace.</p>
+        </div>
+        <div class="weflair-faq__list">
+          <details class="weflair-faq__item">
+            <summary>What industries do you specialize in?</summary>
+            <div class="weflair-faq__answer">We focus on four core sectors: B2B tech, B2B services, fintech, and e-commerce. Within each, we use playbooks, benchmarks, and channel experience shaped across 100+ engagements. If your category sits close to those markets, we are happy to discuss fit.</div>
+          </details>
+          <details class="weflair-faq__item">
+            <summary>How quickly can you start?</summary>
+            <div class="weflair-faq__answer">Most engagements kick off within two weeks of signing. We run a structured onboarding that includes account access, stakeholder alignment, and an initial audit so we can launch first campaigns within 14 days of kickoff.</div>
+          </details>
+          <details class="weflair-faq__item">
+            <summary>What does a typical engagement look like?</summary>
+            <div class="weflair-faq__answer">It starts with a discovery and audit phase, followed by strategy and planning, then execution and optimization, and finally scaling what works. Most clients begin with a 90-day sprint to prove results before expanding scope. We offer everything from full-service partnerships to one-off audits.</div>
+          </details>
+          <details class="weflair-faq__item">
+            <summary>How do you measure and report on success?</summary>
+            <div class="weflair-faq__answer">Every engagement includes real-time dashboards, weekly stand-ups, and monthly deep-dive reviews. We report on the metrics that matter to your business: pipeline, CAC, ROAS, conversion rates, and revenue attribution. No vanity metrics, no black boxes.</div>
+          </details>
+          <details class="weflair-faq__item">
+            <summary>Do you work with in-house marketing teams?</summary>
+            <div class="weflair-faq__answer">Absolutely. Most of our clients have in-house teams. WeFlair plugs in as an extension, covering the channels and capabilities your team does not have bandwidth for. We align on workflows, share reporting, and operate as one unit.</div>
+          </details>
+          <details class="weflair-faq__item">
+            <summary>What makes WeFlair different from other agencies?</summary>
+            <div class="weflair-faq__answer">Senior-led teams with no junior hand-offs, custom strategies built from scratch for every client, transparent reporting with full visibility, and a tech-forward stack that includes proprietary automation and AI-driven optimization. We are the partner you keep, not the agency you replace every 12 months.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="footer weflair-footer">
       <div class="weflair-footer__cta-banner" id="audit">
         <div class="container">
@@ -9547,7 +12656,7 @@
               <div class="weflair-footer__nav-col">
                 <h4 class="weflair-footer__col-heading">Expertise</h4>
                 <ul class="weflair-footer__nav-list">
-                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
+                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B Tech</a></li>
                   <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
                   <li><a href="/expertise/b2b-hardware.html" class="weflair-footer__nav-link">B2B Hardware</a></li>
                   <li><a href="/expertise/fintech.html" class="weflair-footer__nav-link">Fintech</a></li>
@@ -9949,8 +13058,8 @@
         applyCalAttrs(document.querySelector(".nav-bar__btn a"), "nav-talk");
 
         const servicesCta = document.querySelector(".weflair-services-cta");
-        if (servicesCta) {
-          servicesCta.innerHTML = '<div class="weflair-services-cta-text"><h3 class="h5">Not sure which service you need?</h3><p>Book a call and we&rsquo;ll figure out the best approach.</p></div><div class="weflair-services-cta-actions">' + calButtonHtml("Book a free growth audit", "services-cta") + '<p class="weflair-services-cta-note">Free audit included &bull; No commitment required</p></div>';
+        if (servicesCta && !servicesCta.classList.contains('weflair-questionnaire-hook')) {
+          servicesCta.innerHTML = '<div class="weflair-services-cta-text"><h3 class="h5">Not sure which service you need?</h3><p>Answer three quick questions and we&rsquo;ll recommend the right starting point.</p></div>';
         }
 
         const footerInner = document.querySelector(".weflair-footer__cta-inner");
@@ -9979,6 +13088,38 @@
         });
       } else {
         upgradePage();
+      }
+    })();
+  </script>
+  <script>
+    /* ═══ SECTOR TAB SWITCHING ═══ */
+    (function(){
+      var tabs = document.querySelectorAll('.weflair-sectors__tab');
+      var panels = document.querySelectorAll('.weflair-sectors__panel');
+      if (!tabs.length) return;
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          var target = this.getAttribute('data-sector');
+          tabs.forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+          panels.forEach(function(p){ p.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          this.setAttribute('aria-selected','true');
+          var panel = document.querySelector('[data-sector-panel="'+target+'"]');
+          if(panel) panel.classList.add('is-active');
+        });
+      });
+    })();
+
+    /* ═══ FIX CORRUPTED QUESTIONNAIRE LINE ═══ */
+    (function(){
+      var ctaText = document.querySelector('.weflair-questionnaire-hook .weflair-services-cta-text');
+      if (!ctaText) return;
+      var p = ctaText.querySelector('p');
+      if (p) {
+        p.textContent = 'Answer three quick questions and we will recommend the right starting point for your business.';
+        /* Remove any duplicate <p> siblings */
+        var ps = ctaText.querySelectorAll('p');
+        for (var i = 1; i < ps.length; i++) ps[i].remove();
       }
     })();
   </script>
