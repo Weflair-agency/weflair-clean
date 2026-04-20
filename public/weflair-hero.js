@@ -2,168 +2,17 @@
   const FLARE_PATH =
     "M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z";
 
-  const LOGOS = [
-    {
+  const LOGOS = Array.from({ length: 23 }, (_, index) => {
+    const assetNumber = index + 4;
+    return {
       type: "image",
-      label: "HQ Software",
-      src: "./brand-assets/client-logos/hq-software.png",
-      size: "xl",
-      width: "102%",
-      height: "78%",
-    },
-    {
-      type: "image",
-      label: "CellPoint Digital",
-      src: "./brand-assets/client-logos/cellpoint-digital.png",
-      size: "xl",
-      width: "104%",
-      height: "90%",
-    },
-    {
-      type: "image",
-      label: "Royal Mint",
-      src: "./brand-assets/client-logos/royal-mint.png",
-      size: "xl",
-      width: "158%",
-      height: "114%",
-    },
-    {
-      type: "image",
-      label: "VIP Vaping",
-      src: "./brand-assets/client-logos/vip-vaping.svg",
-      size: "xl",
-      width: "124%",
-      height: "88%",
-    },
-    {
-      type: "image",
-      label: "The Fragrance Shop",
-      src: "./brand-assets/client-logos/fragrance-shop.png",
-      size: "xl",
-      width: "160%",
-      height: "114%",
-    },
-    {
-      type: "image",
-      label: "The Conran Shop",
-      src: "./brand-assets/client-logos/conran-shop.png",
-      size: "xl",
-      width: "158%",
-      height: "108%",
-    },
-    {
-      type: "image",
-      label: "Yours",
-      src: "./brand-assets/client-logos/yours.png",
-      size: "xl",
-      width: "154%",
-      height: "108%",
-    },
-    {
-      type: "image",
-      label: "Harrier",
-      src: "./brand-assets/client-logos/harrier-white.png",
-      size: "xl",
-      width: "132%",
-      height: "82%",
-    },
-    {
-      type: "image",
-      label: "Santander",
-      src: "./brand-assets/client-logos/santander.png",
-      size: "xl",
-      width: "182%",
-      height: "116%",
-    },
-    {
-      type: "image",
-      label: "EMAX",
-      src: "./brand-assets/client-logos/emax.png",
-      size: "xl",
-      width: "98%",
-      height: "78%",
-    },
-    {
-      type: "image",
-      label: "RCT",
-      src: "./brand-assets/client-logos/rct.png",
-      size: "xl",
-      width: "106%",
-      height: "78%",
-    },
-    {
-      type: "image",
-      label: "Mawsim",
-      src: "./brand-assets/client-logos/mawsim.png",
-      size: "xl",
-      width: "104%",
-      height: "84%",
-    },
-    {
-      type: "image",
-      label: "Molahin",
-      src: "./brand-assets/client-logos/molahin.png",
-      size: "xl",
-      width: "102%",
-      height: "78%",
-    },
-    {
-      type: "image",
-      label: "Farnell",
-      src: "./brand-assets/client-logos/farnell.png",
-      size: "xl",
-      width: "160%",
-      height: "110%",
-    },
-    {
-      type: "image",
-      label: "CPC",
-      src: "./brand-assets/client-logos/cpc.png",
-      size: "xl",
-      width: "152%",
-      height: "108%",
-    },
-    {
-      type: "image",
-      label: "Focus DIY",
-      src: "./brand-assets/client-logos/focus-diy.png",
-      size: "xl",
-      width: "152%",
-      height: "108%",
-    },
-    {
-      type: "image",
-      label: "JDW",
-      src: "./brand-assets/client-logos/jdw.png",
-      size: "xl",
-      width: "158%",
-      height: "110%",
-    },
-    {
-      type: "image",
-      label: "Jacamo",
-      src: "./brand-assets/client-logos/jacamo.png",
-      size: "xl",
-      width: "158%",
-      height: "100%",
-    },
-    {
-      type: "image",
-      label: "Pink Boutique",
-      src: "./brand-assets/client-logos/pink-boutique.png",
-      size: "xl",
-      width: "154%",
-      height: "110%",
-    },
-    {
-      type: "image",
-      label: "TOFS",
-      src: "./brand-assets/client-logos/tofs.png",
+      label: `Client logo ${assetNumber}`,
+      src: `./logo-ci-${assetNumber}.svg`,
       size: "xl",
       width: "150%",
-      height: "110%",
-    },
-  ];
+      height: "108%",
+    };
+  });
 
   const SITE_ORIGIN = "https://weflair.com";
   const ROUTES = {
@@ -1540,11 +1389,11 @@
       .weflair-logo-marquee.is-reverse .weflair-logo-marquee__track{animation-name:weflairMarqueeRight}
       .weflair-logo-marquee__group{display:flex;align-items:center;flex:0 0 auto;gap:clamp(1rem,1.3vw,1.22rem);padding-inline:clamp(.8rem,1.2vw,1.05rem);white-space:nowrap}
       .weflair-logo-marquee__item{display:flex;align-items:center;flex:0 0 auto}
-      .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(12.35rem,13.4vw,14.8rem);height:clamp(4.9rem,5.45vw,5.5rem);padding:.6rem 1rem;border:1px solid rgba(246,243,238,.14);border-radius:999px;background:rgba(246,243,238,.04);box-shadow:inset 0 1px 0 rgba(246,243,238,.04);backdrop-filter:blur(8px);transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
-      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0 .12rem;white-space:nowrap;--logo-width:94%;--logo-height:82%}
+      .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(12.35rem,13.4vw,14.8rem);height:clamp(4.9rem,5.45vw,5.5rem);padding:.6rem 1rem;border:1px solid rgba(232,228,221,.22);border-radius:999px;background:linear-gradient(180deg,rgba(226,221,214,.12) 0%,rgba(193,186,176,.08) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(8px);transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
+      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0 .04rem;white-space:nowrap;--logo-width:108%;--logo-height:90%}
       .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.96;filter:none;transform:scale(1);transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
-      .weflair-logo-mark.is-xl{--logo-width:100%;--logo-height:88%}
-      .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.22);background:rgba(246,243,238,.04);box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(246,243,238,.04)}
+      .weflair-logo-mark.is-xl{--logo-width:114%;--logo-height:96%}
+      .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.22);background:linear-gradient(180deg,rgba(234,229,222,.14) 0%,rgba(204,197,187,.1) 100%);box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.08)}
       .weflair-logo-pill:hover img,.weflair-logo-pill:focus-within img{opacity:1;filter:none;transform:scale(1.02)}
       .weflair-logo-mark:focus-visible{outline:none}
       @keyframes weflairMarqueeLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -1771,8 +1620,8 @@
         .weflair-logo-marquee__track{animation-duration:42s}
         .weflair-logo-marquee__group{gap:.72rem;padding-inline:.56rem}
         .weflair-logo-pill{width:10.6rem;height:4.25rem;padding:.46rem .68rem}
-        .weflair-logo-mark{--logo-width:96%;--logo-height:78%}
-        .weflair-logo-mark.is-xl{--logo-width:100%;--logo-height:86%}
+        .weflair-logo-mark{--logo-width:108%;--logo-height:84%}
+        .weflair-logo-mark.is-xl{--logo-width:114%;--logo-height:92%}
         .weflair-audit-widget{right:.8rem;bottom:.8rem;width:min(calc(100vw - 1.6rem),22rem)}
         .weflair-footer__cta-banner{padding:3.4rem 0 2.7rem}
         .weflair-footer__cta-panel{padding:2.15rem 1.15rem 2rem;border-radius:1.2rem}

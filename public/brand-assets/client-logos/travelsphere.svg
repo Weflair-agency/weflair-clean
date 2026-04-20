@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 56" width="440" height="56">
+  <!-- Spiral/shell icon -->
+  <g transform="translate(4,4)" fill="none" stroke="#f6f3ee" stroke-width="2.2" stroke-linecap="round">
+    <path d="M24 24c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2"/>
+    <path d="M21 24c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5"/>
+    <path d="M17 24c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9"/>
+    <path d="M12 24c0-7.73 6.27-14 14-14s14 6.27 14 14-6.27 14-14 14"/>
+    <path d="M6 24c0-11.05 8.95-20 20-20s20 8.95 20 20-8.95 20-20 20"/>
+  </g>
+  <!-- "travelsphere" text in serif lowercase -->
+  <text x="60" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="35" font-weight="400" fill="#f6f3ee" letter-spacing="1.5">travelsphere</text>
+</svg>
