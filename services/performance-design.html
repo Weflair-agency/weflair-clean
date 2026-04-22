@@ -1,0 +1,4060 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Performance Design & CRO - WeFlair</title>
+    <link
+      rel="canonical"
+      href="https://weflair.co/services/performance-design.html"
+    />
+    <meta
+      name="description"
+      content="Increase ROI and turn clicks into customers with Performance Creative engineered for impact."
+    />
+    <meta property="og:title" content="Performance Design & CRO — WeFlair" />
+    <meta
+      property="og:description"
+      content="Increase ROI and turn clicks into customers with Performance Creative engineered for impact."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Performance Design & CRO — WeFlair" />
+    <meta
+      name="twitter:description"
+      content="Increase ROI and turn clicks into customers with Performance Creative engineered for impact."
+    />
+    <meta name="theme-color" content="#151515" />
+    <link
+      rel="icon"
+      href="../brand-assets/star-solid.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="../foundation-styles.css" />
+    <link rel="stylesheet" href="../foundation-slater.css" />
+    <link rel="stylesheet" href="../weflair-hero.css" />
+    <link rel="stylesheet" href="../services-shared.css" />
+    <script src="../foundation.js" defer></script>
+    <script src="../weflair-hero.js" defer></script>
+    <script src="../services-reveal.js" defer></script>
+    <style>
+      /* ── PAGE-SPECIFIC: Paid Media ─────────────────────── */
+
+      /* §2 Logo slider */
+      .pm-logos {
+        padding: 3rem 0;
+        border-top: 1px solid var(--sv-border);
+        overflow: hidden;
+      }
+      .pm-logos__track {
+        display: flex;
+        gap: 3.5rem;
+        align-items: center;
+        animation: pm-slide 30s linear infinite;
+        width: max-content;
+      }
+      .pm-logos__track img {
+        height: 1.6rem;
+        opacity: 0.45;
+        filter: grayscale(1) brightness(2);
+        transition: opacity 0.3s;
+      }
+      .pm-logos__track img:hover {
+        opacity: 0.85;
+      }
+      @keyframes pm-slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* §3 Trophy proof */
+      .pm-trophy {
+        padding: var(--sv-section-pad);
+        border-top: 1px solid var(--sv-border);
+      }
+      .pm-trophy__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      @media (max-width: 991px) {
+        .pm-trophy__inner {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pm-trophy__quote {
+        font-size: clamp(1.25rem, 2vw, 1.6rem);
+        line-height: 1.45;
+        color: var(--sv-text);
+        font-weight: 500;
+        font-style: italic;
+        margin: 0 0 2rem;
+      }
+      .pm-trophy__attr {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .pm-trophy__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--sv-green-dim);
+        border: 1px solid var(--sv-green-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pm-trophy__avatar svg {
+        width: 1.4rem;
+        height: 1.4rem;
+        color: var(--sv-green);
+      }
+      .pm-trophy__name {
+        font-weight: 700;
+        color: var(--sv-text);
+        font-size: 0.95rem;
+      }
+      .pm-trophy__role {
+        color: var(--sv-text-muted);
+        font-size: 0.85rem;
+      }
+      .pm-trophy__result {
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-green-border);
+        border-radius: var(--sv-radius-lg);
+        padding: 2.5rem;
+        text-align: center;
+      }
+      .pm-trophy__result-num {
+        font-size: clamp(3rem, 5vw, 4rem);
+        font-weight: 800;
+        color: var(--sv-green);
+        font-family: var(--sv-font-display);
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin: 0 0 0.5rem;
+      }
+      .pm-trophy__result-label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--sv-text);
+        margin: 0 0 0.35rem;
+      }
+      .pm-trophy__result-sub {
+        font-size: 0.85rem;
+        color: var(--sv-text-muted);
+        margin: 0;
+      }
+
+      /* §4 Signature statement + sticky scroll */
+      .pm-signature {
+        padding: var(--sv-section-pad);
+        background: var(--sv-bg-alt);
+        border-top: 1px solid var(--sv-border);
+      }
+      .pm-signature__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+      }
+      .pm-signature__statement {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        font-weight: 700;
+        color: var(--sv-text);
+        font-family: var(--sv-font-display);
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+        margin: 0 0 4rem;
+        max-width: 44rem;
+        text-wrap: balance;
+      }
+      .pm-signature__statement em {
+        font-style: normal;
+        color: var(--sv-green);
+      }
+      .pm-loop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: start;
+      }
+      @media (max-width: 991px) {
+        .pm-loop {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pm-loop__visual {
+        position: sticky;
+        top: 8rem;
+      }
+      .pm-loop__ring {
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+      }
+      .pm-loop__node {
+        position: absolute;
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-border);
+        border-radius: 999px;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--sv-text);
+        white-space: nowrap;
+        transition: all 0.4s ease;
+      }
+      .pm-loop__node--active {
+        border-color: var(--sv-green);
+        color: var(--sv-green);
+        box-shadow: 0 0 20px rgba(62, 255, 104, 0.15);
+      }
+      .pm-loop__node:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .pm-loop__node:nth-child(2) {
+        top: 25%;
+        right: 0;
+      }
+      .pm-loop__node:nth-child(3) {
+        top: 55%;
+        right: 5%;
+      }
+      .pm-loop__node:nth-child(4) {
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .pm-loop__node:nth-child(5) {
+        top: 35%;
+        left: 0;
+      }
+      .pm-loop__center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        border: 1px dashed rgba(62, 255, 104, 0.15);
+        border-radius: 50%;
+      }
+      .pm-loop__steps {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      .pm-loop__step h4 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--sv-text);
+        margin: 0 0 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .pm-loop__step h4 span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background: var(--sv-green-dim);
+        border: 1px solid var(--sv-green-border);
+        color: var(--sv-green);
+        font-size: 0.75rem;
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+      .pm-loop__step p {
+        font-size: 0.95rem;
+        color: var(--sv-text-muted);
+        line-height: 1.55;
+        margin: 0;
+        padding-left: 2.5rem;
+      }
+
+      /* §6 Why our paid hits different */
+      .pm-diff-grid {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+      @media (max-width: 768px) {
+        .pm-diff-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pm-diff-card {
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-border);
+        border-radius: var(--sv-radius-lg);
+        padding: 2.5rem;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .pm-diff-card:hover {
+        border-color: var(--sv-border-hover);
+        transform: translateY(-3px);
+      }
+      .pm-diff-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--sv-green);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .pm-diff-card:hover::before {
+        opacity: 1;
+      }
+      .pm-diff-card__tag {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sv-green);
+        margin: 0 0 1rem;
+      }
+      .pm-diff-card__title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--sv-text);
+        font-family: var(--sv-font-display);
+        margin: 0 0 0.75rem;
+      }
+      .pm-diff-card__desc {
+        font-size: 0.95rem;
+        color: var(--sv-text-muted);
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      /* §7 Creative showcase */
+      .pm-creative-grid {
+        max-width: 72rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+      @media (max-width: 991px) {
+        .pm-creative-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .pm-creative-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .pm-creative-card {
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-border);
+        border-radius: var(--sv-radius);
+        overflow: hidden;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .pm-creative-card:hover {
+        border-color: var(--sv-border-hover);
+        transform: translateY(-3px);
+      }
+      .pm-creative-card__mock {
+        aspect-ratio: 4/3;
+        background: linear-gradient(
+          135deg,
+          rgba(62, 255, 104, 0.04),
+          rgba(17, 17, 17, 0.8)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .pm-creative-card__mock-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--sv-text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .pm-creative-card__stat {
+        position: absolute;
+        bottom: 0.75rem;
+        right: 0.75rem;
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid var(--sv-green-border);
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--sv-green);
+        backdrop-filter: blur(8px);
+      }
+      .pm-creative-card__info {
+        padding: 1.25rem;
+      }
+      .pm-creative-card__type {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--sv-text-muted);
+        margin: 0 0 0.35rem;
+      }
+      .pm-creative-card__title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--sv-text);
+        margin: 0;
+      }
+
+      /* §9 Partners */
+      .pm-partners {
+        padding: var(--sv-section-pad);
+        border-top: 1px solid var(--sv-border);
+        background: var(--sv-bg-alt);
+      }
+      .pm-partners__inner {
+        max-width: 64rem;
+        margin: 0 auto;
+      }
+      .pm-partners__group {
+        margin-bottom: 2.5rem;
+      }
+      .pm-partners__group:last-child {
+        margin-bottom: 0;
+      }
+      .pm-partners__label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sv-text-muted);
+        margin: 0 0 1.25rem;
+      }
+      .pm-partners__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      .pm-partner-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 1.1rem;
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-border);
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--sv-text);
+        transition: border-color 0.25s;
+      }
+      .pm-partner-pill:hover {
+        border-color: var(--sv-green-border);
+      }
+
+      /* §11 Industries pills */
+      .pm-industries {
+        padding: clamp(4rem, 7vw, 6rem) 2rem;
+        border-top: 1px solid var(--sv-border);
+      }
+      .pm-industries__inner {
+        max-width: 72rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .pm-industries__label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sv-text-muted);
+        margin: 0 0 1.5rem;
+      }
+      .pm-industries__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+      }
+      .pm-ind-pill {
+        padding: 0.5rem 1.1rem;
+        border: 1px solid var(--sv-border);
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--sv-text-mid);
+        transition:
+          border-color 0.25s,
+          color 0.25s;
+      }
+      .pm-ind-pill:hover {
+        border-color: var(--sv-green-border);
+        color: var(--sv-green);
+      }
+
+      /* §13 FAQ */
+      .pm-faq-list {
+        max-width: 48rem;
+        margin: 0 auto;
+      }
+      .pm-faq-item {
+        border-bottom: 1px solid var(--sv-border);
+      }
+      .pm-faq-item summary {
+        padding: 1.5rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--sv-text);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .pm-faq-item summary::after {
+        content: "+";
+        font-size: 1.4rem;
+        color: var(--sv-green);
+        transition: transform 0.3s;
+      }
+      .pm-faq-item[open] summary::after {
+        transform: rotate(45deg);
+      }
+      .pm-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .pm-faq-item__body {
+        padding: 0 0 1.5rem;
+        font-size: 0.95rem;
+        color: var(--sv-text-muted);
+        line-height: 1.6;
+      }
+
+      /* CTA block with face */
+      .pm-cta-face {
+        max-width: 48rem;
+        margin: 4rem auto 0;
+        background: var(--sv-card-bg);
+        border: 1px solid var(--sv-green-border);
+        border-radius: var(--sv-radius-lg);
+        padding: 3rem;
+        text-align: center;
+      }
+      .pm-cta-face__avatar {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background: var(--sv-green-dim);
+        border: 2px solid var(--sv-green-border);
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pm-cta-face__avatar svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--sv-green);
+      }
+      .pm-cta-face h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--sv-text);
+        font-family: var(--sv-font-display);
+        margin: 0 0 0.75rem;
+      }
+      .pm-cta-face p {
+        font-size: 1rem;
+        color: var(--sv-text-muted);
+        margin: 0 0 2rem;
+        line-height: 1.55;
+      }
+    </style>
+    
+    <style id="weflair-mega-dropdown-css">
+      .nav-dropdown--mega {
+        left: 50% !important;
+        transform: translateX(-50%);
+        width: max-content;
+        min-width: 40rem;
+      }
+
+      .nav-dropdown--mega .nav-dropdown__grid {
+        display: block !important;
+        flex-flow: unset !important;
+        padding: 1rem 1.1rem !important;
+        border: 1px solid rgba(246, 243, 238, 0.08) !important;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
+      }
+
+      .weflair-mega-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.1rem;
+      }
+
+      .weflair-mega-tile {
+        display: flex !important;
+        align-items: flex-start;
+        gap: 0.7rem;
+        padding: 0.65rem 0.75rem;
+        border-radius: 0.45rem;
+        text-decoration: none !important;
+        color: #f6f3ee !important;
+        transition: background 0.18s ease;
+        height: auto !important;
+        flex-flow: row !important;
+      }
+
+      .weflair-mega-tile:hover {
+        background: rgba(246, 243, 238, 0.06);
+      }
+
+      .weflair-mega-tile__icon {
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.45rem;
+        background: rgba(62, 255, 104, 0.1);
+        border: 1px solid rgba(62, 255, 104, 0.18);
+        color: #3eff68;
+      }
+
+      .weflair-mega-tile__icon svg {
+        width: 1.05rem;
+        height: 1.05rem;
+      }
+
+      .weflair-mega-tile__text {
+        min-width: 0;
+      }
+
+      .weflair-mega-tile__h {
+        margin: 0 !important;
+        font-size: 0.82rem !important;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #f6f3ee !important;
+        white-space: nowrap;
+      }
+
+      .weflair-mega-tile__p {
+        margin: 0.15rem 0 0 !important;
+        font-size: 0.72rem !important;
+        line-height: 1.35;
+        color: rgba(246, 243, 238, 0.45) !important;
+        max-width: 16rem;
+      }
+
+      @media (max-width: 991px) {
+        .nav-dropdown--mega {
+          left: 0 !important;
+          transform: none;
+          min-width: 0;
+          width: 100%;
+        }
+
+        .weflair-mega-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .weflair-mega-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <style>
+      /* PD Custom Redesign */
+      .pd-redesign .pd-cap-row {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .pd-redesign .pd-cap-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        position: relative;
+        z-index: 10;
+      }
+      .pd-redesign .pd-cap-item {
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .pd-redesign .pd-cap-item:hover {
+        background: rgba(62, 255, 104, 0.05);
+        border-color: rgba(62, 255, 104, 0.3);
+      }
+      .pd-redesign .pd-cap-item h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+        color: #f6f3ee;
+        transition: color 0.3s;
+      }
+      .pd-redesign .pd-cap-item:hover h3 {
+        color: #3eff68;
+      }
+      .pd-redesign .pd-cap-icon {
+        color: rgba(255, 255, 255, 0.3);
+        transition:
+          color 0.3s,
+          transform 0.3s;
+      }
+      .pd-redesign .pd-cap-item:hover .pd-cap-icon {
+        color: #3eff68;
+        transform: translateX(5px);
+      }
+
+      .pd-redesign .pd-stage {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      .pd-redesign .pd-ghost {
+        position: absolute;
+        inset: 10%;
+        background: #0a0a0a;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        pointer-events: none;
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.4, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .pd-redesign .pd-ghost-1 {
+        transform: rotate(-3.5deg) translate(-10px, 6px) scale(0.96);
+        z-index: 1;
+        opacity: 0.55;
+      }
+      .pd-redesign .pd-ghost-2 {
+        transform: rotate(2.8deg) translate(12px, 10px) scale(0.97);
+        z-index: 2;
+        opacity: 0.75;
+      }
+      .pd-redesign .pd-card {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(145deg, #1f1f1f, #0a0a0a);
+        border: 1px solid rgba(62, 255, 104, 0.2);
+        border-radius: 24px;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      }
+      .pd-redesign .pd-card-header {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .pd-redesign .pd-card-mac {
+        display: flex;
+        gap: 8px;
+      }
+      .pd-redesign .pd-card-mac span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #444;
+      }
+      .pd-redesign .pd-card-mac span:nth-child(1) {
+        background: #ff5f56;
+      }
+      .pd-redesign .pd-card-mac span:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .pd-redesign .pd-card-mac span:nth-child(3) {
+        background: #27c93f;
+      }
+      .pd-redesign .pd-card-body {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .pd-redesign .pd-wireframe-block {
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+      }
+      .pd-redesign .pd-wireframe-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      @keyframes drift1 {
+        0%,
+        100% {
+          transform: rotate(-3.5deg) translate(-10px, 6px) scale(0.96);
+        }
+        50% {
+          transform: rotate(-4.2deg) translate(-14px, 8px) scale(0.955);
+        }
+      }
+      @keyframes drift2 {
+        0%,
+        100% {
+          transform: rotate(2.8deg) translate(12px, 10px) scale(0.97);
+        }
+        50% {
+          transform: rotate(3.4deg) translate(16px, 12px) scale(0.965);
+        }
+      }
+      .pd-redesign .pd-ghost-1 {
+        animation: drift1 7s ease-in-out infinite;
+      }
+      .pd-redesign .pd-ghost-2 {
+        animation: drift2 8s ease-in-out infinite;
+      }
+
+      @media screen and (max-width: 900px) {
+        .pd-redesign .pd-cap-row {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .pd-redesign .pd-stage {
+          width: 80%;
+        }
+      }
+    </style>
+
+    <style id="weflair-proof-switcher-css">
+      #proof.weflair-proof--switcher {
+        padding: clamp(5.8rem, 8vw, 7.2rem) 0;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__layout {
+        width: min(100%, 80rem);
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head {
+        width: min(100%, 42rem);
+        gap: 0.9rem;
+      }
+
+      .weflair-proof__overline {
+        margin: 0;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #3eff68;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head .h3 {
+        max-width: 20ch;
+      }
+
+      .weflair-proof-switcher {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .weflair-proof-switcher__nav {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 243, 238, 0.12);
+        background: rgba(246, 243, 238, 0.04);
+        color: #f6f3ee;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .weflair-proof-switcher__nav:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, 0.26);
+        background: rgba(62, 255, 104, 0.08);
+      }
+
+      .weflair-proof-switcher__nav svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      /* default desktop shell: feature card full-width, rails horizontal below */
+      .weflair-proof-switcher__shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.05rem;
+        align-items: stretch;
+      }
+
+      .weflair-proof-switcher__rails {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      /* ── proof feature card: shared shell ── */
+      .weflair-proof-feature {
+        border-radius: 1.65rem;
+        border: 1px solid rgba(246, 243, 238, 0.08);
+        background: linear-gradient(
+          180deg,
+          rgba(24, 24, 24, 0.98) 0%,
+          rgba(15, 15, 15, 0.98) 100%
+        );
+        box-shadow: 0 20px 38px rgba(0, 0, 0, 0.22);
+        overflow: hidden;
+        min-height: 22rem;
+        max-height: 34rem;
+      }
+
+      /* ─── TYPE A: heydigital — info|visual 2-col ─── */
+      .weflair-proof-feature[data-type="heydigital"] {
+        display: grid;
+        grid-template-columns: minmax(0, 0.46fr) minmax(0, 0.54fr);
+        grid-template-rows: 1fr auto;
+        gap: 0;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] {
+        grid-template-columns: minmax(0, 0.54fr) minmax(0, 0.46fr);
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+        .weflair-proof-feature__info {
+        order: 2;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+        .weflair-proof-feature__visual,
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+        .weflair-proof-feature__ad-grid {
+        order: 1;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+        .weflair-proof-feature__dots-row {
+        order: 3;
+      }
+
+      .weflair-proof-feature__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: clamp(1.4rem, 2.2vw, 2rem);
+        justify-content: center;
+      }
+
+      .weflair-proof-feature__logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.8rem;
+      }
+
+      .weflair-proof-feature__logo img {
+        max-width: 10rem;
+        max-height: 2.8rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-feature__headline {
+        margin: 0;
+        max-width: 18ch;
+        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+        line-height: 1.06;
+        letter-spacing: -0.045em;
+        font-weight: 700;
+      }
+
+      .weflair-proof-feature__desc {
+        margin: 0;
+        max-width: 42ch;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        color: rgba(246, 243, 238, 0.62);
+      }
+
+      .weflair-proof-feature__metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem 1.8rem;
+        margin-top: 0.35rem;
+      }
+
+      .weflair-proof-feature__metric {
+        display: grid;
+        gap: 0.18rem;
+      }
+
+      .weflair-proof-feature__metric strong {
+        font-size: clamp(2rem, 3vw, 2.65rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        color: #3eff68;
+      }
+
+      .weflair-proof-feature__metric span {
+        font-size: 0.78rem;
+        line-height: 1.3;
+        color: rgba(246, 243, 238, 0.56);
+      }
+
+      .weflair-proof-feature__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.25rem;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #3eff68;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+        transition: opacity 0.18s;
+      }
+
+      .weflair-proof-feature__link:hover {
+        opacity: 0.78;
+      }
+
+      .weflair-proof-feature__link svg {
+        width: 0.85rem;
+        height: 0.85rem;
+      }
+
+      /* ── photo visual (heydigital) ── */
+      .weflair-proof-feature__visual {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .weflair-proof-feature__photo {
+        position: absolute;
+        inset: 0;
+        background-color: #2a2a28;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: transform 0.35s ease;
+      }
+
+      .weflair-proof-feature:hover .weflair-proof-feature__photo {
+        transform: scale(1.04);
+      }
+
+      .weflair-proof-feature__photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(15, 15, 15, 0.12) 0%,
+          rgba(15, 15, 15, 0.38) 100%
+        );
+      }
+
+      /* ── ad-showcase collage (heydigital) ── */
+      .weflair-proof-feature__ad-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.65rem;
+        overflow: hidden;
+        background: linear-gradient(145deg, #0d3320 0%, #071a0e 100%);
+        padding: 1rem;
+        align-content: stretch;
+      }
+
+      .weflair-proof-feature__ad-frame {
+        border-radius: 0.6rem;
+        overflow: hidden;
+        background: #1a1a1a;
+        border: 1px solid rgba(246, 243, 238, 0.1);
+        box-shadow:
+          0 4px 16px rgba(0, 0, 0, 0.35),
+          0 1px 4px rgba(0, 0, 0, 0.15);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .weflair-proof-feature__ad-frame:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.45),
+          0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .weflair-proof-feature__ad-header {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.55rem;
+        background: #1c1c1c;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .weflair-proof-feature__ad-avatar {
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .weflair-proof-feature__ad-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .weflair-proof-feature__ad-name {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: rgba(246, 243, 238, 0.88);
+        line-height: 1;
+      }
+      .weflair-proof-feature__ad-sponsored {
+        font-size: 0.46rem;
+        color: rgba(246, 243, 238, 0.4);
+        line-height: 1;
+        margin-top: 0.12rem;
+      }
+
+      .weflair-proof-feature__ad-body {
+        aspect-ratio: 1.2 / 1;
+        background-size: cover;
+        background-position: center;
+        background-color: #2a2a28;
+        position: relative;
+      }
+      .weflair-proof-feature__ad-body-headline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.45rem 0.55rem;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.72) 0%,
+          transparent 100%
+        );
+        font-size: 0.58rem;
+        font-weight: 700;
+        line-height: 1.25;
+        color: #fff;
+      }
+
+      .weflair-proof-feature__ad-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.38rem 0.55rem;
+        background: #1c1c1c;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .weflair-proof-feature__ad-cta {
+        font-size: 0.52rem;
+        font-weight: 600;
+        color: rgba(246, 243, 238, 0.55);
+        line-height: 1;
+      }
+      .weflair-proof-feature__ad-action {
+        font-size: 0.5rem;
+        font-weight: 700;
+        color: #3eff68;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.18rem 0.4rem;
+        border: 1px solid rgba(62, 255, 104, 0.25);
+        border-radius: 0.25rem;
+        line-height: 1;
+      }
+
+      /* hide elements based on type */
+      .weflair-proof-feature[data-type="heydigital"]
+        .weflair-proof-feature__np-center,
+      .weflair-proof-feature[data-type="heydigital"]
+        .weflair-proof-feature__np-stats,
+      .weflair-proof-feature[data-type="heydigital"]
+        .weflair-proof-feature__np-logo {
+        display: none;
+      }
+
+      .weflair-proof-feature[data-type="netpeak"] .weflair-proof-feature__info,
+      .weflair-proof-feature[data-type="netpeak"]
+        .weflair-proof-feature__visual,
+      .weflair-proof-feature[data-type="netpeak"]
+        .weflair-proof-feature__ad-grid {
+        display: none;
+      }
+
+      /* ─── TYPE B: netpeak — logo | center-content | stats ─── */
+      .weflair-proof-feature[data-type="netpeak"] {
+        display: grid;
+        grid-template-columns: 12rem minmax(0, 1fr) 14rem;
+        grid-template-rows: 1fr auto;
+        gap: 0;
+      }
+
+      .weflair-proof-feature__np-logo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .weflair-proof-feature__np-logo img {
+        max-width: 9rem;
+        max-height: 5rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-feature__np-center {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 1.5rem 1.5rem 0;
+        overflow-y: auto;
+      }
+
+      .weflair-proof-feature__np-photo {
+        width: 100%;
+        border-radius: 0.85rem;
+        overflow: hidden;
+        aspect-ratio: 16 / 7;
+        background-size: cover;
+        background-position: center;
+        background-color: #2a2a28;
+      }
+
+      .weflair-proof-feature__np-desc {
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: rgba(246, 243, 238, 0.7);
+        max-width: 52ch;
+      }
+
+      .weflair-proof-feature__np-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(246, 243, 238, 0.08);
+      }
+
+      .weflair-proof-feature__np-meta-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(246, 243, 238, 0.42);
+        margin-bottom: 0.3rem;
+      }
+
+      .weflair-proof-feature__np-meta-value {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #3eff68;
+        line-height: 1.3;
+      }
+
+      .weflair-proof-feature__np-meta-duration {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #f6f3ee;
+      }
+
+      .weflair-proof-feature__np-cta {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        border-radius: 0.65rem;
+        border: none;
+        background: #3eff68;
+        color: #0a0a0a;
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+        cursor: pointer;
+        transition:
+          background 0.18s ease,
+          transform 0.18s ease;
+      }
+
+      .weflair-proof-feature__np-cta:hover {
+        background: #2de85a;
+        transform: translateY(-1px);
+      }
+
+      .weflair-proof-feature__np-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.5rem 1.4rem;
+        justify-content: center;
+        border-left: 1px solid rgba(246, 243, 238, 0.06);
+      }
+
+      .weflair-proof-feature__np-photo.no-photo,
+      .weflair-proof-feature__photo.no-photo {
+        background: linear-gradient(
+          135deg,
+          rgba(62, 255, 104, 0.22) 0%,
+          rgba(21, 21, 21, 0.9) 40%,
+          rgba(62, 255, 104, 0.1) 100%
+        );
+        border: 1px solid rgba(62, 255, 104, 0.18);
+      }
+
+      .weflair-proof-feature__np-stat {
+        display: grid;
+        gap: 0.2rem;
+      }
+
+      .weflair-proof-feature__np-stat strong {
+        font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        font-weight: 700;
+        color: #3eff68;
+      }
+
+      .weflair-proof-feature__np-stat span {
+        font-size: 0.76rem;
+        line-height: 1.35;
+        color: rgba(246, 243, 238, 0.56);
+        max-width: 10ch;
+      }
+
+      .weflair-proof-feature__dots-row {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        padding: 0.6rem 0 0.85rem;
+      }
+
+      .weflair-proof-rail {
+        width: 100%;
+        padding: 1.2rem 1rem;
+        border-radius: 1.45rem;
+        border: 1px solid rgba(246, 243, 238, 0.08);
+        background: rgba(246, 243, 238, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        color: #f6f3ee;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          background 0.2s ease;
+      }
+
+      .weflair-proof-rail:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, 0.22);
+        background: rgba(246, 243, 238, 0.05);
+      }
+
+      .weflair-proof-rail__logo {
+        display: grid;
+        place-items: center;
+        min-height: 3.2rem;
+        width: 100%;
+        padding: 0 0.3rem;
+      }
+
+      .weflair-proof-rail__logo img {
+        max-width: 100%;
+        max-height: 2.8rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-rail__meta {
+        font-size: 0.64rem;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, 0.46);
+        text-align: center;
+      }
+
+      .weflair-proof-rail__toggle {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid rgba(246, 243, 238, 0.12);
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        line-height: 1;
+        color: #8fa082;
+      }
+
+      .weflair-proof-switcher__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+      }
+
+      .weflair-proof-switcher__dot {
+        width: 0.78rem;
+        height: 0.78rem;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(246, 243, 238, 0.22);
+        cursor: pointer;
+      }
+
+      .weflair-proof-switcher__dot.is-active {
+        background: #3eff68;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher {
+        background:
+          radial-gradient(
+            circle at 12% 18%,
+            rgba(62, 255, 104, 0.04),
+            transparent 24%
+          ),
+          radial-gradient(
+            circle at 88% 14%,
+            rgba(111, 136, 255, 0.06),
+            transparent 26%
+          ),
+          linear-gradient(180deg, #f4f1ea 0%, #ece7dd 100%);
+        color: #171511;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof__head
+        .weflair-section__body,
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__desc,
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__metric
+        span,
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-rail__meta {
+        color: rgba(23, 21, 17, 0.58);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature,
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-rail {
+        border-color: rgba(23, 21, 17, 0.09);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.92) 0%,
+          rgba(250, 247, 241, 0.92) 100%
+        );
+        box-shadow: 0 22px 38px rgba(88, 72, 50, 0.12);
+        color: #171511;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__metric
+        strong {
+        color: #171511;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__link {
+        color: #167a36;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-stat
+        strong {
+        color: #171511;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-stat
+        span {
+        color: rgba(23, 21, 17, 0.58);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-desc {
+        color: rgba(23, 21, 17, 0.68);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-meta-value {
+        color: #167a36;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-meta-duration {
+        color: #171511;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-meta-label {
+        color: rgba(23, 21, 17, 0.46);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-stats {
+        border-left-color: rgba(23, 21, 17, 0.08);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-meta {
+        border-top-color: rgba(23, 21, 17, 0.08);
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-feature__np-cta {
+        background: #171511;
+        color: #f6f3ee;
+      }
+
+      html[data-theme="light"]
+        #proof.weflair-proof--switcher
+        .weflair-proof-switcher__nav {
+        border-color: rgba(23, 21, 17, 0.1);
+        background: rgba(255, 255, 255, 0.76);
+        color: #171511;
+      }
+
+      /* large screens — wider layout, more breathing room */
+      @media screen and (min-width: 1440px) {
+        .weflair-proof-feature[data-type="netpeak"] {
+          grid-template-columns: 14rem minmax(0, 1fr) 16rem;
+        }
+
+        .weflair-proof-feature__info {
+          padding: clamp(1.6rem, 2.4vw, 2.4rem);
+        }
+      }
+
+      /* mid-range — feature card full width, horizontal rails below */
+      @media screen and (max-width: 1199px) and (min-width: 992px) {
+        .weflair-proof-feature {
+          max-height: none;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        .weflair-proof-switcher {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-switcher__nav {
+          display: none;
+        }
+
+        .weflair-proof-feature {
+          min-height: auto;
+          max-height: none;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+          .weflair-proof-feature__info,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+          .weflair-proof-feature__visual,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+          .weflair-proof-feature__ad-grid,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"]
+          .weflair-proof-feature__dots-row {
+          order: unset;
+        }
+
+        .weflair-proof-feature[data-type="netpeak"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature__np-logo {
+          padding: 1.2rem;
+          justify-content: flex-start;
+        }
+
+        .weflair-proof-feature__np-center {
+          padding: 0 1.2rem 1.2rem;
+          overflow-y: visible;
+        }
+
+        .weflair-proof-feature__np-stats {
+          flex-direction: row;
+          flex-wrap: wrap;
+          border-left: none;
+          border-top: 1px solid rgba(246, 243, 238, 0.06);
+          padding: 1.2rem;
+          gap: 1.5rem;
+        }
+
+        .weflair-proof-feature__visual {
+          min-height: 16rem;
+        }
+
+        .weflair-proof-feature__ad-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .weflair-proof-feature__headline {
+          max-width: none;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .weflair-proof-feature__visual {
+          min-height: 13rem;
+        }
+
+        .weflair-proof-feature__ad-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, auto);
+          padding: 0.75rem;
+          gap: 0.5rem;
+        }
+
+        .weflair-proof-feature__info {
+          padding: 1.2rem;
+          gap: 0.9rem;
+        }
+
+        .weflair-proof-feature__metrics {
+          grid-template-columns: 1fr;
+          gap: 0.6rem;
+        }
+
+        .weflair-proof-feature__np-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .weflair-proof-feature__np-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-switcher__rails {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .weflair-proof-rail__meta {
+          font-size: 0.58rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    data-weflair-static="true"
+    data-navigation-status="not-active"
+    data-theme="dark"
+    class="body sv-page"
+    style="padding-top: var(--nav-bar-height, 5rem)"
+  >
+    <div
+      class="noise is--small"
+      style="z-index: 9999; pointer-events: none"
+    ></div>
+
+    <!-- ══ NAV ══ -->
+    <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Go To Market Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="../resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="../cases.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
+    <main class="main">
+      <!-- ══ §1 HERO + STATS BAR ══ -->
+      <section class="sv-hero" id="hero">
+        <div class="sv-hero__inner">
+          <div class="eyebrow">
+            <span class="weflair-eyebrow-icon"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 34 45"
+                fill="none"
+              >
+                <path
+                  d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
+                  fill="currentColor"
+                /></svg
+            ></span>
+            ﻿
+            <p class="eyebrow__p">Performance Design &amp; CRO</p>
+          </div>
+          <h1 class="sv-hero__title" style="max-width: 18ch">
+            Performance Design &amp; CRO for <br /><span style="color: #f97316"
+              >SaaS &amp; Ecommerce</span
+            >
+          </h1>
+
+          <!-- DIAGRAM INJECTED HERE -->
+          <div class="cro-diagram">
+            <p class="cro-diagram__subtitle">
+              We analyze and optimize your website to convert
+              <strong style="color: #fff">2-3x more visitors</strong> without
+              spending another dollar on ads.
+            </p>
+            <div class="cro-diagram__container">
+              <!-- SVG Connecting Lines -->
+              <svg
+                class="cro-diagram__lines"
+                viewBox="0 0 600 200"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 120 50 C 200 50, 250 100, 300 100"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                  opacity="0.3"
+                />
+                <path
+                  d="M 120 150 C 200 150, 250 100, 300 100"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                  opacity="0.3"
+                />
+                <path
+                  d="M 480 50 C 400 50, 350 100, 300 100"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                  opacity="0.3"
+                />
+                <path
+                  d="M 480 150 C 400 150, 350 100, 300 100"
+                  fill="none"
+                  stroke="#F97316"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                  opacity="0.3"
+                />
+              </svg>
+
+              <!-- Left side icons -->
+              <div class="cro-diagram__col cro-diagram__col--left">
+                <div class="cro-diagram__icon-box" title="CrazyEgg">
+                  <img
+                    src="https://cdn.simpleicons.org/crazyegg/0f6226"
+                    alt="CrazyEgg"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cro-diagram__icon-box" title="Microsoft Clarity">
+                  <img
+                    src="https://cdn.simpleicons.org/v/clarity?color=blue"
+                    alt="Clarity"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <!-- Center Button -->
+              <div class="cro-diagram__col cro-diagram__col--center">
+                <a
+                  href="../contact.html"
+                  class="cro-diagram__btn btn w-inline-block weflair-btn"
+                  style="
+                    border: 1px solid rgba(249, 115, 22, 0.4);
+                    padding: 5px;
+                    box-shadow: 0 0 40px rgba(249, 115, 22, 0.2);
+                  "
+                >
+                  <div class="btn__bg" style="background: #f97316"></div>
+                  <div class="btn__text">
+                    <span class="btn__span" style="color: #fff"
+                      >Get Your CRO Audit</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <!-- Right side icons -->
+              <div class="cro-diagram__col cro-diagram__col--right">
+                <div class="cro-diagram__icon-box" title="Google Analytics">
+                  <img
+                    src="https://cdn.simpleicons.org/googleanalytics/E37400"
+                    alt="Google Analytics"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cro-diagram__icon-box" title="Mixpanel">
+                  <img
+                    src="https://cdn.simpleicons.org/mixpanel/7856FF"
+                    alt="Mixpanel"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="cro-diagram__icon-box"
+                  title="Search Console"
+                  style="display: none"
+                >
+                  <img
+                    src="https://cdn.simpleicons.org/googlesearchconsole/4285F4"
+                    alt="Search Console"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <style>
+            .cro-diagram {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 2.5rem;
+              margin-top: 2rem;
+              width: 100%;
+            }
+            .cro-diagram__subtitle {
+              color: var(--sv-text-muted, #a0a0a0);
+              font-size: clamp(1rem, 1.5vw, 1.15rem);
+              text-align: center;
+              max-width: 600px;
+              line-height: 1.5;
+              text-wrap: balance;
+              margin: 0;
+            }
+            .cro-diagram__container {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              max-width: 800px;
+              padding: 1rem 0;
+            }
+            .cro-diagram__lines {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 0;
+              pointer-events: none;
+            }
+            .cro-diagram__col {
+              position: relative;
+              z-index: 1;
+              display: flex;
+              flex-direction: column;
+              gap: 3rem;
+            }
+            .cro-diagram__icon-box {
+              width: 72px;
+              height: 72px;
+              background: #fff;
+              border-radius: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+              transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+            }
+            .cro-diagram__icon-box img {
+              width: 40px;
+              height: 40px;
+              object-fit: contain;
+            }
+            .cro-diagram__btn {
+              border: 1px solid rgba(249, 115, 22, 0.4) !important;
+              padding: 0.8rem 2rem !important;
+            }
+            .cro-diagram__btn .btn__bg {
+              background: #f97316 !important;
+            }
+            .cro-diagram__btn .btn__text {
+              color: #fff !important;
+            }
+            @media (max-width: 600px) {
+              .cro-diagram__container {
+                flex-direction: column;
+                gap: 3rem;
+              }
+              .cro-diagram__col {
+                flex-direction: row;
+                gap: 2rem;
+              }
+              .cro-diagram__lines {
+                display: none;
+              }
+            }
+          </style>
+        </div>
+      </section>
+
+      <div class="sv-stats">
+        <div class="sv-stat">
+          <p class="sv-stat__num">£32M<span>+</span></p>
+          <p class="sv-stat__label">Ad Spend Managed</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat__num">20<span>+</span></p>
+          <p class="sv-stat__label">Years Combined Experience</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat__num">50<span>+</span></p>
+          <p class="sv-stat__label">Brands Scaled</p>
+        </div>
+        <div class="sv-stat">
+          <p class="sv-stat__num">3.2<span>x</span></p>
+          <p class="sv-stat__label">Avg. Pipeline ROAS</p>
+        </div>
+      </div>
+
+      <!-- ══ §2 LOGO SLIDER ══ -->
+      <section class="pm-logos">
+        <div class="pm-logos__track">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+            alt="Google"
+            loading="lazy"
+            style="height: 30px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+            alt="Meta"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg"
+            alt="LinkedIn"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Shopify_logo_2018.svg"
+            alt="Shopify"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b3/HubSpot_Logo.svg"
+            alt="HubSpot"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Klaviyo_logo.svg"
+            alt="Klaviyo"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <!-- Duplicate for endless scroll effect -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+            alt="Google"
+            loading="lazy"
+            style="height: 30px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+            alt="Meta"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg"
+            alt="LinkedIn"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Shopify_logo_2018.svg"
+            alt="Shopify"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b3/HubSpot_Logo.svg"
+            alt="HubSpot"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Klaviyo_logo.svg"
+            alt="Klaviyo"
+            loading="lazy"
+            style="height: 35px; opacity: 0.8; filter: grayscale(1)"
+          />
+        </div>
+      </section>
+
+      <!-- ══ §3 TROPHY PROOF ══ -->
+      <section class="pm-trophy">
+        <div class="pm-trophy__inner">
+          <div>
+            <p class="pm-trophy__quote">
+              "We started with organic. WeFlair came in, audited the funnel, and
+              layered paid on top. Within 8 weeks the Meta campaigns were
+              producing a 4.7x ROAS — and the organic kept compounding
+              underneath."
+            </p>
+            <div class="pm-trophy__attr">
+              <div class="pm-trophy__avatar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div>
+                <p class="pm-trophy__name">Harrier — Ecommerce</p>
+                <p class="pm-trophy__role">
+                  £2K Meta budget → organic-first, paid-amplified
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="pm-trophy__result">
+            <p class="pm-trophy__result-num">4.7x</p>
+            <p class="pm-trophy__result-label">Return on Ad Spend</p>
+            <p class="pm-trophy__result-sub">
+              Meta campaigns, 8 weeks from kickoff
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §4 SIGNATURE STATEMENT + GROWTH LOOP ══ -->
+      <section class="pm-signature">
+        <div class="pm-signature__inner">
+          <p
+            style="
+              color: var(--sv-green);
+              text-transform: uppercase;
+              font-size: 0.8rem;
+              font-weight: 700;
+              letter-spacing: 0.05em;
+              margin-bottom: 1rem;
+            "
+          >
+            Growth Philosophy
+          </p>
+          <p
+            class="pm-signature__statement"
+            style="
+              font-size: clamp(2rem, 4vw, 3rem);
+              font-family: var(--sv-font-display);
+              font-weight: 700;
+              color: var(--sv-text);
+              max-width: 800px;
+              text-wrap: balance;
+              line-height: 1.2;
+              margin: 0;
+            "
+          >
+            Traffic is meaningless if it doesn't convert. Every click should
+            <em style="color: var(--sv-green); font-style: normal">compound</em>
+            into revenue. We build the architecture that holds your budget
+            accountable.
+          </p>
+        </div>
+      </section>
+
+      <!-- ══ §5 WHAT WE RUN — 6 TILES ══ -->
+      <section class="sv-section" id="services">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">What we <em>run.</em></h2>
+          <p class="sv-section__sub">
+            Six capabilities. One integrated system. Every channel tied back to
+            the metric that matters.
+          </p>
+        </div>
+        <div class="sv-card-grid">
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Paid Search</h3>
+            <p class="sv-card__desc">
+              Bottom-of-funnel intent capture with optimised SEM architecture,
+              negative keyword defense, and bid strategy tied to pipeline value.
+            </p>
+          </div>
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Paid Social</h3>
+            <p class="sv-card__desc">
+              Demand generation through creative testing and audience
+              segmentation on LinkedIn, Meta, TikTok, and Reddit.
+            </p>
+          </div>
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="14" x="2" y="3" rx="2" />
+                <line x1="8" x2="16" y1="21" y2="21" />
+                <line x1="12" x2="12" y1="17" y2="21" />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Programmatic &amp; CTV</h3>
+            <p class="sv-card__desc">
+              Data-driven placements across the open web and connected TV
+              targeting your exact ICP with precision at scale.
+            </p>
+          </div>
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Account-Based Marketing</h3>
+            <p class="sv-card__desc">
+              Deeply targeted ABM campaigns designed to switch apathy to action
+              in high-value named accounts.
+            </p>
+          </div>
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+                <path d="M16 16h5v5" />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Retargeting</h3>
+            <p class="sv-card__desc">
+              Sequential retargeting flows that handle objections stage by stage
+              until warm prospects convert into revenue.
+            </p>
+          </div>
+          <div class="sv-card">
+            <div class="sv-card__icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"
+                />
+              </svg>
+            </div>
+            <h3 class="sv-card__title">Performance Creative</h3>
+            <p class="sv-card__desc">
+              In-house ad copy, static, motion, and video — tested every sprint
+              so creative fatigue never kills your pipeline.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §6 WHY OUR PAID HITS DIFFERENT — 2×2 ══ -->
+      <section class="sv-section sv-section--alt" id="why-different">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">
+            Why our paid <em>hits different.</em>
+          </h2>
+          <p class="sv-section__sub">
+            Paid media doesn't live in a silo here. It's wired into every growth
+            lever we operate.
+          </p>
+        </div>
+        <div class="pm-diff-grid">
+          <div class="pm-diff-card">
+            <p class="pm-diff-card__tag">Paid + Creative</p>
+            <h3 class="pm-diff-card__title">
+              In-house creative that ships every sprint
+            </h3>
+            <p class="pm-diff-card__desc">
+              No waiting on freelancers. Our writers and designers produce ad
+              variations, landing pages, and video inside the same team running
+              your campaigns — so messaging stays sharp and tests ship fast.
+            </p>
+          </div>
+          <div class="pm-diff-card">
+            <p class="pm-diff-card__tag">Paid + CRO</p>
+            <h3 class="pm-diff-card__title">
+              The traffic you pay for actually converts
+            </h3>
+            <p class="pm-diff-card__desc">
+              Every campaign is backed by conversion-optimised landing pages and
+              funnels. We close the loop between click and close — not just hand
+              off traffic to a page that leaks.
+            </p>
+          </div>
+          <div class="pm-diff-card">
+            <p class="pm-diff-card__tag">Paid + RevOps</p>
+            <h3 class="pm-diff-card__title">
+              Ads tied to pipeline, not vanity metrics
+            </h3>
+            <p class="pm-diff-card__desc">
+              We pipe ad data into your CRM. Lead scoring, routing, and
+              attribution are built into the workflow — so you see which
+              campaigns generate revenue, not just form fills.
+            </p>
+          </div>
+          <div class="pm-diff-card">
+            <p class="pm-diff-card__tag">Paid + Content</p>
+            <h3 class="pm-diff-card__title">Organic-paid compounding effect</h3>
+            <p class="pm-diff-card__desc">
+              Content fuels remarketing. Paid amplifies content. Together they
+              compound — reducing CAC quarter over quarter while expanding reach
+              into cold audiences organically.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §7 CREATIVE SHOWCASE ══ -->
+      <section class="sv-section" id="creative">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">
+            Creative built for <em>buyers</em>, not award shows.
+          </h2>
+          <p class="sv-section__sub">
+            B2B and ecommerce ad creative shipped every sprint. Tested.
+            Iterated. Scaled.
+          </p>
+        </div>
+        <div class="pm-creative-grid">
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label"
+                >LinkedIn Single Image</span
+              ><span class="pm-creative-card__stat">+128% ROAS</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">B2B SaaS</p>
+              <p class="pm-creative-card__title">
+                CellPoint Digital — Pipeline Campaign
+              </p>
+            </div>
+          </div>
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label">Meta Carousel</span
+              ><span class="pm-creative-card__stat">4.7x ROAS</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">Ecommerce</p>
+              <p class="pm-creative-card__title">Harrier — Paid Social Scale</p>
+            </div>
+          </div>
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label"
+                >Google Search + Display</span
+              ><span class="pm-creative-card__stat">+36% Deals</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">B2B Services</p>
+              <p class="pm-creative-card__title">
+                RCT — Multi-Channel Pipeline
+              </p>
+            </div>
+          </div>
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label">Meta Video Ad</span
+              ><span class="pm-creative-card__stat">$114K Revenue</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">Ecommerce</p>
+              <p class="pm-creative-card__title">Molahin — Revenue Engine</p>
+            </div>
+          </div>
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label"
+                >LinkedIn Document Ad</span
+              ><span class="pm-creative-card__stat">44 Meetings</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">B2B Fintech</p>
+              <p class="pm-creative-card__title">Meta Estate Empire — ABM</p>
+            </div>
+          </div>
+          <div class="pm-creative-card">
+            <div class="pm-creative-card__mock">
+              <span class="pm-creative-card__mock-label"
+                >Retargeting Sequence</span
+              ><span class="pm-creative-card__stat">3X Meetings</span>
+            </div>
+            <div class="pm-creative-card__info">
+              <p class="pm-creative-card__type">B2B Fintech</p>
+              <p class="pm-creative-card__title">
+                CellPoint — Full-Funnel Retargeting
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §8 FLAIR METHOD ══ -->
+      <section class="sv-section sv-section--alt" id="method">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">The FLAIR <em>Method.</em></h2>
+          <p class="sv-section__sub">
+            Five phases. Every engagement. The operating system behind every
+            result on this page.
+          </p>
+        </div>
+        <div class="sv-steps">
+          <div class="sv-step">
+            <div class="sv-step__num">F</div>
+            <div class="sv-step__body">
+              <h3>Find</h3>
+              <p>
+                Deep-dive audit of your current paid setup, ICP, competitive
+                landscape, and attribution gaps. We map every leak before
+                spending a pound.
+              </p>
+            </div>
+          </div>
+          <div class="sv-step">
+            <div class="sv-step__num">L</div>
+            <div class="sv-step__body">
+              <h3>Launch</h3>
+              <p>
+                Campaign architecture, creative production, tracking
+                implementation, and CRM integration — live within 14 days of
+                kickoff.
+              </p>
+            </div>
+          </div>
+          <div class="sv-step">
+            <div class="sv-step__num">A</div>
+            <div class="sv-step__body">
+              <h3>Amplify</h3>
+              <p>
+                Structured testing across channels, audiences, and creative. We
+                double down on winners and kill underperformers weekly.
+              </p>
+            </div>
+          </div>
+          <div class="sv-step">
+            <div class="sv-step__num">I</div>
+            <div class="sv-step__body">
+              <h3>Iterate</h3>
+              <p>
+                Continuous optimisation of bids, budgets, landing pages, and
+                creative based on pipeline data — not platform vanity metrics.
+              </p>
+            </div>
+          </div>
+          <div class="sv-step">
+            <div class="sv-step__num">R</div>
+            <div class="sv-step__body">
+              <h3>Report</h3>
+              <p>
+                Full-funnel attribution dashboards connecting ad spend to
+                qualified pipeline and closed revenue. Weekly syncs. Monthly
+                deep-dives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §9 PARTNERS ══ -->
+      <section class="pm-partners" id="partners">
+        <div class="pm-partners__inner">
+          <div class="sv-section__header" style="margin-bottom: 3rem">
+            <h2 class="sv-section__title">
+              Platform &amp; tech <em>partners.</em>
+            </h2>
+          </div>
+          <div class="pm-partners__group">
+            <p class="pm-partners__label">Platform Partners</p>
+            <div class="pm-partners__row">
+              <span class="pm-partner-pill">Google</span>
+              <span class="pm-partner-pill">Meta</span>
+              <span class="pm-partner-pill">LinkedIn</span>
+              <span class="pm-partner-pill">TikTok</span>
+              <span class="pm-partner-pill">YouTube</span>
+              <span class="pm-partner-pill">Reddit</span>
+              <span class="pm-partner-pill">Microsoft</span>
+              <span class="pm-partner-pill">X</span>
+            </div>
+          </div>
+          <div class="pm-partners__group">
+            <p class="pm-partners__label">Tech Partners</p>
+            <div class="pm-partners__row">
+              <span class="pm-partner-pill">HubSpot</span>
+              <span class="pm-partner-pill">Shopify</span>
+              <span class="pm-partner-pill">Klaviyo</span>
+              <span class="pm-partner-pill">GA4</span>
+              <span class="pm-partner-pill">Apollo</span>
+              <span class="pm-partner-pill">Clay</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §10 CASE STUDIES ══ -->
+
+      <section
+        class="weflair-section weflair-proof weflair-proof--switcher"
+        id="proof"
+      >
+        <div class="container">
+          <div class="weflair-proof__layout">
+            <div class="weflair-proof__head">
+              <p class="weflair-proof__overline">Case studies</p>
+              <h2 class="h3">Proven results.</h2>
+              <p class="weflair-section__body">
+                Measurable growth across ecommerce, CRM, and paid media.
+              </p>
+            </div>
+            <div class="weflair-proof-switcher" data-proof-switcher>
+              <button
+                type="button"
+                class="weflair-proof-switcher__nav is-prev"
+                data-proof-nav-prev
+                aria-label="Show previous case study"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="weflair-proof-switcher__shell">
+                <article class="weflair-proof-feature" data-proof-type>
+                  <!-- TYPE A: heydigital — info left, visual right -->
+                  <div class="weflair-proof-feature__info">
+                    <div
+                      class="weflair-proof-feature__logo"
+                      data-proof-logo
+                    ></div>
+                    <h3
+                      class="weflair-proof-feature__headline"
+                      data-proof-headline
+                    ></h3>
+                    <p class="weflair-proof-feature__desc" data-proof-desc></p>
+                    <div
+                      class="weflair-proof-feature__metrics"
+                      data-proof-metrics
+                    ></div>
+                    <a
+                      href="/case-studies/"
+                      class="weflair-proof-feature__link"
+                      data-proof-link
+                    >
+                      Read full results
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="weflair-proof-feature__visual">
+                    <div
+                      class="weflair-proof-feature__photo"
+                      data-proof-photo
+                    ></div>
+                  </div>
+                  <div
+                    class="weflair-proof-feature__ad-grid"
+                    data-proof-ad-grid
+                  ></div>
+
+                  <!-- TYPE B: netpeak — logo | center | stats -->
+                  <div
+                    class="weflair-proof-feature__np-logo"
+                    data-proof-np-logo
+                  ></div>
+                  <div class="weflair-proof-feature__np-center">
+                    <div
+                      class="weflair-proof-feature__np-photo"
+                      data-proof-np-photo
+                    ></div>
+                    <p
+                      class="weflair-proof-feature__np-desc"
+                      data-proof-np-desc
+                    ></p>
+                    <div
+                      class="weflair-proof-feature__np-meta"
+                      data-proof-np-meta
+                    ></div>
+                    <a
+                      href="/case-studies/"
+                      class="weflair-proof-feature__np-cta"
+                      data-proof-np-cta
+                      >Read full case →</a
+                    >
+                  </div>
+                  <div
+                    class="weflair-proof-feature__np-stats"
+                    data-proof-np-stats
+                  ></div>
+
+                  <!-- shared dots -->
+                  <div class="weflair-proof-feature__dots-row">
+                    <div
+                      class="weflair-proof-switcher__dots"
+                      data-proof-dots
+                    ></div>
+                  </div>
+                </article>
+                <div
+                  class="weflair-proof-switcher__rails"
+                  data-proof-rails
+                ></div>
+              </div>
+              <button
+                type="button"
+                class="weflair-proof-switcher__nav is-next"
+                data-proof-nav-next
+                aria-label="Show next case study"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        (function () {
+          var root = document.querySelector("[data-proof-switcher]");
+          if (!root) return;
+
+          var proofCases = [
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/farnell.png",
+              alt: "Farnell logo",
+              photo: "/brand-assets/cases/farnell.jpg",
+              desc: "Embedded as part of Farnell\u2019s personalization squad alongside McKinsey. Built and deployed a continuous experimentation programme spanning product roadmap, UX, and commercial features \u2014 generating \u00A34.5m in incremental revenue.",
+              metrics: [
+                { value: "\u00A34.5m", label: "Incremental revenue" },
+                { value: "+5%", label: "Conversion rate" },
+                { value: "40%", label: "Experiment win rate" },
+              ],
+              services: ["CRO", "Personalization", "A/B Testing"],
+              duration: "Ongoing",
+              link: "/case-studies/farnell-personalization-squad.html",
+            },
+            {
+              type: "heydigital",
+              layout: "reversed",
+              logo: "/brand-assets/client-logos/harrier-white.png",
+              alt: "Harrier logo",
+              headline: "8K subscribers at \u00A30.49 CPL. 5.53\u00D7 ROAS.",
+              desc: "Full-funnel paid social from zero. Launched a three-stage Meta and Google strategy that captured new audiences, nurtured intent, and converted at scale \u2014 delivering 336 paying customers and \u00A3154K projected LTV.",
+              visual: "ad-showcase",
+              adFrames: [
+                {
+                  body: "/brand-assets/cases/vip-vaping.jpg",
+                  brandName: "Harrier",
+                  headline: "Trail-tested. Race-ready.",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/pink-boutique.jpg",
+                  brandName: "Harrier",
+                  headline: "New season drop \u2014 20% off",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/molahin.jpg",
+                  brandName: "Harrier",
+                  headline: "Built for the trails you love",
+                  cta: "harrier.co.uk",
+                  action: "Learn More",
+                },
+                {
+                  body: "/brand-assets/cases/yours.jpg",
+                  brandName: "Harrier",
+                  headline: "Subscribe & save 15%",
+                  cta: "Newsletter signup",
+                  action: "Sign Up",
+                },
+                {
+                  body: "/brand-assets/cases/farnell.jpg",
+                  brandName: "Harrier",
+                  headline: "Your next PB starts here",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/vip-vaping.jpg",
+                  brandName: "Harrier",
+                  headline: "Free UK delivery over \u00A375",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+              ],
+              metrics: [
+                { value: "8K", label: "New subscribers" },
+                { value: "5.53\u00D7", label: "ROAS" },
+                { value: "\u00A30.49", label: "CPL" },
+                { value: "121%", label: "ROI" },
+              ],
+              link: "/case-studies/harrier-performance-rebuild.html",
+            },
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/vip-vaping.svg",
+              alt: "VIP Vaping logo",
+              photo: "/brand-assets/cases/vip-vaping.jpg",
+              desc: "Inherited a CRM programme in decline across every KPI. Rebuilt the data architecture, restructured lifecycle segmentation, and deployed reactivation journeys that reversed negative trends across acquisition, retention, and win-back.",
+              metrics: [
+                { value: "+32%", label: "New customers" },
+                { value: "+153%", label: "Won-back" },
+                { value: "+19%", label: "Second orders" },
+                { value: "\u221230%", label: "At-risk reduction" },
+              ],
+              services: ["CRM", "Lifecycle", "Email"],
+              duration: "18 months",
+              link: "/case-studies/vip-vaping-turnaround.html",
+            },
+            {
+              type: "heydigital",
+              layout: "default",
+              logo: "/brand-assets/client-logos/notcutts.svg",
+              alt: "Notcutts logo",
+              headline: "70% increase in conversion over 12 months.",
+              desc: "Transformed a traditional garden centre retailer into a digital performer. Made 100% of in-store stock available online and rebuilt the UX from browsing to checkout \u2014 driving a 70% YoY conversion increase.",
+              visual: "photo",
+              photo: "",
+              metrics: [
+                { value: "+70%", label: "Conversion rate" },
+                { value: "100%", label: "Stock online" },
+              ],
+              link: "/case-studies/notcutts-crm-conversion.html",
+            },
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/travelsphere.svg",
+              alt: "Travelsphere logo",
+              photo: "",
+              desc: "End-to-end digital reset for two heritage travel brands. Redesigned destination pages, rebuilt the conversion funnel, and unified analytics \u2014 resulting in sustained double-digit growth across all commercial KPIs.",
+              metrics: [
+                { value: "+25%", label: "YoY revenue" },
+                { value: "+15%", label: "Conversion uplift" },
+                { value: "+10%", label: "Lead growth" },
+              ],
+              services: ["Ecommerce", "UX", "CRO"],
+              duration: "Ongoing",
+              link: "/case-studies/travelsphere-digital-reset.html",
+            },
+          ];
+
+          var activeIndex = 0;
+          var prevButton = root.querySelector("[data-proof-nav-prev]");
+          var nextButton = root.querySelector("[data-proof-nav-next]");
+          var featureEl = root.querySelector(".weflair-proof-feature");
+
+          // heydigital targets
+          var logoTarget = root.querySelector("[data-proof-logo]");
+          var headlineTarget = root.querySelector("[data-proof-headline]");
+          var descTarget = root.querySelector("[data-proof-desc]");
+          var photoTarget = root.querySelector("[data-proof-photo]");
+          var adGridTarget = root.querySelector("[data-proof-ad-grid]");
+          var metricsTarget = root.querySelector("[data-proof-metrics]");
+          var linkTarget = root.querySelector("[data-proof-link]");
+
+          // netpeak targets
+          var npLogoTarget = root.querySelector("[data-proof-np-logo]");
+          var npPhotoTarget = root.querySelector("[data-proof-np-photo]");
+          var npDescTarget = root.querySelector("[data-proof-np-desc]");
+          var npMetaTarget = root.querySelector("[data-proof-np-meta]");
+          var npStatsTarget = root.querySelector("[data-proof-np-stats]");
+          var npCtaTarget = root.querySelector("[data-proof-np-cta]");
+
+          // shared
+          var railsTarget = root.querySelector("[data-proof-rails]");
+          var dotsTarget = root.querySelector("[data-proof-dots]");
+
+          function logoHtml(item) {
+            return (
+              '<img src="' +
+              item.logo +
+              '" alt="' +
+              item.alt +
+              '" loading="lazy" decoding="async">'
+            );
+          }
+
+          function metricHtml(metric) {
+            return (
+              '<div class="weflair-proof-feature__metric"><strong>' +
+              metric.value +
+              "</strong><span>" +
+              metric.label +
+              "</span></div>"
+            );
+          }
+
+          function npStatHtml(metric) {
+            return (
+              '<div class="weflair-proof-feature__np-stat"><strong>' +
+              metric.value +
+              "</strong><span>" +
+              metric.label +
+              "</span></div>"
+            );
+          }
+
+          function adFrameHtml(frame, item) {
+            return (
+              '<div class="weflair-proof-feature__ad-frame">' +
+              '<div class="weflair-proof-feature__ad-header">' +
+              '<div class="weflair-proof-feature__ad-avatar"><img src="' +
+              item.logo +
+              '" alt=""></div>' +
+              '<div><div class="weflair-proof-feature__ad-name">' +
+              frame.brandName +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-sponsored">Sponsored</div></div>' +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-body" style="background-image:url(\'' +
+              frame.body +
+              "')\">" +
+              (frame.headline
+                ? '<div class="weflair-proof-feature__ad-body-headline">' +
+                  frame.headline +
+                  "</div>"
+                : "") +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-footer">' +
+              '<span class="weflair-proof-feature__ad-cta">' +
+              frame.cta +
+              "</span>" +
+              '<span class="weflair-proof-feature__ad-action">' +
+              (frame.action || "Shop Now") +
+              "</span>" +
+              "</div>" +
+              "</div>"
+            );
+          }
+
+          function railHtml(item, index) {
+            var label = item.alt.replace(" logo", "");
+            return (
+              '<button type="button" class="weflair-proof-rail" data-proof-select="' +
+              index +
+              '" aria-label="Show ' +
+              label +
+              ' case study"><span class="weflair-proof-rail__logo">' +
+              logoHtml(item) +
+              '</span><span class="weflair-proof-rail__meta">' +
+              label +
+              '</span><span class="weflair-proof-rail__toggle" aria-hidden="true">+</span></button>'
+            );
+          }
+
+          function dotHtml(index) {
+            return (
+              '<button type="button" class="weflair-proof-switcher__dot' +
+              (index === activeIndex ? " is-active" : "") +
+              '" data-proof-dot="' +
+              index +
+              '" aria-label="Show case study ' +
+              (index + 1) +
+              '"></button>'
+            );
+          }
+
+          function nextIndexes(start) {
+            var indexes = [];
+            for (var offset = 1; offset <= 4; offset += 1) {
+              indexes.push((start + offset) % proofCases.length);
+            }
+            return indexes;
+          }
+
+          function render() {
+            var item = proofCases[activeIndex];
+
+            // set card type
+            featureEl.setAttribute("data-type", item.type);
+            featureEl.setAttribute("data-layout", item.layout || "default");
+
+            if (item.type === "heydigital") {
+              // populate heydigital elements
+              if (logoTarget) logoTarget.innerHTML = logoHtml(item);
+              if (headlineTarget)
+                headlineTarget.textContent = item.headline || "";
+              if (descTarget) descTarget.textContent = item.desc;
+              if (metricsTarget)
+                metricsTarget.innerHTML = item.metrics.map(metricHtml).join("");
+              if (linkTarget) linkTarget.setAttribute("href", item.link);
+
+              // photo or ad-showcase
+              if (item.visual === "photo" && photoTarget) {
+                if (item.photo) {
+                  photoTarget.style.backgroundImage =
+                    'url("' + item.photo + '")';
+                  photoTarget.classList.remove("no-photo");
+                } else {
+                  photoTarget.style.backgroundImage = "none";
+                  photoTarget.classList.add("no-photo");
+                }
+                photoTarget.style.backgroundPosition =
+                  item.photoPosition || "center center";
+                photoTarget.parentElement.style.display = "";
+                if (adGridTarget) adGridTarget.style.display = "none";
+              } else if (
+                item.visual === "ad-showcase" &&
+                adGridTarget &&
+                item.adFrames
+              ) {
+                adGridTarget.innerHTML = item.adFrames
+                  .map(function (frame) {
+                    return adFrameHtml(frame, item);
+                  })
+                  .join("");
+                adGridTarget.style.display = "";
+                if (photoTarget)
+                  photoTarget.parentElement.style.display = "none";
+              }
+            } else if (item.type === "netpeak") {
+              // populate netpeak elements
+              if (npLogoTarget) npLogoTarget.innerHTML = logoHtml(item);
+              if (npPhotoTarget) {
+                if (item.photo) {
+                  npPhotoTarget.style.backgroundImage =
+                    'url("' + item.photo + '")';
+                  npPhotoTarget.classList.remove("no-photo");
+                } else {
+                  npPhotoTarget.style.backgroundImage = "none";
+                  npPhotoTarget.classList.add("no-photo");
+                }
+              }
+              if (npDescTarget) npDescTarget.textContent = item.desc;
+              if (npStatsTarget)
+                npStatsTarget.innerHTML = item.metrics.map(npStatHtml).join("");
+              if (npCtaTarget) npCtaTarget.setAttribute("href", item.link);
+
+              // services + duration meta
+              if (npMetaTarget) {
+                var metaHtml = "";
+                if (item.services) {
+                  metaHtml +=
+                    '<div><div class="weflair-proof-feature__np-meta-label">Services delivered</div><div class="weflair-proof-feature__np-meta-value">' +
+                    item.services.join(", ") +
+                    "</div></div>";
+                }
+                if (item.duration) {
+                  metaHtml +=
+                    '<div><div class="weflair-proof-feature__np-meta-label">Partnership duration</div><div class="weflair-proof-feature__np-meta-duration">' +
+                    item.duration +
+                    "</div></div>";
+                }
+                npMetaTarget.innerHTML = metaHtml;
+              }
+            }
+
+            // rails
+            if (railsTarget) {
+              railsTarget.innerHTML = nextIndexes(activeIndex)
+                .map(function (index) {
+                  return railHtml(proofCases[index], index);
+                })
+                .join("");
+            }
+
+            // dots
+            if (dotsTarget) {
+              dotsTarget.innerHTML = proofCases
+                .map(function (_, index) {
+                  return dotHtml(index);
+                })
+                .join("");
+            }
+
+            // bind rails
+            Array.prototype.forEach.call(
+              root.querySelectorAll("[data-proof-select]"),
+              function (button) {
+                button.addEventListener("click", function () {
+                  activeIndex = Number(
+                    button.getAttribute("data-proof-select"),
+                  );
+                  render();
+                });
+              },
+            );
+
+            // bind dots
+            Array.prototype.forEach.call(
+              root.querySelectorAll("[data-proof-dot]"),
+              function (button) {
+                button.addEventListener("click", function () {
+                  activeIndex = Number(button.getAttribute("data-proof-dot"));
+                  render();
+                });
+              },
+            );
+          }
+
+          prevButton.addEventListener("click", function () {
+            activeIndex =
+              (activeIndex - 1 + proofCases.length) % proofCases.length;
+            render();
+          });
+
+          nextButton.addEventListener("click", function () {
+            activeIndex = (activeIndex + 1) % proofCases.length;
+            render();
+          });
+
+          render();
+        })();
+      </script>
+      <section
+        class="weflair-section weflair-proof weflair-proof--legacy-old"
+        id="proof-legacy-accordion"
+        hidden
+        aria-hidden="true"
+      >
+        <div class="container">
+          <div class="weflair-proof__layout">
+            <div class="weflair-proof__head">
+              <div class="eyebrow">
+                <span class="weflair-eyebrow-icon"
+                  ><img
+                    src="/brand-assets/star-solid.svg"
+                    alt=""
+                    aria-hidden="true"
+                /></span>
+                <p class="eyebrow__p">Case studies</p>
+              </div>
+              <h2 class="h3">Results that compound.</h2>
+              <p class="weflair-section__body">Selected wins.</p>
+            </div>
+            <div class="weflair-proof__matrix">
+              <div class="weflair-proof__top">
+                <a
+                  href="/case-studies/vip-vaping-turnaround.html"
+                  class="weflair-proof-panel is-featured"
+                  aria-label="Read the VIP Vaping case study"
+                >
+                  <div class="weflair-proof-panel__top">
+                    <span class="weflair-proof-panel__badge">Case Study</span>
+                    <span class="weflair-proof-panel__brand">
+                      <img
+                        class="weflair-proof-panel__logo-image"
+                        src="/brand-assets/client-logos/vip-vaping.svg"
+                        alt="VIP Vaping logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  </div>
+                  <p class="weflair-proof-panel__eyeline">
+                    VIP Vaping · Retail turnaround
+                  </p>
+                  <h3 class="weflair-proof-panel__headline">
+                    120+ locations turned around.
+                  </h3>
+                  <div class="weflair-proof-panel__metrics is-three">
+                    <div class="weflair-proof-panel__metric">
+                      <strong>+32%</strong>
+                      <span>New customers</span>
+                    </div>
+                    <div class="weflair-proof-panel__metric">
+                      <strong>3,000%</strong>
+                      <span>Google Maps views</span>
+                    </div>
+                    <div class="weflair-proof-panel__metric">
+                      <strong>+153%</strong>
+                      <span>Won-back customers</span>
+                    </div>
+                  </div>
+                  <p class="weflair-proof-panel__body"></p>
+                  <div class="weflair-proof-panel__actions">
+                    <span class="weflair-proof-panel__cta"
+                      >Read case study
+                      <span aria-hidden="true">&rarr;</span></span
+                    >
+                  </div>
+                </a>
+
+                <div class="weflair-proof__side">
+                  <a
+                    href="/case-studies/rct-paid-search-efficiency.html"
+                    class="weflair-proof-panel is-support"
+                    aria-label="Read the RCT case study"
+                  >
+                    <div class="weflair-proof-panel__top">
+                      <span class="weflair-proof-panel__badge">Case Study</span>
+                      <span class="weflair-proof-panel__brand">
+                        <img
+                          class="weflair-proof-panel__logo-image"
+                          src="/brand-assets/client-logos/rct.png"
+                          alt="RCT logo"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </span>
+                    </div>
+                    <p class="weflair-proof-panel__eyeline">
+                      RCT · Real estate
+                    </p>
+                    <h3 class="weflair-proof-panel__headline">
+                      Search rebuilt for closed deals.
+                    </h3>
+                    <div class="weflair-proof-panel__metrics is-three">
+                      <div class="weflair-proof-panel__metric">
+                        <strong>+36%</strong>
+                        <span>ROAS</span>
+                      </div>
+                      <div class="weflair-proof-panel__metric">
+                        <strong>-17%</strong>
+                        <span>Ad spend</span>
+                      </div>
+                      <div class="weflair-proof-panel__metric">
+                        <strong>+15%</strong>
+                        <span>Total deals</span>
+                      </div>
+                    </div>
+                    <p class="weflair-proof-panel__body"></p>
+                    <div class="weflair-proof-panel__actions">
+                      <span class="weflair-proof-panel__cta"
+                        >Read case study
+                        <span aria-hidden="true">&rarr;</span></span
+                      >
+                    </div>
+                  </a>
+
+                  <div
+                    class="weflair-proof-panel weflair-proof-quote is-testimonial"
+                    data-proof-quote
+                  >
+                    <div class="weflair-proof-quote__top">
+                      <span class="weflair-proof-panel__badge"
+                        >Testimonial</span
+                      >
+                      <div
+                        class="weflair-proof-quote__dots"
+                        role="tablist"
+                        aria-label="Proof testimonials"
+                      >
+                        <button
+                          type="button"
+                          class="weflair-proof-quote__dot is-active"
+                          data-proof-quote-dot
+                          aria-label="Show testimonial 1"
+                        ></button>
+                        <button
+                          type="button"
+                          class="weflair-proof-quote__dot"
+                          data-proof-quote-dot
+                          aria-label="Show testimonial 2"
+                        ></button>
+                        <button
+                          type="button"
+                          class="weflair-proof-quote__dot"
+                          data-proof-quote-dot
+                          aria-label="Show testimonial 3"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="weflair-proof-quote__viewport">
+                      <article
+                        class="weflair-proof-quote__slide is-active"
+                        data-proof-quote-slide
+                      >
+                        <div class="weflair-proof-quote__content">
+                          <div class="weflair-proof-quote__meta">
+                            <div>
+                              <p class="weflair-proof-quote__name">
+                                Steven Osei
+                              </p>
+                              <p class="weflair-proof-quote__role">
+                                CMO · CellPoint Digital
+                              </p>
+                            </div>
+                            <span
+                              class="weflair-proof-quote__mark"
+                              aria-hidden="true"
+                              >&rdquo;</span
+                            >
+                          </div>
+                          <p class="weflair-proof-quote__statement">
+                            &ldquo;WeFlair is our marketing team.&rdquo;
+                          </p>
+                        </div>
+                      </article>
+                      <article
+                        class="weflair-proof-quote__slide"
+                        data-proof-quote-slide
+                      >
+                        <div class="weflair-proof-quote__content">
+                          <div class="weflair-proof-quote__meta">
+                            <div>
+                              <p class="weflair-proof-quote__name">
+                                Hisham Alqaisi
+                              </p>
+                              <p class="weflair-proof-quote__role">CMO · RCT</p>
+                            </div>
+                            <span
+                              class="weflair-proof-quote__mark"
+                              aria-hidden="true"
+                              >&rdquo;</span
+                            >
+                          </div>
+                          <p class="weflair-proof-quote__statement">
+                            &ldquo;The account finally reflected the
+                            business.&rdquo;
+                          </p>
+                        </div>
+                      </article>
+                      <article
+                        class="weflair-proof-quote__slide"
+                        data-proof-quote-slide
+                      >
+                        <div class="weflair-proof-quote__content">
+                          <div class="weflair-proof-quote__meta">
+                            <div>
+                              <p class="weflair-proof-quote__name">
+                                John Abbadi
+                              </p>
+                              <p class="weflair-proof-quote__role">
+                                Founder · Molahin
+                              </p>
+                            </div>
+                            <span
+                              class="weflair-proof-quote__mark"
+                              aria-hidden="true"
+                              >&rdquo;</span
+                            >
+                          </div>
+                          <p class="weflair-proof-quote__statement">
+                            &ldquo;They changed how we approach our
+                            audience.&rdquo;
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="weflair-proof__footer">
+                <a
+                  href="/case-studies/molahin-demand-gen.html"
+                  class="weflair-proof-panel is-mini"
+                  aria-label="Read the Molahin case study"
+                >
+                  <div class="weflair-proof-panel__top">
+                    <span class="weflair-proof-panel__badge">Case Study</span>
+                    <span class="weflair-proof-panel__brand">
+                      <img
+                        class="weflair-proof-panel__logo-image"
+                        src="/brand-assets/client-logos/molahin.png"
+                        alt="Molahin logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  </div>
+                  <p class="weflair-proof-panel__eyeline">
+                    Molahin · Music platform
+                  </p>
+                  <h3 class="weflair-proof-panel__headline">
+                    Paid efficiency up.
+                  </h3>
+                  <div class="weflair-proof-panel__metrics">
+                    <div class="weflair-proof-panel__metric">
+                      <strong>+128%</strong>
+                      <span>ROAS</span>
+                    </div>
+                    <div class="weflair-proof-panel__metric">
+                      <strong>$114K</strong>
+                      <span>New revenue</span>
+                    </div>
+                  </div>
+                  <p class="weflair-proof-panel__body"></p>
+                  <div class="weflair-proof-panel__actions">
+                    <span class="weflair-proof-panel__cta"
+                      >Read case study
+                      <span aria-hidden="true">&rarr;</span></span
+                    >
+                  </div>
+                </a>
+
+                <a
+                  href="/case-studies/notcutts-crm-conversion.html"
+                  class="weflair-proof-panel is-mini"
+                  aria-label="Read the Notcutts case study"
+                >
+                  <div class="weflair-proof-panel__top">
+                    <span class="weflair-proof-panel__badge">Case Study</span>
+                    <span class="weflair-proof-panel__brand">
+                      <img
+                        class="weflair-proof-panel__logo-image"
+                        src="/brand-assets/client-logos/notcutts.svg"
+                        alt="Notcutts logo"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  </div>
+                  <p class="weflair-proof-panel__eyeline">
+                    Notcutts · Retail CRM
+                  </p>
+                  <h3 class="weflair-proof-panel__headline">
+                    Capture up. Conversion up.
+                  </h3>
+                  <div class="weflair-proof-panel__metrics">
+                    <div class="weflair-proof-panel__metric">
+                      <strong>+40%</strong>
+                      <span>Email database</span>
+                    </div>
+                    <div class="weflair-proof-panel__metric">
+                      <strong>+70%</strong>
+                      <span>Conversion YOY</span>
+                    </div>
+                  </div>
+                  <p class="weflair-proof-panel__body"></p>
+                  <div class="weflair-proof-panel__actions">
+                    <span class="weflair-proof-panel__cta"
+                      >Read case study
+                      <span aria-hidden="true">&rarr;</span></span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §11 INDUSTRIES PILLS ══ -->
+      <section class="pm-industries">
+        <div class="pm-industries__inner">
+          <p class="pm-industries__label">Industries We Serve</p>
+          <div class="pm-industries__row">
+            <span class="pm-ind-pill">B2B SaaS</span>
+            <span class="pm-ind-pill">Fintech</span>
+            <span class="pm-ind-pill">Ecommerce &amp; DTC</span>
+            <span class="pm-ind-pill">B2B Services</span>
+            <span class="pm-ind-pill">Healthcare</span>
+            <span class="pm-ind-pill">Real Estate</span>
+            <span class="pm-ind-pill">Industrial &amp; Hardware</span>
+            <span class="pm-ind-pill">Education</span>
+            <span class="pm-ind-pill">Professional Services</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §12 PRICING ══ -->
+      <section class="sv-section sv-section--alt" id="pricing">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">Transparent <em>pricing.</em></h2>
+          <p class="sv-section__sub">
+            No hidden fees. No lock-ins. Pick the tier that matches your growth
+            stage.
+          </p>
+        </div>
+        <div class="sv-pricing-grid">
+          <div class="sv-tier">
+            <h3 class="sv-tier__name">Ignition</h3>
+            <p class="sv-tier__desc">
+              For brands launching or validating paid channels.
+            </p>
+            <p class="sv-tier__price">€3,280 <span>/month</span></p>
+            <ul class="sv-tier__features">
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Up to 2 channels
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Campaign build &amp; management
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Monthly creative refresh
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Bi-weekly reporting
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Tracking &amp; attribution setup
+              </li>
+            </ul>
+            <a
+              href="../contact.html"
+              class="btn w-inline-block weflair-btn"
+              style="
+                border: 1px solid rgba(246, 243, 238, 0.15);
+                width: 100%;
+                justify-content: center;
+              "
+              ><div class="btn__bg"></div>
+              <div class="btn__text">
+                <span class="btn__span">Get Started</span>
+              </div></a
+            >
+          </div>
+          <div class="sv-tier sv-tier--popular">
+            <span class="sv-tier__badge">Most Popular</span>
+            <h3 class="sv-tier__name">Momentum</h3>
+            <p class="sv-tier__desc">
+              For brands ready to scale what's working.
+            </p>
+            <p class="sv-tier__price">€5,000 <span>/month</span></p>
+            <ul class="sv-tier__features">
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Up to 4 channels
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Full-funnel campaign architecture
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Sprint-based creative production
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Weekly reporting + CRM attribution
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Landing page optimisation
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Retargeting sequences
+              </li>
+            </ul>
+            <a
+              href="../contact.html"
+              class="btn w-inline-block weflair-btn weflair-btn--primary"
+              style="width: 100%; justify-content: center"
+              ><div class="btn__bg"></div>
+              <div class="btn__text">
+                <span class="btn__span">Book a Call</span>
+              </div></a
+            >
+          </div>
+          <div class="sv-tier">
+            <h3 class="sv-tier__name">Command</h3>
+            <p class="sv-tier__desc">
+              For brands running serious budget across markets.
+            </p>
+            <p class="sv-tier__price">€8,400 <span>/month</span></p>
+            <ul class="sv-tier__features">
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Unlimited channels
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                ABM + programmatic + CTV
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Dedicated creative team
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Real-time dashboards + Slack alerts
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                Quarterly strategy reviews
+              </li>
+              <li class="sv-tier__feature">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                RevOps integration included
+              </li>
+            </ul>
+            <a
+              href="../contact.html"
+              class="btn w-inline-block weflair-btn"
+              style="
+                border: 1px solid rgba(246, 243, 238, 0.15);
+                width: 100%;
+                justify-content: center;
+              "
+              ><div class="btn__bg"></div>
+              <div class="btn__text">
+                <span class="btn__span">Talk to Us</span>
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ §13 FAQ + CLOSING CTA ══ -->
+      <section class="sv-section" id="faq">
+        <div class="sv-section__header">
+          <h2 class="sv-section__title">
+            Frequently asked <em>questions.</em>
+          </h2>
+        </div>
+        <div class="pm-faq-list">
+          <details class="pm-faq-item">
+            <summary>What ad spend do you recommend to start?</summary>
+            <div class="pm-faq-item__body">
+              It depends on channel and ICP. For B2B LinkedIn, we typically
+              recommend a minimum of €3K/month in ad spend. For ecommerce Meta,
+              £2K is enough to validate. We'll model expected returns during the
+              strategy call so you know the numbers before committing.
+            </div>
+          </details>
+          <details class="pm-faq-item">
+            <summary>How quickly can we expect results?</summary>
+            <div class="pm-faq-item__body">
+              Campaigns go live within 14 days of kickoff. Initial signal (CPL
+              trends, creative winners) appears in weeks 2–4. Meaningful
+              pipeline impact typically shows by week 6–8. We set clear
+              milestones so there's never ambiguity about whether things are
+              working.
+            </div>
+          </details>
+          <details class="pm-faq-item">
+            <summary>
+              Do you handle creative or do we need to provide it?
+            </summary>
+            <div class="pm-faq-item__body">
+              We handle everything in-house — ad copy, static designs, motion,
+              video, and landing pages. Our creative team ships new variations
+              every sprint as part of the engagement. You approve, we iterate.
+            </div>
+          </details>
+          <details class="pm-faq-item">
+            <summary>How do you measure success?</summary>
+            <div class="pm-faq-item__body">
+              Pipeline-qualified metrics: cost per qualified lead, pipeline
+              ROAS, CAC, and closed/won revenue attributed to paid. We connect
+              ad data to your CRM so every metric traces back to actual revenue
+              — not just clicks or form fills.
+            </div>
+          </details>
+          <details class="pm-faq-item">
+            <summary>Can you audit our existing paid setup first?</summary>
+            <div class="pm-faq-item__body">
+              Yes — most engagements start with a paid audit. We'll identify
+              what's working, what's burning budget, and where the biggest
+              opportunities are. If there's a fit, we'll present a roadmap. If
+              not, we'll say so.
+            </div>
+          </details>
+          <details class="pm-faq-item">
+            <summary>What platforms do you manage?</summary>
+            <div class="pm-faq-item__body">
+              Google Ads, Meta (Facebook/Instagram), LinkedIn, TikTok, Reddit,
+              YouTube, Microsoft Ads, programmatic display, and connected TV. We
+              recommend the channel mix based on your ICP and growth stage — not
+              a one-size-fits-all playbook.
+            </div>
+          </details>
+        </div>
+
+        <div class="pm-cta-face">
+          <div class="pm-cta-face__avatar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3>Ready to stop guessing and start compounding?</h3>
+          <p>
+            Book a 30-minute strategy call. We'll walk through your current
+            setup, identify the biggest levers, and show you exactly what a
+            WeFlair engagement looks like.
+          </p>
+          <a
+            href="../contact.html"
+            class="btn w-inline-block weflair-btn weflair-btn--primary"
+            ><div class="btn__bg"></div>
+            <div class="btn__text">
+              <span class="btn__span">Book a Strategy Call</span>
+            </div>
+            <div class="arrow">
+              <div class="arrow__bg"></div>
+              <div class="arrow__box is--duplicate">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="arrow__svg"
+                >
+                  <path
+                    d="M7 17L17 7"
+                    stroke="currentColor"
+                    stroke-width="0.125em"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9 7H17V15"
+                    stroke="currentColor"
+                    stroke-width="0.125em"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div class="arrow__box">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="arrow__svg"
+                >
+                  <path
+                    d="M7 17L17 7"
+                    stroke="currentColor"
+                    stroke-width="0.125em"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M9 7H17V15"
+                    stroke="currentColor"
+                    stroke-width="0.125em"
+                    stroke-linecap="square"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div></div
+          ></a>
+        </div>
+      </section>
+
+      <section class="footer weflair-footer">
+      <div class="weflair-footer__cta-banner" id="audit">
+        <div class="container">
+          <div class="weflair-footer__cta-inner">
+            <div class="eyebrow is-centered"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 34 45" fill="none" class="weflair-flare">
+                  <path
+                    d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
+                    fill="currentColor"></path>
+                </svg></span>
+              <p class="eyebrow__p">Next step</p>
+            </div>
+            <h2 class="h3">Request a growth audit.</h2>
+            <p class="weflair-section__body">We will show you what is leaking, what needs fixing first, and whether
+              there is a real fit.</p>
+            <p class="weflair-section__body is--muted">If there is no fit, we will say so.</p><a data-hover=""
+              data-btn-theme="primary" href="/contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
+              <div class="arrow">
+                <div class="arrow__bg"></div>
+                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
+                    fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="weflair-footer__main">
+        <div class="container">
+          <div class="weflair-footer__top">
+            <div class="weflair-footer__info-row">
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Global remote</h4>
+                <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+                <p class="weflair-footer__info-line">HQ: Distributed</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+                <p class="weflair-footer__info-line">WeFlair LLC</p>
+                <p class="weflair-footer__info-line">New York, United States</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
+                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                  class="weflair-footer__contact-link">hello@weflair.co</a>
+              </div>
+            </div>
+            <div class="weflair-footer__nav-row">
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Services</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
+                      Performance</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
+                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
+                      Design &amp; Content</a></li>
+                  <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Resources</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
+                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
+                  <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
+                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Checklists</a></li>
+                  <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Company</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                  <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                  <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="weflair-footer__divider"></div>
+          <div class="weflair-footer__bottom">
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">© 2026 WeFlair</span><a
+                href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
+                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
+                href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+            <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
+                class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
+                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a><a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link"
+                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a><a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X"
+                target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                  </path>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operator Playbooks — WeFlair</title>
+  <meta name="description" content="25+ Operator-grade playbooks spanning RevOps, Outbound, Paid Media, and eCommerce." />
+  <meta name="theme-color" content="#151515" />
+  <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../foundation-styles.css" />
+  <link rel="stylesheet" href="../foundation-slater.css" />
+  <link rel="stylesheet" href="../weflair-hero.css" />
+  <script src="../foundation.js" defer></script>
+  <script src="../weflair-hero.js" defer></script>
+  
+  <style>
+    .pb-page { background: #151515; color: #f6f3ee; font-family: 'Inter', sans-serif; }
+    
+    /* HERO */
+    .dir-hero { position: relative; padding: clamp(8rem, 12vw, 12rem) 2rem clamp(4rem, 8vw, 6rem); text-align: center; border-bottom: 1px solid rgba(246,243,238,0.06); }
+    .dir-hero__inner { max-width: 58rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+    .dir-hero__title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.06em; margin: 0 0 1.5rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif;}
+    .dir-hero__sub { font-size: clamp(1.1rem, 1.4vw, 1.25rem); line-height: 1.6; color: rgba(246,243,238,0.7); max-width: 44rem; margin: 0 auto; text-wrap: balance; }
+
+    /* LAYOUT */
+    .dir-layout { max-width: 86rem; margin: 0 auto; display: flex; gap: 3rem; padding: clamp(4rem, 6vw, 6rem) 2rem; align-items: flex-start;}
+    @media(max-width: 991px) { .dir-layout { flex-direction: column; } }
+
+    /* SIDEBAR */
+    .dir-sidebar { flex: 0 0 260px; position: sticky; top: 7rem; }
+    @media(max-width: 991px) { .dir-sidebar { flex: none; position: relative; top: 0; width: 100%; margin-bottom:2rem;} }
+    .dir-filter-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(246,243,238,0.4); margin-bottom: 1.5rem; }
+    .dir-filter-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    @media(max-width: 991px) { .dir-filter-list { flex-direction: row; flex-wrap: wrap; } }
+    .dir-filter-btn { background: transparent; border: 1px solid transparent; color: rgba(246,243,238,0.6); padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer; transition: all 0.2s ease; width: 100%; display:flex; justify-content:space-between; align-items:center;}
+    @media(max-width: 991px) { .dir-filter-btn { width: auto; } }
+    .dir-filter-btn:hover { background: rgba(246,243,238,0.03); color: #f6f3ee; }
+    .dir-filter-btn.is-active { background: rgba(62,255,104,0.1); border: 1px solid rgba(62,255,104,0.2); color: #3eff68; }
+
+    /* GRID */
+    .dir-grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-content: flex-start;}
+    @media(max-width: 1200px) { .dir-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 768px) { .dir-grid { grid-template-columns: 1fr; } }
+    
+    .weflair-pb-card { background: rgba(17,17,17,0.7); border: 1px solid rgba(246,243,238,0.08); border-radius: 1rem; padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease; }
+    .weflair-pb-card:hover { border-color: rgba(62,255,104,0.3); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .weflair-pb-badge { display:inline-block; align-self:flex-start; font-size: 0.75rem; font-weight: 700; color: #3eff68; background: rgba(62,255,104,0.1); padding: 0.25rem 0.75rem; border-radius: 999px; border: 1px solid rgba(62,255,104,0.2); margin-bottom: 1.25rem; letter-spacing:0.04em; text-transform:uppercase;}
+    .weflair-pb-h3 { font-size: 1.25rem; font-weight: 700; color: #f6f3ee; font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem; line-height: 1.3; }
+    .weflair-pb-p { font-size: 0.95rem; color: rgba(246,243,238,0.6); line-height: 1.5; margin: 0; }
+
+    /* Filter Hide */
+    .weflair-pb-card.is-hidden { display: none !important; }
+  </style>
+  <style id="playbooks-page-refresh">
+    .dir-hero {
+      padding: clamp(8rem, 12vw, 11rem) 2rem clamp(3.5rem, 6vw, 4.5rem);
+      border-bottom: none;
+    }
+
+    .dir-hero__inner {
+      max-width: 62rem;
+    }
+
+    .dir-hero__title {
+      max-width: 13ch;
+      margin-bottom: 1rem;
+    }
+
+    .dir-hero__sub {
+      max-width: 46rem;
+    }
+
+    .weflair-playbooks-stats {
+      width: min(100%, 76rem);
+      margin: 0 auto;
+      padding: 0 2rem clamp(3rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .weflair-playbooks-stat {
+      padding: 1.2rem 1.3rem;
+      border: 1px solid rgba(246,243,238,0.08);
+      border-radius: 1.2rem;
+      background: rgba(17,17,17,0.72);
+    }
+
+    .weflair-playbooks-stat strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 2vw, 1.95rem);
+      letter-spacing: -0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .weflair-playbooks-stat span {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: rgba(246,243,238,0.62);
+    }
+
+    .weflair-playbooks-featured {
+      width: min(100%, 76rem);
+      margin: 0 auto;
+      padding: 0 2rem clamp(3rem, 5vw, 4rem);
+    }
+
+    .weflair-playbooks-featured__head {
+      margin-bottom: 2rem;
+    }
+
+    .weflair-playbooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .weflair-playbook-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.35rem 1.25rem 1.15rem;
+      border: 1px solid rgba(246,243,238,0.08);
+      border-radius: 1.2rem;
+      background: rgba(17,17,17,0.86);
+      transition: border-color .22s, background .22s, transform .22s ease;
+    }
+
+    .weflair-playbook-card:hover {
+      border-color: rgba(62,255,104,0.22);
+      background: rgba(17,17,17,0.96);
+      transform: translateY(-3px);
+    }
+
+    .weflair-playbook-card__icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: .65rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .weflair-playbook-card__icon svg {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+
+    .weflair-playbook-card__body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .weflair-playbook-card__tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      padding: .22rem .58rem;
+      border-radius: 999px;
+      border: 1px solid rgba(246,243,238,0.1);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(246,243,238,0.38);
+    }
+
+    .weflair-playbook-card__title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: #f6f3ee;
+    }
+
+    .weflair-playbook-card__desc {
+      margin: 0;
+      font-size: .84rem;
+      line-height: 1.52;
+      color: rgba(246,243,238,0.58);
+    }
+
+    .weflair-playbook-card__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      width: fit-content;
+      margin-top: auto;
+      padding: .45rem .9rem .45rem .75rem;
+      border-radius: .5rem;
+      border: 1px solid rgba(62,255,104,0.22);
+      background: rgba(62,255,104,0.07);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: #3eff68;
+      text-decoration: none;
+    }
+
+    .weflair-playbook-card__btn svg {
+      width: .85rem;
+      height: .85rem;
+      flex-shrink: 0;
+    }
+
+    .dir-layout {
+      max-width: 76rem;
+      display: block;
+      padding: 0 2rem clamp(4.5rem, 6vw, 6rem);
+    }
+
+    .dir-sidebar {
+      position: static;
+      margin-bottom: 1.5rem;
+    }
+
+    .dir-filter-title {
+      margin-bottom: 1rem;
+    }
+
+    .dir-filter-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .dir-filter-btn {
+      width: auto;
+      border-radius: 999px;
+      border: 1px solid rgba(246,243,238,0.08);
+      background: rgba(17,17,17,0.52);
+      padding: 0.75rem 1rem;
+      gap: 0.7rem;
+    }
+
+    .dir-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .weflair-library__head {
+      margin-bottom: 1.5rem;
+      max-width: 42rem;
+    }
+
+    .weflair-library__head .h3 {
+      max-width: 12ch;
+      margin: 0 0 0.8rem;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .weflair-library__head p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(246,243,238,0.68);
+    }
+
+    .weflair-pb-card {
+      background: rgba(17,17,17,0.72);
+      border-radius: 1.1rem;
+      padding: 1.45rem;
+    }
+
+    .weflair-pb-card:hover {
+      border-color: rgba(62,255,104,0.24);
+    }
+
+    .weflair-resources-cta {
+      width: min(100%, 76rem);
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    .weflair-resources-cta__panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.6rem 1.7rem;
+      border-radius: 1.4rem;
+      border: 1px solid rgba(246,243,238,0.08);
+      background: rgba(17,17,17,0.82);
+    }
+
+    .weflair-resources-cta__copy h2 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .weflair-resources-cta__copy p {
+      margin: 0;
+      color: rgba(246,243,238,0.66);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 991px) {
+      .weflair-playbooks-stats,
+      .weflair-playbooks-grid,
+      .dir-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .weflair-resources-cta__panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .weflair-playbooks-stats,
+      .weflair-playbooks-grid,
+      .dir-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style id="playbooks-footer-fix">
+    .weflair-footer {
+      background: #0e100e;
+      margin-top: clamp(3rem, 6vw, 5rem);
+    }
+
+    .weflair-footer__cta-banner {
+      position: relative;
+      padding: clamp(4.2rem, 7vw, 7rem) 0 clamp(3rem, 5vw, 4.4rem);
+      background: linear-gradient(180deg, rgba(14, 16, 14, 0) 0%, rgba(14, 16, 14, .4) 28%, rgba(14, 16, 14, .96) 100%);
+    }
+
+    .weflair-footer__cta-panel {
+      position: relative;
+      overflow: hidden;
+      width: min(100%, 58rem);
+      margin: 0 auto;
+      padding: clamp(2.7rem, 4.6vw, 4rem) clamp(1.6rem, 3vw, 2.8rem);
+      border: 1px solid rgba(246, 243, 238, .08);
+      border-radius: 1.55rem;
+      background: linear-gradient(140deg, rgba(34, 42, 34, .96) 0%, rgba(17, 19, 17, .98) 46%, rgba(10, 11, 10, .99) 100%);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .28);
+    }
+
+    .weflair-footer__cta-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% -18% 32%;
+      height: 58%;
+      background: linear-gradient(135deg, rgba(62, 255, 104, .22) 0%, rgba(62, 255, 104, .08) 42%, rgba(62, 255, 104, 0) 100%);
+      transform: skewY(-8deg);
+      pointer-events: none;
+    }
+
+    .weflair-footer__cta-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 18% 18%, rgba(62, 255, 104, .16), rgba(62, 255, 104, 0) 34%);
+      pointer-events: none;
+    }
+
+    .weflair-footer__cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.2rem;
+      justify-items: center;
+      text-align: center;
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    .weflair-footer__cta-title {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      line-height: .94;
+      letter-spacing: -.07em;
+      text-wrap: balance;
+    }
+
+    .weflair-footer__cta-copy {
+      max-width: 40rem;
+      margin: 0;
+      color: #f6f3ee;
+      font-size: clamp(.95rem, 1.15vw, 1.08rem);
+      font-weight: 700;
+      line-height: 1.28;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .weflair-footer__cta-inner .weflair-section__body.is--muted {
+      max-width: 30rem;
+      color: rgba(246, 243, 238, .6);
+      font-size: .86rem;
+      line-height: 1.45;
+    }
+
+    .weflair-footer__cta-inner .btn {
+      min-width: clamp(18rem, 28vw, 24rem);
+      justify-self: center;
+    }
+
+    .weflair-footer__main {
+      padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(1.8rem, 3vw, 2.4rem);
+      border-top: 1px solid rgba(246, 243, 238, .06);
+    }
+
+    .weflair-footer__top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+    }
+
+    .weflair-footer__info-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2.5vw, 2.2rem);
+    }
+
+    .weflair-footer__nav-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1rem, 2.5vw, 2.2rem);
+    }
+
+    .weflair-footer__col-heading {
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      color: #f6f3ee;
+      margin: 0 0 .9rem;
+    }
+
+    .weflair-footer__info-line,
+    .weflair-footer__contact-link,
+    .weflair-footer__nav-link {
+      font-size: .82rem;
+      line-height: 1.5;
+      color: rgba(246, 243, 238, .55);
+      text-decoration: none;
+    }
+
+    .weflair-footer__contact-link,
+    .weflair-footer__nav-link,
+    .weflair-footer__legal-link {
+      transition: color .2s ease;
+    }
+
+    .weflair-footer__contact-link:hover {
+      color: #3eff68;
+    }
+
+    .weflair-footer__nav-link:hover,
+    .weflair-footer__legal-link:hover {
+      color: #f6f3ee;
+    }
+
+    .weflair-footer__nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: .3rem;
+    }
+
+    .weflair-footer__divider {
+      height: 1px;
+      background: rgba(246, 243, 238, .06);
+      margin: clamp(2rem, 3.5vw, 3rem) 0 clamp(1.2rem, 2vw, 1.6rem);
+    }
+
+    .weflair-footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .weflair-footer__legal {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .weflair-footer__copyright,
+    .weflair-footer__legal-link {
+      font-size: .78rem;
+      color: rgba(246, 243, 238, .4);
+      text-decoration: none;
+    }
+
+    .weflair-footer__social {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .weflair-footer__social-link {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: .55rem;
+      border: 1px solid rgba(246, 243, 238, .08);
+      background: transparent;
+      color: rgba(246, 243, 238, .5);
+      transition: color .2s ease, border-color .2s ease, background .2s ease;
+      text-decoration: none;
+    }
+
+    .weflair-footer__social-link:hover {
+      color: #f6f3ee;
+      border-color: rgba(246, 243, 238, .2);
+      background: rgba(246, 243, 238, .04);
+    }
+
+    @media (max-width: 991px) {
+      .weflair-footer__top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .weflair-footer__cta-banner {
+        padding: 3.4rem 0 2.7rem;
+      }
+
+      .weflair-footer__cta-panel {
+        padding: 2.15rem 1.15rem 2rem;
+        border-radius: 1.2rem;
+      }
+
+      .weflair-footer__cta-inner .btn {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .weflair-footer__info-row,
+      .weflair-footer__nav-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .weflair-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body pb-page" style="padding-top:var(--nav-bar-height,5rem)">
+  <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
+  <div class="floating-elements-main"><div class="calc-header-padding-height"></div><div data-navigation-toggle="close" class="nav-fade"></div>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" aria-current="page" class="nav-bar__logo-a w-inline-block w--current" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/outbound-gtm.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound &amp; GTM Engineering</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/revops-ai.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Revenue Operations &amp; AI Workflows</h3><p class="nav-dropdown-tile__p">Connected CRM, routing, and AI automation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/content-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Content &amp; AEO</h3><p class="nav-dropdown-tile__p">Content built for humans, search, and AI engines.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/cro-performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Pages and funnels that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Free GTM Tools</h3><p class="weflair-mega-tile__p">Free tools to boost your sales and marketing performance.</p></div></a><a data-hover="" href="../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AI Tools</h3><p class="weflair-mega-tile__p">AI-powered platforms for sales and marketing teams.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="../cases.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+  </div>
+
+<main class="main">
+  <!-- HERO -->
+  <section class="dir-hero">
+    <div class="dir-hero__inner">
+      <div class="eyebrow" style="margin-bottom:1.5rem; justify-content:center;">
+        <span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg></span>
+        <p class="eyebrow__p">Playbooks</p>
+      </div>
+      <h1 class="dir-hero__title">Operator-grade playbooks your team can actually run.</h1>
+      <p class="dir-hero__sub">The homepage playbook section now lives here properly. Featured plays up top, the full library underneath, and every asset grounded in how WeFlair actually operates across outbound, RevOps, paid media, ecommerce, and lifecycle.</p>
+    </div>
+  </section>
+
+  <section class="weflair-playbooks-stats" aria-label="Playbooks overview">
+    <div class="weflair-playbooks-stat"><strong>25+</strong><span>Templates and operating structures pulled from live delivery work.</span></div>
+    <div class="weflair-playbooks-stat"><strong>5</strong><span>Core motions covered: outbound, RevOps, paid, ecommerce, and customer success.</span></div>
+    <div class="weflair-playbooks-stat"><strong>Built to run</strong><span>Not theory decks. These are execution frameworks with clear next actions.</span></div>
+  </section>
+
+  <section class="weflair-playbooks-featured">
+    <div class="weflair-playbooks-featured__head weflair-section__head">
+      <div class="eyebrow"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg></span><p class="eyebrow__p">Featured plays</p></div>
+      <h2 class="h3">The playbooks teams ask us for most.</h2>
+      <p class="weflair-section__body">These are the six featured motions that used to sit on the homepage. Now they live here, where the resource library actually belongs.</p>
+    </div>
+    <div class="weflair-playbooks-grid">
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#3eff6822;color:#3eff68"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B · Outbound</p><h3 class="weflair-playbook-card__title">Lookalike Outbound</h3><p class="weflair-playbook-card__desc">Find an evergreen stream of cold prospects that match your best-fit customers, then sequence them automatically.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#5eead422;color:#5eead4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B · Inbound</p><h3 class="weflair-playbook-card__title">Visitor Deanonymization</h3><p class="weflair-playbook-card__desc">Identify companies visiting your site and trigger personalised outreach before they contact a competitor.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#818cf822;color:#818cf8"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B &amp; B2C · Email</p><h3 class="weflair-playbook-card__title">Direct Outreach Campaign</h3><p class="weflair-playbook-card__desc">Reach prospects via personal, low-competition channels. Email sequences built to earn replies, not land in spam.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#fbbf2422;color:#fbbf24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01M7 20v-4M12 20V10M17 20V4M22 20v-8"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B · Social</p><h3 class="weflair-playbook-card__title">Social Signals Campaign</h3><p class="weflair-playbook-card__desc">Target buyers showing intent on LinkedIn and social, then engage them at exactly the right moment.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#f472b622;color:#f472b6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"/><path d="M6 15v3a6 6 0 0 0 12 0v-3"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B &amp; B2C · Lead</p><h3 class="weflair-playbook-card__title">Lead Magnet Campaign</h3><p class="weflair-playbook-card__desc">Create an offer prospects cannot refuse, capture demand at scale, and route leads straight into your CRM.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+      <div class="weflair-playbook-card"><div class="weflair-playbook-card__icon" style="background:#fb923c22;color:#fb923c"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><div class="weflair-playbook-card__body"><p class="weflair-playbook-card__tag">B2B · Proof</p><h3 class="weflair-playbook-card__title">Case Study Campaign</h3><p class="weflair-playbook-card__desc">Turn existing wins into qualified pipeline and use proof to pull in more of your best-fit buyers.</p><a href="../contact.html" class="weflair-playbook-card__btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Get the playbook</a></div></div>
+    </div>
+  </section>
+
+  <!-- DIRECTORY -->
+  <section class="dir-layout">
+    <div class="weflair-library__head">
+      <h2 class="h3">Browse the full playbook library.</h2>
+      <p>Filter by motion, grab the structure you need, and use the featured plays above when you want the fastest starting point.</p>
+    </div>
+    <aside class="dir-sidebar">
+      <div class="dir-filter-title">Category Filters</div>
+      <ul class="dir-filter-list">
+        <li><button class="dir-filter-btn is-active" data-filter="all">All Playbooks <span>25</span></button></li>
+        <li><button class="dir-filter-btn" data-filter="outbound">Outbound Sales <span>5</span></button></li>
+        <li><button class="dir-filter-btn" data-filter="revops">RevOps & CRM <span>5</span></button></li>
+        <li><button class="dir-filter-btn" data-filter="paid">Paid Media <span>5</span></button></li>
+        <li><button class="dir-filter-btn" data-filter="ecom">eCommerce <span>5</span></button></li>
+        <li><button class="dir-filter-btn" data-filter="support">Customer Success <span>5</span></button></li>
+      </ul>
+    </aside>
+
+    <div class="dir-grid" id="playbooks-grid">
+      
+    <div class="weflair-pb-card" data-category="outbound">
+      <div class="weflair-pb-badge">Outbound Sales</div>
+      <h3 class="weflair-pb-h3">14-Day Omnichannel SDR Cadence</h3>
+      <p class="weflair-pb-p">Multi-touch blueprint across LinkedIn, Cold Email, and Cold Calling. Built for high-volume outbound.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="outbound">
+      <div class="weflair-pb-badge">Outbound Sales</div>
+      <h3 class="weflair-pb-h3">Inbound Lead Velocity Routing</h3>
+      <p class="weflair-pb-p">SLA protocols to ensure demo requests hit an AE's calendar in under 5 minutes without failure.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="outbound">
+      <div class="weflair-pb-badge">Outbound Sales</div>
+      <h3 class="weflair-pb-h3">Enterprise Multi-Threading Logic</h3>
+      <p class="weflair-pb-p">How to transition from the internal champion to the Economic Buyer without causing organizational friction.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="outbound">
+      <div class="weflair-pb-badge">Outbound Sales</div>
+      <h3 class="weflair-pb-h3">Objection Handling Matrix</h3>
+      <p class="weflair-pb-p">Direct scripts and fallbacks to flip arbitrary 'Send me some info' requests into hard calendar bookings.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="outbound">
+      <div class="weflair-pb-badge">Outbound Sales</div>
+      <h3 class="weflair-pb-h3">Closed-Lost Revival Architecture</h3>
+      <p class="weflair-pb-p">A 90-day automated ping sequence to reactivate stalled pipeline after a deal goes dark.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="revops">
+      <div class="weflair-pb-badge">RevOps & CRM</div>
+      <h3 class="weflair-pb-h3">Apollo-to-HubSpot Sync Logic</h3>
+      <p class="weflair-pb-p">The exact API field mapping and deduplication logic to prevent dirty records and massive data loss.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="revops">
+      <div class="weflair-pb-badge">RevOps & CRM</div>
+      <h3 class="weflair-pb-h3">Behavioral Lead Scoring Matrix</h3>
+      <p class="weflair-pb-p">Math-based models to assign weighted point values based on high-intent website actions (Pricing vs Blog).</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="revops">
+      <div class="weflair-pb-badge">RevOps & CRM</div>
+      <h3 class="weflair-pb-h3">Deal Desk Approval Automation</h3>
+      <p class="weflair-pb-p">Slack and CRM-based automation flows for AE discount approvals to accelerate contracting.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="revops">
+      <div class="weflair-pb-badge">RevOps & CRM</div>
+      <h3 class="weflair-pb-h3">Round-Robin Routing Deduplication</h3>
+      <p class="weflair-pb-p">Building an unbreakable territory and round-robin routing rule system inside Salesforce/HubSpot.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="revops">
+      <div class="weflair-pb-badge">RevOps & CRM</div>
+      <h3 class="weflair-pb-h3">LTV:CAC Dashboard Architecture</h3>
+      <p class="weflair-pb-p">The strict custom report builds required to measure true marketing ROI against closed-won revenue.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="paid">
+      <div class="weflair-pb-badge">Paid Media & Demand</div>
+      <h3 class="weflair-pb-h3">B2B LinkedIn Retargeting Funnel</h3>
+      <p class="weflair-pb-p">A 3-tier sequence: Awareness video to Social Proof carousel to direct product Demo Offer.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="paid">
+      <div class="weflair-pb-badge">Paid Media & Demand</div>
+      <h3 class="weflair-pb-h3">Search Negation Matrix</h3>
+      <p class="weflair-pb-p">Pre-built massive negative keyword lists to prevent wasted Google Ads spend on non-buyer intent.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="paid">
+      <div class="weflair-pb-badge">Paid Media & Demand</div>
+      <h3 class="weflair-pb-h3">Lead Magnet to Demo Acceleration</h3>
+      <p class="weflair-pb-p">The exact 4-email sequence post-download that pushes a passive reader into a sales conversation.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="paid">
+      <div class="weflair-pb-badge">Paid Media & Demand</div>
+      <h3 class="weflair-pb-h3">ABM Content Distribution Protocol</h3>
+      <p class="weflair-pb-p">Targeting specific enterprise IP addresses and job titles with hyper-tailored creative variations.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="paid">
+      <div class="weflair-pb-badge">Paid Media & Demand</div>
+      <h3 class="weflair-pb-h3">Trial Conversion Ad Architecture</h3>
+      <p class="weflair-pb-p">Ad funnels designed explicitly to push Free Trial SaaS users to trigger usage limits and upgrade.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="ecom">
+      <div class="weflair-pb-badge">eCommerce & B2C</div>
+      <h3 class="weflair-pb-h3">4-Part Abandoned Cart Recovery</h3>
+      <p class="weflair-pb-p">Timing constraints and psychological triggers for cart abandonment emails to reclaim lost revenue.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="ecom">
+      <div class="weflair-pb-badge">eCommerce & B2C</div>
+      <h3 class="weflair-pb-h3">Post-Purchase Review Generation</h3>
+      <p class="weflair-pb-p">Email timing sequences mapped against delivery dates to extract UGC and 5-star reviews on auto-pilot.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="ecom">
+      <div class="weflair-pb-badge">eCommerce & B2C</div>
+      <h3 class="weflair-pb-h3">VIP Segment Identification (RFM)</h3>
+      <p class="weflair-pb-p">Using Recency, Frequency, and Monetary modeling to build hidden VIP reward programs.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="ecom">
+      <div class="weflair-pb-badge">eCommerce & B2C</div>
+      <h3 class="weflair-pb-h3">90-Day Dormant Win-Back Flow</h3>
+      <p class="weflair-pb-p">Aggressive, escalating discount structures geared precisely toward reactivating churned customers.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="ecom">
+      <div class="weflair-pb-badge">eCommerce & B2C</div>
+      <h3 class="weflair-pb-h3">BFCM Launch Master Checklist</h3>
+      <p class="weflair-pb-p">Server stress logic, warm-up list sends, and SMS drop timings for Black Friday / Cyber Monday.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="support">
+      <div class="weflair-pb-badge">Customer Success</div>
+      <h3 class="weflair-pb-h3">30-Day Product Activation Sequence</h3>
+      <p class="weflair-pb-p">In-app triggers and email cadences to ensure strict software adoption in the first month.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="support">
+      <div class="weflair-pb-badge">Customer Success</div>
+      <h3 class="weflair-pb-h3">Churn Risk Early Warning System</h3>
+      <p class="weflair-pb-p">Identifying weekly login drops and triggering automated CSM interventions to save accounts.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="support">
+      <div class="weflair-pb-badge">Customer Success</div>
+      <h3 class="weflair-pb-h3">NPS Detractor Mitigation</h3>
+      <p class="weflair-pb-p">Auto-routing negative product reviews or support surveys to senior engineering/support instantly.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="support">
+      <div class="weflair-pb-badge">Customer Success</div>
+      <h3 class="weflair-pb-h3">SLA Breach Escalation Protocol</h3>
+      <p class="weflair-pb-p">Automated Jira/Zendesk routing workflows to ensure high-priority enterprise tickets are never dropped.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    <div class="weflair-pb-card" data-category="support">
+      <div class="weflair-pb-badge">Customer Success</div>
+      <h3 class="weflair-pb-h3">Automated Trial-to-Paid Nurture</h3>
+      <p class="weflair-pb-p">Triggering usage-based emails before the 14-day trial expires to ensure smooth credit card capture.</p>
+      <div style="margin-top:auto; padding-top:1.5rem;">
+        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
+          <div class="btn__bg"></div>
+          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Download Template</span></div>
+        </a>
+      </div>
+    </div>
+  
+    </div>
+  </section>
+
+  <section class="weflair-resources-cta">
+    <div class="weflair-resources-cta__panel">
+      <div class="weflair-resources-cta__copy">
+        <h2>Need the playbook built, not just downloaded?</h2>
+        <p>WeFlair can turn the operating structure into a live system across your channels, CRM, reporting, and creative workflow.</p>
+      </div>
+      <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
+        <div class="btn__bg"></div>
+        <div class="btn__text"><span class="btn__span">Talk to us</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="footer weflair-footer">
+    <div class="weflair-footer__cta-banner" id="audit">
+      <div class="container">
+        <div class="weflair-footer__cta-panel">
+          <div class="weflair-footer__cta-inner">
+            <div class="eyebrow is-centered"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 34 45" fill="none" class="weflair-flare">
+                <path
+                  d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
+                  fill="currentColor"></path>
+              </svg></span>
+              <p class="eyebrow__p">Next step</p>
+            </div>
+            <h2 class="h3 weflair-footer__cta-title">Request a growth audit.</h2>
+            <p class="weflair-footer__cta-copy">We will show you what is leaking, what needs fixing first, and whether there is a real fit.</p>
+            <p class="weflair-section__body is--muted">If there is no fit, we will say so.</p><a data-hover=""
+              data-btn-theme="primary" href="/contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
+              <div class="arrow">
+                <div class="arrow__bg"></div>
+                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
+                    fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weflair-footer__main">
+      <div class="container">
+        <div class="weflair-footer__top">
+          <div class="weflair-footer__info-row">
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">Global remote</h4>
+              <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+              <p class="weflair-footer__info-line">HQ: Distributed</p>
+            </div>
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+              <p class="weflair-footer__info-line">WeFlair LLC</p>
+              <p class="weflair-footer__info-line">New York, United States</p>
+            </div>
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
+                class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                class="weflair-footer__contact-link">hello@weflair.co</a>
+            </div>
+          </div>
+          <div class="weflair-footer__nav-row">
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Services</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp; Performance</a></li>
+                <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM &amp; Outbound Systems</a></li>
+                <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance Design &amp; Content</a></li>
+                <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+              </ul>
+            </div>
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Resources</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
+                <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
+                <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
+                <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                <li><a href="/tools.html?topic=checklists" class="weflair-footer__nav-link">Checklists</a></li>
+                <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
+              </ul>
+            </div>
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Company</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="weflair-footer__divider"></div>
+        <div class="weflair-footer__bottom">
+          <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
+              href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
+              href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
+              href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+          <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
+              class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
+              rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a><a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link"
+              aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
+                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg></a><a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X"
+              target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                </path>
+              </svg></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.dir-filter-btn');
+      const cards = document.querySelectorAll('.weflair-pb-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active state
+          filterBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          // Filter cards
+          cards.forEach(card => {
+            if (filterValue === 'all') {
+              card.classList.remove('is-hidden');
+            } else {
+              if (card.getAttribute('data-category') === filterValue) {
+                card.classList.remove('is-hidden');
+              } else {
+                card.classList.add('is-hidden');
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</main>
+
+
+</body>
+</html>

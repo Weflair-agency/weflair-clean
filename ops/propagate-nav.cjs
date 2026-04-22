@@ -1,6 +1,11 @@
 /**
  * propagate-nav.cjs
- *
+ * 
+ * !!! WARNING TO ALL AI AGENTS !!!
+ * DO NOT EVER REVERT THE NAV_GROUPS. IT CONTAINS THE LATEST,
+ * VERIFIED MENU STRUCTURE (inc Checklists & Playbooks order). 
+ * NEVER BRING BACK "FREE GTM TOOLS" or "AI TOOLS".
+ * 
  * Rebuilds the shared Dapper-style header nav across every HTML page.
  * This avoids copying malformed inline markup between pages and keeps
  * the menu structure consistent on desktop, tablet, and mobile.
@@ -22,6 +27,7 @@ const ICONS = {
   calculator: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>`,
   book: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
   playbook: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg>`,
+  checklist: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg>`,
 };
 
 const NAV_GROUPS = {
@@ -32,44 +38,27 @@ const NAV_GROUPS = {
       body: "Data-backed ads that turn demand into pipeline.",
     },
     {
-      title: "Outbound &amp; GTM Engineering",
-      href: "services/outbound-gtm.html",
+      title: "Go To Market Systems",
+      href: "services/go-to-market-systems.html",
       body: "Outbound systems built for real sales conversations.",
     },
     {
-      title: "Revenue Operations &amp; AI Workflows",
-      href: "services/revops-ai.html",
-      body: "Connected CRM, routing, and AI automation.",
-    },
-    {
-      title: "Content &amp; AEO",
-      href: "services/content-seo.html",
-      body: "Content built for humans, search, and AI engines.",
-    },
-    {
       title: "Performance Design &amp; CRO",
-      href: "services/cro-performance-design.html",
-      body: "Pages and funnels that convert more traffic.",
+      href: "services/performance-design.html",
+      body: "Creative, pages, and content that convert more traffic.",
+    },
+    {
+      title: "AI Visibility &amp; SEO",
+      href: "services/ai-visibility-seo.html",
+      body: "Content systems built for search and AI visibility.",
     },
   ],
   resources: [
     {
-      title: "Free GTM Tools",
-      href: "tools.html",
-      body: "Free tools to boost your sales and marketing performance.",
-      icon: "rocket",
-    },
-    {
-      title: "AI Tools",
-      href: "tools.html",
-      body: "AI-powered platforms for sales and marketing teams.",
-      icon: "sparkle",
-    },
-    {
-      title: "Calculators",
-      href: "resources/calculators.html",
-      body: "ROI, CAC, and pipeline planning tools.",
-      icon: "calculator",
+      title: "Playbooks",
+      href: "resources/playbooks.html",
+      body: "Operator-grade playbooks you can run today.",
+      icon: "playbook",
     },
     {
       title: "Guides",
@@ -78,10 +67,22 @@ const NAV_GROUPS = {
       icon: "book",
     },
     {
-      title: "Playbooks",
-      href: "resources/playbooks.html",
-      body: "Operator-grade playbooks you can run today.",
-      icon: "playbook",
+      title: "Automations &amp; Tools",
+      href: "tools.html",
+      body: "Free tools and automations to boost performance.",
+      icon: "rocket",
+    },
+    {
+      title: "Calculators",
+      href: "resources/calculators.html",
+      body: "ROI, CAC, and pipeline planning tools.",
+      icon: "calculator",
+    },
+    {
+      title: "Checklists",
+      href: "resources/checklists.html",
+      body: "Performance checklists to audit and optimize your growth.",
+      icon: "checklist",
     },
     {
       title: "Case Studies",
@@ -126,8 +127,8 @@ function megaTile(prefix, item) {
 
 function dropdown(prefix, label, items) {
   const rows = [];
-  for (let i = 0; i < items.length; i += 3) {
-    rows.push(items.slice(i, i + 3));
+  for (let i = 0; i < items.length; i += 2) {
+    rows.push(items.slice(i, i + 2));
   }
 
   const rowsHtml = rows

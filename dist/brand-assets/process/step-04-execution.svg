@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" fill="none">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafaf8"/>
+      <stop offset="100%" stop-color="#f3f2ef"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="280" height="200" rx="12" fill="url(#bg4)"/>
+
+  <!-- Chat message -->
+  <g transform="translate(16,18)">
+    <!-- Avatar circle -->
+    <circle cx="16" cy="16" r="13" fill="#22b84a" fill-opacity=".08" stroke="#22b84a" stroke-opacity=".2" stroke-width=".8"/>
+    <circle cx="16" cy="12" r="4.5" fill="#6b7280" fill-opacity=".2"/>
+    <path d="M7 26c0-5 4-9 9-9s9 4 9 9" fill="#6b7280" fill-opacity=".12"/>
+
+    <!-- Name and timestamp -->
+    <text x="36" y="12" font-family="system-ui,-apple-system,sans-serif" font-size="9.5" font-weight="700" fill="#2a2d32" fill-opacity=".82">Strategist</text>
+    <text x="96" y="12" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="500" fill="#6b7280">09:00</text>
+
+    <!-- Message bubble -->
+    <rect x="36" y="18" width="174" height="24" rx="7" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+    <text x="46" y="34" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="500" fill="#2a2d32" fill-opacity=".65">Here's the weekly report:</text>
+  </g>
+
+  <!-- Reactions row -->
+  <g transform="translate(52,70)">
+    <rect width="36" height="16" rx="8" fill="#f0f0ee" stroke="#e0dfdc" stroke-width=".7"/>
+    <path d="M10 12l3-4.5 3 4.5" stroke="#22b84a" stroke-opacity=".6" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="20" y="12" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" font-weight="700" fill="#22b84a" fill-opacity=".7">10</text>
+
+    <rect x="42" y="0" width="32" height="16" rx="8" fill="#f0f0ee" stroke="#e0dfdc" stroke-width=".7"/>
+    <rect x="49" y="4" width="7" height="5" rx="1.5" stroke="#22b84a" stroke-opacity=".5" stroke-width=".7" fill="none"/>
+    <path d="M51 9l-1 1.5" stroke="#22b84a" stroke-opacity=".4" stroke-width=".6" stroke-linecap="round"/>
+    <text x="61" y="12" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" font-weight="700" fill="#22b84a" fill-opacity=".7">8</text>
+
+    <rect x="80" y="0" width="32" height="16" rx="8" fill="#f0f0ee" stroke="#e0dfdc" stroke-width=".7"/>
+    <path d="M88 8l1.5 1.5 3.5-3.5" stroke="#22b84a" stroke-opacity=".6" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="99" y="12" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" font-weight="700" fill="#22b84a" fill-opacity=".7">5</text>
+  </g>
+
+  <!-- Report cards -->
+  <g transform="translate(16,98)">
+    <rect width="118" height="34" rx="8" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+    <!-- Mini bar chart -->
+    <rect x="10" y="8" width="5" height="16" rx="1.5" fill="#22b84a" fill-opacity=".15"/>
+    <rect x="18" y="12" width="5" height="12" rx="1.5" fill="#22b84a" fill-opacity=".25"/>
+    <rect x="26" y="5" width="5" height="19" rx="1.5" fill="#22b84a" fill-opacity=".35"/>
+    <rect x="34" y="10" width="5" height="14" rx="1.5" fill="#22b84a" fill-opacity=".2"/>
+    <text x="48" y="17" font-family="system-ui,-apple-system,sans-serif" font-size="6.5" font-weight="700" fill="#6b7280" letter-spacing=".04em">PIPELINE</text>
+    <text x="48" y="28" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="800" fill="#22b84a" fill-opacity=".7">+78%</text>
+  </g>
+
+  <g transform="translate(142,98)">
+    <rect width="118" height="34" rx="8" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+    <!-- Mini line chart -->
+    <path d="M12 24l8-5 6 3 12-10" stroke="#22b84a" stroke-opacity=".35" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="46" y="17" font-family="system-ui,-apple-system,sans-serif" font-size="6.5" font-weight="700" fill="#6b7280" letter-spacing=".04em">CAC</text>
+    <text x="46" y="28" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="800" fill="#22b84a" fill-opacity=".7">-31%</text>
+  </g>
+
+  <!-- Bottom comms strip -->
+  <g transform="translate(16,144)">
+    <rect width="72" height="24" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".7"/>
+    <circle cx="14" cy="12" r="3.5" fill="#22b84a" fill-opacity=".1" stroke="#22b84a" stroke-opacity=".2" stroke-width=".7"/>
+    <path d="M12 12h4M14 10v4" stroke="#22b84a" stroke-opacity=".5" stroke-width=".6" stroke-linecap="round"/>
+    <text x="22" y="15" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="600" fill="#6b7280">Slack daily</text>
+
+    <rect x="78" y="0" width="78" height="24" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".7"/>
+    <circle cx="92" cy="12" r="3.5" fill="#22b84a" fill-opacity=".1" stroke="#22b84a" stroke-opacity=".2" stroke-width=".7"/>
+    <rect x="89" y="9" width="6" height="5" rx="1" stroke="#22b84a" stroke-opacity=".4" stroke-width=".6" fill="none"/>
+    <text x="100" y="15" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="600" fill="#6b7280">Meet weekly</text>
+
+    <rect x="162" y="0" width="82" height="24" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".7"/>
+    <circle cx="176" cy="12" r="3.5" fill="#22b84a" fill-opacity=".1" stroke="#22b84a" stroke-opacity=".2" stroke-width=".7"/>
+    <path d="M174 10.5l1.5 1.5 3-3" stroke="#22b84a" stroke-opacity=".5" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="184" y="15" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="600" fill="#6b7280">Call recaps</text>
+  </g>
+</svg>

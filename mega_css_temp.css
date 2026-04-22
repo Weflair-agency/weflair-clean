@@ -1,0 +1,58 @@
+﻿    .weflair-playbooks-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 991px) {
+      .weflair-playbooks-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .weflair-playbooks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style id="weflair-mega-dropdown-css">
+    .nav-dropdown--mega {
+      left: 50% !important;
+      transform: translateX(-50%);
+      width: max-content;
+      min-width: 40rem
+    }
+
+    .nav-dropdown--mega .nav-dropdown__grid {
+      display: block !important;
+      flex-flow: unset !important;
+      padding: 1rem 1.1rem !important;
+      border: 1px solid rgba(246, 243, 238, .08) !important;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .4) !important
+    }
+
+    .weflair-mega-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .1rem
+    }
+
+    .weflair-mega-tile {
+      display: flex !important;
+      align-items: flex-start;
+      gap: .7rem;
+      padding: .65rem .75rem;
+      border-radius: .45rem;
+      text-decoration: none !important;
+      color: #f6f3ee !important;
+      transition: background .18s ease;
+      height: auto !important;
+      flex-flow: row !important
+    }
+
+    .weflair-mega-tile:hover {
+      background: rgba(246, 243, 238, .06)
+    }
+
+    .weflair-mega-tile__icon {

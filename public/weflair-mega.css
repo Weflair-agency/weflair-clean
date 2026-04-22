@@ -1,0 +1,94 @@
+.nav-dropdown--mega {
+      left: 50% !important;
+      transform: translateX(-50%);
+      width: max-content;
+      min-width: 40rem
+    }
+
+    .nav-dropdown--mega .nav-dropdown__grid {
+      display: block !important;
+      flex-flow: unset !important;
+      padding: 1rem 1.1rem !important;
+      border: 1px solid rgba(246, 243, 238, .08) !important;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, .4) !important
+    }
+
+    .weflair-mega-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .1rem
+    }
+
+    .weflair-mega-tile {
+      display: flex !important;
+      align-items: flex-start;
+      gap: .7rem;
+      padding: .65rem .75rem;
+      border-radius: .45rem;
+      text-decoration: none !important;
+      color: #f6f3ee !important;
+      transition: background .18s ease;
+      height: auto !important;
+      flex-flow: row !important
+    }
+
+    .weflair-mega-tile:hover {
+      background: rgba(246, 243, 238, .06)
+    }
+
+    .weflair-mega-tile__icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: .45rem;
+      background: rgba(62, 255, 104, .1);
+      border: 1px solid rgba(62, 255, 104, .18);
+      color: #3eff68
+    }
+
+    .weflair-mega-tile__icon svg {
+      width: 1.05rem;
+      height: 1.05rem
+    }
+
+    .weflair-mega-tile__text {
+      min-width: 0
+    }
+
+    .weflair-mega-tile__h {
+      margin: 0 !important;
+      font-size: .82rem !important;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #f6f3ee !important;
+      white-space: nowrap
+    }
+
+    .weflair-mega-tile__p {
+      margin: .15rem 0 0 !important;
+      font-size: .72rem !important;
+      line-height: 1.35;
+      color: rgba(246, 243, 238, .45) !important;
+      max-width: 16rem
+    }
+
+    @media(max-width:991px) {
+      .nav-dropdown--mega {
+        left: 0 !important;
+        transform: none;
+        min-width: 0;
+        width: 100%
+      }
+
+      .weflair-mega-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:479px) {
+      .weflair-mega-grid {
+        grid-template-columns: 1fr
+      }
+    }

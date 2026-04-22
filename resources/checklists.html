@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Growth Optimization Checklists - WeFlair</title>
+  <meta name="description" content="Performance optimization checklists for Google Ads, LinkedIn Ads, Meta Ads, and Outbound readiness." />
+  <meta name="theme-color" content="#151515" />
+  <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../foundation-styles.css" />
+  <link rel="stylesheet" href="../foundation-slater.css" />
+  <link rel="stylesheet" href="../weflair-hero.css" />
+  <script src="../foundation.js" defer></script>
+  <script src="../weflair-hero.js" defer></script>
+  
+  <style>
+    .chk-page { background: #151515; color: #f6f3ee; font-family: 'Inter', sans-serif; }
+    
+    /* HERO */
+    .chk-hero { position: relative; padding: clamp(8rem, 12vw, 12rem) 2rem clamp(4rem, 8vw, 6rem); text-align: center; border-bottom: 1px solid rgba(246,243,238,0.06); }
+    .chk-hero__inner { max-width: 60rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+    .chk-hero__title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.06em; margin: 0 0 1.5rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif;}
+    .chk-hero__sub { font-size: clamp(1.1rem, 1.4vw, 1.25rem); line-height: 1.6; color: rgba(246,243,238,0.7); max-width: 48rem; margin: 0 auto; text-wrap: balance; }
+
+    /* LAYOUT */
+    .chk-layout { max-width: 86rem; margin: 0 auto; display: flex; flex-direction: column; gap: 3rem; padding: clamp(4rem, 6vw, 6rem) 2rem; align-items: center;}
+
+    /* TABS */
+    .chk-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
+    .chk-tab-btn { background: rgba(246,243,238,0.03); border: 1px solid rgba(246,243,238,0.1); color: rgba(246,243,238,0.6); padding: 0.85rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; font-family: inherit;}
+    .chk-tab-btn:hover { background: rgba(246,243,238,0.08); color: #f6f3ee; }
+    .chk-tab-btn.is-active { background: rgba(62,255,104,0.1); border: 1px solid rgba(62,255,104,0.3); color: #3eff68; box-shadow: 0 0 20px rgba(62,255,104,0.1); }
+
+    /* CHECKLIST CONTAINER */
+    .chk-container { width: 100%; max-width: 54rem; }
+    .chk-content { display: none; opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .chk-content.is-active { display: block; opacity: 1; transform: translateY(0); }
+
+    /* CHECKLIST ITEM */
+    .chk-item { background: rgba(17,17,17,0.7); border: 1px solid rgba(246,243,238,0.08); border-radius: 1rem; padding: 1.5rem 2rem; margin-bottom: 1rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; transition: border-color 0.3s ease, background 0.3s ease; }
+    .chk-item:hover { border-color: rgba(62,255,104,0.2); background: rgba(20,20,20,0.8); }
+    
+    .chk-item__left { display: flex; flex-direction: column; gap: 0.5rem; }
+    .chk-item__title { font-size: 1.15rem; font-weight: 600; color: #f6f3ee; margin: 0; line-height: 1.4; }
+    .chk-item__desc { font-size: 0.9rem; color: rgba(246,243,238,0.5); line-height: 1.5; margin: 0; }
+    .chk-item__tip-toggle { background: none; border: none; padding: 0; margin-top: 0.5rem; color: #3eff68; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; }
+    .chk-item__tip-toggle:hover { text-decoration: underline; }
+    .chk-item__tip-toggle svg { width: 0.9rem; height: 0.9rem; transition: transform 0.2s ease; }
+    .chk-item__tip-toggle.is-open svg { transform: rotate(180deg); }
+    
+    .chk-item__tip-content { display: none; margin-top: 1rem; padding: 1rem; background: rgba(62,255,104,0.05); border-left: 3px solid #3eff68; border-radius: 0 0.5rem 0.5rem 0; font-size: 0.85rem; color: rgba(246,243,238,0.7); line-height: 1.6; }
+
+    /* LINKS INSIDE TIPS */
+    .chk-link { color: #3eff68; text-decoration: underline; transition: color 0.2s ease; }
+    .chk-link:hover { color: #f6f3ee; }
+
+    /* TIP CONTENT IMAGES */
+    .checklist-question-image { max-width: 100%; border-radius: 8px; margin-top: 0.75rem; border: 1px solid rgba(246,243,238,0.1); }
+    .checklist-question-image.is-small { max-width: 500px; }
+
+    /* TIP CONTENT PANELS */
+    .chk-tab-content { animation: chkFadeIn 0.3s ease-out; }
+    @keyframes chkFadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* YES/NO TOGGLE */
+    .chk-toggle { display: flex; gap: 0.5rem; background: rgba(10,10,10,0.8); border-radius: 0.5rem; padding: 0.35rem; border: 1px solid rgba(246,243,238,0.1); }
+    .chk-toggle-btn { background: transparent; border: none; color: rgba(246,243,238,0.4); padding: 0.5rem 1.25rem; border-radius: 0.35rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+    .chk-toggle-btn:hover { color: rgba(246,243,238,0.8); }
+    
+    /* Yes active state */
+    .chk-toggle-btn.is-yes.is-active { background: rgba(62,255,104,0.15); color: #3eff68; }
+    /* No active state */
+    .chk-toggle-btn.is-no.is-active { background: rgba(255,62,104,0.15); color: #ff3e68; }
+    
+    /* PROGRESS BAR */
+    .chk-progress-wrap { position: sticky; top: 6rem; z-index: 10; background: rgba(15,15,15,0.9); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(246,243,238,0.08); margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .chk-progress-text { font-size: 1rem; font-weight: 700; color: #f6f3ee; white-space: nowrap; }
+    .chk-progress-bar { flex: 1; height: 8px; background: rgba(246,243,238,0.1); border-radius: 999px; overflow: hidden; position: relative; }
+    .chk-progress-fill { position: absolute; left: 0; top: 0; height: 100%; background: #3eff68; border-radius: 999px; width: 0%; transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 0 10px rgba(62,255,104,0.5); }
+    .chk-progress-score { font-size: 1.5rem; font-weight: 700; color: #3eff68; font-family: 'Space Grotesk', sans-serif; min-width: 4rem; text-align: right; }
+
+    /* LEAD CAPTURE */
+    .chk-cta { margin-top: 4rem; text-align: center; background: linear-gradient(180deg, rgba(17,17,17,0.9) 0%, rgba(10,10,10,0.95) 100%); border: 1px solid rgba(62,255,104,0.2); border-radius: 1.5rem; padding: 4rem 2rem; position: relative; overflow: hidden; }
+    .chk-cta::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at top, rgba(62,255,104,0.1), transparent 70%); pointer-events:none; }
+    .chk-cta__title { font-size: clamp(2rem, 3vw, 2.5rem); font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #f6f3ee; margin: 0 0 1rem; }
+    .chk-cta__desc { font-size: 1.1rem; color: rgba(246,243,238,0.6); max-width: 36rem; margin: 0 auto 2.5rem; line-height: 1.6; }
+    
+    @media(max-width: 768px) {
+      .chk-item { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+      .chk-progress-wrap { flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
+      .chk-progress-score { text-align: center; }
+    }
+  
+    .chk-section-title { font-size: 1.15rem; font-weight: 700; color: #3eff68; margin: 3rem 0 1rem; border-bottom: 1px solid rgba(246,243,238,0.1); padding-bottom: 0.5rem; letter-spacing: -0.02em; font-family: 'Space Grotesk', sans-serif;}
+
+  </style>
+  
+</head>
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body chk-page" style="padding-top:var(--nav-bar-height,5rem)">
+  <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
+  
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Go To Market Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="../resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="../cases.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
+  <main class="main">
+    <!-- HERO -->
+    <section class="chk-hero">
+      <div class="chk-hero__inner">
+        <div class="eyebrow" style="margin-bottom:1.5rem; justify-content:center;">
+          <span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></span>
+          <p class="eyebrow__p">Operator Tools</p>
+        </div>
+        <h1 class="chk-hero__title">Audit your growth engine.</h1>
+        <p class="chk-hero__sub">Stop guessing what's broken. Use these operator-grade checklists to diagnose leaks in your ad accounts and outbound systems.</p>
+      </div>
+    </section>
+
+    <!-- LAYOUT -->
+    <section class="chk-layout">
+      
+      <!-- TABS -->
+      <div class="chk-tabs">
+        <button class="chk-tab-btn is-active" data-target="google">Google Ads</button>
+        <button class="chk-tab-btn" data-target="linkedin">LinkedIn Ads</button>
+        <button class="chk-tab-btn" data-target="meta">Meta Ads</button>
+        <button class="chk-tab-btn" data-target="outbound">Outbound Readiness</button>
+      </div>
+
+      <div class="chk-container">
+        
+        <div class="chk-progress-wrap">
+          <div class="chk-progress-text">Audit Score</div>
+          <div class="chk-progress-bar"><div class="chk-progress-fill" id="progress-fill"></div></div>
+          <div class="chk-progress-score"><span id="score-text">0</span>%</div>
+        </div>
+
+        <!-- GOOGLE ADS CHECKLIST -->
+        <div class="chk-content is-active" id="google">
+          <h2 class="chk-section-title">Budget and Bidding</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Conversions are being tracked (Geo/Devices/Age/Gender/Income level/Audiences for observation)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If the business has accumulated customer demographic data (gender, age), we recommend applying this data by decreasing bid adjustments for age and gender of users who do not bring leads/sales to the business - this will increase advertising efficiency.<br>‍<br>For example, we see that age 18–25 converts more expensively or does not convert at all. It is worth applying negative adjustments for these categories to reduce CPA (adjustments are possible only within the Manual CPC, Enhanced CPC, and Max Clicks strategies, however, without adjustments, there is an opportunity to completely exclude some age categories).<br>‍<br>*If you're using a different bidding strategy, and you see a significant difference in traffic by demographic or device, you can eliminate impressions from the lagging category entirely.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/2732132" target="_blank" class="chk-link" data-old-class="7">Here you can learn more about bid adjustments.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. You use automated bid strategies, but your campaign generates fewer than 5 conversions per day (Maximize conversions, Maximize conversion value, Target CPA)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+              <button class="chk-toggle-btn is-no" data-tab="I don't use automated bid strategies">I don't use automated bid strategies</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Automatic bidding strategies rely on sufficient conversion data to optimize bidding decisions effectively. With limited conversion data, campaigns may struggle to learn and adapt to maximize performance. It's essential to ensure that conversion tracking is properly set up, and that campaigns have adequate time to accumulate data before expecting significant performance improvements.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/7381968?hl=en-AU&amp;ref_topic=6294205&amp;sjid=7001952237534171005-EU" class="chk-link" data-old-class="8">Here you can learn more about the “Maximize Conversions” strategy.</a></div></div>
+              <div class="chk-tab-content" data-tab="I don't use automated bid strategies" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Based on our experience, we can say that currently automated bidding strategies produce better results in most cases, so <a href="https://support.google.com/google-ads/answer/2979071?hl=en-AU&amp;ref_topic=6294205&amp;sjid=7001952237534171005-EU" target="_blank" class="chk-link" data-old-class="9">check out this article </a>to find the right option for you.<br></div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Ad Copy and Extensions</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. All extensions are added to ads</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Ad extensions play a crucial role in enhancing ad visibility and providing additional information to potential customers. By including extensions such as sitelinks, callouts, and structured snippets, you can improve ad relevance and user experience, ultimately driving higher click-through rates.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/topic/3119079?hl=en&amp;ref_topic=3119075&amp;sjid=7001952237534171005-EU" target="_blank" class="chk-link" data-old-class="10">Here you can find all the information about each type of extension.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Using A/B testing of Ad copies</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">We recommend having a minimum of 2 ad variations for A/B testing to optimize campaign performance. This allows for testing different elements such as headlines, descriptions, and calls-to-action. Utilizing A/B testing helps identify the most effective ad creatives to maximize click-through rates and conversions.<br>‍<br>🔗 <a href="https://aimers.io/blog/6-easy-ways-to-start-split-testing-your-landing-pages" target="_blank" class="chk-link" data-old-class="11">You can check more insight about A/B testing/split testing here.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Regularly checking ad copies performance</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Ad copies typically vary in their performance, which requires close attention. It's important to regularly replace underperforming ad copies with higher-quality ones to stay competitive in the auction and maximize results. Consider launching Ad Variation Experiments or categorizing ads based on different themes to compare performance effectively. To ensure accurate results, set up even rotation during experiments to gather sufficient statistical data for each ad.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/7486653?hl=en&amp;sjid=7001952237534171005-EU" target="_blank" class="chk-link" data-old-class="12">Adding labels can help you track ad performance. You can learn more about them here.</a></div><div style="margin-bottom:0.5rem;">🔗 <a href="https://support.google.com/google-ads/answer/7439892?hl=en&amp;sjid=7001952237534171005-EU" target="_blank" class="chk-link" data-old-class="12">You can find out more about setting up ad variations here.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Ad copy meets ad policy requirements</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Ensuring that ad copy complies with ad policy requirements is essential to maintain ad visibility and avoid potential penalties. You must adhere to guidelines regarding language, content, and formatting to ensure that ads are approved and displayed to the target audience effectively. Failure to meet ad policy requirements can result in ad disapproval or suspension, impacting campaign performance and ROI.<br>‍<br>🔗 <a href="https://support.google.com/adspolicy/answer/6008942?hl=en&amp;sjid=7001952237534171005-EU" target="_blank" class="chk-link" data-old-class="13">Check this article</a> if you think that your ads were rejected incorrectly, and you want to appeal to them.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Landing Pages & Conversion Tracking</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Conversions are being tracked</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Failure to track conversions prevents you from accurately assessing the performance of advertising campaigns and making informed adjustments. Without conversion tracking, it becomes challenging to evaluate campaign effectiveness, optimize targeting strategies, and allocate budget efficiently.<br></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Conversions are divided into macro (primary) and micro (secondary)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Segmenting conversions into macro and micro goals allows you to track various levels of user engagement and conversion actions. By defining primary and secondary conversion actions, you gain deeper insights into user behavior and campaign performance. Incorrect division of conversions can lead to misinterpretation of data and ineffective optimization strategies.<br><br>How to change the conversion priority:<br>‍<br>1. Go to your Ad account, then to the “Goals” -&gt; “Summary section”<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff570a7d52e948864f90f_Picture%201-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff570a7d52e948864f90f_Picture%201.webp 597w" alt="“Goals” -&gt; “Summary section”" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff570a7d52e948864f90f_Picture%201.webp" loading="lazy" class="checklist-question-image is-small"><div style="margin-bottom:0.5rem;"><br>2. Select the desired conversion and click “Edit goal”<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5bc34f499561fc88c8a_Picture%202-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5bc34f499561fc88c8a_Picture%202.webp 800w" alt="Select the desired conversion and click “Edit goal”" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5bc34f499561fc88c8a_Picture%202.webp" loading="lazy" class="checklist-question-image"><div style="margin-bottom:0.5rem;"><br>3. In the drop-down field, change to the desired priority level<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5fa7ee8692eb620d214_Picture%203-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5fa7ee8692eb620d214_Picture%203.webp 800w" alt="In the drop-down field, change to the desired priority level" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff5fa7ee8692eb620d214_Picture%203.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Landing page has a clear submit form</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">A clear and prominent submit form on the landing page is essential for facilitating user interaction and capturing lead information effectively. A poorly designed or unclear submit form can lead to user confusion and hinder conversion rates. Optimizing the submit form layout and placement enhances user experience and increases the likelihood of conversion.<br>‍<br>🔗 Learn more about why it's important to pay attention to Conversion Rate Optimization of your website/landing page <a href="https://aimers.io/blog/cro-audit-in-your-ppc-strategy-why-you-should-pay-attention" target="_blank" class="chk-link" data-old-class="14">in this article.</a></div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Targeting & Keywords</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. At the geotargeting level in large countries the location is added not by the entire country, but separately by each state (for example, the USA)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">We recommend dividing large countries, such as the USA, into individual states, cities, or regions; this allows optimizing advertising campaigns at the geolocation level, removing irrelevant ones, or making increasing/decreasing adjustments. For example, we see that some states bring conversions much more expensively than others. Since the campaign uses an automatic strategy, and it is impossible to make decreasing adjustments, such states can be moved to a separate campaign and control CPA there or even can be removed from the campaign.<br></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. At the campaign level, the location option is set to "Presence: People in or regularly in your targeted locations"</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Inaccurate GEO settings at the campaign level, particularly when selected as "Presence or Interest," can lead to inefficient targeting and wastage of ad spend. Proper GEO targeting ensures that ads are displayed to the most relevant audience segments, maximizing campaign effectiveness and ROI.<br><br>How it should look: in the campaign settings, expand “Location options” in the Locations section and select the desired setting.<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff62432b1f035f64c455b_Picture%204-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff62432b1f035f64c455b_Picture%204.webp 800w" alt="At the campaign level, the location option is set to &quot;Presence: People in or regularly in your targeted locations&quot;" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff62432b1f035f64c455b_Picture%204.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Negative keywords are added to Search campaigns</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Insufficient use of negative keywords in Search campaigns leads to irrelevant traffic and wastage of ad spend. By adding negative keywords at the group, campaign, and account levels, you can refine targeting and improve the quality of traffic, ultimately enhancing campaign performance and efficiency.<br>‍<br>🔗 Read more about negative keywords and their match types <a href="https://support.google.com/google-ads/answer/12437241?visit_id=638464557537535453-1959524361&amp;rd=1" target="_blank" class="chk-link" data-old-class="15">in this article.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Branded, competitor, and generic keywords are grouped separately</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">We recommend separating search campaigns based on the following criteria:<br><br>— Search campaign for relevant keywords<br>— Search campaign for competitor brand queries<br>— Search campaign for company brand queries<br><br>This allows for convenient separate control of budgets, bids, adjustments to individual segments, as well as writing the most relevant ads for different categories of keywords.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">5. Correct grouping of keywords is conducted in the campaign: for each category of keywords separate Ads are used</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">﻿Improper grouping of keywords within campaigns diminishes ad quality and relevancy, negatively impacting CTR and cost per click. Categorizing keywords and assigning separate ads to each category improves ad relevance and enhances Quality Score, which positively influences Ad Rank. By aligning ad messaging with specific keyword categories, you can optimize campaign performance.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/1722122" target="_blank" class="chk-link" data-old-class="16">Find out the main nuances that affect Ad Rank here.</a></div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Campaign settings</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Search Partners generate a large volume of traffic within Search campaigns</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Search Partners often contribute a substantial amount of traffic to Search campaigns, albeit of lower quality compared to primary search traffic sources. It's crucial to evaluate the effectiveness of Search Partners' traffic and adjust targeting strategies accordingly to maintain campaign performance and ROI.<br><br>You need to go to the campaign settings and select the “Network” section to disable impressions everywhere except Google search.<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6686fba2a406114193e_Picture%205-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6686fba2a406114193e_Picture%205.webp 800w" alt="Search Partners generate a large volume of traffic within Search campaigns" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6686fba2a406114193e_Picture%205.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Display Network is enabled within Search campaigns</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Based on our experience, the best option is to separate search and display into different campaigns to separately analyze statistics, make adjustments, and control the volume of search and display traffic if necessary. Typically, Display Network spent the majority of funds and bring more expensive conversions.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/117120" target="_blank" class="chk-link" data-old-class="17">Details about what a Display Network is you may find here.</a><br></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Audience Expansions/Optimized targeting is enabled in Display/Demand Gen/YouTube</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+              <button class="chk-toggle-btn is-no" data-tab="These types of campaigns are not set up">These types of campaigns are not set up</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">In our experience, enabling optimized targeting can lead to an increase in inappropriate budget spending and a decrease in conversion rate. Therefore, we recommend being careful with this setting and not use it in situations where you need special control over the audience for targeting and on projects with a limited budget.<br></div></div>
+              <div class="chk-tab-content" data-tab="These types of campaigns are not set up" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Consider running these types of campaigns if you want to reach a new audience across various channels, increasing brand visibility and engagement. Additionally, they provide valuable targeting options, including demographics, interests, and behaviors, ensuring that your ads are shown to the right audience at the right time.<br><br>You can disable this setting at the ad group level:<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff697238737d9e70c3d5a_Picture%206-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff697238737d9e70c3d5a_Picture%206.webp 800w" alt="Audience Expansions/Optimized targeting is enabled in Display/Demand Gen/YouTube" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff697238737d9e70c3d5a_Picture%206.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Ad placements on irrelevant websites and devices are excluded (apps, TV placements, topics related to kids, gaming, etc.)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Excluding irrelevant placements and topics in Display and YouTube campaigns helps ensure that ads appear in suitable contexts that match brand values and audience preferences. Avoiding TV displays on YouTube minimizes ad spend wastage for users unable to interact effectively with ads. By excluding placements on kids' channels, gaming channels, mobile apps, and unrelated topics, you can enhance ad relevance and boost campaign performance.<br><br>🔗 <a href="https://support.google.com/google-ads/topic/3119080" target="_blank" class="chk-link" data-old-class="18">All articles on how to exclude placements can be found here.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">5. Maintaining a high Optimization Score</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Maintaining a high optimization score is essential for effective campaign management and algorithm training. Adhering to recommended optimization practices and implementing relevant recommendations ensures that campaigns are optimized for maximum performance and efficiency. Rejecting irrelevant recommendations while maintaining a 100% optimization score helps improve campaign effectiveness and achieve better results.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/9061546" target="_blank" class="chk-link" data-old-class="19">More details about the Optimization Score and how to calculate it can be found here.</a></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">6. Auto-applied recommendations are enabled</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">﻿Enabling auto-applied recommendations streamlines campaign management processes but requires careful monitoring to ensure that applied recommendations align with campaign objectives and performance goals. Regular review of auto-applied recommendations helps maintain campaign effectiveness and optimize ad spend allocation.<br><br>Auto-applied recommendations can be disabled here:<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6b7a25caa581ab150d2_Picture%207-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6b7a25caa581ab150d2_Picture%207.webp 800w" alt="Auto-applied recommendations are enabled" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6b7a25caa581ab150d2_Picture%207.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Analytics & Reporting</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Data-driven attribution is selected</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Choosing data-driven attribution is crucial for optimizing advertising performance and training algorithms effectively. By selecting data-driven attribution, you gain insights into the true impact of their marketing efforts across various touchpoints, leading to more accurate attribution modeling and better decision-making.<br><br>To select data-driven attribution, press on the conversion name:<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6dd00bab76cb9546c8e_Picture%208-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6dd00bab76cb9546c8e_Picture%208.webp 800w" alt="To select data-driven attribution, press on the conversion name" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6dd00bab76cb9546c8e_Picture%208.webp" loading="lazy" class="checklist-question-image"><div style="margin-bottom:0.5rem;"><br>Select the desired attribution in the drop-down window below:<br></div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6fce7408ebdf1d905c9_Picture%209-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6fce7408ebdf1d905c9_Picture%209.webp 800w" alt="Select the desired attribution in the drop-down window below" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bff6fce7408ebdf1d905c9_Picture%209.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. UTM tags are set up (checked at the account, campaign, ad levels)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">The absence of UTM tags hinders accurate tracking and attribution of campaign performance across different levels, including the account, campaign, and ad levels. Implementing UTM tags lets you capture valuable data on campaign traffic sources, mediums, and campaigns, facilitating comprehensive performance analysis and optimization.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/1033981" target="_blank" class="chk-link" data-old-class="20">Here you can find a detailed guide about UTM tags.</a><br></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Google Analytics is linked to the account</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Failure to link essential tools such as Google Analytics, Google Merchant Center, and Google Search Console to the account limits the depth of insights available for campaign optimization. Linking these platforms provides access to valuable data on website performance, product feeds, and search queries, enabling you to make informed decisions and maximize campaign effectiveness.<br>‍<br>🔗 <a href="https://support.google.com/google-ads/answer/7519537" target="_blank" class="chk-link" data-old-class="21">Here you can read about how to link Google Analytics with your Google Ads account.</a><br></div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Auto-tagging is set to "YES"</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Google Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Auto-tagging enables accurate tracking of campaign performance and attribution within Google Analytics. By enabling auto-tagging, Google Ads automatically appends unique parameters to destination URLs, allowing for comprehensive tracking of ad clicks and conversions. This data is essential for evaluating campaign effectiveness, optimizing targeting strategies, and refining ad messaging to enhance overall performance and ROI.<br><br>🔗 Want to apply this setting? <a href="https://support.google.com/google-ads/answer/7688384" target="_blank" class="chk-link" data-old-class="22">Find out how to set it up in 5 steps here.</a></div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LINKEDIN ADS CHECKLIST -->
+        <div class="chk-content" id="linkedin">
+          <h2 class="chk-section-title">Budget and Bidding</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. An Automatic Bidding Strategy is chosen instead of Manual</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Opting for an Automatic Bidding Strategy can limit your control over bid amounts and may not optimize budget allocation effectively. To manage this, switch to a Manual Bidding Strategy in your campaign settings. This will allow you to set bid amounts manually, optimize budget allocation, and maximize ROI based on performance data.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe027e5db1cc1c56c5345_Picture%201-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe027e5db1cc1c56c5345_Picture%201-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe027e5db1cc1c56c5345_Picture%201.webp 827w" alt="An Automatic Bidding Strategy is chosen instead of Manual" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe027e5db1cc1c56c5345_Picture%201.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. You constantly monitor and optimize the bids and budget for each campaign</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If you're not meeting your campaign objectives, you may need to increase or decrease your bids/budgets to compete more effectively for ad space. It is crucial to test different birds to find the most effective one for a specific campaign.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Campaign Settings</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. "Permanent" option is selected for Locations</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If the "Permanent" option isn't selected for Locations, it could lead to inconsistent targeting and unnecessary changes in location settings. To manage this, go to your campaign settings and ensure that the "Permanent" option is selected for Locations. This will maintain consistent targeting and prevent unintended location changes.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0585038f2546eaaf7c2_Picture%202-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0585038f2546eaaf7c2_Picture%202.webp 737w" alt="&quot;Permanent&quot; option is selected for Locations" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0585038f2546eaaf7c2_Picture%202.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. The Average Frequency metric is about 5</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">An Average Frequency above 5 indicates that users are being shown your ads too frequently, which can lead to Ad fatigue and decreased engagement. To manage this, monitor the Average Frequency metric regularly and adjust ad rotation settings or ad creative to avoid overexposure. Consider refreshing ad content or targeting to maintain user interest and engagement.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe06f0473044836c75a4c_Picture%203-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe06f0473044836c75a4c_Picture%203-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe06f0473044836c75a4c_Picture%203.webp 941w" alt="The Average Frequency metric is about 5" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe06f0473044836c75a4c_Picture%203.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Ad rotation is enabled</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Disabling ad rotation means that the same ad is shown repeatedly without variation, which can lead to decreased ad performance and user engagement over time. To manage this, enable ad rotation in your campaign settings to ensure that different ad variations are shown evenly. This will help maintain ad freshness, improve performance, and prevent ad fatigue among users.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe088124751b2c03e0d61_Picture%204-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe088124751b2c03e0d61_Picture%204-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe088124751b2c03e0d61_Picture%204.webp 941w" alt="Ad rotation is enabled" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe088124751b2c03e0d61_Picture%204.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. All ads in the campaign perform similarly, with no ads performing worse than others</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If some ads in your campaign are underperforming compared to others, it indicates a need for optimization and refinement. To manage this, regularly review ad performance metrics such as click-through rate, conversion rate, and engagement rate. Identify underperforming ads and make data-driven optimizations such as updating ad creative, adjusting targeting, or refining ad messaging to improve performance and overall campaign effectiveness.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Analytics & Reporting</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Insight Tag is placed on the website</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Having the Insight Tag on your website allows you to track conversions, retarget website visitors, and gather valuable data for optimizing your campaigns. Ensure the Insight Tag is properly installed on your website to unlock these benefits and maximize your advertising performance.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ad6c80d960f00d5280_Picture%205-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ad6c80d960f00d5280_Picture%205-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ad6c80d960f00d5280_Picture%205.webp 941w" alt="Insight Tag is placed on the website" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ad6c80d960f00d5280_Picture%205.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. The account tracks conversions</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If your account isn't tracking conversions, you're missing out on valuable data about the effectiveness of your campaigns. To manage this, ensure that conversion tracking is properly set up in your LinkedIn account. Go to "Analyze &gt; Conversion tracking" and follow the steps to enable and configure conversion tracking for your campaigns.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0c93356a4ca1d4e63c2_Picture%206-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0c93356a4ca1d4e63c2_Picture%206.webp 681w" alt="The account tracks conversions" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0c93356a4ca1d4e63c2_Picture%206.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Using of LinkedIn’s reporting interface to find the most/less effective demographics/targets</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Leveraging LinkedIn's reporting interface allows you to analyze campaign performance, identify effective and ineffective demographics and targeting criteria, and make data-driven decisions. Regularly review your campaign reports to optimize targeting and allocate resources where they generate the best results.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Targeting</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. There are NO impressions for job seniorities such as Entry, Training, Unpaid</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Job seniorities such as Entry, Training, Unpaid usually don't make decisions regarding the adoption of solutions for the company they work for. Therefore, it makes little sense to present them with any business proposals.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. There are NO impressions for irrelevant Job Titles</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If your ads are receiving many impressions for irrelevant Job Titles, it indicates a need to refine your targeting criteria and focus on job titles that align with your target audience. To manage this, update your targeting settings to exclude irrelevant Job Titles and concentrate on reaching users with job titles that are more likely to engage with your ads and convert.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Company employees, competitor employees, recent purchasers and lead form fillers are excluded</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If your ads are not excluded from being shown to specific audience segments such as company employees, competitor employees, recent purchasers, and lead form fillers, it can lead to irrelevant ad impressions and reduced campaign effectiveness. To manage this, review and update your targeting settings to exclude these audience segments. This will ensure that your ads are reaching the right audience and improving overall campaign performance.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Audiences</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Remarketing audiences are created and actively used</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">If you're not using remarketing audiences, you're missing opportunities to re-engage users who have shown interest in your offerings. To manage this, create remarketing audiences based on user interactions with your website or previous ad engagements. Actively use these audiences in your campaigns by tailoring ad messaging and offers to re-engage and convert these users.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Audience Expansion is turned off</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Enabling Audience Expansion can result in your ads being shown to audiences beyond your specified targeting criteria, potentially reducing relevance and impacting performance. To manage this, go to your campaign settings and disable Audience Expansion. This will help maintain precise targeting and improve ad relevance for your desired audience.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ed38189925c0717ca9_Picture%207-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ed38189925c0717ca9_Picture%207-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ed38189925c0717ca9_Picture%207.webp 941w" alt="Audience Expansion is turned off" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe0ed38189925c0717ca9_Picture%207.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. LinkedIn Audience Network is disabled</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Enabling the LinkedIn Audience Network showing means that your ads may appear on partner websites and apps outside of LinkedIn, which can impact performance and targeting precision. To manage this, review your campaign settings and disable LinkedIn Audience Network showing. Focus on advertising within LinkedIn's platform to maintain control over ad placements and audience targeting.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe116481fa3c0e86dcdd8_Picture%208-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe116481fa3c0e86dcdd8_Picture%208-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe116481fa3c0e86dcdd8_Picture%208.webp 941w" alt="LinkedIn Audience Network is disabled" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bfe116481fa3c0e86dcdd8_Picture%208.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Creative & Ad Copy</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Each campaign has 4-5 creatives and they rotate</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Using multiple ad creatives within each campaign and enabling ad rotation ensures that your audience sees fresh and engaging content. Keep at least 4 or more creatives in rotation to prevent ad fatigue and maintain user interest over time.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Each creative is tailored to the target audience you’re targeting</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Personalizing ad creatives based on your target audience's interests, demographics, and behaviors can significantly improve ad relevance and performance. Ensure that each creative speaks directly to the specific needs and preferences of your target personas for maximum impact.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Compelling CTA is actively used in Ads</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Including a compelling Call-to-Action (CTA) in your ads encourages users to take desired actions, such as visiting your website, signing up for a demo, or downloading a resource. Ensure that your CTAs are clear, persuasive, and aligned with your campaign objectives to drive conversions and engagement.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. From time to time you experiment with different Ad formats</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Linkedin Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">LinkedIn offers various ad formats such as single image ads, carousel ads, video ads, and text ads. Experiment with different formats to see which performs best with your target audience and use your budget accordingly.</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- META ADS CHECKLIST -->
+        <div class="chk-content" id="meta">
+          <h2 class="chk-section-title">Conversion Tracking</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Conversions are being tracked</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Tracking conversions is crucial for measuring the effectiveness of your ads and understanding how they contribute to your business goals. Without conversion tracking, you won't know which ads are driving actions like purchases, sign-ups, or downloads.<br>‍<br>To ensure conversions are being tracked, set up Facebook's conversion tracking in your ad account. This involves defining conversion events and adding tracking parameters to your ad links. Regularly check your analytics to verify that conversions are being recorded accurately.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Pixel is installed and working correctly</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">The Facebook Pixel is a piece of code that tracks visitor actions on your website, providing valuable data to optimize ads and retarget audiences. An improperly installed or malfunctioning pixel can lead to inaccurate data collection and ineffective ad targeting.<br><br>To verify the pixel is installed and working correctly, use the Facebook Pixel Helper extension in your browser. Check that the pixel fires correctly on key pages and events. Test different user interactions to ensure all relevant data points are captured.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" width="Auto" sizes="100vw" alt="Pixel is installed and working correctly" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef270e695095e5e4f2cff_Picture%201.webp" loading="lazy" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef270e695095e5e4f2cff_Picture%201-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef270e695095e5e4f2cff_Picture%201-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef270e695095e5e4f2cff_Picture%201.webp 941w" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Conversions work based on events, not on page visits</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Tracking conversions based on specific events (e.g., button clicks, form submissions) rather than simple page visits provides a more precise understanding of user actions and ad effectiveness. This granularity helps in optimizing ad campaigns for actual user behavior.<br>‍<br>To implement this, define and set up event-based tracking in your Facebook Pixel settings. Use the Event Setup Tool to configure events like "Add to Cart," "Purchase," or "Lead," ensuring they trigger correctly on your site.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef35fa2d44739b7b197e1_Picture%202-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef35fa2d44739b7b197e1_Picture%202-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef35fa2d44739b7b197e1_Picture%202.webp 941w" alt="Conversions work based on events, not on page visits" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef35fa2d44739b7b197e1_Picture%202.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Custom conversions are set up</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Custom conversions allow you to track and optimize for specific actions that are most relevant to your business goals, such as reaching a specific page or completing a unique action. Without custom conversions, you might miss out on critical insights and optimization opportunities.<br>‍<br>To set up custom conversions, go to the Facebook Events Manager, select 'Custom Conversions,' and define your conversion rules based on URL parameters or specific events.<br>‍<br>Conversions can also be implemented by manually coding them into the website, setting up tags in GTM, additional integrations, and by using the offline conversion tracking method. In such cases, it is important to check the settings within these tools to ensure everything is transmitted correctly.<br>‍<br>Additionally, it is useful to have more data in the account and to set up the Facebook Conversion API. This can be done manually or through additional integrations with just a few clicks, using tools like stape.io and others.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Account Structure</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. All necessary audiences are set up (remarketing, look-alike, conversion actions, etc.)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Setting up diverse audiences is crucial for targeting your ads effectively and maximizing ROI. Remarketing audiences allow you to re-engage users who have previously interacted with your brand, while look-alike audiences help you reach new potential customers who share characteristics with your existing ones. Conversion-based audiences focus on users most likely to complete desired actions.<br>‍<br>To set up these audiences, use Facebook's Audience Manager to create custom and look-alike audiences based on your pixel data, customer lists, and engagement metrics.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef388ef090b5a6888b084_Picture%203-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef388ef090b5a6888b084_Picture%203-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef388ef090b5a6888b084_Picture%203.webp 941w" alt="All necessary audiences are set up (remarketing, look-alike, conversion actions, etc.)" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef388ef090b5a6888b084_Picture%203.webp" loading="lazy" class="checklist-question-image"><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3b53d6ce2cb3d48a64c_Picture%204-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3b53d6ce2cb3d48a64c_Picture%204-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3b53d6ce2cb3d48a64c_Picture%204.webp 941w" alt="All necessary audiences are set up (remarketing, look-alike, conversion actions, etc.)" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3b53d6ce2cb3d48a64c_Picture%204.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. There are no restrictions in the account and/or campaigns (Spend limit, Learning limit, etc.)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Restrictions like spend limits and learning phase limitations can hinder your ad performance by capping how much you can spend or by not allowing your ads to optimize fully. Ensure there are no unnecessary restrictions by reviewing your account settings in Facebook Ads Manager. Check for and remove any spend limits, and monitor the learning phase status of your campaigns.<br>‍<br>If your account is new, you need to be patient. Facebook doesn't immediately allow large spending, and your daily limit may be up to $50 per day. To increase this limit, you need to comply with all rules and replenish your account on time, so that over time, trust in your account grows and the limits increase. Additionally, you can contact technical support with a request to raise the limit.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. The account is structured according to the funnel model TOFU ➝ MOFU ➝ BOFU</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Structuring your account according to the funnel model (Top of Funnel, Middle of Funnel, Bottom of Funnel) ensures that you target users appropriately based on their stage in the customer journey. TOFU focuses on awareness, MOFU on consideration, and BOFU on conversion. To implement this, choose the right strategy for optimization, organize your campaigns and ad sets to target each stage with relevant content and messaging. Use custom audiences for retargeting at each funnel stage and tailor your ads to guide users smoothly through the funnel.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Campaign Settings</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Campaign goal or primary conversion selected correctly</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Selecting the correct campaign goal or primary conversion is essential for ensuring your ad objectives align with your business goals. Choosing the wrong objective can lead to suboptimal ad performance and wasted budget.<br>‍<br>To verify this, review your campaign settings in Ads Manager and ensure the chosen goal matches your desired outcome (e.g., lead generation, website traffic, conversions). Adjust your settings if necessary to reflect the primary action you want users to take.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3e81b00a96630c73537_Picture%205-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3e81b00a96630c73537_Picture%205-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3e81b00a96630c73537_Picture%205.webp 941w" alt="Campaign goal or primary conversion selected correctly" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef3e81b00a96630c73537_Picture%205.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Using Highest Volume bidding strategy</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">The Highest Volume bidding strategy aims to get the most results within your budget, prioritizing volume over cost-efficiency. This strategy is useful for scaling campaigns and maximizing exposure.<br><br>To use this strategy, select 'Highest Volume' or 'Lowest Cost' in your bidding options in Ads Manager. Monitor your campaign performance and adjust bids as needed to ensure you are getting the best possible results within your budget constraints.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef409cd1cebc80f52e367_Picture%206-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef409cd1cebc80f52e367_Picture%206-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef409cd1cebc80f52e367_Picture%206.webp 941w" alt="Using Highest Volume bidding strategy" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef409cd1cebc80f52e367_Picture%206.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Advanced targeting is disabled</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Disabling advanced targeting options, like detailed targeting expansion or targeting automation, can help you maintain more precise control over your audience selection. This ensures your ads are shown to the most relevant users, based on your specific targeting criteria.<br>‍<br>To disable advanced targeting, go to your ad set settings in Ads Manager and deselect any options for targeting expansion. Regularly review your targeting settings to ensure they align with your campaign objectives and audience definitions.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef4407eb156866f7279c6_Picture%207-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef4407eb156866f7279c6_Picture%207-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef4407eb156866f7279c6_Picture%207.webp 941w" alt="Advanced targeting is disabled" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef4407eb156866f7279c6_Picture%207.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Website visitors, form fillers, and current customers are excluded</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Disabling advanced targeting options, like detailed targeting expansion or targeting automation, can help you maintain more precise control over your audience selection. This ensures your ads are shown to the most relevant users, based on your specific targeting criteria. To disable advanced targeting, go to your ad set settings in Ads Manager and deselect any options for targeting expansion. Regularly review your targeting settings to ensure they align with your campaign objectives and audience definitions.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef45d682cb6ba9fe1f1ff_Picture%208-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef45d682cb6ba9fe1f1ff_Picture%208-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef45d682cb6ba9fe1f1ff_Picture%208.webp 941w" alt="Website visitors, form fillers, and current customers are excluded" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef45d682cb6ba9fe1f1ff_Picture%208.webp" loading="lazy" class="checklist-question-image"></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Ads Settings</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Too high or too low number of ads in ad groups (we recommend having 3–5 ads per ad group)</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Having too many ads in an ad group can dilute your budget and hinder performance tracking, while too few ads can limit your ability to test and optimize. Ideally, aim for 3–5 ads per ad group to maintain a balance between variety and manageability. This allows you to compare performance effectively and optimize based on data. Regularly review and adjust the number of ads in each ad group to ensure optimal performance and budget allocation.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Creatives are sized for each placement</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Ensuring your creatives are correctly sized for each placement (e.g., News Feed, Stories, Right Column) enhances ad visibility and user engagement. Incorrectly sized ads can appear distorted or be cropped, negatively affecting performance.<br>‍<br>To follow this, design your creatives according to Facebook's recommended dimensions for each placement. Use tools like Facebook's Creative Hub to preview how your ads will appear in different placements and make necessary adjustments before launching your campaign.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. UTM tags are set up</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">UTM tags allow you to track the effectiveness of your ads in external analytics tools like Google Analytics. Without UTM tags, it’s difficult to attribute traffic and conversions to specific ads or campaigns.<br>‍<br>To set up UTM tags, add parameters to your ad URLs using Facebook's URL parameters tool. Include key information like campaign source, medium, and name to track ad performance accurately. Regularly review your analytics to gain insights from the UTM-tagged data and optimize your campaigns accordingly.</div><img style="max-width:100%; border-radius:4px; margin-top:0.5rem;" sizes="100vw" srcset="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef47c0dc6bd0e3125f216_Picture%209-p-500.webp 500w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef47c0dc6bd0e3125f216_Picture%209-p-800.webp 800w, https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef47c0dc6bd0e3125f216_Picture%209.webp 941w" alt="UTM tags are set up" src="https://cdn.prod.website-files.com/668310d5a305e3ef31a53f68/68bef47c0dc6bd0e3125f216_Picture%209.webp" loading="lazy" class="checklist-question-image is-small"></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. There are custom fields in lead forms</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Using custom fields in lead forms helps you gather specific information relevant to your business needs, improving lead quality. Without custom fields, you may miss out on valuable data that can enhance your follow-up strategy.<br><br>To implement this, customize the fields in your Facebook lead forms to capture essential information (e.g., job title, industry, budget). Regularly review and update these fields to ensure they align with your evolving marketing and sales strategies.</div></div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Analytics & Reporting</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. There are no imbalances in statistics by GEO, gender, age, placements, etc.</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Imbalances in your ad performance statistics can indicate that certain demographics or placements are underperforming, leading to inefficient budget allocation. Monitoring and addressing these imbalances ensures your ads are effectively reaching all target segments.<br><br>To manage this, regularly analyze your ad performance by geography, gender, age, and placement in Facebook Ads Manager. Adjust your targeting and bid strategies to address any significant imbalances, optimizing your ad spend for better overall performance.</div></div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Different audiences are divided into different groups</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">🔥 Good job! Keep using this best practice in your Meta (Facebook) Ads campaigns for continued success.</div></div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;"><div style="margin-bottom:0.5rem;">Segmenting different audiences into separate groups allows for tailored messaging and more precise targeting, enhancing ad relevance and performance. Without segmentation, your ads may be too generic, reducing their effectiveness.<br>‍<br>To follow this, create distinct ad sets for each audience segment (e.g., new prospects, returning customers, different demographic groups). Customize your ad creatives and messaging for each segment to increase engagement and conversion rates. Regularly review performance data to refine your segmentation strategy.</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- OUTBOUND READINESS CHECKLIST -->
+        <div class="chk-content" id="outbound">
+          <h2 class="chk-section-title">Technical Infrastructure</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Are DMARC, DKIM, and SPF records properly authenticated?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Without these, your cold emails will hit the spam folder. Use MXToolBox to verify your records and set DMARC to p=quarantine.</div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Are you utilizing secondary burner domains?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Never send cold email from your primary corporate domain. Buy lookalike domains and set up your sending infrastructure there to protect your main company domain from blacklists.</div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Is daily sending volume restricted to under 50 emails per inbox?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">High volume from a single inbox triggers Google/Microsoft spam filters. Scale horizontally, not vertically. To send 500 emails daily, use 10 different inboxes across 3 domains with inbox rotation software.</div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">4. Are you running a continuous warm-up process?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Build sender reputation before launching cold campaigns. Inbox warm-up tools simulate natural email behavior. Keep warm-up running constantly at 30-40% of your total volume to maintain health.</div>
+            </div>
+          </div>
+
+          <h2 class="chk-section-title">Messaging & Execution</h2>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">1. Is your cold email copy under 75 words?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Nobody reads long emails. Keep it punchy and readable. Structure it simply: Observation, Problem, Solution, Soft CTA. Ensure it reads easily on a mobile device screen without scrolling.</div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">2. Are your emails focused on the prospect's pain instead of your features?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Feature-dumping guarantees a fast deletion. Focus on You are probably struggling with X, which costs you Y. We solve that. Make the prospect the hero of the story.</div>
+            </div>
+          </div>
+          <div class="chk-item" style="display:flex; flex-direction:column; gap:1rem; align-items:flex-start;">
+            <h3 class="chk-item__title" style="margin-bottom:0;">3. Are you utilizing a multi-channel touchpoint strategy?</h3>
+            <div class="chk-toggle" style="display:flex; gap:0.5rem; width: 100%; flex-wrap: wrap;">
+              <button class="chk-toggle-btn is-yes" data-tab="Yes">Yes</button>
+              <button class="chk-toggle-btn is-no" data-tab="No">No</button>
+            </div>
+            <div class="chk-item-contents" style="width:100%;">
+              <div class="chk-tab-content" data-tab="Yes" style="display:none; padding:1rem; background:rgba(62,255,104,0.1); border-left:2px solid #3eff68; border-radius:4px; font-size:0.95rem; color:#f6f3ee;">🔥 Good job! Keep using this best practice.</div>
+              <div class="chk-tab-content" data-tab="No" style="display:none; padding:1rem; background:rgba(255,255,255,0.05); border-left:2px solid rgba(255,255,255,0.2); border-radius:4px; font-size:0.95rem; color:#f6f3ee;">Relying purely on email lowers your overall conversion rate. Combine cold email with LinkedIn connection requests, voice notes, and targeted ads to surround the prospect and build familiarity.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LEAD CAPTURE CTA -->
+        <div class="chk-cta">
+          <h2 class="chk-cta__title">Scored less than 100%?</h2>
+          <p class="chk-cta__desc">You're likely bleeding pipeline. Get a comprehensive, expert teardown of your go-to-market systems, ad accounts, and conversion architecture.</p>
+          <a href="../contact.html" class="btn w-inline-block">
+            <div class="btn__bg"></div>
+            <div class="btn__text"><span class="btn__span">Request Free Growth Audit</span></div>
+            <div class="arrow">
+              <div class="arrow__bg"></div>
+              <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <section class="footer weflair-footer">
+      <div class="weflair-footer__cta-banner" id="audit">
+        <div class="container">
+          <div class="weflair-footer__cta-inner">
+            <div class="eyebrow is-centered"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 34 45" fill="none" class="weflair-flare">
+                  <path
+                    d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
+                    fill="currentColor"></path>
+                </svg></span>
+              <p class="eyebrow__p">Next step</p>
+            </div>
+            <h2 class="h3">Request a growth audit.</h2>
+            <p class="weflair-section__body">We will show you what is leaking, what needs fixing first, and whether
+              there is a real fit.</p>
+            <p class="weflair-section__body is--muted">If there is no fit, we will say so.</p><a data-hover=""
+              data-btn-theme="primary" href="/contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
+              <div class="arrow">
+                <div class="arrow__bg"></div>
+                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
+                    fill="none" class="arrow__svg">
+                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
+                      stroke-linecap="square" stroke-linejoin="round"></path>
+                  </svg></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="weflair-footer__main">
+        <div class="container">
+          <div class="weflair-footer__top">
+            <div class="weflair-footer__info-row">
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Global remote</h4>
+                <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+                <p class="weflair-footer__info-line">HQ: Distributed</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+                <p class="weflair-footer__info-line">WeFlair LLC</p>
+                <p class="weflair-footer__info-line">New York, United States</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
+                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                  class="weflair-footer__contact-link">hello@weflair.co</a>
+              </div>
+            </div>
+            <div class="weflair-footer__nav-row">
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Services</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
+                      Performance</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
+                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
+                      Design &amp; Content</a></li>
+                  <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Resources</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
+                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
+                  <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
+                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Checklists</a></li>
+                  <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Company</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                  <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                  <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="weflair-footer__divider"></div>
+          <div class="weflair-footer__bottom">
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">© 2026 WeFlair</span><a
+                href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
+                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
+                href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+            <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
+                class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
+                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a><a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link"
+                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a><a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X"
+                target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                  </path>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ─── TABS ───
+      const tabBtns = document.querySelectorAll('.chk-tab-btn');
+      const tabContents = document.querySelectorAll('.chk-content');
+      const progressWrap = document.querySelector('.chk-progress-wrap');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+
+          tabBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          tabContents.forEach(c => {
+            c.classList.remove('is-active');
+            if (c.id === target) c.classList.add('is-active');
+          });
+
+          // Reset all answers in ALL tabs when switching
+          // (optional — remove if you want answers to persist)
+          
+          updateScore();
+
+          // Smooth scroll to progress bar so user sees the new tab
+          if (progressWrap) {
+            progressWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // ─── YES / NO / 3rd-OPTION TOGGLE ───
+      const toggleGroups = document.querySelectorAll('.chk-toggle');
+      const scoreText = document.getElementById('score-text');
+      const progressFill = document.getElementById('progress-fill');
+
+      toggleGroups.forEach(group => {
+        const itemContainer = group.closest('.chk-item');
+        const contents = itemContainer.querySelectorAll('.chk-tab-content');
+        const buttons = group.querySelectorAll('.chk-toggle-btn');
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Deactivate all buttons in this group
+            buttons.forEach(b => b.classList.remove('is-active'));
+            btn.classList.add('is-active');
+
+            // Show/hide matching content panel
+            const tabName = btn.getAttribute('data-tab');
+            contents.forEach(c => {
+              if (c.getAttribute('data-tab') === tabName) {
+                c.style.display = 'block';
+                // Re-trigger fade animation
+                c.style.animation = 'none';
+                c.offsetHeight; // force reflow
+                c.style.animation = '';
+              } else {
+                c.style.display = 'none';
+              }
+            });
+
+            updateScore();
+          });
+        });
+      });
+
+      // ─── SCORE CALCULATION ───
+      function updateScore() {
+        const activeTab = document.querySelector('.chk-content.is-active');
+        if (!activeTab) return;
+
+        const items = activeTab.querySelectorAll('.chk-item');
+        const totalItems = items.length;
+        let yesCount = 0;
+        let answeredCount = 0;
+
+        items.forEach(item => {
+          const yesBtn = item.querySelector('.is-yes');
+          const noBtn = item.querySelector('.is-no');
+
+          if (yesBtn && yesBtn.classList.contains('is-active')) {
+            yesCount++;
+            answeredCount++;
+          } else if (noBtn && noBtn.classList.contains('is-active')) {
+            answeredCount++;
+          }
+        });
+
+        const score = totalItems > 0 ? Math.round((yesCount / totalItems) * 100) : 0;
+
+        scoreText.innerText = score;
+        progressFill.style.width = score + '%';
+
+        // Color coding
+        if (score === 100) {
+          progressFill.style.backgroundColor = '#3eff68';
+          scoreText.style.color = '#3eff68';
+        } else if (score > 50) {
+          progressFill.style.backgroundColor = '#f6b94b';
+          scoreText.style.color = '#f6b94b';
+        } else {
+          progressFill.style.backgroundColor = '#ff3e68';
+          scoreText.style.color = '#ff3e68';
+        }
+      }
+
+      // Initialize
+      updateScore();
+    });
+  </script>
+
+</body>
+</html>
+

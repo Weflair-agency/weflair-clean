@@ -1,0 +1,303 @@
+﻿<main class="main pm-page pd-redesign">
+
+  <section class="pd-redesign-hero">
+    <div class="pd-container" style="max-width: 1200px; margin: 0 auto; padding: 10rem 2rem 6rem; text-align: center;">
+      <p class="eyebrow" style="color: #3eff68; text-transform: uppercase; font-size: 13px; font-weight: 600; letter-spacing: 1px; margin-bottom: 2rem;">Performance Design & CRO</p>
+      <h1 class="pd-redesign-hero__title" style="font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; color: #f6f3ee;">Increase ROI and turn clicks into<br/>customers with Performance Creative<br/>engineered for impact.</h1>
+      <p class="pd-redesign-hero__sub" style="font-size: 1.25rem; color: rgba(246,243,238,0.7); max-width: 600px; margin: 0 auto 2rem;">Improve every campaign with Performance Creative rooted in creative testing roadmaps and performance-led design. Strengthen your positioning and win more customers through full-funnel experimentation.</p>
+      <a href="/contact.html" class="weflair-p-button" style="display: inline-block; background-color: #3eff68; color: #000; padding: 14px 28px; border-radius: 6px; font-weight: 600; text-decoration: none;">Book Intro Call</a>
+      
+      <div style="margin-top: 4rem; opacity: 0.7;">
+        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: rgba(246,243,238,0.5); margin-bottom: 1.5rem;">Trusted by Leading SaaS and Tech Companies</p>
+        <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; filter: grayscale(1) invert(1);">
+            <img src="/brand-assets/placeholder-logo-1.svg" alt="Mixpanel" style="height: 24px;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/4/4b/Mixpanel_logo.svg'">
+            <img src="/brand-assets/placeholder-logo-2.svg" alt="ShipBob" style="height: 24px;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e6/ShipBob_Logo.svg'">
+            <img src="/brand-assets/placeholder-logo-3.svg" alt="Demio" style="height: 24px;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/3/36/Demio_logo.svg'">
+            <img src="/brand-assets/placeholder-logo-4.svg" alt="SaaStr" style="height: 24px;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/b/b3/SaaStr_Logo.svg'">
+            <img src="/brand-assets/placeholder-logo-5.svg" alt="Telnyx" style="height: 24px;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e0/Placeholder_logo.svg'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAPPER STYLE CAPABILITIES GRID -->
+  <section class="pd-dapper-capabilities" style="padding: 6rem 0; background: #0a0a0a;">
+    <div class="pd-container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <p class="eyebrow" style="color: #3eff68; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem;">Our Capabilities</p>
+        <h2 style="font-size: 3.5rem; color: #f6f3ee; font-weight: 600; margin-bottom: 4rem;">Your <em style="font-style: italic; color: #3eff68;">one-stop-shop</em><br/>for Performance Design</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+            <!-- Landing Pages -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Landing Page Design</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+            <!-- CRO -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Conversion Rate Optimization (CRO)</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+            <!-- Ad Creative -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Ad Creatives & Motion</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+            <!-- Email & Newsletter -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Email & Newsletters</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+            <!-- Copywriting -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Copywriting</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+            <!-- Creative Testing -->
+            <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); position: relative;">
+                <h3 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 2rem;">Creative Testing Roadmaps</h3>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; color: #3eff68; background: rgba(62,255,104,0.1); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">+</div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIVE STYLE METHODOLOGY -->
+  <section style="padding: 8rem 0; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+    <h2 style="font-size: 3.5rem; color: #3eff68; font-weight: 600; margin-top: 6rem; margin-bottom: 4rem; max-width: 800px; letter-spacing: -0.02em;">Say "Bye 'Bye" to Low Conversion Rates</h2>
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; padding-bottom: 6rem;">
+        <div style="color: rgba(246,243,238,0.5); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Our Methodology</div>
+        <div style="color: rgba(246,243,238,0.8); font-size: 1.25rem; line-height: 1.7;">
+            <p style="margin-bottom: 1.5rem;">WeFlair's Performance Creative unifies strategy, design, and testing into a single performance engine. Instead of treating landing pages, ad creative, and experimentation as separate workstreams, we build them together. The result is creative that is intentionally designed to drive measurable business outcomes, not just look good.</p>
+            <p style="margin-bottom: 1.5rem;">If your campaigns are not converting the way they should, the issue is rarely a single page or isolated tactic. It is a system problem. Performance Creative builds a culture of structured experimentation, where creative variables are developed with clear hypotheses, tested with purpose, and refined through real performance data.</p>
+            <p style="margin-bottom: 1.5rem;">Most agencies treat creative as an add on or rely on one off optimization efforts. We operate differently. Our approach is built on proactive testing roadmaps, shared ownership between strategists and designers, and rapid feedback loops tied directly to performance metrics. We focus on understanding what is preventing conversion, designing the experience that removes that friction, and iterating quickly so every asset has a clear job and measurable impact.</p>
+            <a href="/case-studies/index.html" style="display: inline-block; border: 1px solid rgba(62,255,104,0.3); color: #3eff68; padding: 12px 24px; border-radius: 4px; font-weight: 600; text-decoration: none; margin-top: 1rem;">See Our Portfolio</a>
+        </div>
+    </div>
+  </section>
+
+  <!-- AIMERS CRO EXPLANATION EXPLAINERS -->
+  <section style="padding: 8rem 0; background: #111;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 3rem; color: #f6f3ee; font-weight: 600; margin-bottom: 1.5rem;">Why Your B2B Marketing Needs CRO Agency</h2>
+            <p style="color: rgba(246,243,238,0.7); max-width: 600px; margin: 0 auto;">We recommend our CRO services if your business faces the following challenges:</p>
+        </div>
+
+        <!-- Metric issue boxes -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 6rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 8px; text-align: left; border: 1px solid rgba(255,255,255,0.05);">
+                <h4 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 1.5rem;">Sales Stagnation</h4>
+                <div style="width: 100%; height: 100px; background: rgba(255,255,255,0.03); border-radius: 6px; display: flex; align-items: flex-end; justify-content: center; gap: 8px; padding: 16px;">
+                    <div style="width: 30px; height: 40%; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+                    <div style="width: 30px; height: 60%; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+                    <div style="width: 30px; height: 50%; background: #3eff68; border-radius: 4px;"></div>
+                    <div style="width: 30px; height: 30%; background: rgba(255,255,255,0.1); border-radius: 4px;"></div>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 8px; text-align: left; border: 1px solid rgba(255,255,255,0.05);">
+                <h4 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 1.5rem;">Low Form Submission Rate</h4>
+                <div style="width: 100%; height: 100px; background: rgba(255,255,255,0.03); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+                    <div style="width: 80%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 2px;"></div>
+                    <div style="width: 80%; height: 12px; background: rgba(255,255,255,0.1); border-radius: 2px;"></div>
+                    <div style="width: 40%; height: 24px; background: rgba(255,62,62,0.8); border-radius: 4px; margin-top: 8px; font-size: 10px; color: white; display: flex; align-items: center; justify-content: center;">USER DROP-OFF</div>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 8px; text-align: left; border: 1px solid rgba(255,255,255,0.05);">
+                <h4 style="font-size: 1.25rem; color: #f6f3ee; margin-bottom: 1.5rem;">Inability to Scale Ads</h4>
+                <div style="width: 100%; height: 100px; background: rgba(255,255,255,0.03); border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; flex-direction: column;">
+                    <div style="color: #f6f3ee; font-size: 1.5rem; font-weight: 700;">11.3K <span style="font-size: 12px; color: #ff3e3e;">-3.7%</span></div>
+                    <div style="color: rgba(246,243,238,0.5); font-size: 12px;">Engaged visits</div>
+                    <div style="color: #f6f3ee; font-size: 1.5rem; font-weight: 700; margin-top: 8px;">.5 <span style="font-size: 12px; color: #ff3e3e;">+10.5%</span></div>
+                    <div style="color: rgba(246,243,238,0.5); font-size: 12px;">Average CPC</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions -->
+        <h3 style="font-size: 2.5rem; color: #f6f3ee; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">Here's How Our Conversion Rate Optimization Agency Helps You Grow</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, auto); gap: 2rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="width: 40px; height: 40px; background: rgba(62,255,104,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem;">Increase in Conversions</h4>
+                <p style="color: rgba(246,243,238,0.7); line-height: 1.6; font-size: 1rem;">CRO services optimize your website to turn more visitors into customers or leads, boosting conversion rates and ROI.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="width: 40px; height: 40px; background: rgba(62,255,104,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem;">Enhanced User Experience</h4>
+                <p style="color: rgba(246,243,238,0.7); line-height: 1.6; font-size: 1rem;">Improving website navigation, load times, and content relevance creates a better user experience, increasing customer satisfaction and retention.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="width: 40px; height: 40px; background: rgba(62,255,104,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem;">Data-Driven Decision Making</h4>
+                <p style="color: rgba(246,243,238,0.7); line-height: 1.6; font-size: 1rem;">CRO agency uses data analysis and testing to identify effective strategies, enabling informed decision-making and continuous improvement.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                <div style="width: 40px; height: 40px; background: rgba(62,255,104,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                </div>
+                <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem;">Cost-Effective Marketing</h4>
+                <p style="color: rgba(246,243,238,0.7); line-height: 1.6; font-size: 1rem;">CRO maximizes the value of existing visitors, reducing acquisition costs and improving marketing efficiency.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- AIMERS LANDING PAGE EXPLANATION -->
+  <section style="padding: 8rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <h2 style="font-size: 3rem; color: #f6f3ee; text-align: center; margin-bottom: 4rem; max-width: 800px; margin-inline: auto;">We Create Landing Pages That Turn Clicks into Real ROI</h2>
+        
+        <!-- LP Portfolio Grid -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <div>
+                <img src="/brand-assets/design-lp-1.webp" alt="Landing Page Layout 1" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://placehold.co/600x400/1e1e1e/333333?text=B2B+Landing+Page'">
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; align-items: center;">
+                    <div style="font-weight: 600; color: #f6f3ee; font-size: 1.1rem;">Daily.ai</div>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">Landing Page Design</span>
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">B2B</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="/brand-assets/design-lp-2.webp" alt="Landing Page Layout 2" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://placehold.co/600x400/1e1e1e/333333?text=B2C+Landing+Page'">
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; align-items: center;">
+                    <div style="font-weight: 600; color: #f6f3ee; font-size: 1.1rem;">Upper Hand</div>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">Website Design</span>
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">B2C</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="/brand-assets/design-lp-3.webp" alt="Landing Page Layout 3" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://placehold.co/600x400/1e1e1e/333333?text=Ecommerce+Landing+Page'">
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; align-items: center;">
+                    <div style="font-weight: 600; color: #f6f3ee; font-size: 1.1rem;">EverBee</div>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">Landing Page Design</span>
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">B2C</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="/brand-assets/design-lp-4.webp" alt="Landing Page Layout 4" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://placehold.co/600x400/1e1e1e/333333?text=SaaS+Landing+Page'">
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; align-items: center;">
+                    <div style="font-weight: 600; color: #f6f3ee; font-size: 1.1rem;">DentalSave</div>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">Website Design</span>
+                        <span style="font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.6);">B2B</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- AIMERS STEP BY STEP PROCESS -->
+  <section style="padding: 8rem 0; background: #0a0a0a;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;">
+        <div style="position: sticky; top: 120px; align-self: start;">
+            <h2 style="font-size: 3rem; color: #f6f3ee; font-weight: 600; margin-bottom: 2rem;">Our Step-By-Step Landing Page Design Process for Achieving Your Goals</h2>
+            <!-- Image placeholder -->
+            <img src="/brand-assets/design-process.webp" alt="Process Map" style="width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);" onerror="this.src='https://placehold.co/600x400/1e1e1e/333333?text=Process+Image'">
+        </div>
+        <div>
+            <!-- List -->
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border: 1px solid rgba(62,255,104,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #3eff68; background: rgba(62,255,104,0.05); font-size: 1.1rem;">1</div>
+                <div>
+                    <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem; margin-top: 10px;">Research</h4>
+                    <ul style="color: rgba(246,243,238,0.7); font-size: 1.05rem; line-height: 1.6; padding-left: 1.25rem; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">Conduct in-depth research to align with your business goals and audience.</li>
+                        <li style="margin-bottom: 0.5rem;">Analyze market trends, competitor strategies, and consumer preferences.</li>
+                        <li>Ensure the landing page resonates with users and drives results.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border: 1px solid rgba(62,255,104,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #3eff68; background: rgba(62,255,104,0.05); font-size: 1.1rem;">2</div>
+                <div>
+                    <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem; margin-top: 10px;">Design Concept</h4>
+                    <ul style="color: rgba(246,243,238,0.7); font-size: 1.05rem; line-height: 1.6; padding-left: 1.25rem; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">Translate research insights into a landing page concept.</li>
+                        <li style="margin-bottom: 0.5rem;">Align design with your brand identity and visual style.</li>
+                        <li>Optimize layouts for maximum conversion potential.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border: 1px solid rgba(62,255,104,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #3eff68; background: rgba(62,255,104,0.05); font-size: 1.1rem;">3</div>
+                <div>
+                    <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem; margin-top: 10px;">Copywriting</h4>
+                    <ul style="color: rgba(246,243,238,0.7); font-size: 1.05rem; line-height: 1.6; padding-left: 1.25rem; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">Create catchy content that highlights your value proposition.</li>
+                        <li style="margin-bottom: 0.5rem;">Engage visitors with clear, action-oriented messaging.</li>
+                        <li>Adapt tone and style to resonate with your target audience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border: 1px solid rgba(62,255,104,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #3eff68; background: rgba(62,255,104,0.05); font-size: 1.1rem;">4</div>
+                <div>
+                    <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem; margin-top: 10px;">Testing and Optimization</h4>
+                    <ul style="color: rgba(246,243,238,0.7); font-size: 1.05rem; line-height: 1.6; padding-left: 1.25rem; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">Test across multiple devices and browsers for flawless UX.</li>
+                        <li style="margin-bottom: 0.5rem;">Identify and resolve performance or usability issues pre-launch.</li>
+                        <li>Apply ongoing optimization strategies to maximize results.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 3.5rem;">
+                <div style="flex-shrink: 0; width: 44px; height: 44px; border: 1px solid rgba(62,255,104,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #3eff68; background: rgba(62,255,104,0.05); font-size: 1.1rem;">5</div>
+                <div>
+                    <h4 style="font-size: 1.35rem; color: #f6f3ee; margin-bottom: 1rem; margin-top: 10px;">Launch and Performance Monitoring</h4>
+                    <ul style="color: rgba(246,243,238,0.7); font-size: 1.05rem; line-height: 1.6; padding-left: 1.25rem; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">Launch the landing page once testing is complete.</li>
+                        <li style="margin-bottom: 0.5rem;">Monitor performance metrics and user behavior.</li>
+                        <li>Provide regular reports and improvement recommendations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section style="padding: 8rem 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+        <h2 style="font-size: 2.5rem; color: #f6f3ee; text-align: center; margin-bottom: 4rem; font-weight: 600;">FAQs: What to Know Before Hiring an Agency</h2>
+        
+        <div style="border-bottom: 1px solid rgba(246,243,238,0.1); padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <p style="color: #f6f3ee; font-size: 1.15rem; margin: 0; font-weight: 500;">Why are CRO services important for my B2B SaaS/Tech company?</p>
+            <svg style="color: rgba(246,243,238,0.5);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div style="border-bottom: 1px solid rgba(246,243,238,0.1); padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <p style="color: #f6f3ee; font-size: 1.15rem; margin: 0; font-weight: 500;">How long does it take to see results from Conversion Rate Optimization?</p>
+            <svg style="color: rgba(246,243,238,0.5);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div style="border-bottom: 1px solid rgba(246,243,238,0.1); padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <p style="color: #f6f3ee; font-size: 1.15rem; margin: 0; font-weight: 500;">As a landing page creation agency, what content do you recommend?</p>
+            <svg style="color: rgba(246,243,238,0.5);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div style="border-bottom: 1px solid rgba(246,243,238,0.1); padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <p style="color: #f6f3ee; font-size: 1.15rem; margin: 0; font-weight: 500;">Do you provide A/B testing after the landing page launches?</p>
+            <svg style="color: rgba(246,243,238,0.5);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div style="border-bottom: 1px solid rgba(246,243,238,0.1); padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+            <p style="color: #f6f3ee; font-size: 1.15rem; margin: 0; font-weight: 500;">How much does it cost to hire a landing page design company?</p>
+            <svg style="color: rgba(246,243,238,0.5);" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+    </div>
+  </section>
+
+</main>

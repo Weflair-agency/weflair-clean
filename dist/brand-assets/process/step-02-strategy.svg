@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafaf8"/>
+      <stop offset="100%" stop-color="#f3f2ef"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="280" height="200" rx="12" fill="url(#bg2)"/>
+
+  <!-- Section label -->
+  <text x="20" y="30" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="700" fill="#6b7280" letter-spacing=".08em">CHANNELS</text>
+
+  <!-- Channel pills -->
+  <rect x="20" y="38" width="62" height="22" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+  <rect x="28" y="44" width="10" height="10" rx="2.5" fill="#22b84a" fill-opacity=".1" stroke="#22b84a" stroke-opacity=".3" stroke-width=".7"/>
+  <text x="31" y="52" font-family="system-ui,-apple-system,sans-serif" font-size="5.5" font-weight="800" fill="#22b84a" fill-opacity=".7">in</text>
+  <text x="43" y="53" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="600" fill="#2a2d32" fill-opacity=".78">LinkedIn</text>
+
+  <rect x="88" y="38" width="56" height="22" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+  <circle cx="100" cy="49" r="5" fill="#22b84a" fill-opacity=".08" stroke="#22b84a" stroke-opacity=".25" stroke-width=".7"/>
+  <text x="97" y="52" font-family="system-ui,-apple-system,sans-serif" font-size="6" font-weight="700" fill="#22b84a" fill-opacity=".6">G</text>
+  <text x="109" y="53" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="600" fill="#2a2d32" fill-opacity=".78">Google</text>
+
+  <rect x="150" y="38" width="50" height="22" rx="6" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+  <rect x="158" y="44" width="9" height="6" rx="1.5" fill="none" stroke="#22b84a" stroke-opacity=".35" stroke-width=".7"/>
+  <path d="M159 45l3.5 2.5 3.5-2.5" stroke="#22b84a" stroke-opacity=".3" stroke-width=".6"/>
+  <text x="172" y="53" font-family="system-ui,-apple-system,sans-serif" font-size="8.5" font-weight="600" fill="#2a2d32" fill-opacity=".78">Email</text>
+
+  <!-- Budget section -->
+  <text x="20" y="82" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="700" fill="#6b7280" letter-spacing=".08em">BUDGET ALLOCATION</text>
+
+  <!-- Budget bar bg -->
+  <rect x="20" y="90" width="200" height="8" rx="4" fill="#e8e8e5"/>
+  <!-- Budget bar fill -->
+  <rect x="20" y="90" width="136" height="8" rx="4" fill="#22b84a" fill-opacity=".3" stroke="#22b84a" stroke-opacity=".15" stroke-width=".5"/>
+  <!-- Budget percentage -->
+  <text x="162" y="97" font-family="system-ui,-apple-system,sans-serif" font-size="7.5" font-weight="700" fill="#22b84a" fill-opacity=".7">68%</text>
+
+  <!-- 30-day plan -->
+  <text x="20" y="122" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="700" fill="#6b7280" letter-spacing=".08em">30-DAY PLAN</text>
+
+  <!-- Week tabs -->
+  <rect x="20" y="130" width="50" height="20" rx="6" fill="#22b84a" fill-opacity=".12" stroke="#22b84a" stroke-opacity=".3" stroke-width=".8"/>
+  <text x="32" y="143" font-family="system-ui,-apple-system,sans-serif" font-size="8" font-weight="700" fill="#22b84a" fill-opacity=".85">W 1-2</text>
+
+  <rect x="76" y="130" width="36" height="20" rx="6" fill="#f0f0ee" stroke="#e0dfdc" stroke-width=".7"/>
+  <text x="85" y="143" font-family="system-ui,-apple-system,sans-serif" font-size="8" font-weight="600" fill="#6b7280">W 3</text>
+
+  <rect x="118" y="130" width="36" height="20" rx="6" fill="#f0f0ee" stroke="#e0dfdc" stroke-width=".7"/>
+  <text x="127" y="143" font-family="system-ui,-apple-system,sans-serif" font-size="8" font-weight="600" fill="#6b7280">W 4</text>
+
+  <!-- Checkmark badge bottom-right -->
+  <rect x="200" y="120" width="60" height="40" rx="10" fill="#fff" stroke="#e5e5e3" stroke-width=".8"/>
+  <path d="M220 136l5 5 10-12" stroke="#22b84a" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="212" y="155" font-family="system-ui,-apple-system,sans-serif" font-size="6.5" font-weight="700" fill="#6b7280" letter-spacing=".05em">PHASED</text>
+
+  <!-- Decorative elements top-right -->
+  <rect x="224" y="20" width="40" height="40" rx="8" fill="#fff" stroke="#e5e5e3" stroke-width=".7"/>
+  <text x="232" y="42" font-family="system-ui,-apple-system,sans-serif" font-size="7" font-weight="700" fill="#6b7280" letter-spacing=".04em">GOAL</text>
+  <text x="232" y="53" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="800" fill="#22b84a" fill-opacity=".7">2.4x</text>
+</svg>

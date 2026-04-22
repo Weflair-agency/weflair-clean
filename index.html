@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -37,1746 +37,7 @@
   <link rel="stylesheet" href="/weflair-hero.css?v=20260407-31" />
   <script src="/foundation.js" defer></script>
   <script src="/weflair-hero.js?v=20260420-56" defer></script>
-  <style id="weflair-runtime-css">
-    .weflair-logo {
-      display: inline-flex;
-      align-items: center;
-      gap: .58rem;
-      color: #f6f3ee
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-self: start;
-      gap: .45rem;
-      font-size: .74rem;
-      line-height: 1.14;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: rgba(246, 243, 238, .9)
-    }
-
-    .eyebrow.is-centered {
-      justify-self: start
-    }
-
-    .weflair-logo__mark,
-    .weflair-eyebrow-icon,
-    .weflair-method__icon {
-      width: .85rem;
-      height: .85rem;
-      display: inline-flex;
-      color: #3eff68;
-      filter: drop-shadow(0 0 12px rgba(62, 255, 104, .18))
-    }
-
-    .weflair-logo__word {
-      font-size: clamp(1.95rem, 1.65vw, 2.35rem);
-      line-height: .95;
-      font-weight: 700;
-      letter-spacing: -.05em
-    }
-
-    .weflair-section__head {
-      display: grid;
-      justify-items: start;
-      gap: 1.2rem
-    }
-
-    .weflair-section__head.is-centered {
-      text-align: left;
-      justify-items: start
-    }
-
-    .weflair-section__head .h3 {
-      margin: 0;
-      max-width: 22ch;
-      font-size: clamp(1.85rem, 2.8vw, 2.65rem);
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      text-wrap: balance
-    }
-
-    .weflair-section__body {
-      max-width: 42rem;
-      margin: 0;
-      color: rgba(246, 243, 238, .78);
-      font-size: 1.02rem;
-      line-height: 1.62
-    }
-
-    .weflair-headline .weflair-hero__accent,
-    .weflair-section-accent {
-      font-style: italic
-    }
-
-    .weflair-headline .weflair-hero__accent {
-      font-weight: 400;
-      letter-spacing: -.045em
-    }
-
-    .weflair-section-accent {
-      white-space: nowrap
-    }
-
-    .weflair-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .85rem;
-      align-items: center
-    }
-
-    #hero .eyebrow {
-      margin-bottom: 1.15rem
-    }
-
-    .weflair-btn--ghost {
-      opacity: .78
-    }
-
-    .weflair-btn--ghost .btn__bg {
-      background: transparent;
-      border: 1px solid rgba(246, 243, 238, .12)
-    }
-
-    .weflair-btn--ghost .btn__text,
-    .weflair-btn--ghost .arrow {
-      color: #f6f3ee
-    }
-
-    .weflair-hero-glow {
-      position: absolute;
-      right: 4%;
-      top: 16%;
-      width: 32rem;
-      height: 32rem;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(62, 255, 104, .18), rgba(62, 255, 104, .08) 28%, rgba(62, 255, 104, 0) 68%);
-      filter: blur(18px);
-      pointer-events: none
-    }
-
-    #hero .weflair-headline {
-      max-width: 13.8ch;
-      text-wrap: balance
-    }
-
-    #hero .home-header__col-text {
-      flex: 0 0 min(100%, 39rem) !important;
-      width: min(100%, 39rem) !important;
-      max-width: 39rem !important
-    }
-
-    #hero .home-header__col-text,
-    #hero .styled-content.is--home-header {
-      max-width: 41rem
-    }
-
-    #hero .p-l {
-      max-width: 40rem !important;
-      font-size: clamp(1.12rem, 1.35vw, 1.38rem) !important;
-      line-height: 1.46 !important;
-      letter-spacing: -.018em;
-      text-wrap: pretty
-    }
-
-    #hero .home-header__content {
-      padding-bottom: clamp(3rem, 6vw, 4.75rem)
-    }
-
-    .weflair-hero-widget-wrap {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end
-    }
-
-    .weflair-audit-widget {
-      position: relative;
-      width: min(100%, 21.25rem);
-      margin-left: auto
-    }
-
-    .weflair-audit-widget__launcher {
-      display: grid;
-      place-items: center;
-      width: 4rem;
-      height: 4rem;
-      margin-left: auto;
-      border: none;
-      border-radius: 1.1rem;
-      background: rgba(17, 17, 17, .88);
-      color: #f6f3ee;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, .24);
-      cursor: pointer
-    }
-
-    .weflair-audit-widget__launcher .arrow {
-      width: 1.4rem;
-      height: 1.4rem
-    }
-
-    .weflair-audit-widget__panel {
-      display: grid;
-      gap: 1rem;
-      padding: 1rem 1rem 1.05rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 1.2rem;
-      background: rgba(17, 17, 17, .94);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, .28)
-    }
-
-    .weflair-audit-widget.is-collapsed .weflair-audit-widget__panel {
-      display: none
-    }
-
-    .weflair-audit-widget:not(.is-collapsed) .weflair-audit-widget__launcher {
-      display: none
-    }
-
-    .weflair-audit-widget__head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: .8rem
-    }
-
-    .weflair-audit-widget__profile {
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      min-width: 0
-    }
-
-    .weflair-audit-widget__avatar {
-      display: grid;
-      place-items: center;
-      width: 2.75rem;
-      height: 2.75rem;
-      border-radius: 999px;
-      background: rgba(62, 255, 104, .14);
-      border: 1px solid rgba(62, 255, 104, .22);
-      font-size: .92rem;
-      font-weight: 700;
-      color: #f6f3ee
-    }
-
-    .weflair-audit-widget__meta {
-      min-width: 0
-    }
-
-    .weflair-audit-widget__name {
-      display: block;
-      font-size: 1rem;
-      font-weight: 700;
-      line-height: 1.1
-    }
-
-    .weflair-audit-widget__role {
-      display: block;
-      margin-top: .12rem;
-      color: rgba(246, 243, 238, .62);
-      font-size: .82rem;
-      line-height: 1.2
-    }
-
-    .weflair-audit-widget__close {
-      display: grid;
-      place-items: center;
-      width: 2rem;
-      height: 2rem;
-      border: none;
-      background: transparent;
-      color: rgba(246, 243, 238, .72);
-      cursor: pointer
-    }
-
-    .weflair-audit-widget__title {
-      margin: 0;
-      font-size: 1.7rem;
-      line-height: .98;
-      letter-spacing: -.045em
-    }
-
-    .weflair-audit-widget__body {
-      margin: 0;
-      color: rgba(246, 243, 238, .82);
-      font-size: .95rem;
-      line-height: 1.42
-    }
-
-    .weflair-audit-widget__slots {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .8rem;
-      padding: .88rem .95rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: .95rem;
-      background: rgba(23, 24, 23, .96)
-    }
-
-    .weflair-audit-widget__slots strong {
-      font-size: .98rem;
-      line-height: 1.15
-    }
-
-    .weflair-audit-widget__countdown {
-      color: #3eff68;
-      font-weight: 700
-    }
-
-    .weflair-audit-widget__dates {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: .55rem
-    }
-
-    .weflair-audit-widget__date {
-      display: grid;
-      place-items: center;
-      min-height: 3.9rem;
-      padding: .35rem;
-      border: 1px solid rgba(246, 243, 238, .1);
-      border-radius: .85rem;
-      background: transparent
-    }
-
-    .weflair-audit-widget__date span {
-      display: block;
-      font-size: .8rem;
-      color: rgba(246, 243, 238, .72)
-    }
-
-    .weflair-audit-widget__date strong {
-      display: block;
-      margin-top: .08rem;
-      font-size: 1.32rem;
-      line-height: 1;
-      color: #f6f3ee
-    }
-
-    .weflair-audit-widget__date.is-active {
-      border-color: rgba(62, 255, 104, .28);
-      background: rgba(62, 255, 104, .08)
-    }
-
-    .weflair-audit-widget__cta .btn {
-      width: 100%
-    }
-
-    .weflair-audit-widget__foot {
-      font-size: .77rem;
-      line-height: 1.2;
-      color: rgba(246, 243, 238, .48);
-      text-align: center
-    }
-
-    #services .services-overview__row-text {
-      column-gap: clamp(2.7rem, 4vw, 3.8rem)
-    }
-
-    #services .services-overview__col-eyebrow {
-      width: clamp(8rem, 12vw, 10rem) !important;
-      padding-top: 0 !important
-    }
-
-    #services .services-overview__col-text {
-      max-width: 74rem !important;
-      padding-top: clamp(2.8rem, 3.2vw, 3.3rem) !important
-    }
-
-    #services .services-overview__col-text .h3 {
-      max-width: 22ch !important;
-      font-size: clamp(1.85rem, 2.8vw, 2.65rem) !important;
-      line-height: 1.08 !important;
-      letter-spacing: -.04em !important;
-    }
-
-    #services .services-overview__row-text {
-      align-items: flex-start !important
-    }
-
-    #services .services-overview__col-eyebrow .eyebrow {
-      margin-bottom: 0
-    }
-
-    .weflair-section-accent--solid {
-      color: #3eff68;
-      font-style: normal !important;
-      font-weight: 700
-    }
-
-    .weflair-services-native {
-      display: flex;
-      justify-content: center;
-      margin-top: clamp(2rem, 4vw, 3rem)
-    }
-
-    .weflair-services-native .services-overview__col-tiles {
-      width: min(100%, 57rem)
-    }
-
-    .weflair-services-native .growing-tiles {
-      height: auto;
-      gap: .6rem
-    }
-
-    .weflair-services-native .growing-tiles__row,
-    .weflair-services-native .growing-tiles .growing-tiles__row,
-    .weflair-services-native .growing-tiles .growing-tiles__row:hover {
-      height: auto;
-      transition: none
-    }
-
-    .weflair-services-native .growing-tiles__row {
-      display: flex;
-      gap: .6rem
-    }
-
-    .weflair-services-native .growing-tiles__col,
-    .weflair-services-native .growing-tiles .growing-tiles__col,
-    .weflair-services-native .growing-tiles .growing-tiles__col:hover {
-      flex: 1 1 0;
-      min-width: 0;
-      width: auto;
-      transition: none
-    }
-
-    .weflair-services-native .growing-tile {
-      min-height: 12.6rem;
-      overflow: hidden;
-      transform: translateY(0) scale(1);
-      transition: transform .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease;
-      border-color: rgba(246, 243, 238, .08);
-      background: linear-gradient(180deg, rgba(25, 25, 25, .98) 0%, rgba(18, 18, 18, .98) 100%);
-      box-shadow: none
-    }
-
-    .weflair-services-native .growing-tile:hover,
-    .weflair-services-native .growing-tile:focus-visible {
-      transform: translateY(-4px) scale(1.012);
-      border-color: rgba(246, 243, 238, .16);
-      background: linear-gradient(180deg, rgba(31, 31, 31, .98) 0%, rgba(20, 20, 20, .98) 100%);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, .22)
-    }
-
-    .weflair-services-native .growing-tile .h5 {
-      margin: 0;
-      max-width: none;
-      text-wrap: pretty
-    }
-
-    .weflair-services-native .growing-tile .p-s {
-      max-width: 28ch
-    }
-
-    .weflair-services-native .growing-tile .growing-tile__end .growing-tile__text {
-      transition: opacity .22s ease, transform .22s ease, color .22s ease
-    }
-
-    .weflair-services-native .growing-tile:hover .growing-tile__end .growing-tile__text,
-    .weflair-services-native .growing-tile:focus-visible .growing-tile__end .growing-tile__text {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0)
-    }
-
-    .weflair-services-native .growing-tile:hover .arrow,
-    .weflair-services-native .growing-tile:focus-visible .arrow {
-      background-color: #f3f3f3
-    }
-
-    .weflair-services-native .growing-tile:hover .arrow__box,
-    .weflair-services-native .growing-tile:focus-visible .arrow__box {
-      color: #1b1b1b
-    }
-
-    .weflair-services-native .growing-tiles__row.weflair-services-center {
-      justify-content: center
-    }
-
-    .weflair-services-native .growing-tiles .growing-tiles__row.weflair-services-center .growing-tiles__col,
-    .weflair-services-native .growing-tiles .growing-tiles__row.weflair-services-center .growing-tiles__col:hover {
-      flex: 0 0 calc(50% - .3rem) !important;
-      width: calc(50% - .3rem) !important;
-      max-width: calc(50% - .3rem) !important
-    }
-
-    .weflair-services-center .growing-tile {
-      border-color: rgba(62, 255, 104, 0.12);
-      background: linear-gradient(180deg, rgba(22, 28, 22, .98) 0%, rgba(16, 20, 16, .98) 100%)
-    }
-
-    .weflair-services-center .growing-tile:hover,
-    .weflair-services-center .growing-tile:focus-visible {
-      border-color: rgba(62, 255, 104, 0.25);
-      background: linear-gradient(180deg, rgba(26, 34, 26, .98) 0%, rgba(18, 24, 18, .98) 100%)
-    }
-
-    .weflair-services-native .growing-tiles__row.is-single {
-      justify-content: center
-    }
-
-    .weflair-services-native .growing-tiles__row.is-single .growing-tiles__col {
-      flex: 0 1 calc(50% - .3rem);
-      max-width: calc(50% - .3rem)
-    }
-
-    .weflair-services-cta-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 4.5rem
-    }
-
-    .weflair-services-cta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      width: min(100%, 56rem);
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-      border: 1px solid rgba(62, 255, 104, .15);
-      border-radius: 1rem;
-      background: linear-gradient(90deg, #0d110d 0%, #111611 100%);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, .4);
-      text-align: left
-    }
-
-    .weflair-services-cta-text {
-      flex: 1 1 20rem;
-      display: grid;
-      gap: .25rem
-    }
-
-    .weflair-services-cta h3 {
-      margin: 0;
-      font-size: clamp(1.5rem, 2.2vw, 1.9rem);
-      line-height: 1.05;
-      letter-spacing: -.045em;
-      color: #f6f3ee;
-      font-weight: 800
-    }
-
-    .weflair-services-cta p {
-      margin: 0;
-      max-width: 32rem;
-      font-size: clamp(.9rem, 1vw, .95rem);
-      line-height: 1.45;
-      color: rgba(246, 243, 238, .74);
-      font-weight: 500
-    }
-
-    .weflair-services-cta-actions {
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .6rem
-    }
-
-    .weflair-services-cta .btn {
-      width: 100%;
-      min-width: 14rem
-    }
-
-    .weflair-services-cta-note {
-      font-size: .76rem !important;
-      line-height: 1.2 !important;
-      color: rgba(246, 243, 238, .5) !important;
-      margin: 0
-    }
-
-    @media (max-width: 767px) {
-      .weflair-services-cta {
-        padding: 1.4rem;
-        flex-direction: column;
-        align-items: flex-start
-      }
-
-      .weflair-services-cta-actions {
-        width: 100%;
-        align-items: flex-start
-      }
-    }
-
-    .weflair-tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2rem;
-      padding: .38rem .72rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 999px;
-      background: rgba(28, 31, 28, .92);
-      font-size: .86rem;
-      font-weight: 700;
-      line-height: 1;
-      color: rgba(246, 243, 238, .88)
-    }
-
-    .weflair-challenges .weflair-challenges__row-text {
-      display: flex;
-      column-gap: clamp(3.1rem, 4.6vw, 4.9rem);
-      align-items: flex-start
-    }
-
-    .weflair-challenges .weflair-challenges__col-eyebrow {
-      width: clamp(8.8rem, 12vw, 10.8rem);
-      padding-top: .15rem;
-      flex: 0 0 auto
-    }
-
-    .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow {
-      margin-bottom: 0
-    }
-
-    .weflair-challenges .weflair-challenges__col-text {
-      max-width: 78rem;
-      padding-top: clamp(3rem, 3.7vw, 3.85rem)
-    }
-
-    .weflair-challenges .weflair-challenges__col-text .h3 {
-      max-width: none;
-      margin-bottom: 1.25rem;
-      line-height: 1.08;
-      letter-spacing: -.04em;
-      text-wrap: balance
-    }
-
-    .weflair-challenges .weflair-section__body {
-      max-width: 56rem;
-      margin: 0;
-      color: rgba(246, 243, 238, .72);
-      font-size: 1.03rem;
-      line-height: 1.6;
-      text-wrap: pretty
-    }
-
-    .weflair-problems-native {
-      display: flex;
-      justify-content: center;
-      margin-top: clamp(2.35rem, 3.9vw, 3.2rem)
-    }
-
-    .weflair-problems-native .growing-tiles {
-      width: min(100%, 76rem);
-      gap: .65rem
-    }
-
-    .weflair-problems-native .growing-tiles__row {
-      display: flex;
-      gap: .65rem
-    }
-
-    .weflair-problems-native .growing-tiles__col {
-      flex: 1 1 0;
-      min-width: 0
-    }
-
-    .weflair-problems-native .growing-tile {
-      min-height: 11rem;
-      padding: 1.15rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      cursor: default;
-      text-align: left
-    }
-
-    .weflair-problems-native .growing-tile__start {
-      display: flex;
-      flex-direction: column;
-      gap: .9rem;
-      align-items: flex-start;
-      width: 100%
-    }
-
-    .weflair-problems-native .growing-tile__end {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      min-height: auto;
-      padding-top: .95rem;
-      width: 100%
-    }
-
-    .weflair-problems-native .growing-tile .h5 {
-      margin: 0;
-      max-width: none;
-      text-wrap: pretty;
-      font-size: clamp(1.08rem, 1.14vw, 1.22rem);
-      line-height: 1.18;
-      letter-spacing: -.035em
-    }
-
-    .weflair-problems-native .growing-tile .p-s {
-      margin: 0;
-      max-width: none;
-      font-size: .88rem;
-      line-height: 1.52;
-      color: rgba(246, 243, 238, .7);
-      text-align: left
-    }
-
-    .weflair-problems-native .growing-tile__text {
-      display: grid;
-      gap: .58rem;
-      justify-items: start;
-      width: 100%
-    }
-
-    .weflair-problems-native .growing-tile__end .growing-tile__text {
-      opacity: 1 !important;
-      transform: none !important
-    }
-
-    .weflair-problem-tile__start-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: .7rem;
-      width: 100%
-    }
-
-    .weflair-problem-tile__title {
-      max-width: none;
-      text-align: left
-    }
-
-    .weflair-problem-tile__icon {
-      width: 2.2rem;
-      height: 2.2rem;
-      border: 1px solid rgba(62, 255, 104, .2);
-      border-radius: .65rem;
-      background: rgba(62, 255, 104, .07);
-      display: grid;
-      place-items: center;
-      color: #3eff68;
-      flex: 0 0 auto;
-      transition: background .22s ease, border-color .22s ease
-    }
-
-    .weflair-problem-tile__icon svg {
-      width: 1.05rem;
-      height: 1.05rem
-    }
-
-    .weflair-problems-native .growing-tile:hover .weflair-problem-tile__icon {
-      background: rgba(62, 255, 104, .14);
-      border-color: rgba(62, 255, 104, .36)
-    }
-
-    .weflair-challenges {
-      background:
-        radial-gradient(circle at 18% 14%, rgba(107, 129, 255, .06), transparent 22%),
-        linear-gradient(180deg, #1d2333 0%, #1a2030 100%);
-      color: #f4f1ea;
-    }
-
-    .weflair-challenges .container {
-      max-width: 112rem;
-    }
-
-    .weflair-challenges .weflair-challenges__row-text {
-      max-width: 70rem;
-      column-gap: clamp(2.6rem, 4vw, 4rem);
-    }
-
-    .weflair-challenges .weflair-challenges__col-eyebrow {
-      width: clamp(7rem, 9vw, 8.5rem);
-      padding-top: .25rem;
-    }
-
-    .weflair-challenges .weflair-challenges__col-text {
-      max-width: 54rem;
-      padding-top: 0;
-    }
-
-    .weflair-challenges .weflair-challenges__col-text .h3 {
-      max-width: 16ch;
-      margin-bottom: 1.1rem;
-      font-size: clamp(2.9rem, 5vw, 4.7rem);
-      line-height: .96;
-      letter-spacing: -.065em;
-      text-wrap: balance;
-    }
-
-    .weflair-challenges .weflair-challenges__col-text .h3 .wf-accent {
-      color: #8ea3ff;
-    }
-
-    .weflair-challenges .weflair-section__body {
-      max-width: 42rem;
-      color: rgba(244, 241, 234, .76);
-      font-size: 1.02rem;
-      line-height: 1.56;
-    }
-
-    .weflair-problems-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: clamp(2.2rem, 3.4vw, 3rem);
-      align-items: stretch;
-    }
-
-    .weflair-problem-card {
-      min-width: 0;
-      min-height: 15.25rem;
-      padding: 1.45rem 1.35rem 1.3rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, .06);
-      background: linear-gradient(180deg, rgba(58, 64, 82, .92) 0%, rgba(52, 57, 74, .9) 100%);
-      box-shadow: 0 18px 34px rgba(10, 12, 20, .18);
-      display: grid;
-      align-content: start;
-      gap: .95rem;
-    }
-
-    .weflair-problem-card__icon {
-      width: 2.9rem;
-      height: 2.9rem;
-      border-radius: .55rem;
-      border: 1px solid rgba(146, 162, 255, .14);
-      background: rgba(145, 162, 255, .08);
-      color: #9aaeff;
-      display: inline-grid;
-      place-items: center;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
-    }
-
-    .weflair-problem-card__icon svg {
-      width: 1.28rem;
-      height: 1.28rem;
-      display: block;
-    }
-
-    .weflair-problem-card h3 {
-      margin: 0;
-      max-width: 12ch;
-      font-size: clamp(1.38rem, 1.55vw, 1.72rem);
-      line-height: 1.08;
-      letter-spacing: -.045em;
-      color: #f7f4ed;
-      text-wrap: balance;
-    }
-
-    .weflair-problem-card p {
-      margin: 0;
-      max-width: 26ch;
-      font-size: .95rem;
-      line-height: 1.52;
-      color: rgba(244, 241, 234, .72);
-      text-wrap: pretty;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .weflair-method-detail h3,
-    .weflair-proof-card h3,
-    .weflair-testimonial-card h3 {
-      margin: 0
-    }
-
-    .weflair-demand-team__panel-plain {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      gap: 1.4rem;
-      padding: 1.35rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 1.35rem;
-      background: rgba(17, 17, 17, .84)
-    }
-
-    .weflair-results-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr 1fr;
-      gap: .7rem
-    }
-
-    .weflair-proof-card {
-      min-height: 17rem;
-      padding: 1.25rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 1.2rem;
-      background: rgba(17, 17, 17, .86);
-      display: grid;
-      align-content: start;
-      gap: .9rem
-    }
-
-    .weflair-proof-card--feature {
-      grid-row: span 2
-    }
-
-    .weflair-proof-card__meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .8rem
-    }
-
-    .weflair-proof-card__label {
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #3eff68
-    }
-
-    .weflair-proof-card__company {
-      font-weight: 700;
-      color: rgba(246, 243, 238, .88)
-    }
-
-    .weflair-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .6rem
-    }
-
-    .weflair-stat {
-      padding: .8rem .85rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: .95rem;
-      background: rgba(23, 24, 23, .96)
-    }
-
-    .weflair-stat strong {
-      display: block;
-      font-size: 1.28rem;
-      line-height: 1;
-      color: #f6f3ee
-    }
-
-    .weflair-stat span {
-      display: block;
-      margin-top: .2rem;
-      color: rgba(246, 243, 238, .68);
-      font-size: .86rem
-    }
-
-    .weflair-testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .7rem
-    }
-
-    .weflair-testimonial-card {
-      min-height: 15rem;
-      padding: 1.2rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 1.2rem;
-      background: rgba(17, 17, 17, .86);
-      display: grid;
-      align-content: start;
-      gap: 1rem
-    }
-
-    .weflair-avatar {
-      width: 2.9rem;
-      height: 2.9rem;
-      border-radius: 999px;
-      background: rgba(62, 255, 104, .16);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: #f6f3ee
-    }
-
-    .weflair-compare-block {
-      padding-top: clamp(4rem, 8vw, 6rem);
-      padding-bottom: clamp(4rem, 8vw, 6rem)
-    }
-
-    .weflair-compare-block .container {
-      position: relative
-    }
-
-    .weflair-compare-block__content {
-      position: relative
-    }
-
-    .weflair-compare-block .compare__row-eyebrow {
-      position: relative;
-      z-index: 1
-    }
-
-    .weflair-compare-block .compare__row-title .h3 {
-      max-width: 12ch;
-      margin: 0 auto;
-      text-wrap: balance;
-      font-size: clamp(3rem, 5.8vw, 5.9rem);
-      line-height: .92;
-      letter-spacing: -.08em
-    }
-
-    .weflair-compare-block .compare__row-title .h3 em {
-      font-weight: 400
-    }
-
-    .weflair-compare-block .compare__row-text {
-      max-width: 48rem;
-      margin: 0 auto;
-      padding-top: clamp(1.5rem, 2.5vw, 2rem);
-      padding-bottom: clamp(3.25rem, 5vw, 4.75rem)
-    }
-
-    .weflair-compare-block .compare__row-text p {
-      margin: 0 auto;
-      max-width: 40rem;
-      color: #f6f3ee;
-      font-size: clamp(1.04rem, 1.45vw, 1.32rem);
-      font-weight: 700;
-      line-height: 1.45;
-      text-wrap: balance
-    }
-
-    .weflair-compare-block .compare__row-list {
-      gap: 1rem;
-      align-items: stretch
-    }
-
-    .weflair-compare-block .compare__list {
-      gap: 1rem
-    }
-
-    .weflair-compare-block .compare__list>.h5 {
-      margin: 0 0 .35rem;
-      font-size: clamp(2rem, 2.75vw, 2.85rem);
-      line-height: .98;
-      letter-spacing: -.06em
-    }
-
-    .weflair-compare-block .compare__item {
-      background: rgba(22, 22, 22, .92);
-      border: 1px solid rgba(246, 243, 238, .07);
-      padding-left: 1.15rem;
-      padding-right: 1.45rem;
-      min-height: 6.8rem;
-      box-shadow: inset 0 1px 0 rgba(246, 243, 238, .02)
-    }
-
-    .weflair-compare-block .compare__icon {
-      background: #69df8a;
-      color: #0f120f;
-      box-shadow: 0 0 0 1px rgba(105, 223, 138, .18)
-    }
-
-    .weflair-compare-block .compare__icon.is--dark {
-      background: #f6f3ee;
-      color: #141414;
-      box-shadow: 0 0 0 1px rgba(246, 243, 238, .08)
-    }
-
-    .weflair-compare-block .compare__p {
-      margin: 0;
-      color: #f6f3ee;
-      font-size: clamp(1rem, 1.28vw, 1.22rem);
-      font-weight: 700;
-      line-height: 1.28;
-      letter-spacing: -.03em
-    }
-
-    .weflair-compare-pixels {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 2.95rem);
-      grid-auto-rows: 2.95rem;
-      transform: translate(14%, -10%);
-      opacity: .9;
-      pointer-events: none
-    }
-
-    .weflair-compare-pixels span {
-      display: block;
-      background: rgba(105, 223, 138, .24)
-    }
-
-    .weflair-compare-pixels span:nth-child(2),
-    .weflair-compare-pixels span:nth-child(4),
-    .weflair-compare-pixels span:nth-child(6) {
-      background: rgba(105, 223, 138, .68)
-    }
-
-    .weflair-compare-pixels span:nth-child(3) {
-      background: rgba(105, 223, 138, .52)
-    }
-
-    .weflair-compare-pixels span:nth-child(5) {
-      background: rgba(105, 223, 138, .14)
-    }
-
-    .weflair-footer-cta {
-      display: grid;
-      gap: 1rem;
-      justify-items: center;
-      text-align: center;
-      padding: 4.5rem 0
-    }
-
-    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
-    .weflair-footer {
-      background: #0e100e
-    }
-
-    .weflair-footer__cta-banner {
-      position: relative;
-      padding: clamp(4.2rem, 7vw, 7rem) 0 clamp(3rem, 5vw, 4.4rem);
-      background: linear-gradient(180deg, rgba(14, 16, 14, 0) 0%, rgba(14, 16, 14, .4) 28%, rgba(14, 16, 14, .96) 100%)
-    }
-
-    .weflair-footer__cta-panel {
-      position: relative;
-      overflow: hidden;
-      width: min(100%, 58rem);
-      margin: 0 auto;
-      padding: clamp(2.7rem, 4.6vw, 4rem) clamp(1.6rem, 3vw, 2.8rem);
-      border: 1px solid rgba(246, 243, 238, .08);
-      border-radius: 1.55rem;
-      background: linear-gradient(140deg, rgba(34, 42, 34, .96) 0%, rgba(17, 19, 17, .98) 46%, rgba(10, 11, 10, .99) 100%);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, .28)
-    }
-
-    .weflair-footer__cta-panel::before {
-      content: "";
-      position: absolute;
-      inset: auto -8% -18% 32%;
-      height: 58%;
-      background: linear-gradient(135deg, rgba(62, 255, 104, .22) 0%, rgba(62, 255, 104, .08) 42%, rgba(62, 255, 104, 0) 100%);
-      transform: skewY(-8deg);
-      pointer-events: none
-    }
-
-    .weflair-footer__cta-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 18% 18%, rgba(62, 255, 104, .16), rgba(62, 255, 104, 0) 34%);
-      pointer-events: none
-    }
-
-    .weflair-footer__cta-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 1.2rem;
-      justify-items: center;
-      text-align: center;
-      max-width: 42rem;
-      margin: 0 auto
-    }
-
-    .weflair-footer__cta-title {
-      margin: 0;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-      line-height: 1.02;
-      letter-spacing: -.05em;
-      text-wrap: balance
-    }
-
-    .weflair-footer__cta-copy {
-      max-width: 40rem;
-      margin: 0;
-      color: #f6f3ee;
-      font-size: clamp(.95rem, 1.15vw, 1.08rem);
-      font-weight: 700;
-      line-height: 1.28;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      text-wrap: balance
-    }
-
-    .weflair-footer__cta-inner .weflair-section__body.is--muted {
-      max-width: 30rem;
-      color: rgba(246, 243, 238, .6);
-      font-size: .86rem;
-      line-height: 1.45
-    }
-
-    .weflair-footer__cta-inner .btn {
-      min-width: clamp(18rem, 28vw, 24rem);
-      justify-self: center
-    }
-
-    .weflair-footer__cta-inner .arrow {
-      transform: rotate(0deg) !important
-    }
-
-    .weflair-footer__main {
-      padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(1.8rem, 3vw, 2.4rem);
-      border-top: 1px solid rgba(246, 243, 238, .06)
-    }
-
-    .weflair-footer__top {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-      gap: clamp(2rem, 4vw, 4rem)
-    }
-
-    .weflair-footer__info-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(1rem, 2.5vw, 2.2rem)
-    }
-
-    .weflair-footer__nav-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(1rem, 2.5vw, 2.2rem)
-    }
-
-    .weflair-footer__col-heading {
-      font-size: .88rem;
-      font-weight: 700;
-      letter-spacing: -.01em;
-      color: #f6f3ee;
-      margin: 0 0 .9rem
-    }
-
-    .weflair-footer__info-line {
-      margin: 0 0 .15rem;
-      font-size: .82rem;
-      line-height: 1.5;
-      color: rgba(246, 243, 238, .55)
-    }
-
-    .weflair-footer__contact-link {
-      display: block;
-      font-size: .82rem;
-      line-height: 1.5;
-      color: rgba(246, 243, 238, .55);
-      text-decoration: none;
-      transition: color .2s ease
-    }
-
-    .weflair-footer__contact-link:hover {
-      color: #3eff68
-    }
-
-    .weflair-footer__nav-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: .3rem
-    }
-
-    .weflair-footer__nav-link {
-      font-size: .82rem;
-      line-height: 1.5;
-      color: rgba(246, 243, 238, .55);
-      text-decoration: none;
-      transition: color .2s ease
-    }
-
-    .weflair-footer__nav-link:hover {
-      color: #f6f3ee
-    }
-
-    .weflair-footer__divider {
-      height: 1px;
-      background: rgba(246, 243, 238, .06);
-      margin: clamp(2rem, 3.5vw, 3rem) 0 clamp(1.2rem, 2vw, 1.6rem)
-    }
-
-    .weflair-footer__bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem
-    }
-
-    .weflair-footer__legal {
-      display: flex;
-      align-items: center;
-      gap: 1.6rem;
-      flex-wrap: wrap
-    }
-
-    .weflair-footer__copyright {
-      font-size: .78rem;
-      color: rgba(246, 243, 238, .4)
-    }
-
-    .weflair-footer__legal-link {
-      font-size: .78rem;
-      color: rgba(246, 243, 238, .4);
-      text-decoration: none;
-      transition: color .2s ease
-    }
-
-    .weflair-footer__legal-link:hover {
-      color: rgba(246, 243, 238, .7)
-    }
-
-    .weflair-footer__social {
-      display: flex;
-      align-items: center;
-      gap: .6rem
-    }
-
-    .weflair-footer__social-link {
-      display: grid;
-      place-items: center;
-      width: 2.2rem;
-      height: 2.2rem;
-      border-radius: .55rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      background: transparent;
-      color: rgba(246, 243, 238, .5);
-      transition: color .2s ease, border-color .2s ease, background .2s ease;
-      text-decoration: none
-    }
-
-    .weflair-footer__social-link:hover {
-      color: #f6f3ee;
-      border-color: rgba(246, 243, 238, .2);
-      background: rgba(246, 243, 238, .04)
-    }
-
-    /* â”€â”€â”€ PROCESS â”€â”€â”€ */
-    .weflair-process {
-      padding: clamp(5rem, 8vw, 7.5rem) 0
-    }
-
-    .weflair-process__layout {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(3rem, 4.5vw, 4rem)
-    }
-
-
-    @media (max-width: 991px) {
-
-      .weflair-services-grid,
-      .weflair-results-grid,
-      .weflair-testimonials-grid,
-      .weflair-demand-team__panel-plain {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .weflair-challenges .weflair-challenges__row-text {
-        flex-direction: column;
-        row-gap: 1.35rem
-      }
-
-      .weflair-challenges .weflair-challenges__col-eyebrow {
-        width: auto;
-        padding-top: 0
-      }
-
-      .weflair-challenges .weflair-challenges__col-eyebrow .eyebrow {
-        margin-bottom: .25rem
-      }
-
-      .weflair-challenges .weflair-challenges__col-text {
-        padding-top: 0
-      }
-
-      .weflair-problems-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-
-
-
-      .weflair-problems-native .growing-tiles__row {
-        flex-wrap: wrap
-      }
-
-      .weflair-problems-native .growing-tiles__col {
-        flex: 1 1 calc(50% - .325rem)
-      }
-
-      .weflair-audit-widget {
-        width: min(100%, 19rem)
-      }
-
-      .weflair-proof-card--feature {
-        grid-row: auto;
-        grid-column: 1/-1
-      }
-
-      .weflair-footer__cta-panel {
-        width: min(100%, 62rem)
-      }
-
-      .weflair-footer__top {
-        grid-template-columns: 1fr
-      }
-
-      .weflair-footer__info-row {
-        grid-template-columns: repeat(3, 1fr)
-      }
-
-      .weflair-footer__nav-row {
-        grid-template-columns: repeat(4, 1fr)
-      }
-
-      .weflair-compare-block .compare__row-title .h3 {
-        max-width: 11ch;
-        font-size: clamp(2.8rem, 8vw, 4.8rem)
-      }
-
-      .weflair-compare-pixels {
-        transform: translate(8%, -6%) scale(.82)
-      }
-    }
-
-    @media (max-width: 767px) {
-      .weflair-hero-actions {
-        justify-content: flex-start
-      }
-
-      .weflair-services-grid,
-      .weflair-results-grid,
-      .weflair-testimonials-grid,
-      .weflair-demand-team__panel-plain {
-        grid-template-columns: 1fr
-      }
-
-      .weflair-compare-block .compare__row-title .h3 {
-        max-width: 10ch;
-        font-size: clamp(2.35rem, 10vw, 3.5rem)
-      }
-
-      .weflair-compare-block .compare__row-text {
-        padding-bottom: 2rem
-      }
-
-      .weflair-compare-block .compare__p {
-        font-size: 1.08rem
-      }
-
-      .weflair-compare-pixels {
-        display: none
-      }
-
-      .weflair-challenges .weflair-challenges__col-text .h3 {
-        max-width: none
-      }
-
-      .weflair-challenges .weflair-section__body {
-        font-size: .96rem
-      }
-
-      .weflair-problems-grid {
-        grid-template-columns: 1fr;
-        gap: .9rem;
-      }
-
-      .weflair-problem-card {
-        min-height: 0;
-        padding: 1.2rem 1.05rem 1.1rem;
-      }
-
-      .weflair-problem-card h3,
-      .weflair-problem-card p {
-        max-width: none;
-      }
-
-
-      .weflair-problems-native .growing-tiles__col {
-        flex-basis: 100%
-      }
-
-      .weflair-services-grid .is-span-2 {
-        grid-column: auto
-      }
-
-      .weflair-audit-widget {
-        width: 100%
-      }
-
-      .weflair-audit-widget__dates {
-        grid-template-columns: repeat(5, minmax(0, 1fr))
-      }
-
-      .weflair-footer__cta-banner {
-        padding: 3.4rem 0 2.7rem
-      }
-
-      .weflair-footer__cta-panel {
-        padding: 2.15rem 1.15rem 2rem;
-        border-radius: 1.2rem
-      }
-
-      .weflair-footer__cta-title {
-        font-size: clamp(2.4rem, 11vw, 3.45rem)
-      }
-
-      .weflair-footer__cta-copy {
-        font-size: .88rem;
-        letter-spacing: .055em
-      }
-
-      .weflair-footer__cta-inner .btn {
-        width: 100%;
-        min-width: 0
-      }
-
-      .weflair-footer__top {
-        grid-template-columns: 1fr
-      }
-
-      .weflair-footer__info-row {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .weflair-footer__nav-row {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .weflair-footer__bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem
-      }
-    }
-
-    .weflair-problems-native {
-      display: flex;
-      justify-content: center;
-      margin-top: clamp(2.35rem, 3.9vw, 3.2rem)
-    }
-
-    .weflair-problems-native .growing-tiles {
-      width: min(100%, 76rem);
-      gap: 1.55rem
-    }
-
-    .weflair-problems-native .growing-tiles__row {
-      display: flex;
-      gap: 1.55rem
-    }
-
-    .weflair-problems-native .growing-tiles__col {
-      flex: 1 1 0;
-      min-width: 0
-    }
-
-    .weflair-problems-native .growing-tile {
-      min-height: min-content;
-      padding: 2.35rem 2.35rem 2.25rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      cursor: default;
-      text-align: left;
-      height: 100%;
-      border-radius: 1.2rem
-    }
-
-    .weflair-problems-native .growing-tile__start {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: flex-start;
-      width: 100%
-    }
-
-    .weflair-problems-native .growing-tile__end {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      min-height: auto;
-      padding-top: 1.15rem;
-      width: 100%;
-      flex: 1 1 auto;
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important
-    }
-
-    .weflair-problems-native .growing-tile .h5 {
-      margin: 0;
-      max-width: none !important;
-      text-align: left;
-      text-wrap: pretty;
-      width: 100%;
-      font-size: clamp(1.16rem, 1.3vw, 1.38rem);
-      line-height: 1.2;
-      letter-spacing: -.032em;
-      text-wrap: pretty
-    }
-
-    .weflair-problems-native .growing-tile .p-s {
-      margin: 0;
-      max-width: none !important;
-      width: 100%;
-      font-size: 1.02rem;
-      line-height: 1.66;
-      color: rgba(246, 243, 238, .7);
-      text-align: left;
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: none !important;
-      text-wrap: pretty
-    }
-
-    .weflair-problems-native .growing-tile__text {
-      display: grid;
-      gap: .82rem;
-      justify-items: start;
-      width: 100%;
-      max-width: none
-    }
-
-    .weflair-problems-native .growing-tile__end .growing-tile__text {
-      opacity: 1 !important;
-      transform: none !important;
-      visibility: visible !important;
-      height: auto !important;
-      min-height: min-content !important;
-      min-height: auto !important;
-      position: relative;
-      width: 100%;
-      max-width: none
-    }
-
-    .weflair-problems-native .growing-tile__end .p-s {
-      visibility: visible !important
-    }
-
-    #problems .growing-tile__end .growing-tile__text,
-    #problems .growing-tile__end .p-s {
-      visibility: visible !important
-    }
-
-    .weflair-problem-tile__start-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: .7rem;
-      width: 100%
-    }
-
-    .weflair-problem-tile__title {
-      max-width: none;
-      text-align: left
-    }
-
-    .weflair-problem-tile__icon {
-      width: 2.65rem;
-      height: 2.65rem;
-      border: 1px solid rgba(62, 255, 104, .2);
-      border-radius: .72rem;
-      background: rgba(62, 255, 104, .07);
-      display: grid;
-      place-items: center;
-      color: #3eff68;
-      flex: 0 0 auto;
-      transition: background .22s ease, border-color .22s ease
-    }
-
-    .weflair-problem-tile__icon svg {
-      width: 1.32rem;
-      height: 1.32rem
-    }
-
-    .weflair-problems-native .growing-tile:hover .weflair-problem-tile__icon {
-      background: rgba(62, 255, 104, .14);
-      border-color: rgba(62, 255, 104, .36)
-    }
-
-    @media (max-width: 991px) {
-
-
-      .weflair-problems-native .growing-tiles {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem
-      }
-
-      .weflair-problems-native .growing-tiles__row {
-        display: contents
-      }
-
-      .weflair-problems-native .growing-tiles__col {
-        min-width: 0;
-        max-width: none
-      }
-    }
-
-    @media (max-width: 767px) {
-      .weflair-section-accent {
-        white-space: normal
-      }
-
-      .weflair-problems-native .growing-tiles {
-        grid-template-columns: 1fr;
-        gap: .9rem
-      }
-
-      .weflair-problems-native .growing-tile {
-        padding: 1.5rem 1.32rem
-      }
-
-      .weflair-problems-native .growing-tile .h5 {
-        font-size: clamp(1.06rem, 4.8vw, 1.2rem)
-      }
-
-      .weflair-problems-native .growing-tile .p-s {
-        font-size: .95rem
-      }
-    }
-
-
-
-
-    /* ── Funnel v5 ── */
-
-
-
-
-
-
-
-
-  </style>
+  
   <style id="weflair-cal-widget-overrides">
     .weflair-hero-widget-wrap {
       display: flex;
@@ -3938,6 +2199,204 @@
         transform: translateY(-2px)
       }
 
+      .weflair-credentials__slider[data-logo-slider] {
+        width: 100%;
+      }
+
+      .weflair-credentials__slider-shell {
+        width: min(100%, 74rem) !important;
+        margin: 0 auto !important;
+        padding: 0 0 .4rem !important;
+      }
+
+      .weflair-credentials__badge-slide {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+        justify-items: stretch !important;
+      }
+
+      .weflair-credentials__badge-slide.is-five {
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+      }
+
+      .weflair-credentials__badge-card {
+        min-height: clamp(8.75rem, 14vw, 10.4rem);
+        margin: 0;
+        width: 100%;
+        padding: 1rem .9rem;
+        border-radius: 1.15rem;
+        border: 1px solid rgba(255, 255, 255, .08);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .98) 0%, rgba(243, 239, 231, .94) 100%);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .74);
+        display: grid;
+        place-items: center;
+      }
+
+      .weflair-credentials__badge-card img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .weflair-credentials__badge-card.is-wide img {
+        max-height: clamp(3rem, 4vw, 3.75rem);
+      }
+
+      .weflair-credentials__badge-card.is-round img {
+        max-width: clamp(4.25rem, 6vw, 5.4rem);
+        max-height: clamp(4.25rem, 6vw, 5.4rem);
+      }
+
+      .weflair-credentials__badge-card.is-shield img {
+        max-height: clamp(5.1rem, 7vw, 6.1rem);
+      }
+
+      .weflair-credentials__slider .wf-logo-rail__viewport {
+        align-items: stretch;
+      }
+
+      .weflair-credentials__slider .wf-logo-rail__dots {
+        margin-top: 1.05rem;
+      }
+
+      .weflair-credentials__slider .wf-logo-rail__dot {
+        background: rgba(246, 243, 238, .2);
+      }
+
+      .weflair-credentials__slider .wf-logo-rail__dot.is-active {
+        background: #3eff68;
+      }
+
+      @media (max-width: 1080px) {
+        .weflair-credentials__badge-slide,
+        .weflair-credentials__badge-slide.is-five {
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+
+        .weflair-credentials__badge-card {
+          min-height: 8.2rem;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .weflair-credentials__slider-shell {
+          width: min(100%, 34rem) !important;
+        }
+
+        .weflair-credentials__badge-slide,
+        .weflair-credentials__badge-slide.is-five {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: .75rem !important;
+        }
+
+        .weflair-credentials__badge-card {
+          min-height: 7.5rem;
+          padding: .85rem .72rem;
+        }
+
+        .weflair-credentials__badge-card.is-wide img {
+          max-height: 2.6rem;
+        }
+      }
+
+      .weflair-credentials__badge-wall {
+        display: grid;
+        gap: 1.65rem;
+        justify-items: center;
+        margin-top: 2.15rem;
+      }
+
+      .weflair-credentials__badge-row {
+        display: grid;
+        width: min(100%, 66rem);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .weflair-credentials__badge-row.is-wide {
+        grid-template-columns: repeat(6, minmax(0, max-content));
+        gap: 1.15rem 2.1rem;
+      }
+
+      .weflair-credentials__badge-row.is-mixed {
+        grid-template-columns: repeat(7, minmax(0, max-content));
+        gap: 1.1rem 1.7rem;
+      }
+
+      .weflair-credentials__badge-figure {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .weflair-credentials__badge-figure img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+      .weflair-credentials__badge-figure.is-wide img {
+        height: clamp(2.85rem, 3.8vw, 3.55rem);
+      }
+
+      .weflair-credentials__badge-figure.is-round img {
+        height: clamp(4.65rem, 6vw, 5.65rem);
+      }
+
+      .weflair-credentials__badge-figure.is-shield img {
+        height: clamp(5rem, 6.4vw, 6rem);
+      }
+
+      @media (max-width: 1180px) {
+        .weflair-credentials__badge-row {
+          width: min(100%, 48rem);
+        }
+
+        .weflair-credentials__badge-row.is-wide {
+          grid-template-columns: repeat(3, minmax(0, max-content));
+        }
+
+        .weflair-credentials__badge-row.is-mixed {
+          grid-template-columns: repeat(4, minmax(0, max-content));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .weflair-credentials__badge-wall {
+          gap: 1.25rem;
+        }
+
+        .weflair-credentials__badge-row {
+          width: min(100%, 24rem);
+        }
+
+        .weflair-credentials__badge-row.is-wide {
+          grid-template-columns: repeat(2, minmax(0, max-content));
+          gap: .9rem 1.4rem;
+        }
+
+        .weflair-credentials__badge-row.is-mixed {
+          grid-template-columns: repeat(3, minmax(0, max-content));
+          gap: .9rem 1.2rem;
+        }
+
+        .weflair-credentials__badge-figure.is-wide img {
+          height: 2.45rem;
+        }
+
+        .weflair-credentials__badge-figure.is-round img {
+          height: 4rem;
+        }
+
+        .weflair-credentials__badge-figure.is-shield img {
+          height: 4.45rem;
+        }
+      }
+
       .weflair-credentials__badge-logo {
         width: 2.2rem;
         height: 2.2rem;
@@ -3985,9 +2444,27 @@
       .weflair-faq { padding: clamp(5.8rem, 8vw, 7.5rem) 0 }
 
       .weflair-faq__list {
-        max-width: 54rem;
-        margin-top: clamp(2.35rem, 3.9vw, 3.2rem)
-      }
+          max-width: 72rem;
+          margin-top: clamp(2.35rem, 3.9vw, 3.2rem);
+          display: flex;
+          gap: 4rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .weflair-faq__col {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        @media(max-width: 800px) {
+          .weflair-faq__list {
+            flex-direction: column;
+            gap: 0;
+          }
+          .weflair-faq__col:nth-child(2) .weflair-faq__item:first-child {
+            border-top: none;
+          }
+        }
 
       .weflair-faq__item {
         border-bottom: 1px solid rgba(246, 243, 238, .08)
@@ -4415,6 +2892,128 @@
         line-height: 1.62 !important;
       }
 
+      body[data-theme="dark"] .main-wrap,
+      html[data-theme="dark"] .main-wrap {
+        background: transparent !important;
+      }
+
+      body[data-theme="dark"] #hero .border-bottom,
+      html[data-theme="dark"] #hero .border-bottom {
+        display: none;
+      }
+
+      body[data-theme="dark"] #logos,
+      body[data-theme="dark"] #services,
+      body[data-theme="dark"] #problems,
+      body[data-theme="dark"] #why-us,
+      body[data-theme="dark"] #process,
+      body[data-theme="dark"] #proof,
+      body[data-theme="dark"] #sectors,
+      body[data-theme="dark"] #engagement-model,
+      body[data-theme="dark"] #resources-teaser,
+      body[data-theme="dark"] #faq,
+      body[data-theme="dark"] .weflair-footer__cta-banner,
+      body[data-theme="dark"] .weflair-footer__main,
+      html[data-theme="dark"] #logos,
+      html[data-theme="dark"] #services,
+      html[data-theme="dark"] #problems,
+      html[data-theme="dark"] #why-us,
+      html[data-theme="dark"] #process,
+      html[data-theme="dark"] #proof,
+      html[data-theme="dark"] #sectors,
+      html[data-theme="dark"] #engagement-model,
+      html[data-theme="dark"] #resources-teaser,
+      html[data-theme="dark"] #faq,
+      html[data-theme="dark"] .weflair-footer__cta-banner,
+      html[data-theme="dark"] .weflair-footer__main {
+        background: transparent !important;
+      }
+
+      body[data-theme="dark"] .weflair-sectors,
+      html[data-theme="dark"] .weflair-sectors {
+        color: #f3f3f3;
+      }
+
+      body[data-theme="dark"] .weflair-sectors .eyebrow__p,
+      body[data-theme="dark"] .weflair-sectors .h3,
+      body[data-theme="dark"] .weflair-sectors .weflair-sectors__content h3,
+      body[data-theme="dark"] .weflair-sectors .weflair-sectors__optimize h4,
+      html[data-theme="dark"] .weflair-sectors .eyebrow__p,
+      html[data-theme="dark"] .weflair-sectors .h3,
+      html[data-theme="dark"] .weflair-sectors .weflair-sectors__content h3,
+      html[data-theme="dark"] .weflair-sectors .weflair-sectors__optimize h4 {
+        color: #f3f3f3;
+      }
+
+      body[data-theme="dark"] .weflair-sectors .weflair-section__body,
+      body[data-theme="dark"] .weflair-sectors .weflair-sectors__content p,
+      html[data-theme="dark"] .weflair-sectors .weflair-section__body,
+      html[data-theme="dark"] .weflair-sectors .weflair-sectors__content p {
+        color: rgba(243, 243, 243, .74);
+      }
+
+      body[data-theme="dark"] .weflair-sectors__tab,
+      html[data-theme="dark"] .weflair-sectors__tab {
+        border-bottom-color: rgba(255,255,255,.1);
+        color: rgba(243,243,243,.68);
+      }
+
+      body[data-theme="dark"] .weflair-sectors__hero,
+      html[data-theme="dark"] .weflair-sectors__hero {
+        border-color: rgba(255,255,255,.08);
+        box-shadow: 0 18px 44px rgba(0,0,0,.24);
+      }
+
+      body[data-theme="dark"] .weflair-sectors__logo-card,
+      body[data-theme="dark"] .weflair-sectors__optimize,
+      body[data-theme="dark"] .weflair-sectors__optimize li,
+      html[data-theme="dark"] .weflair-sectors__logo-card,
+      html[data-theme="dark"] .weflair-sectors__optimize,
+      html[data-theme="dark"] .weflair-sectors__optimize li {
+        background: linear-gradient(180deg, rgba(255,255,255,.045) 0%, rgba(255,255,255,.028) 100%);
+        border-color: rgba(255,255,255,.08);
+        box-shadow: 0 14px 28px rgba(0,0,0,.2);
+      }
+
+      body[data-theme="dark"] .weflair-sectors__hero-pill,
+      html[data-theme="dark"] .weflair-sectors__hero-pill {
+        background: rgba(17, 19, 22, .86);
+        color: #f3f3f3;
+      }
+
+      body[data-theme="dark"] .weflair-sectors__optimize li,
+      html[data-theme="dark"] .weflair-sectors__optimize li {
+        color: rgba(243,243,243,.88);
+      }
+
+      body[data-theme="dark"] .weflair-engagement,
+      html[data-theme="dark"] .weflair-engagement {
+        color: #f3f3f3;
+      }
+
+      body[data-theme="dark"] .weflair-engagement .eyebrow__p,
+      body[data-theme="dark"] .weflair-engagement .h3,
+      body[data-theme="dark"] .weflair-engagement .weflair-engagement__card h3,
+      html[data-theme="dark"] .weflair-engagement .eyebrow__p,
+      html[data-theme="dark"] .weflair-engagement .h3,
+      html[data-theme="dark"] .weflair-engagement .weflair-engagement__card h3 {
+        color: #f3f3f3;
+      }
+
+      body[data-theme="dark"] .weflair-engagement .weflair-section__body,
+      body[data-theme="dark"] .weflair-engagement .weflair-engagement__card li,
+      html[data-theme="dark"] .weflair-engagement .weflair-section__body,
+      html[data-theme="dark"] .weflair-engagement .weflair-engagement__card li {
+        color: rgba(243,243,243,.74);
+      }
+
+      body[data-theme="dark"] .weflair-engagement__card,
+      html[data-theme="dark"] .weflair-engagement__card {
+        background: linear-gradient(180deg, rgba(255,255,255,.045) 0%, rgba(255,255,255,.028) 100%);
+        border-color: rgba(255,255,255,.08);
+        box-shadow: 0 18px 38px rgba(0,0,0,.24);
+      }
+
       html[data-theme="light"] .weflair-credentials__badge-logo {
         color: #22c55e;
         filter: none
@@ -4435,388 +3034,7 @@
     <div class="floating-elements-main">
       <div class="calc-header-padding-height"></div>
       <div data-navigation-toggle="close" class="nav-fade"></div>
-      <header class="header">
-        <nav class="nav">
-          <div class="nav-bar">
-            <div class="nav-bar__bg"></div>
-            <div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" aria-current="page"
-                class="nav-bar__logo-a w-inline-block w--current" data-weflair-logo-applied="true"><span
-                  class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 45" fill="none" class="weflair-flare">
-                      <path
-                        d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
-                        fill="currentColor"></path>
-                    </svg></span><span class="weflair-logo__word">WeFlair</span></span></a>
-              <div class="nav-bar__hamburger">
-                <div data-navigation-toggle="toggle" class="hamburger">
-                  <div class="hamburger__bar is--top"></div>
-                  <div class="hamburger__bar"></div>
-                  <div class="hamburger__bar is--bottom"></div>
-                </div>
-              </div>
-            </div>
-            <div data-lenis-prevent="" class="nav-bar__links">
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal"
-                            href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3>
-                              <p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a><a data-hover="" data-arrow="diagonal" href="services/outbound-gtm.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">GTM Engineering</h3>
-                              <p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a></div>
-                        <div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/cro-performance-design.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Performance Design &amp; Content</h3>
-                              <p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a><a data-hover="" data-arrow="diagonal" href="services/revops-ai.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Operations &amp; Automation</h3>
-                              <p class="nav-dropdown-tile__p">Connected CRM, routing, and AI automation.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown nav-dropdown--mega">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="weflair-mega-grid"><a data-hover="" href="tools.html"
-                            class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                  d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-                                <path
-                                  d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-                                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-                                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Free GTM Tools</h3>
-                              <p class="weflair-mega-tile__p">Free tools to boost your sales and marketing performance.
-                              </p>
-                            </div>
-                          </a><a data-hover="" href="tools.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                  d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">AI Tools</h3>
-                              <p class="weflair-mega-tile__p">AI-powered platforms for sales and marketing teams.</p>
-                            </div>
-                          </a><a data-hover="" href="resources/calculators.html"
-                            class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="16" height="20" x="4" y="2" rx="2" />
-                                <line x1="8" x2="16" y1="6" y2="6" />
-                                <line x1="16" x2="16" y1="14" y2="18" />
-                                <path d="M16 10h.01" />
-                                <path d="M12 10h.01" />
-                                <path d="M8 10h.01" />
-                                <path d="M12 14h.01" />
-                                <path d="M8 14h.01" />
-                                <path d="M12 18h.01" />
-                                <path d="M8 18h.01" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Calculators</h3>
-                              <p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p>
-                            </div>
-                          </a><a data-hover="" href="resources/guides.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Guides</h3>
-                              <p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p>
-                            </div>
-                          </a><a data-hover="" href="resources/playbooks.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                                <path d="m10 13-2 2 2 2" />
-                                <path d="m14 17 2-2-2-2" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Playbooks</h3>
-                              <p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p>
-                            </div>
-                          </a><a data-hover="" href="cases.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                                <path d="M4 22h16" />
-                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-                              </svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Case Studies</h3>
-                              <p class="weflair-mega-tile__p">Real results from real engagements.</p>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">About Us</h3>
-                              <p class="nav-dropdown-tile__p">The growth agency built for operators.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a><a data-hover="" data-arrow="diagonal" href="careers.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Careers</h3>
-                              <p class="nav-dropdown-tile__p">Join our team of growth specialists.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default"
-                href="contact.html" class="btn w-inline-block">
-                <div class="btn__bg"></div>
-                <div class="btn__text"><span class="btn__span">Talk to us</span></div>
-                <div class="arrow">
-                  <div class="arrow__bg"></div>
-                  <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                      viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                      <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                    </svg></div>
-                  <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                      fill="none" class="arrow__svg">
-                      <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                    </svg></div>
-                </div>
-              </a></div>
-          </div>
-        </nav>
-      </header>
+      <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" aria-current="page" class="nav-bar__logo-a w-inline-block w--current" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Go To Market Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="cases.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
       <div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none"
           class="theme-switch__svg">
           <path
@@ -4885,8 +3103,7 @@
                 </div>
               </div>
               <h2 data-transition-animation="" data-split-words="" class="h1 weflair-headline"
-                style="opacity: 1; visibility: visible; transform: none;">Your Allbound Marketing Partner to <span
-                  class="weflair-section-accent weflair-section-accent--solid">Drive Ambitious Growth.</span>
+                style="opacity: 1; visibility: visible; transform: none;">Your Allbound Marketing Partner to <span class="weflair-section-accent weflair-section-accent--solid">Drive Ambitious Growth.</span>
               </h2>
             </div>
             <div class="home-header__row-info">
@@ -6379,7 +4596,7 @@
                 <div class="svc-vis">
                   <div class="svc-vis-glow"></div>
                   <div class="pm-scene">
-                    <img src="/public/Conversions%20(3).svg" alt="Paid media platform logos" class="pm-art" loading="lazy" decoding="async">
+                    <img src="/assets/Conversions%20(3)-CQBMrdRo.svg" alt="Paid media platform logos" class="pm-art" loading="lazy" decoding="async">
                   </div>
                 </div>
                 <div class="svc-info">
@@ -6395,7 +4612,7 @@
 
             <!-- Card 2: Outbound GTM -->
             <div class="svc-item">
-              <a href="/services/outbound-gtm.html" class="svc-card">
+              <a href="/services/go-to-market-systems.html" class="svc-card">
                 <div class="svc-vis">
                   <div class="svc-vis-glow"></div>
                   <div class="gtm-flow" aria-hidden="true">
@@ -6437,7 +4654,7 @@
 
             <!-- Card 3: RevOps -->
             <div class="svc-item">
-              <a href="/services/revops-ai.html" class="svc-card">
+              <a href="/services/ai-visibility-seo.html" class="svc-card">
                 <div class="svc-vis">
                   <div class="svc-vis-glow"></div>
                   <div class="ai-search-widget" aria-hidden="true">
@@ -6494,7 +4711,7 @@
                   </div>
                 </div>
                 <div class="svc-info">
-                  <h3 class="svc-title">AI Search &amp; SEO</h3>
+                  <h3 class="svc-title">AI Visibility &amp; SEO</h3>
                   <p class="svc-desc">SEO, AEO, GEO, LLM visibility, content-for-search</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
@@ -6506,7 +4723,7 @@
 
             <!-- Card 4: CRO -->
             <div class="svc-item">
-              <a href="/services/cro-performance-design.html" class="svc-card svc-card--perf">
+              <a href="/services/performance-design.html" class="svc-card svc-card--perf">
                 <div class="svc-vis">
                   <div class="svc-vis-glow"></div>
                   <div class="perf-visual" aria-hidden="true">
@@ -6541,7 +4758,7 @@
                   </div>
                 </div>
                 <div class="svc-info">
-                  <h3 class="svc-title">Performance Design &amp; Content</h3>
+                  <h3 class="svc-title">Performance Design &amp; CRO</h3>
                   <p class="svc-desc">Landing pages, creative systems, conversion design, performance content</p>
                   <span class="svc-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                       stroke-width="2">
@@ -6713,7 +4930,7 @@
       <div class="weflair-handoff__sticky">
         <div class="weflair-handoff__intro weflair-section__head">
           <div class="eyebrow"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><p class="eyebrow__p">Where we plug in</p></div>
-          <h2 class="h3 weflair-handoff__title">How WeFlair plugs into your team.</h2>
+          <h2 class="h3 weflair-handoff__title">How WeFlair plugs into your <span class="weflair-section-accent weflair-section-accent--solid">team.</span></h2>
           <p class="weflair-handoff__lede weflair-section__body">WeFlair complements your in-house team so you do not have to build the entire marketing engine from scratch.</p>
         </div>
         <div class="weflair-handoff__panel">
@@ -6751,11 +4968,7 @@
               </div>
               <div class="weflair-handoff__pane-visual">
                 <div class="weflair-handoff__frame">
-                  <div class="weflair-handoff__frame-bar">
-                    <div class="weflair-handoff__dots"><span></span><span></span><span></span></div>
-                    <div class="weflair-handoff__frame-label"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span>Channel selection</span></div>
-                  </div>
-                  <div class="weflair-handoff__media"><video src="/handoff-assets/strategy.webm" autoplay muted loop playsinline preload="auto"></video></div>
+                  <div class="weflair-handoff__media"><iframe src="/handoff-cards/strategy-card.html" scrolling="no" style="width: 100%; height: 100%; border: none; background: transparent; object-fit: contain; overflow: hidden;"></iframe></div>
                 </div>
               </div>
             </article>
@@ -6774,11 +4987,7 @@
               </div>
               <div class="weflair-handoff__pane-visual">
                 <div class="weflair-handoff__frame">
-                  <div class="weflair-handoff__frame-bar">
-                    <div class="weflair-handoff__dots"><span></span><span></span><span></span></div>
-                    <div class="weflair-handoff__frame-label"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M4 19l5.5-5.5L13 17l7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 10h5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Design system</span></div>
-                  </div>
-                  <div class="weflair-handoff__media"><video src="/handoff-assets/creative.webm" autoplay muted loop playsinline preload="auto"></video></div>
+                  <div class="weflair-handoff__media"><iframe src="/handoff-cards/design-card.html" scrolling="no" style="width: 100%; height: 100%; border: none; background: transparent; object-fit: contain; overflow: hidden;"></iframe></div>
                 </div>
               </div>
             </article>
@@ -6797,11 +5006,7 @@
               </div>
               <div class="weflair-handoff__pane-visual">
                 <div class="weflair-handoff__frame">
-                  <div class="weflair-handoff__frame-bar">
-                    <div class="weflair-handoff__dots"><span></span><span></span><span></span></div>
-                    <div class="weflair-handoff__frame-label"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M4 8h16M4 12h16M4 16h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span>Execution layer</span></div>
-                  </div>
-                  <div class="weflair-handoff__media"><video src="/handoff-assets/execution.webm" autoplay muted loop playsinline preload="auto"></video></div>
+                  <div class="weflair-handoff__media"><iframe src="/handoff-cards/execution-card.html" scrolling="no" style="width: 100%; height: 100%; border: none; background: transparent; object-fit: contain; overflow: hidden;"></iframe></div>
                 </div>
               </div>
             </article>
@@ -6820,11 +5025,9 @@
               </div>
               <div class="weflair-handoff__pane-visual">
                 <div class="weflair-handoff__frame">
-                  <div class="weflair-handoff__frame-bar">
-                    <div class="weflair-handoff__dots"><span></span><span></span><span></span></div>
-                    <div class="weflair-handoff__frame-label"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg><span>Revenue reporting</span></div>
-                  </div>
-                  <div class="weflair-handoff__media"><video src="/handoff-assets/reporting.webm" autoplay muted loop playsinline preload="auto"></video></div>
+                  
+                    
+                  <div class="weflair-handoff__media"><iframe src="/handoff-cards/reporting-card.html" scrolling="no" style="width: 100%; height: 100%; border: none; background: transparent; object-fit: contain; overflow: hidden;"></iframe></div>
                 </div>
               </div>
             </article>
@@ -6842,6 +5045,31 @@
     section.dataset.handoffReady='true';
     var tabs=[].slice.call(section.querySelectorAll('[data-handoff-tab]'));
     var panes=[].slice.call(section.querySelectorAll('[data-handoff-pane]'));
+    function syncVideo(pane,isActive){
+      var video=pane.querySelector('video');
+      if(!video)return;
+      video.muted=true;
+      video.loop=true;
+      video.playsInline=true;
+      if(!isActive){
+        try{video.pause();video.currentTime=0;}catch(_error){}
+        return;
+      }
+      var primeFrame=function(){
+        if(video.duration&&video.duration>.6&&video.currentTime<.3){
+          try{video.currentTime=.45;}catch(_error){}
+        }
+        var playPromise=video.play();
+        if(playPromise&&typeof playPromise.catch==='function'){
+          playPromise.catch(function(){});
+        }
+      };
+      if(video.readyState>=1){
+        primeFrame();
+      }else{
+        video.addEventListener('loadedmetadata',primeFrame,{once:true});
+      }
+    }
     function activate(index){
       var next=Math.max(0,Math.min(index,tabs.length-1));
       section.setAttribute('data-handoff-active',String(next));
@@ -6854,6 +5082,7 @@
         var isActive=paneIndex===next;
         pane.classList.toggle('is-active',isActive);
         pane.setAttribute('aria-hidden',isActive?'false':'true');
+        syncVideo(pane,isActive);
       });
     }
     tabs.forEach(function(tab,index){
@@ -7304,7 +5533,7 @@
         }
       }
     </style>
-    <style id="weflair-why-scroll-css" media="not all">
+    <style id="weflair-why-scroll-css">
       .weflair-why {
         position: relative;
         overflow: clip;
@@ -8905,7 +7134,7 @@
         }
       }
     </style>
-    <style id="weflair-why-rework-css" media="not all">
+    <style id="weflair-why-rework-css">
       #why-weflair {
         padding: clamp(5.5rem, 8vw, 7.5rem) 0;
       }
@@ -9443,7 +7672,7 @@
         }
       }
     </style>
-    <section class="weflair-section weflair-why" id="why-weflair" data-why-section style="display:none!important">
+    <section class="weflair-section weflair-why" id="why-weflair" hidden aria-hidden="true">
       <div class="container container--large">
         <div class="weflair-why__layout">
           <div class="weflair-section__head weflair-why__head">
@@ -10034,7 +8263,7 @@
             <div class="weflair-why-us__visual weflair-why-us__visual--loops">
               <div class="weflair-why-us__visual-shell">
                 <div class="why-loop-board">
-                  <img src="/images/hww/Conversions.svg" alt="Full-funnel growth loops: impressions, clicks, demo requests, pipeline, and closed won feeding a recurring growth loop." class="why-loop-image" loading="lazy" decoding="async">
+                  <img src="/assets/Conversions-2SHjiDkN.svg" alt="Full-funnel growth loops: impressions, clicks, demo requests, pipeline, and closed won feeding a recurring growth loop." class="why-loop-image" loading="lazy" decoding="async">
                 </div>
               </div>
             </div>
@@ -10182,49 +8411,46 @@
             <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">10+</span><span class="weflair-credentials__stat-label">Years operating across the funnel</span></div>
             <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">100+</span><span class="weflair-credentials__stat-label">Growth systems delivered</span></div>
           </div>
-          <div class="weflair-credentials__badges">
-            <div class="wf-creds-grid">
-              <div class="wf-creds-grid__row wf-creds-grid__row--wide" aria-label="Platform partnerships">
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/images.png" alt="Shopify Partners badge" loading="lazy" decoding="async">
+          <div class="weflair-credentials__badges" style="transform: scale(1.15); transform-origin: center top;">
+            <div class="weflair-credentials__badge-wall">
+              <div class="weflair-credentials__badge-row is-wide" aria-label="E-commerce and Paid Media Partnerships">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/images.png" alt="Shopify Partners badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/images%20(1).png" alt="Klaviyo Partner badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/images (1).png" alt="Klaviyo Partner badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/semrush-agency-partner-badge.png" alt="Semrush Certified Agency Partner badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/660ea0489aeb028f51938bfb_certificate-google-marketing-platform.avif" alt="Google Marketing Platform certification badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/660ea0489aeb028f51938bfb_certificate-google-marketing-platform.avif" alt="Google Marketing Platform certification badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/660ea324950fc02759a448b8_certificate-bing-ads.avif" alt="Bing Ads certification badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/660ea324950fc02759a448b8_certificate-bing-ads.avif" alt="Bing Ads certification badge" loading="lazy" decoding="async">
-                </figure>
-                <figure class="wf-creds-badge wf-creds-badge--wide">
-                  <img src="/public/Screenshot%202026-04-20%20151006.png" alt="GoodFirms excellent rating badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-round">
+                  <img src="/66fd0f9805003e034cd7ee0c_4.webp" alt="LinkedIn Marketing Insider badge" loading="lazy" decoding="async">
                 </figure>
               </div>
-              <div class="wf-creds-grid__row wf-creds-grid__row--round" aria-label="Certifications and awards">
-                <figure class="wf-creds-badge wf-creds-badge--round">
-                  <img src="/public/66fd0f9805003e034cd7ee0c_4.webp" alt="LinkedIn Marketing Insider badge" loading="lazy" decoding="async">
+              <div class="weflair-credentials__badge-row is-mixed" aria-label="Certifications and awards">
+                <figure class="weflair-credentials__badge-figure is-shield">
+                  <img src="/66fd0f9881702f8222596258_5.webp" alt="Microsoft Advertising Certified Expert badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--round">
-                  <img src="/public/dfsv.svg" alt="Google certification badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-round">
+                  <img src="/dfsv.svg" alt="Google certification badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--round">
-                  <img src="/public/edfrgt.svg" alt="Marketing certification badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-round">
+                  <img src="/edfrgt.svg" alt="Marketing certification badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--round">
-                  <img src="/public/66fd0f9dde617cc8161ceaf0_21.webp" alt="Digital Marketing and Certification badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-round">
+                  <img src="/66fd0f9dde617cc8161ceaf0_21.webp" alt="Digital Marketing and Certification badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--round">
-                  <img src="/public/68de2bf38e268733b6191853_clients-love-us%201-p-500.webp" alt="Clients Love Us badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/semrush-agency-partner-badge.png" alt="Semrush Certified Agency Partner badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--shield">
-                  <img src="/public/66fd0f9881702f8222596258_5.webp" alt="Microsoft Advertising Certified Expert badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-wide">
+                  <img src="/Screenshot 2026-04-20 151006.png" alt="GoodFirms excellent rating badge" loading="lazy" decoding="async">
                 </figure>
-                <figure class="wf-creds-badge wf-creds-badge--shield">
-                  <img src="/public/660ea079bfe8ebb4e9686059_certificate-amazon-badge.avif" alt="Amazon Ads certification badge" loading="lazy" decoding="async">
+                <figure class="weflair-credentials__badge-figure is-round">
+                  <img src="/68de2bf38e268733b6191853_clients-love-us 1-p-500.webp" alt="Clients Love Us badge" loading="lazy" decoding="async">
                 </figure>
               </div>
             </div>
@@ -11365,6 +9591,170 @@
         }
       }
     </style>
+    <style id="weflair-homepage-dark-fixes">
+      html[data-theme="dark"] .weflair-handoff,
+      body[data-theme="dark"] .weflair-handoff {
+        --handoff-accent: #3eff68;
+        --handoff-accent-rgb: 62, 255, 104;
+      }
+
+      html[data-theme="dark"] .weflair-footer,
+      body[data-theme="dark"] .weflair-footer {
+        background:
+          radial-gradient(circle at 14% 10%, rgba(62, 255, 104, .045), transparent 24%),
+          linear-gradient(180deg, #232524 0%, #1d1f1d 100%) !important;
+      }
+
+      html[data-theme="dark"] .why-team-row.is-lead,
+      body[data-theme="dark"] .why-team-row.is-lead {
+        background: linear-gradient(180deg, rgba(28, 58, 39, .98) 0%, rgba(19, 42, 29, .98) 100%);
+      }
+
+      html[data-theme="dark"] .why-team-check,
+      body[data-theme="dark"] .why-team-check {
+        border-color: #3eff68;
+        color: #3eff68;
+      }
+
+      html[data-theme="dark"] #process .weflair-process__head .eyebrow,
+      html[data-theme="dark"] #process .weflair-process__head .weflair-eyebrow-icon,
+      body[data-theme="dark"] #process .weflair-process__head .eyebrow,
+      body[data-theme="dark"] #process .weflair-process__head .weflair-eyebrow-icon {
+        color: #3eff68;
+      }
+
+      html[data-theme="dark"] #process .weflair-process__head .h3,
+      html[data-theme="dark"] #process .weflair-process__label,
+      html[data-theme="dark"] #process .weflair-process__stage-title,
+      body[data-theme="dark"] #process .weflair-process__head .h3,
+      body[data-theme="dark"] #process .weflair-process__label,
+      body[data-theme="dark"] #process .weflair-process__stage-title {
+        color: #f7f4ed;
+      }
+
+      html[data-theme="dark"] #process .weflair-section__body,
+      html[data-theme="dark"] #process .weflair-process__summary,
+      body[data-theme="dark"] #process .weflair-section__body,
+      body[data-theme="dark"] #process .weflair-process__summary {
+        color: rgba(244, 241, 234, .72);
+      }
+
+      html[data-theme="dark"] #process .weflair-process__bullet,
+      body[data-theme="dark"] #process .weflair-process__bullet {
+        color: rgba(246, 243, 238, .84);
+      }
+
+      html[data-theme="dark"] #process .weflair-process__bullet-icon,
+      body[data-theme="dark"] #process .weflair-process__bullet-icon {
+        color: #3eff68;
+      }
+
+      html[data-theme="dark"] #process .weflair-process__indexline,
+      body[data-theme="dark"] #process .weflair-process__indexline {
+        border-bottom-color: rgba(255, 255, 255, .08);
+      }
+
+      html[data-theme="dark"] #process .weflair-process__line,
+      body[data-theme="dark"] #process .weflair-process__line {
+        background: linear-gradient(90deg, rgba(49, 211, 93, .94) 0%, rgba(49, 211, 93, .14) 100%);
+      }
+
+      html[data-theme="dark"] #process .weflair-process__illus,
+      body[data-theme="dark"] #process .weflair-process__illus {
+        background: rgba(248, 245, 239, .97);
+        border-color: rgba(255, 255, 255, .08);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .82);
+      }
+
+      html[data-theme="dark"] #process .weflair-process__illus::before,
+      body[data-theme="dark"] #process .weflair-process__illus::before {
+        border-color: rgba(23, 21, 17, .08);
+      }
+
+      html[data-theme="dark"] .weflair-handoff__pane,
+      body[data-theme="dark"] .weflair-handoff__pane {
+        grid-template-columns: minmax(0, 1fr) minmax(23rem, .96fr);
+        gap: 1.8rem;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__pane-visual,
+      body[data-theme="dark"] .weflair-handoff__pane-visual {
+        padding-left: 0;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__frame,
+      body[data-theme="dark"] .weflair-handoff__frame {
+        width: min(100%, 29rem);
+        padding: .72rem;
+        border-color: rgba(62, 255, 104, .24);
+        background:
+          radial-gradient(circle at 76% 0%, rgba(62, 255, 104, .14), transparent 34%),
+          linear-gradient(180deg, rgba(26, 26, 26, .98) 0%, rgba(12, 12, 12, .98) 100%);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .04);
+      }
+
+      html[data-theme="dark"] .weflair-handoff__media,
+      body[data-theme="dark"] .weflair-handoff__media {
+        aspect-ratio: 1 / 1.08;
+        display: grid;
+        padding: .5rem;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(62, 255, 104, .12), transparent 42%),
+          #0d1112;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__mock,
+      body[data-theme="dark"] .weflair-handoff__mock {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__mock .process-visual__window,
+      html[data-theme="dark"] .weflair-handoff__mock .perf-stage,
+      html[data-theme="dark"] .weflair-handoff__mock .perf-window,
+      body[data-theme="dark"] .weflair-handoff__mock .process-visual__window,
+      body[data-theme="dark"] .weflair-handoff__mock .perf-stage,
+      body[data-theme="dark"] .weflair-handoff__mock .perf-window {
+        height: 100%;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__mock .perf-stage,
+      body[data-theme="dark"] .weflair-handoff__mock .perf-stage {
+        min-height: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__mock .perf-window,
+      body[data-theme="dark"] .weflair-handoff__mock .perf-window {
+        position: relative;
+        inset: auto;
+        border-radius: 1rem;
+      }
+
+      html[data-theme="dark"] .weflair-handoff__media video,
+      body[data-theme="dark"] .weflair-handoff__media video {
+        object-fit: cover;
+        object-position: center top;
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 991px) {
+        html[data-theme="dark"] .weflair-handoff__pane,
+        body[data-theme="dark"] .weflair-handoff__pane {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+
+        html[data-theme="dark"] .weflair-handoff__frame,
+        body[data-theme="dark"] .weflair-handoff__frame {
+          width: min(100%, 31rem);
+        }
+      }
+    </style>
     <style id="weflair-theme-overrides">
       html[data-theme="dark"] {
         color-scheme: dark;
@@ -12106,7 +10496,7 @@
       }
 
       #problems .weflair-challenges__col-text .h3 .wf-accent {
-        color: #8ea3ff;
+        color: #3eff68;
       }
 
       #problems .weflair-section__body {
@@ -12119,7 +10509,7 @@
 
       #problems .eyebrow__p,
       #problems .weflair-eyebrow-icon {
-        color: #8ea3ff;
+        color: #3eff68;
       }
 
       #problems .weflair-problems-grid {
@@ -12132,12 +10522,14 @@
 
       #problems .weflair-problem-card {
         min-width: 0;
-        min-height: 15.25rem;
+        min-height: 15.8rem;
         padding: 1.45rem 1.35rem 1.3rem;
         border-radius: 1rem;
-        border: 1px solid rgba(255, 255, 255, .06);
-        background: linear-gradient(180deg, rgba(58, 64, 82, .92) 0%, rgba(52, 57, 74, .9) 100%);
-        box-shadow: 0 18px 34px rgba(10, 12, 20, .18);
+        border: 1px solid rgba(255, 255, 255, .07);
+        background:
+          radial-gradient(circle at 100% 0%, rgba(62, 255, 104, .1), transparent 34%),
+          linear-gradient(180deg, rgba(33, 36, 39, .96) 0%, rgba(24, 27, 29, .96) 100%);
+        box-shadow: 0 18px 34px rgba(0, 0, 0, .2);
         display: grid !important;
         align-content: start;
         gap: .95rem;
@@ -12147,9 +10539,9 @@
         width: 2.9rem;
         height: 2.9rem;
         border-radius: .55rem;
-        border: 1px solid rgba(146, 162, 255, .14);
-        background: rgba(145, 162, 255, .08);
-        color: #9aaeff;
+        border: 1px solid rgba(62, 255, 104, .18);
+        background: rgba(62, 255, 104, .08);
+        color: #3eff68;
         display: inline-grid !important;
         place-items: center;
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
@@ -12208,7 +10600,60 @@
         }
       }
     </style>
-    <style id="weflair-why-visual-cleanup" media="not all">
+    <style id="weflair-section-head-standardization">
+      #problems .weflair-challenges__row-text {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: clamp(1rem, 1.8vw, 1.35rem) !important;
+        max-width: min(100%, 58rem) !important;
+      }
+
+      #problems .weflair-challenges__col-eyebrow {
+        width: auto !important;
+        padding-top: 0 !important;
+      }
+
+      #problems .weflair-challenges__col-text {
+        max-width: none !important;
+        display: grid;
+        gap: clamp(.9rem, 1.4vw, 1.1rem);
+      }
+
+      #problems .weflair-challenges__col-text .h3,
+      #where-we-come-in .weflair-handoff__title {
+        max-width: 14ch !important;
+        margin: 0 !important;
+        font-size: clamp(2.6rem, 4.8vw, 4.5rem) !important;
+        line-height: .95 !important;
+        letter-spacing: -.075em !important;
+        text-wrap: balance;
+      }
+
+      #problems .weflair-section__body,
+      #where-we-come-in .weflair-handoff__lede.weflair-section__body {
+        max-width: 44rem !important;
+      }
+
+      #where-we-come-in .weflair-handoff__intro.weflair-section__head {
+        gap: clamp(1rem, 1.8vw, 1.35rem) !important;
+        width: min(100%, 58rem) !important;
+        max-width: min(100%, 58rem) !important;
+        margin: 0 0 clamp(1.45rem, 2.4vw, 1.9rem) !important;
+      }
+
+      #where-we-come-in .weflair-section-accent--solid {
+        color: #3eff68;
+      }
+
+      @media (max-width: 767px) {
+        #problems .weflair-challenges__col-text .h3,
+        #where-we-come-in .weflair-handoff__title {
+          max-width: 11ch !important;
+          font-size: clamp(2.25rem, 10vw, 3.25rem) !important;
+        }
+      }
+    </style>
+    <style id="weflair-why-visual-cleanup">
       #why-weflair .weflair-why__visual {
         gap: .85rem;
         padding: 1.15rem 1.15rem 1.05rem;
@@ -12792,7 +11237,7 @@
                       <div class="weflair-case-card__metric"><strong>Zero-to-one</strong><span>GTM infra</span></div>
                       <div class="weflair-case-card__metric"><strong>C-suite</strong><span>platform demo</span></div>
                     </div>
-                    <div class="weflair-case-card__actions"><a href="/cases.html" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div>
+                    <div class="weflair-case-card__actions"><a href="/case-studies/cellpoint-digital-revops.html" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div>
                   </div>
                   <div class="weflair-case-card__visual" aria-hidden="true"><div class="weflair-case-card__mesh"></div></div>
                 </div>
@@ -12810,7 +11255,7 @@
                       <div class="weflair-case-card__metric"><strong>5.53X</strong><span>ROAS</span></div>
                       <div class="weflair-case-card__metric"><strong>7,724</strong><span>new subscribers</span></div>
                     </div>
-                    <div class="weflair-case-card__actions"><a href="/cases.html" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div>
+                    <div class="weflair-case-card__actions"><a href="/case-studies/harrier-performance-rebuild.html" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div>
                   </div>
                   <div class="weflair-case-card__visual" aria-hidden="true"><div class="weflair-case-card__mesh"></div></div>
                 </div>
@@ -12820,9 +11265,9 @@
           <div class="weflair-case-studies__footer">
             <div class="weflair-case-studies__footer-meta"><span class="weflair-case-studies__progress"
                 data-case-progress="">01 / 04</span><span class="weflair-case-studies__status"
-                data-case-filter-status="">7 case studies</span></div>
+                data-case-filter-status="">9 case studies</span></div>
             <div class="weflair-case-studies__footer-actions"><a data-hover="" data-btn-theme="transparent"
-                href="/cases.html" class="btn w-inline-block weflair-btn weflair-btn--ghost">
+                href="/case-studies/" class="btn w-inline-block weflair-btn weflair-btn--ghost">
                 <div class="btn__bg"></div>
                 <div class="btn__text"><span class="btn__span">Explore all case studies</span></div>
                 <div class="arrow">
@@ -14470,7 +12915,7 @@
                   <h3 class="weflair-proof-feature__headline" data-proof-headline></h3>
                   <p class="weflair-proof-feature__desc" data-proof-desc></p>
                   <div class="weflair-proof-feature__metrics" data-proof-metrics></div>
-                  <a href="/cases.html" class="weflair-proof-feature__link" data-proof-link>
+                  <a href="/case-studies/" class="weflair-proof-feature__link" data-proof-link>
                     Read full results <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                   </a>
                 </div>
@@ -14485,7 +12930,7 @@
                   <div class="weflair-proof-feature__np-photo" data-proof-np-photo></div>
                   <p class="weflair-proof-feature__np-desc" data-proof-np-desc></p>
                   <div class="weflair-proof-feature__np-meta" data-proof-np-meta></div>
-                  <a href="/cases.html" class="weflair-proof-feature__np-cta" data-proof-np-cta>Read full case →</a>
+                  <a href="/case-studies/" class="weflair-proof-feature__np-cta" data-proof-np-cta>Read full case →</a>
                 </div>
                 <div class="weflair-proof-feature__np-stats" data-proof-np-stats></div>
 
@@ -14524,7 +12969,7 @@
             ],
             services: ["CRO", "Personalization", "A/B Testing"],
             duration: "Ongoing",
-            link: "/cases.html"
+            link: "/case-studies/farnell-personalization-squad.html"
           },
           {
             type: "heydigital",
@@ -14548,7 +12993,7 @@
               { value: "\u00A30.49", label: "CPL" },
               { value: "121%", label: "ROI" }
             ],
-            link: "/cases.html"
+            link: "/case-studies/harrier-performance-rebuild.html"
           },
           {
             type: "netpeak",
@@ -14564,7 +13009,7 @@
             ],
             services: ["CRM", "Lifecycle", "Email"],
             duration: "18 months",
-            link: "/cases.html"
+            link: "/case-studies/vip-vaping-turnaround.html"
           },
           {
             type: "heydigital",
@@ -14579,7 +13024,7 @@
               { value: "+70%", label: "Conversion rate" },
               { value: "100%", label: "Stock online" }
             ],
-            link: "/cases.html"
+            link: "/case-studies/notcutts-crm-conversion.html"
           },
           {
             type: "netpeak",
@@ -14594,7 +13039,7 @@
             ],
             services: ["Ecommerce", "UX", "CRO"],
             duration: "Ongoing",
-            link: "/cases.html"
+            link: "/case-studies/travelsphere-digital-reset.html"
           }
         ];
 
@@ -14790,7 +13235,7 @@
           </div>
           <div class="weflair-proof__matrix">
             <div class="weflair-proof__top">
-              <a href="/cases.html" class="weflair-proof-panel is-featured" aria-label="Read the VIP Vaping case study">
+              <a href="/case-studies/vip-vaping-turnaround.html" class="weflair-proof-panel is-featured" aria-label="Read the VIP Vaping case study">
                 <div class="weflair-proof-panel__top">
                   <span class="weflair-proof-panel__badge">Case Study</span>
                   <span class="weflair-proof-panel__brand">
@@ -14820,7 +13265,7 @@
               </a>
 
               <div class="weflair-proof__side">
-                <a href="/cases.html" class="weflair-proof-panel is-support" aria-label="Read the RCT case study">
+                <a href="/case-studies/rct-paid-search-efficiency.html" class="weflair-proof-panel is-support" aria-label="Read the RCT case study">
                   <div class="weflair-proof-panel__top">
                     <span class="weflair-proof-panel__badge">Case Study</span>
                     <span class="weflair-proof-panel__brand">
@@ -14901,7 +13346,7 @@
             </div>
 
             <div class="weflair-proof__footer">
-              <a href="/cases.html" class="weflair-proof-panel is-mini" aria-label="Read the Molahin case study">
+              <a href="/case-studies/molahin-demand-gen.html" class="weflair-proof-panel is-mini" aria-label="Read the Molahin case study">
                 <div class="weflair-proof-panel__top">
                   <span class="weflair-proof-panel__badge">Case Study</span>
                   <span class="weflair-proof-panel__brand">
@@ -14926,7 +13371,7 @@
                 </div>
               </a>
 
-              <a href="/cases.html" class="weflair-proof-panel is-mini" aria-label="Read the Notcutts case study">
+              <a href="/case-studies/notcutts-crm-conversion.html" class="weflair-proof-panel is-mini" aria-label="Read the Notcutts case study">
                 <div class="weflair-proof-panel__top">
                   <span class="weflair-proof-panel__badge">Case Study</span>
                   <span class="weflair-proof-panel__brand">
@@ -15712,34 +14157,58 @@
           <h2 class="h3">Common questions.</h2>
           <p class="weflair-section__body">The practical questions teams ask when they are deciding fit, scope, and pace.</p>
         </div>
-        <div class="weflair-faq__list">
-          <details class="weflair-faq__item">
-            <summary>What industries do you specialize in?</summary>
-            <div class="weflair-faq__answer">We focus on four core sectors: B2B tech, B2B services, fintech, and e-commerce. Within each, we use playbooks, benchmarks, and channel experience shaped across 100+ engagements. If your category sits close to those markets, we are happy to discuss fit.</div>
-          </details>
-          <details class="weflair-faq__item">
-            <summary>How quickly can you start?</summary>
-            <div class="weflair-faq__answer">Most engagements kick off within two weeks of signing. We run a structured onboarding that includes account access, stakeholder alignment, and an initial audit so we can launch first campaigns within 14 days of kickoff.</div>
-          </details>
-          <details class="weflair-faq__item">
-            <summary>What does a typical engagement look like?</summary>
-            <div class="weflair-faq__answer">It starts with a discovery and audit phase, followed by strategy and planning, then execution and optimization, and finally scaling what works. Most clients begin with a 90-day sprint to prove results before expanding scope. We offer everything from full-service partnerships to one-off audits.</div>
-          </details>
-          <details class="weflair-faq__item">
-            <summary>How do you measure and report on success?</summary>
-            <div class="weflair-faq__answer">Every engagement includes real-time dashboards, weekly stand-ups, and monthly deep-dive reviews. We report on the metrics that matter to your business: pipeline, CAC, ROAS, conversion rates, and revenue attribution. No vanity metrics, no black boxes.</div>
-          </details>
-          <details class="weflair-faq__item">
-            <summary>Do you work with in-house marketing teams?</summary>
-            <div class="weflair-faq__answer">Absolutely. Most of our clients have in-house teams. WeFlair plugs in as an extension, covering the channels and capabilities your team does not have bandwidth for. We align on workflows, share reporting, and operate as one unit.</div>
-          </details>
-          <details class="weflair-faq__item">
-            <summary>What makes WeFlair different from other agencies?</summary>
-            <div class="weflair-faq__answer">Senior-led teams with no junior hand-offs, custom strategies built from scratch for every client, transparent reporting with full visibility, and a tech-forward stack that includes proprietary automation and AI-driven optimization. We are the partner you keep, not the agency you replace every 12 months.</div>
-          </details>
+        
+
+
+<div class="weflair-faq__list">
+  <div class="weflair-faq__col">
+    <details class="weflair-faq__item">
+      <summary>We need results immediately. How do you deliver?</summary>
+      <div class="weflair-faq__answer">During onboarding, we quickly get up to speed on your business and implement strategic quick wins early in the engagement. While short-term growth is a priority, we immediately lay out a roadmap for sustained success in our first few weeks together. If your business is at immediate risk and you are looking for WeFlair as a last-resort crisis mitigation, we likely aren't the right partner. Our model is built on multi-year growth strategies, prioritizing big-picture success over temporary fixes.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>What are WeFlair's core service specialties?</summary>
+      <div class="weflair-faq__answer">WeFlair is a growth agency focused on building and operating elite customer acquisition engines. We operate across four core pillars: <strong>Performance Design &amp; Content</strong>, <strong>Go-To-Market &amp; Outbound Systems</strong>, <strong>AI Visibility &amp; SEO</strong>, and <strong>Paid Media &amp; Performance</strong>. Instead of isolated tactics, we build cohesive, end-to-end growth systems designed specifically for B2B, B2C, eCommerce, SaaS, and tech brands to predictably scale revenue.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>Which team will work on my project?</summary>
+      <div class="weflair-faq__answer">Teams usually consist of a dedicated Growth Operator (responsible for technical execution, analytics, and strategy) and an Account Manager (overseeing collaboration on your account). Depending on your scope, we quickly loop in CRO specialists, copywriters, and performance designers. The depth of our in-house capabilities replaces the need to juggle multiple siloed freelancers.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>What advertising budget would you recommend to start with?</summary>
+      <div class="weflair-faq__answer">Based on years of cross-channel experience, we've found that an optimal budget must allow for comprehensive testing and rapid optimization. We typically recommend a baseline of $3,000�$5,000/month per ad platform during the initial validation phase to gather statistical significance, though we scale and manage budgets well into the seven figures once we identify winning systems.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>How do you integrate AI into your design and creative workflow?</summary>
+      <div class="weflair-faq__answer">We use AI to enhance our workflows, never to replace the core strategic process. Our teams deploy AI tools across ideation, rapid prototyping, content generation, and performance analysis. Every AI execution at WeFlair is strictly human-guided to guarantee it aligns with your brand identity and performance objectives.</div>
+    </details>
+  </div>
+  <div class="weflair-faq__col">
+    <details class="weflair-faq__item">
+      <summary>What's your pricing structure?</summary>
+      <div class="weflair-faq__answer">Our pricing model is rooted in transparency, flexibility, and incentive alignment. Our services are modular, meaning they can be engaged incrementally or as a fully integrated system. Clients typically start with one or two core services at the onset of our partnership�often beginning with a deep-dive audit�and expand our scope as we deliver performance and build mutual trust.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>I am a head of growth marketing within my company. Will your team replace my job?</summary>
+      <div class="weflair-faq__answer">Absolutely not. We actually prefer collaborating directly with internal marketing leaders to empower them to hit their KPIs and growth goals faster. Our senior growth operators manage the execution, strategies, and agency functions, acting as an elite extension of your in-house capabilities rather than a replacement.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>What ROI can we expect?</summary>
+      <div class="weflair-faq__answer">As a performance-driven growth agency, we advocate for a rigorously data-led approach. Once we align on your target ROI, payback periods, and Customer Acquisition Cost limits during our initial dive, we assess the mathematical feasibility and build a customized execution strategy designed precisely to hit or exceed those unit economics.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>Do you have growth marketing experience with businesses in my industry?</summary>
+      <div class="weflair-faq__answer">We bring a highly diverse range of experience across both B2B and B2C markets. Our leadership team has a combined 20+ years of experience driving growth for eCommerce, SaaS, and core technology companies. Because we deploy senior-level operators on every account, we understand the nuances of different verticals and exactly how to adapt our growth frameworks to solve your specific industry challenges.</div>
+    </details>
+    <details class="weflair-faq__item">
+      <summary>How can I get started working with WeFlair?</summary>
+      <div class="weflair-faq__answer">Getting started is simple. Request an audit or book a call via our site. We'll run a deep-dive into your current metrics, identify where revenue is leaking, and map out a custom growth strategy aligned with your targets. If it's a mutual fit, our onboarding is swift, allowing us to launch your first campaigns within 14 days.</div>
+    </details>
+  </div>
+</div>
         </div>
-      </div>
-    </section>
+
+      </section>
 
     <section class="footer weflair-footer">
       <div class="weflair-footer__cta-banner" id="audit">
@@ -15811,33 +14280,22 @@
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
                       Performance</a></li>
-                  <li><a href="/services/outbound-gtm.html" class="weflair-footer__nav-link">GTM
-                      Engineering</a></li>
-                  <li><a href="/services/cro-performance-design.html" class="weflair-footer__nav-link">Performance
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
+                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
                       Design &amp; Content</a></li>
-                  <li><a href="/services/revops-ai.html" class="weflair-footer__nav-link">Operations &amp;
-                      Automation</a></li>
-                </ul>
-              </div>
-              <div class="weflair-footer__nav-col">
-                <h4 class="weflair-footer__col-heading">Expertise</h4>
-                <ul class="weflair-footer__nav-list">
-                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B Tech</a></li>
-                  <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
-                  <li><a href="/expertise/b2b-hardware.html" class="weflair-footer__nav-link">B2B Hardware</a></li>
-                  <li><a href="/expertise/fintech.html" class="weflair-footer__nav-link">Fintech</a></li>
-                  <li><a href="/expertise/ecommerce.html" class="weflair-footer__nav-link">E-commerce</a></li>
+                  <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
                 </ul>
               </div>
               <div class="weflair-footer__nav-col">
                 <h4 class="weflair-footer__col-heading">Resources</h4>
                 <ul class="weflair-footer__nav-list">
-                  <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
-                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
-                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
                   <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
-                  <li><a href="/tools.html" class="weflair-footer__nav-link">AI Tools</a></li>
-                  <li><a href="/blog.html" class="weflair-footer__nav-link">Marketing Blog</a></li>
+                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
+                  <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
+                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Checklists</a></li>
+                  <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
                 </ul>
               </div>
               <div class="weflair-footer__nav-col">
@@ -16097,7 +14555,7 @@
         title: "GTM Engineering",
         body: "Signal-driven prospecting, enriched sequences, and pipeline automation - conversations that start because the timing and message are right.",
         linkLabel: "Discover details",
-        linkHref: "/services/outbound-gtm.html",
+        linkHref: "/services/go-to-market-systems.html",
         lead: {
           name: "GTM Lead",
           img: "/brand-assets/team/persona-02.svg"
@@ -16120,7 +14578,7 @@
         title: "Operations & Automation",
         body: "Clean data, smart routing, and automation that runs without babysitting - so nothing leaks between marketing and sales.",
         linkLabel: "Discover details",
-        linkHref: "/services/revops-ai.html",
+        linkHref: "/services/go-to-market-systems.html",
         lead: {
           name: "RevOps Lead",
           img: "/brand-assets/team/persona-03.svg"
@@ -16136,14 +14594,14 @@
           img: "/brand-assets/team/persona-07.svg"
         }]
       }, {
-        name: "Performance Design & Content",
+        name: "Performance Design & CRO",
         icon: "content",
         tone: "content",
         eyebrow: "Design & Content Pod",
-        title: "Performance Design & Content",
+        title: "Performance Design & CRO",
         body: "Creative, pages, and content designed to convert - then tested and iterated until the numbers prove it.",
         linkLabel: "Discover details",
-        linkHref: "/services/cro-performance-design.html",
+        linkHref: "/services/performance-design.html",
         lead: {
           name: "Creative Director",
           img: "/brand-assets/team/persona-04.svg"
