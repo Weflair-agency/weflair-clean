@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5995",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1 --port 5995"
+    "build": "node build-site.cjs && node generate-seo.cjs",
+    "preview": "npx serve dist -p 3000"
   },
   "devDependencies": {
     "cheerio": "^1.2.0",

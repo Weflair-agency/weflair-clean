@@ -3,49 +3,1105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WeFlair - eCommerce Expertise</title>
+  <title>E-commerce Marketing Agency | WeFlair</title>
+  <meta name="description" content="Paid acquisition, conversion optimisation, and lifecycle systems for e-commerce brands that need stronger ROAS, higher AOV, and repeat revenue." />
   <meta name="theme-color" content="#151515" />
-  <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../foundation-styles.css" />
-  <link rel="stylesheet" href="../foundation-slater.css" />
-  <link rel="stylesheet" href="../weflair-hero.css" />
-  <script src="../foundation.js" defer></script>
-  <style>
-    .expertise-hero { padding: 8rem 0 4rem; text-align: center; }
-    .expertise-grid { display: grid; gap: 2rem; max-width: 60rem; margin: 0 auto; padding: 2rem; }
-    .expertise-card { padding: 2rem; border: 1px solid rgba(62,255,104,0.15); border-radius: 1rem; background: linear-gradient(180deg, rgba(20,22,20,0.65) 0%, rgba(16,18,16,0.82) 100%); }
-    .h2 { font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem; color: #f6f3ee; }
-    .p-l { font-size: 1.25rem; color: rgba(246,243,238,0.7); max-width: 40rem; margin: 0 auto; }
+  <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/foundation-styles.css" />
+  <link rel="stylesheet" href="/foundation-slater.css" />
+  <link rel="stylesheet" href="/weflair-hero.css" />
+  <link rel="stylesheet" href="/expertise/expertise.css" />
+  <script src="/foundation.js" defer></script>
+  <script src="/weflair-hero.js" defer></script>
+
+  <style id="weflair-mega-dropdown-css">
+    .nav-dropdown--mega{left:50%!important;transform:translateX(-50%);width:max-content;min-width:40rem}
+    .nav-dropdown--mega .nav-dropdown__grid{display:block!important;flex-flow:unset!important;padding:1rem 1.1rem!important;border:1px solid rgba(246,243,238,.08)!important;box-shadow:0 16px 48px rgba(0,0,0,.4)!important}
+    .weflair-mega-grid{display:grid!important;grid-template-columns:repeat(3,1fr);gap:.1rem}
+    .weflair-mega-tile{display:flex!important;align-items:flex-start;gap:.7rem;padding:.65rem .75rem;border-radius:.45rem;text-decoration:none!important;color:#f6f3ee!important;transition:background .18s ease;height:auto!important;flex-flow:row!important}
+    .weflair-mega-tile:hover{background:rgba(246,243,238,.06)}
+    .weflair-mega-tile__icon{flex-shrink:0;display:grid;place-items:center;width:2rem;height:2rem;border-radius:.45rem;background:rgba(62,255,104,.1);border:1px solid rgba(62,255,104,.18);color:#3eff68}
+    .weflair-mega-tile__icon svg{width:1.05rem;height:1.05rem}
+    .weflair-mega-tile__text{min-width:0}
+    .weflair-mega-tile__h{margin:0!important;font-size:.82rem!important;font-weight:600;line-height:1.2;color:#f6f3ee!important;white-space:nowrap}
+    .weflair-mega-tile__p{margin:.15rem 0 0!important;font-size:.72rem!important;line-height:1.35;color:rgba(246,243,238,.45)!important;max-width:16rem}
+    @media(max-width:991px){.nav-dropdown--mega{left:0!important;transform:none;min-width:0;width:100%}.weflair-mega-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:479px){.weflair-mega-grid{grid-template-columns:1fr}}
+  </style>
+
+  <style id="ecom-page-css">
+    :root {
+      --ecom-brand: #3eff68;
+      --ecom-brand-rgb: 62,255,104;
+      --ecom-bg: #0a0a0a;
+      --ecom-surface: #111;
+      --ecom-border: rgba(246,243,238,.08);
+      --ecom-text: #f6f3ee;
+      --ecom-text-soft: rgba(246,243,238,.62);
+    }
+
+    .ecom-page {
+      font-family: inherit;
+      color: var(--ecom-text);
+      background: var(--ecom-bg);
+    }
+
+    .ecom-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      box-sizing: border-box;
+    }
+
+    /* HERO */
+    .ecom-hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 0 5rem;
+      background:
+        radial-gradient(circle at 70% 10%, rgba(var(--ecom-brand-rgb),.12) 0%, transparent 55%),
+        radial-gradient(circle at 20% 80%, rgba(111,136,255,.07) 0%, transparent 45%);
+    }
+    .ecom-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      margin: 0 auto 1.5rem;
+      padding: .32rem .78rem;
+      border: 1px solid rgba(var(--ecom-brand-rgb),.22);
+      border-radius: 999px;
+      background: rgba(var(--ecom-brand-rgb),.07);
+      color: #9dffb6;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .ecom-hero__h1 {
+      font-size: clamp(3.2rem, 5.5vw, 6.5rem);
+      line-height: .96;
+      letter-spacing: -.05em;
+      margin: 0 auto 2rem;
+      max-width: 18ch;
+      text-wrap: balance;
+    }
+    .ecom-hero__h1 em {
+      font-style: normal;
+      color: var(--ecom-brand);
+    }
+    .ecom-hero__p {
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--ecom-text-soft);
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+    .ecom-hero__actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+    .ecom-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .9rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: .5rem;
+      transition: all .24s ease;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .ecom-btn--primary {
+      background: var(--ecom-brand);
+      color: #000;
+    }
+    .ecom-btn--primary:hover { background: #fff; color: #000; }
+    .ecom-btn--ghost {
+      background: transparent;
+      color: var(--ecom-text);
+      border: 1px solid var(--ecom-border);
+    }
+    .ecom-btn--ghost:hover { border-color: rgba(246,243,238,.28); }
+    .ecom-hero__metrics {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ecom-hero__metric { text-align: center; }
+    .ecom-hero__metric strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: var(--ecom-brand);
+      line-height: 1;
+    }
+    .ecom-hero__metric span {
+      display: block;
+      font-size: .78rem;
+      color: var(--ecom-text-soft);
+      margin-top: .3rem;
+      letter-spacing: .02em;
+    }
+    .ecom-hero__metric-divider {
+      width: 1px;
+      background: var(--ecom-border);
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+
+    /* SECTION BASE */
+    .ecom-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--ecom-border);
+    }
+    .ecom-section--light { background: rgba(246,243,238,.025); }
+    .ecom-section__head { margin-bottom: 3.5rem; }
+    .ecom-section__head--center { text-align: center; }
+    .ecom-section__eyebrow {
+      display: block;
+      color: var(--ecom-brand);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .ecom-section__h2 {
+      font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+      line-height: .97;
+      letter-spacing: -.04em;
+      margin: 0 0 1rem;
+      max-width: 18ch;
+    }
+    .ecom-section__head--center .ecom-section__h2 { margin-left: auto; margin-right: auto; }
+    .ecom-section__lede {
+      font-size: 1.05rem;
+      color: var(--ecom-text-soft);
+      line-height: 1.65;
+      max-width: 44rem;
+    }
+    .ecom-section__head--center .ecom-section__lede { margin: 0 auto; }
+
+    /* PROBLEMS */
+    .ecom-problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .ecom-problem-card {
+      padding: 2rem;
+      border: 1px solid var(--ecom-border);
+      border-radius: 1rem;
+      background: rgba(17,17,17,.8);
+      border-top: 2px solid transparent;
+      transition: border-top-color .24s, background .24s;
+    }
+    .ecom-problem-card:hover { border-top-color: var(--ecom-brand); background: rgba(20,20,20,.95); }
+    .ecom-problem-card__icon {
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: .65rem;
+      background: rgba(var(--ecom-brand-rgb),.1);
+      border: 1px solid rgba(var(--ecom-brand-rgb),.18);
+      margin-bottom: 1.25rem;
+      color: var(--ecom-brand);
+    }
+    .ecom-problem-card__icon svg { width: 1.15rem; height: 1.15rem; }
+    .ecom-problem-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 .65rem; letter-spacing: -.02em; }
+    .ecom-problem-card p { font-size: .88rem; color: var(--ecom-text-soft); line-height: 1.6; margin: 0; }
+
+    /* CAPABILITIES */
+    .ecom-capabilities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .ecom-cap-card {
+      background: rgba(17,17,17,.8);
+      border: 1px solid var(--ecom-border);
+      border-radius: .75rem;
+      overflow: hidden;
+      transition: border-color .24s;
+    }
+    .ecom-cap-card:hover { border-color: rgba(246,243,238,.14); }
+    .ecom-cap-card summary {
+      padding: 1.35rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      outline: none;
+    }
+    .ecom-cap-card summary::-webkit-details-marker { display: none; }
+    .ecom-cap-card summary h3 {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+    }
+    .ecom-plus {
+      font-size: 1.4rem;
+      font-weight: 300;
+      line-height: 1;
+      margin-left: 1rem;
+      flex-shrink: 0;
+      transition: transform .28s ease;
+      opacity: .5;
+      color: var(--ecom-brand);
+    }
+    .ecom-cap-card[open] .ecom-plus { transform: rotate(45deg); opacity: 1; }
+    .ecom-cap-content {
+      padding: 0 1.5rem 1.5rem;
+      font-size: .92rem;
+      color: var(--ecom-text-soft);
+      line-height: 1.65;
+    }
+    .ecom-cap-content ul {
+      margin: .75rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .45rem;
+    }
+    .ecom-cap-content ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: .84rem;
+    }
+    .ecom-cap-content ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .42rem;
+      width: .48rem;
+      height: .48rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--ecom-brand);
+      background: rgba(var(--ecom-brand-rgb),.12);
+    }
+
+    /* WHY */
+    .ecom-why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      align-items: center;
+    }
+    .ecom-why-copy h3 {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 0 0 1.5rem;
+    }
+    .ecom-why-copy p {
+      font-size: 1.05rem;
+      color: var(--ecom-text-soft);
+      line-height: 1.7;
+      margin: 0 0 1.25rem;
+    }
+    .ecom-why-stats {
+      background: rgba(17,17,17,.9);
+      padding: 2.5rem;
+      border: 1px solid var(--ecom-border);
+      border-left: 3px solid var(--ecom-brand);
+      border-radius: .75rem;
+      display: grid;
+      gap: 2rem;
+    }
+    .ecom-stat__value {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: var(--ecom-brand);
+      line-height: 1;
+    }
+    .ecom-stat__label {
+      font-size: .9rem;
+      color: rgba(246,243,238,.78);
+      line-height: 1.4;
+      margin-top: .35rem;
+    }
+
+    /* PROCESS */
+    .ecom-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .ecom-process-step {
+      padding: 2rem 1.75rem;
+      background: rgba(17,17,17,.7);
+      border: 1px solid var(--ecom-border);
+      border-top: 2px solid transparent;
+      border-radius: .75rem;
+      transition: border-top-color .24s, background .24s;
+    }
+    .ecom-process-step:hover { border-top-color: var(--ecom-brand); background: rgba(20,20,20,.95); }
+    .ecom-process-step__num {
+      display: block;
+      font-size: .72rem;
+      color: var(--ecom-brand);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .ecom-process-step h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .75rem; line-height: 1.2; }
+    .ecom-process-step p { font-size: .88rem; color: var(--ecom-text-soft); line-height: 1.6; margin: 0; }
+
+    /* PROOF */
+    .ecom-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .ecom-proof-card {
+      padding: 1.75rem;
+      border: 1px solid var(--ecom-border);
+      border-radius: 1rem;
+      background: rgba(17,17,17,.85);
+      display: grid;
+      gap: 1.25rem;
+    }
+    .ecom-proof-card__quote-mark {
+      font-size: 2.2rem;
+      line-height: 1;
+      color: rgba(var(--ecom-brand-rgb),.28);
+      font-family: Georgia, serif;
+      margin-bottom: -.5rem;
+    }
+    .ecom-proof-card__quote { margin: 0; font-size: .9rem; color: rgba(246,243,238,.72); line-height: 1.6; font-style: italic; }
+    .ecom-proof-card__metrics { display: flex; gap: 1.5rem; }
+    .ecom-proof-card__metric strong { display: block; font-size: 1.55rem; font-weight: 700; letter-spacing: -.03em; color: var(--ecom-brand); line-height: 1; }
+    .ecom-proof-card__metric span { font-size: .72rem; color: var(--ecom-text-soft); margin-top: .25rem; display: block; }
+    .ecom-proof-card__footer {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--ecom-border);
+    }
+    .ecom-proof-card__avatar {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 999px;
+      background: rgba(var(--ecom-brand-rgb),.14);
+      border: 1px solid rgba(var(--ecom-brand-rgb),.22);
+      font-weight: 700;
+      font-size: .75rem;
+      flex-shrink: 0;
+      color: var(--ecom-brand);
+    }
+    .ecom-proof-card__meta strong { display: block; font-size: .82rem; color: var(--ecom-text); font-weight: 700; }
+    .ecom-proof-card__meta span { font-size: .72rem; color: var(--ecom-text-soft); }
+    .ecom-proof__cta { text-align: center; }
+    .ecom-proof__cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--ecom-brand);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: gap .2s;
+    }
+    .ecom-proof__cta a:hover { gap: .6rem; }
+
+    /* DIFFERENTIATORS */
+    .ecom-diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .ecom-diff-card {
+      padding: 1.75rem;
+      border: 1px solid var(--ecom-border);
+      border-radius: 1rem;
+      background: rgba(17,17,17,.8);
+    }
+    .ecom-diff-card__icon {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: .6rem;
+      background: rgba(var(--ecom-brand-rgb),.1);
+      border: 1px solid rgba(var(--ecom-brand-rgb),.18);
+      margin-bottom: 1.25rem;
+      color: var(--ecom-brand);
+    }
+    .ecom-diff-card__icon svg { width: 1.1rem; height: 1.1rem; }
+    .ecom-diff-card h3 { font-size: 1rem; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .6rem; }
+    .ecom-diff-card p { font-size: .86rem; color: var(--ecom-text-soft); line-height: 1.6; margin: 0; }
+
+    /* FAQ */
+    .ecom-faq { max-width: 820px; margin: 0 auto; }
+    .ecom-faq details { border-bottom: 1px solid var(--ecom-border); padding: 1.75rem 0; }
+    .ecom-faq summary {
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: -.02em;
+      gap: 1rem;
+    }
+    .ecom-faq summary::-webkit-details-marker { display: none; }
+    .ecom-faq summary::after {
+      content: '+';
+      font-size: 1.6rem;
+      color: var(--ecom-brand);
+      transition: transform .28s ease;
+      flex-shrink: 0;
+      font-weight: 300;
+    }
+    .ecom-faq details[open] summary::after { transform: rotate(45deg); }
+    .ecom-faq-answer { padding-top: 1.25rem; color: var(--ecom-text-soft); line-height: 1.7; font-size: 1rem; }
+
+    /* RESOURCES */
+    .ecom-resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .ecom-resource-card {
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      padding: 1.6rem;
+      border: 1px solid var(--ecom-border);
+      border-radius: 1rem;
+      background: rgba(17,17,17,.85);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .22s, background .22s;
+    }
+    .ecom-resource-card:hover { border-color: rgba(var(--ecom-brand-rgb),.22); background: rgba(20,20,20,.96); }
+    .ecom-resource-card__icon {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: .6rem;
+      background: rgba(var(--ecom-brand-rgb),.1);
+      border: 1px solid rgba(var(--ecom-brand-rgb),.18);
+      color: var(--ecom-brand);
+      flex-shrink: 0;
+    }
+    .ecom-resource-card__icon svg { width: 1.1rem; height: 1.1rem; }
+    .ecom-resource-card__tag {
+      display: inline-flex;
+      align-items: center;
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(246,243,238,.09);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--ecom-text-soft);
+      width: fit-content;
+    }
+    .ecom-resource-card h3 { font-size: .98rem; font-weight: 700; letter-spacing: -.02em; margin: 0; color: var(--ecom-text); }
+    .ecom-resource-card p { font-size: .83rem; color: var(--ecom-text-soft); line-height: 1.55; margin: 0; flex: 1; }
+    .ecom-resource-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ecom-brand);
+      margin-top: auto;
+      transition: gap .2s;
+    }
+    .ecom-resource-card:hover .ecom-resource-card__link { gap: .55rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .ecom-process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 991px) {
+      .ecom-why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ecom-proof-grid { grid-template-columns: 1fr 1fr; }
+      .ecom-diff-grid { grid-template-columns: 1fr 1fr; }
+      .ecom-resources-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      .ecom-problems-grid { grid-template-columns: 1fr; }
+      .ecom-capabilities { grid-template-columns: 1fr; }
+      .ecom-process-grid { grid-template-columns: 1fr; }
+      .ecom-proof-grid { grid-template-columns: 1fr; }
+      .ecom-diff-grid { grid-template-columns: 1fr; }
+      .ecom-resources-grid { grid-template-columns: 1fr; }
+      .ecom-hero__metrics { gap: 1.5rem; }
+      .ecom-hero__metric-divider { display: none; }
+    }
   </style>
 </head>
-<body class="body">
-  <main id="main">
-    <!-- Navbar placeholder (we will inject the real navbar using JS/build later or just leave it standard for now) -->
-    <a href="../index.html" class="btn" style="position:absolute; top:2rem; left:2rem;">Back to Home</a>
-    
-    <section class="expertise-hero">
-      <div class="container">
-        <h1 class="h2">Dominating the eCommerce Space.</h1>
-        <p class="p-l">High volume, rigorous LTV/CAC optimization. We build high-velocity growth engines specifically designed for eCommerce businesses.</p>
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body expertise-page">
+  <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
+  <main class="ecom-page">
+
+    <!-- SECTION 1: HERO -->
+    <section class="ecom-hero ecom-container" id="top">
+      <div class="ecom-eyebrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        E-commerce Growth Agency
+      </div>
+      <h1 class="ecom-hero__h1">Scale revenue, not just <em>ad spend</em></h1>
+      <p class="ecom-hero__p">Paid acquisition, conversion optimisation, and lifecycle systems for commerce teams that need better unit economics &mdash; not just more traffic.</p>
+      <div class="ecom-hero__actions">
+        <a href="../contact.html" class="ecom-btn ecom-btn--primary">Book a Discovery Call</a>
+        <a href="#services" class="ecom-btn ecom-btn--ghost">Explore our services</a>
+      </div>
+      <div class="ecom-hero__metrics">
+        <div class="ecom-hero__metric">
+          <strong>$30M+</strong>
+          <span>Managed ad spend</span>
+        </div>
+        <div class="ecom-hero__metric-divider"></div>
+        <div class="ecom-hero__metric">
+          <strong>100+</strong>
+          <span>Commerce brands scaled</span>
+        </div>
+        <div class="ecom-hero__metric-divider"></div>
+        <div class="ecom-hero__metric">
+          <strong>2.8&times;</strong>
+          <span>Average ROAS improvement</span>
+        </div>
+        <div class="ecom-hero__metric-divider"></div>
+        <div class="ecom-hero__metric">
+          <strong>10+</strong>
+          <span>Years in performance marketing</span>
+        </div>
       </div>
     </section>
 
-    <section class="expertise-grid">
-      <div class="expertise-card">
-        <h3>Custom Workflows</h3>
-        <p>Your sales cycle is unique. We map data models and conversion points tailored to the eCommerce buyer journey.</p>
+    <!-- SECTION 2: PROBLEMS -->
+    <section class="ecom-section ecom-container">
+      <div class="ecom-section__head">
+        <span class="ecom-section__eyebrow">The Real Problem</span>
+        <h2 class="ecom-section__h2">Why most e-commerce brands plateau</h2>
+        <p class="ecom-section__lede">Growth stalls when the tactics that worked at &pound;1M MRR stop working at &pound;5M. The channels are the same &mdash; but the leverage points shift entirely.</p>
       </div>
-      <div class="expertise-card">
-        <h3>Proven ROI</h3>
-        <p>No vanity metrics. Every outbound and paid media sequence is tracked directly to closed-won revenue.</p>
+      <div class="ecom-problems-grid">
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>ROAS is lying to you</h3>
+          <p>Last-click attribution inflates channel performance. You're spending more on ads that look profitable but can't survive contribution-margin analysis.</p>
+        </div>
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          </div>
+          <h3>Cart abandonment is haemorrhaging revenue</h3>
+          <p>70%+ of shoppers abandon before purchasing. Most teams send one recovery email and move on. The real lift is in the full checkout experience and post-abandon sequence.</p>
+        </div>
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>CAC is rising with no ceiling in sight</h3>
+          <p>Meta and Google CPMs have climbed 40&ndash;60% in three years. Brands with no LTV model keep increasing budgets to maintain volume &mdash; eventually the maths breaks.</p>
+        </div>
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>One-time buyers who never come back</h3>
+          <p>Brands live and die by repeat purchase rate. When 85% of customers never buy again, you're running on an acquisition treadmill with no way to reduce spend.</p>
+        </div>
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Creatives burning out faster than ever</h3>
+          <p>Ad fatigue hits in days, not weeks. Teams with no structured creative testing cycle are outpaced by competitors who've built systematic approaches to ideation and iteration.</p>
+        </div>
+        <div class="ecom-problem-card">
+          <div class="ecom-problem-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Reporting shows traffic, not profit</h3>
+          <p>GA4 and ad dashboards give you the inputs, not the outcomes. Without contribution-margin reporting tied to channels, you're optimising for the wrong number.</p>
+        </div>
       </div>
-      <div style="text-align:center; padding-top:2rem;">
-        <a href="../contact.html" class="btn weflair-btn weflair-btn--primary">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span">Get a Growth Audit</span></div>
+    </section>
+
+    <!-- SECTION 3: CAPABILITIES -->
+    <section id="services" class="ecom-section ecom-section--light ecom-container">
+      <div class="ecom-section__head ecom-section__head--center">
+        <span class="ecom-section__eyebrow">Our Capabilities</span>
+        <h2 class="ecom-section__h2">End-to-end e-commerce growth services</h2>
+        <p class="ecom-section__lede">From first click to fifth purchase &mdash; we build the systems that convert attention into revenue and customers into repeat buyers.</p>
+      </div>
+      <div class="ecom-capabilities">
+        <details class="ecom-cap-card" open>
+          <summary><h3>Paid Acquisition</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>Performance campaigns built around margin, not vanity metrics. We optimise for contribution margin, not last-click ROAS.</p>
+            <ul>
+              <li>Google Shopping &amp; Performance Max campaigns</li>
+              <li>Meta &amp; TikTok DTC campaigns with structured creative testing</li>
+              <li>Retargeting and dynamic product advertising</li>
+              <li>Audience segmentation by LTV cohort</li>
+              <li>Attribution modelling and blended channel efficiency</li>
+            </ul>
+          </div>
+        </details>
+        <details class="ecom-cap-card">
+          <summary><h3>Conversion Rate Optimisation</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>Systematic CRO across product pages, collections, cart, and checkout. We find the friction points your analytics can't see.</p>
+            <ul>
+              <li>PDP and collection page audits</li>
+              <li>Checkout flow optimisation &amp; abandonment reduction</li>
+              <li>A/B and multivariate testing frameworks</li>
+              <li>Heatmap and session recording analysis</li>
+              <li>Social proof, urgency, and trust signal implementation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="ecom-cap-card">
+          <summary><h3>Lifecycle &amp; Email Marketing</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>Post-purchase retention systems that compound over time. We build the flows that turn one-time buyers into loyal customers with high LTV.</p>
+            <ul>
+              <li>Welcome, post-purchase, and win-back flows</li>
+              <li>Cart &amp; browse abandonment sequences</li>
+              <li>SMS and push notification programmes</li>
+              <li>Loyalty and repeat-purchase mechanics</li>
+              <li>Segmentation by RFM, CLV, and product affinity</li>
+            </ul>
+          </div>
+        </details>
+        <details class="ecom-cap-card">
+          <summary><h3>Performance Creative</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>Creative strategy and production designed to stop scroll and drive purchase. Built for systematic testing, not one-off shots.</p>
+            <ul>
+              <li>Ad creative strategy and concepting</li>
+              <li>UGC and native creative production</li>
+              <li>Creative testing frameworks: hooks, formats, CTAs</li>
+              <li>Landing page and PDP design</li>
+              <li>Motion and static assets optimised per channel</li>
+            </ul>
+          </div>
+        </details>
+        <details class="ecom-cap-card">
+          <summary><h3>SEO &amp; Content for Commerce</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>Organic growth that compounds. We build the content systems and technical SEO foundations that capture high-intent buyers without paying for every click.</p>
+            <ul>
+              <li>Category &amp; collection page SEO</li>
+              <li>Product description and schema optimisation</li>
+              <li>Editorial content for mid-funnel capture</li>
+              <li>Technical SEO: crawlability, speed, Core Web Vitals</li>
+              <li>AI search &amp; Generative Engine Optimisation (GEO)</li>
+            </ul>
+          </div>
+        </details>
+        <details class="ecom-cap-card">
+          <summary><h3>Analytics &amp; Revenue Intelligence</h3><span class="ecom-plus">+</span></summary>
+          <div class="ecom-cap-content">
+            <p>From ad dashboards to profit dashboards. We build reporting stacks that connect channel spend to contribution margin, LTV, and payback period.</p>
+            <ul>
+              <li>GA4 and Shopify attribution setup</li>
+              <li>Contribution margin reporting by channel</li>
+              <li>Cohort LTV analysis and CAC payback modelling</li>
+              <li>Custom dashboards in Looker Studio or Notion</li>
+              <li>Weekly CFO-ready revenue reporting</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHY ECOMMERCE IS DIFFERENT -->
+    <section class="ecom-section ecom-container">
+      <div class="ecom-why-grid">
+        <div class="ecom-why-copy">
+          <span class="ecom-section__eyebrow">Why It Matters</span>
+          <h3>E-commerce demands a different kind of partner</h3>
+          <p>Most agencies optimise for the metric you can see: ROAS, sessions, email open rates. We optimise for the metric that matters: margin per order, payback period, and LTV-to-CAC ratio.</p>
+          <p>Selling at scale means understanding seasonality, SKU-level profitability, and the compounding value of a customer on their third order &mdash; not just their first. Generic growth agencies don't think in these terms. We do.</p>
+          <a href="../contact.html" class="ecom-btn ecom-btn--ghost" style="margin-top:.75rem">Talk to a specialist</a>
+        </div>
+        <div class="ecom-why-stats">
+          <div>
+            <div class="ecom-stat__value">2.8&times;</div>
+            <div class="ecom-stat__label">Average ROAS improvement across e-commerce clients in the first 90 days</div>
+          </div>
+          <div>
+            <div class="ecom-stat__value">38%</div>
+            <div class="ecom-stat__label">Average reduction in blended CAC after full-funnel optimisation</div>
+          </div>
+          <div>
+            <div class="ecom-stat__value">+47%</div>
+            <div class="ecom-stat__label">Average increase in repeat purchase rate after lifecycle programme launch</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PROCESS -->
+    <section class="ecom-section ecom-section--light ecom-container">
+      <div class="ecom-section__head ecom-section__head--center">
+        <span class="ecom-section__eyebrow">Our Process</span>
+        <h2 class="ecom-section__h2">How we engineer e-commerce growth</h2>
+        <p class="ecom-section__lede">Four phases. No retainers that run on autopilot. Every engagement is built around finding the highest-leverage interventions and executing them fast.</p>
+      </div>
+      <div class="ecom-process-grid">
+        <div class="ecom-process-step">
+          <span class="ecom-process-step__num">01 / Audit</span>
+          <h3>Find the bleed before we fix the brand</h3>
+          <p>We audit your full acquisition and conversion stack: channel attribution, creative performance, funnel drop-offs, lifecycle gaps, and contribution margin by channel. No guessing &mdash; just data.</p>
+        </div>
+        <div class="ecom-process-step">
+          <span class="ecom-process-step__num">02 / Strategy</span>
+          <h3>Build the system, not just the campaign</h3>
+          <p>We define your ICP by LTV cohort, identify highest-leverage interventions, and build a 90-day roadmap with clear revenue targets. Paid, lifecycle, CRO, and creative &mdash; all aligned.</p>
+        </div>
+        <div class="ecom-process-step">
+          <span class="ecom-process-step__num">03 / Execute</span>
+          <h3>Launch, test, and iterate at pace</h3>
+          <p>We move in two-week sprints. Campaigns live within 10 days. Creative tests run weekly. Lifecycle flows deployed and measured. We act like your internal growth team, not an external agency.</p>
+        </div>
+        <div class="ecom-process-step">
+          <span class="ecom-process-step__num">04 / Optimise</span>
+          <h3>Report to revenue, not activity</h3>
+          <p>Weekly reporting tied to contribution margin, not vanity metrics. Monthly strategic reviews that adjust the roadmap based on what's working. You always know what's running and what's next.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PROOF -->
+    <section class="ecom-section ecom-container">
+      <div class="ecom-section__head">
+        <span class="ecom-section__eyebrow">Case Studies</span>
+        <h2 class="ecom-section__h2">Results that speak in revenue, not reach</h2>
+        <p class="ecom-section__lede">Every engagement is measured in the metrics that move a business forward. Here's what that looks like in practice.</p>
+      </div>
+      <div class="ecom-proof-grid">
+        <div class="ecom-proof-card">
+          <div class="ecom-proof-card__quote-mark">&ldquo;</div>
+          <p class="ecom-proof-card__quote">WeFlair didn't just optimise our ads &mdash; they rebuilt how we think about customer acquisition. CAC is down, repeat purchase is up, and our contribution margin per order has never looked better.</p>
+          <div class="ecom-proof-card__metrics">
+            <div class="ecom-proof-card__metric"><strong>&minus;34%</strong><span>Blended CAC</span></div>
+            <div class="ecom-proof-card__metric"><strong>+61%</strong><span>Repeat rate</span></div>
+          </div>
+          <div class="ecom-proof-card__footer">
+            <div class="ecom-proof-card__avatar">JH</div>
+            <div class="ecom-proof-card__meta">
+              <strong>James H.</strong>
+              <span>Head of Growth, DTC Apparel Brand</span>
+            </div>
+          </div>
+        </div>
+        <div class="ecom-proof-card">
+          <div class="ecom-proof-card__quote-mark">&ldquo;</div>
+          <p class="ecom-proof-card__quote">The CRO work alone paid for the entire engagement in month two. They found three checkout friction points we'd completely missed, and the uplift was immediate.</p>
+          <div class="ecom-proof-card__metrics">
+            <div class="ecom-proof-card__metric"><strong>+28%</strong><span>Checkout CVR</span></div>
+            <div class="ecom-proof-card__metric"><strong>3.2&times;</strong><span>ROAS improvement</span></div>
+          </div>
+          <div class="ecom-proof-card__footer">
+            <div class="ecom-proof-card__avatar">SL</div>
+            <div class="ecom-proof-card__meta">
+              <strong>Sarah L.</strong>
+              <span>E-commerce Director, Home &amp; Living</span>
+            </div>
+          </div>
+        </div>
+        <div class="ecom-proof-card">
+          <div class="ecom-proof-card__quote-mark">&ldquo;</div>
+          <p class="ecom-proof-card__quote">We were spending &pound;80K/month on paid and couldn't figure out why growth had stalled. WeFlair identified the lifecycle gap in week one &mdash; and filled it in month one.</p>
+          <div class="ecom-proof-card__metrics">
+            <div class="ecom-proof-card__metric"><strong>+52%</strong><span>Email revenue</span></div>
+            <div class="ecom-proof-card__metric"><strong>&minus;22%</strong><span>CAC payback</span></div>
+          </div>
+          <div class="ecom-proof-card__footer">
+            <div class="ecom-proof-card__avatar">MR</div>
+            <div class="ecom-proof-card__meta">
+              <strong>Marcus R.</strong>
+              <span>Founder, Supplements &amp; Wellness</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ecom-proof__cta">
+        <a href="../case-studies/">View all case studies <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+      </div>
+    </section>
+
+    <!-- SECTION 7: DIFFERENTIATORS -->
+    <section class="ecom-section ecom-section--light ecom-container">
+      <div class="ecom-section__head ecom-section__head--center">
+        <span class="ecom-section__eyebrow">Why WeFlair</span>
+        <h2 class="ecom-section__h2">What makes us different</h2>
+        <p class="ecom-section__lede">We're not a media buying shop that bolted on a CRO service. We're a full-funnel growth team built around e-commerce unit economics from the ground up.</p>
+      </div>
+      <div class="ecom-diff-grid">
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Margin-first thinking</h3>
+          <p>We don't celebrate ROAS if the margin isn't there. Every recommendation is filtered through contribution margin and payback period analysis.</p>
+        </div>
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Speed to impact</h3>
+          <p>Campaigns live in 10 days. Lifecycle flows deployed in 30. Structured for fast impact, not slow ramp-up periods that burn your budget.</p>
+        </div>
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Senior-led, always</h3>
+          <p>No junior hand-offs. Your account is led by a senior strategist who has managed seven-figure budgets and owns outcomes end to end.</p>
+        </div>
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Cross-channel coordination</h3>
+          <p>Paid, lifecycle, CRO, and creative &mdash; all run from one team with shared data. No siloed agencies pointing fingers at each other when results slip.</p>
+        </div>
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Transparent reporting</h3>
+          <p>Weekly snapshots, monthly deep-dives, and real-time dashboard access. You always know what's running, what's working, and what we're doing next.</p>
+        </div>
+        <div class="ecom-diff-card">
+          <div class="ecom-diff-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3>Ecommerce-native stack</h3>
+          <p>Shopify, WooCommerce, Klaviyo, GA4, Northbeam, Triple Whale &mdash; we work in your stack natively, not around it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RESOURCES -->
+    <section class="ecom-section ecom-container">
+      <div class="ecom-section__head">
+        <span class="ecom-section__eyebrow">Free Resources</span>
+        <h2 class="ecom-section__h2">Tools and playbooks, yours to take</h2>
+        <p class="ecom-section__lede">We don't gatekeep. The frameworks and thinking we use with clients &mdash; available free.</p>
+      </div>
+      <div class="ecom-resources-grid">
+        <a href="../resources/guides/ecommerce-retention-audit.html" class="ecom-resource-card">
+          <div class="ecom-resource-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <span class="ecom-resource-card__tag">Guide</span>
+          <h3>E-commerce Retention Audit</h3>
+          <p>A step-by-step framework for diagnosing why customers aren't coming back &mdash; and the interventions that fix it.</p>
+          <span class="ecom-resource-card__link">Open guide &rarr;</span>
+        </a>
+        <a href="../resources/calculators.html" class="ecom-resource-card">
+          <div class="ecom-resource-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          </div>
+          <span class="ecom-resource-card__tag">Calculator</span>
+          <h3>LTV &amp; CAC Payback Calculator</h3>
+          <p>Model customer lifetime value, payback periods, and the channel blend required to hit your profitability targets.</p>
+          <span class="ecom-resource-card__link">Open calculator &rarr;</span>
+        </a>
+        <a href="../resources/checklists.html" class="ecom-resource-card">
+          <div class="ecom-resource-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg>
+          </div>
+          <span class="ecom-resource-card__tag">Checklist</span>
+          <h3>Paid Media Launch Checklist</h3>
+          <p>Pre-launch QA for Google, Meta, and TikTok campaigns &mdash; tracking, audiences, creative specs, and budget pacing.</p>
+          <span class="ecom-resource-card__link">Open checklist &rarr;</span>
         </a>
       </div>
     </section>
+
+    <!-- SECTION 9: FAQ -->
+    <section class="ecom-section ecom-section--light ecom-container">
+      <div class="ecom-section__head ecom-section__head--center">
+        <span class="ecom-section__eyebrow">FAQ</span>
+        <h2 class="ecom-section__h2">Frequently asked questions</h2>
+      </div>
+      <div class="ecom-faq">
+        <details open>
+          <summary>What types of e-commerce brands do you work with?</summary>
+          <div class="ecom-faq-answer">We work with DTC and marketplace-integrated brands generating between &pound;1M and &pound;30M in annual revenue. Our sweet spot is brands that have proven product-market fit and are looking to scale profitably &mdash; not just at volume. We've worked across apparel, home &amp; living, health &amp; wellness, beauty, food &amp; drink, and sporting goods.</div>
+        </details>
+        <details>
+          <summary>What platforms and tools do you work with?</summary>
+          <div class="ecom-faq-answer">Natively: Shopify, WooCommerce, Klaviyo, Meta Ads, Google Ads, TikTok Ads, GA4, Northbeam, Triple Whale, and Looker Studio. We don't impose a tech stack &mdash; we work in yours and fill gaps where needed.</div>
+        </details>
+        <details>
+          <summary>How quickly will we see results?</summary>
+          <div class="ecom-faq-answer">Paid media optimisations typically show measurable lift within the first 30 days. CRO and lifecycle programmes compound over 60&ndash;90 days as test cycles run and flows mature. Most clients see a clear ROI-positive return within the first quarter. We'll set specific milestones before we start so you know exactly what to expect.</div>
+        </details>
+        <details>
+          <summary>Do you manage creative as well as media buying?</summary>
+          <div class="ecom-faq-answer">Yes &mdash; and it's one of the things that separates us from most agencies. Creative and media buying are run from the same team with shared data. We handle concept, brief, and production (static and motion), and build structured testing frameworks so every creative informs the next.</div>
+        </details>
+        <details>
+          <summary>What does a typical engagement look like?</summary>
+          <div class="ecom-faq-answer">Engagements start with a two-week audit and strategy phase, followed by a 90-day execution sprint. We work on retainer (typically &pound;5,000&ndash;&pound;15,000/month depending on scope) with a minimum three-month commitment. We're selective about who we take on &mdash; we'd rather work with fewer clients and go deep than run a high-volume account model.</div>
+        </details>
+        <details>
+          <summary>How is WeFlair different from a traditional paid media agency?</summary>
+          <div class="ecom-faq-answer">Most paid media agencies optimise for the metrics they control: ROAS, CTR, and CPM. We optimise for contribution margin and LTV. That means we work across paid, lifecycle, and CRO simultaneously &mdash; because acquisition efficiency is useless if the conversion and retention systems are broken. We report in the numbers your CFO cares about, not just ad platform dashboards.</div>
+        </details>
+        <details>
+          <summary>What's the minimum budget to work with you?</summary>
+          <div class="ecom-faq-answer">For paid media management, we generally recommend a minimum ad spend of &pound;10,000/month to generate statistically meaningful test cycles. For CRO and lifecycle-only engagements, there's no ad spend minimum. If you're below these thresholds, book a call anyway &mdash; we can often point you toward the right next step even if it's not a full engagement.</div>
+        </details>
+      </div>
+    </section>
+
   </main>
+
+  <section class="footer weflair-footer">
+    <div class="weflair-new-cta-wrap" id="audit">
+      <div class="container" style="position:relative; z-index: 5;">
+        <div class="weflair-new-cta">
+          <div class="weflair-new-cta__bg"></div>
+          <div class="weflair-new-cta__glow"></div>
+          <div class="weflair-new-cta__grid">
+            <div class="weflair-new-cta__left">
+              <div class="weflair-new-cta__label">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Next Step
+              </div>
+              <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
+              <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+              <div class="weflair-new-cta__features">
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+              </div>
+            </div>
+            <div class="weflair-new-cta__right">
+              <a href="/contact.html" class="weflair-new-cta__btn">
+                <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                <span class="weflair-new-cta__btn-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weflair-footer__main">
+      <div class="container">
+        <div class="weflair-footer__top">
+          <div class="weflair-footer__info-row">
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">Global remote</h4>
+              <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+              <p class="weflair-footer__info-line">HQ: Distributed</p>
+            </div>
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+              <p class="weflair-footer__info-line">WeFlair LLC</p>
+              <p class="weflair-footer__info-line">New York, United States</p>
+            </div>
+            <div class="weflair-footer__info-col">
+              <h4 class="weflair-footer__col-heading">Talk to an expert</h4>
+              <a href="mailto:sam@weflair.com" class="weflair-footer__contact-link">sam@weflair.com</a>
+              <a href="mailto:hello@weflair.co" class="weflair-footer__contact-link">hello@weflair.co</a>
+            </div>
+          </div>
+          <div class="weflair-footer__nav-row">
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Services</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp; Performance</a></li>
+                <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">Outbound Systems</a></li>
+                <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance Design &amp; CRO</a></li>
+                <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+              </ul>
+            </div>
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Expertise</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/expertise/b2b-demand-generation.html" class="weflair-footer__nav-link">B2B Demand Generation</a></li>
+                <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
+                <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
+                <li><a href="/expertise/b2b-tech.html" class="weflair-footer__nav-link">B2B Tech</a></li>
+                <li><a href="/expertise/ecommerce.html" class="weflair-footer__nav-link">E-commerce</a></li>
+              </ul>
+            </div>
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Resources</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
+                <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
+                <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
+                <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Automation Pack</a></li>
+                <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
+              </ul>
+            </div>
+            <div class="weflair-footer__nav-col">
+              <h4 class="weflair-footer__col-heading">Company</h4>
+              <ul class="weflair-footer__nav-list">
+                <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="weflair-footer__divider"></div>
+        <div class="weflair-footer__bottom">
+          <div class="weflair-footer__legal">
+            <span class="weflair-footer__copyright">&copy; 2026 WeFlair</span>
+            <a href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a>
+            <a href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a>
+            <a href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a>
+          </div>
+          <div class="weflair-footer__social">
+            <a href="https://instagram.com/weflair" class="weflair-footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+            <a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

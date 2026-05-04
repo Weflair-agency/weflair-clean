@@ -1,100 +1,287 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
+const manifest = require("./site-manifest.cjs");
 
-const ROUTES = [
-  { file: 'index.html', title: 'WeFlair - Growth Marketing Agency', desc: 'We build end-to-end marketing engines to drive measurable growth.' },
-  { file: 'services/go-to-market-systems.html', title: 'Outbound & GTM Engineering - WeFlair', desc: 'Outbound systems built to create qualified meetings and real sales conversations.' },
-  { file: 'services/paid-media-performance.html', title: 'Paid Media & Performance - WeFlair', desc: 'Data-backed ad campaigns across Google Ads, Meta, and LinkedIn.' },
-  { file: 'services/performance-design.html', title: 'Performance Design & CRO - WeFlair', desc: 'Landing pages and funnels that convert more traffic.' },
-  { file: 'services/ai-visibility-seo.html', title: 'Content & AEO - WeFlair', desc: 'Content systems built for search and AI visibility.' },
-  { file: 'resources/playbooks.html', title: 'Growth Playbooks - WeFlair', desc: 'Step-by-step marketing playbooks we use to scale brands.' },
-  { file: 'resources/guides.html', title: 'Marketing Guides - WeFlair', desc: 'Practical explainers for the systems behind growth.' },
-  { file: 'tools.html', title: 'Automations, Tools & Calculators - WeFlair', desc: 'Free calculators, automations, and tools to boost your marketing.' },
-  { file: 'resources/checklists.html', title: 'Growth Optimization Checklists - WeFlair', desc: 'Performance optimization checklists for Google Ads, LinkedIn Ads, Meta Ads, and Outbound readiness.' },
-  { file: 'cases.html', title: 'Case Studies - WeFlair', desc: 'Real results from brands that stopped guessing.' },
-  { file: 'about.html', title: 'About Us - WeFlair', desc: 'Our remote team of global growth operators.' },
-  { file: 'careers.html', title: 'Careers - WeFlair', desc: 'Join WeFlair to build high-performance marketing engines.' },
-  { file: 'contact.html', title: 'Contact Us - WeFlair', desc: 'Book a free growth audit with our experts.' },
-  { file: 'legal/privacy.html', title: 'Privacy Policy - WeFlair', desc: 'Our privacy policy.' },
-  { file: 'legal/terms.html', title: 'Terms & Conditions - WeFlair', desc: 'Terms and conditions for using WeFlair.' }
+const ROOT = __dirname;
+const DIST = path.join(ROOT, "dist");
+const HEADER = fs.readFileSync(path.join(ROOT, "src", "partials", "header.html"), "utf8").trim();
+const FOOTER = fs.readFileSync(path.join(ROOT, "src", "partials", "footer.html"), "utf8").trim();
+
+const EXTRA_HTML_DIRS = [
+  {
+    dir: path.join(ROOT, "resources", "guides"),
+    include: (absolutePath) => absolutePath.endsWith(".html"),
+  },
+  {
+    dir: path.join(ROOT, "case-studies"),
+    include: (absolutePath) =>
+      absolutePath.endsWith(".html") && path.basename(absolutePath).toLowerCase() !== "index.html",
+  },
 ];
 
-const headerRaw = fs.readFileSync('src/partials/header.html', 'utf8');
-const footerRaw = fs.readFileSync('src/partials/footer.html', 'utf8');
+const STATIC_DIRS = ["brand-assets", "images", "resources", "case-studies", "services", "expertise", "legal"];
 
-function fixRelativePaths(html, depth) {
-  if (depth === 0) return html;
-  const prefix = '../'.repeat(depth);
-  let res = html;
-  
-  res = res.replace(/href="\//g, 'href="/'); // Absolute links stay absolute (not ideal for raw file opening but Netlify uses them)
-  res = res.replace(/src="\//g, 'src="/');
-  
-  // It looks like previous scripts used ../ to resolve root. Since we're pushing to Netlify, 
-  // root-relative absolute paths (like `/brand-assets/...` and `/index.html`) are usually best.
-  // The old scripts converted `href="services/"` to `href="../services/"`. Let's just use absolute root paths `/` for global assets.
-  res = res.replace(/href="\.\/([^"]*)"/g, `href="${prefix}$1"`);
-  
-  // A clean approach: assume standard root-relative is okay, but fix any local hardcodings.
-  // We'll replace href="services/..." in the header to root relative href="/services/..."
-  res = res.replace(/href="services\//g, 'href="/services/');
-  res = res.replace(/href="resources\//g, 'href="/resources/');
-  res = res.replace(/href="about\.html"/g, 'href="/about.html"');
-  res = res.replace(/href="contact\.html"/g, 'href="/contact.html"');
-  res = res.replace(/href="careers\.html"/g, 'href="/careers.html"');
-  res = res.replace(/href="tools\.html"/g, 'href="/tools.html"');
-  res = res.replace(/href="cases\.html"/g, 'href="/cases.html"');
-  res = res.replace(/href="index\.html"/g, 'href="/"');
-  
-  
-  res = res.replace(/src="brand-assets\//g, 'src="/brand-assets/');
-  res = res.replace(/src="brand\//g, 'src="/brand/');
-  res = res.replace(/src="images\//g, 'src="/images/');
-  // Replace the .css scripts
-  res = res.replace(/href="foundation-styles\.css"/g, 'href="/foundation-styles.css"');
-  res = res.replace(/href="foundation-slater\.css"/g, 'href="/foundation-slater.css"');
-  res = res.replace(/href="weflair-hero\.css"/g, 'href="/weflair-hero.css"');
-  
-  return res;
+function cleanDist() {
+  fs.mkdirSync(DIST, { recursive: true });
+  for (const entry of fs.readdirSync(DIST)) {
+    fs.rmSync(path.join(DIST, entry), { recursive: true, force: true });
+  }
 }
 
-ROUTES.forEach(route => {
-  const filePath = path.join(__dirname, route.file);
-  const depth = (route.file.match(/\//g) || []).length;
-  
-  if (!fs.existsSync(filePath)) {
-    console.log(`Skipping ${route.file} (does not exist)`);
+function normalizePath(filePath) {
+  return filePath.split(path.sep).join("/");
+}
+
+function publicPathFromFile(relativeFile) {
+  const normalized = normalizePath(relativeFile);
+  if (normalized === "index.html") {
+    return "/";
+  }
+  if (normalized.endsWith("/index.html")) {
+    return `/${normalized.slice(0, -"index.html".length)}`;
+  }
+  return `/${normalized}`;
+}
+
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function escapeAttr(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;");
+}
+
+function insertIntoHead(html, tag) {
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `  ${tag}\n</head>`);
+  }
+  return html;
+}
+
+function upsertTag(html, pattern, tag) {
+  if (pattern.test(html)) {
+    return html.replace(pattern, tag);
+  }
+  return insertIntoHead(html, tag);
+}
+
+function extractTitle(html) {
+  const match = html.match(/<title>([\s\S]*?)<\/title>/i);
+  return match ? match[1].trim() : "";
+}
+
+function extractMetaContent(html, attribute, value) {
+  const pattern = new RegExp(
+    `<meta[^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*content=["']([^"']*)["'][^>]*>`,
+    "i"
+  );
+  const direct = html.match(pattern);
+  if (direct) {
+    return direct[1].trim();
+  }
+
+  const reversedPattern = new RegExp(
+    `<meta[^>]*content=["']([^"']*)["'][^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*>`,
+    "i"
+  );
+  const reversed = html.match(reversedPattern);
+  return reversed ? reversed[1].trim() : "";
+}
+
+function injectSharedChrome(html) {
+  let next = html;
+
+  if (next.includes("<!-- WEFLAIR_HEADER -->")) {
+    next = next.replace("<!-- WEFLAIR_HEADER -->", HEADER);
+  } else if (/<header[^>]*>[\s\S]*?<nav[\s\S]*?<\/nav>\s*<\/header>/i.test(next)) {
+    next = next.replace(/<header[^>]*>[\s\S]*?<nav[\s\S]*?<\/nav>\s*<\/header>/i, `<header class="header">${HEADER}</header>`);
+  } else if (/<nav[^>]*>[\s\S]*?<\/nav>/i.test(next)) {
+    next = next.replace(/<nav[^>]*>[\s\S]*?<\/nav>/i, HEADER);
+  } else {
+    next = next.replace(/<body([^>]*)>/i, `<body$1>\n<header class="header">${HEADER}</header>`);
+  }
+
+  if (next.includes("<!-- WEFLAIR_FOOTER -->")) {
+    next = next.replace("<!-- WEFLAIR_FOOTER -->", FOOTER);
+  } else if (/<section[^>]*class="[^"]*\bfooter\b[^"]*"[\s\S]*?<\/section>/i.test(next)) {
+    next = next.replace(/<section[^>]*class="[^"]*\bfooter\b[^"]*"[\s\S]*?<\/section>/i, FOOTER);
+  } else if (/<footer[^>]*>[\s\S]*?<\/footer>/i.test(next)) {
+    next = next.replace(/<footer[^>]*>[\s\S]*?<\/footer>/i, FOOTER);
+  } else {
+    next = next.replace(/<\/body>/i, `${FOOTER}\n</body>`);
+  }
+
+  return next;
+}
+
+function upsertMetadata(html, publicPath, explicitTitle, explicitDescription) {
+  const canonicalUrl = `${manifest.siteUrl}${publicPath}`;
+  const title = explicitTitle || extractTitle(html);
+  const description = explicitDescription || extractMetaContent(html, "name", "description");
+
+  let next = html;
+
+  if (title) {
+    next = upsertTag(next, /<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
+    next = upsertTag(
+      next,
+      /<meta[^>]*property=["']og:title["'][^>]*>/i,
+      `<meta property="og:title" content="${escapeAttr(title)}" />`
+    );
+    next = upsertTag(
+      next,
+      /<meta[^>]*name=["']twitter:title["'][^>]*>/i,
+      `<meta name="twitter:title" content="${escapeAttr(title)}" />`
+    );
+  }
+
+  if (description) {
+    next = upsertTag(
+      next,
+      /<meta[^>]*name=["']description["'][^>]*>/i,
+      `<meta name="description" content="${escapeAttr(description)}" />`
+    );
+    next = upsertTag(
+      next,
+      /<meta[^>]*property=["']og:description["'][^>]*>/i,
+      `<meta property="og:description" content="${escapeAttr(description)}" />`
+    );
+    next = upsertTag(
+      next,
+      /<meta[^>]*name=["']twitter:description["'][^>]*>/i,
+      `<meta name="twitter:description" content="${escapeAttr(description)}" />`
+    );
+  }
+
+  next = upsertTag(
+    next,
+    /<link[^>]*rel=["']canonical["'][^>]*>/i,
+    `<link rel="canonical" href="${escapeAttr(canonicalUrl)}" />`
+  );
+  next = upsertTag(
+    next,
+    /<meta[^>]*property=["']og:url["'][^>]*>/i,
+    `<meta property="og:url" content="${escapeAttr(canonicalUrl)}" />`
+  );
+  next = upsertTag(
+    next,
+    /<meta[^>]*name=["']twitter:card["'][^>]*>/i,
+    `<meta name="twitter:card" content="summary_large_image" />`
+  );
+
+  return next;
+}
+
+function writeHtml(relativeFile, html) {
+  const outPath = path.join(DIST, relativeFile);
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
+  fs.writeFileSync(outPath, html);
+}
+
+function buildPage(relativeFile, routeMeta) {
+  const sourcePath = path.join(ROOT, relativeFile);
+  if (!fs.existsSync(sourcePath)) {
+    console.log(`Skipping ${relativeFile} (does not exist)`);
     return;
   }
-  
-  let html = fs.readFileSync(filePath, 'utf8');
-  
-  // Replace existing header
-  html = html.replace(/<header class="header.*?<\/header>/s, fixRelativePaths(headerRaw, depth));
-  // Replace existing footer
-  html = html.replace(/<footer.*?<\/footer>|<section class="footer.*?<\/section>/s, fixRelativePaths(footerRaw, depth));
-  
-  // Update Title and Meta
-  if (html.includes('<title>')) {
-     html = html.replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`);
-  } else {
-     html = html.replace(/<head>/, `<head>\n  <title>${route.title}</title>`);
+
+  let html = fs.readFileSync(sourcePath, "utf8");
+  const publicPath = routeMeta?.path || publicPathFromFile(relativeFile);
+  html = injectSharedChrome(html);
+  html = upsertMetadata(html, publicPath, routeMeta?.title, routeMeta?.description);
+
+  if (publicPath !== "/") {
+    html = html.replace(/<style id="weflair-runtime-css">[\s\S]*?<\/style>/i, "");
   }
-  
-  if (html.includes('name="description"')) {
-     html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${route.desc}"`);
-  } else {
-     html = html.replace(/<head>/, `<head>\n  <meta name="description" content="${route.desc}" />`);
+
+  writeHtml(relativeFile, html);
+  console.log(`Compiled ${relativeFile}`);
+}
+
+function collectFiles(directory, include, results = []) {
+  if (!fs.existsSync(directory)) {
+    return results;
   }
-  
-  // Also we must link the new unified CSS
-  if (!html.includes('weflair-global.css')) {
-     html = html.replace(/<\/head>/, `  <link rel="stylesheet" href="/weflair-global.css" />\n</head>`);
+
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const absolutePath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      collectFiles(absolutePath, include, results);
+      continue;
+    }
+    if (include(absolutePath)) {
+      results.push(absolutePath);
+    }
   }
-  
-  // Remove the old `<style id="weflair-runtime-css">` if it exists in subpages!
-  html = html.replace(/<style id="weflair-runtime-css">[\s\S]*?<\/style>/, '');
-  
-  fs.writeFileSync(filePath, html);
-  console.log(`Compiled ${route.file}`);
-});
+
+  return results;
+}
+
+function copyDirectory(sourceDir, destDir, includeFile) {
+  if (!fs.existsSync(sourceDir)) {
+    return;
+  }
+
+  fs.mkdirSync(destDir, { recursive: true });
+  for (const entry of fs.readdirSync(sourceDir, { withFileTypes: true })) {
+    const sourcePath = path.join(sourceDir, entry.name);
+    const destPath = path.join(destDir, entry.name);
+
+    if (entry.isDirectory()) {
+      copyDirectory(sourcePath, destPath, includeFile);
+      continue;
+    }
+
+    if (!includeFile || includeFile(sourcePath)) {
+      fs.mkdirSync(path.dirname(destPath), { recursive: true });
+      fs.copyFileSync(sourcePath, destPath);
+    }
+  }
+}
+
+function buildManifestRoutes() {
+  for (const route of manifest.routes) {
+    buildPage(route.file, route);
+  }
+}
+
+function buildExtraHtml() {
+  const manifestFiles = new Set(manifest.routes.map((route) => normalizePath(route.file)));
+
+  for (const config of EXTRA_HTML_DIRS) {
+    const files = collectFiles(config.dir, config.include);
+    for (const absolutePath of files) {
+      const relativeFile = normalizePath(path.relative(ROOT, absolutePath));
+      if (manifestFiles.has(relativeFile)) {
+        continue;
+      }
+      buildPage(relativeFile);
+    }
+  }
+}
+
+function copyStaticAssets() {
+  copyDirectory(path.join(ROOT, "public"), DIST);
+
+  for (const directory of STATIC_DIRS) {
+    copyDirectory(
+      path.join(ROOT, directory),
+      path.join(DIST, directory),
+      (absolutePath) => !absolutePath.toLowerCase().endsWith(".html")
+    );
+  }
+
+  const netlifyConfig = path.join(ROOT, "netlify.toml");
+  if (fs.existsSync(netlifyConfig)) {
+    fs.copyFileSync(netlifyConfig, path.join(DIST, "netlify.toml"));
+  }
+}
+
+cleanDist();
+buildManifestRoutes();
+buildExtraHtml();
+copyStaticAssets();
+
+console.log("Build complete -> dist");

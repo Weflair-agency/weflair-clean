@@ -1,0 +1,49 @@
+﻿import re
+
+html_path = 'index.html'
+with open(html_path, 'r', encoding='utf-8') as f:
+    text = f.read()
+
+old_block = r'''<a href="/tools.html" class="weflair-resource-card" aria-label="Browse automations and tools">
+              <div class="weflair-resource-card__glow" style="--glow-x:80%;--glow-y:8%;--glow-color:111,136,255"></div>
+              <span class="weflair-resource-card__icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="url(#auto-g)" fill="url(#auto-g)" fill-opacity=".08"/>
+                  <circle cx="12" cy="12" r="3.5" stroke="url(#auto-g2)" stroke-dasharray="2.5 2"/>
+                  <defs>
+                    <linearGradient id="auto-g" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#6f88ff"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+                    <linearGradient id="auto-g2" x1="8" y1="8" x2="16" y2="16" gradientUnits="userSpaceOnUse"><stop stop-color="#6f88ff"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <h3 class="weflair-resource-card__title">Automations &amp; Tools</h3>
+              <p class="weflair-resource-card__body">Scripts, AI workflows, calculators, and prompt kits that actually save hours. Updated regularly. Plug them into your stack and move.</p>
+              <div class="weflair-resource-card__samples"><span>AI prompts</span><span>Scripts</span><span>Workflows</span><span>Calculators</span></div>
+              <span class="weflair-resource-card__link">Browse tools <span aria-hidden="true">&rarr;</span></span>
+            </a>'''
+
+new_block = '''<a href="/resources/checklists.html" class="weflair-resource-card" aria-label="Browse checklists">
+              <div class="weflair-resource-card__glow" style="--glow-x:80%;--glow-y:8%;--glow-color:111,136,255"></div>
+              <span class="weflair-resource-card__icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 18H3" stroke="url(#check-g)" />
+                  <path d="m15 18 2 2 4-4" stroke="url(#check-g)" />
+                  <path d="M16 12H3" stroke="url(#check-g)" />
+                  <path d="M16 6H3" stroke="url(#check-g)" />
+                  <defs>
+                    <linearGradient id="check-g" x1="3" y1="6" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#6f88ff"/><stop offset="1" stop-color="#a78bfa"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <h3 class="weflair-resource-card__title">Checklists</h3>
+              <p class="weflair-resource-card__body">Performance checklists to audit your setups, spot gaps, and deploy immediate optimizations across your entire funnel.</p>
+              <div class="weflair-resource-card__samples"><span>Audits</span><span>Optimization</span><span>Funnel</span><span>Growth</span></div>
+              <span class="weflair-resource-card__link">Browse checklists <span aria-hidden="true">&rarr;</span></span>
+            </a>'''
+
+text = text.replace(old_block, new_block)
+
+with open(html_path, 'w', encoding='utf-8') as f:
+    f.write(text)

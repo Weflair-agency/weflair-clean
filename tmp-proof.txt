@@ -1,0 +1,535 @@
+<section
+        class="weflair-section weflair-proof weflair-proof--switcher"
+        id="proof"
+      >
+        <div class="container">
+          <div class="weflair-proof__layout">
+            <div class="weflair-proof__head">
+              <p class="weflair-proof__overline">Case studies</p>
+              <h2 class="h3">Proven results.</h2>
+              <p class="weflair-section__body">
+                Measurable growth across ecommerce, CRM, and paid media.
+              </p>
+            </div>
+            <div class="weflair-proof-switcher" data-proof-switcher>
+              <button
+                type="button"
+                class="weflair-proof-switcher__nav is-prev"
+                data-proof-nav-prev
+                aria-label="Show previous case study"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <div class="weflair-proof-switcher__shell">
+                <article class="weflair-proof-feature" data-proof-type>
+                  <!-- TYPE A: heydigital — info left, visual right -->
+                  <div class="weflair-proof-feature__info">
+                    <div
+                      class="weflair-proof-feature__logo"
+                      data-proof-logo
+                    ></div>
+                    <h3
+                      class="weflair-proof-feature__headline"
+                      data-proof-headline
+                    ></h3>
+                    <p class="weflair-proof-feature__desc" data-proof-desc></p>
+                    <div
+                      class="weflair-proof-feature__metrics"
+                      data-proof-metrics
+                    ></div>
+                    <a
+                      href="/case-studies/"
+                      class="weflair-proof-feature__link"
+                      data-proof-link
+                    >
+                      Read full results
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="weflair-proof-feature__visual">
+                    <div
+                      class="weflair-proof-feature__photo"
+                      data-proof-photo
+                    ></div>
+                  </div>
+                  <div
+                    class="weflair-proof-feature__ad-grid"
+                    data-proof-ad-grid
+                  ></div>
+
+                  <!-- TYPE B: netpeak — logo | center | stats -->
+                  <div
+                    class="weflair-proof-feature__np-logo"
+                    data-proof-np-logo
+                  ></div>
+                  <div class="weflair-proof-feature__np-center">
+                    <div
+                      class="weflair-proof-feature__np-photo"
+                      data-proof-np-photo
+                    ></div>
+                    <p
+                      class="weflair-proof-feature__np-desc"
+                      data-proof-np-desc
+                    ></p>
+                    <div
+                      class="weflair-proof-feature__np-meta"
+                      data-proof-np-meta
+                    ></div>
+                    <a
+                      href="/case-studies/"
+                      class="weflair-proof-feature__np-cta"
+                      data-proof-np-cta
+                      >Read full case →</a
+                    >
+                  </div>
+                  <div
+                    class="weflair-proof-feature__np-stats"
+                    data-proof-np-stats
+                  ></div>
+
+                  <!-- shared dots -->
+                  <div class="weflair-proof-feature__dots-row">
+                    <div
+                      class="weflair-proof-switcher__dots"
+                      data-proof-dots
+                    ></div>
+                  </div>
+                </article>
+                <div
+                  class="weflair-proof-switcher__rails"
+                  data-proof-rails
+                ></div>
+              </div>
+              <button
+                type="button"
+                class="weflair-proof-switcher__nav is-next"
+                data-proof-nav-next
+                aria-label="Show next case study"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        (function () {
+          var root = document.querySelector("[data-proof-switcher]");
+          if (!root) return;
+
+          var proofCases = [
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/farnell.png",
+              alt: "Farnell logo",
+              photo: "/brand-assets/cases/farnell.jpg",
+              desc: "Embedded as part of Farnell\u2019s personalization squad alongside McKinsey. Built and deployed a continuous experimentation programme spanning product roadmap, UX, and commercial features \u2014 generating \u00A34.5m in incremental revenue.",
+              metrics: [
+                { value: "\u00A34.5m", label: "Incremental revenue" },
+                { value: "+5%", label: "Conversion rate" },
+                { value: "40%", label: "Experiment win rate" },
+              ],
+              services: ["CRO", "Personalization", "A/B Testing"],
+              duration: "Ongoing",
+              link: "/case-studies/farnell-personalization-squad.html",
+            },
+            {
+              type: "heydigital",
+              layout: "reversed",
+              logo: "/brand-assets/client-logos/harrier-white.png",
+              alt: "Harrier logo",
+              headline: "8K subscribers at \u00A30.49 CPL. 5.53\u00D7 ROAS.",
+              desc: "Full-funnel paid social from zero. Launched a three-stage Meta and Google strategy that captured new audiences, nurtured intent, and converted at scale \u2014 delivering 336 paying customers and \u00A3154K projected LTV.",
+              visual: "ad-showcase",
+              adFrames: [
+                {
+                  body: "/brand-assets/cases/vip-vaping.jpg",
+                  brandName: "Harrier",
+                  headline: "Trail-tested. Race-ready.",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/pink-boutique.jpg",
+                  brandName: "Harrier",
+                  headline: "New season drop \u2014 20% off",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/molahin.jpg",
+                  brandName: "Harrier",
+                  headline: "Built for the trails you love",
+                  cta: "harrier.co.uk",
+                  action: "Learn More",
+                },
+                {
+                  body: "/brand-assets/cases/yours.jpg",
+                  brandName: "Harrier",
+                  headline: "Subscribe & save 15%",
+                  cta: "Newsletter signup",
+                  action: "Sign Up",
+                },
+                {
+                  body: "/brand-assets/cases/farnell.jpg",
+                  brandName: "Harrier",
+                  headline: "Your next PB starts here",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+                {
+                  body: "/brand-assets/cases/vip-vaping.jpg",
+                  brandName: "Harrier",
+                  headline: "Free UK delivery over \u00A375",
+                  cta: "harrier.co.uk",
+                  action: "Shop Now",
+                },
+              ],
+              metrics: [
+                { value: "8K", label: "New subscribers" },
+                { value: "5.53\u00D7", label: "ROAS" },
+                { value: "\u00A30.49", label: "CPL" },
+                { value: "121%", label: "ROI" },
+              ],
+              link: "/case-studies/harrier-performance-rebuild.html",
+            },
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/vip-vaping.svg",
+              alt: "VIP Vaping logo",
+              photo: "/brand-assets/cases/vip-vaping.jpg",
+              desc: "Inherited a CRM programme in decline across every KPI. Rebuilt the data architecture, restructured lifecycle segmentation, and deployed reactivation journeys that reversed negative trends across acquisition, retention, and win-back.",
+              metrics: [
+                { value: "+32%", label: "New customers" },
+                { value: "+153%", label: "Won-back" },
+                { value: "+19%", label: "Second orders" },
+                { value: "\u221230%", label: "At-risk reduction" },
+              ],
+              services: ["CRM", "Lifecycle", "Email"],
+              duration: "18 months",
+              link: "/case-studies/vip-vaping-turnaround.html",
+            },
+            {
+              type: "heydigital",
+              layout: "default",
+              logo: "/brand-assets/client-logos/notcutts.svg",
+              alt: "Notcutts logo",
+              headline: "70% increase in conversion over 12 months.",
+              desc: "Transformed a traditional garden centre retailer into a digital performer. Made 100% of in-store stock available online and rebuilt the UX from browsing to checkout \u2014 driving a 70% YoY conversion increase.",
+              visual: "photo",
+              photo: "",
+              metrics: [
+                { value: "+70%", label: "Conversion rate" },
+                { value: "100%", label: "Stock online" },
+              ],
+              link: "/case-studies/notcutts-crm-conversion.html",
+            },
+            {
+              type: "netpeak",
+              logo: "/brand-assets/client-logos/travelsphere.svg",
+              alt: "Travelsphere logo",
+              photo: "",
+              desc: "End-to-end digital reset for two heritage travel brands. Redesigned destination pages, rebuilt the conversion funnel, and unified analytics \u2014 resulting in sustained double-digit growth across all commercial KPIs.",
+              metrics: [
+                { value: "+25%", label: "YoY revenue" },
+                { value: "+15%", label: "Conversion uplift" },
+                { value: "+10%", label: "Lead growth" },
+              ],
+              services: ["Ecommerce", "UX", "CRO"],
+              duration: "Ongoing",
+              link: "/case-studies/travelsphere-digital-reset.html",
+            },
+          ];
+
+          var activeIndex = 0;
+          var prevButton = root.querySelector("[data-proof-nav-prev]");
+          var nextButton = root.querySelector("[data-proof-nav-next]");
+          var featureEl = root.querySelector(".weflair-proof-feature");
+
+          // heydigital targets
+          var logoTarget = root.querySelector("[data-proof-logo]");
+          var headlineTarget = root.querySelector("[data-proof-headline]");
+          var descTarget = root.querySelector("[data-proof-desc]");
+          var photoTarget = root.querySelector("[data-proof-photo]");
+          var adGridTarget = root.querySelector("[data-proof-ad-grid]");
+          var metricsTarget = root.querySelector("[data-proof-metrics]");
+          var linkTarget = root.querySelector("[data-proof-link]");
+
+          // netpeak targets
+          var npLogoTarget = root.querySelector("[data-proof-np-logo]");
+          var npPhotoTarget = root.querySelector("[data-proof-np-photo]");
+          var npDescTarget = root.querySelector("[data-proof-np-desc]");
+          var npMetaTarget = root.querySelector("[data-proof-np-meta]");
+          var npStatsTarget = root.querySelector("[data-proof-np-stats]");
+          var npCtaTarget = root.querySelector("[data-proof-np-cta]");
+
+          // shared
+          var railsTarget = root.querySelector("[data-proof-rails]");
+          var dotsTarget = root.querySelector("[data-proof-dots]");
+
+          function logoHtml(item) {
+            return (
+              '<img src="' +
+              item.logo +
+              '" alt="' +
+              item.alt +
+              '" loading="lazy" decoding="async">'
+            );
+          }
+
+          function metricHtml(metric) {
+            return (
+              '<div class="weflair-proof-feature__metric"><strong>' +
+              metric.value +
+              "</strong><span>" +
+              metric.label +
+              "</span></div>"
+            );
+          }
+
+          function npStatHtml(metric) {
+            return (
+              '<div class="weflair-proof-feature__np-stat"><strong>' +
+              metric.value +
+              "</strong><span>" +
+              metric.label +
+              "</span></div>"
+            );
+          }
+
+          function adFrameHtml(frame, item) {
+            return (
+              '<div class="weflair-proof-feature__ad-frame">' +
+              '<div class="weflair-proof-feature__ad-header">' +
+              '<div class="weflair-proof-feature__ad-avatar"><img src="' +
+              item.logo +
+              '" alt=""></div>' +
+              '<div><div class="weflair-proof-feature__ad-name">' +
+              frame.brandName +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-sponsored">Sponsored</div></div>' +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-body" style="background-image:url(\'' +
+              frame.body +
+              "')\">" +
+              (frame.headline
+                ? '<div class="weflair-proof-feature__ad-body-headline">' +
+                  frame.headline +
+                  "</div>"
+                : "") +
+              "</div>" +
+              '<div class="weflair-proof-feature__ad-footer">' +
+              '<span class="weflair-proof-feature__ad-cta">' +
+              frame.cta +
+              "</span>" +
+              '<span class="weflair-proof-feature__ad-action">' +
+              (frame.action || "Shop Now") +
+              "</span>" +
+              "</div>" +
+              "</div>"
+            );
+          }
+
+          function railHtml(item, index) {
+            var label = item.alt.replace(" logo", "");
+            return (
+              '<button type="button" class="weflair-proof-rail" data-proof-select="' +
+              index +
+              '" aria-label="Show ' +
+              label +
+              ' case study"><span class="weflair-proof-rail__logo">' +
+              logoHtml(item) +
+              '</span><span class="weflair-proof-rail__meta">' +
+              label +
+              '</span><span class="weflair-proof-rail__toggle" aria-hidden="true">+</span></button>'
+            );
+          }
+
+          function dotHtml(index) {
+            return (
+              '<button type="button" class="weflair-proof-switcher__dot' +
+              (index === activeIndex ? " is-active" : "") +
+              '" data-proof-dot="' +
+              index +
+              '" aria-label="Show case study ' +
+              (index + 1) +
+              '"></button>'
+            );
+          }
+
+          function nextIndexes(start) {
+            var indexes = [];
+            for (var offset = 1; offset <= 4; offset += 1) {
+              indexes.push((start + offset) % proofCases.length);
+            }
+            return indexes;
+          }
+
+          function render() {
+            var item = proofCases[activeIndex];
+
+            // set card type
+            featureEl.setAttribute("data-type", item.type);
+            featureEl.setAttribute("data-layout", item.layout || "default");
+
+            if (item.type === "heydigital") {
+              // populate heydigital elements
+              if (logoTarget) logoTarget.innerHTML = logoHtml(item);
+              if (headlineTarget)
+                headlineTarget.textContent = item.headline || "";
+              if (descTarget) descTarget.textContent = item.desc;
+              if (metricsTarget)
+                metricsTarget.innerHTML = item.metrics.map(metricHtml).join("");
+              if (linkTarget) linkTarget.setAttribute("href", item.link);
+
+              // photo or ad-showcase
+              if (item.visual === "photo" && photoTarget) {
+                if (item.photo) {
+                  photoTarget.style.backgroundImage =
+                    'url("' + item.photo + '")';
+                  photoTarget.classList.remove("no-photo");
+                } else {
+                  photoTarget.style.backgroundImage = "none";
+                  photoTarget.classList.add("no-photo");
+                }
+                photoTarget.style.backgroundPosition =
+                  item.photoPosition || "center center";
+                photoTarget.parentElement.style.display = "";
+                if (adGridTarget) adGridTarget.style.display = "none";
+              } else if (
+                item.visual === "ad-showcase" &&
+                adGridTarget &&
+                item.adFrames
+              ) {
+                adGridTarget.innerHTML = item.adFrames
+                  .map(function (frame) {
+                    return adFrameHtml(frame, item);
+                  })
+                  .join("");
+                adGridTarget.style.display = "";
+                if (photoTarget)
+                  photoTarget.parentElement.style.display = "none";
+              }
+            } else if (item.type === "netpeak") {
+              // populate netpeak elements
+              if (npLogoTarget) npLogoTarget.innerHTML = logoHtml(item);
+              if (npPhotoTarget) {
+                if (item.photo) {
+                  npPhotoTarget.style.backgroundImage =
+                    'url("' + item.photo + '")';
+                  npPhotoTarget.classList.remove("no-photo");
+                } else {
+                  npPhotoTarget.style.backgroundImage = "none";
+                  npPhotoTarget.classList.add("no-photo");
+                }
+              }
+              if (npDescTarget) npDescTarget.textContent = item.desc;
+              if (npStatsTarget)
+                npStatsTarget.innerHTML = item.metrics.map(npStatHtml).join("");
+              if (npCtaTarget) npCtaTarget.setAttribute("href", item.link);
+
+              // services + duration meta
+              if (npMetaTarget) {
+                var metaHtml = "";
+                if (item.services) {
+                  metaHtml +=
+                    '<div><div class="weflair-proof-feature__np-meta-label">Services delivered</div><div class="weflair-proof-feature__np-meta-value">' +
+                    item.services.join(", ") +
+                    "</div></div>";
+                }
+                if (item.duration) {
+                  metaHtml +=
+                    '<div><div class="weflair-proof-feature__np-meta-label">Partnership duration</div><div class="weflair-proof-feature__np-meta-duration">' +
+                    item.duration +
+                    "</div></div>";
+                }
+                npMetaTarget.innerHTML = metaHtml;
+              }
+            }
+
+            // rails
+            if (railsTarget) {
+              railsTarget.innerHTML = nextIndexes(activeIndex)
+                .map(function (index) {
+                  return railHtml(proofCases[index], index);
+                })
+                .join("");
+            }
+
+            // dots
+            if (dotsTarget) {
+              dotsTarget.innerHTML = proofCases
+                .map(function (_, index) {
+                  return dotHtml(index);
+                })
+                .join("");
+            }
+
+            // bind rails
+            Array.prototype.forEach.call(
+              root.querySelectorAll("[data-proof-select]"),
+              function (button) {
+                button.addEventListener("click", function () {
+                  activeIndex = Number(
+                    button.getAttribute("data-proof-select"),
+                  );
+                  render();
+                });
+              },
+            );
+
+            // bind dots
+            Array.prototype.forEach.call(
+              root.querySelectorAll("[data-proof-dot]"),
+              function (button) {
+                button.addEventListener("click", function () {
+                  activeIndex = Number(button.getAttribute("data-proof-dot"));
+                  render();
+                });
+              },
+            );
+          }
+
+          prevButton.addEventListener("click", function () {
+            activeIndex =
+              (activeIndex - 1 + proofCases.length) % proofCases.length;
+            render();
+          });
+
+          nextButton.addEventListener("click", function () {
+            activeIndex = (activeIndex + 1) % proofCases.length;
+            render();
+          });
+
+          render();
+        })();
+      </script>

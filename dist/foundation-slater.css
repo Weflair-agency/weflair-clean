@@ -208,16 +208,16 @@
 /* ------------------------- Lenis -------------------------------------------------- */
 
 html.lenis {height: auto;}
-.lenis.lenis-smooth {scroll-behavior: auto; height: auto;}
+.lenis.lenis-smooth {scroll-behavior: auto; height: 100vh;}
 .lenis.lenis-smooth [data-lenis-prevent] {overscroll-behavior: contain;}
 .lenis.lenis-stopped {overflow: hidden;}
 .lenis.lenis-scrolling iframe {pointer-events: none;}
 
 /* ------------------------- Hide Scrollbar -------------------------------------------------- */
 
-/* body ::-webkit-scrollbar, body::-webkit-scrollbar{display: none;} */ /* Chrome, Safari, Opera */
-/* body {-ms-overflow-style: none;} */ /* IE & Edge */
-/* html {scrollbar-width: none;} */ /* Firefox */
+body ::-webkit-scrollbar, body::-webkit-scrollbar{display: none;} /* Chrome, Safari, Opera */
+body {-ms-overflow-style: none;} /* IE & Edge */
+html {scrollbar-width: none;} /* Firefox */
 
 /* ------------------------- Body -------------------------------------------------- */
 

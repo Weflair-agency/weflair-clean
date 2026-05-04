@@ -1,0 +1,123 @@
+Full-funnel systems. One commercial model.</h3>
+              <p>Paid media, outbound, creative, and conversion infrastructure are mapped to the same path from attention to pipeline. The result is a growth loop that gets sharper instead of more fragmented as spend rises.</p>
+            </div>
+            <div class="weflair-why-us__visual weflair-why-us__visual--loops">
+              <div class="weflair-why-us__visual-shell">
+                <div class="why-loop-board">
+                  <img src="/images/hww/Conversions.svg" alt="Full-funnel growth loops: impressions, clicks, demo requests, pipeline, and closed won feeding a recurring growth loop." class="why-loop-image" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="weflair-why-us__story">
+            <div class="weflair-why-us__copy">
+              <span class="weflair-why-us__index">02</span>
+              <h3>Senior operators. Clear owners. No relay layer.</h3>
+              <p>Your account is led by one senior point of contact and backed by specialists across performance, design, and go-to-market systems. Decisions stay close to the work, so momentum does not disappear in handoffs.</p>
+            </div>
+            <div class="weflair-why-us__visual weflair-why-us__visual--team">
+              <div class="weflair-why-us__visual-shell">
+                <div class="why-team-scene">
+                  <div class="why-team-grid"></div>
+                  <div class="why-team-stack">
+                    <div class="why-team-row is-lead">
+                      <span class="why-team-avatar"><img src="/brand-assets/team/headshots/headshot-01.jpg" alt="Performance marketing lead" style="object-position:center 26%"></span>
+                      <div class="why-team-meta">
+                        <span class="why-team-name">Performance Marketing Lead</span>
+                        <span class="why-team-role">Senior owner across channel strategy</span>
+                      </div>
+                    </div>
+                    <div class="why-team-row">
+                      <span class="why-team-avatar"><img src="/brand-assets/team/headshots/headshot-02.jpg" alt="Lead strategist" style="object-position:center 18%"></span>
+                      <div class="why-team-meta">
+                        <span class="why-team-name">Lead Strategist</span>
+                        <span class="why-team-role">Campaign planning, pacing, and decisions</span>
+                      </div>
+                    </div>
+                    <div class="why-team-row is-muted">
+                      <span class="why-team-avatar"><img src="/brand-assets/team/headshots/headshot-06.jpg" alt="GTM engineer" style="object-position:center 22%"></span>
+                      <div class="why-team-meta">
+                        <span class="why-team-name">GTM Engineer</span>
+                        <span class="why-team-role">Automation, routing, CRM logic</span>
+                      </div>
+                    </div>
+                    <div class="why-team-row is-lead">
+                      <span class="why-team-avatar"><img src="/brand-assets/team/headshots/headshot-04.jpg" alt="Design team lead" style="object-position:center 18%"></span>
+                      <div class="why-team-meta">
+                        <span class="why-team-name">Design Team Lead</span>
+                        <span class="why-team-role">Creative systems and conversion design</span>
+                      </div>
+                    </div>
+                    <div class="why-team-row">
+                      <span class="why-team-avatar"><img src="/brand-assets/team/headshots/headshot-05.jpg" alt="Senior designer" style="object-position:center 24%"></span>
+                      <div class="why-team-meta">
+                        <span class="why-team-name">Senior Designer</span>
+                        <span class="why-team-role">Concept to execution, fast iteration</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="why-team-checklist">
+                    <ul>
+                      <li><span class="why-team-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l2.5 2.5 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Senior operators in the work every week</span></li>
+                      <li><span class="why-team-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l2.5 2.5 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Specialists matched to the problem, not forced tiers</span></li>
+                      <li><span class="why-team-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3.5 8.5l2.5 2.5 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>One point of contact with direct decision-making access</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="weflair-why-us__story">
+            <div class="weflair-why-us__copy">
+              <span class="weflair-why-us__index">03</span>
+              <h3>Measurement built around business impact.</h3>
+              <p>We instrument the path from demand to conversion so reporting shows what changed, where efficiency is improving, and what contribution your marketing is making to pipeline and revenue.</p>
+            </div>
+            <div class="weflair-why-us__visual weflair-why-us__visual--data">
+              <div class="weflair-why-us__visual-shell">
+                <div class="why-data-scene">
+                  <div class="why-data-chart">
+                    <h4>CAC vs. CTR</h4>
+                    <p>Monthly analysis</p>
+                    <svg class="why-data-svg" viewBox="0 0 320 180" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                      <path d="M0 151C42 149 62 122 96 129C128 136 149 73 184 70C212 67 223 112 255 114C280 115 294 88 320 84V180H0V151Z" fill="url(#whyDataAreaOne)" class="why-data-area"/>
+                      <path d="M0 134C44 132 58 95 95 103C134 112 141 138 182 137C220 136 236 96 272 98C293 99 306 92 320 88" stroke="#304A79" stroke-width="2.7" stroke-linecap="round" class="why-data-line"/>
+                      <circle cx="67" cy="129" r="6" fill="#3C4B78"/>
+                      <circle cx="196" cy="137" r="6" fill="#4C5BB1"/>
+                      <defs>
+                        <linearGradient id="whyDataAreaOne" x1="0" y1="48" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#B6F279"/>
+                          <stop offset="1" stop-color="#68DD61"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="why-data-mini why-data-mini--top">
+                    <h4>Q2 revenue targets</h4>
+                    <p>Scored up</p>
+                    <svg viewBox="0 0 120 58" fill="none" aria-hidden="true">
+                      <path d="M4 41C18 40 25 26 37 28C53 31 58 18 73 19C90 20 94 36 116 34" stroke="#5A7A55" stroke-width="2.1" stroke-linecap="round"/>
+                      <path d="M4 37C19 34 24 42 40 40C57 38 60 20 74 22C90 25 100 29 116 24" stroke="#A7DB8A" stroke-width="2.1" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="why-data-mini why-data-mini--bottom">
+                    <h4>Margin ROAS</h4>
+                    <p>Contribution trend</p>
+                    <svg viewBox="0 0 128 78" fill="none" aria-hidden="true">
+                      <path d="M10 60l18-10 18 6 18-18 18 8 18-18 18 12" stroke="#BDF28E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="10" cy="60" r="3" fill="#BDF28E"/>
+                      <circle cx="28" cy="50" r="3" fill="#BDF28E"/>
+                      <circle cx="46" cy="56" r="3" fill="#BDF28E"/>
+                      <circle cx="64" cy="38" r="3" fill="#BDF28E"/>
+                      <circle cx="82" cy="46" r="3" fill="#BDF28E"/>
+                      <circle cx="100" cy="28" r="3" fill="#BDF28E"/>
+                      <circle cx="118" cy="40" r="3" fill="#BDF28E"/>
+                    </svg>
+                  </div>
+                  <span class="why-data-chip">+33% modeled efficiency</span>
+                </div>
+              </div>
+            </div>
+          </article>

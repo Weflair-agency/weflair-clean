@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resource Pack | WeFlair</title>
+  <meta
+    name="description"
+    content="Get WeFlair's free GTM resource pack: AI agents, sales and marketing automations, templates, checklists, and operating tools for growth teams."
+  />
+  <meta property="og:title" content="Resource Pack | WeFlair" />
+  <meta
+    property="og:description"
+    content="Get WeFlair's free GTM resource pack: AI agents, sales and marketing automations, templates, checklists, and operating tools for growth teams."
+  />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Resource Pack | WeFlair" />
+  <meta
+    name="twitter:description"
+    content="Get WeFlair's free GTM resource pack: AI agents, sales and marketing automations, templates, checklists, and operating tools for growth teams."
+  />
+  <meta name="theme-color" content="#151515" />
+  <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/foundation-styles.css" />
+  <link rel="stylesheet" href="/foundation-slater.css" />
+  <link rel="stylesheet" href="/weflair-hero.css" />
+  <script src="/foundation.js" defer></script>
+  <script src="/weflair-hero.js" defer></script>
+  <style>
+    :root {
+      --rp-bg: #151515;
+      --rp-ink: #f6f3ee;
+      --rp-muted: rgba(246, 243, 238, .66);
+      --rp-soft: rgba(246, 243, 238, .08);
+      --rp-line: rgba(246, 243, 238, .12);
+      --rp-green: #3eff68;
+      --rp-green-deep: #16d94d;
+      --rp-card: #f6f3ee;
+      --rp-card-ink: #111311;
+    }
+
+    body.resource-pack-page {
+      min-height: 100%;
+      background:
+        linear-gradient(rgba(246, 243, 238, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(246, 243, 238, .025) 1px, transparent 1px),
+        var(--rp-bg);
+      background-size: 48px 48px;
+      color: var(--rp-ink);
+    }
+
+    .rp-shell {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(21, 21, 21, .15), rgba(21, 21, 21, .92) 34rem),
+        transparent;
+    }
+
+    .rp-container {
+      width: min(100% - 2rem, 78rem);
+      margin-inline: auto;
+    }
+
+    .rp-hero {
+      position: relative;
+      padding: clamp(7rem, 12vw, 10rem) 0 clamp(4rem, 8vw, 7rem);
+    }
+
+    .rp-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(62, 255, 104, .08), transparent 38%),
+        linear-gradient(180deg, rgba(246, 243, 238, .04), transparent 52%);
+      opacity: .82;
+    }
+
+    .rp-hero__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(21rem, .72fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+
+    .rp-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin: 0 0 1rem;
+      color: var(--rp-green);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .rp-kicker::before {
+      content: "";
+      width: .48rem;
+      height: .48rem;
+      border-radius: 50%;
+      background: var(--rp-green);
+      box-shadow: 0 0 0 .28rem rgba(62, 255, 104, .12);
+    }
+
+    .rp-title {
+      max-width: 12.5ch;
+      margin: 0 0 1.25rem;
+      color: var(--rp-ink);
+      font-size: clamp(3rem, 7.2vw, 6.45rem);
+      line-height: .86;
+      letter-spacing: -.055em;
+      font-weight: 750;
+    }
+
+    .rp-lede {
+      max-width: 45rem;
+      margin: 0;
+      color: var(--rp-muted);
+      font-size: clamp(1rem, 1.4vw, 1.22rem);
+      line-height: 1.55;
+    }
+
+    .rp-audience {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 1.65rem 0 2.25rem;
+    }
+
+    .rp-audience span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.1rem;
+      padding: .48rem .78rem;
+      border: 1px solid rgba(62, 255, 104, .18);
+      border-radius: 999px;
+      background: rgba(62, 255, 104, .07);
+      color: rgba(246, 243, 238, .84);
+      font-size: .82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .rp-included {
+      display: grid;
+      gap: .9rem;
+      max-width: 44rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rp-included li {
+      display: grid;
+      grid-template-columns: 3rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      color: var(--rp-ink);
+      font-size: clamp(.95rem, 1.15vw, 1.08rem);
+      font-weight: 700;
+      line-height: 1.28;
+    }
+
+    .rp-included__icon {
+      display: grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: .75rem;
+      background: rgba(246, 243, 238, .92);
+      color: #0b8b30;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+    }
+
+    .rp-included__icon svg {
+      width: 1.22rem;
+      height: 1.22rem;
+    }
+
+    .rp-form-card {
+      position: relative;
+      border-radius: 1.1rem;
+      background: var(--rp-card);
+      color: var(--rp-card-ink);
+      padding: clamp(1.45rem, 3vw, 2.35rem);
+      box-shadow: 0 2.5rem 6rem rgba(0, 0, 0, .32);
+      isolation: isolate;
+    }
+
+    .rp-form-card::before {
+      content: "";
+      position: absolute;
+      inset: -.45rem;
+      z-index: -1;
+      border: 1px solid rgba(62, 255, 104, .22);
+      border-radius: 1.35rem;
+      background: rgba(62, 255, 104, .045);
+    }
+
+    .rp-form-card__eyebrow {
+      margin: 0 0 .7rem;
+      color: rgba(17, 19, 17, .62);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .rp-form-card h2 {
+      margin: 0 0 .65rem;
+      color: var(--rp-card-ink);
+      font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .rp-form-card__copy {
+      margin: 0 0 1.45rem;
+      color: rgba(17, 19, 17, .7);
+      font-size: .95rem;
+      line-height: 1.55;
+    }
+
+    .rp-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .rp-field {
+      display: grid;
+      gap: .42rem;
+    }
+
+    .rp-field label {
+      color: rgba(17, 19, 17, .9);
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    .rp-field input {
+      width: 100%;
+      min-height: 3.08rem;
+      border: 1px solid rgba(17, 19, 17, .22);
+      border-radius: .42rem;
+      background: #fff;
+      color: var(--rp-card-ink);
+      padding: .88rem 1rem;
+      font: inherit;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .rp-field input:focus {
+      border-color: rgba(22, 217, 77, .85);
+      box-shadow: 0 0 0 .22rem rgba(62, 255, 104, .18);
+    }
+
+    .rp-submit {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: .65rem;
+      min-height: 3.25rem;
+      margin-top: .35rem;
+      border: 0;
+      border-radius: .48rem;
+      background: var(--rp-green-deep);
+      color: #071107;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .rp-submit:hover,
+    .rp-submit:focus-visible {
+      transform: translateY(-1px);
+      background: var(--rp-green);
+      box-shadow: 0 .9rem 2rem rgba(22, 217, 77, .22);
+    }
+
+    .rp-submit svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .rp-privacy {
+      margin: .2rem 0 0;
+      color: rgba(17, 19, 17, .58);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    .rp-preview {
+      padding: clamp(3.2rem, 6vw, 5.75rem) 0 clamp(4rem, 7vw, 6.5rem);
+      border-top: 1px solid var(--rp-line);
+      background: rgba(246, 243, 238, .025);
+    }
+
+    .rp-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 1.5rem;
+    }
+
+    .rp-section-head h2 {
+      margin: 0;
+      color: var(--rp-ink);
+      font-size: clamp(2rem, 4.2vw, 4rem);
+      line-height: .93;
+      letter-spacing: -.045em;
+      font-weight: 750;
+    }
+
+    .rp-section-head p {
+      max-width: 43rem;
+      margin: 0;
+      color: var(--rp-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .rp-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+    }
+
+    .rp-preview-card {
+      min-height: 13rem;
+      border: 1px solid var(--rp-line);
+      border-radius: .85rem;
+      background: rgba(246, 243, 238, .045);
+      padding: 1.25rem;
+    }
+
+    .rp-preview-card__label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.75rem;
+      padding: .28rem .58rem;
+      border-radius: 999px;
+      background: rgba(62, 255, 104, .1);
+      color: var(--rp-green);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .rp-preview-card h3 {
+      margin: 1.15rem 0 .65rem;
+      color: var(--rp-ink);
+      font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+      line-height: 1.05;
+      letter-spacing: -.025em;
+    }
+
+    .rp-preview-card p {
+      margin: 0;
+      color: rgba(246, 243, 238, .58);
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+
+    .rp-final {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      text-align: center;
+    }
+
+    .rp-final__box {
+      display: grid;
+      gap: 1rem;
+      justify-items: center;
+      border: 1px solid rgba(62, 255, 104, .16);
+      border-radius: 1rem;
+      background: rgba(62, 255, 104, .06);
+      padding: clamp(1.7rem, 4vw, 3rem);
+    }
+
+    .rp-final h2 {
+      max-width: 16ch;
+      margin: 0;
+      color: var(--rp-ink);
+      font-size: clamp(2rem, 4.8vw, 4.3rem);
+      line-height: .92;
+      letter-spacing: -.05em;
+      font-weight: 750;
+    }
+
+    .rp-final p {
+      max-width: 45rem;
+      margin: 0;
+      color: var(--rp-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .rp-final a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: .85rem 1.25rem;
+      border-radius: .5rem;
+      background: var(--rp-green);
+      color: #071107;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .rp-hero__grid,
+      .rp-section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .rp-title {
+        max-width: 13ch;
+      }
+
+      .rp-form-card {
+        max-width: 36rem;
+      }
+
+      .rp-preview-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rp-container {
+        width: min(100% - 1.25rem, 78rem);
+      }
+
+      .rp-hero {
+        padding-top: 6.3rem;
+      }
+
+      .rp-audience span {
+        white-space: normal;
+      }
+
+      .rp-included li {
+        grid-template-columns: 2.65rem minmax(0, 1fr);
+      }
+
+      .rp-included__icon {
+        width: 2.65rem;
+        height: 2.65rem;
+      }
+
+      .rp-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://weflair.com/resource-pack.html" />
+  <meta property="og:url" content="https://weflair.com/resource-pack.html" />
+</head>
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body resource-pack-page">
+  <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
+  <main class="main rp-shell">
+    <section class="rp-hero" aria-labelledby="resource-pack-title">
+      <div class="rp-container rp-hero__grid">
+        <div class="rp-hero__copy">
+          <p class="rp-kicker">For sales and marketing teams</p>
+          <h1 class="rp-title" id="resource-pack-title">Get the free AI GTM Resource Pack.</h1>
+          <p class="rp-lede">
+            Sales and marketing automations, AI skills, templates, and practical tools to help your team move faster without rebuilding every workflow from scratch.
+          </p>
+
+          <div class="rp-audience" aria-label="Resource pack categories">
+            <span>Sales</span>
+            <span>Marketing</span>
+            <span>AI skills</span>
+            <span>Templates</span>
+            <span>Automations</span>
+          </div>
+
+          <ul class="rp-included" aria-label="What's included in the resource pack">
+            <li>
+              <span class="rp-included__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+              </span>
+              B2B sales tools, data providers, and tech stack map.
+            </li>
+            <li>
+              <span class="rp-included__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round"/></svg>
+              </span>
+              37 sales triggers that help teams find timing-based opportunities.
+            </li>
+            <li>
+              <span class="rp-included__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.7"/><path d="m4 8 8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="round"/></svg>
+              </span>
+              Cold email infrastructure setup guide for deliverability.
+            </li>
+            <li>
+              <span class="rp-included__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+              </span>
+              Campaign strategy templates for hot copy, lead magnets, and trigger-based outreach.
+            </li>
+            <li>
+              <span class="rp-included__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.5 6.5l2.8 2.8M14.7 14.7l2.8 2.8M17.5 6.5l-2.8 2.8M9.3 14.7l-2.8 2.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+              </span>
+              Clay templates, GPT prompts, and content ideation systems.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="rp-form-card" id="resource-pack-form" aria-label="Get the Resource Pack">
+          <p class="rp-form-card__eyebrow">Free access</p>
+          <h2>Send me the pack.</h2>
+          <p class="rp-form-card__copy">
+            Drop your details and we will send the library to your inbox. No pitch deck. No fake scarcity. Just the resources.
+          </p>
+
+          <form class="rp-form" name="resource-pack" method="POST" data-netlify="true" action="/resource-pack.html#resource-pack-form">
+            <input type="hidden" name="form-name" value="resource-pack" />
+            <input type="hidden" name="source" value="Resource Pack landing page" />
+            <div class="rp-field">
+              <label for="rp-name">Name *</label>
+              <input id="rp-name" name="name" type="text" autocomplete="name" placeholder="First name + last name" required />
+            </div>
+            <div class="rp-field">
+              <label for="rp-email">Email *</label>
+              <input id="rp-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            </div>
+            <button class="rp-submit" type="submit">
+              Send me the pack
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="rp-privacy">Free forever. No spam. We will send the pack and the occasional useful update.</p>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="rp-preview" aria-labelledby="inside-pack-title">
+      <div class="rp-container">
+        <div class="rp-section-head">
+          <h2 id="inside-pack-title">Built for real GTM work.</h2>
+          <p>
+            The pack is not a blog roundup. It is a library of sales, marketing, AI, and operations resources your team can copy, adapt, and run inside active campaigns.
+          </p>
+        </div>
+        <div class="rp-preview-grid">
+          <article class="rp-preview-card">
+            <span class="rp-preview-card__label">Sales</span>
+            <h3>Trigger-based outbound assets.</h3>
+            <p>Find accounts with a reason to buy now, then build outreach around timing instead of generic personalization.</p>
+          </article>
+          <article class="rp-preview-card">
+            <span class="rp-preview-card__label">Marketing</span>
+            <h3>Campaign and lead magnet templates.</h3>
+            <p>Use frameworks for hot copy, resource offers, landing page angles, and campaign structure.</p>
+          </article>
+          <article class="rp-preview-card">
+            <span class="rp-preview-card__label">AI skills</span>
+            <h3>Prompts and agent workflows.</h3>
+            <p>Speed up research, content ideation, list building, support handoffs, and repeatable GTM tasks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rp-final" aria-labelledby="rp-final-title">
+      <div class="rp-container">
+        <div class="rp-final__box">
+          <h2 id="rp-final-title">Get the Resource Pack.</h2>
+          <p>
+            Name and email only. We will send the free library, including AI agents, automations, campaign templates, cold email infrastructure notes, and tools for sales and marketing teams.
+          </p>
+          <a href="#resource-pack-form">Download the pack</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- WEFLAIR_FOOTER -->
+</body>
+</html>

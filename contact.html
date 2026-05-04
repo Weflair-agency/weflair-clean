@@ -3,327 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - WeFlair</title>
-  <meta name="description" content="Book a free growth audit with our experts." />
-  <meta property="og:title" content="Contact — WeFlair" />
-  <meta property="og:description" content="Ready to talk? Book a growth audit or reach out directly. We will be honest about whether there is a real fit." />
+  <title>Contact | WeFlair</title>
+  <meta name="description" content="Start with a 15 min call to see if WeFlair can help. If there is a fit, we build your 90-day growth roadmap." />
+  <meta property="og:title" content="Contact | WeFlair" />
+  <meta property="og:description" content="Start with a 15 min call to see if WeFlair can help. If there is a fit, we build your 90-day growth roadmap." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact — WeFlair" />
-  <meta name="twitter:description" content="Ready to talk? Book a growth audit or reach out directly. We will be honest about whether there is a real fit." />
+  <meta name="twitter:title" content="Contact | WeFlair" />
+  <meta name="twitter:description" content="Start with a 15 min call to see if WeFlair can help. If there is a fit, we build your 90-day growth roadmap." />
   <meta name="theme-color" content="#151515" />
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/foundation-styles.css" />
   <link rel="stylesheet" href="/foundation-slater.css" />
   <link rel="stylesheet" href="/weflair-hero.css" />
+  <link rel="stylesheet" href="/weflair-contact.css" />
   <script src="/foundation.js" defer></script>
   <script src="/weflair-hero.js" defer></script>
-<style id="weflair-mega-dropdown-css">
-.nav-dropdown--mega{left:50%!important;transform:translateX(-50%);width:max-content;min-width:40rem}
-.nav-dropdown--mega .nav-dropdown__grid{display:block!important;flex-flow:unset!important;padding:1rem 1.1rem!important;border:1px solid rgba(246,243,238,.08)!important;box-shadow:0 16px 48px rgba(0,0,0,.4)!important}
-.weflair-mega-grid{display:grid!important;grid-template-columns:repeat(3,1fr);gap:.1rem}
-.weflair-mega-tile{display:flex!important;align-items:flex-start;gap:.7rem;padding:.65rem .75rem;border-radius:.45rem;text-decoration:none!important;color:#f6f3ee!important;transition:background .18s ease;height:auto!important;flex-flow:row!important}
-.weflair-mega-tile:hover{background:rgba(246,243,238,.06)}
-.weflair-mega-tile__icon{flex-shrink:0;display:grid;place-items:center;width:2rem;height:2rem;border-radius:.45rem;background:rgba(62,255,104,.1);border:1px solid rgba(62,255,104,.18);color:#3eff68}
-.weflair-mega-tile__icon svg{width:1.05rem;height:1.05rem}
-.weflair-mega-tile__text{min-width:0}
-.weflair-mega-tile__h{margin:0!important;font-size:.82rem!important;font-weight:600;line-height:1.2;color:#f6f3ee!important;white-space:nowrap}
-.weflair-mega-tile__p{margin:.15rem 0 0!important;font-size:.72rem!important;line-height:1.35;color:rgba(246,243,238,.45)!important;max-width:16rem}
-@media(max-width:991px){.nav-dropdown--mega{left:0!important;transform:none;min-width:0;width:100%}.weflair-mega-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:479px){.weflair-mega-grid{grid-template-columns:1fr}}
-</style>
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.querySelector('.wf-contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.wf-contact-submit');
+        if (btn) { btn.disabled = true; btn.querySelector('span').textContent = 'Sending…'; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).finally(function () {
+          window.location.href = 'https://cal.com/weflair';
+        });
+      });
+    });
+  </script>
 </head>
-<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body">
-<main class="main">
-<div class="floating-elements-main"><div class="calc-header-padding-height"></div><div data-navigation-toggle="close" class="nav-fade"></div><header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Go To Market Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="cases.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header><div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99935 15.833C10.2035 15.833 10.4005 15.908 10.553 16.0436C10.7055 16.1792 10.803 16.3661 10.8268 16.5688L10.8327 16.6663V17.4997C10.8324 17.7121 10.7511 17.9164 10.6053 18.0708C10.4595 18.2253 10.2602 18.3182 10.0482 18.3307C9.83615 18.3431 9.62737 18.2741 9.46449 18.1378C9.30161 18.0015 9.19694 17.8081 9.17185 17.5972L9.16602 17.4997V16.6663C9.16602 16.4453 9.25381 16.2334 9.41009 16.0771C9.56637 15.9208 9.77834 15.833 9.99935 15.833Z" fill="currentColor"></path><path d="M15.2606 14.0906L15.3389 14.1598L15.9223 14.7431C16.0717 14.8931 16.1585 15.0943 16.165 15.306C16.1714 15.5176 16.0971 15.7237 15.9571 15.8825C15.817 16.0413 15.6218 16.1409 15.411 16.161C15.2003 16.1811 14.9898 16.1202 14.8223 15.9906L14.7439 15.9215L14.1606 15.3381C14.0168 15.1946 13.9304 15.0034 13.9177 14.8006C13.9049 14.5979 13.9667 14.3974 14.0914 14.237C14.2161 14.0765 14.3951 13.9672 14.5948 13.9295C14.7944 13.8918 15.001 13.9284 15.1756 14.0323L15.2606 14.0906Z" fill="currentColor"></path><path d="M5.84086 14.16C5.98434 14.3035 6.07053 14.4944 6.08327 14.6969C6.096 14.8995 6.0344 15.0997 5.91003 15.26L5.84086 15.3383L5.25753 15.9217C5.10756 16.0711 4.90633 16.1579 4.69471 16.1644C4.48308 16.1708 4.27693 16.0965 4.11813 15.9565C3.95932 15.8164 3.85977 15.6212 3.8397 15.4104C3.81962 15.1997 3.88052 14.9892 4.01003 14.8217L4.07919 14.7433L4.66253 14.16C4.8188 14.0038 5.03072 13.916 5.25169 13.916C5.47266 13.916 5.68459 14.0038 5.84086 14.16Z" fill="currentColor"></path><path d="M3.33371 9.16699C3.54611 9.16723 3.75041 9.24856 3.90485 9.39437C4.0593 9.54017 4.15224 9.73945 4.16469 9.95149C4.17714 10.1635 4.10815 10.3723 3.97182 10.5352C3.8355 10.6981 3.64213 10.8027 3.43121 10.8278L3.33371 10.8337H2.50038C2.28798 10.8334 2.08369 10.7521 1.92924 10.6063C1.77479 10.4605 1.68185 10.2612 1.6694 10.0492C1.65695 9.83713 1.72594 9.62834 1.86227 9.46547C1.99859 9.30259 2.19197 9.19791 2.40288 9.17283L2.50038 9.16699H3.33371Z" fill="currentColor"></path><path d="M17.5017 9.16699C17.7141 9.16723 17.9184 9.24856 18.0728 9.39437C18.2273 9.54017 18.3202 9.73945 18.3327 9.95149C18.3451 10.1635 18.2761 10.3723 18.1398 10.5352C18.0035 10.6981 17.8101 10.8027 17.5992 10.8278L17.5017 10.8337H16.6683C16.4559 10.8334 16.2517 10.7521 16.0972 10.6063C15.9428 10.4605 15.8498 10.2612 15.8374 10.0492C15.8249 9.83713 15.8939 9.62834 16.0302 9.46547C16.1666 9.30259 16.3599 9.19791 16.5708 9.17283L16.6683 9.16699H17.5017Z" fill="currentColor"></path><path d="M5.17931 4.00935L5.25765 4.07852L5.84098 4.66185C5.99044 4.81181 6.07721 5.01304 6.08367 5.22467C6.09013 5.43629 6.0158 5.64244 5.87577 5.80125C5.73575 5.96005 5.54052 6.0596 5.32975 6.07968C5.11898 6.09976 4.90847 6.03886 4.74098 5.90935L4.66265 5.84018L4.07931 5.25685C3.93606 5.11325 3.85009 4.92233 3.83754 4.71988C3.82498 4.51742 3.8867 4.31735 4.01112 4.15714C4.13554 3.99694 4.31411 3.88762 4.51337 3.84968C4.71263 3.81173 4.91889 3.84776 5.09348 3.95102L5.17931 4.00935Z" fill="currentColor"></path><path d="M15.9229 4.07895C16.0664 4.22244 16.1526 4.41336 16.1653 4.61588C16.178 4.8184 16.1164 5.01861 15.9921 5.17895L15.9229 5.25728L15.3396 5.84062C15.1896 5.99007 14.9884 6.07684 14.7767 6.08331C14.5651 6.08977 14.359 6.01544 14.2002 5.87541C14.0414 5.73538 13.9418 5.54016 13.9217 5.32939C13.9016 5.11862 13.9625 4.90811 14.0921 4.74062L14.1612 4.66228L14.7446 4.07895C14.9008 3.92272 15.1128 3.83496 15.3337 3.83496C15.5547 3.83496 15.7666 3.92272 15.9229 4.07895Z" fill="currentColor"></path><path d="M9.99935 1.66699C10.2035 1.66702 10.4005 1.74196 10.553 1.87759C10.7055 2.01322 10.803 2.20012 10.8268 2.40283L10.8327 2.50033V3.33366C10.8324 3.54606 10.7511 3.75035 10.6053 3.9048C10.4595 4.05925 10.2602 4.15219 10.0482 4.16464C9.83615 4.17708 9.62737 4.1081 9.46449 3.97177C9.30161 3.83545 9.19694 3.64207 9.17185 3.43116L9.16602 3.33366V2.50033C9.16602 2.27931 9.25381 2.06735 9.41009 1.91107C9.56637 1.75479 9.77834 1.66699 9.99935 1.66699Z" fill="currentColor"></path><path d="M10.0007 5.83301C10.817 5.83296 11.6155 6.07275 12.2968 6.52259C12.978 6.97243 13.5122 7.6125 13.8328 8.36331C14.1534 9.11411 14.2464 9.94256 14.1002 10.7458C13.954 11.549 13.5751 12.2915 13.0105 12.8812C12.4459 13.4709 11.7205 13.8817 10.9244 14.0627C10.1283 14.2437 9.29663 14.1868 8.5326 13.8991C7.76857 13.6114 7.10589 13.1056 6.62687 12.4445C6.14784 11.7834 5.87358 10.9961 5.83815 10.1805L5.83398 9.99967L5.83815 9.81884C5.88475 8.74613 6.34366 7.73282 7.11917 6.99022C7.89468 6.24763 8.92693 5.83307 10.0007 5.83301Z" fill="currentColor"></path></svg></div></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme" data-codex-theme-mounted="true">Switch Theme</button></div><div class="noise is--small"></div></div>
-<style>
-  .ct-page { background: #151515; color: #f6f3ee; }
-  .ct-hero {
-    position: relative;
-    padding: clamp(9rem,14vw,14rem) 2rem clamp(3rem,6vw,5rem);
-    text-align: center;
-    overflow: hidden;
-  }
-  .ct-hero::before {
-    content: "";
-    position: absolute;
-    top: -20%; left: 50%;
-    transform: translateX(-50%);
-    width: 70vw; height: 70vw;
-    background: radial-gradient(circle, rgba(62,255,104,.12) 0%, transparent 60%);
-    pointer-events: none; z-index: 0;
-  }
-  .ct-hero__inner { position: relative; z-index: 1; max-width: 44rem; margin: 0 auto; }
-  .ct-hero__title {
-    font-size: clamp(2.6rem,5vw,4.4rem); line-height: .95; font-weight: 700;
-    letter-spacing: -.06em; margin: 0 0 1.5rem; color: #f6f3ee;
-  }
-  .ct-hero__sub {
-    font-size: clamp(1.05rem,1.3vw,1.2rem); line-height: 1.55;
-    color: rgba(246,243,238,.68); max-width: 36rem; margin: 0 auto;
-  }
-  .ct-body {
-    max-width: 72rem; margin: 0 auto;
-    padding: clamp(3rem,6vw,5rem) 2rem clamp(4rem,8vw,6rem);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    align-items: start;
-  }
-  @media(max-width:767px){ .ct-body { grid-template-columns: 1fr; } }
-  .ct-form-wrap {
-    background: rgba(17,17,17,.86);
-    border: 1px solid rgba(246,243,238,.08);
-    border-radius: 1.2rem; padding: 2.5rem;
-  }
-  .ct-form-wrap h2 {
-    font-size: 1.35rem; font-weight: 700; margin: 0 0 .4rem; color: #f6f3ee;
-  }
-  .ct-form-wrap p.ct-form-sub {
-    font-size: .92rem; color: rgba(246,243,238,.55); margin: 0 0 2rem; line-height: 1.5;
-  }
-  .ct-field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.25rem; }
-  .ct-field label {
-    font-size: .82rem; font-weight: 600; color: rgba(246,243,238,.78);
-  }
-  .ct-field input, .ct-field select, .ct-field textarea {
-    background: rgba(246,243,238,.04);
-    border: 1px solid rgba(246,243,238,.1);
-    border-radius: .55rem; padding: .75rem 1rem;
-    font-size: .95rem; color: #f6f3ee;
-    font-family: inherit; outline: none;
-    transition: border-color .2s ease;
-  }
-  .ct-field input:focus, .ct-field select:focus, .ct-field textarea:focus {
-    border-color: rgba(62,255,104,.4);
-  }
-  .ct-field textarea { resize: vertical; min-height: 5rem; }
-  .ct-field select { appearance: none; cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f6f3ee' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 1rem center;
-    padding-right: 2.5rem;
-  }
-  .ct-field select option { background: #151515; color: #f6f3ee; }
-  .ct-submit {
-    display: inline-flex; align-items: center; gap: .6rem;
-    padding: .85rem 2rem; border: none; border-radius: .6rem; cursor: pointer;
-    font-size: .95rem; font-weight: 600; font-family: inherit;
-    background: #3eff68; color: #111; transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .ct-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(62,255,104,.25); }
-  .ct-submit svg { width: 1rem; height: 1rem; }
-  .ct-context {
-    background: rgba(17,17,17,.86);
-    border: 1px solid rgba(246,243,238,.08);
-    border-radius: 1.2rem; padding: 2.5rem;
-  }
-  .ct-context h3 { font-size: 1.15rem; font-weight: 700; color: #f6f3ee; margin: 0 0 1.5rem; }
-  .ct-step { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-  .ct-step__num {
-    flex-shrink: 0; width: 2.2rem; height: 2.2rem;
-    display: grid; place-items: center;
-    border-radius: .5rem; background: rgba(62,255,104,.1);
-    border: 1px solid rgba(62,255,104,.18); color: #3eff68;
-    font-size: .85rem; font-weight: 700;
-  }
-  .ct-step__text h4 { font-size: .95rem; font-weight: 600; color: #f6f3ee; margin: 0 0 .25rem; }
-  .ct-step__text p { font-size: .85rem; color: rgba(246,243,238,.55); margin: 0; line-height: 1.45; }
-  .ct-direct {
-    margin-top: 2rem; padding-top: 1.5rem;
-    border-top: 1px solid rgba(246,243,238,.06);
-  }
-  .ct-direct h4 { font-size: .88rem; font-weight: 600; color: rgba(246,243,238,.78); margin: 0 0 .6rem; }
-  .ct-direct a {
-    color: #3eff68; text-decoration: none; font-size: .95rem; font-weight: 600;
-    transition: opacity .2s ease;
-  }
-  .ct-direct a:hover { opacity: .8; }
-  .ct-trust {
-    max-width: 72rem; margin: 0 auto;
-    padding: 0 2rem clamp(4rem,8vw,6rem);
-  }
-  .ct-trust__inner {
-    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
-    text-align: center;
-  }
-  @media(max-width:579px){ .ct-trust__inner { grid-template-columns: 1fr; } }
-  .ct-trust-card {
-    background: rgba(17,17,17,.86);
-    border: 1px solid rgba(246,243,238,.08);
-    border-radius: 1rem; padding: 1.5rem;
-  }
-  .ct-trust-card__val {
-    font-size: 1.8rem; font-weight: 700; color: #3eff68; margin: 0 0 .25rem;
-  }
-  .ct-trust-card__label {
-    font-size: .85rem; color: rgba(246,243,238,.55); margin: 0;
-  }
-</style>
+<body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body wf-contact-page">
+  <div data-navigation-toggle="close" class="nav-fade"></div>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
 
-<div style="padding-top:var(--nav-bar-height,5rem)">
-<div class="ct-page">
+  <main class="main wf-contact-main">
+    <div class="noise is--small" aria-hidden="true"></div>
 
-<!-- HERO -->
-<section class="ct-hero">
-  <div class="ct-hero__inner">
-    <div class="eyebrow" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9);margin-bottom:1.5rem;justify-content:center">
-      <span style="width:.85rem;height:.85rem;display:inline-flex;color:#3eff68">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-      </span>
-      <p style="margin:0">Let's talk</p>
-    </div>
-    <h1 class="ct-hero__title">Start your growth engine</h1>
-    <p class="ct-hero__sub">No fluff calls. No 47-slide decks. Just a focused conversation about what's broken in your pipeline — and whether we're the right team to fix it.</p>
-  </div>
-</section>
-
-<!-- FORM + CONTEXT -->
-<section class="ct-body">
-  <!-- Left: Form -->
-  <div class="ct-form-wrap">
-    <h2>Book a Growth Audit</h2>
-    <p class="ct-form-sub">Fill this out and we'll get back to you within 1 business day.</p>
-    <form action="https://formspree.io/f/PLACEHOLDER" method="POST">
-      <div class="ct-field">
-        <label for="ct-name">Full Name</label>
-        <input type="text" id="ct-name" name="name" placeholder="Jane Smith" required />
-      </div>
-      <div class="ct-field">
-        <label for="ct-company">Company</label>
-        <input type="text" id="ct-company" name="company" placeholder="Acme Inc." required />
-      </div>
-      <div class="ct-field">
-        <label for="ct-email">Work Email</label>
-        <input type="email" id="ct-email" name="email" placeholder="jane@acme.com" required />
-      </div>
-      <div class="ct-field">
-        <label for="ct-service">Service Interest</label>
-        <select id="ct-service" name="service" required>
-          <option value="" disabled selected>Select a service</option>
-          <option value="paid-media">Paid Media & Performance</option>
-          <option value="outbound-gtm">Outbound & GTM Engineering</option>
-          <option value="revops-ai">Revenue Operations & AI Workflows</option>
-          <option value="cro-design">Performance Design & CRO</option>
-          <option value="content-aeo">Content & AEO</option>
-          <option value="full-system">Full Growth System</option>
-          <option value="not-sure">Not sure yet</option>
-        </select>
-      </div>
-      <div class="ct-field">
-        <label for="ct-budget">Monthly Budget Range</label>
-        <select id="ct-budget" name="budget">
-          <option value="" disabled selected>Select a range</option>
-          <option value="under-5k">Under $5,000</option>
-          <option value="5k-10k">$5,000 – $10,000</option>
-          <option value="10k-25k">$10,000 – $25,000</option>
-          <option value="25k-plus">$25,000+</option>
-          <option value="project">Project-based / one-time</option>
-        </select>
-      </div>
-      <div class="ct-field">
-        <label for="ct-message">What's the biggest bottleneck in your pipeline right now?</label>
-        <textarea id="ct-message" name="message" placeholder="Tell us what's not working — we'll come prepared." rows="4"></textarea>
-      </div>
-      <button type="submit" class="ct-submit">
-        Book Growth Audit
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </button>
-    </form>
-  </div>
-
-  <!-- Right: Context -->
-  <div class="ct-context">
-    <h3>What happens next</h3>
-    <div class="ct-step">
-      <div class="ct-step__num">1</div>
-      <div class="ct-step__text">
-        <h4>We respond within 1 business day</h4>
-        <p>A real operator reviews your submission — not a sales bot.</p>
-      </div>
-    </div>
-    <div class="ct-step">
-      <div class="ct-step__num">2</div>
-      <div class="ct-step__text">
-        <h4>30-minute strategy call</h4>
-        <p>We dig into your current pipeline, channels, and where the leaks are. Zero pitch, all substance.</p>
-      </div>
-    </div>
-    <div class="ct-step">
-      <div class="ct-step__num">3</div>
-      <div class="ct-step__text">
-        <h4>Custom growth audit</h4>
-        <p>You get a clear breakdown of what's working, what's broken, and what to fix first — whether you work with us or not.</p>
-      </div>
-    </div>
-    <div class="ct-direct">
-      <h4>Prefer email?</h4>
-      <a href="mailto:hello@weflair.com">hello@weflair.com</a>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST RIBBON -->
-<section class="ct-trust">
-  <div class="ct-trust__inner">
-    <div class="ct-trust-card">
-      <p class="ct-trust-card__val">50+</p>
-      <p class="ct-trust-card__label">B2B engagements delivered</p>
-    </div>
-    <div class="ct-trust-card">
-      <p class="ct-trust-card__val">3.2×</p>
-      <p class="ct-trust-card__label">Average pipeline lift</p>
-    </div>
-    <div class="ct-trust-card">
-      <p class="ct-trust-card__val">14 days</p>
-      <p class="ct-trust-card__label">Average time to kickoff</p>
-    </div>
-  </div>
-</section>
-
-</div><!-- /.ct-page -->
-</div>
-
-<!-- FOOTER -->
-<section class="footer weflair-footer">
-      <div class="weflair-footer__cta-banner" id="audit">
-        <div class="container">
-          <div class="weflair-footer__cta-inner">
-            <div class="eyebrow is-centered"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 34 45" fill="none" class="weflair-flare">
-                  <path
-                    d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
-                    fill="currentColor"></path>
-                </svg></span>
-              <p class="eyebrow__p">Next step</p>
+    <section class="wf-contact-hero" aria-labelledby="contact-title">
+      <div class="wf-contact-wrap">
+        <div class="wf-contact-panel">
+          <div class="wf-contact-copy">
+            <p class="wf-contact-eyebrow">Strategy call</p>
+            <h1 class="wf-contact-title" id="contact-title">Ready to build your business goals?</h1>
+            <p class="wf-contact-lede">Start with a 15 min call to see if we can help. If we're a match, we book a Strategy Session and build your 90-day roadmap.</p>
+            <ul class="wf-contact-next">
+              <li><span class="wf-contact-check">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span><span>A detailed audit of your channels, tracking, funnel, and growth infrastructure.</span></li>
+              <li><span class="wf-contact-check">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span><span>A marketing plan designed to achieve your goals.</span></li>
+              <li><span class="wf-contact-check">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span><span>A quick walkthrough of how WeFlair operates and how our weekly sprints work.</span></li>
+              <li><span class="wf-contact-check">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span><span>Audit recommendations and a first-step plan based on your goals.</span></li>
+              <li><span class="wf-contact-check">
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span><span>A personalized PPC, SEO, or GTM audit can be prepared upon request.</span></li>
+            </ul>
+            <div class="wf-contact-badges" aria-label="WeFlair partner badges and certifications">
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/images.png" alt="Shopify Partner badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/images%20(1).png" alt="Klaviyo Partner badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/660ea0489aeb028f51938bfb_certificate-google-marketing-platform.avif" alt="Google Marketing Platform certification badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/660ea324950fc02759a448b8_certificate-bing-ads.avif" alt="Microsoft Advertising certification badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/semrush-agency-partner-badge.png" alt="Semrush Agency Partner badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/Screenshot%202026-04-20%20151006.png" alt="GoodFirms rating badge" loading="lazy" decoding="async" /></figure>
             </div>
-            <h2 class="h3">Request a growth audit.</h2>
-            <p class="weflair-section__body">We will show you what is leaking, what needs fixing first, and whether
-              there is a real fit.</p>
-            <p class="weflair-section__body is--muted">If there is no fit, we will say so.</p><a data-hover=""
-              data-btn-theme="primary" href="/contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
-              <div class="btn__bg"></div>
-              <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
-              <div class="arrow">
-                <div class="arrow__bg"></div>
-                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg></div>
-                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                    fill="none" class="arrow__svg">
-                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg></div>
+          </div>
+
+          <aside class="wf-contact-card" id="contact-form" aria-label="Contact form">
+            <div class="wf-contact-card__head">
+              <p class="wf-contact-card__kicker">Tell us enough to come prepared</p>
+              <h2 class="wf-contact-card__title">What are you trying to solve?</h2>
+            </div>
+            <form class="wf-contact-form" name="contact-strategy-call" method="POST" action="/contact.html#contact-form" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+              <input type="hidden" name="form-name" value="contact-strategy-call" />
+              <p class="wf-contact-hidden">
+                <label>Do not fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <div class="wf-contact-form__grid">
+                <label class="wf-contact-field" for="contact-name">
+                  <span class="wf-contact-label">Name *</span>
+                  <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="First name + last name" required />
+                </label>
+                <label class="wf-contact-field" for="contact-email">
+                  <span class="wf-contact-label">Business email *</span>
+                  <input id="contact-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+                </label>
+                <label class="wf-contact-field wf-contact-field--full" for="contact-company">
+                  <span class="wf-contact-label">Company / website</span>
+                  <input id="contact-company" type="text" name="company" autocomplete="organization" placeholder="Company name or website" />
+                </label>
               </div>
-            </a>
+
+              <fieldset class="wf-contact-problem">
+                <legend class="wf-contact-problem__label">What are you trying to solve?</legend>
+                <div class="wf-contact-chips">
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="lead-generation" /><span>Lead generation</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="seo-ai-visibility" /><span>SEO / AI visibility</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="paid-media" /><span>Paid media</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="creative-landing-pages" /><span>Creative / landing pages</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="outbound-systems" /><span>Outbound systems</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="crm-automation" /><span>CRM / automation</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="combination" /><span>Combination of all</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="not-sure" /><span>Not sure yet</span></label>
+                </div>
+              </fieldset>
+
+              <label class="wf-contact-field" for="contact-message">
+                <span class="wf-contact-label">Ask us a question / tell us about your project *</span>
+                <textarea id="contact-message" name="message" placeholder="Tell us what is happening now, what you want to fix, and what success should look like." required></textarea>
+              </label>
+
+              <div class="wf-contact-captcha" aria-label="reCAPTCHA verification">
+                <div data-netlify-recaptcha="true"></div>
+              </div>
+
+              <button class="wf-contact-submit" type="submit">
+                <span>Send</span>
+                
+<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
+  <path d="m13 6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+              </button>
+
+              <p class="wf-contact-legal">By submitting this form, you agree to our <a href="/legal/privacy.html">Privacy Policy</a> and authorize WeFlair to store and process your data to provide the requested content or service.</p>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="footer weflair-footer">
+      <div class="weflair-new-cta-wrap" id="audit">
+        <div class="container" style="position:relative; z-index: 5;">
+          <div class="weflair-new-cta">
+            <div class="weflair-new-cta__bg"></div>
+            <div class="weflair-new-cta__glow"></div>
+
+            <div class="weflair-new-cta__grid">
+              <div class="weflair-new-cta__left">
+                <div class="weflair-new-cta__label">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Next Step
+                </div>
+                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
+                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <div class="weflair-new-cta__features">
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                </div>
+              </div>
+              <div class="weflair-new-cta__right">
+                <a href="/contact.html" class="weflair-new-cta__btn">
+                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -353,22 +210,32 @@
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
                       Performance</a></li>
-                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
-                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">Outbound
+                      Systems</a></li>
                   <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
-                      Design &amp; Content</a></li>
+                      Design &amp; CRO</a></li>
                   <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Expertise</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/expertise/b2b-demand-generation.html" class="weflair-footer__nav-link">B2B Demand Generation</a></li>
+                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
+                  <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
+                  <li><a href="/expertise/b2b-tech.html" class="weflair-footer__nav-link">B2B Tech</a></li>
+                  <li><a href="/expertise/ecommerce.html" class="weflair-footer__nav-link">E-commerce</a></li>
                 </ul>
               </div>
               <div class="weflair-footer__nav-col">
                 <h4 class="weflair-footer__col-heading">Resources</h4>
                 <ul class="weflair-footer__nav-list">
-                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
-                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
-                  <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
+                  <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
                   <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
-                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Checklists</a></li>
-                  <li><a href="/cases.html" class="weflair-footer__nav-link">Case Studies</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
+                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Resource Pack</a></li>
+                  <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
                 </ul>
               </div>
               <div class="weflair-footer__nav-col">
@@ -377,13 +244,14 @@
                   <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
                   <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
                   <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                  <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="weflair-footer__divider"></div>
           <div class="weflair-footer__bottom">
-            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">© 2026 WeFlair</span><a
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
                 href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
                 href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
                 href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
@@ -413,6 +281,5 @@
         </div>
       </div>
     </section>
-</main>
 </body>
 </html>

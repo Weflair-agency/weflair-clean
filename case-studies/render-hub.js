@@ -123,32 +123,27 @@ function featuredHtml(item) {
 }
 
 function cardHtml(item, index) {
-  // Make every 3rd card span full width for dynamic masonry aesthetic
-  const isLarge = index % 3 === 2; 
-  const layoutClass = isLarge ? " wfcs-card--huge" : " wfcs-card--standard";
-
+  // Use a rotating theme class to match the requested colorful vibe
+  const themes = ['wfcs-theme-orange', 'wfcs-theme-pink', 'wfcs-theme-purple', 'wfcs-theme-green', 'wfcs-theme-yellow', 'wfcs-theme-blue'];
+  const themeClass = themes[index % themes.length];
+  
+  // Collect all relevant tags
+  let allTags = item.industries.concat(item.services);
+  
   return (
-    '<article class="wfcs-card' +
-      layoutClass +
-      '">' +
+    '<article class="wfcs-card wfcs-card--standard ' + themeClass + '">' +
       '<div class="wfcs-card__header">' +
         '<div class="wfcs-card__logo-box">' + logoHtml(item) + "</div>" +
-        '<div class="wfcs-card__meta">' +
-          '<span class="wfcs-card__meta-pill">' + escapeHtml(item.companySize) + "</span>" +
-          '<span class="wfcs-card__meta-pill">' + escapeHtml(item.companyType) + "</span>" +
+        '<div class="wfcs-card__tags">' +
+          allTags.slice(0,4).map(function(tag) { return '<span class="wfcs-card__tag">' + escapeHtml(tag) + '</span>'; }).join('') +
         "</div>" +
       "</div>" +
       '<div class="wfcs-card__body">' +
-        '<p class="wfcs-card__eyebrow">' + escapeHtml(item.industries.join(" / ")) + "</p>" +
-        '<h3 class="wfcs-card__company">' + escapeHtml(item.name) + "</h3>" +
-        '<p class="wfcs-card__headline">' + escapeHtml(item.headline) + "</p>" +
-        '<p class="wfcs-card__summary">' + escapeHtml(item.summary) + "</p>" +
-        '<div class="wfcs-card__services">' + serviceTagsHtml(item.services) + "</div>" +
+        '<h3 class="wfcs-card__headline">' + escapeHtml(item.headline) + "</h3>" +
       "</div>" +
       '<div class="wfcs-metric-row">' + metricsHtml(item.metrics, "wfcs-metric") + "</div>" +
       '<div class="wfcs-card__footer">' +
-        '<span class="wfcs-card__vertical">' + escapeHtml(item.vertical) + "</span>" +
-        '<a class="wfcs-card__link" href="/case-studies/' + escapeHtml(item.slug) + '.html">Read case study</a>' +
+        '<a class="wfcs-card__link" href="/case-studies/' + escapeHtml(item.slug) + '.html">Read Case Study &rarr;</a>' +
       "</div>" +
     "</article>"
   );
@@ -164,15 +159,7 @@ function matches(item) {
   return industryMatch && sizeMatch && serviceMatch;
 }
 
-function renderFeatured() {
-  if (!featuredRoot) return;
-
-  const featured = CASE_STUDIES.find(function (item) {
-    return item.slug === FEATURED_SLUG;
-  }) || CASE_STUDIES[0];
-
-  featuredRoot.innerHTML = featuredHtml(featured);
-}
+function renderFeatured() { return; }
 
 function renderFilters() {
   if (industryRail) {

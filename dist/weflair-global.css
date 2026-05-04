@@ -2,9 +2,14 @@
       --weflair-max-width: 1440px;
       --weflair-padding: clamp(1.5rem, 5vw, 4rem);
     }
-    .main, .main-wrap {
+    .main {
       max-width: 100vw;
-      overflow-x: hidden;
+      overflow-x: clip;
+      overflow-y: visible;
+    }
+    .main-wrap {
+      max-width: 100vw;
+      overflow: clip;
     }
     .container {
       max-width: var(--weflair-max-width) !important;
@@ -72,7 +77,7 @@
       font-size: clamp(1.85rem, 2.8vw, 2.65rem);
       line-height: 1.08;
       letter-spacing: -.04em;
-      text-wrap: balance
+      text-wrap: wrap;
     }
 
     .weflair-section__body {
@@ -607,11 +612,11 @@
     }
 
     .weflair-challenges .weflair-challenges__col-text .h3 {
-      max-width: none;
+      max-width: 100% !important;
       margin-bottom: 1.25rem;
       line-height: 1.08;
       letter-spacing: -.04em;
-      text-wrap: balance
+      text-wrap: wrap !important;
     }
 
     .weflair-challenges .weflair-section__body {
@@ -765,12 +770,12 @@
     }
 
     .weflair-challenges .weflair-challenges__col-text .h3 {
-      max-width: 16ch;
+      max-width: 100% !important;
       margin-bottom: 1.1rem;
-      font-size: clamp(2.9rem, 5vw, 4.7rem);
-      line-height: .96;
-      letter-spacing: -.065em;
-      text-wrap: balance;
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      text-wrap: wrap !important;
     }
 
     .weflair-challenges .weflair-challenges__col-text .h3 .wf-accent {
@@ -825,7 +830,7 @@
 
     .weflair-problem-card h3 {
       margin: 0;
-      max-width: 12ch;
+      max-width: none;
       font-size: clamp(1.38rem, 1.55vw, 1.72rem);
       line-height: 1.08;
       letter-spacing: -.045em;
@@ -1009,9 +1014,9 @@
     }
 
     .weflair-compare-block .compare__row-title .h3 {
-      max-width: 12ch;
+      max-width: none;
       margin: 0 auto;
-      text-wrap: balance;
+      text-wrap: wrap;
       font-size: clamp(3rem, 5.8vw, 5.9rem);
       line-height: .92;
       letter-spacing: -.08em
@@ -1424,7 +1429,7 @@
       }
 
       .weflair-compare-block .compare__row-title .h3 {
-        max-width: 11ch;
+        max-width: none;
         font-size: clamp(2.8rem, 8vw, 4.8rem)
       }
 
@@ -1446,7 +1451,7 @@
       }
 
       .weflair-compare-block .compare__row-title .h3 {
-        max-width: 10ch;
+        max-width: none;
         font-size: clamp(2.35rem, 10vw, 3.5rem)
       }
 
@@ -1769,3 +1774,10 @@
 .weflair-mega-tile__p{margin:.15rem 0 0!important;font-size:.72rem!important;line-height:1.35;color:rgba(246,243,238,.45)!important;max-width:16rem}
 @media(max-width:991px){.nav-dropdown--mega{left:0!important;transform:none;min-width:0;width:100%}.weflair-mega-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:479px){.weflair-mega-grid{grid-template-columns:1fr}}
+
+/* Missing from index */
+.weflair-logo{display:inline-flex;align-items:center;gap:.58rem;color:#f6f3ee}
+.eyebrow{display:inline-flex;align-items:center;justify-self:start;gap:.45rem;font-size:.78rem;line-height:1.14;font-weight:700;letter-spacing:.025em;color:rgba(246,243,238,.9)}
+.eyebrow.is-centered{justify-self:start}
+.weflair-logo__mark,.weflair-eyebrow-icon,.weflair-method__icon{width:.85rem;height:.85rem;display:inline-flex;color:#3eff68;filter:drop-shadow(0 0 12px rgba(62,255,104,.18))}
+.weflair-logo__word{font-size:clamp(1.95rem,1.65vw,2.35rem);line-height:.95;font-weight:700;letter-spacing:-.05em}

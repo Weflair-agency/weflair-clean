@@ -1,0 +1,57 @@
+<section class="weflair-section weflair-credentials" id="credentials-legacy" hidden aria-hidden="true">
+      <div class="container">
+        <div class="weflair-section__head" style="text-align:center">
+          <h2 class="h3">WeFlair credentials</h2>
+        </div>
+        <div class="weflair-credentials__stats">
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">$30M+</span><span class="weflair-credentials__stat-label">In managed Ad Spend</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">10+</span><span class="weflair-credentials__stat-label">Years of experience</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">100+</span><span class="weflair-credentials__stat-label">Success stories</span></div>
+          <div class="weflair-credentials__stat"><span class="weflair-credentials__stat-num">4.93/5</span><span class="weflair-credentials__stat-label">Client satisfaction rate</span></div>
+        </div>
+        <div class="weflair-credentials__slider">
+          <div class="weflair-credentials__slider-track">
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+              <span class="weflair-credentials__badge-name">Google Partner</span>
+              <span class="weflair-credentials__badge-sub">PREMIER 2026</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span>
+              <span class="weflair-credentials__badge-name">Meta</span>
+              <span class="weflair-credentials__badge-sub">Business Partners Member</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+              <span class="weflair-credentials__badge-name">Certified</span>
+              <span class="weflair-credentials__badge-sub">Marketing Insider</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+              <span class="weflair-credentials__badge-name">Clutch</span>
+              <span class="weflair-credentials__badge-sub">Top PPC Company</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19l5.5-5.5L13 17l7-7"/><path d="M15 10h5v5"/></svg></span>
+              <span class="weflair-credentials__badge-name">High Performer</span>
+              <span class="weflair-credentials__badge-sub">Winter 2026</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+              <span class="weflair-credentials__badge-name">Microsoft Ads</span>
+              <span class="weflair-credentials__badge-sub">Certified Expert</span>
+            </div>
+            <div class="weflair-credentials__badge-tile">
+              <span class="weflair-credentials__badge-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+              <span class="weflair-credentials__badge-name">HubSpot</span>
+              <span class="weflair-credentials__badge-sub">Solutions Partner</span>
+            </div>
+          </div>
+          <div class="weflair-credentials__dots" aria-hidden="true">
+            <span class="weflair-credentials__dot is-active"></span>
+            <span class="weflair-credentials__dot"></span>
+            <span class="weflair-credentials__dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>

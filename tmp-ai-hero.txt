@@ -1,0 +1,45 @@
+<section class="ais-hero">
+    <span class="ais-star ais-star--left" aria-hidden="true"></span>
+    <span class="ais-star ais-star--right" aria-hidden="true"></span>
+    <div class="ais-dot-grid" aria-hidden="true"></div>
+    <div class="ais-meter ais-meter--left" aria-hidden="true">
+      <span style="--h:0.28"></span><span style="--h:0.46"></span><span style="--h:0.62"></span><span style="--h:0.82"></span><span style="--h:0.95"></span><span style="--h:0.74"></span><span style="--h:0.63"></span>
+    </div>
+    <div class="ais-meter ais-meter--right" aria-hidden="true">
+      <span style="--h:0.36"></span><span style="--h:0.54"></span><span style="--h:0.72"></span><span style="--h:0.9"></span><span style="--h:0.68"></span><span style="--h:0.52"></span><span style="--h:0.78"></span>
+    </div>
+    <div class="ais-wrap">
+      <div class="ais-hero__grid">
+        <div class="ais-kicker">AI Search, GEO &amp; SEO</div>
+        <h1 class="ais-hero__title">Most agencies bolted AI search onto an SEO retainer. <span class="accent">We built the system around how discovery works now.</span></h1>
+        <p class="ais-hero__copy">We combine technical SEO, answer-engine optimization, content structure, offsite authority, and conversion design so your brand can earn citations, win clicks, and turn AI-driven discovery into real pipeline.</p>
+        <div class="ais-hero__summary"><strong>Built for both visibility and outcome.</strong><span>ChatGPT, Gemini, AI Overviews, Perplexity, classic search, and the page experience that has to convert after the click.</span></div>
+        <div class="ais-btn-row">
+          <a class="ais-btn ais-btn--primary" href="#ai-audit">Get a free AI search audit</a>
+          <a class="ais-btn ais-btn--ghost" href="#how-it-works">See how the system works</a>
+        </div>
+        <div class="ais-chip-row">
+          <span class="ais-chip">Google AI Overviews</span>
+          <span class="ais-chip">ChatGPT</span>
+          <span class="ais-chip">Gemini</span>
+          <span class="ais-chip">Perplexity</span>
+          <span class="ais-chip">Claude</span>
+          <span class="ais-chip">Classic Search</span>
+        </div>
+        <div class="ais-hero__cards">
+          <article class="ais-hero__card">
+            <h3>SEO + AEO + GEO</h3>
+            <p>One integrated discovery system instead of a disconnected AI add-on.</p>
+          </article>
+          <article class="ais-hero__card">
+            <h3>Citations to sessions</h3>
+            <p>We monitor what happens after AI traffic lands, not just whether your brand was mentioned.</p>
+          </article>
+          <article class="ais-hero__card">
+            <h3>Technical to CRO</h3>
+            <p>Schema, entity structure, content design, and conversion paths are handled as one program.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>

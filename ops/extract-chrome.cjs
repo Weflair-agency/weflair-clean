@@ -1,0 +1,10 @@
+﻿const fs = require('fs');
+const cheerio = require('cheerio');
+const code = fs.readFileSync('C:/Users/sam/Desktop/vscode-weflair/weflair-clean/index.html', 'utf8');
+const $ = cheerio.load(code);
+const nav = $('.navbar_component').parent().html() || $('.navbar').parent().html();
+const footer = $('.footer_component').parent().html() || $('footer').parent().html();
+fs.writeFileSync('C:/Users/sam/Desktop/vscode-weflair/weflair-clean/src/partials/header.html', nav || '');
+fs.writeFileSync('C:/Users/sam/Desktop/vscode-weflair/weflair-clean/src/partials/footer.html', footer || '');
+console.log('Nav: ' + (nav ? nav.length : 0));
+console.log('Footer: ' + (footer ? footer.length : 0));

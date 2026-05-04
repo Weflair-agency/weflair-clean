@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta name="description" content="Content systems built for search and AI visibility." />
+  <meta name="description" content="SEO, AEO, GEO, and conversion design built to help ambitious brands earn citations, qualified traffic, and pipeline across search and AI surfaces." />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Visibility & SEO - WeFlair</title>
-  <link rel="canonical" href="https://weflair.co/services/ai-visibility-seo.html" />
+  <title>AI Search & SEO | WeFlair</title>
+  <link rel="canonical" href="https://weflair.com/services/ai-visibility-seo.html" />
   <meta name="theme-color" content="#151515" />
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
@@ -15,41 +15,1307 @@
   <script src="../weflair-hero.js" defer></script>
   
   <style>
-    .pm-page { background: #151515; color: #f6f3ee; font-family: 'Inter', sans-serif; }
+    .ais-page {
+      --ais-dark: #0a0f0c;
+      --ais-dark-2: #101611;
+      --ais-paper: #f7f8f3;
+      --ais-paper-2: #eef3ea;
+      --ais-ink: #121814;
+      --ais-ink-soft: rgba(18, 24, 20, 0.7);
+      --ais-line: rgba(18, 24, 20, 0.08);
+      --ais-line-strong: rgba(18, 24, 20, 0.14);
+      --ais-line-dark: rgba(255, 255, 255, 0.1);
+      --ais-text: #f6f3ee;
+      --ais-text-soft: rgba(246, 243, 238, 0.74);
+      --ais-accent: #42ff6f;
+      --ais-accent-soft: rgba(66, 255, 111, 0.14);
+      --ais-accent-deep: #1a8c43;
+      --ais-shadow: 0 26px 80px rgba(18, 24, 20, 0.12);
+      background: linear-gradient(180deg, #090d0a 0%, #111613 100%);
+      color: var(--ais-text);
+      font-family: "Helvetica Now Display", Helvetica, Arial, sans-serif;
+    }
+
     
-    /* 1. HERO */
-    .pd-hero-sec { position: relative; padding: clamp(10rem, 16vw, 15rem) 2rem clamp(6rem, 10vw, 8rem); text-align: center; overflow: hidden; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid rgba(246,243,238,0.06); }
-    .pd-hero-sec::before { content: ""; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 70vw; height: 70vw; background: radial-gradient(circle, rgba(62,255,104,0.1) 0%, transparent 60%); pointer-events: none; z-index: 0; }
-    .pd-hero__inner { position: relative; z-index: 1; max-width: 68rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-    .pd-hero-sec .eyebrow { margin-bottom: 1.5rem; justify-content: center; }
-    .pd-hero__title { font-size: clamp(3.2rem, 5.5vw, 5rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.06em; margin: 0 0 1.8rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif;}
-    .pd-hero__sub { font-size: clamp(1.15rem, 1.4vw, 1.3rem); line-height: 1.5; color: rgba(246,243,238,0.7); max-width: 48rem; margin: 0 auto 3rem; text-wrap: balance; }
 
-    /* 2. BLEED CALLOUT */
-    .pd-bleed-sec { padding: clamp(4rem, 8vw, 8rem) 2rem; background: #0a0b0a;}
-    .weflair-bleed-box { max-width:64rem; margin:0 auto; background:linear-gradient(135deg, rgba(20,24,20,1) 0%, rgba(13,17,13,1) 100%); border:1px solid rgba(255,62,62,0.3); border-radius:1.5rem; padding:4rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(255,62,62,0.05); position:relative; overflow:hidden;}
-    .weflair-bleed-box::after { content:""; position:absolute; left:0; top:0; width:50%; height:100%; background:radial-gradient(circle at left, rgba(255,62,62,0.1) 0%, transparent 80%); pointer-events:none;}
-    .weflair-bleed-box h2 { font-size:clamp(2rem, 3vw, 2.5rem); color:#f6f3ee; font-family: 'Space Grotesk', sans-serif; margin-bottom:1.5rem;}
-    .weflair-bleed-box p { font-size: 1.1rem; line-height:1.6; color: rgba(246,243,238,0.8); margin-bottom: 0;}
+    .ais-shell {
+      position: relative;
+      overflow: clip;
+    }
 
-    /* 3. TRANSFORMATION SPLIT */
-    .pd-transform-sec { padding: clamp(6rem, 10vw, 10rem) 2rem; border-top: 1px solid rgba(246,243,238,0.06); }
-    .pd-transform-inner { max-width: 68rem; margin: 0 auto; }
-    .pd-transform-head { text-align:center; margin-bottom: 4rem; }
-    .pd-transform-head h2 { font-size: clamp(2.5rem, 4vw, 3.4rem); font-family: 'Space Grotesk', sans-serif; }
-    .pd-transform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    @media(max-width:768px) { .pd-transform-grid { grid-template-columns: 1fr; } }
-    .transform-col { border-radius: 1.5rem; padding: 3rem; border: 1px solid; }
-    .transform-col--bad { background: rgba(255,62,62,0.02); border-color: rgba(255,62,62,0.1); }
-    .transform-col--good { background: rgba(62,255,104,0.02); border-color: rgba(62,255,104,0.2); box-shadow: 0 0 40px rgba(62,255,104,0.03); }
-    .transform-col h3 { font-size:1.5rem; font-family: 'Space Grotesk', sans-serif; margin-bottom:2rem; display:flex; align-items:center; gap:0.75rem;}
-    .transform-list { list-style:none; padding:0; margin:0; }
-    .transform-list li { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.25rem; font-size:1.05rem; color:rgba(246,243,238,0.7); line-height:1.5;}
-    .transform-col--bad .transform-list li svg { color: #ff3e3e; margin-top:0.15rem; flex-shrink:0; width:1.2rem; height:1.2rem;}
-    .transform-col--good .transform-list li svg { color: #3eff68; margin-top:0.15rem; flex-shrink:0; width:1.2rem; height:1.2rem;}
-    .transform-col--good h3 { color: #3eff68; }
-    .transform-col--bad h3 { color: #ff3e3e; }
+    .ais-wrap {
+      width: min(100% - 2.5rem, 78rem);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
+    .ais-section {
+      padding: clamp(4.75rem, 8vw, 7rem) 0;
+    }
+
+    .ais-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 0.82rem;
+      line-height: 1;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(246, 243, 238, 0.6);
+    }
+
+    .ais-kicker::before {
+      content: "";
+      width: 2.3rem;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.82;
+    }
+
+    .ais-light .ais-kicker {
+      color: rgba(18, 24, 20, 0.46);
+    }
+
+    .ais-title {
+      margin: 0 0 1.2rem;
+      font-size: clamp(2.65rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.08em;
+      font-weight: 700;
+      text-wrap: balance;
+      color: inherit;
+    }
+
+    .ais-copy {
+      margin: 0;
+      max-width: 44rem;
+      font-size: 1.05rem;
+      line-height: 1.78;
+      color: var(--ais-text-soft);
+      text-wrap: balance;
+    }
+
+    .ais-light .ais-copy {
+      color: var(--ais-ink-soft);
+    }
+
+    .ais-script {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--ais-accent-deep);
+    }
+
+    .ais-card {
+      border-radius: 1.8rem;
+      border: 1px solid rgba(18, 24, 20, 0.08);
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--ais-shadow);
+    }
+
+    .ais-light {
+      position: relative;
+      color: var(--ais-ink);
+      background:
+        radial-gradient(circle at 15% 25%, rgba(66, 255, 111, 0.08), transparent 32%),
+        radial-gradient(circle at 80% 16%, rgba(66, 255, 111, 0.06), transparent 26%),
+        linear-gradient(90deg, rgba(24, 62, 35, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, var(--ais-paper) 0%, var(--ais-paper-2) 100%);
+      background-size: auto, auto, 10rem 100%, auto;
+    }
+
+    .ais-light::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 22%);
+      pointer-events: none;
+    }
+
+    .ais-light--border {
+      border-top: 1px solid var(--ais-line);
+    }
+
+    .ais-head {
+      max-width: 54rem;
+      margin: 0 auto 3.2rem;
+      text-align: center;
+    }
+
+    .ais-head--tight {
+      margin-bottom: 2.4rem;
+    }
+
+    .ais-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.95rem;
+    }
+
+    .ais-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.55rem;
+      padding: 0.95rem 1.55rem;
+      border-radius: 1rem;
+      border: 1px solid transparent;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .ais-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .ais-btn--primary {
+      color: #061009;
+      background: linear-gradient(135deg, #65ff90 0%, #34ef64 100%);
+      box-shadow: 0 18px 45px rgba(66, 255, 111, 0.2);
+    }
+
+    .ais-btn--ghost {
+      color: var(--ais-text);
+      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .ais-btn--light {
+      color: var(--ais-ink);
+      border-color: rgba(18, 24, 20, 0.1);
+      background: rgba(18, 24, 20, 0.04);
+    }
+
+    .ais-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(8.8rem, 13vw, 10.8rem) 0 clamp(3.7rem, 6.5vw, 4.8rem);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at 50% 22%, rgba(66, 255, 111, 0.09), transparent 26%),
+        linear-gradient(180deg, #171919 0%, #111413 100%);
+    }
+
+    .ais-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+      background-size: 3rem 3rem;
+      opacity: 0.12;
+      mask-image: radial-gradient(circle at center, black 38%, transparent 78%);
+      pointer-events: none;
+    }
+
+    .ais-hero__grid {
+      max-width: 65rem;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .ais-star {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      pointer-events: none;
+      filter: drop-shadow(0 0 28px rgba(66, 255, 111, 0.35));
+    }
+
+    .ais-star::before,
+    .ais-star::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(66, 255, 111, 0), rgba(66, 255, 111, 0.9), rgba(66, 255, 111, 0));
+    }
+
+    .ais-star::before {
+      width: 100%;
+      height: 0.45rem;
+    }
+
+    .ais-star::after {
+      width: 0.45rem;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(66, 255, 111, 0), rgba(66, 255, 111, 0.9), rgba(66, 255, 111, 0));
+    }
+
+    .ais-star--left {
+      left: max(2vw, 1rem);
+      top: 10.5rem;
+      transform: scale(0.8);
+    }
+
+    .ais-star--right {
+      right: max(4vw, 1rem);
+      top: 16rem;
+      transform: scale(0.62);
+    }
+
+    .ais-dot-grid {
+      position: absolute;
+      top: 8.4rem;
+      right: max(9vw, 2rem);
+      width: 7.8rem;
+      height: 7.8rem;
+      border-radius: 1rem;
+      background-image: radial-gradient(circle, rgba(66, 255, 111, 0.65) 1px, transparent 1.25px);
+      background-size: 0.75rem 0.75rem;
+      opacity: 0.6;
+      box-shadow: inset 0 0 0 1px rgba(66, 255, 111, 0.12);
+      pointer-events: none;
+    }
+
+    .ais-meter {
+      position: absolute;
+      bottom: 3.3rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.35rem;
+      pointer-events: none;
+    }
+
+    .ais-meter span {
+      width: 0.4rem;
+      height: calc(3rem * var(--h));
+      border-radius: 999px 999px 0 0;
+      background: linear-gradient(180deg, rgba(152, 255, 181, 0.6) 0%, rgba(66, 255, 111, 0.94) 100%);
+      box-shadow: 0 0 24px rgba(66, 255, 111, 0.18);
+    }
+
+    .ais-meter--left {
+      left: max(2vw, 1.2rem);
+    }
+
+    .ais-meter--right {
+      right: max(2vw, 1.2rem);
+    }
+
+    .ais-hero__summary {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 0 auto 1.25rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(246, 243, 238, 0.82);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .ais-hero__summary strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .ais-hero__title {
+      margin: 0 0 1.45rem;
+      font-size: clamp(3.4rem, 7vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.09em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .ais-hero__title .accent {
+      color: var(--ais-accent);
+    }
+
+    .ais-hero__copy {
+      margin: 0 auto 1.75rem;
+      max-width: 47rem;
+      font-size: 1.1rem;
+      line-height: 1.72;
+      color: var(--ais-text-soft);
+      text-wrap: balance;
+    }
+
+    .ais-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 1.35rem;
+    }
+
+    .ais-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(246, 243, 238, 0.88);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .ais-chip::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--ais-accent);
+      box-shadow: 0 0 12px rgba(66, 255, 111, 0.45);
+    }
+
+    .ais-hero__cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .ais-hero__card {
+      padding: 1.2rem 1.15rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .ais-hero__card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.7rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--ais-accent);
+    }
+
+    .ais-hero__card p {
+      margin: 0;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: rgba(246, 243, 238, 0.75);
+    }
+
+    .ais-point-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.35rem;
+      align-items: start;
+    }
+
+    .ais-point {
+      padding-top: 1rem;
+      border-top: 1px solid rgba(18, 24, 20, 0.08);
+    }
+
+    .ais-point__icon {
+      display: inline-grid;
+      place-items: center;
+      width: 5rem;
+      height: 5rem;
+      margin-bottom: 1.4rem;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(100, 255, 145, 0.18), rgba(66, 255, 111, 0.94));
+      color: #061009;
+      box-shadow: 0 18px 35px rgba(66, 255, 111, 0.18);
+    }
+
+    .ais-point__icon svg {
+      width: 1.55rem;
+      height: 1.55rem;
+    }
+
+    .ais-point h3 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    .ais-point p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .ais-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .ais-mini-card {
+      padding: 1.65rem;
+    }
+
+    .ais-mini-card__mark {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 1rem;
+      color: var(--ais-accent-deep);
+    }
+
+    .ais-mini-card h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.1rem;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .ais-mini-card p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    .ais-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2.25rem;
+      align-items: start;
+    }
+
+    .ais-workspace {
+      padding: 1rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(245, 248, 241, 0.9));
+    }
+
+    .ais-browser {
+      border-radius: 1.55rem;
+      border: 1px solid rgba(18, 24, 20, 0.08);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(244, 247, 241, 0.98), rgba(235, 240, 231, 0.95));
+    }
+
+    .ais-browser__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.2rem 0.9rem;
+      color: rgba(18, 24, 20, 0.38);
+      font-size: 0.92rem;
+      line-height: 1;
+    }
+
+    .ais-browser__lights {
+      display: inline-flex;
+      gap: 0.35rem;
+    }
+
+    .ais-browser__lights span {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+    }
+
+    .ais-browser__lights span:nth-child(1) {
+      background: #ff6f61;
+    }
+
+    .ais-browser__lights span:nth-child(2) {
+      background: #ffcf52;
+    }
+
+    .ais-browser__lights span:nth-child(3) {
+      background: #4ed66d;
+    }
+
+    .ais-browser__body {
+      padding: 0 1rem 1rem;
+    }
+
+    .ais-browser__toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(18, 24, 20, 0.07);
+      border-radius: 1.3rem;
+      background: rgba(234, 239, 231, 0.88);
+      color: rgba(18, 24, 20, 0.62);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .ais-browser__surface {
+      margin-top: 0.95rem;
+      padding: 1rem;
+      border: 1px solid rgba(18, 24, 20, 0.07);
+      border-radius: 1.3rem;
+      background: rgba(235, 240, 231, 0.92);
+    }
+
+    .ais-surface-card {
+      padding: 1.1rem;
+      border: 1px solid rgba(18, 24, 20, 0.06);
+      border-radius: 1.15rem;
+      background: linear-gradient(180deg, rgba(244, 247, 241, 0.96), rgba(239, 243, 236, 0.92));
+    }
+
+    .ais-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(66, 255, 111, 0.16);
+      color: var(--ais-accent-deep);
+      font-size: 0.82rem;
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .ais-surface-card h3,
+    .ais-reference h3 {
+      margin: 0.9rem 0 0.55rem;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      color: var(--ais-ink);
+    }
+
+    .ais-surface-card p,
+    .ais-reference p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    .ais-reference {
+      margin-top: 0.95rem;
+      padding: 1.1rem;
+      border: 1px solid rgba(18, 24, 20, 0.06);
+      border-radius: 1.15rem;
+      background: linear-gradient(180deg, rgba(239, 244, 236, 0.95), rgba(232, 238, 229, 0.92));
+    }
+
+    .ais-reference__table {
+      margin-top: 0.9rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid rgba(18, 24, 20, 0.06);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .ais-reference__row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
+    .ais-reference__row + .ais-reference__row {
+      border-top: 1px solid rgba(18, 24, 20, 0.07);
+    }
+
+    .ais-reference__row strong {
+      color: var(--ais-ink);
+    }
+
+    .ais-reference__row span {
+      color: var(--ais-ink-soft);
+    }
+
+    .ais-accordion {
+      border-top: 1px solid var(--ais-line);
+    }
+
+    .ais-accordion details {
+      border-bottom: 1px solid var(--ais-line);
+    }
+
+    .ais-accordion summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.55rem 0;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ais-ink);
+    }
+
+    .ais-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ais-accordion__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .ais-accordion__label::before {
+      content: "";
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--ais-accent-deep);
+    }
+
+    .ais-accordion__toggle {
+      position: relative;
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 1px solid rgba(26, 140, 67, 0.18);
+      background: rgba(66, 255, 111, 0.08);
+    }
+
+    .ais-accordion__toggle::before,
+    .ais-accordion__toggle::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0.7rem;
+      height: 1.5px;
+      background: var(--ais-accent-deep);
+      transform: translate(-50%, -50%);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .ais-accordion__toggle::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .ais-accordion details[open] .ais-accordion__toggle::after {
+      opacity: 0;
+    }
+
+    .ais-accordion__body {
+      padding: 0 0 1.55rem;
+      color: var(--ais-ink-soft);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .ais-accordion__body p {
+      margin: 0;
+    }
+
+    .ais-accordion__body p + p {
+      margin-top: 1rem;
+    }
+
+    .ais-step-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .ais-step {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 1.2rem;
+      align-items: start;
+      padding: 1.35rem 1.55rem;
+    }
+
+    .ais-step__num {
+      display: inline-grid;
+      place-items: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(66, 255, 111, 0.24);
+      background: rgba(66, 255, 111, 0.1);
+      color: var(--ais-accent-deep);
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .ais-step h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.2rem;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: var(--ais-ink);
+    }
+
+    .ais-step p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .ais-service-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .ais-service-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .ais-service-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      padding: 1.3rem 0.15rem;
+      border: 0;
+      border-bottom: 1px solid var(--ais-line);
+      background: transparent;
+      color: rgba(18, 24, 20, 0.66);
+      font: inherit;
+      font-size: clamp(1.1rem, 1.75vw, 1.3rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .ais-service-trigger:hover,
+    .ais-service-trigger.is-active {
+      color: var(--ais-accent-deep);
+    }
+
+    .ais-service-trigger__mark {
+      flex-shrink: 0;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid transparent;
+      color: currentColor;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .ais-service-trigger.is-active .ais-service-trigger__mark {
+      border-color: rgba(66, 255, 111, 0.18);
+      background: rgba(66, 255, 111, 0.08);
+    }
+
+    .ais-service-panel {
+      padding: 2rem;
+      min-height: 23rem;
+    }
+
+    .ais-service-panel h3 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      color: var(--ais-ink);
+      text-wrap: balance;
+    }
+
+    .ais-service-panel p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .ais-check-list {
+      display: grid;
+      gap: 0.9rem;
+      padding: 0;
+      margin: 1.35rem 0 0;
+      list-style: none;
+    }
+
+    .ais-check-list li {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: start;
+      color: var(--ais-ink-soft);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .ais-check-list li::before {
+      content: "+";
+      display: inline-grid;
+      place-items: center;
+      width: 1.35rem;
+      height: 1.35rem;
+      margin-top: 0.1rem;
+      border-radius: 50%;
+      background: rgba(66, 255, 111, 0.1);
+      color: var(--ais-accent-deep);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .ais-compare-wrap {
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+    }
+
+    .ais-compare {
+      min-width: 57rem;
+      border-radius: 1.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(18, 24, 20, 0.08);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--ais-shadow);
+    }
+
+    .ais-compare__head,
+    .ais-compare__row {
+      display: grid;
+      grid-template-columns: minmax(12rem, 1fr) minmax(18rem, 1.45fr) minmax(18rem, 1.45fr);
+    }
+
+    .ais-compare__head {
+      background: linear-gradient(135deg, #48ed6c 0%, #2ddf5c 100%);
+      color: #08110a;
+      font-weight: 700;
+    }
+
+    .ais-compare__head div,
+    .ais-compare__cell {
+      padding: 1.3rem 1.15rem;
+      font-size: 0.98rem;
+      line-height: 1.68;
+    }
+
+    .ais-compare__row + .ais-compare__row {
+      border-top: 1px solid rgba(18, 24, 20, 0.08);
+    }
+
+    .ais-compare__cell {
+      color: var(--ais-ink-soft);
+    }
+
+    .ais-compare__cell strong {
+      color: var(--ais-ink);
+    }
+
+    .ais-compare__badge {
+      display: inline-grid;
+      place-items: center;
+      width: 1.55rem;
+      height: 1.55rem;
+      margin-right: 0.6rem;
+      border-radius: 50%;
+      font-weight: 700;
+      line-height: 1;
+      vertical-align: middle;
+    }
+
+    .ais-compare__badge--plus {
+      background: rgba(66, 255, 111, 0.12);
+      color: var(--ais-accent-deep);
+    }
+
+    .ais-compare__badge--minus {
+      background: rgba(18, 24, 20, 0.06);
+      color: rgba(18, 24, 20, 0.4);
+    }
+
+    .ais-compare__cta {
+      margin-top: 1.75rem;
+      text-align: center;
+    }
+
+    .ais-dark-band {
+      position: relative;
+      overflow: hidden;
+      color: var(--ais-text);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(66, 255, 111, 0.12), transparent 30%),
+        linear-gradient(180deg, #09100c 0%, #0c120f 100%);
+    }
+
+    .ais-dark-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 3.2rem 3.2rem;
+      opacity: 0.08;
+      mask-image: radial-gradient(circle at center, black 42%, transparent 82%);
+      pointer-events: none;
+    }
+
+    .ais-dark-band .ais-copy {
+      color: var(--ais-text-soft);
+    }
+
+    .ais-results-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.92fr);
+      gap: 1.8rem;
+      align-items: stretch;
+    }
+
+    .ais-results-card {
+      padding: 2rem;
+      border-radius: 1.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.025);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .ais-chart {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: end;
+      min-height: 22rem;
+      padding: 0.5rem 0 0;
+    }
+
+    .ais-bar-group {
+      text-align: center;
+    }
+
+    .ais-bar-value {
+      display: block;
+      margin-bottom: 0.65rem;
+      font-size: 1.45rem;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--ais-accent);
+    }
+
+    .ais-bar {
+      width: min(6rem, 100%);
+      margin: 0 auto 0.85rem;
+      border-radius: 1.3rem 1.3rem 0.7rem 0.7rem;
+      background:
+        linear-gradient(180deg, rgba(173, 255, 194, 0.34) 0%, rgba(66, 255, 111, 0.96) 100%);
+      box-shadow: 0 0 28px rgba(66, 255, 111, 0.18);
+    }
+
+    .ais-bar-group h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .ais-bar-group p {
+      margin: 0;
+      color: rgba(246, 243, 238, 0.7);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .ais-insight-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .ais-insight {
+      padding: 1.3rem 1.35rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ais-insight__top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 0.7rem;
+      color: rgba(246, 243, 238, 0.54);
+      font-size: 0.86rem;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .ais-insight h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .ais-insight p {
+      margin: 0;
+      color: rgba(246, 243, 238, 0.72);
+      font-size: 0.96rem;
+      line-height: 1.68;
+    }
+
+    .ais-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .ais-case-card {
+      padding: 1.6rem;
+    }
+
+    .ais-case-card h3 {
+      margin: 0 0 0.7rem;
+      font-size: 1.15rem;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      color: var(--ais-ink);
+    }
+
+    .ais-case-card p {
+      margin: 0;
+      color: var(--ais-ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.72;
+    }
+
+    .ais-case-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.48rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(66, 255, 111, 0.12);
+      color: var(--ais-accent-deep);
+      font-size: 0.82rem;
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .ais-stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .ais-stat {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(18, 24, 20, 0.06);
+      color: rgba(18, 24, 20, 0.68);
+      font-size: 0.9rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .ais-case-link {
+      display: inline-flex;
+      margin-top: 1.35rem;
+      color: var(--ais-accent-deep);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .ais-faq {
+      display: grid;
+      gap: 0;
+      margin-top: 3rem;
+    }
+
+    .ais-faq details {
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .ais-faq details:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .ais-faq summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .ais-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ais-faq__body {
+      padding: 0 0 1.5rem;
+      max-width: 55rem;
+      color: rgba(246, 243, 238, 0.74);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .ais-faq__body p {
+      margin: 0;
+    }
+
+    .ais-final-cta {
+      max-width: 56rem;
+      margin: 3rem auto 0;
+      padding: clamp(2rem, 4vw, 3rem);
+      border-radius: 2rem;
+      border: 1px solid rgba(66, 255, 111, 0.16);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
+      text-align: center;
+      scroll-margin-top: 8rem;
+    }
+
+    .ais-final-cta h3 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.08em;
+      color: #ffffff;
+      text-wrap: balance;
+    }
+
+    .ais-final-cta p {
+      margin: 0 auto 1.65rem;
+      max-width: 42rem;
+      color: rgba(246, 243, 238, 0.76);
+      font-size: 1.05rem;
+      line-height: 1.76;
+    }
+
+    @media (max-width: 1080px) {
+      .ais-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ais-point-grid,
+      .ais-hero__cards,
+      .ais-case-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ais-results-grid,
+      .ais-service-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .ais-split {
+        grid-template-columns: 1fr;
+      }
+
+      .ais-dot-grid,
+      .ais-meter,
+      .ais-star--right {
+        display: none;
+      }
+
+      .ais-star--left {
+        left: -0.3rem;
+        top: 9rem;
+        transform: scale(0.58);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ais-wrap {
+        width: min(100% - 1.5rem, 78rem);
+      }
+
+      .ais-section {
+        padding: 4.25rem 0;
+      }
+
+      .ais-hero__summary {
+        border-radius: 1.1rem;
+      }
+
+      .ais-point-grid,
+      .ais-grid-4,
+      .ais-hero__cards,
+      .ais-case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ais-step {
+        grid-template-columns: 1fr;
+      }
+
+      .ais-step__num {
+        width: 2.7rem;
+        height: 2.7rem;
+      }
+
+      .ais-service-panel {
+        padding: 1.5rem;
+        min-height: 0;
+      }
+
+      .ais-results-card {
+        padding: 1.35rem;
+      }
+
+      .ais-chart {
+        min-height: 16rem;
+        gap: 0.8rem;
+      }
+
+      .ais-bar {
+        width: 4.35rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .ais-btn-row {
+        flex-direction: column;
+      }
+
+      .ais-btn {
+        width: 100%;
+      }
+
+      .ais-chip-row {
+        justify-content: flex-start;
+      }
+
+      .ais-hero__grid {
+        text-align: left;
+      }
+
+      .ais-hero__summary,
+      .ais-btn-row,
+      .ais-chip-row {
+        justify-content: flex-start;
+      }
+
+      .ais-hero__cards {
+        margin-top: 1rem;
+      }
+    }
   </style>
   
 <style id="weflair-mega-dropdown-css">
@@ -148,364 +1414,548 @@
       }
     }
   </style>
+  <meta property="og:title" content="AI Search &amp; SEO | WeFlair" />
+  <meta name="twitter:title" content="AI Search &amp; SEO | WeFlair" />
+  <meta property="og:description" content="SEO, AEO, GEO, and conversion design built to help ambitious brands earn citations, qualified traffic, and pipeline across search and AI surfaces." />
+  <meta name="twitter:description" content="SEO, AEO, GEO, and conversion design built to help ambitious brands earn citations, qualified traffic, and pipeline across search and AI surfaces." />
+  <meta property="og:url" content="https://weflair.com/services/ai-visibility-seo.html" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
-<body data-weflair-static="true" data-theme="dark" class="body pm-page" style="padding-top:var(--nav-bar-height,5rem)">
+<body data-weflair-static="true" data-theme="dark" class="body ais-page" style="padding-top:var(--nav-bar-height,5rem)">
   <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
-  <header class="header">
-        <nav class="nav">
-          <div class="nav-bar">
-            <div class="nav-bar__bg"></div>
-            <div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="/" aria-current="page"
-                class="nav-bar__logo-a w-inline-block w--current" data-weflair-logo-applied="true"><span
-                  class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 34 45" fill="none" class="weflair-flare">
-                      <path
-                        d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
-                        fill="currentColor"></path>
-                    </svg></span><span class="weflair-logo__word">WeFlair</span></span></a>
-              <div class="nav-bar__hamburger">
-                <div data-navigation-toggle="toggle" class="hamburger">
-                  <div class="hamburger__bar is--top"></div>
-                  <div class="hamburger__bar"></div>
-                  <div class="hamburger__bar is--bottom"></div>
-                </div>
-              </div>
-            </div>
-            <div data-lenis-prevent="" class="nav-bar__links">
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="nav-dropdown__grid-row">
-                          <a data-hover="" data-arrow="diagonal" href="/services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3>
-                              <p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                              </div>
-                            </div>
-                          </a>
-                          <a data-hover="" data-arrow="diagonal" href="/services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Go To Market Systems</h3>
-                              <p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                        <div class="nav-dropdown__grid-row">
-                          <a data-hover="" data-arrow="diagonal" href="/services/performance-design.html" class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3>
-                              <p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                              </div>
-                            </div>
-                          </a>
-                          <a data-hover="" data-arrow="diagonal" href="/services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3>
-                              <p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown nav-dropdown--mega">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="weflair-mega-grid">
-                          <a data-hover="" href="/resources/playbooks.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="m10 13-2 2 2 2" /><path d="m14 17 2-2-2-2" /></svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Playbooks</h3>
-                              <p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p>
-                            </div>
-                          </a>
-                          <a data-hover="" href="/resources/guides.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Guides</h3>
-                              <p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p>
-                            </div>
-                          </a>
-                          <a data-hover="" href="/tools.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3>
-                              <p class="weflair-mega-tile__p">Calculators, tools, and automations to boost performance.</p>
-                            </div>
-                          </a>
-                          <a data-hover="" href="/resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="/tools.html?topic=checklists" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="/cases.html" class="weflair-mega-tile w-inline-block">
-                            <div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg></div>
-                            <div class="weflair-mega-tile__text">
-                              <h3 class="weflair-mega-tile__h">Case Studies</h3>
-                              <p class="weflair-mega-tile__p">Real results from real engagements.</p>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div data-dropdown-status="not-active" class="nav-bar__link">
-                <div data-dropdown-click="" class="nav-bar__link-inner">
-                  <div class="nav-bar__link-bg"></div>
-                  <div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span>
-                    <div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg">
-                        <path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em">
-                        </path>
-                      </svg></div>
-                  </div>
-                </div>
-                <div class="nav-dropdown">
-                  <div class="nav-dropdown__overflow">
-                    <div class="nav-dropdown__overflow-inner">
-                      <div class="nav-dropdown__grid">
-                        <div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/about.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">About Us</h3>
-                              <p class="nav-dropdown-tile__p">The growth agency built for operators.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a><a data-hover="" data-arrow="diagonal" href="/careers.html"
-                            class="nav-dropdown-tile w-inline-block">
-                            <div class="nav-dropdown-tile__bg"></div>
-                            <div class="nav-dropdown-tile__text">
-                              <h3 class="nav-dropdown-tile__h">Careers</h3>
-                              <p class="nav-dropdown-tile__p">Join our team of growth specialists.</p>
-                            </div>
-                            <div class="nav-dropdown-tile__arrow">
-                              <div class="arrow">
-                                <div class="arrow__bg"></div>
-                                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg"
-                                    width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor"
-                                      stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                                      stroke-linecap="square" stroke-linejoin="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default"
-                href="/contact.html" class="btn w-inline-block">
-                <div class="btn__bg"></div>
-                <div class="btn__text"><span class="btn__span">Talk to us</span></div>
-                <div class="arrow">
-                  <div class="arrow__bg"></div>
-                  <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                      viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                      <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                    </svg></div>
-                  <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                      fill="none" class="arrow__svg">
-                      <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                      <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                        stroke-linecap="square" stroke-linejoin="round"></path>
-                    </svg></div>
-                </div>
-              </a></div>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="/index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="/resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="/resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="/resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="/resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="/resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+<main class="main ais-shell">
+  <section class="ais-hero">
+    <span class="ais-star ais-star--left" aria-hidden="true"></span>
+    <span class="ais-star ais-star--right" aria-hidden="true"></span>
+    <div class="ais-dot-grid" aria-hidden="true"></div>
+    <div class="ais-meter ais-meter--left" aria-hidden="true">
+      <span style="--h:0.28"></span><span style="--h:0.46"></span><span style="--h:0.62"></span><span style="--h:0.82"></span><span style="--h:0.95"></span><span style="--h:0.74"></span><span style="--h:0.63"></span>
+    </div>
+    <div class="ais-meter ais-meter--right" aria-hidden="true">
+      <span style="--h:0.36"></span><span style="--h:0.54"></span><span style="--h:0.72"></span><span style="--h:0.9"></span><span style="--h:0.68"></span><span style="--h:0.52"></span><span style="--h:0.78"></span>
+    </div>
+    <div class="ais-wrap">
+      <div class="ais-hero__grid">
+        <div class="ais-kicker">AI Search, GEO &amp; SEO</div>
+        <h1 class="ais-hero__title">Most agencies bolted AI search onto an SEO retainer. <span class="accent">We built the system around how discovery works now.</span></h1>
+        <p class="ais-hero__copy">We combine technical SEO, answer-engine optimization, content structure, offsite authority, and conversion design so your brand can earn citations, win clicks, and turn AI-driven discovery into real pipeline.</p>
+        <div class="ais-hero__summary"><strong>Built for both visibility and outcome.</strong><span>ChatGPT, Gemini, AI Overviews, Perplexity, classic search, and the page experience that has to convert after the click.</span></div>
+        <div class="ais-btn-row">
+          <a class="ais-btn ais-btn--primary" href="#ai-audit">Get a free AI search audit</a>
+          <a class="ais-btn ais-btn--ghost" href="#how-it-works">See how the system works</a>
+        </div>
+        <div class="ais-chip-row">
+          <span class="ais-chip">Google AI Overviews</span>
+          <span class="ais-chip">ChatGPT</span>
+          <span class="ais-chip">Gemini</span>
+          <span class="ais-chip">Perplexity</span>
+          <span class="ais-chip">Claude</span>
+          <span class="ais-chip">Classic Search</span>
+        </div>
+        <div class="ais-hero__cards">
+          <article class="ais-hero__card">
+            <h3>SEO + AEO + GEO</h3>
+            <p>One integrated discovery system instead of a disconnected AI add-on.</p>
+          </article>
+          <article class="ais-hero__card">
+            <h3>Citations to sessions</h3>
+            <p>We monitor what happens after AI traffic lands, not just whether your brand was mentioned.</p>
+          </article>
+          <article class="ais-hero__card">
+            <h3>Technical to CRO</h3>
+            <p>Schema, entity structure, content design, and conversion paths are handled as one program.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-light">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">AI Search Approach</div>
+        <h2 class="ais-title">A <span class="ais-script">future-ready</span> system for AI discovery, classic search, and conversion.</h2>
+        <p class="ais-copy">The objective is not to show up once in an LLM answer and call it progress. The objective is to build durable visibility across search and AI surfaces, then turn that attention into qualified engagement.</p>
+      </div>
+      <div class="ais-point-grid">
+        <article class="ais-point">
+          <div class="ais-point__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"></circle>
+              <path d="M20 20 16.5 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
           </div>
-        </nav>
-      </header>
-<main class="main">
-  <section class="pd-hero-sec">
-    <div class="pd-hero__inner">
-      <div class="eyebrow" style="margin-bottom:1.5rem; justify-content:center;">
-        <span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg></span>
-        <p class="eyebrow__p">AI SEO & Programmatic</p>
-      </div>
-      <h1 class="pd-hero__title">Dominate AI Overviews & <span style="color:#3eff68">Search Engines.</span></h1>
-      <p class="pd-hero__sub">Traditional keyword stuffing is dead. We construct massive programmatic architectures and optimize for the LLM era so that Perplexity, ChatGPT, and Google explicitly recommend you over competitors.</p>
-      <div style="margin-top:2rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span">Audit My Technical SEO</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="pd-bleed-sec">
-    <div class="weflair-bleed-box">
-      <h2>ChatGPT is stealing your Google Traffic.</h2>
-      <p>If your semantic structure and entity modeling isn't built to be processed by LLMs, you are going to disappear in the next 18 months. We engineer complex programmatic hubs ensuring your brand gets mathematically cited every time a buyer asks an AI for a recommendation.</p>
-    </div>
-  </section>
-
-  <section class="pd-transform-sec">
-    <div class="pd-transform-inner">
-      <div class="pd-transform-head">
-        <h2>The Search Paradigm Shift</h2>
-      </div>
-      <div class="pd-transform-grid">
-        <div class="transform-col transform-col--bad">
-          <h3><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Legacy SEO</h3>
-          <ul class="transform-list">
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Basic blog posts nobody reads.</li>
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Spammy backlink buying and link farms.</li>
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Keyword density optimization alone.</li>
-          </ul>
-        </div>
-        <div class="transform-col transform-col--good">
-          <h3><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> WeFlair Semantic Architecture</h3>
-          <ul class="transform-list">
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Programmatic SEO for 1000s of scalable pages.</li>
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Generative Engine Optimization (GEO) specifically for ChatGPT.</li>
-            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Deep technical structured data and schema markup.</li>
-          </ul>
-        </div>
+          <h3>Audit how your brand is understood.</h3>
+          <p>We review how AI platforms and search engines represent your brand, where competitors are getting chosen instead, what topics trigger answers in your market, and which assets already deserve to be elevated.</p>
+        </article>
+        <article class="ais-point">
+          <div class="ais-point__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17h10M7 12h10M7 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              <path d="M17 16V6l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3>Engineer pages models and people can trust.</h3>
+          <p>We tighten structure, schema, entities, internal linking, answer blocks, trust signals, and topical depth so your content becomes easier to parse, cite, and rank across both AI and traditional search.</p>
+        </article>
+        <article class="ais-point">
+          <div class="ais-point__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <path d="M5 16v-5m7 5V8m7 8V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              <path d="M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <h3>Turn visibility into sessions, engagement, and pipeline.</h3>
+          <p>Showing up is only part of the job. We monitor referral behavior, redesign the path after the click, and iterate the conversion flow so AI visibility contributes to measurable business outcomes.</p>
+        </article>
       </div>
     </div>
   </section>
 
+  <section class="ais-light ais-light--border">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head ais-head--tight">
+        <div class="ais-kicker">Our Philosophy</div>
+        <h2 class="ais-title">Built for a search landscape that keeps moving.</h2>
+        <p class="ais-copy">The page structure, the answer structure, and the conversion structure all matter now. So does the pace at which the models, surfaces, and signals keep changing.</p>
+      </div>
+      <div class="ais-grid-4">
+        <article class="ais-card ais-mini-card">
+          <svg class="ais-mini-card__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M7 4l7 8-7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <h3>Data-backed iteration</h3>
+          <p>We use visibility audits, referral behavior, and page interaction data to improve what gets cited and what gets action.</p>
+        </article>
+        <article class="ais-card ais-mini-card">
+          <svg class="ais-mini-card__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M7 4l7 8-7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <h3>Human-first answer design</h3>
+          <p>We do not write for crawlers alone. We design content to read cleanly for people while staying structurally obvious for models.</p>
+        </article>
+        <article class="ais-card ais-mini-card">
+          <svg class="ais-mini-card__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M7 4l7 8-7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <h3>Continuous adaptation</h3>
+          <p>AI search behavior shifts quickly. We treat this as an active operating system, not a one-time SEO cleanup project.</p>
+        </article>
+        <article class="ais-card ais-mini-card">
+          <svg class="ais-mini-card__mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M7 4l7 8-7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <h3>Trust signals that compound</h3>
+          <p>Technical structure, expert content, mentions, PR, and brand-topic association work better when they reinforce each other.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="footer weflair-footer">
-      <div class="weflair-footer__cta-banner" id="audit">
-        <div class="container">
-          <div class="weflair-footer__cta-inner">
-            <div class="eyebrow is-centered"><span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 34 45" fill="none" class="weflair-flare">
-                  <path
-                    d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z"
-                    fill="currentColor"></path>
-                </svg></span>
-              <p class="eyebrow__p">Next step</p>
+  <section class="ais-light ais-light--border">
+    <div class="ais-wrap ais-section">
+      <div class="ais-split">
+        <div class="ais-card ais-workspace">
+          <div class="ais-browser">
+            <div class="ais-browser__top">
+              <div class="ais-browser__lights" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span>AI search strategy workspace</span>
             </div>
-            <h2 class="h3">Request a growth audit.</h2>
-            <p class="weflair-section__body">We will show you what is leaking, what needs fixing first, and whether
-              there is a real fit.</p>
-            <p class="weflair-section__body is--muted">If there is no fit, we will say so.</p><a data-hover=""
-              data-btn-theme="primary" href="/contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
-              <div class="btn__bg"></div>
-              <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
-              <div class="arrow">
-                <div class="arrow__bg"></div>
-                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                    viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg></div>
-                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                    fill="none" class="arrow__svg">
-                    <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                    <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                      stroke-linecap="square" stroke-linejoin="round"></path>
-                  </svg></div>
+            <div class="ais-browser__body">
+              <div class="ais-browser__toolbar">
+                <span>Prompt cluster: <strong>best growth agency for AI visibility</strong></span>
+                <span>Surface: <strong>ChatGPT / Gemini</strong></span>
               </div>
-            </a>
+              <div class="ais-browser__surface">
+                <div class="ais-surface-card">
+                  <span class="ais-pill">Answer surface</span>
+                  <h3>From discovery, to engagement and conversion.</h3>
+                  <p>Answer visibility matters only if the page is structured to keep the visit moving. That means clear headings, citation-ready summaries, relevant proof, internal pathways, and a conversion path that matches search intent.</p>
+                </div>
+                <div class="ais-reference">
+                  <span class="ais-pill">Reference map</span>
+                  <div class="ais-reference__table">
+                    <div class="ais-reference__row"><strong>Content structure</strong><span>LLM-ready summaries, schema, internal links</span></div>
+                    <div class="ais-reference__row"><strong>Authority layer</strong><span>Mentions, backlinks, digital PR, topical association</span></div>
+                    <div class="ais-reference__row"><strong>Post-click path</strong><span>Landing clarity, proof, funnel progression, CTA fit</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="ais-head" style="text-align:left; margin:0 0 1.5rem;">
+            <div class="ais-kicker">AI Search Strategy &amp; Execution</div>
+            <h2 class="ais-title">From discovery, to engagement and conversion.</h2>
+          </div>
+          <div class="ais-accordion">
+            <details open>
+              <summary>
+                <span class="ais-accordion__label">Auditing &amp; analysis</span>
+                <span class="ais-accordion__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="ais-accordion__body">
+                <p>AI search optimization starts with a full audit of how your brand shows up across ChatGPT, Gemini, AI Overviews, Perplexity, and classic search. We assess existing content, topic coverage, technical SEO, entity clarity, and where brand mentions and backlinks are strengthening or weakening your position.</p>
+                <p>We then review which pages are already being cited, how competitors are getting selected, and what search and answer prompts are most likely to create commercial opportunities for your category.</p>
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="ais-accordion__label">Visibility &amp; optimization</span>
+                <span class="ais-accordion__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="ais-accordion__body">
+                <p>We improve the surfaces most likely to earn citations and clicks: summaries, comparison structures, schema, page hierarchy, internal links, entity alignment, and topical gaps that make it easier for engines to understand what your brand should be surfaced for.</p>
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="ais-accordion__label">Conversion optimization</span>
+                <span class="ais-accordion__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="ais-accordion__body">
+                <p>Visibility is only useful if the visit moves. We tighten the landing experience, proof hierarchy, CTA fit, and funnel progression so colder AI-referred traffic has a clearer path to action.</p>
+              </div>
+            </details>
+            <details>
+              <summary>
+                <span class="ais-accordion__label">Testing &amp; reporting</span>
+                <span class="ais-accordion__toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="ais-accordion__body">
+                <p>We track citations, referral behavior, assisted conversion patterns, and the prompts or pages creating commercial upside, then iterate the system based on evidence rather than vanity visibility metrics.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-light ais-light--border" id="how-it-works">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">How It Works</div>
+        <h2 class="ais-title">A search system that moves in four steps.</h2>
+        <p class="ais-copy">The execution is layered on purpose so every gain in discoverability makes the next layer stronger instead of creating disconnected workstreams.</p>
+      </div>
+      <div class="ais-step-list">
+        <article class="ais-card ais-step">
+          <div class="ais-step__num">01</div>
+          <div>
+            <h3>Map the answer landscape</h3>
+            <p>We identify the prompts, topics, entities, gaps, and competitor patterns that shape whether your brand gets surfaced across AI and search.</p>
+          </div>
+        </article>
+        <article class="ais-card ais-step">
+          <div class="ais-step__num">02</div>
+          <div>
+            <h3>Rebuild the content and technical layer</h3>
+            <p>We tighten page structure, schema, answer blocks, topical coverage, internal links, and information architecture so the site is easier to rank, parse, and cite.</p>
+          </div>
+        </article>
+        <article class="ais-card ais-step">
+          <div class="ais-step__num">03</div>
+          <div>
+            <h3>Strengthen authority and brand-topic association</h3>
+            <p>We pair on-page work with mentions, backlinks, PR, and supporting assets that help reinforce your expertise across the surfaces models rely on.</p>
+          </div>
+        </article>
+        <article class="ais-card ais-step">
+          <div class="ais-step__num">04</div>
+          <div>
+            <h3>Measure the visit, then improve the funnel</h3>
+            <p>We use referral behavior and on-page interaction data to refine the content layout and conversion flow so visibility turns into business impact.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-light ais-light--border">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">Our Services</div>
+        <h2 class="ais-title">What the program actually includes.</h2>
+        <p class="ais-copy">This is not a vague AI visibility package. Each layer has a clear job inside the same system.</p>
+      </div>
+      <div class="ais-service-layout">
+        <div class="ais-service-list" role="tablist" aria-label="AI search services">
+          <button class="ais-service-trigger is-active" type="button" role="tab" aria-pressed="true" data-title="AI search strategy &amp; content design" data-copy="We map the real questions people ask across search, answer engines, and conversational interfaces, then design content that is easier to cite, easier to understand, and easier to convert from." data-points="Intent and prompt research tied to revenue priorities||Answer blocks, summaries, and comparison structures for citation-ready pages||Editorial planning that combines SEO demand and AI-answer opportunity">
+            <span>AI search strategy &amp; content design</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+          <button class="ais-service-trigger" type="button" role="tab" aria-pressed="false" data-title="Technical SEO &amp; structured data" data-copy="We fix crawl, indexation, schema, site architecture, and content formatting so both traditional engines and answer engines can parse your pages cleanly." data-points="Schema design for product, service, and comparison content||Internal linking and information architecture updates||Technical cleanup for speed, rendering, and crawl efficiency">
+            <span>Technical SEO &amp; structured data</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+          <button class="ais-service-trigger" type="button" role="tab" aria-pressed="false" data-title="Entity, mention &amp; citation building" data-copy="We reinforce what your brand is associated with through off-site mentions, backlinks, PR, and entity clarity work that improves discoverability." data-points="Brand-topic association mapping||Citation sources and authority opportunities||Supportive assets that make mentions easier to earn">
+            <span>Entity, mention &amp; citation building</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+          <button class="ais-service-trigger" type="button" role="tab" aria-pressed="false" data-title="SEO foundations &amp; topical coverage" data-copy="We build the classic SEO layer properly so AI visibility is supported by durable organic demand capture." data-points="Topical gap analysis and content plans||Hub and cluster structures around commercial intent||Pages aligned to search demand and buying questions">
+            <span>SEO foundations &amp; topical coverage</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+          <button class="ais-service-trigger" type="button" role="tab" aria-pressed="false" data-title="Conversion paths for AI-referred traffic" data-copy="We redesign what happens after the click so AI-referred visits are easier to qualify, trust, and move through the funnel." data-points="Landing-page clarity and proof hierarchy||CTA fit for colder discovery traffic||Journey tuning around engagement and conversion signals">
+            <span>Conversion paths for AI-referred traffic</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+          <button class="ais-service-trigger" type="button" role="tab" aria-pressed="false" data-title="Reporting, testing &amp; iteration" data-copy="We treat AI search as an operating system, not a one-time deliverable, with reporting tied to business outcomes." data-points="Answer-surface monitoring and citation review||Referral and assisted conversion analysis||Continuous experimentation across content, structure, and CRO">
+            <span>Reporting, testing &amp; iteration</span>
+            <span class="ais-service-trigger__mark" aria-hidden="true">+</span>
+          </button>
+        </div>
+        <article class="ais-card ais-service-panel" id="ais-service-panel" aria-live="polite">
+          <h3 id="ais-service-title">AI search strategy &amp; content design</h3>
+          <p id="ais-service-copy">We map the real questions people ask across search, answer engines, and conversational interfaces, then design content that is easier to cite, easier to understand, and easier to convert from.</p>
+          <ul class="ais-check-list" id="ais-service-points">
+            <li>Intent and prompt research tied to revenue priorities</li>
+            <li>Answer blocks, summaries, and comparison structures for citation-ready pages</li>
+            <li>Editorial planning that combines SEO demand and AI-answer opportunity</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-light ais-light--border">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">Why WeFlair</div>
+        <h2 class="ais-title">A search system, not a bolt-on AI package.</h2>
+        <p class="ais-copy">WeFlair is built to connect strategy, technical work, content, and conversion design so each part makes the others stronger.</p>
+      </div>
+      <div class="ais-compare-wrap">
+        <div class="ais-compare">
+          <div class="ais-compare__head">
+            <div>Feature</div>
+            <div>WeFlair</div>
+            <div>Typical SEO-only retainer</div>
+          </div>
+          <div class="ais-compare__row">
+            <div class="ais-compare__cell"><strong>SEO + AEO + GEO planning</strong></div>
+            <div class="ais-compare__cell">One integrated roadmap across classic search, answer engines, and post-click performance.</div>
+            <div class="ais-compare__cell">Often handled as separate initiatives or not handled at all.</div>
+          </div>
+          <div class="ais-compare__row">
+            <div class="ais-compare__cell"><strong>Answer-engine structure</strong></div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--plus">+</span>Schema, summaries, comparison logic, and entity cleanup built into the page design.</div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--minus">-</span>Standard on-page SEO without a specific answer-surface strategy.</div>
+          </div>
+          <div class="ais-compare__row">
+            <div class="ais-compare__cell"><strong>Citation and mention layer</strong></div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--plus">+</span>Brand-topic association, offsite mentions, and authority work tied to discoverability goals.</div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--minus">-</span>Authority is usually treated as generic link building.</div>
+          </div>
+          <div class="ais-compare__row">
+            <div class="ais-compare__cell"><strong>LLM referral conversion tuning</strong></div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--plus">+</span>We monitor what happens after AI traffic lands and improve the page accordingly.</div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--minus">-</span>Visibility may be reported, but the post-click journey is left untouched.</div>
+          </div>
+          <div class="ais-compare__row">
+            <div class="ais-compare__cell"><strong>Execution across teams</strong></div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--plus">+</span>Content, technical SEO, CRO, and strategy move through one accountable delivery loop.</div>
+            <div class="ais-compare__cell"><span class="ais-compare__badge ais-compare__badge--minus">-</span>Work is fragmented across specialists with weaker handoff quality.</div>
+          </div>
+        </div>
+      </div>
+      <div class="ais-compare__cta">
+        <a class="ais-btn ais-btn--primary" href="#ai-audit">Get a free AI search audit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-dark-band">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">Selected Results</div>
+        <h2 class="ais-title">Visibility is only useful when it changes the business.</h2>
+        <p class="ais-copy">The work is different by client, but the principle stays the same: build discoverability, then make the visit pay off.</p>
+      </div>
+      <div class="ais-results-grid">
+        <article class="ais-results-card">
+          <div class="ais-chart">
+            <div class="ais-bar-group">
+              <span class="ais-bar-value">3000%</span>
+              <div class="ais-bar" style="height: 16rem;"></div>
+              <h3>VIP Vaping</h3>
+              <p>Google Maps visibility lift</p>
+            </div>
+            <div class="ais-bar-group">
+              <span class="ais-bar-value">+70%</span>
+              <div class="ais-bar" style="height: 11rem;"></div>
+              <h3>Notcutts</h3>
+              <p>Year-over-year conversion growth</p>
+            </div>
+            <div class="ais-bar-group">
+              <span class="ais-bar-value">+25%</span>
+              <div class="ais-bar" style="height: 7rem;"></div>
+              <h3>Travelsphere</h3>
+              <p>Year-over-year ecommerce growth</p>
+            </div>
+          </div>
+        </article>
+        <div class="ais-insight-list">
+          <article class="ais-insight">
+            <div class="ais-insight__top"><span>VIP Vaping</span><span>Content + Local Search</span></div>
+            <h3>From decline to growth with visibility and retention working together.</h3>
+            <p>We paired local search visibility, CRM segmentation, and a stronger page experience to reverse a customer decline and expand store discovery at the same time.</p>
+          </article>
+          <article class="ais-insight">
+            <div class="ais-insight__top"><span>Notcutts</span><span>CRO + Owned Audience</span></div>
+            <h3>More reachable customers, better conversion, stronger commercial follow-through.</h3>
+            <p>We solved the reach problem and the conversion problem together by improving data capture, trust, and the path from browse to checkout.</p>
+          </article>
+          <article class="ais-insight">
+            <div class="ais-insight__top"><span>Travelsphere</span><span>Funnel Redesign</span></div>
+            <h3>Better digital trading from a clearer route through the funnel.</h3>
+            <p>We improved destination pages, conversion logic, and demand quality so traffic was more likely to turn into actual revenue.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-light ais-light--border">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">Case Studies</div>
+        <h2 class="ais-title">Real examples from the work.</h2>
+        <p class="ais-copy">Different categories. Same principle. Better discovery means more value only when the rest of the system is built to capitalize on it.</p>
+      </div>
+      <div class="ais-case-grid">
+        <article class="ais-card ais-case-card">
+          <span class="ais-case-chip">Retail visibility turnaround</span>
+          <h3>VIP Vaping</h3>
+          <p>CRM, local search, and site experience rebuilt together to reverse decline and restore growth.</p>
+          <div class="ais-stat-row">
+            <span class="ais-stat">+32% new customers</span>
+            <span class="ais-stat">3000% Maps views</span>
+            <span class="ais-stat">+153% won-back buyers</span>
+          </div>
+          <a class="ais-case-link" href="/case-studies/vip-vaping-turnaround.html">Read case study</a>
+        </article>
+        <article class="ais-card ais-case-card">
+          <span class="ais-case-chip">Conversion + audience growth</span>
+          <h3>Notcutts</h3>
+          <p>Improved reachability and conversion by pairing capture mechanics with a stronger ecommerce experience.</p>
+          <div class="ais-stat-row">
+            <span class="ais-stat">+40% email database</span>
+            <span class="ais-stat">224K subscribers</span>
+            <span class="ais-stat">+70% conversion</span>
+          </div>
+          <a class="ais-case-link" href="/case-studies/notcutts-crm-conversion.html">Read case study</a>
+        </article>
+        <article class="ais-card ais-case-card">
+          <span class="ais-case-chip">Demand + funnel reset</span>
+          <h3>Travelsphere</h3>
+          <p>Sharper destination pages, cleaner product priorities, and stronger conversion paths across two travel brands.</p>
+          <div class="ais-stat-row">
+            <span class="ais-stat">+25% YoY revenue</span>
+            <span class="ais-stat">+10% lead growth</span>
+            <span class="ais-stat">+15% conversion lift</span>
+          </div>
+          <a class="ais-case-link" href="/case-studies/travelsphere-digital-reset.html">Read case study</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ais-dark-band ais-dark-band--faq">
+    <div class="ais-wrap ais-section">
+      <div class="ais-head">
+        <div class="ais-kicker">FAQ</div>
+        <h2 class="ais-title">Frequently asked questions about AI search, GEO, and SEO.</h2>
+        <p class="ais-copy">The language is changing fast. The mechanics underneath it are more stable than most people think.</p>
+      </div>
+      <div class="ais-faq">
+        <details>
+          <summary>
+            <span>What is the difference between AI search optimization and generative engine optimization?</span>
+            <span class="ais-accordion__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="ais-faq__body">
+            <p>Most teams use the terms interchangeably. We treat both as the work of helping your brand get understood, cited, and clicked across answer engines. The label matters less than the mechanics: structure, clarity, authority, and what happens after the visit lands.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span>How is this different from traditional SEO?</span>
+            <span class="ais-accordion__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="ais-faq__body">
+            <p>Traditional SEO focuses on rankings and organic traffic. This program still covers that layer, but it also accounts for how pages are summarized, cited, and selected inside AI interfaces, plus whether those visits actually convert once they arrive.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span>Why do brand mentions and citations matter so much for AI visibility?</span>
+            <span class="ais-accordion__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="ais-faq__body">
+            <p>Models infer trust from the wider web, not just your site. Strong mentions, backlinks, PR, and clean brand-topic association reinforce why your brand should be surfaced for a category, question, or recommendation prompt.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span>What technical elements make content more AI-ready?</span>
+            <span class="ais-accordion__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="ais-faq__body">
+            <p>Clear heading structure, crawlable HTML, schema, entity clarity, internal linking, concise summaries, comparison blocks, and pages that connect intent to proof all make it easier for both engines and models to parse and reuse your content.</p>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span>How do you measure whether AI search work is actually paying off?</span>
+            <span class="ais-accordion__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="ais-faq__body">
+            <p>We look at citation visibility, referral sessions, on-page engagement, assisted conversion patterns, and the prompts or pages generating commercial opportunity. Visibility without pipeline movement is not enough.</p>
+          </div>
+        </details>
+      </div>
+      <div class="ais-final-cta" id="ai-audit">
+        <h3>Want to know where your brand is invisible, misrepresented, or easy to beat?</h3>
+        <p>We will audit how you show up across search and AI surfaces, identify where competitors are outranking or out-citing you, and show the changes most likely to move visibility and conversion together.</p>
+        <a class="ais-btn ais-btn--primary" href="/contact.html">Get a free AI search audit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer weflair-footer">
+      <div class="weflair-new-cta-wrap" id="audit">
+        <div class="container" style="position:relative; z-index: 5;">
+          <div class="weflair-new-cta">
+            <div class="weflair-new-cta__bg"></div>
+            <div class="weflair-new-cta__glow"></div>
+
+            <div class="weflair-new-cta__grid">
+              <div class="weflair-new-cta__left">
+                <div class="weflair-new-cta__label">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Next Step
+                </div>
+                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
+                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <div class="weflair-new-cta__features">
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                </div>
+              </div>
+              <div class="weflair-new-cta__right">
+                <a href="/contact.html" class="weflair-new-cta__btn">
+                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -535,22 +1985,32 @@
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
                       Performance</a></li>
-                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
-                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">Outbound
+                      Systems</a></li>
                   <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
-                      Design &amp; Content</a></li>
+                      Design &amp; CRO</a></li>
                   <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Expertise</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/expertise/b2b-demand-generation.html" class="weflair-footer__nav-link">B2B Demand Generation</a></li>
+                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
+                  <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
+                  <li><a href="/expertise/b2b-tech.html" class="weflair-footer__nav-link">B2B Tech</a></li>
+                  <li><a href="/expertise/ecommerce.html" class="weflair-footer__nav-link">E-commerce</a></li>
                 </ul>
               </div>
               <div class="weflair-footer__nav-col">
                 <h4 class="weflair-footer__col-heading">Resources</h4>
                 <ul class="weflair-footer__nav-list">
-                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
-                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
-                  <li><a href="/tools.html" class="weflair-footer__nav-link">Automations &amp; Tools</a></li>
-                  
+                  <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
+                  <li><a href="/resources/ai-seo-playbook.html" class="weflair-footer__nav-link">AISEO Playbook</a></li>
                   <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
-                  <li><a href="/tools.html?topic=checklists" class="weflair-footer__nav-link">Checklists</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
+                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Resource Pack</a></li>
                   <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
                 </ul>
               </div>
@@ -560,13 +2020,14 @@
                   <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
                   <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
                   <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                  <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="weflair-footer__divider"></div>
           <div class="weflair-footer__bottom">
-            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">© 2026 WeFlair</span><a
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
                 href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
                 href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
                 href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
@@ -598,7 +2059,66 @@
     </section>
 </main>
 
+<script>
+  (function () {
+    var serviceTriggers = Array.prototype.slice.call(document.querySelectorAll(".ais-service-trigger"));
+    var serviceTitle = document.getElementById("ais-service-title");
+    var serviceCopy = document.getElementById("ais-service-copy");
+    var servicePoints = document.getElementById("ais-service-points");
 
+    function renderService(trigger) {
+      if (!trigger || !serviceTitle || !serviceCopy || !servicePoints) {
+        return;
+      }
+
+      serviceTriggers.forEach(function (item) {
+        var isActive = item === trigger;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      serviceTitle.textContent = trigger.dataset.title || "";
+      serviceCopy.textContent = trigger.dataset.copy || "";
+      servicePoints.innerHTML = "";
+
+      (trigger.dataset.points || "").split("||").forEach(function (point) {
+        var value = point.trim();
+        if (!value) {
+          return;
+        }
+
+        var item = document.createElement("li");
+        item.textContent = value;
+        servicePoints.appendChild(item);
+      });
+    }
+
+    serviceTriggers.forEach(function (trigger) {
+      trigger.addEventListener("click", function () {
+        renderService(trigger);
+      });
+    });
+
+    if (serviceTriggers.length) {
+      renderService(serviceTriggers[0]);
+    }
+
+    var strategyPanels = Array.prototype.slice.call(document.querySelectorAll(".ais-accordion details"));
+    strategyPanels.forEach(function (panel) {
+      panel.addEventListener("toggle", function () {
+        if (!panel.open) {
+          return;
+        }
+
+        strategyPanels.forEach(function (other) {
+          if (other !== panel) {
+            other.open = false;
+          }
+        });
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Performance Design & CRO | WeFlair</title>
+    <meta name="description" content="Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue." />
+    <meta property="og:title" content="Performance Design &amp; CRO | WeFlair" />
+    <meta property="og:description" content="Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weflair.com/services/performance-design.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Performance Design &amp; CRO | WeFlair" />
+    <meta name="twitter:description" content="Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue." />
+    <meta name="theme-color" content="#151515" />
+    <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/foundation-styles.css" />
+    <link rel="stylesheet" href="/foundation-slater.css" />
+    <link rel="stylesheet" href="/weflair-hero.css" />
+    <link rel="stylesheet" href="/services-shared.css" />
+    <script src="/foundation.js" defer></script>
+    <script src="/weflair-hero.js" defer></script>
+    <script src="/services-reveal.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Performance Design & CRO",
+        "serviceType": "Landing page design, UX optimization, experimentation, and conversion systems",
+        "url": "https://weflair.com/services/performance-design.html",
+        "description": "Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue.",
+        "provider": {
+          "@type": "Organization",
+          "name": "WeFlair",
+          "url": "https://weflair.com"
+        }
+      }
+    </script>
+    <style>
+      .pdx-page {
+        --pdx-dark: #0b0f0d;
+        --pdx-dark-2: #121815;
+        --pdx-paper: #f3f5ef;
+        --pdx-paper-2: #e9efe4;
+        --pdx-ink: #101412;
+        --pdx-ink-soft: rgba(16, 20, 18, 0.72);
+        --pdx-line: rgba(16, 20, 18, 0.08);
+        --pdx-line-dark: rgba(255, 255, 255, 0.1);
+        --pdx-text: #f5f2ec;
+        --pdx-text-soft: rgba(245, 242, 236, 0.72);
+        --pdx-green: #3eff68;
+        --pdx-green-2: #8cffab;
+        --pdx-green-dim: rgba(62, 255, 104, 0.12);
+        --pdx-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+        background:
+          radial-gradient(circle at top, rgba(62, 255, 104, 0.08), transparent 24%),
+          linear-gradient(180deg, #0a0d0b 0%, #121613 100%);
+        color: var(--pdx-text);
+        font-family: "Helvetica Now Display", Helvetica, Arial, sans-serif;
+      }
+
+      .pdx-page .weflair-new-cta-wrap {
+        display: none;
+      }
+
+      .pdx-shell {
+        position: relative;
+        overflow: clip;
+      }
+
+      .pdx-wrap {
+        width: min(100% - 2.5rem, 77rem);
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .pdx-light {
+        background: linear-gradient(180deg, var(--pdx-paper) 0%, var(--pdx-paper-2) 100%);
+        color: var(--pdx-ink);
+      }
+
+      .pdx-dark {
+        background:
+          radial-gradient(circle at top left, rgba(62, 255, 104, 0.06), transparent 30%),
+          linear-gradient(180deg, var(--pdx-dark) 0%, var(--pdx-dark-2) 100%);
+      }
+
+      .pdx-section {
+        padding: clamp(4.8rem, 8vw, 7rem) 0;
+      }
+
+      .pdx-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        line-height: 1;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--pdx-text-soft);
+      }
+
+      .pdx-kicker::before {
+        content: "";
+        width: 2.3rem;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.75;
+      }
+
+      .pdx-light .pdx-kicker {
+        color: rgba(16, 20, 18, 0.56);
+      }
+
+      .pdx-title {
+        margin: 0 0 1.2rem;
+        font-family: var(--sv-font-display);
+        font-size: clamp(2.45rem, 4.8vw, 4.6rem);
+        line-height: 0.98;
+        letter-spacing: -0.07em;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+
+      .pdx-title--light {
+        color: var(--pdx-ink);
+      }
+
+      .pdx-title .accent,
+      .pdx-title--light .accent {
+        color: #1a883f;
+      }
+
+      .pdx-subtitle {
+        margin: 0;
+        max-width: 42rem;
+        font-size: 1.05rem;
+        line-height: 1.76;
+        color: var(--pdx-text-soft);
+        text-wrap: balance;
+      }
+
+      .pdx-light .pdx-subtitle {
+        color: var(--pdx-ink-soft);
+      }
+
+      .pdx-section-head {
+        max-width: 52rem;
+        margin: 0 auto 3rem;
+        text-align: center;
+      }
+
+      .pdx-btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .pdx-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        min-height: 3.35rem;
+        padding: 0.96rem 1.45rem;
+        border-radius: 0.9rem;
+        font-weight: 700;
+        line-height: 1;
+        text-decoration: none;
+        transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+      }
+
+      .pdx-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .pdx-btn--primary {
+        color: #07110a;
+        background: linear-gradient(135deg, #63ff8f 0%, #2ee961 100%);
+        box-shadow: 0 18px 44px rgba(62, 255, 104, 0.18);
+      }
+
+      .pdx-btn--ghost {
+        color: var(--pdx-text);
+        border: 1px solid rgba(245, 242, 236, 0.12);
+        background: rgba(245, 242, 236, 0.04);
+      }
+
+      .pdx-btn--dark {
+        color: var(--pdx-ink);
+        border: 1px solid rgba(16, 20, 18, 0.1);
+        background: rgba(16, 20, 18, 0.04);
+      }
+
+      .pdx-btn__icon {
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+      }
+
+      .pdx-card {
+        border-radius: 1.6rem;
+        border: 1px solid var(--pdx-line);
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow: 0 18px 48px rgba(16, 20, 18, 0.06);
+      }
+
+      .pdx-dark .pdx-card {
+        border-color: var(--pdx-line-dark);
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: none;
+      }
+
+      .pdx-hero {
+        position: relative;
+        padding: clamp(9.5rem, 13vw, 12rem) 0 clamp(4.2rem, 7vw, 5rem);
+        border-bottom: 1px solid var(--pdx-line-dark);
+        overflow: hidden;
+      }
+
+      .pdx-hero::before {
+        content: "";
+        position: absolute;
+        left: -8rem;
+        top: 11rem;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(62, 255, 104, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .pdx-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 3rem 3rem;
+        opacity: 0.08;
+        mask-image: radial-gradient(circle at center, black 38%, transparent 80%);
+        pointer-events: none;
+      }
+
+      .pdx-hero .weflair-float-star {
+        z-index: 0;
+      }
+
+      .pdx-hero .weflair-float-star--pdx-1 {
+        top: 13rem;
+        left: min(4vw, 2rem);
+        width: 4.1rem;
+        opacity: 0.62;
+      }
+
+      .pdx-hero .weflair-float-star--pdx-2 {
+        top: 24rem;
+        right: min(4vw, 2rem);
+        width: 2.8rem;
+        opacity: 0.5;
+        animation-delay: -3s;
+      }
+
+      .pdx-hero__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .pdx-hero__copy {
+        max-width: 38rem;
+      }
+
+      .pdx-hero__title {
+        margin: 0 0 1.25rem;
+        font-family: var(--sv-font-display);
+        font-size: clamp(3.2rem, 6vw, 5.95rem);
+        line-height: 0.94;
+        letter-spacing: -0.08em;
+        font-weight: 700;
+        text-wrap: balance;
+      }
+
+      .pdx-hero__body {
+        margin: 0 0 1.8rem;
+        max-width: 35rem;
+        font-size: 1.08rem;
+        line-height: 1.76;
+        color: var(--pdx-text-soft);
+      }
+
+      .pdx-hero__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin: 1.5rem 0 0;
+      }
+
+      .pdx-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        min-height: 2.3rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(245, 242, 236, 0.12);
+        background: rgba(245, 242, 236, 0.045);
+        color: var(--pdx-text-soft);
+        font-size: 0.84rem;
+        font-weight: 600;
+      }
+
+      .pdx-pill::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--pdx-green);
+      }
+
+      .pdx-hero__visual {
+        position: relative;
+        min-height: 38rem;
+      }
+
+      .pdx-stack {
+        position: relative;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .pdx-stack__card {
+        position: relative;
+        padding: 1.45rem;
+        border-radius: 1.55rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(14px);
+      }
+
+      .pdx-stack__card--main {
+        padding: 1.65rem;
+      }
+
+      .pdx-stack__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(245, 242, 236, 0.72);
+      }
+
+      .pdx-stack__eyebrow::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: var(--pdx-green);
+        box-shadow: 0 0 18px rgba(62, 255, 104, 0.55);
+      }
+
+      .pdx-stack__title {
+        margin: 0 0 0.8rem;
+        font-size: 1.55rem;
+        line-height: 1.06;
+        letter-spacing: -0.05em;
+        font-weight: 700;
+      }
+
+      .pdx-stack__text {
+        margin: 0;
+        color: var(--pdx-text-soft);
+        line-height: 1.68;
+        font-size: 0.98rem;
+      }
+
+      .pdx-checklist {
+        display: grid;
+        gap: 0.7rem;
+        margin: 1.2rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .pdx-checklist li {
+        display: flex;
+        gap: 0.8rem;
+        color: rgba(245, 242, 236, 0.86);
+        font-size: 0.95rem;
+        line-height: 1.54;
+      }
+
+      .pdx-checklist li::before {
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-top: 0.35rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #64ff90 0%, #2ee961 100%);
+        box-shadow: 0 0 18px rgba(62, 255, 104, 0.45);
+        flex-shrink: 0;
+      }
+
+      .pdx-stack__media {
+        position: relative;
+        min-height: 16rem;
+        overflow: hidden;
+      }
+
+      .pdx-stack__media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.15rem;
+      }
+
+      .pdx-stack__stat {
+        position: absolute;
+        left: -1.5rem;
+        bottom: -1.5rem;
+        width: min(15rem, 48%);
+        padding: 1.2rem;
+        border-radius: 1.3rem;
+        border: 1px solid rgba(62, 255, 104, 0.18);
+        background: linear-gradient(180deg, rgba(16, 55, 27, 0.92) 0%, rgba(8, 27, 14, 0.94) 100%);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+      }
+
+      .pdx-stack__stat strong {
+        display: block;
+        margin-bottom: 0.45rem;
+        font-size: 2.2rem;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        color: var(--pdx-green-2);
+      }
+
+      .pdx-stack__stat span {
+        display: block;
+        color: rgba(245, 242, 236, 0.72);
+        font-size: 0.86rem;
+        line-height: 1.54;
+      }
+
+      .pdx-float-note {
+        position: absolute;
+        right: -1rem;
+        top: -1rem;
+        width: 11.5rem;
+        padding: 1rem;
+        border-radius: 1.15rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(9, 13, 11, 0.84);
+      }
+
+      .pdx-float-note strong,
+      .pdx-mini-chart strong {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.92rem;
+        line-height: 1.3;
+      }
+
+      .pdx-float-note p,
+      .pdx-mini-chart p {
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.55;
+        color: var(--pdx-text-soft);
+      }
+
+      .pdx-mini-chart {
+        position: absolute;
+        right: 0.6rem;
+        bottom: -0.8rem;
+        width: 12rem;
+        padding: 1rem;
+        border-radius: 1.15rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(12, 16, 14, 0.86);
+      }
+
+      .pdx-bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        height: 4.9rem;
+        margin-top: 0.9rem;
+      }
+
+      .pdx-bars span {
+        flex: 1;
+        border-radius: 999px 999px 0 0;
+        background: linear-gradient(180deg, rgba(62, 255, 104, 0.92) 0%, rgba(62, 255, 104, 0.18) 100%);
+      }
+
+      .pdx-bars span:nth-child(1) { height: 42%; }
+      .pdx-bars span:nth-child(2) { height: 68%; }
+      .pdx-bars span:nth-child(3) { height: 88%; }
+      .pdx-bars span:nth-child(4) { height: 100%; }
+
+      .pdx-logo-strip {
+        border-top: 1px solid var(--pdx-line);
+        border-bottom: 1px solid var(--pdx-line);
+      }
+
+      .pdx-logo-strip__label {
+        margin: 0 0 1.6rem;
+        text-align: center;
+        font-size: 0.86rem;
+        line-height: 1.5;
+        color: rgba(16, 20, 18, 0.56);
+      }
+
+      .pdx-logo-strip__row {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .pdx-logo-strip__row img {
+        width: 100%;
+        max-height: 1.8rem;
+        object-fit: contain;
+        filter: grayscale(1);
+        opacity: 0.75;
+      }
+
+      .pdx-benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1.2rem;
+      }
+
+      .pdx-benefit {
+        grid-column: span 2;
+        padding: 1.55rem;
+      }
+
+      .pdx-benefit--wide {
+        grid-column: span 3;
+      }
+
+      .pdx-benefit__icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.85rem;
+        margin-bottom: 1rem;
+        background: rgba(62, 255, 104, 0.12);
+        color: #1a883f;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .pdx-benefit h3,
+      .pdx-why-card h3,
+      .pdx-method-card h3 {
+        margin: 0 0 0.65rem;
+        font-size: 1.35rem;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .pdx-benefit p,
+      .pdx-why-card p,
+      .pdx-method-card p {
+        margin: 0;
+        color: var(--pdx-ink-soft);
+        line-height: 1.66;
+        font-size: 0.98rem;
+      }
+
+      .pdx-showcase__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      .pdx-showcase__lede {
+        max-width: 34rem;
+      }
+
+      .pdx-stat-panel {
+        width: min(14rem, 100%);
+        margin-top: 1.6rem;
+        padding: 1.3rem;
+        border-radius: 1.25rem;
+        background: linear-gradient(180deg, #165d2b 0%, #0d2f18 100%);
+        color: var(--pdx-text);
+        box-shadow: 0 18px 50px rgba(12, 31, 17, 0.25);
+      }
+
+      .pdx-stat-panel strong {
+        display: block;
+        margin-bottom: 0.45rem;
+        font-size: 2.05rem;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        color: var(--pdx-green-2);
+      }
+
+      .pdx-stat-panel span {
+        display: block;
+        font-size: 0.88rem;
+        line-height: 1.58;
+        color: rgba(245, 242, 236, 0.72);
+      }
+
+      .pdx-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .pdx-gallery__item {
+        overflow: hidden;
+        border-radius: 1.2rem;
+        border: 1px solid var(--pdx-line);
+        background: #d8e4d2;
+        box-shadow: 0 16px 42px rgba(16, 20, 18, 0.08);
+      }
+
+      .pdx-gallery__item img {
+        width: 100%;
+        height: 100%;
+        min-height: 12rem;
+        object-fit: cover;
+        display: block;
+      }
+
+      .pdx-gallery__item--wide {
+        grid-column: span 2;
+      }
+
+      .pdx-why__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+        gap: 1.4rem;
+        align-items: stretch;
+      }
+
+      .pdx-why__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+      }
+
+      .pdx-why-card {
+        padding: 1.5rem;
+      }
+
+      .pdx-why__media {
+        overflow: hidden;
+      }
+
+      .pdx-why__media img {
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .pdx-method {
+        position: relative;
+      }
+
+      .pdx-method::before {
+        content: "";
+        position: absolute;
+        right: -8rem;
+        top: 18%;
+        width: 22rem;
+        height: 22rem;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(62, 255, 104, 0.08) 0%, transparent 68%);
+        pointer-events: none;
+      }
+
+      .pdx-method-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .pdx-method-card {
+        padding: 1.5rem;
+        color: var(--pdx-text);
+      }
+
+      .pdx-method-card p {
+        color: var(--pdx-text-soft);
+      }
+
+      .pdx-method-card__index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.35rem;
+        height: 2.35rem;
+        border-radius: 0.8rem;
+        margin-bottom: 1rem;
+        background: rgba(62, 255, 104, 0.1);
+        color: var(--pdx-green-2);
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .pdx-mid-cta {
+        margin-top: 2rem;
+        padding: 1.7rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .pdx-mid-cta strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-size: 1.4rem;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .pdx-mid-cta p {
+        margin: 0;
+        color: var(--pdx-text-soft);
+        line-height: 1.64;
+      }
+
+      .pdx-process__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.06fr);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
+      }
+
+      .pdx-process__visual {
+        position: sticky;
+        top: 7rem;
+        overflow: hidden;
+      }
+
+      .pdx-process__visual img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 0.95;
+        object-fit: cover;
+      }
+
+      .pdx-process__panel {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .pdx-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1.25rem;
+      }
+
+      .pdx-step__num {
+        width: 2.55rem;
+        height: 2.55rem;
+        border-radius: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(62, 255, 104, 0.12);
+        color: #1a883f;
+        font-size: 0.98rem;
+        font-weight: 700;
+      }
+
+      .pdx-step h3 {
+        margin: 0 0 0.45rem;
+        font-size: 1.08rem;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+      }
+
+      .pdx-step p {
+        margin: 0;
+        color: var(--pdx-ink-soft);
+        line-height: 1.64;
+        font-size: 0.95rem;
+      }
+
+      .pdx-results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .pdx-result {
+        padding: 1.45rem;
+      }
+
+      .pdx-result__brand {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.1rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--pdx-text-soft);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .pdx-result strong {
+        display: block;
+        margin: 1rem 0 0.45rem;
+        font-size: 2.5rem;
+        line-height: 1;
+        letter-spacing: -0.08em;
+        color: var(--pdx-green-2);
+      }
+
+      .pdx-result h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.2rem;
+        line-height: 1.12;
+        letter-spacing: -0.04em;
+      }
+
+      .pdx-result p {
+        margin: 0;
+        color: var(--pdx-text-soft);
+        line-height: 1.64;
+        font-size: 0.94rem;
+      }
+
+      .pdx-case-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .pdx-case-card {
+        display: grid;
+        gap: 0.9rem;
+        padding: 1.45rem;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .pdx-case-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .pdx-case-card__tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-height: 2rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(62, 255, 104, 0.12);
+        color: #1a883f;
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .pdx-case-card h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      .pdx-case-card p {
+        margin: 0;
+        color: var(--pdx-ink-soft);
+        line-height: 1.66;
+        font-size: 0.95rem;
+      }
+
+      .pdx-case-card__stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .pdx-case-card__stats span {
+        min-height: 2rem;
+        padding: 0.4rem 0.68rem;
+        border-radius: 999px;
+        border: 1px solid var(--pdx-line);
+        color: rgba(16, 20, 18, 0.7);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .pdx-case-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        color: #1a883f;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .pdx-case-card__cta svg {
+        width: 0.95rem;
+        height: 0.95rem;
+      }
+
+      .pdx-faq-list {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .pdx-faq-item {
+        border-radius: 1.2rem;
+        border: 1px solid var(--pdx-line-dark);
+        background: rgba(255, 255, 255, 0.03);
+        overflow: hidden;
+      }
+
+      .pdx-faq-item summary {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.3rem 1.4rem;
+        cursor: pointer;
+      }
+
+      .pdx-faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .pdx-faq-item__q {
+        font-size: 1.08rem;
+        line-height: 1.35;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+      }
+
+      .pdx-faq-item__icon {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--pdx-green-2);
+        border: 1px solid rgba(62, 255, 104, 0.22);
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .pdx-faq-item[open] .pdx-faq-item__icon {
+        transform: rotate(45deg);
+      }
+
+      .pdx-faq-item__a {
+        padding: 0 1.4rem 1.3rem;
+      }
+
+      .pdx-faq-item__a p {
+        margin: 0;
+        max-width: 48rem;
+        color: var(--pdx-text-soft);
+        line-height: 1.74;
+      }
+
+      .pdx-final-cta {
+        margin-top: 2rem;
+        padding: 1.8rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.4rem;
+        align-items: center;
+      }
+
+      .pdx-final-cta strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .pdx-final-cta p {
+        margin: 0;
+        color: var(--pdx-text-soft);
+        line-height: 1.68;
+      }
+
+      @media (max-width: 991px) {
+        .pdx-hero__grid,
+        .pdx-showcase__grid,
+        .pdx-why__grid,
+        .pdx-process__grid,
+        .pdx-mid-cta,
+        .pdx-final-cta {
+          grid-template-columns: 1fr;
+        }
+
+        .pdx-method-grid,
+        .pdx-results-grid,
+        .pdx-case-grid,
+        .pdx-logo-strip__row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pdx-benefit-grid,
+        .pdx-why__cards {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .pdx-benefit,
+        .pdx-benefit--wide {
+          grid-column: auto;
+        }
+
+        .pdx-process__visual {
+          position: relative;
+          top: 0;
+        }
+
+        .pdx-hero__visual {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .pdx-wrap {
+          width: min(100% - 1.35rem, 77rem);
+        }
+
+        .pdx-logo-strip__row,
+        .pdx-method-grid,
+        .pdx-results-grid,
+        .pdx-case-grid,
+        .pdx-benefit-grid,
+        .pdx-gallery,
+        .pdx-why__cards {
+          grid-template-columns: 1fr;
+        }
+
+        .pdx-gallery__item--wide {
+          grid-column: auto;
+        }
+
+        .pdx-stack__stat,
+        .pdx-float-note,
+        .pdx-mini-chart {
+          position: relative;
+          width: 100%;
+          left: auto;
+          right: auto;
+          bottom: auto;
+          top: auto;
+          margin-top: 1rem;
+        }
+
+        .pdx-hero {
+          padding-top: 8.8rem;
+        }
+
+        .pdx-section {
+          padding: 4.4rem 0;
+        }
+      }
+    </style>
+    <link rel="canonical" href="https://weflair.com/services/performance-design.html" />
+</head>
+  <body class="body sv-page pdx-page" data-weflair-static="true" data-navigation-status="not-active" data-theme="dark">
+    <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../../../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../../../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../../../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">The B2B demand page skeleton for the next content pass.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../../../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../../../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../../../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Playbooks</h3><p class="weflair-mega-tile__p">Operator-grade playbooks you can run today.</p></div></a><a data-hover="" href="../../../resources/guides.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides</h3><p class="weflair-mega-tile__p">Deep-dive marketing guides and frameworks.</p></div></a><a data-hover="" href="../../../tools.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Automations &amp; Tools</h3><p class="weflair-mega-tile__p">Free tools and automations to boost performance.</p></div></a><a data-hover="" href="../../../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../../../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Checklists</h3><p class="weflair-mega-tile__p">Performance checklists to audit and optimize your growth.</p></div></a><a data-hover="" href="../../../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../../../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../../../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../../../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+
+    <main class="pdx-shell">
+      <section class="pdx-hero">
+        <img class="weflair-float-star weflair-float-star--pdx-1" src="/brand-assets/star-solid.svg" alt="" aria-hidden="true" />
+        <img class="weflair-float-star weflair-float-star--pdx-2" src="/brand-assets/star-solid.svg" alt="" aria-hidden="true" />
+
+        <div class="pdx-wrap pdx-hero__grid">
+          <div class="pdx-hero__copy" data-sv-reveal>
+            <div class="pdx-kicker">Performance Design &amp; CRO</div>
+            <h1 class="pdx-hero__title">
+              Landing pages and <span class="accent">conversion systems</span> built to make your traffic pay back.
+            </h1>
+            <p class="pdx-hero__body">
+              WeFlair designs, writes, builds, and iterates the pages between click and revenue. The job is not just to look cleaner. It is to reduce hesitation, sharpen the offer, and turn more paid, outbound, and organic traffic into qualified action.
+            </p>
+            <div class="pdx-btn-row">
+              <a class="pdx-btn pdx-btn--primary" href="/contact.html">
+                <span>Get your conversion audit</span>
+                <svg class="pdx-btn__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a class="pdx-btn pdx-btn--ghost" href="#process">
+                <span>See the process</span>
+              </a>
+            </div>
+            <div class="pdx-hero__meta">
+              <span class="pdx-pill">Landing page architecture</span>
+              <span class="pdx-pill">Experiment design</span>
+              <span class="pdx-pill">Form and checkout UX</span>
+            </div>
+          </div>
+
+          <div class="pdx-hero__visual" data-sv-stagger>
+            <div class="pdx-stack">
+              <div class="pdx-stack__card pdx-stack__card--main">
+                <span class="pdx-stack__eyebrow">Conversion system view</span>
+                <h2 class="pdx-stack__title">From first impression to next step clarity.</h2>
+                <p class="pdx-stack__text">
+                  We review what the visitor sees, what they understand, where they hesitate, and whether the page earns the next click. That means message hierarchy, visual trust, interaction friction, form flow, and post-click continuity.
+                </p>
+                <ul class="pdx-checklist">
+                  <li>Sharper value proposition and offer framing above the fold</li>
+                  <li>Page structure built for scanning, trust, and action</li>
+                  <li>Testing roadmap tied to measurable pipeline outcomes</li>
+                </ul>
+              </div>
+
+              <div class="pdx-stack__card pdx-stack__media">
+                <img src="/brand-assets/cases/vip-vaping.jpg" alt="Retail conversion environment" />
+                <div class="pdx-stack__stat">
+                  <strong>20%</strong>
+                  <span>Illustrative lift range we target first by fixing clarity, friction, and CTA logic before scaling testing.</span>
+                </div>
+              </div>
+
+              <div class="pdx-float-note">
+                <strong>Audit focus</strong>
+                <p>Hero framing, section order, CTA sequencing, form friction, proof placement, and testable hypotheses.</p>
+              </div>
+
+              <div class="pdx-mini-chart">
+                <strong>What gets measured</strong>
+                <p>Scroll quality, CTA engagement, form starts, completion rate, and downstream revenue efficiency.</p>
+                <div class="pdx-bars" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-light pdx-logo-strip">
+        <div class="pdx-wrap">
+          <p class="pdx-logo-strip__label">Trusted by growth teams that need cleaner landing page performance, tighter UX, and better conversion economics.</p>
+          <div class="pdx-logo-strip__row" aria-label="Client logos">
+            <img src="/brand-assets/client-logos/cellpoint-digital.png" alt="CellPoint Digital" />
+            <img src="/brand-assets/client-logos/farnell.png" alt="Farnell" />
+            <img src="/brand-assets/client-logos/notcutts.svg" alt="Notcutts" />
+            <img src="/brand-assets/client-logos/travelsphere.svg" alt="Travelsphere" />
+            <img src="/brand-assets/client-logos/rct.png" alt="RCT" />
+            <img src="/brand-assets/client-logos/vip-vaping.svg" alt="VIP Vaping" />
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-light">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker">What it changes</div>
+            <h2 class="pdx-title pdx-title--light">What performance design actually does for <span class="accent">revenue</span>.</h2>
+            <p class="pdx-subtitle">
+              The screenshots you sent lean on benefit-led cards. This section keeps that mechanic, but the narrative is now about conversion outcomes instead of generic landing-page filler.
+            </p>
+          </div>
+
+          <div class="pdx-benefit-grid" data-sv-stagger>
+            <article class="pdx-card pdx-benefit">
+              <span class="pdx-benefit__icon">01</span>
+              <h3>Turn more clicks into qualified actions</h3>
+              <p>We redesign the path from ad or search click to next step so the page earns demo requests, purchases, applications, or hand-raisers instead of passive browsing.</p>
+            </article>
+
+            <article class="pdx-card pdx-benefit">
+              <span class="pdx-benefit__icon">02</span>
+              <h3>Clarify the offer faster</h3>
+              <p>Message hierarchy, headline logic, proof placement, and CTA sequencing get rebuilt so visitors understand the promise before they start second-guessing it.</p>
+            </article>
+
+            <article class="pdx-card pdx-benefit">
+              <span class="pdx-benefit__icon">03</span>
+              <h3>Respond to demand shifts without rebuilding from scratch</h3>
+              <p>We create modular sections and repeatable page patterns so you can launch new angles, verticals, campaigns, and tests without another messy redesign cycle.</p>
+            </article>
+
+            <article class="pdx-card pdx-benefit pdx-benefit--wide">
+              <span class="pdx-benefit__icon">04</span>
+              <h3>Open up more A/B testing leverage</h3>
+              <p>The page becomes a controlled system you can iterate on. That means clearer hypotheses, cleaner variable isolation, and experiments that improve more than button color vanity metrics.</p>
+            </article>
+
+            <article class="pdx-card pdx-benefit pdx-benefit--wide">
+              <span class="pdx-benefit__icon">05</span>
+              <h3>Learn what actually improves performance</h3>
+              <p>We pair page design with behavioral measurement so you can see which layouts, offers, form flows, and proof blocks lift real pipeline performance, not just clicks.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-light">
+        <div class="pdx-wrap pdx-showcase__grid">
+          <div class="pdx-showcase__lede" data-sv-reveal>
+            <div class="pdx-kicker pdx-kicker--dark">Performance creative</div>
+            <h2 class="pdx-title pdx-title--light">Say goodbye to low-conversion pages.</h2>
+            <p class="pdx-subtitle">
+              The reference pages use a split layout with a strong left narrative and a proof-heavy visual field. We kept that mechanic and made it specific: better landing pages are the result of disciplined structure, not decorative noise.
+            </p>
+            <div class="pdx-stat-panel">
+              <strong>20%</strong>
+              <span>Typical first-wave opportunity we hunt for when the page has obvious friction, blurred positioning, weak CTA logic, or proof in the wrong place.</span>
+            </div>
+            <div class="pdx-btn-row" style="margin-top: 1.3rem;">
+              <a class="pdx-btn pdx-btn--primary" href="/contact.html">
+                <span>Get your conversion audit</span>
+                <svg class="pdx-btn__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="pdx-gallery" data-sv-stagger>
+            <figure class="pdx-gallery__item pdx-gallery__item--wide">
+              <img src="/brand-assets/cases/farnell.jpg" alt="Farnell storefront and product environment" />
+            </figure>
+            <figure class="pdx-gallery__item">
+              <img src="/brand-assets/cases/vip-vaping.jpg" alt="VIP Vaping retail scene" />
+            </figure>
+            <figure class="pdx-gallery__item">
+              <img src="/brand-assets/cases/yours.jpg" alt="Yours retail environment" />
+            </figure>
+            <figure class="pdx-gallery__item pdx-gallery__item--wide">
+              <img src="/brand-assets/cases/pink-boutique.jpg" alt="Pink Boutique fashion retail scene" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-light">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker pdx-kicker--dark">Why WeFlair</div>
+            <h2 class="pdx-title pdx-title--light">Why teams bring us in when the page looks fine but <span class="accent">still underperforms</span>.</h2>
+          </div>
+
+          <div class="pdx-why__grid" data-sv-stagger>
+            <div class="pdx-why__cards">
+              <article class="pdx-card pdx-why-card">
+                <h3>Design choices tied to conversion evidence</h3>
+                <p>We do not decorate first and justify later. Each section exists to answer a real hesitation, support a real decision, or move the visitor into a measurable next step.</p>
+              </article>
+
+              <article class="pdx-card pdx-why-card">
+                <h3>Continuous improvement after launch</h3>
+                <p>The launch is where the learning begins. We structure the page so testing, iteration, and message refinement can happen without tearing the thing apart every month.</p>
+              </article>
+
+              <article class="pdx-card pdx-why-card">
+                <h3>Brand-respectful execution</h3>
+                <p>Higher conversion should not mean generic SaaS sludge. We preserve tone, product truth, and visual identity while making the experience more decisive and commercially useful.</p>
+              </article>
+
+              <article class="pdx-card pdx-why-card">
+                <h3>One view of ad, page, form, and next step</h3>
+                <p>We look at the full motion, not just the landing page in isolation. That means tighter continuity from campaign promise to page story to form or sales handoff.</p>
+              </article>
+            </div>
+
+            <figure class="pdx-card pdx-why__media">
+              <img src="/brand-assets/cases/pink-boutique.jpg" alt="Team collaboration and conversion design workshop energy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-dark pdx-method">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker">Methodology</div>
+            <h2 class="pdx-title">How we build pages that can <span class="accent">keep improving</span>.</h2>
+            <p class="pdx-subtitle">
+              The dark methodology blocks in your references work because they feel procedural, not fluffy. This section borrows that mechanic and turns it into a concrete conversion program.
+            </p>
+          </div>
+
+          <div class="pdx-method-grid" data-sv-stagger>
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">01</span>
+              <h3>Creative testing roadmap</h3>
+              <p>We define which ideas need testing, what signals matter, and what should change first based on commercial upside, not internal preference.</p>
+            </article>
+
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">02</span>
+              <h3>Landing page architecture</h3>
+              <p>We rebuild section order, proof cadence, CTA rhythm, and content density so the page tells one coherent story instead of fighting itself.</p>
+            </article>
+
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">03</span>
+              <h3>Technical performance layer</h3>
+              <p>Fast load, clean responsive behavior, stable interaction states, and analytics-ready implementation so performance design is not undermined by execution slop.</p>
+            </article>
+
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">04</span>
+              <h3>Full-funnel optimization</h3>
+              <p>We tune what happens before and after the page too, from ad-to-page continuity to form logic, routing, and follow-up conversion paths.</p>
+            </article>
+
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">05</span>
+              <h3>Brand positioning and offer clarity</h3>
+              <p>Pages convert better when the promise is specific, defensible, and immediately understandable. We tighten the story before we chase micro-optimizations.</p>
+            </article>
+
+            <article class="pdx-card pdx-method-card">
+              <span class="pdx-method-card__index">06</span>
+              <h3>Form UX, friction, and trust</h3>
+              <p>We remove unnecessary resistance, sequence asks correctly, and place proof where it helps the visitor say yes instead of stalling out.</p>
+            </article>
+          </div>
+
+          <div class="pdx-card pdx-mid-cta" data-sv-reveal>
+            <div>
+              <strong>Need to know what is leaking right now?</strong>
+              <p>We can audit the current landing page, map the friction, and show you the highest-value fixes before you commit to a bigger redesign.</p>
+            </div>
+            <a class="pdx-btn pdx-btn--primary" href="/contact.html">
+              <span>Get your conversion audit</span>
+              <svg class="pdx-btn__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="pdx-section pdx-light">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker pdx-kicker--dark">How we work</div>
+            <h2 class="pdx-title pdx-title--light">A step-by-step CRO and landing page process that gets to <span class="accent">usable wins</span>.</h2>
+          </div>
+
+          <div class="pdx-process__grid">
+            <figure class="pdx-card pdx-process__visual">
+              <img src="/brand-assets/cases/yours.jpg" alt="Conversion planning workshop and implementation process" />
+            </figure>
+
+            <div class="pdx-process__panel" data-sv-stagger>
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">01</span>
+                <div>
+                  <h3>Research and friction audit</h3>
+                  <p>We audit your traffic sources, page behavior, competitor patterns, offer framing, and user intent to find the disconnects that are suppressing action.</p>
+                </div>
+              </article>
+
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">02</span>
+                <div>
+                  <h3>Design concept and experiment plan</h3>
+                  <p>Research gets translated into a page concept with clear hierarchy, visual priorities, conversion logic, and a roadmap for what should be tested first.</p>
+                </div>
+              </article>
+
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">03</span>
+                <div>
+                  <h3>Copywriting, message, and offer hierarchy</h3>
+                  <p>We rewrite the page so the promise lands quickly, the proof is doing work, and every CTA is supported by the right context instead of generic urgency.</p>
+                </div>
+              </article>
+
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">04</span>
+                <div>
+                  <h3>Landing page design and development</h3>
+                  <p>We build the page for speed, responsiveness, measurement, and handoff cleanliness so it slots into your stack without becoming another maintenance problem.</p>
+                </div>
+              </article>
+
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">05</span>
+                <div>
+                  <h3>Testing and optimization</h3>
+                  <p>Before and after launch, we validate device behavior, interaction friction, and experiment setup so the page can be iterated with confidence.</p>
+                </div>
+              </article>
+
+              <article class="pdx-card pdx-step">
+                <span class="pdx-step__num">06</span>
+                <div>
+                  <h3>Launch, monitoring, and iteration</h3>
+                  <p>Once the page is live, we track how users engage, where they stall, and what lifts qualified conversions so the next round of changes is evidence-led.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-dark">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker">Results</div>
+            <h2 class="pdx-title">Examples of what better conversion systems can unlock.</h2>
+          </div>
+
+          <div class="pdx-results-grid" data-sv-stagger>
+            <article class="pdx-card pdx-result">
+              <span class="pdx-result__brand">Farnell</span>
+              <strong>GBP4.5m</strong>
+              <h3>Pipeline influenced through personalization and conversion refinement</h3>
+              <p>The win was not one cosmetic redesign. It came from aligning experience, offer, and post-click intent with a clearer commercial motion.</p>
+            </article>
+
+            <article class="pdx-card pdx-result">
+              <span class="pdx-result__brand">Notcutts</span>
+              <strong>+70%</strong>
+              <h3>CRM-attributed sales growth after conversion-focused experience changes</h3>
+              <p>Better journey design and stronger next-step logic helped turn more existing audience attention into attributable commercial value.</p>
+            </article>
+
+            <article class="pdx-card pdx-result">
+              <span class="pdx-result__brand">Travelsphere</span>
+              <strong>+15%</strong>
+              <h3>Revenue lift from a tighter digital experience and cleaner demand capture</h3>
+              <p>When the page story, action path, and measurement align, even modest conversion gains can compound into meaningful revenue movement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-light">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker pdx-kicker--dark">Case studies</div>
+            <h2 class="pdx-title pdx-title--light">Proof from pages, journeys, and funnel systems we have already <span class="accent">improved</span>.</h2>
+          </div>
+
+          <div class="pdx-case-grid" data-sv-stagger>
+            <a class="pdx-card pdx-case-card" href="/case-studies/farnell-personalization-squad.html">
+              <span class="pdx-case-card__tag">Enterprise CRO</span>
+              <h3>Farnell</h3>
+              <p>Personalization and experience optimization that helped influence GBP4.5m in pipeline across a more commercially coherent journey.</p>
+              <div class="pdx-case-card__stats">
+                <span>GBP4.5m influenced</span>
+                <span>Personalization</span>
+              </div>
+              <span class="pdx-case-card__cta">Read case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+
+            <a class="pdx-card pdx-case-card" href="/case-studies/notcutts-crm-conversion.html">
+              <span class="pdx-case-card__tag">Ecommerce conversion</span>
+              <h3>Notcutts</h3>
+              <p>A redesigned CRM and experience layer that helped drive a stronger conversion path and measurable sales improvement.</p>
+              <div class="pdx-case-card__stats">
+                <span>+70% CRM sales</span>
+                <span>Lifecycle + page UX</span>
+              </div>
+              <span class="pdx-case-card__cta">Read case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+
+            <a class="pdx-card pdx-case-card" href="/case-studies/travelsphere-digital-reset.html">
+              <span class="pdx-case-card__tag">Funnel redesign</span>
+              <h3>Travelsphere</h3>
+              <p>A cleaner digital experience and reset in conversion structure that helped unlock stronger revenue performance from existing traffic.</p>
+              <div class="pdx-case-card__stats">
+                <span>+15% revenue</span>
+                <span>Journey redesign</span>
+              </div>
+              <span class="pdx-case-card__cta">Read case study
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pdx-section pdx-dark">
+        <div class="pdx-wrap">
+          <div class="pdx-section-head">
+            <div class="pdx-kicker">FAQ</div>
+            <h2 class="pdx-title">Questions teams ask before they rebuild a conversion path.</h2>
+          </div>
+
+          <div class="pdx-faq-list" data-sv-reveal>
+            <details class="pdx-faq-item" open>
+              <summary>
+                <span class="pdx-faq-item__q">What do you actually review in a conversion audit?</span>
+                <span class="pdx-faq-item__icon">+</span>
+              </summary>
+              <div class="pdx-faq-item__a">
+                <p>We review the page from offer to action: message clarity, visual hierarchy, proof placement, CTA rhythm, form friction, responsive behavior, page speed, and the quality of continuity from traffic source into the landing experience.</p>
+              </div>
+            </details>
+
+            <details class="pdx-faq-item">
+              <summary>
+                <span class="pdx-faq-item__q">Can you redesign one page or do you need the full funnel?</span>
+                <span class="pdx-faq-item__icon">+</span>
+              </summary>
+              <div class="pdx-faq-item__a">
+                <p>We can start with one critical page, but we usually map the surrounding funnel too. A page often underperforms because the promise, form flow, or post-submit path is misaligned, not just because the page itself looks weak.</p>
+              </div>
+            </details>
+
+            <details class="pdx-faq-item">
+              <summary>
+                <span class="pdx-faq-item__q">Do you work inside our current stack or only on fresh builds?</span>
+                <span class="pdx-faq-item__icon">+</span>
+              </summary>
+              <div class="pdx-faq-item__a">
+                <p>Both. We can improve an existing build or create a cleaner system from scratch. The right choice depends on whether the current page has salvageable structure or is already fighting too many accumulated compromises.</p>
+              </div>
+            </details>
+
+            <details class="pdx-faq-item">
+              <summary>
+                <span class="pdx-faq-item__q">How quickly can testing start after the redesign?</span>
+                <span class="pdx-faq-item__icon">+</span>
+              </summary>
+              <div class="pdx-faq-item__a">
+                <p>Usually immediately, provided analytics and experiment plumbing are set up properly. We design the page so testable hypotheses are baked in from the first launch rather than added as an afterthought.</p>
+              </div>
+            </details>
+
+            <details class="pdx-faq-item">
+              <summary>
+                <span class="pdx-faq-item__q">How do you judge success beyond conversion rate alone?</span>
+                <span class="pdx-faq-item__icon">+</span>
+              </summary>
+              <div class="pdx-faq-item__a">
+                <p>We look at qualified actions, form quality, pipeline contribution, revenue efficiency, and whether the redesign improves the economics of the traffic you are already buying or earning. Higher conversion with worse lead quality is not a win.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="pdx-card pdx-final-cta" data-sv-reveal>
+            <div>
+              <strong>Want the page-level truth before you touch another redesign?</strong>
+              <p>We will audit the current experience, show you where friction lives, and outline the highest-confidence conversion fixes first.</p>
+            </div>
+            <a class="pdx-btn pdx-btn--primary" href="/contact.html">
+              <span>Get your conversion audit</span>
+              <svg class="pdx-btn__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.5 12.5L12.5 3.5M6 3.5H12.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="footer weflair-footer">
+      <div class="weflair-new-cta-wrap" id="audit">
+        <div class="container" style="position:relative; z-index: 5;">
+          <div class="weflair-new-cta">
+            <div class="weflair-new-cta__bg"></div>
+            <div class="weflair-new-cta__glow"></div>
+            
+            <div class="weflair-new-cta__grid">
+              <div class="weflair-new-cta__left">
+                <div class="weflair-new-cta__label">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Next Step
+                </div>
+                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
+                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <div class="weflair-new-cta__features">
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                </div>
+              </div>
+              <div class="weflair-new-cta__right">
+                <a href="/contact.html" class="weflair-new-cta__btn">
+                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weflair-footer__main">
+        <div class="container">
+          <div class="weflair-footer__top">
+            <div class="weflair-footer__info-row">
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Global remote</h4>
+                <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+                <p class="weflair-footer__info-line">HQ: Distributed</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+                <p class="weflair-footer__info-line">WeFlair LLC</p>
+                <p class="weflair-footer__info-line">New York, United States</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
+                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                  class="weflair-footer__contact-link">hello@weflair.co</a>
+              </div>
+            </div>
+            <div class="weflair-footer__nav-row">
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Services</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
+                      Performance</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">GTM
+                      &amp; Outbound Systems</a></li>
+                  <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
+                      Design &amp; Content</a></li>
+                  <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Resources</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Playbooks</a></li>
+                  <li><a href="/resources/guides.html" class="weflair-footer__nav-link">Guides</a></li>
+                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Checklists</a></li>
+                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Automation Pack</a></li>
+                  <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Company</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                  <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                  <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                  <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="weflair-footer__divider"></div>
+          <div class="weflair-footer__bottom">
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
+                href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
+                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
+                href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+            <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
+                class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
+                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a><a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link"
+                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a><a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X"
+                target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                  </path>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

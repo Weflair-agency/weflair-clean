@@ -1,0 +1,59 @@
+﻿[[redirects]]
+  from = "/cases.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/ai-tools.html"
+  to = "/resource-pack.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools.html"
+  to = "/resource-pack.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/playbook.html"
+  to = "/resources/playbooks.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/cro-performance-design.html"
+  to = "/services/performance-design.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/outbound-gtm.html"
+  to = "/services/go-to-market-systems.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/content-seo.html"
+  to = "/services/ai-visibility-seo.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/revops-ai.html"
+  to = "/services/go-to-market-systems.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/expertise/b2b-hardware.html"
+  to = "/expertise/b2b-tech.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/expertise/fintech.html"
+  to = "/expertise/b2b-tech.html"
+  status = 301
+  force = true

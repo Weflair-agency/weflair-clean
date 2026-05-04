@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" role="img" aria-labelledby="title">
+  <title id="title">Molahin</title>
+  <rect x="0" y="30" width="88" height="88" rx="12" fill="#ef7a08"/>
+  <path d="M42 56c12 0 22 9 22 21 0 13-10 22-22 22-7 0-14-3-18-8 5 1 13 0 18-5 7-7 6-19-1-25-4-3-9-5-14-5 4-1 9-1 15 0Z" fill="#101010"/>
+  <text x="116" y="101" fill="#f6f3ee" font-family="Segoe Script, Brush Script MT, cursive" font-size="78" font-weight="600">Molahin</text>
+</svg>

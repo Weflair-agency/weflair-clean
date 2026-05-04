@@ -1,11 +1,11 @@
 /**
  * propagate-nav.cjs
- * 
+ *
  * !!! WARNING TO ALL AI AGENTS !!!
  * DO NOT EVER REVERT THE NAV_GROUPS. IT CONTAINS THE LATEST,
- * VERIFIED MENU STRUCTURE (inc Checklists & Playbooks order). 
+ * VERIFIED MENU STRUCTURE (inc Checklists & Playbooks order).
  * NEVER BRING BACK "FREE GTM TOOLS" or "AI TOOLS".
- * 
+ *
  * Rebuilds the shared Dapper-style header nav across every HTML page.
  * This avoids copying malformed inline markup between pages and keeps
  * the menu structure consistent on desktop, tablet, and mobile.
@@ -38,7 +38,7 @@ const NAV_GROUPS = {
       body: "Data-backed ads that turn demand into pipeline.",
     },
     {
-      title: "Go To Market Systems",
+      title: "Outbound Systems",
       href: "services/go-to-market-systems.html",
       body: "Outbound systems built for real sales conversations.",
     },
@@ -53,23 +53,50 @@ const NAV_GROUPS = {
       body: "Content systems built for search and AI visibility.",
     },
   ],
+  expertise: [
+    {
+      title: "B2B Demand Generation",
+      href: "expertise/b2b-demand-generation.html",
+      body: "Demand systems built around qualified pipeline.",
+    },
+    {
+      title: "B2B SaaS",
+      href: "expertise/b2b-saas.html",
+      body: "Software teams under pressure to prove pipeline.",
+    },
+    {
+      title: "B2B Services",
+      href: "expertise/b2b-services.html",
+      body: "Service offers that need cleaner demand generation.",
+    },
+    {
+      title: "B2B Tech",
+      href: "expertise/b2b-tech.html",
+      body: "Technical B2B categories with complex buying journeys.",
+    },
+    {
+      title: "E-commerce",
+      href: "expertise/ecommerce.html",
+      body: "Paid, lifecycle, and storefront performance.",
+    },
+  ],
   resources: [
     {
-      title: "Playbooks",
+      title: "Guides &amp; Playbooks",
       href: "resources/playbooks.html",
-      body: "Operator-grade playbooks you can run today.",
+      body: "Practical playbooks and deeper growth guides in one place.",
       icon: "playbook",
     },
     {
-      title: "Guides",
-      href: "resources/guides.html",
-      body: "Deep-dive marketing guides and frameworks.",
-      icon: "book",
+      title: "AISEO Playbook",
+      href: "resources/ai-seo-playbook.html",
+      body: "A free AI search visibility playbook built for resource-led lead capture.",
+      icon: "sparkle",
     },
     {
-      title: "Automations &amp; Tools",
-      href: "tools.html",
-      body: "Free tools and automations to boost performance.",
+      title: "Resource Pack",
+      href: "resource-pack.html",
+      body: "AI skills, templates, and tools for sales and marketing teams.",
       icon: "rocket",
     },
     {
@@ -79,14 +106,14 @@ const NAV_GROUPS = {
       icon: "calculator",
     },
     {
-      title: "Checklists",
+      title: "Ads Checklist",
       href: "resources/checklists.html",
-      body: "Performance checklists to audit and optimize your growth.",
+      body: "Paid media checklist for tracking, creative, and launch QA.",
       icon: "checklist",
     },
     {
       title: "Case Studies",
-      href: "cases.html",
+      href: "case-studies/",
       body: "Real results from real engagements.",
       icon: "trophy",
     },
@@ -160,6 +187,10 @@ function buildHeader(prefix, isHome) {
     prefix,
     "Services",
     NAV_GROUPS.services
+  )}${dropdown(
+    prefix,
+    "Expertise",
+    NAV_GROUPS.expertise
   )}${megaDropdown(prefix, "Resources", NAV_GROUPS.resources)}${dropdown(
     prefix,
     "About",
@@ -171,13 +202,23 @@ function buildHeader(prefix, isHome) {
 
 function collectHtmlFiles(dir) {
   const files = [];
+  const skipDirs = new Set([
+    ".git",
+    "_archive",
+    "_recovery_snapshots",
+    "dist",
+    "node_modules",
+    "ops",
+    "public",
+    "screenshots",
+  ]);
+
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (
-      entry.name === "dist" ||
-      entry.name === "node_modules" ||
-      entry.name === "ops" ||
-      entry.name === "public"
-    ) {
+    if (entry.isDirectory() && skipDirs.has(entry.name)) {
+      continue;
+    }
+
+    if (entry.isFile() && entry.name.startsWith("recovered-")) {
       continue;
     }
 
@@ -203,13 +244,14 @@ const htmlFiles = collectHtmlFiles(ROOT);
 let updated = 0;
 let skipped = 0;
 
+const headerPartialPath = path.join(ROOT, "src", "partials", "header.html");
+const headerPartial = buildHeader("/", false).replace(/^<header class="header">/, "").replace(/<\/header>$/, "");
+fs.writeFileSync(headerPartialPath, headerPartial, "utf8");
+console.log("OK src/partials/header.html");
+updated += 1;
+
 for (const filePath of htmlFiles) {
   const relPath = path.relative(ROOT, filePath).replace(/\\/g, "/");
-
-  if (relPath === "sitemap.html") {
-    skipped += 1;
-    continue;
-  }
 
   const html = fs.readFileSync(filePath, "utf8");
   const headerRegex = /<header class="header">[\s\S]*?<\/header>/;
@@ -235,5 +277,10 @@ for (const filePath of htmlFiles) {
   updated += 1;
   console.log(`OK ${relPath}`);
 }
+
+const partialHeader = buildHeader("/", false)
+  .replace(/^<header class="header">/, "")
+  .replace(/<\/header>$/, "");
+fs.writeFileSync(path.join(ROOT, "src", "partials", "header.html"), partialHeader, "utf8");
 
 console.log(`Done: ${updated} updated, ${skipped} skipped`);

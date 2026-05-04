@@ -2,17 +2,50 @@
   const FLARE_PATH =
     "M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z";
 
-  const LOGOS = Array.from({ length: 23 }, (_, index) => {
-    const assetNumber = index + 4;
-    return {
-      type: "image",
-      label: `Client logo ${assetNumber}`,
-      src: `./logo-ci-${assetNumber}.svg`,
-      size: "xl",
-      width: "150%",
-      height: "108%",
-    };
-  });
+  const LOGO_ROWS = [
+    [
+      { label: "Farnell", src: "./logo-ci-4.svg", size: "wide", width: "162%", height: "124%", scale: "1.2" },
+      { label: "CellPoint Digital", src: "/brand-assets/client-logos/clean/cellpoint-digital-official.svg", size: "wide", width: "104%", height: "88%", scale: ".98" },
+      { label: "Royal Mint", src: "./logo-ci-26.svg", size: "tiny", width: "176%", height: "132%", scale: "1.3" },
+      { label: "Santander", src: "./logo-ci-19.svg", size: "tiny", width: "168%", height: "132%", scale: "1.28" },
+      { label: "The Co-operative Bank", src: "./logo-ci-24.svg", size: "wide", width: "184%", height: "136%", scale: "1.34" },
+      { label: "CPC", src: "./logo-ci-5.svg", size: "square", width: "150%", height: "124%", scale: "1.18" },
+      { label: "Emax", src: "/brand-assets/client-logos/clean/emax.png", size: "wide", width: "136%", height: "104%", scale: "1.16" },
+      { label: "HQ Software", src: "/brand-assets/client-logos/clean/hq-software-transparent.png", size: "wide", width: "98%", height: "72%", scale: ".9" },
+      { label: "Mawsim", src: "/brand-assets/client-logos/clean/mawsim-transparent.png", size: "wide", width: "112%", height: "82%", scale: ".88" },
+      { label: "Omnicore", src: "/brand-assets/client-logos/clean/omnicore-transparent.png", size: "square", tone: "lighten", width: "82%", height: "80%", scale: ".76" },
+      { label: "Merna Logistics", src: "./logo-ci-22.svg", size: "tiny", width: "176%", height: "132%", scale: "1.3" },
+    ],
+    [
+      { label: "The Conran Shop", src: "./logo-ci-7.svg", size: "tiny", width: "178%", height: "136%", scale: "1.34" },
+      { label: "TOFS", src: "./logo-ci-8.svg", size: "wide", width: "162%", height: "124%", scale: "1.18" },
+      { label: "VIP Vaping", src: "./logo-ci-9.svg", size: "wide", tone: "lighten", width: "166%", height: "124%", scale: "1.24" },
+      { label: "Simply Be", src: "./logo-ci-6.svg", size: "tiny", tone: "lighten", width: "154%", height: "118%", scale: "1.08" },
+      { label: "Yours", src: "./logo-ci-11.svg", size: "tiny", tone: "lighten", width: "176%", height: "128%", scale: "1.32" },
+      { label: "Pink Boutique", src: "./logo-ci-12.svg", size: "wide", width: "158%", height: "124%", scale: "1.16" },
+      { label: "Notcutts", src: "./logo-ci-21.svg", size: "wide", width: "158%", height: "124%", scale: "1.18" },
+      { label: "Travelsphere", src: "/brand-assets/client-logos/travelsphere.svg", size: "wide", width: "96%", height: "82%", scale: ".94" },
+      { label: "The Fragrance Shop", src: "./logo-ci-15.svg", size: "tiny", width: "174%", height: "132%", scale: "1.28" },
+      { label: "Focus DIY", src: "./logo-ci-25.svg", size: "wide", width: "162%", height: "124%", scale: "1.16" },
+      { label: "Jacamo", src: "./logo-ci-20.svg", size: "wide", width: "166%", height: "128%", scale: "1.24" },
+      { label: "Figleaves", src: "./logo-ci-17.svg", size: "wide", tone: "lighten", width: "138%", height: "102%", scale: "1.04" },
+      { label: "Jon Richard", src: "./logo-ci-18.svg", size: "wide", tone: "lighten", width: "172%", height: "132%", scale: "1.34" },
+      { label: "Harrier Trail Running", src: "/brand-assets/client-logos/clean/harrier-horizontal-white-tight.png", size: "wide", width: "128%", height: "94%", scale: ".96", y: "2%" },
+    ],
+    [
+      { label: "RCT", src: "/brand-assets/client-logos/clean/rct-transparent.png", size: "square", width: "86%", height: "86%", scale: ".8" },
+      { label: "Mortoo Homes", src: "/brand-assets/client-logos/clean/mortoo-homes-tight.png", size: "wide", tone: "lighten", width: "92%", height: "68%", scale: ".76" },
+      { label: "Hopo Pace", src: "/brand-assets/client-logos/clean/hopo-pace-original.png", size: "wide", width: "100%", height: "70%", scale: ".88" },
+      { label: "CuzinBeats", src: "/brand-assets/client-logos/clean/cuzinbeats-transparent.png", size: "wide", width: "98%", height: "72%", scale: ".86" },
+      { label: "Molahin", src: "/brand-assets/client-logos/clean/molahin-transparent.png", size: "wide", width: "112%", height: "76%", scale: ".98" },
+      { label: "TMR", src: "/brand-assets/client-logos/clean/tmr-original.webp", size: "wide", width: "118%", height: "84%", scale: ".96" },
+      { label: "Vapoholic", src: "./logo-ci-16.svg", size: "wide", tone: "boost", width: "222%", height: "166%", scale: "1.9" },
+      { label: "British American Tobacco", src: "./logo-ci-13.svg", size: "tiny", width: "210%", height: "160%", scale: "1.65", y: "5%" },
+      { label: "Fashion", src: "./logo-ci-14.svg", size: "tiny", tone: "lighten", width: "160%", height: "120%", scale: "1.2" },
+      { label: "Aximon", src: "./logo-ci-23.svg", size: "tiny", tone: "boost", width: "190%", height: "140%", scale: "1.58" },
+      { label: "Ten Motives", src: "./logo-ci-10.svg", size: "tiny", tone: "lighten", width: "196%", height: "148%", scale: "1.65" },
+    ],
+  ];
 
   const SITE_ORIGIN = "https://weflair.com";
   const ROUTES = {
@@ -21,7 +54,7 @@
     careers: "/careers.html",
     contact: "/contact.html",
     blog: "/blog.html",
-    results: "/cases.html",
+    results: "/case-studies/",
     sitemap: "/sitemap.html",
     tools: "/tools.html",
     servicesPaid: "/services/paid-media-performance.html",
@@ -30,16 +63,16 @@
     servicesContent: "/services/ai-visibility-seo.html",
     servicesCro: "/services/performance-design.html",
     servicesStrategy: "/services/strategy-creative.html",
+    expertiseDemand: "/expertise/b2b-demand-generation.html",
     expertiseSaas: "/expertise/b2b-saas.html",
     expertiseServices: "/expertise/b2b-services.html",
-    expertiseHardware: "/expertise/b2b-hardware.html",
-    expertiseFintech: "/expertise/fintech.html",
+    expertiseTech: "/expertise/b2b-tech.html",
     expertiseEcommerce: "/expertise/ecommerce.html",
-    resourcesGuides: "/resources/guides.html",
+    resourcesGuides: "/resources/playbooks.html",
     resourcesPlaybooks: "/resources/playbooks.html",
     resourcesAiTools: "/tools.html",
     resourcesCalculators: "/resources/calculators.html",
-    resourcesChecklists: "/tools.html?topic=checklists",
+    resourcesChecklists: "/resources/checklists.html",
     legalPrivacy: "/legal/privacy.html",
     legalTerms: "/legal/terms.html",
   };
@@ -65,26 +98,24 @@
     nav: {
       services: [
         ["Paid Media & Performance", "Campaigns tied to qualified revenue."],
-        ["Outbound & GTM Engineering", "Signals, sequencing, and GTM logic."],
-        ["Revenue Operations & AI Workflows", "Routing, dashboards, and AI-enabled automation."],
-        ["Content & AEO", "Content systems built for search and AI visibility."],
-        ["Performance Design & CRO", "Pages and funnels that convert harder."],
+        ["Outbound Systems", "Automated outbound systems built for real sales conversations."],
+        ["Performance Design & CRO", "Creative, pages, and content that convert more traffic."],
+        ["AI Visibility & SEO", "Content systems built for search and AI visibility."],
       ],
       expertise: [
+        ["B2B Demand Generation", "Demand systems built around qualified pipeline."],
         ["B2B SaaS", "Software teams under pressure to prove pipeline."],
         ["B2B Services", "Service offers that need cleaner demand generation."],
-        ["B2B Hardware", "Longer sales cycles with more buying friction."],
+        ["B2B Tech", "Technical B2B categories with complex buying journeys."],
         ["E-commerce", "Paid, lifecycle, and storefront performance."],
-        ["FinTech", "Trust-heavy categories where precision matters."],
       ],
       resources: [
         ["Free GTM Tools", "Free tools to boost your sales and marketing performance."],
         ["AI Sales Tools", "AI-powered prospecting and pipeline acceleration."],
         ["AI Marketing Tools", "AI tools that scale campaigns and improve performance."],
         ["Calculators", "Simple planning tools for growth decisions."],
-        ["Checklists", "Performance checklists to audit and optimize your growth."],
-        ["Guides", "Practical explainers for the systems behind growth."],
-        ["Playbooks", "How WeFlair runs paid, outbound, CRM, and conversion together."],
+        ["Ads Checklist", "Paid media checklist for tracking, creative, and launch QA."],
+        ["Guides & Playbooks", "Practical playbooks and deeper growth guides in one place."],
       ],
     },
     services: {
@@ -268,7 +299,7 @@
         "Logistics",
         "Web3",
         "SaaS",
-        "Fintech",
+        "B2B Tech",
       ],
       moreLabel: "See more success stories",
       cards: [
@@ -279,7 +310,7 @@
             type: "text",
             label: "CellPoint Digital",
           },
-          sector: "Fintech / Payments",
+          sector: "B2B Tech / Payments",
           headline: "Zero-to-one GTM infrastructure for a payments brand scaling beyond vendor support.",
           body:
             "Signal workflows, lead scoring, Apollo enrichment, HubSpot RevOps, and executive demo infrastructure were built from scratch and turned the relationship into a strategic anchor partnership.",
@@ -288,7 +319,7 @@
             ["C-suite", "platform demo"],
           ],
           services: ["Apollo Enrichment", "HubSpot RevOps", "n8n Workflows"],
-          industries: ["B2B", "Fintech"],
+          industries: ["B2B", "B2B Tech"],
           highlights: [
             "Built signal workflows and lead scoring from scratch.",
             "Connected Apollo, HubSpot, and automation into one motion.",
@@ -460,7 +491,7 @@
           role: "CMO, CellPoint Digital",
           initials: "SO",
           company: "CellPoint Digital",
-          label: "Fintech / GTM",
+          label: "B2B Tech / GTM",
           logo: {
             type: "text",
             label: "CellPoint Digital",
@@ -644,19 +675,18 @@
         heading: "Services",
         links: [
           { label: "Paid Media & Performance", href: ROUTES.servicesPaid },
-          { label: "Outbound & GTM Engineering", href: ROUTES.servicesOutbound },
-          { label: "Revenue Operations & AI Workflows", href: ROUTES.servicesRevops },
-          { label: "Content & AEO", href: ROUTES.servicesContent },
+          { label: "Outbound Systems", href: ROUTES.servicesOutbound },
           { label: "Performance Design & CRO", href: ROUTES.servicesCro },
+          { label: "AI Visibility & SEO", href: ROUTES.servicesContent },
         ],
       },
       expertise: {
         heading: "Expertise",
         links: [
+          { label: "B2B Demand Generation", href: ROUTES.expertiseDemand },
           { label: "B2B SaaS", href: ROUTES.expertiseSaas },
           { label: "B2B Services", href: ROUTES.expertiseServices },
-          { label: "B2B Hardware", href: ROUTES.expertiseHardware },
-          { label: "Fintech", href: ROUTES.expertiseFintech },
+          { label: "B2B Tech", href: ROUTES.expertiseTech },
           { label: "E-commerce", href: ROUTES.expertiseEcommerce },
         ],
       },
@@ -665,9 +695,8 @@
         links: [
           { label: "Case Studies", href: ROUTES.results },
           { label: "Calculators", href: ROUTES.resourcesCalculators },
-          { label: "Checklists", href: ROUTES.resourcesChecklists },
-          { label: "Guides", href: ROUTES.resourcesGuides },
-          { label: "Playbooks", href: ROUTES.resourcesPlaybooks },
+          { label: "Ads Checklist", href: ROUTES.resourcesChecklists },
+          { label: "Guides & Playbooks", href: ROUTES.resourcesPlaybooks },
           { label: "AI Tools", href: ROUTES.resourcesAiTools },
           { label: "Marketing Blog", href: ROUTES.blog },
         ],
@@ -714,10 +743,10 @@
     "services/content-seo": ROUTES.servicesContent,
     "services/cro-performance-design": ROUTES.servicesCro,
     "services/strategy-creative": ROUTES.servicesStrategy,
+    "expertise/b2b-demand-generation": ROUTES.expertiseDemand,
     "expertise/b2b-saas": ROUTES.expertiseSaas,
     "expertise/b2b-services": ROUTES.expertiseServices,
-    "expertise/b2b-hardware": ROUTES.expertiseHardware,
-    "expertise/fintech": ROUTES.expertiseFintech,
+    "expertise/b2b-tech": ROUTES.expertiseTech,
     "expertise/ecommerce": ROUTES.expertiseEcommerce,
     "resources/guides": ROUTES.resourcesGuides,
     "resources/playbooks": ROUTES.resourcesPlaybooks,
@@ -729,6 +758,7 @@
 
   const LABEL_ROUTE_MAP = {
     "paid media performance": ROUTES.servicesPaid,
+    "outbound systems": ROUTES.servicesOutbound,
     "outbound gtm engineering": ROUTES.servicesOutbound,
     "outbound gtm": ROUTES.servicesOutbound,
     "revenue operations ai workflows": ROUTES.servicesRevops,
@@ -741,10 +771,13 @@
     "cro performance design": ROUTES.servicesCro,
     "conversion design cro": ROUTES.servicesCro,
     "conversion design and cro": ROUTES.servicesCro,
+    "b2b demand generation": ROUTES.expertiseDemand,
+    "demand generation": ROUTES.expertiseDemand,
     "b2b saas": ROUTES.expertiseSaas,
     "b2b services": ROUTES.expertiseServices,
-    "b2b hardware": ROUTES.expertiseHardware,
-    fintech: ROUTES.expertiseFintech,
+    "b2b tech": ROUTES.expertiseTech,
+    "b2b hardware": ROUTES.expertiseTech,
+    fintech: ROUTES.expertiseTech,
     ecommerce: ROUTES.expertiseEcommerce,
     "e commerce": ROUTES.expertiseEcommerce,
     "case studies": ROUTES.results,
@@ -752,8 +785,11 @@
     "free gtm tools": ROUTES.tools,
     "ai sales tools": ROUTES.tools,
     "ai marketing tools": ROUTES.tools,
-    guides: ROUTES.resourcesGuides,
+    guides: ROUTES.resourcesPlaybooks,
+    "guides playbooks": ROUTES.resourcesPlaybooks,
+    "guides and playbooks": ROUTES.resourcesPlaybooks,
     playbooks: ROUTES.resourcesPlaybooks,
+    "ads checklist": ROUTES.resourcesChecklists,
     checklists: ROUTES.resourcesChecklists,
     "performance checklists": ROUTES.resourcesChecklists,
     "ai tools": ROUTES.resourcesAiTools,
@@ -1241,7 +1277,7 @@
       )
       .join("");
 
-    return `<article class="weflair-case-card" style="--card-accent:${accent};--card-accent-rgb:${rgb}"><div class="weflair-case-card__shell"><div class="weflair-case-card__content"><div class="weflair-case-card__top"><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(card)}</div><span class="weflair-case-card__sector">${card.sector}</span></div><h3 class="weflair-case-card__headline">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p><div class="weflair-case-card__metrics">${metricsMarkup}</div><div class="weflair-case-card__actions"><a href="${card.href || "cases.html"}" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div></div><div class="weflair-case-card__visual" aria-hidden="true"><div class="weflair-case-card__mesh"></div></div></div></article>`;
+    return `<article class="weflair-case-card" style="--card-accent:${accent};--card-accent-rgb:${rgb}"><div class="weflair-case-card__shell"><div class="weflair-case-card__content"><div class="weflair-case-card__top"><div class="weflair-case-card__logo-wrap">${caseStudyLogoMarkup(card)}</div><span class="weflair-case-card__sector">${card.sector}</span></div><h3 class="weflair-case-card__headline">${card.headline}</h3><p class="weflair-case-card__body">${card.body}</p><div class="weflair-case-card__metrics">${metricsMarkup}</div><div class="weflair-case-card__actions"><a href="${card.href || ROUTES.results}" class="weflair-case-card__readmore">Read full results <span class="weflair-case-card__readmore-arrow">&rarr;</span></a></div></div><div class="weflair-case-card__visual" aria-hidden="true"><div class="weflair-case-card__mesh"></div></div></div></article>`;
   }
 
   function testimonialCardMarkup(item) {
@@ -1387,19 +1423,23 @@
       .weflair-logos-head .eyebrow,.weflair-logos-head .eyebrow__p{color:#f6f3ee}
       .weflair-logos-divider{width:100%;height:1px;background:rgba(246,243,238,.11)}
       .weflair-logos-rail{position:relative;width:100%;margin:0;padding:0}
-      .weflair-logo-stack{display:grid;gap:1.1rem;width:100%}
+      .weflair-logo-stack{display:grid;gap:1rem;width:100%}
       .weflair-logo-marquee{position:relative;width:100%;padding-inline:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 4%,black 96%,transparent)}
       .weflair-logo-marquee:hover .weflair-logo-marquee__track,.weflair-logo-marquee:focus-within .weflair-logo-marquee__track{animation-play-state:paused}
-      .weflair-logo-marquee__track{display:flex;align-items:center;gap:0;width:max-content;animation:weflairMarqueeLeft 72s linear infinite;will-change:transform}
+      .weflair-logo-marquee__track{display:flex;align-items:center;gap:0;width:max-content;animation:weflairMarqueeLeft 88s linear infinite;will-change:transform}
       .weflair-logo-marquee.is-reverse .weflair-logo-marquee__track{animation-name:weflairMarqueeRight}
-      .weflair-logo-marquee__group{display:flex;align-items:center;flex:0 0 auto;gap:clamp(1rem,1.3vw,1.22rem);padding-inline:clamp(.8rem,1.2vw,1.05rem);white-space:nowrap}
+      .weflair-logo-marquee__group{display:flex;align-items:center;flex:0 0 auto;gap:clamp(.72rem,1vw,1rem);padding-inline:clamp(.55rem,.9vw,.82rem);white-space:nowrap}
       .weflair-logo-marquee__item{display:flex;align-items:center;flex:0 0 auto}
-      .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(12.35rem,13.4vw,14.8rem);height:clamp(4.9rem,5.45vw,5.5rem);padding:.6rem 1rem;border:1px solid rgba(232,228,221,.22);border-radius:999px;background:linear-gradient(180deg,rgba(226,221,214,.12) 0%,rgba(193,186,176,.08) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(8px);transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
-      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0 .04rem;white-space:nowrap;--logo-width:108%;--logo-height:90%}
-      .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.96;filter:none;transform:scale(1);transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
-      .weflair-logo-mark.is-xl{--logo-width:114%;--logo-height:96%}
-      .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.22);background:linear-gradient(180deg,rgba(234,229,222,.14) 0%,rgba(204,197,187,.1) 100%);box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.08)}
-      .weflair-logo-pill:hover img,.weflair-logo-pill:focus-within img{opacity:1;filter:none;transform:scale(1.02)}
+      .weflair-logo-pill{display:flex;align-items:center;justify-content:center;width:clamp(15.25rem,16.4vw,18.8rem);height:clamp(5.65rem,6.15vw,6.9rem);padding:.24rem .5rem;overflow:hidden;border:1px solid rgba(232,228,221,.115);border-radius:999px;background:linear-gradient(180deg,rgba(20,21,20,.58) 0%,rgba(11,12,11,.4) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.035);backdrop-filter:blur(6px);transition:transform 180ms ease,border-color 180ms ease,background 180ms ease,box-shadow 180ms ease}
+      .weflair-logo-mark{display:inline-flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;padding:0;white-space:nowrap;--logo-width:132%;--logo-height:112%;--logo-scale:1;--logo-x:0%;--logo-y:0%;--logo-filter:brightness(1.06) saturate(1.08) contrast(1.02);--logo-hover-filter:brightness(1.2) saturate(1.22) contrast(1.05) drop-shadow(0 0 14px rgba(62,255,104,.18))}
+      .weflair-logo-mark img{display:block;width:auto;max-width:var(--logo-width);max-height:var(--logo-height);opacity:.94;filter:var(--logo-filter);transform:translate(var(--logo-x),var(--logo-y)) scale(var(--logo-scale));transform-origin:center;image-rendering:-webkit-optimize-contrast;transition:opacity 180ms ease,filter 180ms ease,transform 180ms ease}
+      .weflair-logo-mark.is-wide{--logo-width:150%;--logo-height:116%}
+      .weflair-logo-mark.is-square{--logo-width:138%;--logo-height:124%}
+      .weflair-logo-mark.is-tiny{--logo-width:164%;--logo-height:128%;--logo-scale:1.22}
+      .weflair-logo-mark.is-lighten{--logo-filter:brightness(0) invert(1) contrast(1.08);--logo-hover-filter:brightness(0) invert(1) contrast(1.18) drop-shadow(0 0 14px rgba(62,255,104,.2))}
+      .weflair-logo-mark.is-boost{--logo-filter:brightness(1.65) saturate(1.55) contrast(1.16);--logo-hover-filter:brightness(1.9) saturate(1.75) contrast(1.18) drop-shadow(0 0 14px rgba(62,255,104,.18))}
+      .weflair-logo-pill:hover,.weflair-logo-pill:focus-within{transform:translateY(-2px);border-color:rgba(62,255,104,.28);background:linear-gradient(180deg,rgba(18,28,19,.62) 0%,rgba(9,16,10,.48) 100%);box-shadow:0 16px 32px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.045)}
+      .weflair-logo-pill:hover img,.weflair-logo-pill:focus-within img{opacity:1;filter:var(--logo-hover-filter);transform:translate(var(--logo-x),var(--logo-y)) scale(calc(var(--logo-scale) * 1.025))}
       .weflair-logo-mark:focus-visible{outline:none}
       @keyframes weflairMarqueeLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
       @keyframes weflairMarqueeRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
@@ -1621,12 +1661,14 @@
         .weflair-problems-native .growing-tile .p-s{font-size:.9rem}
         .weflair-services-grid .is-span-2{grid-column:auto}
         .weflair-logos-head .h3{max-width:none;font-size:.82rem}
-        .weflair-logo-stack{gap:.82rem}
-        .weflair-logo-marquee__track{animation-duration:42s}
-        .weflair-logo-marquee__group{gap:.72rem;padding-inline:.56rem}
-        .weflair-logo-pill{width:10.6rem;height:4.25rem;padding:.46rem .68rem}
-        .weflair-logo-mark{--logo-width:108%;--logo-height:84%}
-        .weflair-logo-mark.is-xl{--logo-width:114%;--logo-height:92%}
+        .weflair-logo-stack{gap:.72rem}
+        .weflair-logo-marquee__track{animation-duration:58s}
+        .weflair-logo-marquee__group{gap:.52rem;padding-inline:.42rem}
+        .weflair-logo-pill{width:12.2rem;height:4.95rem;padding:.18rem .34rem}
+        .weflair-logo-mark{--logo-width:140%;--logo-height:112%}
+        .weflair-logo-mark.is-wide{--logo-width:154%;--logo-height:116%}
+        .weflair-logo-mark.is-square{--logo-width:142%;--logo-height:124%}
+        .weflair-logo-mark.is-tiny{--logo-width:172%;--logo-height:130%;--logo-scale:1.24}
         .weflair-audit-widget{right:.8rem;bottom:.8rem;width:min(calc(100vw - 1.6rem),22rem)}
         .weflair-footer__cta-banner{padding:3.4rem 0 2.7rem}
         .weflair-footer__cta-panel{padding:2.15rem 1.15rem 2rem;border-radius:1.2rem}
@@ -1641,7 +1683,7 @@
         .weflair-process__num{display:none}
         .weflair-process__title::before{content:attr(data-num) '. ';color:rgba(246,243,238,.3);font-weight:600}
         .weflair-process__body{grid-column:1/-1}
-      
+
 /* ORG CHART AND AVATAR STYLES */
 .weflair-org-chart { display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; animation: weflairOrgFadeIn 0.6s ease-out forwards; }
 @keyframes weflairOrgFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -1791,27 +1833,24 @@
       const normalizedOffset = ((offset % items.length) + items.length) % items.length;
       return [...items.slice(normalizedOffset), ...items.slice(0, normalizedOffset)];
     };
-    const splitIndex = Math.ceil(LOGOS.length / 2);
-    const topRow = LOGOS.slice(0, splitIndex);
-    const rawBottomRow = LOGOS.slice(splitIndex);
-    const bottomRow = rotateLogos(rawBottomRow.length ? rawBottomRow : topRow, 2);
+    const rows = LOGO_ROWS.map((row, index) => rotateLogos(row, index % 2 ? 2 : 0));
     const logoMarkup = (items) =>
       items.map((item) =>
-        item.type === "image"
-          ? `<span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark${
-              item.size ? ` is-${item.size}` : ""
-            }" tabindex="0"${
-              item.width || item.height
-                ? ` style="${item.width ? `--logo-width:${item.width};` : ""}${item.height ? `--logo-height:${item.height};` : ""}"`
-                : ""
-            }><img src="${item.src}" alt="${item.label}" loading="lazy" decoding="async"></span></span></span>`
-          : `<span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark${
-              item.size ? ` is-${item.size}` : ""
-            }" tabindex="0">${item.label}</span></span></span>`
+        `<span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark${
+          item.size ? ` is-${item.size}` : ""
+        }${item.tone ? ` is-${item.tone}` : ""}" tabindex="0"${
+          item.width || item.height || item.scale || item.x || item.y
+            ? ` style="${item.width ? `--logo-width:${item.width};` : ""}${item.height ? `--logo-height:${item.height};` : ""}${item.scale ? `--logo-scale:${item.scale};` : ""}${item.x ? `--logo-x:${item.x};` : ""}${item.y ? `--logo-y:${item.y};` : ""}"`
+            : ""
+        }><img src="${item.src}" alt="${item.label}" loading="eager" decoding="async"></span></span></span>`
       ).join("");
-    const topGroup = logoMarkup(topRow);
-    const bottomGroup = logoMarkup(bottomRow);
-    section.innerHTML = `<div class="container"><div class="weflair-logos-shell"><div class="weflair-section__head weflair-logos-head"><h2 class="h3">${CONTENT.logos.title}</h2></div><div class="weflair-logos-rail"><div class="weflair-logo-stack"><div class="weflair-logo-marquee"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group">${topGroup}</div><div class="weflair-logo-marquee__group" aria-hidden="true">${topGroup}</div></div></div><div class="weflair-logo-marquee is-reverse"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group">${bottomGroup}</div><div class="weflair-logo-marquee__group" aria-hidden="true">${bottomGroup}</div></div></div></div></div></div></div>`;
+    const rowMarkup = rows
+      .map((row, index) => {
+        const group = logoMarkup(row);
+        return `<div class="weflair-logo-marquee${index % 2 ? " is-reverse" : ""}"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group">${group}</div><div class="weflair-logo-marquee__group" aria-hidden="true">${group}</div></div></div>`;
+      })
+      .join("");
+    section.innerHTML = `<div class="container"><div class="weflair-logos-shell"><div class="weflair-section__head weflair-logos-head"><h2 class="h3">${CONTENT.logos.title}</h2></div><div class="weflair-logos-rail"><div class="weflair-logo-stack">${rowMarkup}</div></div></div></div>`;
   }
 
   function wireAuditWidget() {
@@ -1860,12 +1899,7 @@
             )
             .join("")}</div>`
       )
-      .join("")}</div></div></div><div class="weflair-services-cta-wrap"><div class="weflair-services-cta"><div class="weflair-services-cta-text"><h3 class="h5">Not sure which service you need?</h3><p>Book a call and we&rsquo;ll figure out the best approach.</p></div><div class="weflair-services-cta-actions">${calButton(
-      "Book a free growth audit",
-      "primary",
-      'data-cal-source="services-cta"',
-      "diagonal"
-    )}<p class="weflair-services-cta-note">Free audit included &bull; No commitment required</p></div></div></div></div>`;
+      .join("")}</div></div></div><div class="weflair-services-cta-wrap" data-services-assessment-root></div></div>`;
   }
 
   function challengeIcon(index) {
@@ -2068,7 +2102,7 @@
       )
       .join("")}</div><div class="weflair-case-studies__frame"><div data-case-panel></div><div class="weflair-case-studies__footer"><div class="weflair-case-studies__footer-link">${button(
       CONTENT.results.moreLabel,
-      CONTENT.results.moreHref || "cases.html",
+      CONTENT.results.moreHref || ROUTES.results,
       "ghost",
       "diagonal"
     )}</div><div class="weflair-case-studies__nav"><button type="button" class="weflair-case-studies__nav-btn" data-case-nav="prev" aria-label="Previous case study">${resultsNavIcon(
@@ -2175,13 +2209,7 @@
     const d = CONTENT.footer;
     section.className = "footer weflair-footer";
 
-    const eyebrowHtml = d.cta.eyebrow ? eyebrow(d.cta.eyebrow, true) : "";
-    const ctaHtml = `<div class="weflair-footer__cta-banner" id="audit"><div class="container"><div class="weflair-footer__cta-panel"><div class="weflair-footer__cta-inner">${eyebrowHtml}<h2 class="h3 weflair-footer__cta-title">${d.cta.title}</h2><p class="weflair-footer__cta-copy">${d.cta.body}</p><p class="weflair-section__body is--muted">${d.cta.reassurance}</p>${calButton(
-      d.cta.ctaLabel,
-      "primary",
-      'data-cal-source="footer-cta"',
-      "diagonal"
-    )}</div></div></div></div>`;
+    const ctaHtml = `<div class="weflair-new-cta-wrap" id="audit"><div class="container" style="position:relative; z-index: 5;"><div class="weflair-new-cta"><div class="weflair-new-cta__bg"></div><div class="weflair-new-cta__glow"></div><div class="weflair-new-cta__grid"><div class="weflair-new-cta__left"><div class="weflair-new-cta__label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Next Step</div><h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2><p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p><div class="weflair-new-cta__features"><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div></div></div><div class="weflair-new-cta__right"><a href="/contact.html" class="weflair-new-cta__btn"><span class="weflair-new-cta__btn-text">Get your free audit</span><span class="weflair-new-cta__btn-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a></div></div></div></div></div>`;
 
     const infoColsHtml = d.columns.map(col => {
       const body = col.links
@@ -2420,7 +2448,7 @@
   function schedule() {
     const p = window.location.pathname;
     const isHome = p === '/' || p.endsWith('/index.html') || p === '';
-    
+
     if (document.body?.dataset.weflairStatic === "true") {
       const init = () => {
         if (isHome) bootStaticHomepage();
@@ -2432,7 +2460,7 @@
       }
       return;
     }
-    
+
     if (!isHome) return; // Do not run DOM mutations on subpages to preserve SEO and static content.
 
     let attempts = 0;
