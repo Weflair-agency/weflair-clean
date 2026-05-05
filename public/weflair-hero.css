@@ -3,6 +3,218 @@
   align-items: center;
 }
 
+/* Critical first-paint styles for the homepage logo rail.
+   These mirror the runtime styles so logos never render at native image size before JS loads. */
+.weflair-logos-shell {
+  width: 100%;
+  margin: 0;
+  padding: clamp(.75rem, 1vw, 1rem) 0 0;
+  display: grid;
+  gap: clamp(1rem, 1.8vw, 1.4rem);
+}
+
+.weflair-logos-head {
+  gap: .8rem;
+  text-align: center;
+}
+
+.weflair-logos-head .h3 {
+  max-width: none;
+  margin: 0 auto;
+  font-size: .88rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: .01em;
+  color: rgba(246, 243, 238, .52);
+}
+
+.weflair-logos-head .eyebrow,
+.weflair-logos-head .eyebrow__p {
+  color: #f6f3ee;
+}
+
+.weflair-logos-rail {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.weflair-logo-stack {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.weflair-logo-marquee {
+  position: relative;
+  width: 100%;
+  padding-inline: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+}
+
+.weflair-logo-marquee:hover .weflair-logo-marquee__track,
+.weflair-logo-marquee:focus-within .weflair-logo-marquee__track {
+  animation-play-state: paused;
+}
+
+.weflair-logo-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: weflairMarqueeLeft 88s linear infinite;
+  will-change: transform;
+}
+
+.weflair-logo-marquee.is-reverse .weflair-logo-marquee__track {
+  animation-name: weflairMarqueeRight;
+}
+
+.weflair-logo-marquee__group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: clamp(.72rem, 1vw, 1rem);
+  padding-inline: clamp(.55rem, .9vw, .82rem);
+  white-space: nowrap;
+}
+
+.weflair-logo-marquee__item {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.weflair-logo-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(15.25rem, 16.4vw, 18.8rem);
+  height: clamp(5.65rem, 6.15vw, 6.9rem);
+  padding: .24rem .5rem;
+  overflow: hidden;
+  border: 1px solid rgba(232, 228, 221, .115);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(20, 21, 20, .58) 0%, rgba(11, 12, 11, .4) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035);
+  backdrop-filter: blur(6px);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.weflair-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  white-space: nowrap;
+  --logo-width: 132%;
+  --logo-height: 112%;
+  --logo-scale: 1;
+  --logo-x: 0%;
+  --logo-y: 0%;
+  --logo-filter: brightness(1.06) saturate(1.08) contrast(1.02);
+  --logo-hover-filter: brightness(1.2) saturate(1.22) contrast(1.05) drop-shadow(0 0 14px rgba(62, 255, 104, .18));
+}
+
+.weflair-logo-mark img {
+  display: block;
+  width: auto;
+  max-width: var(--logo-width);
+  max-height: var(--logo-height);
+  opacity: .94;
+  filter: var(--logo-filter);
+  transform: translate(var(--logo-x), var(--logo-y)) scale(var(--logo-scale));
+  transform-origin: center;
+  image-rendering: -webkit-optimize-contrast;
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.weflair-logo-mark.is-wide {
+  --logo-width: 150%;
+  --logo-height: 116%;
+}
+
+.weflair-logo-mark.is-square {
+  --logo-width: 138%;
+  --logo-height: 124%;
+}
+
+.weflair-logo-mark.is-tiny {
+  --logo-width: 164%;
+  --logo-height: 128%;
+  --logo-scale: 1.22;
+}
+
+.weflair-logo-mark.is-lighten {
+  --logo-filter: brightness(0) invert(1) contrast(1.08);
+  --logo-hover-filter: brightness(0) invert(1) contrast(1.18) drop-shadow(0 0 14px rgba(62, 255, 104, .2));
+}
+
+.weflair-logo-mark.is-boost {
+  --logo-filter: brightness(1.65) saturate(1.55) contrast(1.16);
+  --logo-hover-filter: brightness(1.9) saturate(1.75) contrast(1.18) drop-shadow(0 0 14px rgba(62, 255, 104, .18));
+}
+
+.weflair-logo-pill:hover,
+.weflair-logo-pill:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(62, 255, 104, .28);
+  background: linear-gradient(180deg, rgba(18, 28, 19, .62) 0%, rgba(9, 16, 10, .48) 100%);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .045);
+}
+
+.weflair-logo-pill:hover img,
+.weflair-logo-pill:focus-within img {
+  opacity: 1;
+  filter: var(--logo-hover-filter);
+  transform: translate(var(--logo-x), var(--logo-y)) scale(calc(var(--logo-scale) * 1.025));
+}
+
+.weflair-logo-mark:focus-visible {
+  outline: none;
+}
+
+@keyframes weflairMarqueeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes weflairMarqueeRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media screen and (max-width: 767px) {
+  .weflair-logos-head .h3 {
+    max-width: none;
+    font-size: .82rem;
+  }
+
+  .weflair-logo-stack {
+    gap: .72rem;
+  }
+
+  .weflair-logo-marquee__track {
+    animation-duration: 58s;
+  }
+
+  .weflair-logo-marquee__group {
+    gap: .52rem;
+    padding-inline: .42rem;
+  }
+
+  .weflair-logo-pill {
+    width: 12.2rem;
+    height: 4.95rem;
+    padding: .18rem .34rem;
+  }
+}
+
 .nav-bar__logo-a,
 .nav-bar__logo-a.w--current {
   text-decoration: none !important;
@@ -3025,5 +3237,171 @@
 
   .weflair-framework__wheel-arrow.is-c {
     left: 11%;
+  }
+}
+
+/* Final critical override: keep the homepage logo rail stable before deferred JS runs. */
+#logos .weflair-logos-shell {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: clamp(.75rem, 1vw, 1rem) 0 0 !important;
+  display: grid !important;
+  gap: clamp(1rem, 1.8vw, 1.4rem) !important;
+}
+
+#logos .weflair-logos-head {
+  gap: .8rem !important;
+  text-align: center !important;
+}
+
+#logos .weflair-logos-head .h3 {
+  max-width: none !important;
+  margin: 0 auto !important;
+  font-size: .88rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: .01em !important;
+  color: rgba(246, 243, 238, .52) !important;
+}
+
+#logos .weflair-logos-rail {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#logos .weflair-logo-stack {
+  display: grid !important;
+  gap: 1rem !important;
+  width: 100% !important;
+}
+
+#logos .weflair-logo-marquee {
+  position: relative !important;
+  width: 100% !important;
+  padding-inline: 0 !important;
+  overflow: hidden !important;
+  mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent) !important;
+}
+
+#logos .weflair-logo-marquee__track {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  width: max-content !important;
+  animation: weflairMarqueeLeft 88s linear infinite !important;
+  will-change: transform !important;
+}
+
+#logos .weflair-logo-marquee.is-reverse .weflair-logo-marquee__track {
+  animation-name: weflairMarqueeRight !important;
+}
+
+#logos .weflair-logo-marquee__group {
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  gap: clamp(.72rem, 1vw, 1rem) !important;
+  padding-inline: clamp(.55rem, .9vw, .82rem) !important;
+  white-space: nowrap !important;
+}
+
+#logos .weflair-logo-marquee__item {
+  display: flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+}
+
+#logos .weflair-logo-pill {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: clamp(15.25rem, 16.4vw, 18.8rem) !important;
+  height: clamp(5.65rem, 6.15vw, 6.9rem) !important;
+  padding: .24rem .5rem !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(232, 228, 221, .115) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, rgba(20, 21, 20, .58) 0%, rgba(11, 12, 11, .4) 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+#logos .weflair-logo-mark {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  --logo-width: 132%;
+  --logo-height: 112%;
+  --logo-scale: 1;
+  --logo-x: 0%;
+  --logo-y: 0%;
+  --logo-filter: brightness(1.06) saturate(1.08) contrast(1.02);
+}
+
+#logos .weflair-logo-mark img {
+  display: block !important;
+  width: auto !important;
+  max-width: var(--logo-width) !important;
+  max-height: var(--logo-height) !important;
+  opacity: .94 !important;
+  filter: var(--logo-filter) !important;
+  transform: translate(var(--logo-x), var(--logo-y)) scale(var(--logo-scale)) !important;
+  transform-origin: center !important;
+}
+
+#logos .weflair-logo-mark.is-wide {
+  --logo-width: 150%;
+  --logo-height: 116%;
+}
+
+#logos .weflair-logo-mark.is-square {
+  --logo-width: 138%;
+  --logo-height: 124%;
+}
+
+#logos .weflair-logo-mark.is-tiny {
+  --logo-width: 164%;
+  --logo-height: 128%;
+  --logo-scale: 1.22;
+}
+
+#logos .weflair-logo-mark.is-lighten {
+  --logo-filter: brightness(0) invert(1) contrast(1.08);
+}
+
+#logos .weflair-logo-mark.is-boost {
+  --logo-filter: brightness(1.65) saturate(1.55) contrast(1.16);
+}
+
+@media screen and (max-width: 767px) {
+  #logos .weflair-logos-head .h3 {
+    max-width: none !important;
+    font-size: .82rem !important;
+  }
+
+  #logos .weflair-logo-stack {
+    gap: .72rem !important;
+  }
+
+  #logos .weflair-logo-marquee__track {
+    animation-duration: 58s !important;
+  }
+
+  #logos .weflair-logo-marquee__group {
+    gap: .52rem !important;
+    padding-inline: .42rem !important;
+  }
+
+  #logos .weflair-logo-pill {
+    width: 12.2rem !important;
+    height: 4.95rem !important;
+    padding: .18rem .34rem !important;
   }
 }

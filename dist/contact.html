@@ -15,10 +15,28 @@
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/foundation-styles.css" />
   <link rel="stylesheet" href="/foundation-slater.css" />
-  <link rel="stylesheet" href="/weflair-hero.css" />
-  <link rel="stylesheet" href="/weflair-contact.css" />
-  <script src="/foundation.js" defer></script>
-  <script src="/weflair-hero.js" defer></script>
+  <link rel="stylesheet" href="/weflair-hero.css?v=20260504-logo-critical-01" />
+  <link rel="stylesheet" href="/weflair-contact.css?v=20260505-contact-logos-02" />
+  <script src="/foundation.js?v=20260504-dark-01" defer></script>
+  <script src="/weflair-hero.js?v=20260504-home-stable-01" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.querySelector('.wf-contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.wf-contact-submit');
+        if (btn) { btn.disabled = true; btn.querySelector('span').textContent = 'Sending…'; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).finally(function () {
+          window.location.href = 'https://cal.com/weflair';
+        });
+      });
+    });
+  </script>
   <link rel="canonical" href="https://weflair.com/contact.html" />
   <meta property="og:url" content="https://weflair.com/contact.html" />
 </head>
@@ -44,7 +62,7 @@
               <li><span class="wf-contact-check">
 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
   <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg></span><span>A marketing plan designed to achieve your goals.</span></li>
+</svg></span><span>A 90 day marketing plan built to achieve your goals.</span></li>
               <li><span class="wf-contact-check">
 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
   <path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -59,12 +77,14 @@
 </svg></span><span>A personalized PPC, SEO, or GTM audit can be prepared upon request.</span></li>
             </ul>
             <div class="wf-contact-badges" aria-label="WeFlair partner badges and certifications">
-              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/images.png" alt="Shopify Partner badge" loading="lazy" decoding="async" /></figure>
-              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/images (1).png" alt="Klaviyo Partner badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--lockup"><img src="/brand-assets/partner-logos/shopify.svg" alt="" loading="lazy" decoding="async" /><figcaption>Shopify Partner</figcaption></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/images%20(1).png" alt="Klaviyo Partner badge" loading="lazy" decoding="async" /></figure>
               <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/660ea0489aeb028f51938bfb_certificate-google-marketing-platform.avif" alt="Google Marketing Platform certification badge" loading="lazy" decoding="async" /></figure>
               <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/660ea324950fc02759a448b8_certificate-bing-ads.avif" alt="Microsoft Advertising certification badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--shield"><img src="/66fd0f9881702f8222596258_5.webp" alt="Microsoft Advertising Certified Expert badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--round"><img src="/66fd0f9dde617cc8161ceaf0_21.webp" alt="Digital Marketing and Certification badge" loading="lazy" decoding="async" /></figure>
               <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/semrush-agency-partner-badge.png" alt="Semrush Agency Partner badge" loading="lazy" decoding="async" /></figure>
-              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/Screenshot 2026-04-20 151006.png" alt="GoodFirms rating badge" loading="lazy" decoding="async" /></figure>
+              <figure class="wf-contact-badge wf-contact-badge--wide"><img src="/Screenshot%202026-04-20%20151006.png" alt="GoodFirms rating badge" loading="lazy" decoding="async" /></figure>
             </div>
           </div>
 
@@ -95,7 +115,7 @@
               </div>
 
               <fieldset class="wf-contact-problem">
-                <legend class="wf-contact-problem__label">What are you trying to solve?</legend>
+                <legend class="wf-contact-problem__label">What are you trying to solve? Select all that apply.</legend>
                 <div class="wf-contact-chips">
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="lead-generation" /><span>Lead generation</span></label>
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="seo-ai-visibility" /><span>SEO / AI visibility</span></label>
@@ -103,7 +123,7 @@
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="creative-landing-pages" /><span>Creative / landing pages</span></label>
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="outbound-systems" /><span>Outbound systems</span></label>
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="crm-automation" /><span>CRM / automation</span></label>
-                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="combination" /><span>Combination of all</span></label>
+                  <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="combination" /><span>Combination of some</span></label>
                   <label class="wf-contact-chip"><input type="checkbox" name="challenge[]" value="not-sure" /><span>Not sure yet</span></label>
                 </div>
               </fieldset>
@@ -133,50 +153,6 @@
       </div>
     </section>
 
-    <section class="wf-contact-calendar" aria-labelledby="calendar-title">
-      <div class="wf-contact-wrap wf-contact-calendar__grid">
-        <div class="wf-contact-note">
-          <p class="wf-contact-note__eyebrow">Prefer booking directly?</p>
-          <h2 id="calendar-title">Pick a 15 min slot.</h2>
-          <p>The first call is only to understand the goal, the current bottleneck, and whether we can help. If the fit is clear, the Strategy Session is where the full 90-day roadmap gets built.</p>
-          <div class="wf-contact-note__meta">
-            <span>15 min intro call</span>
-            <span>No pitch deck</span>
-            <span>Strategy Session next</span>
-          </div>
-        </div>
-        <div class="wf-contact-cal">
-          <form class="wf-contact-slot-form" name="contact-slot-request" method="POST" action="/contact.html#calendar-title" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact-slot-request" />
-            <p class="wf-contact-hidden">
-              <label>Do not fill this out: <input name="bot-field" /></label>
-            </p>
-            <div class="wf-contact-slot-head">
-              <h3>Request a slot</h3>
-              <span>Europe/London</span>
-            </div>
-            <div class="wf-contact-date-grid" aria-label="Preferred date">
-              <label class="wf-contact-date"><input type="radio" name="preferred_date" value="mon-may-4" checked /><span><small>Mon</small><strong>4</strong><small>May</small></span></label>
-              <label class="wf-contact-date"><input type="radio" name="preferred_date" value="tue-may-5" /><span><small>Tue</small><strong>5</strong><small>May</small></span></label>
-              <label class="wf-contact-date"><input type="radio" name="preferred_date" value="wed-may-6" /><span><small>Wed</small><strong>6</strong><small>May</small></span></label>
-              <label class="wf-contact-date"><input type="radio" name="preferred_date" value="thu-may-7" /><span><small>Thu</small><strong>7</strong><small>May</small></span></label>
-            </div>
-            <div class="wf-contact-time-grid" aria-label="Preferred time">
-              <label class="wf-contact-time"><input type="radio" name="preferred_time" value="09:30" /><span>09:30</span></label>
-              <label class="wf-contact-time"><input type="radio" name="preferred_time" value="11:00" checked /><span>11:00</span></label>
-              <label class="wf-contact-time"><input type="radio" name="preferred_time" value="13:30" /><span>13:30</span></label>
-              <label class="wf-contact-time"><input type="radio" name="preferred_time" value="15:00" /><span>15:00</span></label>
-            </div>
-            <input class="wf-contact-slot-email" type="email" name="email" autocomplete="email" placeholder="Business email" required />
-            <button class="wf-contact-slot-submit" type="submit"><span>Request this slot</span>
-<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-  <path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
-  <path d="m13 6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg></button>
-          </form>
-        </div>
-      </div>
-    </section>
   </main>
 
   <section class="footer weflair-footer">
@@ -190,19 +166,19 @@
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>

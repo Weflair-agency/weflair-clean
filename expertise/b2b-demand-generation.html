@@ -9,805 +9,1607 @@
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/foundation-styles.css" />
   <link rel="stylesheet" href="/foundation-slater.css" />
-  <link rel="stylesheet" href="/weflair-hero.css" />
+  <link rel="stylesheet" href="/weflair-hero.css?v=20260504-logo-critical-01" />
   <link rel="stylesheet" href="/expertise/expertise.css" />
-  <script src="/foundation.js" defer></script>
-  <script src="/weflair-hero.js" defer></script>
+  <script src="/foundation.js?v=20260504-dark-01" defer></script>
+  <script src="/weflair-hero.js?v=20260504-home-stable-01" defer></script>
   <style id="demand-generation-polish">
-    .demand-page .demand-kicker {
+
+    .demand-page {
+      --dg-bg: #111312;
+      --dg-panel: #171a18;
+      --dg-panel-2: #20231f;
+      --dg-cream: #f6f3ee;
+      --dg-muted: rgba(246, 243, 238, 0.68);
+      --dg-soft: rgba(246, 243, 238, 0.12);
+      --dg-line: rgba(246, 243, 238, 0.16);
+      --dg-green: #3eff68;
+      --dg-blue: #5c75ff;
+      --dg-orange: #ff7448;
+      --dg-ink: #111312;
+      background: var(--dg-bg);
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-page {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(17, 19, 18, 0.96), rgba(17, 19, 18, 1) 26rem),
+        repeating-linear-gradient(90deg, rgba(246, 243, 238, 0.035) 0 1px, transparent 1px 7.5rem);
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-page * {
+      box-sizing: border-box;
+    }
+
+    .demand-page .dg-container {
+      width: min(100% - 2rem, 76rem);
+      margin-inline: auto;
+    }
+
+    .demand-page .dg-section {
+      position: relative;
+      padding: 6.5rem 0;
+    }
+
+    .demand-page .dg-section--tight {
+      padding: 4rem 0;
+    }
+
+    .demand-page .dg-section--warm {
+      background: var(--dg-cream);
+      color: var(--dg-ink);
+    }
+
+    .demand-page .dg-section--ink {
+      background: #0d0f0e;
+    }
+
+    .demand-page .dg-eyebrow,
+    .demand-page .dg-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
+      margin: 0 0 1rem;
+      color: var(--dg-green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
     }
 
-    .demand-page .demand-kicker::before {
+    .demand-page .dg-eyebrow::before,
+    .demand-page .dg-kicker::before {
       content: "";
-      width: 0.45rem;
-      height: 0.45rem;
-      flex: 0 0 auto;
-      background: var(--dg-accent);
-      box-shadow: 0 0 1rem rgba(62, 255, 104, 0.42);
+      width: 0.55rem;
+      height: 0.55rem;
+      background: currentColor;
       transform: rotate(45deg);
     }
 
-    .demand-page .demand-command {
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
-      gap: 0.9rem;
-      min-height: 31rem;
-      padding: 1rem;
+    .demand-page .dg-hero {
+      position: relative;
+      padding: 10rem 0 5.5rem;
       background:
-        radial-gradient(circle at 86% 16%, rgba(70, 100, 255, 0.22), transparent 15rem),
-        radial-gradient(circle at 12% 88%, rgba(62, 255, 104, 0.14), transparent 14rem),
-        rgba(255, 255, 255, 0.025);
+        linear-gradient(135deg, rgba(62, 255, 104, 0.09), transparent 34rem),
+        linear-gradient(225deg, rgba(92, 117, 255, 0.12), transparent 33rem),
+        var(--dg-bg);
     }
 
-    .demand-command__top,
-    .demand-command__metrics article,
-    .demand-command__stage,
-    .demand-command__handoff {
-      border: 1px solid rgba(246, 243, 238, 0.12);
-      border-radius: 0.5rem;
-      background: rgba(10, 12, 14, 0.72);
-      box-shadow: 0 1.1rem 2.2rem rgba(0, 0, 0, 0.18);
+    .demand-page .dg-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(246, 243, 238, 0.24), transparent);
     }
 
-    .demand-command__top {
-      display: flex;
+    .demand-page .dg-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.82fr);
+      gap: 4rem;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.85rem 1rem;
-      color: rgba(246, 243, 238, 0.72);
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
     }
 
-    .demand-command__top strong {
-      color: var(--dg-accent);
-      font-size: 0.72rem;
-    }
-
-    .demand-command__metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.7rem;
-    }
-
-    .demand-command__metrics article {
-      padding: 0.85rem;
-    }
-
-    .demand-command__metrics span,
-    .demand-command__stage span,
-    .demand-command__handoff span {
-      display: block;
-      color: rgba(246, 243, 238, 0.54);
-      font-size: 0.68rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .demand-command__metrics strong {
-      display: block;
-      margin-top: 0.25rem;
-      color: var(--dg-ink);
-      font-size: 1.45rem;
-      line-height: 1;
-    }
-
-    .demand-command__metrics small {
-      color: var(--dg-accent);
-      font-size: 0.72rem;
-      font-weight: 800;
-    }
-
-    .demand-command__flow {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.7rem;
-      align-items: stretch;
-    }
-
-    .demand-command__stage {
-      display: grid;
-      gap: 0.75rem;
-      padding: 0.95rem;
-    }
-
-    .demand-command__stage strong {
-      color: var(--dg-ink);
-      font-size: 1rem;
-    }
-
-    .demand-command__bar {
-      width: 100%;
-      height: 0.45rem;
-      border-radius: 999px;
-      background: rgba(246, 243, 238, 0.1);
-      overflow: hidden;
-    }
-
-    .demand-command__bar i {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--dg-accent), var(--dg-blue));
-    }
-
-    .demand-command__handoff {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.95rem 1rem;
-    }
-
-    .demand-command__handoff strong {
-      color: var(--dg-ink);
-    }
-
-    .demand-command__logos {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .demand-command__logos img,
-    .channel-icon img {
-      width: 1.55rem;
-      height: 1.55rem;
-      object-fit: contain;
-    }
-
-    .demand-logo-proof {
-      padding: 3.75rem 0 4rem !important;
-      border-top: 1px solid rgba(246, 243, 238, 0.06);
-      border-bottom: 1px solid rgba(246, 243, 238, 0.06);
-      background: rgba(255, 255, 255, 0.015);
-    }
-
-    .demand-logo-proof .container {
-      width: min(100% - 2rem, 76rem);
-    }
-
-    .demand-logo-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 0.85rem;
-      max-width: 58rem;
-      margin: 0 auto;
-    }
-
-    .demand-logo-grid figure {
-      display: grid;
-      place-items: center;
-      min-height: 5rem;
+    .demand-page .dg-hero h1 {
+      max-width: 52rem;
       margin: 0;
-      border: 1px solid rgba(246, 243, 238, 0.1);
-      border-radius: 0.5rem;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .demand-logo-grid img {
-      max-width: 6.2rem;
-      max-height: 2rem;
-      object-fit: contain;
-    }
-
-    .demand-page .demand-channels {
-      background:
-        linear-gradient(180deg, rgba(70, 100, 255, 0.1), rgba(62, 255, 104, 0.045)),
-        rgba(255, 255, 255, 0.015);
-    }
-
-    .demand-page .channel-toggle {
-      width: fit-content;
-      max-width: 100%;
-      margin: 2rem 0 0;
-      border-color: rgba(246, 243, 238, 0.14);
-      border-radius: 0.65rem;
-    }
-
-    .demand-page .channel-toggle span {
-      color: rgba(246, 243, 238, 0.5);
-      font-size: 0.82rem;
+      color: var(--dg-cream);
+      font-size: 5.1rem;
+      line-height: 0.96;
       font-weight: 800;
+      letter-spacing: 0;
     }
 
-    .demand-page .channel-toggle span.is-active {
-      color: var(--dg-ink);
+    .demand-page .dg-hero h1 span {
+      color: var(--dg-green);
     }
 
-    .demand-page .channel-tabs button {
+    .demand-page .dg-hero__lead {
+      max-width: 43rem;
+      margin: 1.45rem 0 0;
+      color: var(--dg-muted);
+      font-size: 1.18rem;
+      line-height: 1.65;
+    }
+
+    .demand-page .dg-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .demand-page .dg-btn {
       display: inline-flex;
+      min-height: 3.25rem;
       align-items: center;
       justify-content: center;
-      min-height: 3.15rem;
-      padding: 0.6rem 0.8rem;
-      border-radius: 0.5rem;
-      letter-spacing: 0;
-      line-height: 1.15;
-      text-transform: none;
-      white-space: normal;
-    }
-
-    .demand-page .channel-card {
-      display: grid;
-      grid-template-columns: minmax(18rem, 0.42fr) minmax(0, 1fr);
-      gap: 1rem;
-      border-color: rgba(246, 243, 238, 0.12);
-      border-radius: 0.75rem;
-      background: rgba(13, 15, 18, 0.9);
-      color: var(--dg-ink);
-    }
-
-    .demand-page .channel-copy {
-      display: grid;
-      align-content: start;
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    .demand-page .channel-icon {
-      width: 3.2rem;
-      height: 3.2rem;
-      margin-bottom: 0.25rem;
-      border: 1px solid rgba(246, 243, 238, 0.12);
-      border-radius: 0.5rem;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .demand-page .channel-mode-note {
-      color: var(--dg-accent);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .demand-page .channel-copy h3 {
-      color: var(--dg-ink);
-      font-size: 1.85rem;
-      line-height: 1;
-    }
-
-    .demand-page .channel-copy p {
-      max-width: 26rem;
-      color: rgba(246, 243, 238, 0.7);
-    }
-
-    .demand-page .channel-preview {
-      display: grid;
-      align-content: stretch;
-      min-height: 25rem;
-      padding: 1rem;
-      border-color: rgba(246, 243, 238, 0.1);
-      background:
-        linear-gradient(rgba(246, 243, 238, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(246, 243, 238, 0.035) 1px, transparent 1px),
-        #101216;
-      background-size: 4.5rem 4.5rem;
-    }
-
-    .channel-preview__panel {
-      display: grid;
-      gap: 1rem;
-      align-content: start;
-      height: 100%;
-      padding: 1.15rem;
-      border: 1px solid rgba(246, 243, 238, 0.12);
-      border-radius: 0.65rem;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .channel-preview__top,
-    .channel-preview__row,
-    .channel-preview__summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .channel-preview__top {
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid rgba(246, 243, 238, 0.1);
-    }
-
-    .channel-preview__brand {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      min-width: 0;
-    }
-
-    .channel-preview__brand img {
-      width: 2rem;
-      height: 2rem;
-      object-fit: contain;
-    }
-
-    .channel-preview__brand strong,
-    .channel-preview__summary strong {
-      color: var(--dg-ink);
-    }
-
-    .channel-preview__badge,
-    .channel-preview__row span,
-    .channel-preview__summary span {
-      color: rgba(246, 243, 238, 0.55);
-      font-size: 0.76rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .channel-preview__rows {
-      display: grid;
       gap: 0.65rem;
-    }
-
-    .channel-preview__row,
-    .channel-preview__summary {
-      padding: 0.85rem;
-      border: 1px solid rgba(246, 243, 238, 0.1);
+      padding: 0.9rem 1.15rem;
+      border: 1px solid var(--dg-line);
       border-radius: 0.5rem;
-      background: rgba(255, 255, 255, 0.045);
+      color: var(--dg-cream);
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
     }
 
-    .channel-preview__row strong {
-      color: var(--dg-accent);
-      font-size: 1rem;
+    .demand-page .dg-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(246, 243, 238, 0.34);
     }
 
-    .channel-preview__bars {
+    .demand-page .dg-btn svg {
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .demand-page .dg-btn--primary {
+      border-color: rgba(62, 255, 104, 0.72);
+      background: var(--dg-green);
+      color: #071009;
+      box-shadow: 0 1rem 2.4rem rgba(62, 255, 104, 0.18);
+    }
+
+    .demand-page .dg-btn--primary:hover {
+      background: #68ff84;
+      color: #071009;
+    }
+
+    .demand-page .dg-btn--light {
+      border-color: #111312;
+      background: #111312;
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-proofline {
       display: grid;
-      gap: 0.55rem;
-      padding-top: 0.25rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 2rem;
+      max-width: 47rem;
     }
 
-    .channel-preview__bar {
-      height: 0.5rem;
-      border-radius: 999px;
-      background: rgba(246, 243, 238, 0.1);
-      overflow: hidden;
+    .demand-page .dg-proofline span {
+      display: flex;
+      min-height: 4.7rem;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.9rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.035);
+      color: rgba(246, 243, 238, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.35;
+      font-weight: 700;
     }
 
-    .channel-preview__bar i {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--dg-accent), var(--dg-blue));
+    .demand-page .dg-proofline i {
+      width: 0.55rem;
+      height: 0.55rem;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--dg-green);
+      box-shadow: 0 0 0 0.35rem rgba(62, 255, 104, 0.12);
     }
 
-    .demand-page .method-visual {
+    .demand-page .dg-command {
+      position: relative;
       display: grid;
-      min-height: 25rem;
-      padding: 1rem !important;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(246, 243, 238, 0.18);
+      border-radius: 0.5rem;
       background:
-        radial-gradient(circle at 82% 16%, rgba(62, 255, 104, 0.14), transparent 12rem),
-        rgba(255, 255, 255, 0.025);
+        linear-gradient(180deg, rgba(246, 243, 238, 0.08), rgba(246, 243, 238, 0.03)),
+        #121512;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34);
     }
 
-    .method-system {
-      display: grid;
-      gap: 0.8rem;
-      align-content: stretch;
-      height: 100%;
+    .demand-page .dg-command::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: repeating-linear-gradient(0deg, transparent 0 2rem, rgba(246, 243, 238, 0.035) 2rem calc(2rem + 1px));
     }
 
-    .method-system__top,
-    .method-system__row,
-    .method-system__outcome {
-      border: 1px solid rgba(246, 243, 238, 0.12);
-      border-radius: 0.55rem;
-      background: rgba(10, 12, 14, 0.76);
+    .demand-page .dg-command > * {
+      position: relative;
+      z-index: 1;
     }
 
-    .method-system__top,
-    .method-system__row,
-    .method-system__outcome {
+    .demand-page .dg-command__top,
+    .demand-page .dg-command__card,
+    .demand-page .dg-command__route,
+    .demand-page .dg-command__decision {
+      border: 1px solid rgba(246, 243, 238, 0.14);
+      border-radius: 0.5rem;
+      background: rgba(9, 11, 10, 0.78);
+    }
+
+    .demand-page .dg-command__top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
       padding: 0.9rem 1rem;
-    }
-
-    .method-system__top span,
-    .method-system__row span,
-    .method-system__outcome span {
-      color: rgba(246, 243, 238, 0.55);
-      font-size: 0.72rem;
+      color: rgba(246, 243, 238, 0.7);
+      font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 0;
     }
 
-    .method-system__top strong,
-    .method-system__row strong,
-    .method-system__outcome strong {
-      color: var(--dg-ink);
+    .demand-page .dg-command__top strong {
+      color: var(--dg-green);
+    }
+
+    .demand-page .dg-command__metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .demand-page .dg-command__card {
+      padding: 0.9rem;
+      min-height: 6.8rem;
+    }
+
+    .demand-page .dg-command__card span,
+    .demand-page .dg-command__route span,
+    .demand-page .dg-command__decision span {
+      display: block;
+      color: rgba(246, 243, 238, 0.52);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-command__card strong {
+      display: block;
+      margin-top: 0.45rem;
+      color: var(--dg-cream);
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .demand-page .dg-command__card p {
+      margin: 0.55rem 0 0;
+      color: rgba(246, 243, 238, 0.58);
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .demand-page .dg-command__route {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0.65rem;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .demand-page .dg-route-node {
+      min-height: 5.2rem;
+      padding: 0.75rem;
+      border: 1px solid rgba(246, 243, 238, 0.12);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.045);
+    }
+
+    .demand-page .dg-route-node strong {
+      display: block;
+      margin-top: 0.35rem;
       font-size: 0.98rem;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
-    .method-system__row i {
-      width: 0.65rem;
-      height: 0.65rem;
+    .demand-page .dg-route-line {
+      width: 2.2rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--dg-green), var(--dg-blue));
+    }
+
+    .demand-page .dg-command__flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .demand-page .dg-flow-item {
+      display: grid;
+      gap: 0.7rem;
+      min-height: 10rem;
+      padding: 0.95rem;
+      border: 1px solid rgba(246, 243, 238, 0.12);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.045);
+    }
+
+    .demand-page .dg-flow-item strong {
+      color: var(--dg-cream);
+      font-size: 1rem;
+    }
+
+    .demand-page .dg-flow-item p {
+      margin: 0;
+      color: rgba(246, 243, 238, 0.62);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .demand-page .dg-flow-bar {
+      align-self: end;
+      height: 0.48rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.12);
+    }
+
+    .demand-page .dg-flow-bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--dg-green), var(--dg-blue));
+      animation: dgBar 4s ease-in-out infinite;
+    }
+
+    .demand-page .dg-command__decision {
+      padding: 1rem;
+    }
+
+    .demand-page .dg-command__decision strong {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--dg-cream);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .demand-page .dg-logo-band {
+      border-top: 1px solid rgba(246, 243, 238, 0.1);
+      border-bottom: 1px solid rgba(246, 243, 238, 0.1);
+      background: #0d0f0e;
+    }
+
+    .demand-page .dg-logo-band__inner {
+      display: grid;
+      gap: 1.7rem;
+      padding: 2.6rem 0;
+    }
+
+    .demand-page .dg-logo-band p {
+      margin: 0;
+      color: rgba(246, 243, 238, 0.64);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .demand-page .dg-logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.7rem 2.3rem;
+    }
+
+    .demand-page .dg-logo-row img {
+      display: block;
+      width: auto;
+      max-width: 8.5rem;
+      height: 2.25rem;
+      object-fit: contain;
+      filter: saturate(0.92) brightness(1.05);
+    }
+
+    .demand-page .dg-logo-row--clients img {
+      max-width: 9.8rem;
+      height: 2.1rem;
+      opacity: 0.82;
+    }
+
+    .demand-page .dg-section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.62fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2.2rem;
+    }
+
+    .demand-page .dg-section-head h2,
+    .demand-page .dg-cta h2 {
+      margin: 0;
+      font-size: 3.35rem;
+      line-height: 1.02;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-section-head p,
+    .demand-page .dg-copy p,
+    .demand-page .dg-cta p {
+      margin: 0;
+      color: var(--dg-muted);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    .demand-page .dg-section--warm .dg-section-head p,
+    .demand-page .dg-section--warm .dg-copy p {
+      color: rgba(17, 19, 18, 0.68);
+    }
+
+    .demand-page .dg-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .demand-page .dg-card-grid--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .demand-page .dg-card-grid--four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .demand-page .dg-card {
+      position: relative;
+      min-height: 15rem;
+      padding: 1.35rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .demand-page .dg-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(62, 255, 104, 0.42);
+      background: rgba(246, 243, 238, 0.06);
+    }
+
+    .demand-page .dg-section--warm .dg-card {
+      border-color: rgba(17, 19, 18, 0.12);
+      background: rgba(17, 19, 18, 0.035);
+    }
+
+    .demand-page .dg-card__icon {
+      display: grid;
+      width: 2.35rem;
+      height: 2.35rem;
+      place-items: center;
+      margin-bottom: 1.1rem;
+      border-radius: 0.5rem;
+      background: rgba(62, 255, 104, 0.12);
+      color: var(--dg-green);
+    }
+
+    .demand-page .dg-card:nth-child(2n) .dg-card__icon {
+      background: rgba(92, 117, 255, 0.14);
+      color: var(--dg-blue);
+    }
+
+    .demand-page .dg-card:nth-child(3n) .dg-card__icon {
+      background: rgba(255, 116, 72, 0.14);
+      color: var(--dg-orange);
+    }
+
+    .demand-page .dg-card__icon svg {
+      width: 1.22rem;
+      height: 1.22rem;
+    }
+
+    .demand-page .dg-card h3 {
+      margin: 0;
+      color: currentColor;
+      font-size: 1.25rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-card p {
+      margin: 0.75rem 0 0;
+      color: var(--dg-muted);
+      font-size: 0.96rem;
+      line-height: 1.58;
+    }
+
+    .demand-page .dg-section--warm .dg-card p {
+      color: rgba(17, 19, 18, 0.66);
+    }
+
+    .demand-page .dg-system {
+      display: grid;
+      grid-template-columns: minmax(20rem, 0.72fr) minmax(0, 1fr);
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .demand-page .dg-system__panel {
+      display: grid;
+      align-content: space-between;
+      min-height: 100%;
+      padding: 1.45rem;
+      border-radius: 0.5rem;
+      background: #111312;
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-system__panel h2 {
+      margin: 0;
+      font-size: 3rem;
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-system__panel p {
+      margin: 1rem 0 0;
+      color: rgba(246, 243, 238, 0.7);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .demand-page .dg-system__score {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 2rem;
+    }
+
+    .demand-page .dg-score-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(246, 243, 238, 0.14);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.05);
+      color: rgba(246, 243, 238, 0.76);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .demand-page .dg-score-row strong {
+      color: var(--dg-green);
+    }
+
+    .demand-page .dg-system__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .demand-page .dg-process {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.85rem;
+      counter-reset: dgstep;
+    }
+
+    .demand-page .dg-step {
+      position: relative;
+      min-height: 16rem;
+      padding: 1.15rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.045);
+    }
+
+    .demand-page .dg-step::before {
+      counter-increment: dgstep;
+      content: "0" counter(dgstep);
+      display: grid;
+      width: 2.25rem;
+      height: 2.25rem;
+      place-items: center;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      background: rgba(62, 255, 104, 0.12);
+      color: var(--dg-green);
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .demand-page .dg-step h3 {
+      margin: 0;
+      color: var(--dg-cream);
+      font-size: 1.08rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-step p {
+      margin: 0.75rem 0 0;
+      color: rgba(246, 243, 238, 0.66);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+
+    .demand-page .dg-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .demand-page .dg-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 2.85rem;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+      color: rgba(246, 243, 238, 0.72);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .demand-page .dg-tab:hover {
+      transform: translateY(-2px);
+      border-color: rgba(246, 243, 238, 0.34);
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-tab.is-active,
+    .demand-page .dg-tab[aria-selected="true"] {
+      border-color: rgba(62, 255, 104, 0.72);
+      background: rgba(62, 255, 104, 0.12);
+      color: var(--dg-green);
+    }
+
+    .demand-page .dg-channel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.76fr) minmax(20rem, 0.66fr);
+      gap: 1rem;
+      align-items: stretch;
+      min-height: 27rem;
+      padding: 1rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+    }
+
+    .demand-page .dg-channel__copy,
+    .demand-page .dg-channel__visual {
+      border: 1px solid rgba(246, 243, 238, 0.12);
+      border-radius: 0.5rem;
+      background: rgba(11, 13, 12, 0.82);
+    }
+
+    .demand-page .dg-channel__copy {
+      padding: 1.45rem;
+    }
+
+    .demand-page .dg-channel__icon {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      place-items: center;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.08);
+    }
+
+    .demand-page .dg-channel__icon img {
+      max-width: 1.8rem;
+      max-height: 1.8rem;
+      object-fit: contain;
+    }
+
+    .demand-page .dg-channel__copy h3 {
+      margin: 0;
+      color: var(--dg-cream);
+      font-size: 2.2rem;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-channel__copy p {
+      margin: 1rem 0 0;
+      color: rgba(246, 243, 238, 0.68);
+      font-size: 1.02rem;
+      line-height: 1.62;
+    }
+
+    .demand-page .dg-channel__list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .demand-page .dg-channel__list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem;
+      color: rgba(246, 243, 238, 0.74);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .demand-page .dg-channel__list li::before {
+      content: "";
+      width: 0.42rem;
+      height: 0.42rem;
+      margin-top: 0.45rem;
+      border-radius: 50%;
+      background: var(--dg-green);
+    }
+
+    .demand-page .dg-channel__visual {
+      display: grid;
+      align-content: center;
+      gap: 0.85rem;
+      padding: 1rem;
+    }
+
+    .demand-page .dg-dashboard-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem;
+      border: 1px solid rgba(246, 243, 238, 0.12);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.045);
+    }
+
+    .demand-page .dg-dashboard-row span {
+      color: rgba(246, 243, 238, 0.58);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-dashboard-row strong {
+      display: block;
+      margin-top: 0.28rem;
+      color: var(--dg-cream);
+      font-size: 0.96rem;
+      line-height: 1.2;
+    }
+
+    .demand-page .dg-dashboard-row b {
+      color: var(--dg-green);
+      font-size: 0.94rem;
+    }
+
+    .demand-page .dg-dashboard-bar {
+      height: 0.55rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.12);
+    }
+
+    .demand-page .dg-dashboard-bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--dg-green), var(--dg-orange), var(--dg-blue));
+      transition: width 260ms ease;
+    }
+
+    .demand-page .dg-deliverables {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .demand-page .dg-deliverable {
+      min-height: 9rem;
+      padding: 1rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+    }
+
+    .demand-page .dg-deliverable span {
+      display: inline-grid;
+      width: 1.75rem;
+      height: 1.75rem;
+      place-items: center;
+      margin-bottom: 0.85rem;
+      border-radius: 0.45rem;
+      background: rgba(62, 255, 104, 0.13);
+      color: var(--dg-green);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .demand-page .dg-deliverable h3 {
+      margin: 0;
+      color: var(--dg-cream);
+      font-size: 1rem;
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-deliverable p {
+      margin: 0.55rem 0 0;
+      color: rgba(246, 243, 238, 0.62);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .demand-page .dg-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .demand-page .dg-proof-card {
+      min-height: 18rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(17, 19, 18, 0.12);
+      border-radius: 0.5rem;
+      background: rgba(17, 19, 18, 0.04);
+    }
+
+    .demand-page .dg-proof-card img {
+      display: block;
+      width: auto;
+      max-width: 9.5rem;
+      height: 2.35rem;
+      object-fit: contain;
+      margin-bottom: 1.4rem;
+    }
+
+    .demand-page .dg-proof-card h3 {
+      margin: 0;
+      color: var(--dg-ink);
+      font-size: 1.35rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-proof-card p {
+      margin: 0.9rem 0 0;
+      color: rgba(17, 19, 18, 0.66);
+      font-size: 0.96rem;
+      line-height: 1.58;
+    }
+
+    .demand-page .dg-fit {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .demand-page .dg-fit article {
+      padding: 1.25rem;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+    }
+
+    .demand-page .dg-fit h3 {
+      margin: 0 0 0.9rem;
+      color: var(--dg-cream);
+      font-size: 1.3rem;
+      letter-spacing: 0;
+    }
+
+    .demand-page .dg-check-list {
+      display: grid;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .demand-page .dg-check-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.65rem;
+      color: rgba(246, 243, 238, 0.72);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .demand-page .dg-check-list li::before {
+      content: "";
+      width: 1.05rem;
+      height: 1.05rem;
+      margin-top: 0.08rem;
+      border-radius: 50%;
+      background: var(--dg-green);
+      clip-path: polygon(14% 54%, 34% 74%, 82% 24%, 92% 36%, 34% 94%, 4% 64%);
+    }
+
+    .demand-page .dg-fit article:last-child .dg-check-list li::before {
+      background: var(--dg-orange);
+      clip-path: polygon(17% 24%, 24% 17%, 50% 43%, 76% 17%, 83% 24%, 57% 50%, 83% 76%, 76% 83%, 50% 57%, 24% 83%, 17% 76%, 43% 50%);
+    }
+
+    .demand-page .dg-faq {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 56rem;
+      margin-inline: auto;
+    }
+
+    .demand-page .dg-faq-item {
+      border: 1px solid var(--dg-line);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.04);
+    }
+
+    .demand-page .dg-faq-button {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      border: 0;
+      background: transparent;
+      color: var(--dg-cream);
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .demand-page .dg-faq-button span {
+      display: grid;
+      width: 1.75rem;
+      height: 1.75rem;
       flex: 0 0 auto;
-      border-radius: 999px;
-      background: var(--dg-accent);
-      box-shadow: 0 0 1rem rgba(62, 255, 104, 0.38);
+      place-items: center;
+      border: 1px solid var(--dg-line);
+      border-radius: 0.45rem;
+      color: var(--dg-green);
+      transition: transform 180ms ease;
     }
 
-    @media (max-width: 900px) {
-      .demand-page .demand-command__metrics,
-      .demand-page .demand-command__flow {
-        grid-template-columns: 1fr 1fr;
-      }
+    .demand-page .dg-faq-item.is-open .dg-faq-button span {
+      transform: rotate(45deg);
+    }
 
-      .demand-logo-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+    .demand-page .dg-faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 220ms ease;
+    }
 
-      .demand-page .channel-card {
+    .demand-page .dg-faq-panel p {
+      margin: 0;
+      padding: 0 1.1rem 1.1rem;
+      color: rgba(246, 243, 238, 0.66);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .demand-page .dg-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 3rem;
+      border: 1px solid rgba(62, 255, 104, 0.28);
+      border-radius: 0.5rem;
+      background:
+        linear-gradient(135deg, rgba(62, 255, 104, 0.2), rgba(92, 117, 255, 0.14) 52%, rgba(255, 116, 72, 0.14)),
+        #111312;
+      color: var(--dg-cream);
+    }
+
+    .demand-page .dg-cta__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .demand-page .dg-cta p {
+      max-width: 42rem;
+      margin-top: 1rem;
+    }
+
+    .demand-page .dg-mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-top: 1.45rem;
+      max-width: 42rem;
+    }
+
+    .demand-page .dg-mini-stats span {
+      padding: 0.85rem;
+      border: 1px solid rgba(246, 243, 238, 0.16);
+      border-radius: 0.5rem;
+      background: rgba(246, 243, 238, 0.07);
+      color: rgba(246, 243, 238, 0.76);
+      font-size: 0.88rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    html.dg-js .demand-page [data-dg-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    html.dg-js .demand-page [data-dg-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes dgBar {
+      0%, 100% { transform: translateX(-6%); filter: saturate(1); }
+      50% { transform: translateX(6%); filter: saturate(1.25); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .demand-page .dg-btn,
+      .demand-page .dg-card,
+      .demand-page .dg-tab,
+      .demand-page .dg-flow-bar i,
+      .demand-page .dg-dashboard-bar i,
+      html.dg-js .demand-page [data-dg-reveal] {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .demand-page .dg-hero__grid,
+      .demand-page .dg-system,
+      .demand-page .dg-channel,
+      .demand-page .dg-cta__grid {
         grid-template-columns: 1fr;
       }
+
+      .demand-page .dg-hero h1 {
+        font-size: 4rem;
+      }
+
+      .demand-page .dg-section-head {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .demand-page .dg-card-grid,
+      .demand-page .dg-card-grid--four,
+      .demand-page .dg-deliverables,
+      .demand-page .dg-proof-grid,
+      .demand-page .dg-process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
-    @media (max-width: 640px) {
-      .demand-page .demand-command {
-        min-height: 0;
+    @media (max-width: 720px) {
+      .demand-page .dg-container {
+        width: min(100% - 1rem, 76rem);
       }
 
-      .demand-page .demand-command__metrics,
-      .demand-page .demand-command__flow,
-      .demand-logo-grid {
-        grid-template-columns: 1fr 1fr;
+      .demand-page .dg-hero {
+        padding: 8rem 0 4rem;
       }
 
-      .demand-page .channel-toggle {
-        width: 100%;
+      .demand-page .dg-section {
+        padding: 4.5rem 0;
+      }
+
+      .demand-page .dg-hero h1 {
+        font-size: 3.05rem;
+        line-height: 1;
+      }
+
+      .demand-page .dg-section-head h2,
+      .demand-page .dg-system__panel h2,
+      .demand-page .dg-cta h2 {
+        font-size: 2.25rem;
+      }
+
+      .demand-page .dg-proofline,
+      .demand-page .dg-command__flow,
+      .demand-page .dg-card-grid,
+      .demand-page .dg-card-grid--two,
+      .demand-page .dg-card-grid--four,
+      .demand-page .dg-system__grid,
+      .demand-page .dg-process,
+      .demand-page .dg-deliverables,
+      .demand-page .dg-proof-grid,
+      .demand-page .dg-fit,
+      .demand-page .dg-mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .demand-page .dg-command {
+        padding: 0.75rem;
+      }
+
+      .demand-page .dg-command__metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+      }
+
+      .demand-page .dg-command__card {
+        min-height: 5.4rem;
+        padding: 0.65rem;
+      }
+
+      .demand-page .dg-command__card strong {
+        font-size: 1.05rem;
+      }
+
+      .demand-page .dg-command__card p {
+        font-size: 0.72rem;
+      }
+
+      .demand-page .dg-command__route {
+        grid-template-columns: 1fr;
+      }
+
+      .demand-page .dg-route-line {
+        width: 2px;
+        height: 1.5rem;
+        justify-self: center;
+        background: linear-gradient(180deg, var(--dg-green), var(--dg-blue));
+      }
+
+      .demand-page .dg-logo-row {
+        gap: 1.1rem 1.4rem;
+      }
+
+      .demand-page .dg-logo-row img {
+        max-width: 7.4rem;
+        height: 1.9rem;
+      }
+
+      .demand-page .dg-cta {
+        padding: 1.25rem;
       }
     }
+
   </style>
 </head>
 <body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body expertise-page demand-page">
   <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
   <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="../resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="../resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
-  <main class="main demand-shell">
-    <section class="demand-hero" id="top">
-      <div class="demand-container demand-hero__grid">
-        <div class="demand-hero__copy">
-          <p class="demand-kicker">B2B Demand Generation Agency</p>
-          <h1>Full-funnel demand gen that drives pipeline, <span class="weflair-section-accent weflair-section-accent--solid">not just leads.</span></h1>
-          <p>We set up and run a system most teams cannot, weaving paid media, content, and signal-based outbound into a revenue engine that produces real results.</p>
-          <div class="demand-actions">
-            <a href="/contact.html" class="demand-btn demand-btn--primary">Book a call</a>
-            <a href="/case-studies/" class="demand-btn demand-btn--outline">Explore results</a>
+
+  <main class="main dg-page">
+    <section class="dg-hero" id="top">
+      <div class="dg-container">
+        <div class="dg-hero__grid">
+          <div class="dg-hero__copy" data-dg-reveal>
+            <p class="dg-kicker">B2B Demand Generation Agency</p>
+            <h1>Build a demand engine that turns attention into <span>qualified pipeline.</span></h1>
+            <p class="dg-hero__lead">WeFlair plans, builds, and runs the system behind predictable B2B growth: paid media, outbound signals, landing pages, CRM routing, creative testing, and weekly revenue reporting.</p>
+            <div class="dg-actions" aria-label="Demand generation calls to action">
+              <a href="/contact.html" class="dg-btn dg-btn--primary">
+                Book a demand audit
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+              <a href="#system" class="dg-btn">
+                See the system
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+            </div>
+            <div class="dg-proofline" aria-label="Operating principles">
+              <span><i></i>Paid, outbound, content, and CRM working from one plan</span>
+              <span><i></i>90-day build plan with weekly sprint decisions</span>
+              <span><i></i>Reporting tied to pipeline quality, not vanity metrics</span>
+            </div>
+          </div>
+
+          <div class="dg-command" aria-label="Demand generation command center preview" data-dg-reveal>
+            <div class="dg-command__top">
+              <span>Pipeline command center</span>
+              <strong>Weekly sprint live</strong>
+            </div>
+            <div class="dg-command__metrics">
+              <article class="dg-command__card">
+                <span>ICP fit</span>
+                <strong>Mapped</strong>
+                <p>Account tiers, buying triggers, and exclusion rules.</p>
+              </article>
+              <article class="dg-command__card">
+                <span>Active tests</span>
+                <strong>12</strong>
+                <p>Offers, angles, audiences, and landing page variants.</p>
+              </article>
+              <article class="dg-command__card">
+                <span>Sales handoff</span>
+                <strong>Live</strong>
+                <p>Lead routing, notes, and follow-up triggers.</p>
+              </article>
+            </div>
+            <div class="dg-command__route">
+              <div class="dg-route-node"><span>Create</span><strong>Account demand</strong></div>
+              <i class="dg-route-line"></i>
+              <div class="dg-route-node"><span>Capture</span><strong>High-intent traffic</strong></div>
+              <i class="dg-route-line"></i>
+              <div class="dg-route-node"><span>Convert</span><strong>Qualified pipeline</strong></div>
+            </div>
+            <div class="dg-command__flow">
+              <article class="dg-flow-item">
+                <strong>Paid capture</strong>
+                <p>Search, LinkedIn, retargeting, and proof-led creative.</p>
+                <span class="dg-flow-bar"><i style="width: 82%;"></i></span>
+              </article>
+              <article class="dg-flow-item">
+                <strong>Signal outbound</strong>
+                <p>Warm account triggers, sequences, and sales context.</p>
+                <span class="dg-flow-bar"><i style="width: 68%;"></i></span>
+              </article>
+              <article class="dg-flow-item">
+                <strong>CRM + reporting</strong>
+                <p>Attribution, routing, dashboards, and next actions.</p>
+                <span class="dg-flow-bar"><i style="width: 91%;"></i></span>
+              </article>
+            </div>
+            <div class="dg-command__decision">
+              <span>This week's decision</span>
+              <strong>Move budget into the strongest segment, ship landing page v2, and route warm accounts to sales with campaign context.</strong>
+            </div>
           </div>
         </div>
-        <div class="demand-hero__visual demand-command" aria-label="Demand generation command center">
-          <div class="demand-command__top">
-            <span>Pipeline command center</span>
-            <strong>Live system</strong>
+      </div>
+    </section>
+
+    <section class="dg-logo-band" aria-label="Demand generation platforms and client experience">
+      <div class="dg-container">
+        <div class="dg-logo-band__inner">
+          <p>Built around the platforms your revenue team already uses.</p>
+          <div class="dg-logo-row">
+            <img src="/brand-assets/partner-logos/google.svg" alt="Google" loading="lazy" decoding="async">
+            <img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async">
+            <img src="/brand-assets/partner-logos/meta.svg" alt="Meta" loading="lazy" decoding="async">
+            <img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot" loading="lazy" decoding="async">
+            <img src="/brand-assets/partner-logos/youtube.svg" alt="YouTube" loading="lazy" decoding="async">
+            <img src="/brand-assets/partner-logos/reddit.svg" alt="Reddit" loading="lazy" decoding="async">
           </div>
-          <div class="demand-command__metrics">
-            <article><span>ICP fit</span><strong>84%</strong><small>+18 pts</small></article>
-            <article><span>Intent</span><strong>1.8k</strong><small>accounts</small></article>
-            <article><span>Meetings</span><strong>42</strong><small>this month</small></article>
-            <article><span>Pipeline</span><strong>$612k</strong><small>in CRM</small></article>
+          <p>Experience across B2B, SaaS, ecommerce, and performance teams.</p>
+          <div class="dg-logo-row dg-logo-row--clients">
+            <img src="/brand-assets/client-logos/clean/cellpoint-digital-official.svg" alt="CellPoint Digital" loading="lazy" decoding="async">
+            <img src="/brand-assets/client-logos/farnell.png" alt="Farnell" loading="lazy" decoding="async">
+            <img src="/brand-assets/client-logos/clean/hq-software-transparent.png" alt="HQ Software" loading="lazy" decoding="async">
+            <img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" loading="lazy" decoding="async">
+            <img src="/brand-assets/client-logos/clean/molahin-transparent.png" alt="Molahin" loading="lazy" decoding="async">
           </div>
-          <div class="demand-command__flow">
-            <article class="demand-command__stage">
-              <span>Create demand</span>
-              <strong>Problem-aware content and paid social</strong>
-              <div class="demand-command__bar"><i style="width: 76%;"></i></div>
-            </article>
-            <article class="demand-command__stage">
-              <span>Capture intent</span>
-              <strong>Search, retargeting, and offer paths</strong>
-              <div class="demand-command__bar"><i style="width: 88%;"></i></div>
-            </article>
-            <article class="demand-command__stage">
-              <span>Convert pipeline</span>
-              <strong>CRM handoff and sales follow-up</strong>
-              <div class="demand-command__bar"><i style="width: 69%;"></i></div>
-            </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section" id="problem">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">The problem</p>
+            <h2>Your marketing is busy. Your pipeline is still thin.</h2>
           </div>
-          <div class="demand-command__handoff">
+          <p>Most B2B teams do not have a traffic problem. They have disconnected campaigns, weak offers, poor follow-up, and reporting that cannot explain which activity creates sales-ready demand.</p>
+        </div>
+        <div class="dg-card-grid">
+          <article class="dg-card" data-dg-reveal>
+            <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h10"/><path d="M4 17h7"/></svg></span>
+            <h3>Campaigns run in silos</h3>
+            <p>Paid search, social, outbound, content, and sales follow-up move separately, so every channel tells a different story.</p>
+          </article>
+          <article class="dg-card" data-dg-reveal>
+            <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 16h10"/></svg></span>
+            <h3>Offers do not match buying intent</h3>
+            <p>Prospects see generic demos and broad claims when they need a reason to care based on role, pain, urgency, and category awareness.</p>
+          </article>
+          <article class="dg-card" data-dg-reveal>
+            <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19V5"/><path d="M5 19h14"/><path d="m8 15 3-3 3 2 4-6"/></svg></span>
+            <h3>Reporting rewards the wrong work</h3>
+            <p>Clicks, form fills, and meetings look useful until the CRM shows they are not becoming qualified opportunities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section dg-section--warm" id="system">
+      <div class="dg-container">
+        <div class="dg-system">
+          <aside class="dg-system__panel" data-dg-reveal>
             <div>
-              <span>Connected stack</span>
-              <strong>Ads, CRM, outbound, reporting</strong>
+              <p class="dg-eyebrow">The system</p>
+              <h2>One operating system for demand creation and demand capture.</h2>
+              <p>We connect strategy, channels, creative, conversion, and CRM feedback so each sprint teaches the next sprint what to build, cut, or scale.</p>
             </div>
-            <div class="demand-command__logos" aria-label="Connected demand channels">
-              <img src="/brand-assets/partner-logos/google.svg" alt="Google" loading="lazy" decoding="async">
-              <img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async">
-              <img src="/brand-assets/partner-logos/meta.svg" alt="Meta" loading="lazy" decoding="async">
-              <img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot" loading="lazy" decoding="async">
+            <div class="dg-system__score" aria-label="Demand system components">
+              <div class="dg-score-row"><span>Strategy</span><strong>ICP + offer</strong></div>
+              <div class="dg-score-row"><span>Execution</span><strong>Paid + outbound</strong></div>
+              <div class="dg-score-row"><span>Feedback</span><strong>CRM + sales</strong></div>
             </div>
+          </aside>
+          <div class="dg-system__grid">
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m18 6-12 12"/></svg></span>
+              <h3>ICP and offer architecture</h3>
+              <p>Define who matters, what they care about, how they buy, and which offer should move them to the next step.</p>
+            </article>
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V8a2 2 0 0 1 2-2h12"/><path d="M8 20h10a2 2 0 0 0 2-2V8"/><path d="m8 12 3 3 5-6"/></svg></span>
+              <h3>Paid media and creative testing</h3>
+              <p>Launch paid search, LinkedIn, Meta, retargeting, and creative tests with a clear hypothesis and conversion path.</p>
+            </article>
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8"/><path d="M8 13h5"/><path d="M8 17h3"/></svg></span>
+              <h3>Landing pages and conversion paths</h3>
+              <p>Build pages, proof modules, forms, and next-step flows around the intent behind each campaign.</p>
+            </article>
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h5"/><path d="M15 12h5"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/><path d="M12 5v2"/><path d="M12 17v2"/></svg></span>
+              <h3>Signal-based outbound</h3>
+              <p>Use account activity, job changes, intent signals, and campaign engagement to start sharper sales conversations.</p>
+            </article>
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><path d="M8 6v12"/><path d="M16 6v12"/></svg></span>
+              <h3>CRM routing and attribution</h3>
+              <p>Pass the right source, offer, account, and sales notes into your CRM so performance is visible after the lead is created.</p>
+            </article>
+            <article class="dg-card" data-dg-reveal>
+              <span class="dg-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-3"/></svg></span>
+              <h3>Weekly pipeline reporting</h3>
+              <p>Review what happened in-channel and what changed in the CRM, then turn the learning into the next sprint plan.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="weflair-logos demand-logo-proof">
-  <div class="container container--large">
-    <div class="weflair-logos__text" style="text-align:center; color: var(--color-text-mid); font-size:1.125rem; font-weight:600; margin-bottom:2rem;">
-      Connecting the channels and revenue tools B2B teams actually use.
-    </div>
-    <div class="demand-logo-grid" aria-label="Demand generation platform logos">
-      <figure><img src="/brand-assets/partner-logos/google.svg" alt="Google" loading="lazy" decoding="async"></figure>
-      <figure><img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async"></figure>
-      <figure><img src="/brand-assets/partner-logos/meta.svg" alt="Meta" loading="lazy" decoding="async"></figure>
-      <figure><img src="/brand-assets/partner-logos/youtube.svg" alt="YouTube" loading="lazy" decoding="async"></figure>
-      <figure><img src="/brand-assets/partner-logos/reddit.svg" alt="Reddit" loading="lazy" decoding="async"></figure>
-      <figure><img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot" loading="lazy" decoding="async"></figure>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM SECTION MOVED UP HERE -->
-<section class="demand-solutions" id="solutions" style="padding: 6rem 0; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
-  <div class="container container--large" style="display:flex; flex-direction:column; gap:4rem;">
-    <div style="max-width:48rem; text-align:center; margin:0 auto;">
-      <p class="demand-kicker">The Problem</p>
-      <h2 style="font-size:2.8rem; line-height:1.2; margin-bottom:1.5rem; font-weight:700;">Expert solutions to achieve your <br/>business goals</h2>
-      <p style="color:var(--color-text-mid); font-size:1.2rem;">Here is how the right demand generation partner solves your core challenges.</p>
-    </div>
-    
-    <div class="weflair-solutions-boxes" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem;">
-      <div class="process-audit__item" style="flex-direction:column; align-items:flex-start; padding:2.5rem; gap:1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-        <h3 style="color:#FFF; font-size:1.4rem; font-weight:600; margin:0;">Difficulty identifying ideal customers</h3>
-        <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.6; margin:0;">We help you tailor your ideal customer profile to target ready-to-buy prospects. This keeps your team working from a stable flow of pipeline opportunities.</p>
-      </div>
-      <div class="process-audit__item" style="flex-direction:column; align-items:flex-start; padding:2.5rem; gap:1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-        <h3 style="color:#FFF; font-size:1.4rem; font-weight:600; margin:0;">Limited outreach expertise</h3>
-        <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.6; margin:0;">Scale outbound systems effortlessly. We set up domains, sequences, and workflows that generate real conversations instead of spam complaints.</p>
-      </div>
-      <div class="process-audit__item" style="flex-direction:column; align-items:flex-start; padding:2.5rem; gap:1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-        <h3 style="color:#FFF; font-size:1.4rem; font-weight:600; margin:0;">Insufficient resources for new offers</h3>
-        <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.6; margin:0;">Launch pilot campaigns securely without hiring a full in-house team. We test new value propositions and secure demand for uncharted territories.</p>
-      </div>
-      <div class="process-audit__item" style="flex-direction:column; align-items:flex-start; padding:2.5rem; gap:1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1);">
-        <h3 style="color:#FFF; font-size:1.4rem; font-weight:600; margin:0;">Business instability from market shifts</h3>
-        <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.6; margin:0;">Diversify your acquisition channels. We build a multichannel engine (Paid Social, Paid Search, Outbound) to ensure you aren't reliant on a single failing channel.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <section class="demand-framework" id="framework" style="padding: 8rem 0;">
-  <div class="container container--large">
-    <article class="weflair-why-us__story" style="display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
-      <div class="weflair-why-us__copy" style="max-width:32rem;">
-        <p class="demand-kicker">The Framework</p>
-        <h2 style="font-size:3rem; line-height:1.1; margin-bottom:2rem; font-weight:700;">Create, capture, convert.</h2>
-        <p style="color:var(--color-text-mid); font-size:1.25rem; line-height:1.6;">Most demand generation agencies focus on one layer. We build and run all three as one connected system, so pipeline compounds instead of leaking between stages.</p>
-      </div>
-      <div class="weflair-why-us__visual weflair-why-us__visual--loops" style="border:1px solid rgba(255,255,255,0.1); border-radius:1.5rem; padding:3rem; background:rgba(20,20,25,0.4); box-shadow:0 24px 48px rgba(0,0,0,0.4);">
-        <div class="weflair-why-us__visual-shell" style="display:flex; justify-content:center; align-items:center;">
-          <div class="why-loop-board">
-            <img src="/images/hww/Conversions.svg" alt="Full-funnel growth loops: impressions, clicks, demo requests, pipeline, and closed won feeding a recurring growth loop." class="why-loop-image" loading="lazy" decoding="async" style="width:100%; max-width:480px; height:auto;">
+    <section class="dg-section" id="plan">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">90-day rollout</p>
+            <h2>A demand plan built to ship, learn, and scale.</h2>
           </div>
+          <p>The first 90 days should not be random testing. It should produce a working demand system, clean tracking, sharper offers, and a backlog of validated next moves.</p>
         </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-    <section class="demand-method" id="method">
-      <div class="demand-container">
-        <p class="demand-kicker">Our approach</p>
-        <h2>The WeFlair Method: how we build demand generation systems for B2B SaaS.</h2>
-        <p class="demand-lede">Most agencies run campaigns. We build the infrastructure that makes them scale, unifying GTM engineering, paid media, and signal-based outbound into a high-performance system that compounds with every lead.</p>
-        <div class="method-grid">
-          <div class="method-phases" role="tablist" aria-label="Demand generation phases">
-            <button class="method-phase is-active" type="button" data-method-tab="audit"><span>Phase 1</span>Audit & Foundation</button>
-            <button class="method-phase" type="button" data-method-tab="architecture"><span>Phase 2</span>GTM Architecture & Strategy</button>
-            <button class="method-phase" type="button" data-method-tab="creative"><span>Phase 3</span>Creative & Messaging</button>
-            <button class="method-phase" type="button" data-method-tab="testing"><span>Phase 4</span>Launch & Structured Testing</button>
-            <button class="method-phase" type="button" data-method-tab="reporting"><span>Phase 5</span>Optimization & Revenue Reporting</button>
-          </div>
-          <div class="method-visual" aria-hidden="true">
-            <div class="method-system">
-              <div class="method-system__top"><span>Operating rhythm</span><strong>Audit to pipeline learning</strong></div>
-              <div class="method-system__row"><span>01</span><strong>Find account, tracking, and funnel leaks</strong><i></i></div>
-              <div class="method-system__row"><span>02</span><strong>Turn ICP and offers into channel architecture</strong><i></i></div>
-              <div class="method-system__row"><span>03</span><strong>Launch paid, content, and outbound tests together</strong><i></i></div>
-              <div class="method-system__row"><span>04</span><strong>Read results against pipeline, not clicks</strong><i></i></div>
-              <div class="method-system__outcome"><span>Output</span><strong>One shared revenue loop for marketing and sales</strong></div>
-            </div>
-          </div>
-            <article><strong>Actions</strong><p>Increase investment in demand generation and demand capture campaigns.</p></article>
-          </div>
-          <div class="method-content">
-            <div class="method-panel is-active" data-method-panel="audit">
-              <h3>We audit your entire demand generation stack, from ad accounts and content performance to CRM pipeline data and sales handoffs, making sure your tools, attribution, and teams are perfectly aligned.</h3>
-              <p>The output is a clear map of where demand leaks, where pipeline actually originates, and which channels produce pipeline versus noise.</p>
-              <strong>Includes:</strong>
-              <ul class="demand-checks">
-                <li>Full paid media audit across Google, LinkedIn, Meta, and active platforms</li>
-                <li>Content and organic performance review</li>
-                <li>Outbound infrastructure assessment covering tools, sequences, and deliverability</li>
-                <li>CRM pipeline analysis and attribution gap identification</li>
-                <li>ICP and TAM validation against closed-won data</li>
-                <li>Competitive demand generation landscape review</li>
-              </ul>
-              <div class="method-proof"><strong>52%</strong><p>of Toggl spend drove clicks, not pipeline. Our audit showed this could be cut without losing deal volume.</p></div>
-            </div>
-            <div class="method-panel" data-method-panel="architecture">
-              <h3>We turn the audit into GTM architecture: audience segments, offers, channel priorities, conversion paths, and sales follow-up rules.</h3>
-              <p>The goal is to make each tactic part of one operating system instead of another disconnected campaign.</p>
-              <strong>Includes:</strong>
-              <ul class="demand-checks">
-                <li>ICP, TAM, and account-list validation</li>
-                <li>Channel mix and budget planning</li>
-                <li>Campaign architecture and routing logic</li>
-                <li>Sales handoff and CRM lifecycle design</li>
-              </ul>
-            </div>
-            <div class="method-panel" data-method-panel="creative">
-              <h3>We build messaging and creative around the actual pains, buying triggers, objections, and comparison moments inside the market.</h3>
-              <p>This gives paid, content, and outbound one shared story instead of separate messages fighting each other.</p>
-              <strong>Includes:</strong>
-              <ul class="demand-checks">
-                <li>Problem-angle development</li>
-                <li>Ad concepts and landing-page messaging</li>
-                <li>Outbound email and LinkedIn copy systems</li>
-                <li>Retargeting and proof-led creative</li>
-              </ul>
-            </div>
-            <div class="method-panel" data-method-panel="testing">
-              <h3>We launch structured tests across paid capture, paid creation, retargeting, and signal-based outbound.</h3>
-              <p>Tests are planned around pipeline learning, not vanity engagement.</p>
-              <strong>Includes:</strong>
-              <ul class="demand-checks">
-                <li>Campaign launch QA</li>
-                <li>Audience and angle testing</li>
-                <li>Warm outbound sequences</li>
-                <li>Retargeting paths and conversion follow-up</li>
-              </ul>
-            </div>
-            <div class="method-panel" data-method-panel="reporting">
-              <h3>We optimize from signal to revenue, connecting campaign data to CRM movement, sales feedback, and pipeline quality.</h3>
-              <p>That rhythm keeps spend moving toward the channels and messages that create qualified opportunities.</p>
-              <strong>Includes:</strong>
-              <ul class="demand-checks">
-                <li>Weekly performance review</li>
-                <li>Pipeline and attribution reporting</li>
-                <li>Audience, budget, and offer optimization</li>
-                <li>Sales feedback loops and next-test planning</li>
-              </ul>
-            </div>
-          </div>
+        <div class="dg-process">
+          <article class="dg-step" data-dg-reveal>
+            <h3>Audit and diagnose</h3>
+            <p>Review ad accounts, CRM data, analytics, landing pages, ICP quality, offer fit, and sales follow-up gaps.</p>
+          </article>
+          <article class="dg-step" data-dg-reveal>
+            <h3>Map the architecture</h3>
+            <p>Build the campaign structure, channel mix, audience rules, reporting model, and sprint backlog.</p>
+          </article>
+          <article class="dg-step" data-dg-reveal>
+            <h3>Build campaign assets</h3>
+            <p>Create messaging angles, ads, landing pages, outbound sequences, forms, routing, and dashboards.</p>
+          </article>
+          <article class="dg-step" data-dg-reveal>
+            <h3>Launch controlled tests</h3>
+            <p>Run focused channel tests with clear success criteria and fast QA across tracking, creative, and handoff.</p>
+          </article>
+          <article class="dg-step" data-dg-reveal>
+            <h3>Scale what proves quality</h3>
+            <p>Move spend and effort toward the accounts, offers, pages, and messages that create qualified opportunities.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="demand-channels" id="channels">
-      <div class="demand-container">
-        <p class="demand-kicker">Channel system</p>
-        <h2>Every demand generation channel, connected.</h2>
-        <p class="demand-lede">We manage the channel mix around your ICP and growth stage, then connect paid, outbound, CRM, and reporting into one system.</p>
-        <div class="channel-toggle" aria-label="Channel mode">
-          <span class="is-active" data-channel-mode-label="create">Create demand</span>
-          <button type="button" aria-pressed="false" data-channel-mode><span></span></button>
-          <span data-channel-mode-label="capture">Capture demand</span>
-        </div>
-        <div class="channel-tabs" role="tablist" aria-label="Demand generation channels">
-          <button class="is-active" type="button" data-channel-tab="google">Google Ads</button>
-          <button type="button" data-channel-tab="linkedin">LinkedIn</button>
-          <button type="button" data-channel-tab="meta">Meta</button>
-          <button type="button" data-channel-tab="emerging">YouTube, Reddit & Emerging</button>
-        </div>
-        <div class="channel-card" data-channel-card data-mode="create">
-          <div class="channel-copy">
-            <span class="channel-icon" data-channel-icon><img src="/brand-assets/partner-logos/google.svg" alt="" loading="lazy" decoding="async"></span>
-            <span class="channel-mode-note" data-channel-mode-note>Capture motion</span>
-            <h3 data-channel-title>Google Ads</h3>
-            <p data-channel-body>Capture buyers who are already searching for the category, competitors, and pain-aware terms with landing pages and routing built for B2B buying cycles.</p>
+    <section class="dg-section dg-section--ink" id="channels">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">Channel engine</p>
+            <h2>Every channel has a job. The page makes that job clear.</h2>
           </div>
-          <div class="channel-preview" data-channel-preview aria-label="Google Ads channel preview">
-            <div class="channel-preview__panel">
-              <div class="channel-preview__top">
-                <div class="channel-preview__brand">
-                  <img src="/brand-assets/partner-logos/google.svg" alt="" loading="lazy" decoding="async">
-                  <strong>Google Ads</strong>
-                </div>
-                <span class="channel-preview__badge">Capture</span>
+          <p>Pick a channel to see how we structure the motion, the assets, and the pipeline readout. The goal is not more activity. It is clearer revenue learning.</p>
+        </div>
+        <div class="dg-tabs" role="tablist" aria-label="Demand generation channel examples" data-dg-reveal>
+          <button class="dg-tab is-active" type="button" role="tab" aria-selected="true" data-dg-channel="google">Google Ads</button>
+          <button class="dg-tab" type="button" role="tab" aria-selected="false" data-dg-channel="linkedin">LinkedIn</button>
+          <button class="dg-tab" type="button" role="tab" aria-selected="false" data-dg-channel="outbound">Outbound</button>
+          <button class="dg-tab" type="button" role="tab" aria-selected="false" data-dg-channel="landing">Landing Pages</button>
+          <button class="dg-tab" type="button" role="tab" aria-selected="false" data-dg-channel="crm">CRM Reporting</button>
+        </div>
+        <div class="dg-channel" data-dg-channel-panel data-dg-reveal>
+          <article class="dg-channel__copy">
+            <span class="dg-channel__icon"><img data-dg-channel-logo src="/brand-assets/partner-logos/google.svg" alt="" loading="lazy" decoding="async"></span>
+            <h3 data-dg-channel-title>Google Ads for high-intent demand capture</h3>
+            <p data-dg-channel-copy>Capture category, competitor, and pain-aware search demand with landing pages, offers, and CRM handoff built for B2B buying cycles.</p>
+            <ul class="dg-channel__list" data-dg-channel-list>
+              <li>Campaigns split by intent, role, segment, and offer path.</li>
+              <li>Landing pages matched to the search problem, not one generic demo page.</li>
+              <li>Pipeline reporting that separates cheap leads from serious opportunities.</li>
+            </ul>
+          </article>
+          <aside class="dg-channel__visual" aria-label="Channel dashboard preview">
+            <div class="dg-dashboard-row">
+              <div><span data-dg-row-a-label>Intent coverage</span><strong data-dg-row-a-copy>Category and competitor demand mapped</strong></div>
+              <b data-dg-row-a-value>82%</b>
+            </div>
+            <span class="dg-dashboard-bar"><i data-dg-bar-a style="width: 82%;"></i></span>
+            <div class="dg-dashboard-row">
+              <div><span data-dg-row-b-label>Conversion path</span><strong data-dg-row-b-copy>Dedicated page and CRM routing</strong></div>
+              <b data-dg-row-b-value>Ready</b>
+            </div>
+            <span class="dg-dashboard-bar"><i data-dg-bar-b style="width: 74%;"></i></span>
+            <div class="dg-dashboard-row">
+              <div><span data-dg-row-c-label>Pipeline signal</span><strong data-dg-row-c-copy>Qualified demo requests by segment</strong></div>
+              <b data-dg-row-c-value>Live</b>
+            </div>
+            <span class="dg-dashboard-bar"><i data-dg-bar-c style="width: 89%;"></i></span>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section" id="deliverables">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">What you get</p>
+            <h2>The deliverables that make the system publishable and operable.</h2>
+          </div>
+          <p>This is not a strategy PDF that sits untouched. We build the plan, the assets, the campaigns, the dashboards, and the operating rhythm your team needs to run demand properly.</p>
+        </div>
+        <div class="dg-deliverables">
+          <article class="dg-deliverable" data-dg-reveal><span>01</span><h3>Demand audit map</h3><p>Channel, funnel, tracking, and CRM gaps ranked by impact.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>02</span><h3>ICP and offer matrix</h3><p>Who to target, what to say, and which offer fits the moment.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>03</span><h3>Campaign architecture</h3><p>Budgets, segments, objectives, naming, QA, and launch plan.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>04</span><h3>Landing page system</h3><p>Page structure, proof blocks, CTAs, form logic, and routing.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>05</span><h3>Creative testing backlog</h3><p>Angles, hooks, proof assets, formats, and decision rules.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>06</span><h3>Outbound sequences</h3><p>Signal-based copy, list rules, deliverability setup, and handoff.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>07</span><h3>CRM and dashboards</h3><p>Source capture, lifecycle reporting, opportunity views, and notes.</p></article>
+          <article class="dg-deliverable" data-dg-reveal><span>08</span><h3>Weekly sprint rhythm</h3><p>What changed, what it means, and what ships next.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section dg-section--warm" id="proof">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">Proof of approach</p>
+            <h2>Built for teams that need cleaner growth systems.</h2>
+          </div>
+          <p>Different clients need different channel mixes. The consistent work is building the same clear loop: better targeting, sharper conversion, cleaner reporting, and faster decisions.</p>
+        </div>
+        <div class="dg-proof-grid">
+          <article class="dg-proof-card" data-dg-reveal>
+            <img src="/brand-assets/client-logos/clean/cellpoint-digital-official.svg" alt="CellPoint Digital" loading="lazy" decoding="async">
+            <h3>Revenue operations clarity</h3>
+            <p>For complex B2B funnels, the handoff matters as much as the ad. We structure source, intent, routing, and follow-up so sales can see why a lead exists.</p>
+          </article>
+          <article class="dg-proof-card" data-dg-reveal>
+            <img src="/brand-assets/client-logos/farnell.png" alt="Farnell" loading="lazy" decoding="async">
+            <h3>Performance channel discipline</h3>
+            <p>Campaigns need tighter segmentation and clearer measurement before budget scales. We find wasted activity and turn it into a sharper testing plan.</p>
+          </article>
+          <article class="dg-proof-card" data-dg-reveal>
+            <img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" loading="lazy" decoding="async">
+            <h3>Local and specialist demand</h3>
+            <p>For high-intent categories, the page, offer, ad, and call handling have to match. We align the whole path so demand is easier to convert.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section" id="fit">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">Fit</p>
+            <h2>Who this is for.</h2>
+          </div>
+          <p>The best fit is a B2B team that already has a real offer, a sales motion, and pressure to turn marketing into qualified pipeline more consistently.</p>
+        </div>
+        <div class="dg-fit">
+          <article data-dg-reveal>
+            <h3>Good fit</h3>
+            <ul class="dg-check-list">
+              <li>You sell a B2B product or service with a considered buying cycle.</li>
+              <li>You need paid, outbound, content, and CRM to work together.</li>
+              <li>You want a 90-day plan that ships campaigns and improves reporting.</li>
+              <li>You care about opportunity quality, not just cheaper leads.</li>
+            </ul>
+          </article>
+          <article data-dg-reveal>
+            <h3>Bad fit</h3>
+            <ul class="dg-check-list">
+              <li>You only want one-off ad account tweaks with no strategy work.</li>
+              <li>You cannot support sales follow-up or CRM visibility.</li>
+              <li>Your offer is not ready to put in front of the market.</li>
+              <li>You expect demand generation to work without testing or iteration.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section dg-section--ink" id="faq">
+      <div class="dg-container">
+        <div class="dg-section-head" data-dg-reveal>
+          <div>
+            <p class="dg-eyebrow">FAQ</p>
+            <h2>Questions before we build the engine.</h2>
+          </div>
+          <p>Short answers to the things that usually decide whether demand generation is ready to work.</p>
+        </div>
+        <div class="dg-faq" data-dg-reveal>
+          <article class="dg-faq-item is-open">
+            <button class="dg-faq-button" type="button" aria-expanded="true">How fast can this launch?<span aria-hidden="true">+</span></button>
+            <div class="dg-faq-panel"><p>Most teams can move from audit to first launches in a few weeks if access, tracking, CRM fields, and approvals are available. The 90-day plan is built to launch, learn, and improve without waiting months for perfection.</p></div>
+          </article>
+          <article class="dg-faq-item">
+            <button class="dg-faq-button" type="button" aria-expanded="false">Do you replace our internal team?<span aria-hidden="true">+</span></button>
+            <div class="dg-faq-panel"><p>No. We usually work as the specialist demand team around your sales and marketing operators. We bring the strategy, channel execution, conversion work, reporting structure, and sprint rhythm.</p></div>
+          </article>
+          <article class="dg-faq-item">
+            <button class="dg-faq-button" type="button" aria-expanded="false">Which channels should we start with?<span aria-hidden="true">+</span></button>
+            <div class="dg-faq-panel"><p>It depends on your ICP, sales cycle, market awareness, and current data. We normally start with the shortest route to qualified learning, then add channels once the offer, page, and reporting loop are solid.</p></div>
+          </article>
+          <article class="dg-faq-item">
+            <button class="dg-faq-button" type="button" aria-expanded="false">What will sales actually receive?<span aria-hidden="true">+</span></button>
+            <div class="dg-faq-panel"><p>They should receive lead source, offer context, campaign angle, account notes, urgency signals, and routing logic. That context is what turns a form fill into a useful sales conversation.</p></div>
+          </article>
+          <article class="dg-faq-item">
+            <button class="dg-faq-button" type="button" aria-expanded="false">How do you report performance?<span aria-hidden="true">+</span></button>
+            <div class="dg-faq-panel"><p>We still track channel metrics, but the real review connects them to CRM movement: qualified leads, opportunity creation, sales feedback, conversion quality, and what we should do next.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dg-section dg-section--tight" id="audit">
+      <div class="dg-container">
+        <div class="dg-cta" data-dg-reveal>
+          <div class="dg-cta__grid">
+            <div>
+              <p class="dg-eyebrow">Free audit</p>
+              <h2>Get a demand generation audit before you spend another quarter guessing.</h2>
+              <p>We will review your current demand setup, identify the biggest leaks, and give you a practical first-step plan for building a cleaner pipeline engine.</p>
+              <div class="dg-mini-stats">
+                <span>Channel and funnel review</span>
+                <span>90-day action plan</span>
+                <span>Fit checked honestly</span>
               </div>
-              <div class="channel-preview__rows">
-                <div class="channel-preview__row"><span>Intent keywords</span><strong>High</strong></div>
-                <div class="channel-preview__row"><span>Landing page route</span><strong>Demo</strong></div>
-                <div class="channel-preview__row"><span>CRM handoff</span><strong>Sales-ready</strong></div>
-              </div>
-              <div class="channel-preview__bars">
-                <div class="channel-preview__bar"><i style="width: 82%;"></i></div>
-                <div class="channel-preview__bar"><i style="width: 68%;"></i></div>
-                <div class="channel-preview__bar"><i style="width: 91%;"></i></div>
-              </div>
-              <div class="channel-preview__summary"><span>Pipeline signal</span><strong>Demo requests and opportunity creation</strong></div>
             </div>
+            <a href="/contact.html" class="dg-btn dg-btn--primary">
+              Book your audit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
-
-    
-
-    <section class="demand-steps" id="steps">
-      <div class="demand-container steps-grid">
-        <article class="step-copy">
-          <h2>Audience definition</h2>
-          <h3>Shaping your TAM, ICP, and value prop</h3>
-          <ul class="arrow-list">
-            <li>First, we study your market, service or product, and distinctive features, as well as the core pain points you address.</li>
-            <li>After that, we either draft and approve your ICP if you do not have one or propose adjustments to the existing one for precise targeting.</li>
-            <li>We create several unique value propositions for the chosen client profiles. This helps us analyze the potential demand inside your niche.</li>
-          </ul>
-          <a href="/contact.html" class="circle-link"><span>-></span> Book a call</a>
-        </article>
-        <div class="people-visual" aria-hidden="true">
-          <div class="person-row"><span></span><i></i><b></b></div>
-          <div class="person-row"><span></span><i></i><b></b><em></em></div>
-          <div class="person-row"><span></span><i></i><b></b></div>
-        </div>
-        <div class="email-visual" aria-hidden="true">
-          <article><strong>Subject: Moving forward</strong><p>To: 245 recipients</p><span>Contact first name</span><span>Company name</span></article>
-          <div class="email-metrics"><b>Opened 64%</b><b>Replied 12.78%</b></div>
-        </div>
-        <article class="step-copy">
-          <h2>Pilot campaigns launch</h2>
-          <h3>Creating and testing tailored outreach campaigns</h3>
-          <ul class="arrow-list">
-            <li>Experienced writers craft several sequences of emails and LinkedIn messages for each ICP group to address their pain points.</li>
-            <li>Our tech specialists take care of domain and mailbox configuration to prevent possible spam issues.</li>
-            <li>We launch multichannel cadences and monitor performance to understand which templates create the highest demand for your offering.</li>
-          </ul>
-          <a href="/contact.html" class="circle-link"><span>-></span> Book a call</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="demand-fit" id="fit">
-      <div class="demand-container fit-grid">
-        <div class="fit-visual" aria-hidden="true">
-          <div class="fit-board">
-            <span></span><span></span><span></span>
-            <p>ICP workshop</p>
-          </div>
-        </div>
-        <div class="fit-copy">
-          <h2>Find out if we make a perfect match</h2>
-          <p>Are we the ideal demand generation company for you? Check whether these are your basic challenges right now:</p>
-          <ul class="fit-list">
-            <li>You developed a new product and want to launch pilot campaigns with minimal risk.</li>
-            <li>You are not sure how to best improve your value proposition.</li>
-            <li>You would like to test new hypotheses and business ideas quickly.</li>
-            <li>You need to build a promo strategy but lack proper experience.</li>
-            <li>You want to pinpoint what your target market is.</li>
-            <li>You do not have the time or resources to build a new sales team.</li>
-            <li>You have never used email or LinkedIn for outreach.</li>
-          </ul>
-          <a href="/contact.html" class="demand-btn demand-btn--primary">Get a quote</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="demand-faq" id="faq">
-      <div class="demand-container">
-        <h2>FAQ</h2>
-        <div class="faq-list">
-          <button type="button">What does an effective demand generation strategy look like?<span>v</span></button>
-          <button type="button">How many ICPs or VPs can you test at the same time?<span>v</span></button>
-          <button type="button">What outbound demand generation KPIs do you track?<span>v</span></button>
-          <button type="button">How long do you need to run demand generation campaigns to see real results?<span>v</span></button>
-        </div>
-      </div>
-    </section>
-
   </main>
   <section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">
@@ -815,24 +1617,24 @@
           <div class="weflair-new-cta">
             <div class="weflair-new-cta__bg"></div>
             <div class="weflair-new-cta__glow"></div>
-            
+
             <div class="weflair-new-cta__grid">
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>
@@ -890,9 +1692,10 @@
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
                   <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
+                  <li><a href="/resources/ai-seo-playbook.html" class="weflair-footer__nav-link">AISEO Playbook</a></li>
                   <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
                   <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
-                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Automation Pack</a></li>
+                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Resource Pack</a></li>
                   <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
                 </ul>
               </div>
@@ -940,117 +1743,104 @@
       </div>
     </section>
   <script>
+
     (() => {
-      const methodTabs = document.querySelectorAll("[data-method-tab]");
-      const methodPanels = document.querySelectorAll("[data-method-panel]");
-      methodTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          methodTabs.forEach((item) => item.classList.remove("is-active"));
-          methodPanels.forEach((item) => item.classList.remove("is-active"));
-          tab.classList.add("is-active");
-          document.querySelector('[data-method-panel="' + tab.dataset.methodTab + '"]')?.classList.add("is-active");
-        });
-      });
+      document.documentElement.classList.add("dg-js");
+
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealItems = document.querySelectorAll("[data-dg-reveal]");
+      if (prefersReduced || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+        revealItems.forEach((item) => observer.observe(item));
+      }
 
       const channelData = {
         google: {
-          label: "Google Ads",
           logo: "/brand-assets/partner-logos/google.svg",
-          create: {
-            note: "Creation motion",
-            title: "Google Ads for category demand",
-            body: "Use YouTube, Performance Max, and problem-led search coverage to build remarketing pools before buyers are ready to book a demo.",
-            badge: "Create",
-            rows: [["Problem themes", "Mapped"], ["Warm audience", "Growing"], ["Retargeting pool", "Qualified"]],
-            bars: [72, 64, 83],
-            summary: "New category-aware traffic feeding retargeting and nurture."
-          },
-          capture: {
-            note: "Capture motion",
-            title: "Google Ads for high-intent search",
-            body: "Capture buyers already searching for the category, competitors, and pain-aware terms with landing pages and routing built for B2B buying cycles.",
-            badge: "Capture",
-            rows: [["Intent keywords", "High"], ["Landing page route", "Demo"], ["CRM handoff", "Sales-ready"]],
-            bars: [82, 68, 91],
-            summary: "Demo requests and opportunity creation tied back to campaigns."
-          }
+          title: "Google Ads for high-intent demand capture",
+          copy: "Capture category, competitor, and pain-aware search demand with landing pages, offers, and CRM handoff built for B2B buying cycles.",
+          bullets: [
+            "Campaigns split by intent, role, segment, and offer path.",
+            "Landing pages matched to the search problem, not one generic demo page.",
+            "Pipeline reporting that separates cheap leads from serious opportunities."
+          ],
+          rows: [
+            ["Intent coverage", "Category and competitor demand mapped", "82%", 82],
+            ["Conversion path", "Dedicated page and CRM routing", "Ready", 74],
+            ["Pipeline signal", "Qualified demo requests by segment", "Live", 89]
+          ]
         },
         linkedin: {
-          label: "LinkedIn",
           logo: "/brand-assets/partner-logos/linkedin.svg",
-          create: {
-            note: "Creation motion",
-            title: "LinkedIn buying committee coverage",
-            body: "Build demand with account lists, founder-led content, proof ads, and employee amplification that reaches the people who influence the deal.",
-            badge: "Create",
-            rows: [["Account list", "Tiered"], ["Creative angles", "5 live"], ["Committee reach", "Expanding"]],
-            bars: [78, 74, 66],
-            summary: "Relevant accounts seeing the same story across paid and organic."
-          },
-          capture: {
-            note: "Capture motion",
-            title: "LinkedIn retargeting and lead routing",
-            body: "Retarget engaged accounts with stronger proof, route form fills cleanly, and give sales context on which message triggered the conversion.",
-            badge: "Capture",
-            rows: [["Engaged accounts", "Warm"], ["Offer path", "Segmented"], ["Sales notes", "Attached"]],
-            bars: [69, 80, 76],
-            summary: "Warm account engagement turning into sales-ready conversations."
-          }
+          title: "LinkedIn for account demand and buying committees",
+          copy: "Reach the people who influence the deal with account lists, proof-led creative, founder content, and retargeting paths that warm the full committee.",
+          bullets: [
+            "Tiered account lists and role-specific message angles.",
+            "Creative tests built around pain, proof, category education, and objections.",
+            "Retargeting and sales notes for accounts showing engagement."
+          ],
+          rows: [
+            ["Account coverage", "Buying committee segments active", "76%", 76],
+            ["Creative learning", "Angles ranked by engagement quality", "5 live", 67],
+            ["Sales context", "Engaged accounts pushed to CRM", "Synced", 81]
+          ]
         },
-        meta: {
-          label: "Meta",
-          logo: "/brand-assets/partner-logos/meta.svg",
-          create: {
-            note: "Creation motion",
-            title: "Meta demand creation",
-            body: "Test problem-aware creative, category education, and proof hooks at speed so the market starts recognizing the pain before search intent appears.",
-            badge: "Create",
-            rows: [["Creative tests", "Active"], ["Audience learning", "Broad"], ["Proof hooks", "Validated"]],
-            bars: [88, 72, 70],
-            summary: "Fast creative learning for the rest of the demand system."
-          },
-          capture: {
-            note: "Capture motion",
-            title: "Meta retargeting paths",
-            body: "Move engaged visitors into proof-led retargeting, demo offers, and conversion paths that support search, LinkedIn, and outbound follow-up.",
-            badge: "Capture",
-            rows: [["Visitor segment", "Warm"], ["Proof asset", "Case-led"], ["Next step", "Demo"]],
-            bars: [64, 78, 73],
-            summary: "Retargeting paths that turn attention into booked next steps."
-          }
+        outbound: {
+          logo: "/brand-assets/partner-logos/hubspot.svg",
+          title: "Signal-based outbound that does not feel random",
+          copy: "Turn account activity, hiring signals, page visits, technology use, and campaign engagement into sharper email and LinkedIn conversations.",
+          bullets: [
+            "List rules based on ICP fit, trigger strength, and exclusion criteria.",
+            "Sequences tied to the same offer and proof used in paid campaigns.",
+            "Deliverability, reply routing, and CRM notes built into the workflow."
+          ],
+          rows: [
+            ["Signal quality", "Warm triggers prioritized", "High", 84],
+            ["Sequence fit", "Role and pain matched", "Live", 79],
+            ["Reply routing", "Sales handoff ready", "Clean", 86]
+          ]
         },
-        emerging: {
-          label: "YouTube, Reddit & Emerging",
-          logo: "/brand-assets/partner-logos/youtube.svg",
-          create: {
-            note: "Creation motion",
-            title: "Emerging channel demand tests",
-            body: "Add YouTube, Reddit, and niche channels when the audience signal is there, using focused tests instead of spraying budget across every platform.",
-            badge: "Create",
-            rows: [["Audience signal", "Checked"], ["Community fit", "Scored"], ["Test budget", "Controlled"]],
-            bars: [67, 61, 70],
-            summary: "New demand sources tested without breaking the core engine."
-          },
-          capture: {
-            note: "Capture motion",
-            title: "Emerging channel conversion loops",
-            body: "Connect emerging-channel engagement back into retargeting, CRM segments, and outbound triggers so experiments produce measurable pipeline signal.",
-            badge: "Capture",
-            rows: [["Engagement trigger", "Tagged"], ["Retargeting sync", "Live"], ["Pipeline readout", "Weekly"]],
-            bars: [66, 75, 68],
-            summary: "Experimental channels tied into the same reporting loop."
-          }
+        landing: {
+          logo: "/brand-assets/star-solid.svg",
+          title: "Landing pages that turn intent into the next step",
+          copy: "Build pages around one audience, one problem, one proof path, and one next action so paid and outbound traffic have somewhere useful to land.",
+          bullets: [
+            "Message hierarchy mapped to awareness stage and buying friction.",
+            "Proof, objections, FAQs, and CTAs designed for B2B decisions.",
+            "Forms and routing that keep qualification without killing conversion."
+          ],
+          rows: [
+            ["Message match", "Traffic source and page aligned", "Strong", 88],
+            ["Proof path", "Objections handled on-page", "Built", 78],
+            ["Form logic", "Qualification with lower friction", "Ready", 72]
+          ]
+        },
+        crm: {
+          logo: "/brand-assets/partner-logos/hubspot.svg",
+          title: "CRM reporting that tells you what to do next",
+          copy: "Connect campaign data to lead quality, opportunity movement, sales feedback, and pipeline outcomes so every sprint has a decision attached.",
+          bullets: [
+            "Source, campaign, offer, and landing page fields captured reliably.",
+            "Dashboards built for channel performance and pipeline quality.",
+            "Weekly review rhythm that moves budget, creative, and targeting."
+          ],
+          rows: [
+            ["Source capture", "Campaign and offer data attached", "Clean", 91],
+            ["Lifecycle view", "Lead to opportunity quality tracked", "Live", 83],
+            ["Sprint decision", "Next action linked to CRM movement", "Weekly", 80]
+          ]
         }
       };
-      const channelTabs = document.querySelectorAll("[data-channel-tab]");
-      const channelTitle = document.querySelector("[data-channel-title]");
-      const channelBody = document.querySelector("[data-channel-body]");
-      const channelIcon = document.querySelector("[data-channel-icon]");
-      const channelModeNote = document.querySelector("[data-channel-mode-note]");
-      const channelPreview = document.querySelector("[data-channel-preview]");
-      const channelCard = document.querySelector("[data-channel-card]");
-      const mode = document.querySelector("[data-channel-mode]");
-      const modeLabels = document.querySelectorAll("[data-channel-mode-label]");
+
       const safe = (value) => String(value).replace(/[&<>"']/g, (char) => ({
         "&": "&amp;",
         "<": "&lt;",
@@ -1058,67 +1848,82 @@
         '"': "&quot;",
         "'": "&#39;"
       })[char]);
-      const renderChannel = () => {
-        const activeTab = document.querySelector("[data-channel-tab].is-active") || channelTabs[0];
-        const channel = channelData[activeTab?.dataset.channelTab || "google"];
-        const modeKey = mode?.getAttribute("aria-pressed") === "true" ? "capture" : "create";
-        const content = channel[modeKey];
-        channelCard?.setAttribute("data-mode", modeKey);
-        modeLabels.forEach((label) => label.classList.toggle("is-active", label.dataset.channelModeLabel === modeKey));
-        if (channelIcon) channelIcon.innerHTML = '<img src="' + safe(channel.logo) + '" alt="" loading="lazy" decoding="async">';
-        if (channelModeNote) channelModeNote.textContent = content.note;
-        if (channelTitle) channelTitle.textContent = content.title;
-        if (channelBody) channelBody.textContent = content.body;
-        if (channelPreview) {
-          const rows = content.rows.map((row) => '<div class="channel-preview__row"><span>' + safe(row[0]) + '</span><strong>' + safe(row[1]) + '</strong></div>').join("");
-          const bars = content.bars.map((width) => '<div class="channel-preview__bar"><i style="width: ' + Number(width) + '%;"></i></div>').join("");
-          channelPreview.setAttribute("aria-label", channel.label + " " + content.badge.toLowerCase() + " preview");
-          channelPreview.innerHTML =
-            '<div class="channel-preview__panel">' +
-              '<div class="channel-preview__top">' +
-                '<div class="channel-preview__brand"><img src="' + safe(channel.logo) + '" alt="" loading="lazy" decoding="async"><strong>' + safe(channel.label) + '</strong></div>' +
-                '<span class="channel-preview__badge">' + safe(content.badge) + '</span>' +
-              '</div>' +
-              '<div class="channel-preview__rows">' + rows + '</div>' +
-              '<div class="channel-preview__bars">' + bars + '</div>' +
-              '<div class="channel-preview__summary"><span>Pipeline signal</span><strong>' + safe(content.summary) + '</strong></div>' +
-            '</div>';
-        }
+
+      const tabs = document.querySelectorAll("[data-dg-channel]");
+      const logo = document.querySelector("[data-dg-channel-logo]");
+      const title = document.querySelector("[data-dg-channel-title]");
+      const copy = document.querySelector("[data-dg-channel-copy]");
+      const list = document.querySelector("[data-dg-channel-list]");
+      const rowALabel = document.querySelector("[data-dg-row-a-label]");
+      const rowACopy = document.querySelector("[data-dg-row-a-copy]");
+      const rowAValue = document.querySelector("[data-dg-row-a-value]");
+      const rowBLabel = document.querySelector("[data-dg-row-b-label]");
+      const rowBCopy = document.querySelector("[data-dg-row-b-copy]");
+      const rowBValue = document.querySelector("[data-dg-row-b-value]");
+      const rowCLabel = document.querySelector("[data-dg-row-c-label]");
+      const rowCCopy = document.querySelector("[data-dg-row-c-copy]");
+      const rowCValue = document.querySelector("[data-dg-row-c-value]");
+      const barA = document.querySelector("[data-dg-bar-a]");
+      const barB = document.querySelector("[data-dg-bar-b]");
+      const barC = document.querySelector("[data-dg-bar-c]");
+
+      const setRow = (row, label, text, value, bar) => {
+        if (label) label.textContent = row[0];
+        if (text) text.textContent = row[1];
+        if (value) value.textContent = row[2];
+        if (bar) bar.style.width = Number(row[3]) + "%";
       };
-      channelTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          channelTabs.forEach((item) => item.classList.remove("is-active"));
-          tab.classList.add("is-active");
-          renderChannel();
+
+      const renderChannel = (key) => {
+        const data = channelData[key] || channelData.google;
+        tabs.forEach((tab) => {
+          const active = tab.dataset.dgChannel === key;
+          tab.classList.toggle("is-active", active);
+          tab.setAttribute("aria-selected", String(active));
         });
+        if (logo) logo.src = data.logo;
+        if (title) title.textContent = data.title;
+        if (copy) copy.textContent = data.copy;
+        if (list) list.innerHTML = data.bullets.map((item) => "<li>" + safe(item) + "</li>").join("");
+        setRow(data.rows[0], rowALabel, rowACopy, rowAValue, barA);
+        setRow(data.rows[1], rowBLabel, rowBCopy, rowBValue, barB);
+        setRow(data.rows[2], rowCLabel, rowCCopy, rowCValue, barC);
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => renderChannel(tab.dataset.dgChannel));
       });
 
-      mode?.addEventListener("click", () => {
-        const pressed = mode.getAttribute("aria-pressed") === "true";
-        mode.setAttribute("aria-pressed", String(!pressed));
-        renderChannel();
-      });
-      renderChannel();
-
-      const solutionCopy = {
-        customers: ["Refine your ideal customer profile for precise targeting and predictable lead flow", "We help you tailor your ideal customer profile to target ready-to-buy prospects. This keeps your team working from a stable, manageable flow of pipeline opportunities."],
-        outreach: ["Build outreach expertise without adding another internal team", "We write, configure, launch, and monitor email and LinkedIn campaigns so your team can test demand without building a new outbound department from scratch."],
-        resources: ["Launch demand for a new offer with the right operating system", "We shape the ICP, value proposition, campaign sequence, and feedback loop so a new offer can reach the market with less waste and clearer learning."],
-        shift: ["Stabilize pipeline when the market changes", "We help you adjust targeting, messaging, channel mix, and reporting so demand generation keeps moving when buyer behavior shifts."]
+      const faqItems = document.querySelectorAll(".dg-faq-item");
+      const syncFaq = (item) => {
+        const button = item.querySelector(".dg-faq-button");
+        const panel = item.querySelector(".dg-faq-panel");
+        const isOpen = item.classList.contains("is-open");
+        if (button) button.setAttribute("aria-expanded", String(isOpen));
+        if (panel) panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "0px";
       };
-      const solutionTabs = document.querySelectorAll("[data-solution-tab]");
-      const solutionTitle = document.querySelector("[data-solution-title]");
-      const solutionBody = document.querySelector("[data-solution-body]");
-      solutionTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          solutionTabs.forEach((item) => item.classList.remove("is-active"));
-          tab.classList.add("is-active");
-          const copy = solutionCopy[tab.dataset.solutionTab];
-          solutionTitle.textContent = copy[0];
-          solutionBody.textContent = copy[1];
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector(".dg-faq-button");
+        button?.addEventListener("click", () => {
+          const wasOpen = item.classList.contains("is-open");
+          faqItems.forEach((entry) => {
+            entry.classList.remove("is-open");
+            syncFaq(entry);
+          });
+          if (!wasOpen) {
+            item.classList.add("is-open");
+            syncFaq(item);
+          }
         });
+        syncFaq(item);
       });
+
+      window.addEventListener("resize", () => {
+        faqItems.forEach(syncFaq);
+      }, { passive: true });
     })();
+
   </script>
 </body>
 </html>

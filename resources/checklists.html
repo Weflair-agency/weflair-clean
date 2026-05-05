@@ -9,9 +9,9 @@
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
   <link rel="stylesheet" href="../foundation-slater.css" />
-  <link rel="stylesheet" href="../weflair-hero.css" />
-  <script src="../foundation.js" defer></script>
-  <script src="../weflair-hero.js" defer></script>
+  <link rel="stylesheet" href="../weflair-hero.css?v=20260504-logo-critical-01" />
+  <script src="../foundation.js?v=20260504-dark-01" defer></script>
+  <script src="../weflair-hero.js?v=20260504-home-stable-01" defer></script>
   
   <style>
 .chk-page { background: #050508; color: #F8F8FA; font-family: 'Onest', 'Inter', sans-serif; overflow-x: hidden; }
@@ -24,34 +24,36 @@
 @keyframes popClick { 0% { transform: scale(1); } 50% { transform: scale(0.95); } 100% { transform: scale(1); } }
 
 /* HERO - AESTHETIC POLISH */
-.chk-hero { position: relative; padding: clamp(10rem, 15vw, 14rem) 2rem clamp(5rem, 10vw, 8rem); text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03); overflow: hidden; background: radial-gradient(circle at 50% -20%, rgba(34, 197, 94, 0.08), transparent 70%); }
+.chk-hero { position: relative; padding: clamp(8rem, 11vw, 12rem) 2rem clamp(4rem, 7vw, 6rem); text-align: center; border-bottom: 1px solid rgba(255,255,255,0.03); overflow: hidden; background: radial-gradient(circle at 50% -20%, rgba(34, 197, 94, 0.08), transparent 70%); }
 .chk-hero::before { content: ""; position: absolute; inset: -20%; background: radial-gradient(circle at 50% 50%, rgba(34,197,94,0.12) 0%, transparent 50%); filter: blur(80px); animation: floatingLight 15s ease-in-out infinite; z-index: 0; pointer-events: none; }
 .chk-hero__inner { position: relative; z-index: 1; max-width: 60rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.chk-hero__title { font-size: clamp(3.2rem, 6vw, 5.5rem); line-height: 1.05; font-weight: 600; letter-spacing: -0.04em; margin: 0 0 1.5rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+.chk-hero__title { font-size: clamp(3.2rem, 6vw, 5.5rem); line-height: 1.05; font-weight: 600; letter-spacing: 0; margin: 0 0 1.5rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
 .chk-hero__sub { font-size: clamp(1.1rem, 1.5vw, 1.25rem); line-height: 1.6; color: rgba(246,243,238,0.7); max-width: 50rem; margin: 0 auto; text-wrap: balance; font-weight: 500; font-family: 'Onest', 'Inter', sans-serif; }
 
 /* TABS - SLEEK FULLY ROUNDED PILLS */
-.chk-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; background: rgba(5,5,8,0.8); padding: 0.5rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(12px); box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-20px); animation: slideUpFade 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.chk-tab-btn { background: transparent; border: 1px solid transparent; color: rgba(246,243,238,0.5); padding: 0.85rem 1.6rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-family: inherit; letter-spacing: 0.02em; }
+.chk-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 0; background: rgba(5,5,8,0.8); padding: 0.5rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(12px); box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.3); animation: slideUpFade 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.chk-tab-btn { background: transparent; border: 1px solid transparent; color: rgba(246,243,238,0.5); padding: 0.85rem 1.6rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; font-family: inherit; letter-spacing: 0; }
 .chk-tab-btn:hover { color: #fff; background: rgba(255,255,255,0.04); }
 .chk-tab-btn.is-active { background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.3); color: #4ADE80; box-shadow: inset 0 2px 4px rgba(34,197,94,0.1), 0 4px 12px rgba(34, 197, 94, 0.15); }
 
 /* CHECKLIST CONTAINER & SECTION HEADERS */
-.chk-container { width: 100%; max-width: 54rem; }
+.chk-container { width: 100%; max-width: 54rem; min-width: 0; }
 .chk-content { display: none; }
 .chk-content.is-active { display: block; animation: staggerFade 0.5s ease-out forwards; }
-.chk-section-title { font-size: 1.4rem; font-weight: 600; color: #4ADE80; margin: 3.5rem 0 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(34,197,94,0.15); letter-spacing: -0.02em; font-family: "Space Grotesk", sans-serif; position: relative; }
+.chk-section-title { font-size: 1.4rem; font-weight: 600; color: #4ADE80; margin: 3.5rem 0 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(34,197,94,0.15); letter-spacing: 0; font-family: "Space Grotesk", sans-serif; position: relative; }
 .chk-section-title::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 60px; background: #22C55E; box-shadow: 0 0 10px #22C55E; }
 
 /* ELEVATED CHECKLIST ITEMS - QUESTIONNAIRE CARDS */
-.chk-item { background: rgba(20,20,27,0.75); border: 1px solid rgba(255,255,255,0.06); border-radius: 1.25rem; padding: 1.75rem 2.25rem; margin-bottom: 1.25rem; display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: start; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 20px rgba(0,0,0,0.3); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; overflow: hidden; }
+.chk-item { background: rgba(20,20,27,0.75); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1.5rem !important; margin-bottom: 1.25rem; display: grid !important; grid-template-columns: minmax(0, 1fr) auto; gap: 1.25rem 1.5rem !important; align-items: start !important; transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.3); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); position: relative; overflow: hidden; }
 .chk-item::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%); pointer-events: none; }
-.chk-item:hover { border-color: rgba(34,197,94,0.3); background: rgba(25,25,35,0.9); transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(34,197,94,0.1); }
+.chk-item:hover { border-color: rgba(34,197,94,0.3); background: rgba(25,25,35,0.9); box-shadow: 0 14px 30px rgba(0,0,0,0.4), 0 0 24px rgba(34,197,94,0.08); }
 
 .chk-item__left { display: flex; flex-direction: column; gap: 0.5rem; position: relative; z-index: 1; }
-.chk-item__title { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 0; line-height: 1.4; letter-spacing: -0.01em; transition: color 0.3s ease; }
+.chk-item__title { font-size: 1.08rem; font-weight: 600; color: #fff; margin: 0 !important; line-height: 1.45; letter-spacing: 0; transition: color 0.2s ease; position: relative; z-index: 1; min-width: 0; overflow-wrap: anywhere; }
 .chk-item:hover .chk-item__title { color: #4ADE80; }
 .chk-item__desc { font-size: 0.95rem; color: rgba(246,243,238,0.6); line-height: 1.5; margin: 0; font-family: "Onest", "Inter", sans-serif; }
+.chk-item-contents { grid-column: 1 / -1; width: 100% !important; min-width: 0; position: relative; z-index: 1; }
+.chk-tab-content { border-radius: 8px !important; overflow-wrap: anywhere; }
 
 .chk-item__tip-toggle { background: none; border: none; padding: 0.4rem 0.85rem; margin-top: 0.75rem; color: #4ADE80; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 99px; background: rgba(34,197,94,0.08); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); align-self: flex-start; border: 1px solid rgba(34,197,94,0.15); }
 .chk-item__tip-toggle:hover { background: rgba(34,197,94,0.2); transform: translateY(-1px); border-color: rgba(34,197,94,0.3); box-shadow: 0 4px 12px rgba(34,197,94,0.1); }
@@ -67,8 +69,8 @@
 .checklist-question-image.is-small { max-width: 500px; }
 
 /* MODERN YES/NO SWITCHES */
-.chk-toggle { display: flex; gap: 0.35rem; background: rgba(5,5,8,0.9); border-radius: 0.75rem; padding: 0.35rem; border: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1; box-shadow: inset 0 4px 8px rgba(0,0,0,0.6); }
-.chk-toggle-btn { background: transparent; border: none; color: rgba(255,255,255,0.35); padding: 0.65rem 1.5rem; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; font-family: "Inter", sans-serif; letter-spacing: 0.03em; text-transform: uppercase; }
+.chk-toggle { display: flex !important; gap: 0.35rem !important; background: rgba(5,5,8,0.9); border-radius: 8px; padding: 0.35rem; border: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1; box-shadow: inset 0 4px 8px rgba(0,0,0,0.6); width: auto !important; max-width: 19rem; justify-content: flex-end; flex-wrap: wrap !important; }
+.chk-toggle-btn { background: transparent; border: none; color: rgba(255,255,255,0.45); padding: 0.65rem 1rem; border-radius: 6px; min-height: 2.4rem; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; position: relative; overflow: hidden; font-family: "Inter", sans-serif; letter-spacing: 0; text-transform: uppercase; white-space: normal; }
 .chk-toggle-btn:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.03); }
 
 /* Yes active state */
@@ -77,19 +79,24 @@
 .chk-toggle-btn.is-no.is-active { background: #EF4444; color: #050508; box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2), 0 4px 15px rgba(239,68,68,0.4); text-shadow: none; animation: popClick 0.3s ease; }
 
 /* LEAD CAPTURE CTA - BEAUTIFUL GLOWING MODULE */
-.chk-cta { margin-top: 5rem; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(34,197,94,0.12) 0%, transparent 60%), rgba(13,13,20,0.85); border: 1px solid rgba(255,255,255,0.06); border-radius: 2rem; padding: clamp(4rem, 8vw, 6rem) 2rem; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transform: translateY(0); transition: transform 0.4s ease, box-shadow 0.4s ease; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-.chk-cta:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3); }
+.chk-cta { margin-top: 5rem; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(34,197,94,0.12) 0%, transparent 60%), rgba(13,13,20,0.85); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: clamp(4rem, 8vw, 6rem) 2rem; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: border-color 0.2s ease, box-shadow 0.2s ease; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.chk-cta:hover { box-shadow: 0 24px 54px rgba(0,0,0,0.55), 0 0 34px rgba(34,197,94,0.1); border-color: rgba(34,197,94,0.3); }
 .chk-cta::before { content: ""; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(34,197,94,0.6), transparent); }
-.chk-cta__title { font-size: clamp(2.2rem, 4vw, 3.2rem); font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #fff; margin: 0 0 1rem; letter-spacing: -0.03em; text-wrap: balance; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.chk-cta__title { font-size: clamp(2.2rem, 4vw, 3.2rem); font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #fff; margin: 0 0 1rem; letter-spacing: 0; text-wrap: balance; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
 .chk-cta__desc { font-size: 1.15rem; color: rgba(246,243,238,0.7); max-width: 44rem; margin: 0 auto 2.5rem; line-height: 1.6; font-weight: 500; font-family: "Onest", "Inter", sans-serif; }
+.chk-cta .btn { display: inline-flex; width: auto; max-width: 100%; letter-spacing: 0; }
 
 @media(max-width: 768px) {
+  .chk-hero { padding: 6.5rem 1.25rem 3.5rem; }
+  .chk-hero__title { font-size: clamp(3rem, 16vw, 4rem); }
+  .chk-hero__sub { font-size: 1rem; }
+  .chk-tabs-container { padding: 0 1rem; }
+  .chk-tabs { width: 100%; max-width: 24rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; border-radius: 12px; }
   .chk-progress-wrap { flex-direction: column; gap: 1.25rem; align-items: stretch; text-align: center; padding: 1.5rem; top: 5rem; }
   .chk-progress-score { text-align: center; }
-  .chk-item { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
-  .chk-tabs { flex-direction: column; border-radius: 1.25rem; padding: 0.75rem; }
-  .chk-tab-btn { text-align: center; border-radius: 0.75rem; }
-  .chk-toggle { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+  .chk-item { grid-template-columns: 1fr !important; gap: 1rem !important; padding: 1.25rem !important; }
+  .chk-tab-btn { text-align: center; border-radius: 8px; padding: 0.8rem 0.65rem; }
+  .chk-toggle { width: 100% !important; max-width: none; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
   .chk-toggle-btn { text-align: center; padding: 0.8rem; }
 }
 
@@ -99,59 +106,69 @@
     max-width: 90rem; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-columns: 1fr;
-    gap: 3rem; 
-    padding: clamp(2rem, 4vw, 4rem) 2rem 6rem; 
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3rem); 
+    padding: clamp(3rem, 5vw, 5rem) 2rem 6rem; 
     align-items: start; 
     position: relative; 
     z-index: 2; 
 }
 @media(min-width: 1024px) {
     .chk-layout {
-        grid-template-columns: 1fr 340px; /* main content + sidebar */
+        grid-template-columns: minmax(0, 54rem) minmax(16rem, 20rem);
+        justify-content: center;
     }
 }
 
 /* SIDEBAR PROGRESS WIDGET */
 .chk-sidebar {
-    position: sticky;
-    top: 6rem;
+    position: static;
+    order: -1;
     z-index: 100;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-width: 0;
+}
+@media(min-width: 1024px) {
+    .chk-sidebar {
+        position: sticky;
+        top: calc(var(--nav-bar-height, 5rem) + 1rem);
+        order: 0;
+    }
 }
 
 .chk-progress-wrap { 
     background: rgba(13, 13, 20, 0.6); 
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px); 
-    padding: 2.5rem 2rem; 
-    border-radius: 1.5rem; 
+    padding: 1.25rem; 
+    border-radius: 8px; 
     border: 1px solid rgba(255,255,255,0.08); 
     border-bottom: 1px solid rgba(255,255,255,0.03); 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    gap: 1.5rem; 
+    gap: 1rem; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05); 
     animation: slideUpFade 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; 
     width: 100%; 
-    transition: transform 0.3s ease, border-color 0.3s ease; 
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; 
 }
-.chk-progress-wrap:hover { border-color: rgba(34,197,94,0.35); transform: translateY(-5px); }
-.chk-progress-text { font-size: 1.15rem; font-weight: 500; color: rgba(255,255,255,0.7); font-family: "Space Grotesk", sans-serif; letter-spacing: 0.05em; text-transform: uppercase; }
+.chk-progress-wrap:hover { border-color: rgba(34,197,94,0.35); box-shadow: 0 20px 44px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05); }
+.chk-progress-text { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.7); font-family: "Space Grotesk", sans-serif; letter-spacing: 0; text-transform: uppercase; }
 .chk-progress-bar { width: 100%; height: 12px; background: rgba(0,0,0,0.6); border-radius: 999px; overflow: hidden; position: relative; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.04); }
 .chk-progress-fill { position: absolute; left: 0; top: 0; height: 100%; background: linear-gradient(90deg, #166534, #22C55E, #4ADE80); border-radius: 999px; width: 0%; transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 0 16px rgba(34,197,94,0.7); }
 .chk-progress-fill::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); transform: translateX(-100%); animation: shimmer 2s infinite; }
-.chk-progress-score { font-size: 4.5rem; font-weight: 700; color: #4ADE80; font-family: "Space Grotesk", sans-serif; text-shadow: 0 0 30px rgba(34,197,94,0.4); line-height: 1; }
+.chk-progress-score { font-size: clamp(2.4rem, 6vw, 3.5rem); font-weight: 700; color: #4ADE80; font-family: "Space Grotesk", sans-serif; text-shadow: 0 0 30px rgba(34,197,94,0.4); line-height: 1; }
 
 @media(max-width: 1023px) {
     .chk-progress-wrap {
-        padding: 1.5rem;
+        padding: 1rem;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
     .chk-progress-score { font-size: 2rem; }
 }
@@ -162,6 +179,11 @@
     display: flex; justify-content: center;
     padding: 0 2rem;
     position: relative; z-index: 10;
+    transform: translateY(-50%);
+}
+@media(max-width: 768px) {
+    .chk-tabs-container { transform: none; margin-top: 1rem; padding: 0 1rem; }
+    .chk-layout { padding: 2rem 1rem 4rem; }
 }
 
 /* FLOATING STARS */
@@ -223,11 +245,6 @@
 
 
       <div class="chk-container">
-        
-        
-          <div class="chk-progress-bar"><div class="chk-progress-fill" id="progress-fill"></div></div>
-          <div class="chk-progress-score"><span id="score-text">0</span>%</div>
-        </div>
 
         <!-- GOOGLE ADS CHECKLIST -->
         <div class="chk-content is-active" id="google">
@@ -1059,24 +1076,24 @@
           <div class="weflair-new-cta">
             <div class="weflair-new-cta__bg"></div>
             <div class="weflair-new-cta__glow"></div>
-            
+
             <div class="weflair-new-cta__grid">
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>
@@ -1134,6 +1151,7 @@
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
                   <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
+                  <li><a href="/resources/ai-seo-playbook.html" class="weflair-footer__nav-link">AISEO Playbook</a></li>
                   <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
                   <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
                   <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Resource Pack</a></li>

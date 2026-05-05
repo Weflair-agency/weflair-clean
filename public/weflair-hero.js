@@ -87,9 +87,9 @@
     hero: {
       eyebrow: "Growth Marketing Agency",
       titleHtml:
-        'We build <span class="weflair-hero__accent">hyper-relevant</span> marketing engines for <span class="weflair-section-accent weflair-section-accent--solid">today&rsquo;s customers.</span>',
+        'Your Allbound Marketing Partner to <span class="weflair-section-accent weflair-section-accent--solid">Drive Ambitious Growth.</span>',
       body:
-        "For ambitious companies facing real go-to-market and revenue challenges, we build end-to-end marketing engines to drive measurable growth.",
+        "We deliver end-to-end marketing solutions - from strategy to revenue.",
       primary: "Discover more",
     },
     logos: {
@@ -938,45 +938,28 @@
   }
 
   function renderThemeSwitch() {
-    return `<div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none" class="theme-switch__svg"><path d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z" fill="currentColor"></path></svg><div class="theme-switch__wrap"><div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><path d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z" fill="currentColor"></path></svg></div><div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg"><circle cx="10" cy="10" r="3.2" fill="currentColor"></circle><path d="M10 1.9V3.8M10 16.2V18.1M3.8 10H1.9M18.1 10H16.2M4.1 4.1L5.5 5.5M14.5 14.5L15.9 15.9M15.9 4.1L14.5 5.5M5.5 14.5L4.1 15.9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg></div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false" aria-label="Switch to light theme">Switch Theme</button></div><div class="noise is--small"></div></div>`;
+    return "";
   }
 
-  const THEME_STORAGE_KEY = "weflair-theme";
   const THEME_META_COLORS = {
     dark: "#151515",
-    light: "#f4f1ea",
   };
 
   function getStoredTheme() {
-    try {
-      const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-      return storedTheme === "light" || storedTheme === "dark" ? storedTheme : null;
-    } catch (_error) {
-      return null;
-    }
+    return null;
   }
 
   function getActiveTheme() {
-    const activeTheme =
-      document.body?.getAttribute("data-theme") ||
-      document.documentElement?.getAttribute("data-theme");
-    return activeTheme === "light" ? "light" : "dark";
+    return "dark";
   }
 
-  function applyTheme(theme, { persist = true } = {}) {
-    const nextTheme = theme === "light" ? "light" : "dark";
+  function applyTheme(_theme, { persist: _persist = true } = {}) {
+    const nextTheme = "dark";
     document.documentElement?.setAttribute("data-theme", nextTheme);
     document.body?.setAttribute("data-theme", nextTheme);
     const themeMeta = q('meta[name="theme-color"]');
     if (themeMeta) {
       themeMeta.setAttribute("content", THEME_META_COLORS[nextTheme]);
-    }
-    if (persist) {
-      try {
-        localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-      } catch (_error) {
-        // Ignore storage failures in static preview mode.
-      }
     }
     window.dispatchEvent(
       new CustomEvent("weflair:themechange", { detail: { theme: nextTheme } })
@@ -1079,10 +1062,6 @@
       }
     }
 
-    if (!q(".theme-switch", shell)) {
-      shell.insertAdjacentHTML("beforeend", renderThemeSwitch());
-    }
-
     mountInjectedShellClosers(shell);
     mountInjectedThemeButtons(shell);
   }
@@ -1130,12 +1109,11 @@
   }
 
   function renderAuditWidgetMarkup() {
-    return `<div class="weflair-audit-widget" id="audit-widget"><button type="button" class="weflair-audit-widget__launcher" data-audit-toggle aria-expanded="false" aria-controls="weflair-audit-panel" aria-label="Open strategy call widget">${diagonalArrowMarkup()}</button><div class="weflair-audit-widget__panel" id="weflair-audit-panel"><div class="weflair-audit-widget__head"><div class="weflair-audit-widget__profile"><div class="weflair-audit-widget__avatar">SM</div><div class="weflair-audit-widget__meta"><span class="weflair-audit-widget__name">Sami Madi</span><span class="weflair-audit-widget__role">Founder, WeFlair</span></div></div><button type="button" class="weflair-audit-widget__close" data-audit-close aria-label="Close strategy call card">&times;</button></div><div class="weflair-audit-widget__eyebrow">Free 30 min strategy call</div><h3 class="weflair-audit-widget__title">See where your growth engine is leaking.</h3><p class="weflair-audit-widget__body">We&rsquo;ll review your funnel, channels, and follow-up, then show you the next 1-3 moves most likely to improve pipeline.</p><div class="weflair-audit-widget__proof"><span class="weflair-audit-widget__proof-pill">30 min</span><span class="weflair-audit-widget__proof-pill">Free</span><span class="weflair-audit-widget__proof-pill">No hard sell</span></div><div class="weflair-audit-widget__slots"><strong>Hands-on intro calls only</strong><span class="weflair-audit-widget__countdown">Limited each week</span></div><ul class="weflair-audit-widget__list"><li>Spot the biggest leak in paid, outbound, or CRM.</li><li>Leave with clear next steps, not a vague pitch.</li><li>Best for teams already investing in growth.</li></ul><div class="weflair-audit-widget__cta">${calButton(
-      "Book your free strategy call",
-      "primary",
-      'data-cal-source="hero-widget"',
-      "diagonal"
-    )}</div><div class="weflair-audit-widget__foot">Takes you to the contact page so you can request the brief without leaving the site.</div></div></div>`;
+    return "";
+  }
+
+  function removeAuditWidget() {
+    qa(".weflair-audit-widget, .weflair-hero-widget-wrap").forEach((node) => node.remove());
   }
 
   function tags(items, className = "weflair-tag") {
@@ -1811,18 +1789,7 @@
     if (!q(".weflair-hero-glow", hero)) {
       hero.insertAdjacentHTML("beforeend", `<div class="weflair-hero-glow"></div>`);
     }
-    let cardSlot = q(".weflair-hero-widget-wrap", hero);
-    if (!cardSlot) {
-      const nativeCard = q(".corner-card, .home-header__col-card", hero);
-      if (nativeCard) {
-        nativeCard.classList.add("weflair-hero-widget-wrap");
-        nativeCard.innerHTML = "";
-        cardSlot = nativeCard;
-      }
-    }
-    if (cardSlot && !q(".weflair-audit-widget", cardSlot)) {
-      cardSlot.innerHTML = renderAuditWidgetMarkup();
-    }
+    removeAuditWidget();
   }
 
   function renderLogosSection(section) {
@@ -1854,30 +1821,7 @@
   }
 
   function wireAuditWidget() {
-    const widget = q(".weflair-audit-widget");
-    if (!widget || widget.dataset.wireReady) return;
-    widget.dataset.wireReady = "true";
-    const launcher = q("[data-audit-toggle]", widget);
-    const closer = q("[data-audit-close]", widget);
-    const setCollapsed = (collapsed) => {
-      widget.classList.toggle("is-collapsed", collapsed);
-      if (launcher) launcher.setAttribute("aria-expanded", String(!collapsed));
-    };
-    launcher?.addEventListener("click", () => setCollapsed(false));
-    closer?.addEventListener("click", () => setCollapsed(true));
-    const compactQuery = window.matchMedia("(max-width: 991px)");
-    setCollapsed(compactQuery.matches);
-    const handleCompactChange = (event) => {
-      if (event.matches) setCollapsed(true);
-    };
-    if (typeof compactQuery.addEventListener === "function") {
-      compactQuery.addEventListener("change", handleCompactChange);
-    } else if (typeof compactQuery.addListener === "function") {
-      compactQuery.addListener(handleCompactChange);
-    }
-    document.addEventListener("weflair:navigation", (event) => {
-      if (event.detail?.active) setCollapsed(true);
-    });
+    removeAuditWidget();
   }
 
   function renderServicesSection(section) {
@@ -2209,7 +2153,7 @@
     const d = CONTENT.footer;
     section.className = "footer weflair-footer";
 
-    const ctaHtml = `<div class="weflair-new-cta-wrap" id="audit"><div class="container" style="position:relative; z-index: 5;"><div class="weflair-new-cta"><div class="weflair-new-cta__bg"></div><div class="weflair-new-cta__glow"></div><div class="weflair-new-cta__grid"><div class="weflair-new-cta__left"><div class="weflair-new-cta__label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Next Step</div><h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2><p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p><div class="weflair-new-cta__features"><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div></div></div><div class="weflair-new-cta__right"><a href="/contact.html" class="weflair-new-cta__btn"><span class="weflair-new-cta__btn-text">Get your free audit</span><span class="weflair-new-cta__btn-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a></div></div></div></div></div>`;
+    const ctaHtml = `<div class="weflair-new-cta-wrap" id="audit"><div class="container" style="position:relative; z-index: 5;"><div class="weflair-new-cta"><div class="weflair-new-cta__bg"></div><div class="weflair-new-cta__glow"></div><div class="weflair-new-cta__grid"><div class="weflair-new-cta__left"><div class="weflair-new-cta__label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Free Audit</div><h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2><p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p><div class="weflair-new-cta__features"><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div><div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div></div></div><div class="weflair-new-cta__right"><a href="/contact.html" class="weflair-new-cta__btn"><span class="weflair-new-cta__btn-text">Book your free audit</span><span class="weflair-new-cta__btn-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span></a></div></div></div></div></div>`;
 
     const infoColsHtml = d.columns.map(col => {
       const body = col.links

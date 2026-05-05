@@ -1,5 +1,38 @@
 window.WEFLAIR_PLAYBOOKS = [
   {
+    slug: "ai-seo-playbook",
+    title: "AISEO Playbook",
+    category: "ai",
+    featured: true,
+    kicker: "AI search visibility",
+    summary: "Build an AI search visibility system around entity signals, proof paths, comparison content, and resource-led capture.",
+    audience: "B2B teams that need to show up in AI answers and turn that visibility into qualified demand.",
+    format: "Playbook + visibility checklist",
+    effort: "2 week build",
+    stack: ["Search Console", "GA4", "CRM"],
+    includes: [
+      "Entity signal map",
+      "Citation gap worksheet",
+      "Comparison page brief",
+      "Resource-led capture flow"
+    ],
+    steps: [
+      {
+        title: "Map the answer surface",
+        body: "Identify the questions, comparison moments, and category terms where buyers expect an answer before they reach a website."
+      },
+      {
+        title: "Strengthen entity proof",
+        body: "Connect service pages, case proof, author signals, and third-party mentions so AI systems can resolve what the company does."
+      },
+      {
+        title: "Capture demand from the resource",
+        body: "Turn visibility into pipeline with a focused resource offer, clean form capture, and follow-up tied to the topic requested."
+      }
+    ],
+    metrics: ["AI answer mentions", "Citation coverage", "Resource conversion"]
+  },
+  {
     slug: "lookalike-outbound-engine",
     title: "Lookalike Outbound Engine",
     category: "outbound",

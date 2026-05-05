@@ -15,9 +15,9 @@
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
   <link rel="stylesheet" href="../foundation-slater.css" />
-  <link rel="stylesheet" href="../weflair-hero.css" />
-  <script src="../foundation.js" defer></script>
-  <script src="../weflair-hero.js" defer></script>
+  <link rel="stylesheet" href="../weflair-hero.css?v=20260504-logo-critical-01" />
+  <script src="../foundation.js?v=20260504-dark-01" defer></script>
+  <script src="../weflair-hero.js?v=20260504-home-stable-01" defer></script>
 <style id="weflair-mega-dropdown-css">
 .nav-dropdown--mega{left:50%!important;transform:translateX(-50%);width:max-content;min-width:40rem}
 .nav-dropdown--mega .nav-dropdown__grid{display:block!important;flex-flow:unset!important;padding:1rem 1.1rem!important;border:1px solid rgba(246,243,238,.08)!important;box-shadow:0 16px 48px rgba(0,0,0,.4)!important}
@@ -114,6 +114,10 @@
         color: rgba(255, 255, 255, 0.9);
         font-style: italic;
       }
+      #services .b2b-section-header {
+        margin: 0 auto 2.5rem;
+        text-align: center;
+      }
       
       .b2b-problems-grid {
         display: grid;
@@ -151,14 +155,18 @@
       /* INTERACTIVE CAPABILITIES CSS (Accodrion Style Details/Summary) */
       .b2b-capabilities {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        width: min(100%, 920px);
+        margin: 0 auto;
       }
       .b2b-capability-card {
         background: var(--b2b-card-bg);
         border: 1px solid var(--b2b-border);
         border-radius: 8px;
         color: #fff;
+        min-height: 0;
+        overflow: hidden;
         transition: transform 0.3s ease, border-color 0.3s ease;
       }
       .b2b-capability-card:hover {
@@ -168,19 +176,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 3rem;
+        gap: 1rem;
+        min-height: 5.25rem;
+        padding: 1.15rem 1.25rem;
         cursor: pointer;
         list-style: none; /* Remove default triangle */
-        font-size: 1.25rem;
-        font-weight: 500;
         outline: none;
+      }
+      .b2b-capability-card summary h3 {
+        margin: 0 !important;
+        max-width: calc(100% - 2.5rem);
+        font-size: clamp(1.05rem, 1.4vw, 1.25rem) !important;
+        line-height: 1.25 !important;
+        font-weight: 600;
+        letter-spacing: 0;
+        color: #fff;
       }
       .b2b-capability-card summary::-webkit-details-marker {
         display: none;
       }
       .b2b-capability-card summary .plus {
-        width: 28px;
-        height: 28px;
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
         background: var(--b2b-brand);
         border-radius: 4px;
         display: flex;
@@ -188,7 +206,7 @@
         justify-content: center;
         color: #000;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1rem;
         line-height: 1;
         transition: transform 0.3s ease;
       }
@@ -196,9 +214,10 @@
         transform: rotate(45deg); /* Turns plus to cross (x) */
       }
       .b2b-capability-content {
-        padding: 0 3rem 2rem 3rem;
+        padding: 0 1.25rem 1.25rem;
         color: rgba(255,255,255,0.7);
         line-height: 1.6;
+        font-size: 0.95rem;
       }
       .b2b-cap-tags {
         display: flex;
@@ -828,19 +847,19 @@
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>

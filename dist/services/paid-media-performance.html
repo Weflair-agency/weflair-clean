@@ -15,11 +15,14 @@
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
   <link rel="stylesheet" href="../foundation-slater.css" />
-  <link rel="stylesheet" href="../weflair-hero.css" />
-  <script src="../foundation.js" defer></script>
-  <script src="../weflair-hero.js" defer></script>
+  <link rel="stylesheet" href="../weflair-hero.css?v=20260504-logo-critical-01" />
+  <script src="../foundation.js?v=20260504-dark-01" defer></script>
+  <script src="../weflair-hero.js?v=20260504-home-stable-01" defer></script>
   <style>
     .pm-page { background: #151515; color: #f6f3ee; font-family: 'Inter', sans-serif; }
+    .pm-page .nav { height:auto !important; min-height:0 !important; background:transparent !important; border-bottom:0 !important; backdrop-filter:none !important; }
+    .pm-page .nav-bar { pointer-events:auto; }
+    .pm-page .weflair-footer > .weflair-new-cta-wrap { display:none !important; }
     .pm-hero {
       position: relative;
       padding: clamp(9rem, 14vw, 15rem) 2rem clamp(4rem, 8vw, 6rem);
@@ -184,6 +187,139 @@
 
     /* Fix nav rendering */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; background: rgba(21,21,21,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(246,243,238,0.06); }
+  
+    /* Paid media rebuild - page scoped */
+    .pm-page { background:#111; color:#f6f3ee; }
+    .pm-page .nav { height:auto !important; min-height:0 !important; background:transparent !important; border-bottom:0 !important; backdrop-filter:none !important; }
+    .pm-page .nav-bar { pointer-events:auto; }
+    .pm-page .weflair-footer > .weflair-new-cta-wrap { display:none !important; }
+    .pm-page .main { overflow:hidden; }
+    .pm-hero {
+      position:relative;
+      min-height:clamp(44rem, 86vh, 58rem);
+      padding:clamp(8rem, 12vw, 11rem) clamp(1.25rem, 5vw, 4rem) clamp(4rem, 7vw, 6rem);
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid rgba(246,243,238,.08);
+      background:
+        radial-gradient(circle at 72% 34%, rgba(62,255,104,.16), transparent 28rem),
+        linear-gradient(135deg, #0b0d0b 0%, #151515 55%, #0f160f 100%);
+    }
+    .pm-hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:linear-gradient(rgba(246,243,238,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(246,243,238,.04) 1px, transparent 1px);
+      background-size:52px 52px;
+      mask-image:linear-gradient(180deg, rgba(0,0,0,.8), transparent 82%);
+      pointer-events:none;
+    }
+    .pm-shell { width:min(100%, 72rem); margin:0 auto; position:relative; z-index:1; }
+    .pm-hero__layout { display:grid; grid-template-columns:minmax(0, 1.05fr) minmax(21rem, .82fr); gap:clamp(2rem, 5vw, 5rem); align-items:center; }
+    .pm-kicker { display:inline-flex; align-items:center; gap:.55rem; color:#3eff68; font-size:.76rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1.4rem; }
+    .pm-kicker::before { content:""; width:.42rem; height:.42rem; border-radius:999px; background:#3eff68; box-shadow:0 0 18px rgba(62,255,104,.75); }
+    .pm-hero__title { max-width:13ch; font-size:clamp(3.4rem, 7vw, 6.8rem); line-height:.88; letter-spacing:-.065em; margin:0 0 1.35rem; color:#f6f3ee; text-wrap:balance; }
+    .pm-hero__title span { color:#3eff68; }
+    .pm-hero__sub { max-width:43rem; font-size:clamp(1.06rem, 1.55vw, 1.25rem); line-height:1.55; color:rgba(246,243,238,.76); margin:0 0 2rem; }
+    .pm-hero__actions { display:flex; flex-wrap:wrap; gap:.9rem; align-items:center; margin-bottom:1.35rem; }
+    .pm-hero__note { display:flex; flex-wrap:wrap; gap:.6rem 1rem; color:rgba(246,243,238,.58); font-size:.88rem; }
+    .pm-proof-strip { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:.8rem; margin-top:2.4rem; max-width:43rem; }
+    .pm-proof-pill { border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.045); border-radius:.85rem; padding:1rem; }
+    .pm-proof-pill strong { display:block; color:#3eff68; font-size:1.35rem; letter-spacing:-.04em; line-height:1; margin-bottom:.35rem; }
+    .pm-proof-pill span { color:rgba(246,243,238,.62); font-size:.82rem; line-height:1.35; display:block; }
+    .pm-hero-card { border:1px solid rgba(246,243,238,.12); background:linear-gradient(180deg, rgba(22,25,22,.9), rgba(10,11,10,.96)); border-radius:1.4rem; padding:1.15rem; box-shadow:0 28px 70px rgba(0,0,0,.42); }
+    .pm-hero-card__top { display:flex; justify-content:space-between; align-items:center; gap:1rem; border-bottom:1px solid rgba(246,243,238,.08); padding:.35rem .25rem 1rem; margin-bottom:1rem; }
+    .pm-hero-card__label { color:rgba(246,243,238,.62); font-size:.82rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .pm-hero-card__status { color:#3eff68; border:1px solid rgba(62,255,104,.3); background:rgba(62,255,104,.08); border-radius:999px; padding:.32rem .62rem; font-size:.72rem; font-weight:800; }
+    .pm-platform-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:.7rem; }
+    .pm-platform { min-height:5.7rem; border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.045); border-radius:.9rem; padding:.9rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .pm-platform__head { display:flex; align-items:center; gap:.55rem; min-width:0; color:#f6f3ee; font-weight:750; font-size:.92rem; }
+    .pm-platform__head img { width:1.45rem; height:1.45rem; object-fit:contain; filter:brightness(0) invert(1); opacity:.9; flex:0 0 auto; }
+    .pm-platform__role { color:rgba(246,243,238,.55); font-size:.78rem; line-height:1.3; }
+    .pm-diagnostic { margin-top:.75rem; border:1px solid rgba(62,255,104,.18); background:linear-gradient(135deg, rgba(62,255,104,.1), rgba(246,243,238,.03)); border-radius:.95rem; padding:1rem; display:grid; gap:.72rem; }
+    .pm-diagnostic__row { display:flex; justify-content:space-between; gap:1rem; color:rgba(246,243,238,.68); font-size:.84rem; }
+    .pm-diagnostic__row strong { color:#f6f3ee; }
+    .pm-section { padding:clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem); border-top:1px solid rgba(246,243,238,.07); }
+    .pm-section--soft { background:#151515; }
+    .pm-section--deep { background:#0d0f0d; }
+    .pm-section__head { max-width:45rem; margin:0 auto clamp(2rem, 5vw, 3.5rem); text-align:center; }
+    .pm-section__head--left { max-width:52rem; margin-left:0; margin-right:auto; text-align:left; }
+    .pm-section__head--left .pm-section__copy { margin-left:0; }
+    .pm-section__eyebrow { display:inline-flex; align-items:center; gap:.5rem; min-height:1.6rem; color:#3eff68; font-size:.74rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin:0 0 .9rem; }
+    .pm-section__eyebrow::before { content:""; width:.7rem; height:.7rem; flex:0 0 auto; background:#3eff68; clip-path:polygon(50% 0,61% 38%,100% 50%,61% 62%,50% 100%,39% 62%,0 50%,39% 38%); filter:drop-shadow(0 0 10px rgba(62,255,104,.55)); }
+    .pm-section__title { font-size:3.55rem; line-height:1.08; letter-spacing:0; margin:0 0 1rem; color:#f6f3ee; text-wrap:balance; }
+    .pm-accent { color:#3eff68; }
+    .pm-title-muted { color:rgba(246,243,238,.72); font-weight:520; }
+    .pm-section__copy { color:rgba(246,243,238,.66); font-size:1.03rem; line-height:1.6; margin:0 auto; max-width:40rem; }
+    .pm-service-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1rem; }
+    .pm-service-card { min-height:14.4rem; border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.035); border-radius:1.05rem; padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between; gap:1.4rem; transition:transform .25s ease, border-color .25s ease, background .25s ease; }
+    .pm-service-card:hover { transform:translateY(-4px); border-color:rgba(62,255,104,.3); background:rgba(62,255,104,.055); }
+    .pm-service-card__top { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .pm-service-card__tag { color:#3eff68; font-size:.73rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .pm-service-card__icon { width:2.15rem; height:2.15rem; border:1px solid rgba(62,255,104,.22); background:rgba(62,255,104,.08); border-radius:.65rem; color:#3eff68; display:grid; place-items:center; flex:0 0 auto; }
+    .pm-service-card__icon svg { width:1.08rem; height:1.08rem; stroke:currentColor; }
+    .pm-service-card h3 { color:#f6f3ee; font-size:1.32rem; letter-spacing:0; margin:0 0 .7rem; line-height:1.12; }
+    .pm-service-card p { color:rgba(246,243,238,.62); font-size:.93rem; line-height:1.5; margin:0; }
+    .pm-system-grid { display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr); gap:clamp(2rem, 5vw, 4rem); align-items:center; }
+    .pm-list { display:grid; gap:1rem; margin-top:1.6rem; }
+    .pm-list__item { display:grid; grid-template-columns:auto 1fr; gap:.85rem; align-items:start; }
+    .pm-check { width:1.05rem; height:1.05rem; margin-top:.2rem; border-radius:999px; background:#3eff68; color:#081008; display:grid; place-items:center; font-size:.72rem; font-weight:900; }
+    .pm-list__item strong { color:#f6f3ee; display:block; margin-bottom:.25rem; }
+    .pm-list__item span { color:rgba(246,243,238,.62); line-height:1.5; font-size:.94rem; }
+    .pm-visual { border:1px solid rgba(246,243,238,.1); background:radial-gradient(circle at 55% 10%, rgba(62,255,104,.13), transparent 22rem), #101210; border-radius:1.25rem; padding:1rem; }
+    .pm-visual__screen { border:1px solid rgba(246,243,238,.1); border-radius:.9rem; overflow:hidden; background:#080908; }
+    .pm-flow { padding:1rem; display:grid; gap:.8rem; }
+    .pm-flow__bar { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem .85rem; border:1px solid rgba(246,243,238,.08); border-radius:.75rem; background:rgba(246,243,238,.04); }
+    .pm-flow__bar span { color:rgba(246,243,238,.58); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .pm-flow__bar strong { color:#3eff68; font-size:.85rem; }
+    .pm-flow__lanes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem; }
+    .pm-flow__lane { min-height:12rem; border:1px solid rgba(246,243,238,.09); border-radius:.85rem; background:rgba(246,243,238,.035); padding:.8rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .pm-flow__lane h3 { color:#f6f3ee; font-size:.95rem; margin:0; letter-spacing:-.02em; }
+    .pm-flow__metric { color:#3eff68; font-size:1.55rem; font-weight:800; letter-spacing:-.05em; }
+    .pm-flow__line { height:.45rem; border-radius:999px; background:linear-gradient(90deg, #3eff68, rgba(62,255,104,.12)); }
+    .pm-flow__note { color:rgba(246,243,238,.58); font-size:.78rem; line-height:1.35; margin:0; }
+    .pm-flow__footer { display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; border:1px solid rgba(62,255,104,.18); background:rgba(62,255,104,.055); border-radius:.8rem; padding:.9rem; }
+    .pm-flow__footer span { color:rgba(246,243,238,.7); font-size:.86rem; line-height:1.35; }
+    .pm-flow__footer strong { color:#3eff68; white-space:nowrap; }
+    .pm-test-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:1rem; }
+    .pm-test-card { border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.04); border-radius:1rem; padding:1.25rem; }
+    .pm-test-card strong { color:#3eff68; display:block; font-size:1.35rem; letter-spacing:-.04em; margin-bottom:.55rem; }
+    .pm-test-card span { color:rgba(246,243,238,.63); font-size:.88rem; line-height:1.45; display:block; }
+    .pm-channel-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem, 5vw, 4rem); align-items:start; }
+    .pm-section__title--channel { max-width:16ch; font-size:3.25rem; line-height:1.1; }
+    .pm-logo-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.8rem; }
+    .pm-logo-card { min-height:6.2rem; border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.04); border-radius:.95rem; padding:.9rem; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:.55rem; transition:border-color .25s ease, background .25s ease; }
+    .pm-logo-card:hover { border-color:rgba(62,255,104,.26); background:rgba(62,255,104,.055); }
+    .pm-logo-card img { width:1.55rem; height:1.55rem; object-fit:contain; filter:brightness(0) invert(1); opacity:.9; }
+    .pm-logo-card span { color:rgba(246,243,238,.78); font-size:.82rem; font-weight:750; }
+    .pm-audience { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
+    .pm-audience-card { border:1px solid rgba(62,255,104,.16); background:rgba(62,255,104,.045); border-radius:1rem; padding:1.25rem; }
+    .pm-audience-card h3 { color:#f6f3ee; margin:0 0 .55rem; font-size:1.2rem; letter-spacing:-.03em; }
+    .pm-audience-card p { color:rgba(246,243,238,.63); margin:0; line-height:1.5; font-size:.93rem; }
+    .pm-cta-boost { margin-top:1.1rem; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; max-width:36rem; }
+    .pm-cta-boost__item { border:1px solid rgba(246,243,238,.1); background:rgba(246,243,238,.045); border-radius:.8rem; padding:.85rem; color:rgba(246,243,238,.74); font-size:.86rem; line-height:1.35; }
+    @media (max-width: 991px) {
+      .pm-hero__layout, .pm-system-grid, .pm-channel-grid { grid-template-columns:1fr; }
+      .pm-hero { min-height:auto; }
+      .pm-section__title { font-size:3rem; }
+      .pm-section__title--channel { max-width:15ch; }
+      .pm-service-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+      .pm-test-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 767px) {
+      .pm-page[data-navigation-status="not-active"] .nav-bar { height:3.3125rem !important; min-height:0 !important; overflow:visible !important; }
+      .pm-page[data-navigation-status="not-active"] .nav-bar__bg { height:100% !important; }
+      .pm-hero { padding-top:7rem; text-align:left; }
+      .pm-hero__title { font-size:clamp(3rem, 18vw, 4rem); max-width:10ch; }
+      .pm-section__title { font-size:2.35rem; line-height:1.1; }
+      .pm-section__title--channel { font-size:2.45rem; max-width:12ch; }
+      .pm-proof-strip, .pm-service-grid, .pm-test-grid, .pm-logo-grid, .pm-audience, .pm-cta-boost { grid-template-columns:1fr; }
+      .pm-platform-grid { grid-template-columns:1fr; }
+      .pm-hero__actions .btn { width:100%; justify-content:center; }
+      .pm-section__head { text-align:left; margin-left:0; }
+      .pm-section__copy { margin-left:0; }
+    }
+
   </style>
   <link rel="canonical" href="https://weflair.com/services/paid-media-performance.html" />
   <meta property="og:url" content="https://weflair.com/services/paid-media-performance.html" />
@@ -191,335 +327,206 @@
 <body data-weflair-static="true" data-navigation-status="not-active" data-theme="dark" class="body pm-page">
 <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="/index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="/resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="/resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="/resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="/resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="/resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
 
+
 <main class="main">
   <section class="pm-hero">
-    <div class="pm-hero__inner">
-      <div class="eyebrow">
-        <span class="weflair-eyebrow-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-        </span>
-        <p class="eyebrow__p">Paid Media & Performance</p>
-      </div>
-      <h1 class="pm-hero__title">Eliminate wasted ad spend with <span style="color:#3eff68">high-performing</span> paid media.</h1>
-      <p class="pm-hero__sub">Run paid media campaigns that drive pipeline – not just clicks. We turn active demand into qualified revenue through a system that outperforms traditional agencies.</p>
-      <div class="pm-hero__actions">
-        <a href="#book" class="btn w-inline-block weflair-btn weflair-btn--primary">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span">Book Intro Call</span></div>
-          <div class="arrow">
-            <div class="arrow__bg"></div>
-            <div class="arrow__box is--duplicate">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="arrow__box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/></svg>
-            </div>
+    <div class="pm-shell">
+      <div class="pm-hero__layout">
+        <div>
+          <div class="pm-kicker">Paid media performance</div>
+          <h1 class="pm-hero__title">Stop buying clicks. <span>Buy revenue signals.</span></h1>
+          <p class="pm-hero__sub">We build paid media systems for B2B and B2C teams that need cleaner acquisition economics: sharper targeting, stronger creative, tighter tracking, and budget moved toward the campaigns that prove pipeline or profitable sales.</p>
+          <div class="pm-hero__actions">
+            <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">Get your paid media audit</span></div>
+              <div class="arrow">
+                <div class="arrow__bg"></div>
+                <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/></svg></div>
+                <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"/></svg></div>
+              </div>
+            </a>
+            <a href="#channels" class="btn w-inline-block weflair-btn weflair-btn--ghost">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">See channels</span></div>
+            </a>
           </div>
-        </a>
+          <div class="pm-hero__note">
+            <span>No black-box retainers</span>
+            <span>Revenue-first reporting</span>
+            <span>Creative and media together</span>
+          </div>
+          <div class="pm-proof-strip" aria-label="Paid media proof points">
+            <div class="pm-proof-pill"><strong>10x</strong><span>faster audience and prospect research with AI-assisted workflows</span></div>
+            <div class="pm-proof-pill"><strong>-41%</strong><span>cost-per-qualified-lead reduction target through waste removal</span></div>
+            <div class="pm-proof-pill"><strong>14d</strong><span>typical sprint from audit to live campaign changes</span></div>
+          </div>
+        </div>
+        <aside class="pm-hero-card" aria-label="Paid media operating system">
+          <div class="pm-hero-card__top">
+            <span class="pm-hero-card__label">Channel command center</span>
+            <span class="pm-hero-card__status">Live signal</span>
+          </div>
+          <div class="pm-platform-grid">
+            <div class="pm-platform"><div class="pm-platform__head"><img src="../brand-assets/partner-logos/google.svg" alt="Google logo">Google</div><div class="pm-platform__role">Capture declared intent</div></div>
+            <div class="pm-platform"><div class="pm-platform__head"><img src="../brand-assets/partner-logos/linkedin.svg" alt="LinkedIn logo">LinkedIn</div><div class="pm-platform__role">Reach buying committees</div></div>
+            <div class="pm-platform"><div class="pm-platform__head"><img src="../brand-assets/partner-logos/meta.svg" alt="Meta logo">Meta</div><div class="pm-platform__role">Test demand and creative</div></div>
+            <div class="pm-platform"><div class="pm-platform__head"><img src="../brand-assets/partner-logos/tiktok.svg" alt="TikTok logo">TikTok</div><div class="pm-platform__role">Scale social proof fast</div></div>
+          </div>
+          <div class="pm-diagnostic">
+            <div class="pm-diagnostic__row"><span>Waste audit</span><strong>Search terms, audiences, offers</strong></div>
+            <div class="pm-diagnostic__row"><span>Creative loop</span><strong>Hooks, angles, landing pages</strong></div>
+            <div class="pm-diagnostic__row"><span>Revenue readout</span><strong>Pipeline, CAC, ROAS, LTV</strong></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <div class="pm-stats-ribbon">
-    <div class="pm-stats-ribbon__val">175<span>%</span></div>
-    <h3 class="pm-stats-ribbon__label">Increase in Closed/Won Deals</h3>
-    <p class="pm-stats-ribbon__desc">We build attribution models that track performance straight through to revenue.</p>
-  </div>
-
-  <section class="pm-hover-grid-sec">
-    <div class="weflair-section__head is-centered" style="justify-items:center;text-align:center;">
-      <h2 class="h3">Strategic paid advertising services<br><span class="weflair-section-accent weflair-section-accent--solid">tailored to your end goals.</span></h2>
-      <p class="weflair-section__body" style="max-width:32rem;">Our team handles all aspects of ad creation, targeting, bidding, and continuous optimization.</p>
-    </div>
-    <div class="growing-tiles">
-      <div class="growing-tiles__row">
-        <div class="growing-tiles__col">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Paid Search</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">Capture bottom-of-funnel intent with heavily optimized SEM architecture and negative keyword defense.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="growing-tiles__col">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Paid Social</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">Generate net-new demand through creative testing and nuanced audience segmentation on LinkedIn and Meta.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
+  <section class="pm-section pm-section--soft">
+    <div class="pm-shell">
+      <div class="pm-section__head pm-section__head--left">
+        <p class="pm-section__eyebrow">Our capabilities</p>
+        <h2 class="pm-section__title">Paid media that knows what it is <span class="pm-accent">supposed to win.</span></h2>
+        <p class="pm-section__copy">The job is not to make every platform look busy. The job is to map channel, audience, offer, creative, and measurement to the outcome your business actually needs.</p>
       </div>
-      <div class="growing-tiles__row weflair-services-center">
-        <div class="growing-tiles__col" style="flex:0 0 calc(50% - .3rem)!important;width:calc(50% - .3rem)!important;max-width:calc(50% - .3rem)!important">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Account Based Marketing</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">Capitalize on the valuable. Deeply targeted ABM campaigns meant to switch apathy to action in high-value accounts.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="growing-tiles__col">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Programmatic</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">Scale your reach beyond standard networks with data-driven placements targeting your exact ICP across the web.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="growing-tiles__row">
-        <div class="growing-tiles__col">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Retargeting</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">Leakproof your funnel. We build sequential retargeting flows that handle objections block by block until they convert.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="growing-tiles__col">
-          <a data-ease data-hover data-arrow="diagonal" href="#contact" class="growing-tile w-inline-block">
-            <div class="growing-tile__start">
-              <div class="growing-tile__text">
-                <h3 class="h5">Performance Reporting</h3>
-              </div>
-            </div>
-            <div class="growing-tile__end">
-              <div class="growing-tile__text">
-                <p class="p-s">LTV:CAC modeling and tracking so you know exactly which ads are generating revenue and which are burning cash.</p>
-              </div>
-              <div class="growing-tile__arrow">
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </div>
-            </div>
-          </a>
-        </div>
+      <div class="pm-service-grid">
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Intent</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.5-4.5"></path></svg></span></div><div><h3>Paid search</h3><p>Google and Microsoft campaigns built around high-intent queries, clean negatives, conversion quality, and budget discipline.</p></div></article>
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Demand</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10h8"></path><path d="M8 14h5"></path><path d="M21 12a8 8 0 0 1-8 8H6l-3 3v-7a8 8 0 1 1 18-4Z"></path></svg></span></div><div><h3>Paid social</h3><p>Meta, LinkedIn, TikTok, Reddit, and YouTube campaigns that test angles and scale the messages your market responds to.</p></div></article>
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Accounts</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M2 12h4"></path><path d="M18 12h4"></path></svg></span></div><div><h3>ABM media</h3><p>Account-based targeting for B2B teams that need to influence specific companies, buying groups, and sales-stage objections.</p></div></article>
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Reach</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"></path><path d="M7 8h10"></path><path d="M8 16h8"></path><path d="M12 4v16"></path></svg></span></div><div><h3>Programmatic</h3><p>Controlled reach across premium inventory, retargeting pools, and ICP segments without spraying budget into low-quality placements.</p></div></article>
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Recovery</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"></path><path d="M20 4v6h-6"></path></svg></span></div><div><h3>Retargeting</h3><p>Sequential retargeting that handles objections, reinforces proof, and brings warm visitors back with a better reason to act.</p></div></article>
+        <article class="pm-service-card"><div class="pm-service-card__top"><span class="pm-service-card__tag">Truth</span><span class="pm-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-4"></path><path d="M12 16V8"></path><path d="M16 16V9"></path></svg></span></div><div><h3>Performance reporting</h3><p>Dashboards tied to qualified leads, revenue, CAC, ROAS, and LTV so spend decisions are based on commercial signal.</p></div></article>
       </div>
     </div>
   </section>
 
-  <section class="pm-challenges">
-    <div class="pm-ch-grid">
-      <div class="pm-ch-content">
-        <div class="eyebrow" style="margin-bottom:1rem;">
-          <span class="weflair-eyebrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-          </span>
-          <p class="eyebrow__p">Testing & Experimentation</p>
+  <section class="pm-section pm-section--deep">
+    <div class="pm-shell">
+      <div class="pm-system-grid">
+        <div>
+          <p class="pm-section__eyebrow">Testing and experimentation</p>
+          <h2 class="pm-section__title">Find the right channel and message before scaling spend.</h2>
+          <p class="pm-section__copy" style="margin-left:0;">Most ad accounts fail because they scale before the signal is clear. We run controlled experiments across audience, offer, creative, and landing page so budget moves only when the evidence is strong.</p>
+          <div class="pm-list">
+            <div class="pm-list__item"><span class="pm-check">✓</span><div><strong>Start small, prove fast</strong><span>Launch focused tests that expose which persona, pain, and promise create qualified demand.</span></div></div>
+            <div class="pm-list__item"><span class="pm-check">✓</span><div><strong>Test creative like a revenue lever</strong><span>Hooks, formats, proof, objections, and offers are tested as a system, not as isolated ad variants.</span></div></div>
+            <div class="pm-list__item"><span class="pm-check">✓</span><div><strong>Scale what survives scrutiny</strong><span>When the data shows a winner, we shift spend and tighten the funnel around it.</span></div></div>
+          </div>
         </div>
-        <h2 class="h3" style="font-size:clamp(2.4rem,4vw,3.1rem);line-height:0.95;margin:0 0 1.5rem;letter-spacing:-0.05em;text-wrap:balance;">Find your winning channel-message formula.</h2>
-        <p style="font-size:1.05rem;line-height:1.6;color:rgba(246,243,238,0.65);margin:0 0 2rem;">Observe, hypothesize, experiment, and double down on the win. We compress months of market learnings into weeks — so you scale what works, not what feels right.</p>
-        <div class="pm-ch-list">
-          <div class="pm-ch-item">
-            <h4>Start small, prove fast</h4>
-            <p>We run tight experiments across channels and audiences to identify what moves your ICP before committing real budget to scale.</p>
-          </div>
-          <div class="pm-ch-item">
-            <h4>Multivariate creative testing</h4>
-            <p>We test messaging, format, and value props simultaneously — finding the brand-persona-channel-message combination that drives qualified pipeline.</p>
-          </div>
-          <div class="pm-ch-item">
-            <h4>Double down on what wins</h4>
-            <p>Once we find the signal, we scale it hard. No gut feelings, no budget wasted on underperformers. Data in, decisions out.</p>
+        <div class="pm-visual">
+          <div class="pm-visual__screen">
+            <div class="pm-flow" aria-label="Paid media experiment board">
+              <div class="pm-flow__bar"><span>Experiment sprint</span><strong>Week 01-02</strong></div>
+              <div class="pm-flow__lanes">
+                <div class="pm-flow__lane">
+                  <h3>Audience</h3>
+                  <div class="pm-flow__metric">4 ICPs</div>
+                  <div class="pm-flow__line"></div>
+                  <p class="pm-flow__note">Segments ranked by intent, fit, and expected conversion quality.</p>
+                </div>
+                <div class="pm-flow__lane">
+                  <h3>Message</h3>
+                  <div class="pm-flow__metric">12 angles</div>
+                  <div class="pm-flow__line"></div>
+                  <p class="pm-flow__note">Pain points, proof, and offers tested against each buying stage.</p>
+                </div>
+                <div class="pm-flow__lane">
+                  <h3>Budget</h3>
+                  <div class="pm-flow__metric">3 winners</div>
+                  <div class="pm-flow__line"></div>
+                  <p class="pm-flow__note">Spend moves only when the signal beats the control.</p>
+                </div>
+              </div>
+              <div class="pm-flow__footer"><span>Scale decision based on qualified conversions, not platform vanity metrics.</span><strong>Revenue signal</strong></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="pm-ch-visual">
-        <img src="../brand/Agency/Group%2073-4.png" alt="WeFlair Testing & Experimentation" />
+    </div>
+  </section>
+
+  <section class="pm-section pm-section--soft">
+    <div class="pm-shell">
+      <div class="pm-section__head">
+        <p class="pm-section__eyebrow">AI and automation</p>
+        <h2 class="pm-section__title">Use AI where it makes media buying sharper, not noisier.</h2>
+        <p class="pm-section__copy">We use automation to speed up research, surface patterns, generate controlled creative variants, and keep reporting honest. Humans still make the commercial calls.</p>
+      </div>
+      <div class="pm-test-grid">
+        <div class="pm-test-card"><strong>Research</strong><span>Build ICP lists, competitor angles, keyword clusters, and creative hypotheses faster.</span></div>
+        <div class="pm-test-card"><strong>Creative</strong><span>Generate variant maps for hooks, objections, proof points, and landing-page messages.</span></div>
+        <div class="pm-test-card"><strong>Bidding</strong><span>Feed platforms cleaner conversion signals so automated bidding chases better outcomes.</span></div>
+        <div class="pm-test-card"><strong>Reporting</strong><span>Spot wasted spend, attribution gaps, weak segments, and budget moves before the month ends.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- AI-Powered Performance -->
-  <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);background:#0e100e;">
-    <div style="max-width:70rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-      <div>
-        <div class="eyebrow" style="margin-bottom:1.5rem;">
-          <span class="weflair-eyebrow-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
-          </span>
-          <p class="eyebrow__p">AI & Automation</p>
+  <section class="pm-section pm-section--deep" id="channels">
+    <div class="pm-shell">
+      <div class="pm-channel-grid">
+        <div>
+          <p class="pm-section__eyebrow">Channel coverage</p>
+          <h2 class="pm-section__title pm-section__title--channel"><span class="pm-accent">B2B or B2C,</span> the strategy changes. <span class="pm-title-muted">The standard does not.</span></h2>
+          <p class="pm-section__copy" style="margin-left:0;">B2B needs account quality, buying-stage relevance, sales alignment, and pipeline truth. B2C needs faster creative learning, margin-aware ROAS, and customer value tracking. The page now says both because this service can serve both, but the operating model is different.</p>
         </div>
-        <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;color:#f6f3ee;margin:0 0 1.25rem;">AI-powered paid media.<br>Faster and smarter.</h2>
-        <p style="font-size:1.05rem;line-height:1.6;color:rgba(246,243,238,0.65);margin:0 0 2rem;">We inject AI into the parts of the process where it creates the most leverage — from building your ideal prospect list in hours to creative optimization and bid intelligence. You get the reach of a large agency with the precision of a specialist team.</p>
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--primary" style="display:inline-flex;align-items:center;gap:.5rem;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span">Book a Strategy Call</span></div>
-          <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-        </a>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-        <div style="background:rgba(246,243,238,0.04);border:1px solid rgba(246,243,238,0.08);border-radius:.75rem;padding:1.5rem;">
-          <p style="font-size:2rem;font-weight:700;color:#3eff68;margin:0 0 .5rem;letter-spacing:-.04em;">10x</p>
-          <p style="font-size:.85rem;color:rgba(246,243,238,0.55);margin:0;line-height:1.4;">faster prospect list building vs. manual research</p>
-        </div>
-        <div style="background:rgba(246,243,238,0.04);border:1px solid rgba(246,243,238,0.08);border-radius:.75rem;padding:1.5rem;">
-          <p style="font-size:2rem;font-weight:700;color:#3eff68;margin:0 0 .5rem;letter-spacing:-.04em;">-41%</p>
-          <p style="font-size:.85rem;color:rgba(246,243,238,0.55);margin:0;line-height:1.4;">average reduction in cost per qualified lead</p>
-        </div>
-        <div style="background:rgba(246,243,238,0.04);border:1px solid rgba(246,243,238,0.08);border-radius:.75rem;padding:1.5rem;">
-          <p style="font-size:2rem;font-weight:700;color:#3eff68;margin:0 0 .5rem;letter-spacing:-.04em;">3.2x</p>
-          <p style="font-size:.85rem;color:rgba(246,243,238,0.55);margin:0;line-height:1.4;">pipeline return on ad spend across accounts</p>
-        </div>
-        <div style="background:rgba(246,243,238,0.04);border:1px solid rgba(246,243,238,0.08);border-radius:.75rem;padding:1.5rem;">
-          <p style="font-size:2rem;font-weight:700;color:#3eff68;margin:0 0 .5rem;letter-spacing:-.04em;">14d</p>
-          <p style="font-size:.85rem;color:rgba(246,243,238,0.55);margin:0;line-height:1.4;">from kickoff to live campaigns</p>
+        <div>
+          <div class="pm-logo-grid" aria-label="Paid media platforms">
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/google.svg" alt="Google logo"><span>Google Ads</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/linkedin.svg" alt="LinkedIn logo"><span>LinkedIn Ads</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/meta.svg" alt="Meta logo"><span>Meta Ads</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/tiktok.svg" alt="TikTok logo"><span>TikTok Ads</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/youtube.svg" alt="YouTube logo"><span>YouTube</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/reddit.svg" alt="Reddit logo"><span>Reddit</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/microsoft.svg" alt="Microsoft logo"><span>Microsoft Ads</span></div>
+            <div class="pm-logo-card"><img src="../brand-assets/partner-logos/googleanalytics.svg" alt="Google Analytics logo"><span>GA4</span></div>
+          </div>
+          <div class="pm-audience">
+            <article class="pm-audience-card"><h3>For B2B</h3><p>We prioritize buying committees, high-intent accounts, lead quality, CRM feedback, and pipeline influence.</p></article>
+            <article class="pm-audience-card"><h3>For B2C</h3><p>We prioritize creative testing velocity, offer clarity, margin-aware ROAS, repeat purchase, and LTV.</p></article>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Channel Breadth -->
-  <section style="padding:clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);border-top:1px solid rgba(246,243,238,.06);">
-    <div style="max-width:70rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-      <div>
-        <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;color:#f6f3ee;margin:0 0 1.25rem;">No two channels are the same.</h2>
-        <p style="font-size:1.05rem;line-height:1.6;color:rgba(246,243,238,0.65);margin:0 0 1rem;">Each platform serves a unique purpose — and so do our strategies. We meet your audience on the platforms where they live, with the right message at the right moment.</p>
-        <p style="font-size:1.05rem;line-height:1.6;color:rgba(246,243,238,0.65);margin:0 0 2rem;">Our specialists cover every major paid channel and merge channel-specific creative with data to drive results that move the revenue needle — not just the dashboard.</p>
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="display:inline-flex;align-items:center;gap:.5rem;border-color:rgba(246,243,238,0.2);">
-          <div class="btn__bg"></div>
-          <div class="btn__text" style="color:#f6f3ee"><span class="btn__span">Talk to us</span></div>
-          <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-        </a>
-      </div>
-      <div>
-        <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem;">
-          <span style="background:rgba(62,255,104,0.1);border:1px solid rgba(62,255,104,0.25);color:#3eff68;padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">LinkedIn Ads</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">Google Search</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">Meta</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">TikTok</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">Reddit</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">YouTube</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">Programmatic</span>
-          <span style="background:rgba(246,243,238,0.05);border:1px solid rgba(246,243,238,0.1);color:rgba(246,243,238,0.7);padding:.4rem .9rem;border-radius:2rem;font-size:.82rem;font-weight:600;letter-spacing:.01em;">Microsoft Ads</span>
-        </div>
-        <div style="border-left:2px solid rgba(62,255,104,0.4);padding-left:1.25rem;">
-          <p style="font-size:.95rem;line-height:1.6;color:rgba(246,243,238,0.6);margin:0;font-style:italic;">"We have experts in TikTok, Instagram, Facebook, Reddit, LinkedIn, and YouTube that merge creativity with data to connect you with your customers — on the platforms they actually use."</p>
+  <section class="pm-page-cta">
+    <div class="weflair-new-cta-wrap" id="audit">
+      <div class="container" style="position:relative; z-index: 5;">
+        <div class="weflair-new-cta">
+          <div class="weflair-new-cta__bg"></div>
+          <div class="weflair-new-cta__glow"></div>
+          <div class="weflair-new-cta__grid">
+            <div class="weflair-new-cta__left">
+              <div class="weflair-new-cta__label">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Next Step
+              </div>
+              <h2 class="weflair-new-cta__h2">Let us find the leaks in your paid media engine.</h2>
+              <p class="weflair-new-cta__p">Book a free paid media audit. We will review your account structure, tracking, creative, landing pages, and budget allocation so you leave with clear next steps, not a vague sales pitch.</p>
+              <div class="weflair-new-cta__features">
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tracking review</div>
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Creative diagnosis</div>
+                <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Budget priorities</div>
+              </div>
+              <div class="pm-cta-boost">
+                <div class="pm-cta-boost__item"><strong style="color:#f6f3ee;display:block;margin-bottom:.25rem;">Account waste map</strong>Where budget is leaking across targeting, search terms, placements, and creative.</div>
+                <div class="pm-cta-boost__item"><strong style="color:#f6f3ee;display:block;margin-bottom:.25rem;">90-day priority plan</strong>What to fix first, what to test next, and what deserves more spend.</div>
+              </div>
+            </div>
+            <div class="weflair-new-cta__right">
+              <a href="/contact.html" class="weflair-new-cta__btn">
+                <span class="weflair-new-cta__btn-text">Get my paid media audit</span>
+                <span class="weflair-new-cta__btn-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Other Services: Alternating Hover Cards -->
-  <style>
-    .pm-other { border-top:1px solid rgba(246,243,238,.06); }
-    .pm-other__label { text-align:center; padding:3rem 2rem 1.5rem; font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(246,243,238,.35); }
-    .pm-other-card { display:flex; align-items:stretch; border-top:1px solid rgba(246,243,238,.06); overflow:hidden; min-height:9rem; cursor:pointer; transition:background .3s ease; text-decoration:none; }
-    .pm-other-card:hover { background:rgba(246,243,238,.03); }
-    .pm-other-card__num { flex-shrink:0; width:5rem; display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:700; letter-spacing:.08em; color:rgba(246,243,238,.2); border-right:1px solid rgba(246,243,238,.06); }
-    .pm-other-card--right .pm-other-card__num { border-right:none; border-left:1px solid rgba(246,243,238,.06); order:2; }
-    .pm-other-card__body { flex:1; padding:2rem 2.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
-    .pm-other-card--right .pm-other-card__body { flex-direction:row-reverse; }
-    .pm-other-card__title { font-size:clamp(1.1rem,2.2vw,1.6rem); font-weight:700; letter-spacing:-.03em; color:#f6f3ee; line-height:1.1; transition:color .25s ease; }
-    .pm-other-card:hover .pm-other-card__title { color:#3eff68; }
-    .pm-other-card__reveal { max-width:28rem; opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease; }
-    .pm-other-card:hover .pm-other-card__reveal { opacity:1; transform:translateY(0); }
-    .pm-other-card__desc { font-size:.9rem; line-height:1.55; color:rgba(246,243,238,.55); margin:0 0 .75rem; }
-    .pm-other-card__cta { font-size:.82rem; font-weight:700; letter-spacing:.02em; color:#3eff68; display:inline-flex; align-items:center; gap:.35rem; }
-    .pm-other-card__cta svg { transition:transform .2s ease; }
-    .pm-other-card:hover .pm-other-card__cta svg { transform:translateX(3px); }
-    @media(max-width:767px) {
-      .pm-other-card { flex-direction:column!important; min-height:auto; }
-      .pm-other-card__num { width:100%; height:2.5rem; border-right:none!important; border-left:none!important; border-bottom:1px solid rgba(246,243,238,.06); }
-      .pm-other-card--right .pm-other-card__num { order:0; }
-      .pm-other-card__body { flex-direction:column!important; align-items:flex-start; }
-      .pm-other-card__reveal { opacity:1; transform:none; max-width:100%; }
-    }
-  </style>
-  <section class="pm-other">
-    <p class="pm-other__label">Explore Other Services</p>
-
-    <a href="../services/outbound-gtm.html" class="pm-other-card">
-      <div class="pm-other-card__num">01</div>
-      <div class="pm-other-card__body">
-        <h3 class="pm-other-card__title">Outbound &amp; GTM Engineering</h3>
-        <div class="pm-other-card__reveal">
-          <p class="pm-other-card__desc">Outbound systems built to generate real sales conversations at scale — not spray-and-pray sequences.</p>
-          <span class="pm-other-card__cta">Explore Outbound &amp; GTM <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <a href="../services/revops-ai.html" class="pm-other-card pm-other-card--right">
-      <div class="pm-other-card__num">02</div>
-      <div class="pm-other-card__body">
-        <h3 class="pm-other-card__title">Revenue Operations &amp; AI</h3>
-        <div class="pm-other-card__reveal">
-          <p class="pm-other-card__desc">Connected CRM, routing, and AI workflows that turn your stack into a machine that actually closes.</p>
-          <span class="pm-other-card__cta">Explore RevOps &amp; AI <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <a href="../services/content-seo.html" class="pm-other-card">
-      <div class="pm-other-card__num">03</div>
-      <div class="pm-other-card__body">
-        <h3 class="pm-other-card__title">Content &amp; AEO</h3>
-        <div class="pm-other-card__reveal">
-          <p class="pm-other-card__desc">Content built for humans, search engines, and AI — that actually ranks, answers, and converts.</p>
-          <span class="pm-other-card__cta">Explore Content &amp; AEO <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <a href="../services/cro-performance-design.html" class="pm-other-card pm-other-card--right">
-      <div class="pm-other-card__num">04</div>
-      <div class="pm-other-card__body">
-        <h3 class="pm-other-card__title">Performance Design &amp; CRO</h3>
-        <div class="pm-other-card__reveal">
-          <p class="pm-other-card__desc">Pages and funnels engineered to convert more of the traffic you're already paying for.</p>
-          <span class="pm-other-card__cta">Explore Performance Design <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-        </div>
-      </div>
-    </a>
-  </section>
-
-  <section class="footer weflair-footer">
+<section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">
         <div class="container" style="position:relative; z-index: 5;">
           <div class="weflair-new-cta">
@@ -530,19 +537,19 @@
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>

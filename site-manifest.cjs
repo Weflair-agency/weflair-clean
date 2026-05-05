@@ -41,7 +41,7 @@ module.exports = {
       key: "b2b-demand-generation",
       title: "B2B Demand Generation",
       href: "/expertise/b2b-demand-generation.html",
-      description: "A B2B demand generation page skeleton ready for the next content pass.",
+      description: "Full-funnel B2B demand generation systems for teams that need qualified pipeline from paid media, outbound, content, and CRM reporting.",
     },
     {
       key: "b2b-saas",
@@ -247,7 +247,7 @@ module.exports = {
       path: "/expertise/b2b-demand-generation.html",
       title: "B2B Demand Generation | WeFlair",
       description:
-        "A launch-ready skeleton for WeFlair's B2B demand generation expertise page.",
+        "Full-funnel B2B demand generation for B2B teams that need qualified pipeline, cleaner attribution, and faster campaign learning.",
       pageType: "expertise",
       schemaType: "Service",
       group: "Expertise",
@@ -325,6 +325,18 @@ module.exports = {
       group: "Resources",
       label: "Guides & Playbooks",
       includeInXml: true,
+    },
+    {
+      file: "resources/playbook.html",
+      path: "/resources/playbook.html",
+        title: "Get a Growth Playbook | WeFlair",
+        description:
+          "Request a selected WeFlair growth playbook or the full playbook resource pack.",
+      pageType: "resource",
+      schemaType: "WebPage",
+      group: "Resources",
+        label: "Get a Growth Playbook",
+      includeInXml: false,
     },
     {
       file: "resources/ai-seo-playbook.html",
@@ -485,12 +497,6 @@ module.exports = {
       from: "/tools.html",
       to: "/resource-pack.html",
       title: "Resource Pack | WeFlair",
-    },
-    {
-      file: "resources/playbook.html",
-      from: "/resources/playbook.html",
-      to: "/resources/playbooks.html",
-      title: "Playbooks | WeFlair",
     },
     {
       file: "resources/guides.html",

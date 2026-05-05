@@ -1,76 +1,23 @@
 (() => {
-  const STORAGE_KEY = 'weflair-theme';
-  const THEME_META_COLORS = {
-    dark: '#151515',
-    light: '#f4f1ea',
-  };
+  const THEME_META_COLOR = '#151515';
   const NAV_BREAKPOINT = '(max-width: 991px)';
   const NAV_ACTIVE = 'active';
   const NAV_INACTIVE = 'not-active';
   const NAV_EVENT = 'weflair:navigation';
 
-  const applyTheme = (theme) => {
+  const applyTheme = () => {
     if (!document.body) return;
-    document.body.setAttribute('data-theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
     const themeMeta = document.querySelector('meta[name="theme-color"]');
     if (themeMeta) {
-      themeMeta.setAttribute('content', THEME_META_COLORS[theme] || THEME_META_COLORS.dark);
+      themeMeta.setAttribute('content', THEME_META_COLOR);
     }
-    document
-      .querySelectorAll('[data-theme-toggle]')
-      .forEach((button) => {
-        button.setAttribute('aria-pressed', String(theme === 'light'));
-        button.setAttribute(
-          'aria-label',
-          theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-        );
-        button.dataset.codexThemeMounted = 'true';
-      });
     document.dispatchEvent(
       new CustomEvent('weflair:themechange', {
-        detail: { theme },
+        detail: { theme: 'dark' },
       })
     );
-  };
-
-  const getStoredTheme = () => {
-    try {
-      return localStorage.getItem(STORAGE_KEY);
-    } catch (_error) {
-      return null;
-    }
-  };
-
-  const persistTheme = (theme) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, theme);
-    } catch (_error) {
-      // Ignore storage issues in static preview mode.
-    }
-  };
-
-  const getNextTheme = () =>
-    document.body?.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-
-  const mountThemeToggle = () => {
-    if (document.documentElement.dataset.codexThemeDelegated !== 'true') {
-      document.documentElement.dataset.codexThemeDelegated = 'true';
-      document.addEventListener(
-        'click',
-        (event) => {
-          const button = event.target.closest?.('[data-theme-toggle]');
-          if (!button) return;
-          const nextTheme = getNextTheme();
-          applyTheme(nextTheme);
-          persistTheme(nextTheme);
-        },
-        true
-      );
-    }
-    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
-      button.dataset.codexThemeMounted = 'true';
-    });
   };
 
   const collapseAuditWidget = () => {
@@ -240,9 +187,7 @@
   };
 
   const boot = () => {
-    const theme = getStoredTheme() || document.body?.getAttribute('data-theme') || 'dark';
-    applyTheme(theme);
-    mountThemeToggle();
+    applyTheme();
     mountNavigation();
   };
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8" />
@@ -12,29 +12,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WeFlair | Growth Marketing Systems for Ambitious Teams" />
   <meta name="twitter:description" content="WeFlair builds paid media, GTM systems, performance design, and AI search engines that turn growth into a working system." />
-  <meta name="theme-color" content="#f4f1ea" />
-  <script>
-    (function () {
-      try {
-        var storedTheme = localStorage.getItem("weflair-theme");
-        if (storedTheme !== "light" && storedTheme !== "dark") return;
-        document.documentElement.setAttribute("data-theme", storedTheme);
-        var themeMeta = document.querySelector('meta[name="theme-color"]');
-        if (themeMeta) {
-          themeMeta.setAttribute("content", storedTheme === "light" ? "#f4f1ea" : "#151515");
-        }
-      } catch (_error) {
-        // Ignore storage failures before hydration.
-      }
-    })();
-  </script>
+  <meta name="theme-color" content="#151515" />
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/foundation-styles.css" />
   <link rel="stylesheet" href="/foundation-slater.css" />
-  <link rel="stylesheet" href="/weflair-hero.css?v=20260407-31" />
+  <link rel="stylesheet" href="/weflair-hero.css?v=20260504-logo-critical-01" />
   <link rel="stylesheet" href="/services-assessment.css?v=20260430-03" />
-  <script src="/foundation.js" defer></script>
-  <script src="/weflair-hero.js?v=20260430-services-assessment-01" defer></script>
+  <script src="/foundation.js?v=20260504-dark-01" defer></script>
+  <script src="/weflair-hero.js?v=20260504-home-stable-01" defer></script>
   <script src="/services-assessment.js?v=20260430-03" defer></script>
   <link rel="stylesheet" href="/weflair-global.css" />
   <style id="weflair-cal-widget-overrides">
@@ -457,7 +442,8 @@
     }
   </style>
   <style id="weflair-handoff-css">
-.weflair-handoff{--handoff-accent:#6f83ff;--handoff-accent-rgb:111,131,255;padding:clamp(2rem,3.5vw,3rem) 0;position:relative;overflow:clip}
+.weflair-handoff{--handoff-accent:#6f83ff;--handoff-accent-rgb:111,131,255;padding:clamp(2rem,3.5vw,3rem) 0;position:relative;overflow-x:clip}
+.weflair-handoff .container{height:auto}
 .weflair-handoff[data-handoff-active="1"]{--handoff-accent:#3eff68;--handoff-accent-rgb:62,255,104}
 .weflair-handoff[data-handoff-active="2"]{--handoff-accent:#f6b94b;--handoff-accent-rgb:246,185,75}
 .weflair-handoff[data-handoff-active="3"]{--handoff-accent:#5eead4;--handoff-accent-rgb:94,234,212}
@@ -466,7 +452,7 @@
 .weflair-handoff .eyebrow{justify-content:flex-start}
 .weflair-handoff__title{margin:0;max-width:15.5ch;font-size:clamp(1.8rem,3vw,2.6rem);line-height:.96;letter-spacing:-.05em;text-wrap:balance}
 .weflair-handoff__lede{display:none}
-.weflair-handoff__track{position:relative;height:180vh}
+.weflair-handoff__track{position:relative;height:400vh}
 .weflair-handoff__sticky{position:sticky;top:clamp(4.5rem,6vw,5.5rem);display:grid;gap:.7rem}
 /* Tabs: vertical sidebar on the left */
 .weflair-handoff__tabs{display:grid;grid-template-columns:1fr;gap:0}
@@ -551,9 +537,11 @@
   <style id="weflair-handoff-overrides">
 .weflair-handoff{padding:clamp(1.9rem,3.5vw,3rem) 0}
 .weflair-handoff__intro.weflair-section__head{gap:1rem;width:min(100%,76rem);max-width:none;margin:0 auto 1rem;padding-left:0}
-.weflair-handoff__intro .h3{max-width:22ch;margin:0;font-size:clamp(1.85rem,2.8vw,2.65rem);line-height:1.08;letter-spacing:-.04em}
+.weflair-handoff__intro .h3{max-width:22ch;margin:0;font-size:clamp(1.85rem,2.8vw,2.65rem);line-height:1.18;letter-spacing:-.03em}
 .weflair-handoff__lede.weflair-section__body{display:block;max-width:38rem;margin:0;color:rgba(246,243,238,.74);font-size:1rem;line-height:1.55}
-.weflair-handoff__track,.weflair-handoff__sticky{position:relative;height:auto;top:auto;display:grid;gap:0}
+.weflair-handoff__track{position:relative;top:auto}
+.weflair-handoff__sticky{position:relative;height:auto;top:auto;display:grid;gap:0;align-self:start}
+@media(min-width:992px){.weflair-handoff__track{height:400vh}}
 .weflair-handoff__panel{position:relative;z-index:1;grid-template-columns:1fr;gap:.85rem;width:min(100%,76rem);margin:0 auto;align-items:stretch}
 .weflair-handoff__tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;padding-top:0;align-self:auto}
 .weflair-handoff__tab{border:none;border-radius:.95rem;padding:1rem 1rem;font-size:.84rem;font-weight:700;letter-spacing:.08em;text-transform:none;color:rgba(246,243,238,.58);background:rgba(15,15,15,.72);border:1px solid rgba(246,243,238,.08);transition:color .22s,border-color .22s,background .22s,transform .22s}
@@ -568,7 +556,7 @@
 .weflair-handoff__pane-icon,.weflair-handoff__proof,.weflair-handoff__right,.weflair-handoff__visuals,.weflair-handoff__sidebar-visual{display:none!important}
 .weflair-handoff__pane-copy{display:grid;align-content:start;gap:.68rem;min-width:0}
 .weflair-handoff__eyebrow{display:inline-flex;align-items:center;margin:0;color:var(--handoff-accent);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.weflair-handoff__heading{margin:0;max-width:13ch;font-size:clamp(1.55rem,2.4vw,2.45rem);line-height:.96;letter-spacing:-.06em;text-wrap:balance}
+.weflair-handoff__heading{margin:0;max-width:13ch;font-size:clamp(1.55rem,2.4vw,2.45rem);line-height:1.12;letter-spacing:-.04em;text-wrap:balance}
 .weflair-handoff__copy{margin:0;max-width:30rem;color:rgba(246,243,238,.7);font-size:.92rem;line-height:1.5}
 .weflair-handoff__includes{color:rgba(246,243,238,.46);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:.15rem}
 .weflair-handoff__list{display:grid;gap:.55rem;margin:0;padding:0;list-style:none}
@@ -3036,53 +3024,6 @@
       <div class="calc-header-padding-height"></div>
       <div data-navigation-toggle="close" class="nav-fade"></div>
       <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="/index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="/resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="/resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="/resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="/resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="/resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
-      <div class="theme-switch"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 64 128" fill="none"
-          class="theme-switch__svg">
-          <path
-            d="M64 8C64 3.58172 60.4183 0 56 0H40C35.5817 0 32 3.58172 32 8V32C32 36.4183 28.4183 40 24 40H8C3.58172 40 0 43.5817 0 48V80C0 84.4183 3.58172 88 8 88H24C28.4183 88 32 91.5817 32 96V120C32 124.418 35.5817 128 40 128H56C60.4183 128 64 124.418 64 120V8Z"
-            fill="currentColor"></path>
-        </svg>
-        <div class="theme-switch__wrap">
-          <div class="theme-switch__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"
-              fill="none" class="theme-switch__icon-svg">
-              <path
-                d="M9.99967 1.82001C10.0345 1.82 10.069 1.82221 10.1032 1.82655H10.3214C10.6578 1.82655 10.9599 2.03245 11.0829 2.34555C11.2059 2.65864 11.1248 3.01512 10.8783 3.24411C9.96741 4.09055 9.38187 5.22945 9.22353 6.46283C9.06519 7.6962 9.34406 8.94607 10.0117 9.99517C10.6792 11.0443 11.6934 11.8263 12.8777 12.2052C14.062 12.5842 15.3417 12.5361 16.4943 12.0695C16.8001 11.9456 17.1504 12.0176 17.3826 12.2519C17.6148 12.4863 17.6836 12.8372 17.5569 13.1418C16.9885 14.5095 16.0595 15.6973 14.8689 16.5784C13.6784 17.4595 12.271 18.001 10.7969 18.1449C9.32273 18.2889 7.83718 18.03 6.49866 17.3958C5.16014 16.7617 4.01886 15.7761 3.19657 14.5442C2.37427 13.3123 1.90181 11.8803 1.82956 10.4009C1.75732 8.92151 2.08802 7.45028 2.78637 6.14411C3.48472 4.83794 4.52454 3.74585 5.79491 2.98431C7.06527 2.22277 8.51853 1.82036 9.99967 1.82001Z"
-                fill="currentColor"></path>
-            </svg></div>
-          <div class="theme-switch__icon is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-              viewBox="0 0 20 20" fill="none" class="theme-switch__icon-svg">
-              <path
-                d="M9.99935 15.833C10.2035 15.833 10.4005 15.908 10.553 16.0436C10.7055 16.1792 10.803 16.3661 10.8268 16.5688L10.8327 16.6663V17.4997C10.8324 17.7121 10.7511 17.9164 10.6053 18.0708C10.4595 18.2253 10.2602 18.3182 10.0482 18.3307C9.83615 18.3431 9.62737 18.2741 9.46449 18.1378C9.30161 18.0015 9.19694 17.8081 9.17185 17.5972L9.16602 17.4997V16.6663C9.16602 16.4453 9.25381 16.2334 9.41009 16.0771C9.56637 15.9208 9.77834 15.833 9.99935 15.833Z"
-                fill="currentColor"></path>
-              <path
-                d="M15.2606 14.0906L15.3389 14.1598L15.9223 14.7431C16.0717 14.8931 16.1585 15.0943 16.165 15.306C16.1714 15.5176 16.0971 15.7237 15.9571 15.8825C15.817 16.0413 15.6218 16.1409 15.411 16.161C15.2003 16.1811 14.9898 16.1202 14.8223 15.9906L14.7439 15.9215L14.1606 15.3381C14.0168 15.1946 13.9304 15.0034 13.9177 14.8006C13.9049 14.5979 13.9667 14.3974 14.0914 14.237C14.2161 14.0765 14.3951 13.9672 14.5948 13.9295C14.7944 13.8918 15.001 13.9284 15.1756 14.0323L15.2606 14.0906Z"
-                fill="currentColor"></path>
-              <path
-                d="M5.84086 14.16C5.98434 14.3035 6.07053 14.4944 6.08327 14.6969C6.096 14.8995 6.0344 15.0997 5.91003 15.26L5.84086 15.3383L5.25753 15.9217C5.10756 16.0711 4.90633 16.1579 4.69471 16.1644C4.48308 16.1708 4.27693 16.0965 4.11813 15.9565C3.95932 15.8164 3.85977 15.6212 3.8397 15.4104C3.81962 15.1997 3.88052 14.9892 4.01003 14.8217L4.07919 14.7433L4.66253 14.16C4.8188 14.0038 5.03072 13.916 5.25169 13.916C5.47266 13.916 5.68459 14.0038 5.84086 14.16Z"
-                fill="currentColor"></path>
-              <path
-                d="M3.33371 9.16699C3.54611 9.16723 3.75041 9.24856 3.90485 9.39437C4.0593 9.54017 4.15224 9.73945 4.16469 9.95149C4.17714 10.1635 4.10815 10.3723 3.97182 10.5352C3.8355 10.6981 3.64213 10.8027 3.43121 10.8278L3.33371 10.8337H2.50038C2.28798 10.8334 2.08369 10.7521 1.92924 10.6063C1.77479 10.4605 1.68185 10.2612 1.6694 10.0492C1.65695 9.83713 1.72594 9.62834 1.86227 9.46547C1.99859 9.30259 2.19197 9.19791 2.40288 9.17283L2.50038 9.16699H3.33371Z"
-                fill="currentColor"></path>
-              <path
-                d="M17.5017 9.16699C17.7141 9.16723 17.9184 9.24856 18.0728 9.39437C18.2273 9.54017 18.3202 9.73945 18.3327 9.95149C18.3451 10.1635 18.2761 10.3723 18.1398 10.5352C18.0035 10.6981 17.8101 10.8027 17.5992 10.8278L17.5017 10.8337H16.6683C16.4559 10.8334 16.2517 10.7521 16.0972 10.6063C15.9428 10.4605 15.8498 10.2612 15.8374 10.0492C15.8249 9.83713 15.8939 9.62834 16.0302 9.46547C16.1666 9.30259 16.3599 9.19791 16.5708 9.17283L16.6683 9.16699H17.5017Z"
-                fill="currentColor"></path>
-              <path
-                d="M5.17931 4.00935L5.25765 4.07852L5.84098 4.66185C5.99044 4.81181 6.07721 5.01304 6.08367 5.22467C6.09013 5.43629 6.0158 5.64244 5.87577 5.80125C5.73575 5.96005 5.54052 6.0596 5.32975 6.07968C5.11898 6.09976 4.90847 6.03886 4.74098 5.90935L4.66265 5.84018L4.07931 5.25685C3.93606 5.11325 3.85009 4.92233 3.83754 4.71988C3.82498 4.51742 3.8867 4.31735 4.01112 4.15714C4.13554 3.99694 4.31411 3.88762 4.51337 3.84968C4.71263 3.81173 4.91889 3.84776 5.09348 3.95102L5.17931 4.00935Z"
-                fill="currentColor"></path>
-              <path
-                d="M15.9229 4.07895C16.0664 4.22244 16.1526 4.41336 16.1653 4.61588C16.178 4.8184 16.1164 5.01861 15.9921 5.17895L15.9229 5.25728L15.3396 5.84062C15.1896 5.99007 14.9884 6.07684 14.7767 6.08331C14.5651 6.08977 14.359 6.01544 14.2002 5.87541C14.0414 5.73538 13.9418 5.54016 13.9217 5.32939C13.9016 5.11862 13.9625 4.90811 14.0921 4.74062L14.1612 4.66228L14.7446 4.07895C14.9008 3.92272 15.1128 3.83496 15.3337 3.83496C15.5547 3.83496 15.7666 3.92272 15.9229 4.07895Z"
-                fill="currentColor"></path>
-              <path
-                d="M9.99935 1.66699C10.2035 1.66702 10.4005 1.74196 10.553 1.87759C10.7055 2.01322 10.803 2.20012 10.8268 2.40283L10.8327 2.50033V3.33366C10.8324 3.54606 10.7511 3.75035 10.6053 3.9048C10.4595 4.05925 10.2602 4.15219 10.0482 4.16464C9.83615 4.17708 9.62737 4.1081 9.46449 3.97177C9.30161 3.83545 9.19694 3.64207 9.17185 3.43116L9.16602 3.33366V2.50033C9.16602 2.27931 9.25381 2.06735 9.41009 1.91107C9.56637 1.75479 9.77834 1.66699 9.99935 1.66699Z"
-                fill="currentColor"></path>
-              <path
-                d="M10.0007 5.83301C10.817 5.83296 11.6155 6.07275 12.2968 6.52259C12.978 6.97243 13.5122 7.6125 13.8328 8.36331C14.1534 9.11411 14.2464 9.94256 14.1002 10.7458C13.954 11.549 13.5751 12.2915 13.0105 12.8812C12.4459 13.4709 11.7205 13.8817 10.9244 14.0627C10.1283 14.2437 9.29663 14.1868 8.5326 13.8991C7.76857 13.6114 7.10589 13.1056 6.62687 12.4445C6.14784 11.7834 5.87358 10.9961 5.83815 10.1805L5.83398 9.99967L5.83815 9.81884C5.88475 8.74613 6.34366 7.73282 7.11917 6.99022C7.89468 6.24763 8.92693 5.83307 10.0007 5.83301Z"
-                fill="currentColor"></path>
-            </svg></div>
-        </div><button data-theme-toggle="" class="theme-switch__button" aria-pressed="false"
-          aria-label="Switch to light theme">Switch Theme</button>
-      </div>
-      <div class="noise is--small"></div>
     </div>
     <div data-scroll-container="" class="main-wrap">
       <section class="home-header" id="hero">
@@ -3146,607 +3087,15 @@
                 </div>
               </div>
             </div>
-            <div data-transition-animation="fade-y" class="home-header__col-card weflair-hero-widget-wrap"
-              style="opacity: 1; visibility: visible; transform: none;">
-              <div class="weflair-audit-widget" id="audit-widget"><button type="button"
-                  class="weflair-audit-widget__launcher" data-audit-toggle="" aria-expanded="false"
-                  aria-controls="weflair-audit-panel">
-                  <div class="arrow">
-                    <div class="arrow__bg"></div>
-                    <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                        viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square"
-                          stroke-linejoin="round"></path>
-                        <path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square"
-                          stroke-linejoin="round"></path>
-                      </svg></div>
-                    <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                        fill="none" class="arrow__svg">
-                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square"
-                          stroke-linejoin="round"></path>
-                        <path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square"
-                          stroke-linejoin="round"></path>
-                      </svg></div>
-                  </div>
-                </button>
-                <div class="weflair-audit-widget__panel" id="weflair-audit-panel">
-                  <div class="weflair-audit-widget__head">
-                    <div class="weflair-audit-widget__profile">
-                      <div class="weflair-audit-widget__avatar">SM</div>
-                      <div class="weflair-audit-widget__meta"><span class="weflair-audit-widget__name">Sami
-                          Madi</span><span class="weflair-audit-widget__role">Growth audit, 30 min</span></div>
-                    </div><button type="button" class="weflair-audit-widget__close" data-audit-close=""
-                      aria-label="Close growth audit card">x</button>
-                  </div>
-                  <h3 class="weflair-audit-widget__title">Request a growth audit</h3>
-                  <p class="weflair-audit-widget__body">Book a 30 min session to see how we would engineer a stronger
-                    growth system around your goals, channels, and workflow.</p>
-                  <div class="weflair-audit-widget__slots"><strong>Only a few spots are open.</strong><span
-                      class="weflair-audit-widget__countdown">This week</span></div>
-                  <div class="weflair-audit-widget__dates">
-                    <div class="weflair-audit-widget__date is-active"><span>Tue</span><strong>08</strong></div>
-                    <div class="weflair-audit-widget__date"><span>Wed</span><strong>09</strong></div>
-                    <div class="weflair-audit-widget__date"><span>Thu</span><strong>10</strong></div>
-                    <div class="weflair-audit-widget__date"><span>Fri</span><strong>11</strong></div>
-                    <div class="weflair-audit-widget__date"><span>Mon</span><strong>14</strong></div>
-                  </div>
-                  <div class="weflair-audit-widget__cta"><a data-hover="" data-btn-theme="primary" href="#audit"
-                      class="btn w-inline-block weflair-btn weflair-btn--primary">
-                      <div class="btn__bg"></div>
-                      <div class="btn__text"><span class="btn__span">Request a growth audit</span></div>
-                      <div class="arrow">
-                        <div class="arrow__bg"></div>
-                        <div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                            viewBox="0 0 24 24" fill="none" class="arrow__svg">
-                            <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                            <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                            <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                          </svg></div>
-                        <div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"
-                            fill="none" class="arrow__svg">
-                            <path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                            <path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                            <path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em"
-                              stroke-linecap="square" stroke-linejoin="round"></path>
-                          </svg></div>
-                      </div>
-                    </a></div>
-                  <div class="weflair-audit-widget__foot">One point of view. Clear next steps. No hard sell.</div>
-                </div>
-              </div>
-            </div>
+            
           </div>
           <div class="border-bottom"></div>
         </div>
     </div>
     <div class="weflair-hero-glow"></div>
     </section>
-    <section id="logos" class="home-results weflair-section">
-      <div class="container">
-        <div class="wf-logo-rail wf-logo-rail--partners">
-          <div class="wf-logo-rail__inner">
-            <div class="wf-logo-rail__shell" data-logo-slider>
-              <div class="wf-logo-rail__viewport" data-logo-slider-viewport tabindex="0" aria-label="Client logo slider">
-                <div class="wf-logo-rail__slide is-six">
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-4.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-5.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-6.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-7.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-8.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-9.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                </div>
+    <section id="logos" class="home-results weflair-section"><div class="container"><div class="weflair-logos-shell"><div class="weflair-section__head weflair-logos-head"><h2 class="h3">Sales and marketing leaders in ambitious companies worldwide trust WeFlair.</h2></div><div class="weflair-logos-rail"><div class="weflair-logo-stack"><div class="weflair-logo-marquee"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.2;"><img src="./logo-ci-4.svg" alt="Farnell" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:104%;--logo-height:88%;--logo-scale:.98;"><img src="/brand-assets/client-logos/clean/cellpoint-digital-official.svg" alt="CellPoint Digital" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:176%;--logo-height:132%;--logo-scale:1.3;"><img src="./logo-ci-26.svg" alt="Royal Mint" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:168%;--logo-height:132%;--logo-scale:1.28;"><img src="./logo-ci-19.svg" alt="Santander" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:184%;--logo-height:136%;--logo-scale:1.34;"><img src="./logo-ci-24.svg" alt="The Co-operative Bank" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square" tabindex="0" style="--logo-width:150%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-5.svg" alt="CPC" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:136%;--logo-height:104%;--logo-scale:1.16;"><img src="/brand-assets/client-logos/clean/emax.png" alt="Emax" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:98%;--logo-height:72%;--logo-scale:.9;"><img src="/brand-assets/client-logos/clean/hq-software-transparent.png" alt="HQ Software" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:112%;--logo-height:82%;--logo-scale:.88;"><img src="/brand-assets/client-logos/clean/mawsim-transparent.png" alt="Mawsim" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square is-lighten" tabindex="0" style="--logo-width:82%;--logo-height:80%;--logo-scale:.76;"><img src="/brand-assets/client-logos/clean/omnicore-transparent.png" alt="Omnicore" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:176%;--logo-height:132%;--logo-scale:1.3;"><img src="./logo-ci-22.svg" alt="Merna Logistics" loading="eager" decoding="async"></span></span></span></div><div class="weflair-logo-marquee__group" aria-hidden="true"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.2;"><img src="./logo-ci-4.svg" alt="Farnell" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:104%;--logo-height:88%;--logo-scale:.98;"><img src="/brand-assets/client-logos/clean/cellpoint-digital-official.svg" alt="CellPoint Digital" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:176%;--logo-height:132%;--logo-scale:1.3;"><img src="./logo-ci-26.svg" alt="Royal Mint" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:168%;--logo-height:132%;--logo-scale:1.28;"><img src="./logo-ci-19.svg" alt="Santander" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:184%;--logo-height:136%;--logo-scale:1.34;"><img src="./logo-ci-24.svg" alt="The Co-operative Bank" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square" tabindex="0" style="--logo-width:150%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-5.svg" alt="CPC" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:136%;--logo-height:104%;--logo-scale:1.16;"><img src="/brand-assets/client-logos/clean/emax.png" alt="Emax" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:98%;--logo-height:72%;--logo-scale:.9;"><img src="/brand-assets/client-logos/clean/hq-software-transparent.png" alt="HQ Software" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:112%;--logo-height:82%;--logo-scale:.88;"><img src="/brand-assets/client-logos/clean/mawsim-transparent.png" alt="Mawsim" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square is-lighten" tabindex="0" style="--logo-width:82%;--logo-height:80%;--logo-scale:.76;"><img src="/brand-assets/client-logos/clean/omnicore-transparent.png" alt="Omnicore" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:176%;--logo-height:132%;--logo-scale:1.3;"><img src="./logo-ci-22.svg" alt="Merna Logistics" loading="eager" decoding="async"></span></span></span></div></div></div><div class="weflair-logo-marquee is-reverse"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:166%;--logo-height:124%;--logo-scale:1.24;"><img src="./logo-ci-9.svg" alt="VIP Vaping" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:154%;--logo-height:118%;--logo-scale:1.08;"><img src="./logo-ci-6.svg" alt="Simply Be" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:176%;--logo-height:128%;--logo-scale:1.32;"><img src="./logo-ci-11.svg" alt="Yours" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:158%;--logo-height:124%;--logo-scale:1.16;"><img src="./logo-ci-12.svg" alt="Pink Boutique" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:158%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-21.svg" alt="Notcutts" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:96%;--logo-height:82%;--logo-scale:.94;"><img src="/brand-assets/client-logos/travelsphere.svg" alt="Travelsphere" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:174%;--logo-height:132%;--logo-scale:1.28;"><img src="./logo-ci-15.svg" alt="The Fragrance Shop" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.16;"><img src="./logo-ci-25.svg" alt="Focus DIY" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:166%;--logo-height:128%;--logo-scale:1.24;"><img src="./logo-ci-20.svg" alt="Jacamo" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:138%;--logo-height:102%;--logo-scale:1.04;"><img src="./logo-ci-17.svg" alt="Figleaves" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:172%;--logo-height:132%;--logo-scale:1.34;"><img src="./logo-ci-18.svg" alt="Jon Richard" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:128%;--logo-height:94%;--logo-scale:.96;--logo-y:2%;"><img src="/brand-assets/client-logos/clean/harrier-horizontal-white-tight.png" alt="Harrier Trail Running" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:178%;--logo-height:136%;--logo-scale:1.34;"><img src="./logo-ci-7.svg" alt="The Conran Shop" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-8.svg" alt="TOFS" loading="eager" decoding="async"></span></span></span></div><div class="weflair-logo-marquee__group" aria-hidden="true"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:166%;--logo-height:124%;--logo-scale:1.24;"><img src="./logo-ci-9.svg" alt="VIP Vaping" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:154%;--logo-height:118%;--logo-scale:1.08;"><img src="./logo-ci-6.svg" alt="Simply Be" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:176%;--logo-height:128%;--logo-scale:1.32;"><img src="./logo-ci-11.svg" alt="Yours" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:158%;--logo-height:124%;--logo-scale:1.16;"><img src="./logo-ci-12.svg" alt="Pink Boutique" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:158%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-21.svg" alt="Notcutts" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:96%;--logo-height:82%;--logo-scale:.94;"><img src="/brand-assets/client-logos/travelsphere.svg" alt="Travelsphere" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:174%;--logo-height:132%;--logo-scale:1.28;"><img src="./logo-ci-15.svg" alt="The Fragrance Shop" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.16;"><img src="./logo-ci-25.svg" alt="Focus DIY" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:166%;--logo-height:128%;--logo-scale:1.24;"><img src="./logo-ci-20.svg" alt="Jacamo" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:138%;--logo-height:102%;--logo-scale:1.04;"><img src="./logo-ci-17.svg" alt="Figleaves" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:172%;--logo-height:132%;--logo-scale:1.34;"><img src="./logo-ci-18.svg" alt="Jon Richard" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:128%;--logo-height:94%;--logo-scale:.96;--logo-y:2%;"><img src="/brand-assets/client-logos/clean/harrier-horizontal-white-tight.png" alt="Harrier Trail Running" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:178%;--logo-height:136%;--logo-scale:1.34;"><img src="./logo-ci-7.svg" alt="The Conran Shop" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:162%;--logo-height:124%;--logo-scale:1.18;"><img src="./logo-ci-8.svg" alt="TOFS" loading="eager" decoding="async"></span></span></span></div></div></div><div class="weflair-logo-marquee"><div class="weflair-logo-marquee__track"><div class="weflair-logo-marquee__group"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square" tabindex="0" style="--logo-width:86%;--logo-height:86%;--logo-scale:.8;"><img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:92%;--logo-height:68%;--logo-scale:.76;"><img src="/brand-assets/client-logos/clean/mortoo-homes-tight.png" alt="Mortoo Homes" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:100%;--logo-height:70%;--logo-scale:.88;"><img src="/brand-assets/client-logos/clean/hopo-pace-original.png" alt="Hopo Pace" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:98%;--logo-height:72%;--logo-scale:.86;"><img src="/brand-assets/client-logos/clean/cuzinbeats-transparent.png" alt="CuzinBeats" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:112%;--logo-height:76%;--logo-scale:.98;"><img src="/brand-assets/client-logos/clean/molahin-transparent.png" alt="Molahin" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:118%;--logo-height:84%;--logo-scale:.96;"><img src="/brand-assets/client-logos/clean/tmr-original.webp" alt="TMR" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-boost" tabindex="0" style="--logo-width:222%;--logo-height:166%;--logo-scale:1.9;"><img src="./logo-ci-16.svg" alt="Vapoholic" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:210%;--logo-height:160%;--logo-scale:1.65;--logo-y:5%;"><img src="./logo-ci-13.svg" alt="British American Tobacco" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:160%;--logo-height:120%;--logo-scale:1.2;"><img src="./logo-ci-14.svg" alt="Fashion" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-boost" tabindex="0" style="--logo-width:190%;--logo-height:140%;--logo-scale:1.58;"><img src="./logo-ci-23.svg" alt="Aximon" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:196%;--logo-height:148%;--logo-scale:1.65;"><img src="./logo-ci-10.svg" alt="Ten Motives" loading="eager" decoding="async"></span></span></span></div><div class="weflair-logo-marquee__group" aria-hidden="true"><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-square" tabindex="0" style="--logo-width:86%;--logo-height:86%;--logo-scale:.8;"><img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-lighten" tabindex="0" style="--logo-width:92%;--logo-height:68%;--logo-scale:.76;"><img src="/brand-assets/client-logos/clean/mortoo-homes-tight.png" alt="Mortoo Homes" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:100%;--logo-height:70%;--logo-scale:.88;"><img src="/brand-assets/client-logos/clean/hopo-pace-original.png" alt="Hopo Pace" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:98%;--logo-height:72%;--logo-scale:.86;"><img src="/brand-assets/client-logos/clean/cuzinbeats-transparent.png" alt="CuzinBeats" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:112%;--logo-height:76%;--logo-scale:.98;"><img src="/brand-assets/client-logos/clean/molahin-transparent.png" alt="Molahin" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide" tabindex="0" style="--logo-width:118%;--logo-height:84%;--logo-scale:.96;"><img src="/brand-assets/client-logos/clean/tmr-original.webp" alt="TMR" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-wide is-boost" tabindex="0" style="--logo-width:222%;--logo-height:166%;--logo-scale:1.9;"><img src="./logo-ci-16.svg" alt="Vapoholic" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny" tabindex="0" style="--logo-width:210%;--logo-height:160%;--logo-scale:1.65;--logo-y:5%;"><img src="./logo-ci-13.svg" alt="British American Tobacco" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:160%;--logo-height:120%;--logo-scale:1.2;"><img src="./logo-ci-14.svg" alt="Fashion" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-boost" tabindex="0" style="--logo-width:190%;--logo-height:140%;--logo-scale:1.58;"><img src="./logo-ci-23.svg" alt="Aximon" loading="eager" decoding="async"></span></span></span><span class="weflair-logo-marquee__item"><span class="weflair-logo-pill"><span class="weflair-logo-mark is-tiny is-lighten" tabindex="0" style="--logo-width:196%;--logo-height:148%;--logo-scale:1.65;"><img src="./logo-ci-10.svg" alt="Ten Motives" loading="eager" decoding="async"></span></span></span></div></div></div></div></div></div></div></section>
 
-                <div class="wf-logo-rail__slide is-six">
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-10.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-11.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-12.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-13.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-14.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-15.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                </div>
-
-                <div class="wf-logo-rail__slide is-six">
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-16.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-17.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-18.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-19.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-20.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-21.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                </div>
-
-                <div class="wf-logo-rail__slide is-five">
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-22.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-23.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-24.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-25.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                  <figure class="wf-logo-card">
-                    <div class="wf-logo-card__media"><img src="/logo-ci-26.svg" alt="" loading="lazy" decoding="async"></div>
-                  </figure>
-                </div>
-              </div>
-              <div class="wf-logo-rail__dots" aria-label="Logo slider pagination">
-                <button type="button" class="wf-logo-rail__dot is-active" data-logo-dot aria-label="Go to logo slide 1" aria-current="true"></button>
-                <button type="button" class="wf-logo-rail__dot" data-logo-dot aria-label="Go to logo slide 2" aria-current="false"></button>
-                <button type="button" class="wf-logo-rail__dot" data-logo-dot aria-label="Go to logo slide 3" aria-current="false"></button>
-                <button type="button" class="wf-logo-rail__dot" data-logo-dot aria-label="Go to logo slide 4" aria-current="false"></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-      <style>
-        .wf-logo-rail {
-          padding: clamp(2.2rem, 4vw, 3.4rem) 0 clamp(2.8rem, 5vw, 4rem);
-        }
-
-        .wf-logo-rail__inner {
-          width: min(100%, 74rem);
-          margin: 0 auto;
-          display: grid;
-          gap: 1.25rem;
-        }
-
-        .wf-logo-rail__intro {
-          display: grid;
-          gap: 0.42rem;
-          justify-items: center;
-          text-align: center;
-        }
-
-        .wf-logo-rail__eyebrow {
-          margin: 0;
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: rgba(246, 243, 238, 0.48);
-        }
-
-        .wf-logo-rail__title {
-          margin: 0;
-          max-width: 24ch;
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: clamp(1.1rem, 2.1vw, 1.45rem);
-          font-weight: 700;
-          line-height: 1.08;
-          letter-spacing: -0.03em;
-          color: #f6f3ee;
-        }
-
-        .wf-logo-rail__shell {
-          position: relative;
-          padding: clamp(1rem, 2.4vw, 1.35rem);
-          border-radius: 1.35rem;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background:
-            radial-gradient(circle at 15% 20%, rgba(34, 197, 94, 0.08), transparent 24%),
-            linear-gradient(180deg, rgba(12, 14, 18, 0.94) 0%, rgba(11, 11, 11, 0.98) 100%);
-          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.32);
-          overflow: hidden;
-        }
-
-        .wf-logo-rail__viewport {
-          display: flex;
-          gap: 0;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-          scroll-behavior: smooth;
-        }
-
-        .wf-logo-rail__viewport::-webkit-scrollbar {
-          display: none;
-        }
-
-        .wf-logo-rail__slide {
-          flex: 0 0 100%;
-          min-width: 100%;
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 0.9rem;
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
-
-        .wf-logo-rail__slide--three {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .wf-logo-card {
-          min-height: 9.5rem;
-          margin: 0;
-          padding: 1rem 0.95rem;
-          border-radius: 1rem;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.97);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-          display: grid;
-          place-items: center;
-        }
-
-        .wf-logo-card__media {
-          width: 100%;
-          height: clamp(4.5rem, 8vw, 5.8rem);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .wf-logo-card__media img {
-          width: auto;
-          max-width: 100%;
-          max-height: 100%;
-          display: block;
-          object-fit: contain;
-        }
-
-        .wf-logo-card--tall .wf-logo-card__media {
-          height: clamp(5.2rem, 9vw, 6.4rem);
-        }
-
-        .wf-logo-rail__dots {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          margin-top: 1rem;
-        }
-
-        .wf-logo-rail__dot {
-          width: 0.6rem;
-          height: 0.6rem;
-          padding: 0;
-          border: none;
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.18);
-          transition: transform 0.22s ease, background-color 0.22s ease, opacity 0.22s ease;
-          opacity: 0.9;
-          cursor: pointer;
-        }
-
-        .wf-logo-rail__dot.is-active {
-          background: #22c55e;
-          transform: scale(1.12);
-          opacity: 1;
-        }
-
-        .wf-logo-rail__dot:focus-visible {
-          outline: 2px solid #22c55e;
-          outline-offset: 3px;
-        }
-
-        .wf-logo-rail--partners {
-          padding: clamp(1.35rem, 2.7vw, 2.1rem) 0 clamp(2rem, 4.2vw, 2.8rem);
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__inner {
-          width: min(100%, 78rem);
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__shell {
-          padding: clamp(0.9rem, 1.8vw, 1.15rem) clamp(1rem, 2vw, 1.4rem);
-          border-radius: 1.2rem;
-          border-color: rgba(255, 255, 255, 0.06);
-          background:
-            linear-gradient(180deg, rgba(232, 228, 221, 0.96) 0%, rgba(216, 211, 201, 0.92) 100%);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.45),
-            0 18px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__slide {
-          grid-template-columns: repeat(6, minmax(0, 1fr));
-          gap: clamp(0.65rem, 1.4vw, 1rem);
-          align-items: center;
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__slide.is-five {
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-        }
-
-        .wf-logo-rail--partners .wf-logo-card {
-          min-height: 0;
-          padding: 0.2rem 0;
-          border: none;
-          border-radius: 0;
-          background: transparent;
-          box-shadow: none;
-        }
-
-        .wf-logo-rail--partners .wf-logo-card__media {
-          height: clamp(2.35rem, 3vw, 2.95rem);
-        }
-
-        .wf-logo-rail--partners .wf-logo-card__media img {
-          width: auto;
-          max-width: min(100%, 10.2rem);
-          max-height: 100%;
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__dots {
-          margin-top: 0.85rem;
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__dot {
-          background: rgba(16, 18, 22, 0.18);
-        }
-
-        .wf-logo-rail--partners .wf-logo-rail__dot.is-active {
-          background: #22c55e;
-        }
-
-        @media (max-width: 1080px) {
-          .wf-logo-rail__slide {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .wf-logo-rail__slide--three {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .wf-logo-rail--partners .wf-logo-rail__slide,
-          .wf-logo-rail--partners .wf-logo-rail__slide.is-five {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-          }
-        }
-
-        @media (max-width: 640px) {
-          .wf-logo-rail {
-            padding-top: 1.8rem;
-            padding-bottom: 2.4rem;
-          }
-
-          .wf-logo-rail__shell {
-            padding: 0.85rem;
-            border-radius: 1.1rem;
-          }
-
-          .wf-logo-rail__slide {
-            gap: 0.7rem;
-          }
-
-          .wf-logo-card {
-            min-height: 8.2rem;
-            padding: 0.85rem 0.75rem;
-            border-radius: 0.88rem;
-          }
-
-          .wf-logo-card__media {
-            height: 4.5rem;
-          }
-
-          .wf-logo-rail--partners .wf-logo-rail__shell {
-            padding: 0.9rem 0.9rem 0.8rem;
-            border-radius: 1rem;
-          }
-
-          .wf-logo-rail--partners .wf-logo-rail__slide,
-          .wf-logo-rail--partners .wf-logo-rail__slide.is-five {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.65rem;
-          }
-
-          .wf-logo-rail--partners .wf-logo-card__media {
-            height: 2.2rem;
-          }
-        }
-
-        @media (max-width: 420px) {
-          .wf-logo-rail--partners .wf-logo-rail__slide,
-          .wf-logo-rail--partners .wf-logo-rail__slide.is-five {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .wf-logo-rail--partners .wf-logo-card__media img {
-            max-width: min(100%, 8.2rem);
-          }
-        }
-
-        html[data-theme="light"] .wf-logo-rail__eyebrow {
-          color: rgba(23, 21, 17, 0.48);
-        }
-
-        html[data-theme="light"] .wf-logo-rail__title {
-          color: #171511;
-        }
-
-        html[data-theme="light"] .wf-logo-rail__shell {
-          border-color: var(--wf-theme-border);
-          background:
-            radial-gradient(circle at 15% 20%, rgba(34, 197, 94, 0.08), transparent 24%),
-            linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 243, 238, 0.92) 100%);
-          box-shadow: var(--wf-theme-shadow);
-        }
-
-        html[data-theme="light"] .wf-logo-card {
-          border-color: rgba(23, 21, 17, 0.08);
-          background: rgba(255, 255, 255, 0.98);
-        }
-
-        html[data-theme="light"] .wf-logo-rail__dot {
-          background: rgba(23, 21, 17, 0.16);
-        }
-
-        html[data-theme="light"] .wf-logo-rail__dot.is-active {
-          background: #22c55e;
-        }
-
-        html[data-theme="light"] .wf-logo-rail--partners .wf-logo-rail__shell {
-          border-color: rgba(23, 21, 17, 0.08);
-          background: linear-gradient(180deg, rgba(235, 231, 224, 0.98) 0%, rgba(220, 214, 204, 0.94) 100%);
-          box-shadow: 0 16px 36px rgba(23, 21, 17, 0.08);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .wf-logo-rail__viewport {
-            scroll-behavior: auto;
-          }
-
-          .wf-logo-rail__dot {
-            transition: none;
-          }
-        }
-      </style>
-      <script>
-        (function () {
-          var shells = document.querySelectorAll('[data-logo-slider]');
-          if (!shells.length) return;
-
-          shells.forEach(function (shell) {
-            var viewport = shell.querySelector('[data-logo-slider-viewport]');
-            if (!viewport) return;
-            var dots = Array.prototype.slice.call(shell.querySelectorAll('[data-logo-dot]'));
-            var slides = Array.prototype.slice.call(viewport.querySelectorAll('.wf-logo-rail__slide'));
-            if (!dots.length || !slides.length) return;
-
-            var activeIndex = 0;
-            var autoTimer = null;
-            var scrollTicking = false;
-            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-            function setActive(index) {
-              activeIndex = Math.max(0, Math.min(slides.length - 1, index));
-              dots.forEach(function (dot, dotIndex) {
-                var isActive = dotIndex === activeIndex;
-                dot.classList.toggle('is-active', isActive);
-                dot.setAttribute('aria-current', isActive ? 'true' : 'false');
-              });
-            }
-
-            function goTo(index, behavior) {
-              setActive(index);
-              viewport.scrollTo({
-                left: viewport.clientWidth * activeIndex,
-                behavior: behavior || 'smooth'
-              });
-            }
-
-            function stopAuto() {
-              if (autoTimer) {
-                window.clearInterval(autoTimer);
-                autoTimer = null;
-              }
-            }
-
-            function startAuto() {
-              stopAuto();
-              if (reduceMotion.matches || slides.length < 2) return;
-              autoTimer = window.setInterval(function () {
-                goTo((activeIndex + 1) % slides.length, 'smooth');
-              }, 4200);
-            }
-
-            dots.forEach(function (dot, index) {
-              dot.addEventListener('click', function () {
-                stopAuto();
-                goTo(index, 'smooth');
-                startAuto();
-              });
-            });
-
-            viewport.addEventListener('scroll', function () {
-              if (scrollTicking) return;
-              scrollTicking = true;
-              window.requestAnimationFrame(function () {
-                setActive(Math.round(viewport.scrollLeft / Math.max(1, viewport.clientWidth)));
-                scrollTicking = false;
-              });
-            }, { passive: true });
-
-            viewport.addEventListener('keydown', function (event) {
-              if (event.key === 'ArrowRight') {
-                event.preventDefault();
-                stopAuto();
-                goTo((activeIndex + 1) % slides.length, 'smooth');
-                startAuto();
-              }
-
-              if (event.key === 'ArrowLeft') {
-                event.preventDefault();
-                stopAuto();
-                goTo((activeIndex - 1 + slides.length) % slides.length, 'smooth');
-                startAuto();
-              }
-            });
-
-            shell.addEventListener('mouseenter', stopAuto);
-            shell.addEventListener('mouseleave', startAuto);
-            shell.addEventListener('focusin', stopAuto);
-            shell.addEventListener('focusout', function (event) {
-              if (shell.contains(event.relatedTarget)) return;
-              startAuto();
-            });
-            window.addEventListener('resize', function () {
-              goTo(activeIndex, 'auto');
-            });
-
-            if (typeof reduceMotion.addEventListener === 'function') {
-              reduceMotion.addEventListener('change', function () {
-                if (reduceMotion.matches) {
-                  stopAuto();
-                  return;
-                }
-                startAuto();
-              });
-            }
-
-            setActive(0);
-            startAuto();
-          });
-        })();
-      </script>
     <section class="services-overview weflair-section" id="services">
       <div class="container">
         <div class="services-overview__row-text">
@@ -5211,58 +4560,101 @@
     section.dataset.handoffReady='true';
     var tabs=[].slice.call(section.querySelectorAll('[data-handoff-tab]'));
     var panes=[].slice.call(section.querySelectorAll('[data-handoff-pane]'));
+    var track=section.querySelector('[data-handoff-track]');
+    var sticky=section.querySelector('.weflair-handoff__sticky');
+    var TAB_COUNT=tabs.length;
+    var current=-1;
+    var trackLeft=0,trackWidth=0;
+
     function syncVideo(pane,isActive){
       var video=pane.querySelector('video');
       if(!video)return;
-      video.muted=true;
-      video.loop=true;
-      video.playsInline=true;
-      if(!isActive){
-        try{video.pause();video.currentTime=0;}catch(_error){}
-        return;
-      }
-      var primeFrame=function(){
-        if(video.duration&&video.duration>.6&&video.currentTime<.3){
-          try{video.currentTime=.45;}catch(_error){}
-        }
-        var playPromise=video.play();
-        if(playPromise&&typeof playPromise.catch==='function'){
-          playPromise.catch(function(){});
-        }
+      video.muted=true;video.loop=true;video.playsInline=true;
+      if(!isActive){try{video.pause();video.currentTime=0;}catch(_){}return;}
+      var prime=function(){
+        if(video.duration&&video.duration>.6&&video.currentTime<.3){try{video.currentTime=.45;}catch(_){}}
+        var p=video.play();if(p&&typeof p.catch==='function')p.catch(function(){});
       };
-      if(video.readyState>=1){
-        primeFrame();
-      }else{
-        video.addEventListener('loadedmetadata',primeFrame,{once:true});
-      }
+      if(video.readyState>=1)prime();else video.addEventListener('loadedmetadata',prime,{once:true});
     }
+
     function activate(index){
-      var next=Math.max(0,Math.min(index,tabs.length-1));
+      var next=Math.max(0,Math.min(index,TAB_COUNT-1));
+      if(next===current)return;
+      current=next;
       section.setAttribute('data-handoff-active',String(next));
-      tabs.forEach(function(tab,tabIndex){
-        var isActive=tabIndex===next;
-        tab.classList.toggle('is-active',isActive);
-        tab.setAttribute('aria-selected',isActive?'true':'false');
+      tabs.forEach(function(tab,i){
+        var a=i===next;
+        tab.classList.toggle('is-active',a);
+        tab.setAttribute('aria-selected',a?'true':'false');
       });
-      panes.forEach(function(pane,paneIndex){
-        var isActive=paneIndex===next;
-        pane.classList.toggle('is-active',isActive);
-        pane.setAttribute('aria-hidden',isActive?'false':'true');
-        syncVideo(pane,isActive);
+      panes.forEach(function(pane,i){
+        var a=i===next;
+        pane.classList.toggle('is-active',a);
+        pane.setAttribute('aria-hidden',a?'false':'true');
+        syncVideo(pane,a);
       });
     }
-    tabs.forEach(function(tab,index){
-      tab.addEventListener('click',function(){activate(index);});
-      tab.addEventListener('keydown',function(event){
-        if(event.key!=='ArrowDown'&&event.key!=='ArrowUp'&&event.key!=='ArrowRight'&&event.key!=='ArrowLeft')return;
-        event.preventDefault();
-        var direction=(event.key==='ArrowDown'||event.key==='ArrowRight')?1:-1;
-        var next=(index+direction+tabs.length)%tabs.length;
-        tabs[next].focus();
-        activate(next);
+
+    tabs.forEach(function(tab,i){
+      tab.addEventListener('click',function(){activate(i);});
+      tab.addEventListener('keydown',function(e){
+        if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+        e.preventDefault();
+        var dir=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1;
+        var n=(i+dir+TAB_COUNT)%TAB_COUNT;
+        tabs[n].focus();activate(n);
       });
     });
+
+    function cacheLayout(){
+      if(!track)return;
+      var r=track.getBoundingClientRect();
+      trackLeft=r.left;
+      trackWidth=track.offsetWidth;
+    }
+
+    var STICKY_TOP=80;
+
+    function update(){
+      if(!track||!sticky)return;
+      var desktop=window.innerWidth>991;
+
+      /* Restore mobile: no JS positioning */
+      if(!desktop){sticky.style.cssText='';return;}
+
+      var trackRect=track.getBoundingClientRect();
+      var maxScroll=track.offsetHeight-window.innerHeight;
+
+      /* Drive tab index from scroll progress */
+      var progress=0;
+      if(maxScroll>0){
+        var scrolledIn=-trackRect.top;
+        progress=Math.max(0,Math.min(1,scrolledIn/maxScroll));
+        activate(Math.min(TAB_COUNT-1,Math.floor(progress*TAB_COUNT)));
+      }
+
+      /* JS-based sticky (handles overflow:clip ancestors blocking native sticky) */
+      var nativeSticky=getComputedStyle(sticky).position==='sticky';
+      if(!nativeSticky){
+        if(trackRect.top>STICKY_TOP){
+          /* Before section: keep the block in normal flow. */
+          sticky.style.cssText='';
+        }else if(trackRect.bottom<STICKY_TOP+sticky.offsetHeight){
+          /* Exit naturally with the bottom of the track instead of disappearing into empty space. */
+          sticky.style.cssText='position:absolute;top:auto;bottom:0;width:100%;left:0;z-index:1';
+        }else{
+          sticky.style.cssText='position:fixed;top:'+STICKY_TOP+'px;width:'+trackWidth+'px;left:'+trackLeft+'px;z-index:1';
+        }
+      }
+    }
+
+    window.addEventListener('scroll',function(){cacheLayout();update();},{passive:true});
+    window.addEventListener('resize',function(){cacheLayout();if(sticky)sticky.style.cssText='';update();});
+
+    cacheLayout();
     activate(0);
+    update();
   }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded',initWeFlairHandoff,{once:true});
@@ -13381,22 +12773,24 @@
             ],
             link: "/case-studies/harrier-performance-rebuild.html"
           },
+          /* ARCHIVED \u2014 CellPoint Digital (uncomment to restore)
           {
             type: "netpeak",
-            logo: "/brand-assets/client-logos/vip-vaping.svg",
-            alt: "VIP Vaping logo",
-            photo: "/brand-assets/cases/vip-vaping.jpg",
-            desc: "Inherited a CRM programme in decline across every KPI. Rebuilt the data architecture, restructured lifecycle segmentation, and deployed reactivation journeys that reversed negative trends across acquisition, retention, and win-back.",
+            logo: "/brand-assets/client-logos/cellpoint-digital.png",
+            alt: "CellPoint Digital logo",
+            photo: "/brand-assets/cases/cellpoint-digital.jpg",
+            desc: "Connected acquisition, TAM intelligence, buyer signals and playbooks into one GTM operating system for a $50M ARR payment orchestration platform\u2014turning scattered activity into a connected, repeatable commercial motion.",
             metrics: [
-              { value: "+32%", label: "New customers" },
-              { value: "+153%", label: "Won-back" },
-              { value: "+19%", label: "Second orders" },
-              { value: "\u221230%", label: "At-risk reduction" }
+              { value: "\u20ac100M+", label: "Pipeline surfaced" },
+              { value: "60x+", label: "Estimated ROI" },
+              { value: "\u20ac24K+", label: "Ad waste removed" },
+              { value: "3x", label: "Qualified traffic" }
             ],
-            services: ["CRM", "Lifecycle", "Email"],
-            duration: "18 months",
-            link: "/case-studies/vip-vaping-turnaround.html"
+            services: ["GTM Engineering", "SignalSphere", "Sales Playbooks", "Paid Acquisition"],
+            duration: "9 months",
+            link: "/case-studies/cellpoint-digital-revops.html"
           },
+          */
           {
             type: "heydigital",
             layout: "default",
@@ -14569,45 +13963,45 @@
   <div class="weflair-faq__col">
     <details class="weflair-faq__item">
       <summary>We need results immediately. How do you deliver?</summary>
-      <div class="weflair-faq__answer">During onboarding, we quickly get up to speed on your business and implement strategic quick wins early in the engagement. While short-term growth is a priority, we immediately lay out a roadmap for sustained success in our first few weeks together. If your business is at immediate risk and you are looking for WeFlair as a last-resort crisis mitigation, we likely aren't the right partner. Our model is built on multi-year growth strategies, prioritizing big-picture success over temporary fixes.</div>
+      <div class="weflair-faq__answer">We start by finding the fastest revenue leaks: wasted spend, weak landing pages, unclear offers, broken tracking, slow follow-up, and campaigns that are not being managed tightly enough. The first phase is built around practical fixes we can ship quickly, while the deeper work turns those fixes into a repeatable acquisition system. If you need a miracle rescue in a week, we are probably not the right partner. If you need senior operators who can move fast and still build properly, that is where we fit.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>What are WeFlair's core service specialties?</summary>
-      <div class="weflair-faq__answer">WeFlair is a growth agency focused on building and operating elite customer acquisition engines. We operate across five core service areas: <strong>Paid Media &amp; Performance</strong>, <strong>Outbound Systems</strong>, <strong>Demand Generation</strong>, <strong>AI Visibility &amp; SEO</strong>, and <strong>Performance Design &amp; CRO</strong>. Instead of isolated tactics, we build cohesive, end-to-end growth systems designed specifically for B2B, B2C, eCommerce, SaaS, and tech brands to predictably scale revenue.</div>
+      <div class="weflair-faq__answer">WeFlair builds and operates customer acquisition systems. Our core service areas are <strong>Paid Media &amp; Performance</strong>, <strong>Outbound Systems</strong>, <strong>Demand Generation</strong>, <strong>AI Visibility &amp; SEO</strong>, and <strong>Performance Design &amp; CRO</strong>. The point is not to sell isolated tasks. It is to connect traffic, creative, landing pages, outbound, content, tracking, and reporting so growth is easier to understand, manage, and scale.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>Which team will work on my project?</summary>
-      <div class="weflair-faq__answer">Teams usually consist of a dedicated Growth Operator (responsible for technical execution, analytics, and strategy) and an Account Manager (overseeing collaboration on your account). Depending on your scope, we quickly loop in CRO specialists, copywriters, and performance designers. The depth of our in-house capabilities replaces the need to juggle multiple siloed freelancers.</div>
+      <div class="weflair-faq__answer">You get a small senior pod, not a bloated account team. There is one clear owner for strategy and performance, with the right specialists pulled in based on the scope: paid media, outbound, CRO, copy, design, content, SEO, analytics, or automation. The goal is simple: fewer handoffs, clearer decisions, and people doing the work who understand how the whole acquisition system fits together.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>What advertising budget would you recommend to start with?</summary>
-      <div class="weflair-faq__answer">Based on years of cross-channel experience, we've found that an optimal budget must allow for comprehensive testing and rapid optimization. We typically recommend a baseline of $3,000?$5,000/month per ad platform during the initial validation phase to gather statistical significance, though we scale and manage budgets well into the seven figures once we identify winning systems.</div>
+      <div class="weflair-faq__answer">For early validation, we can usually start from around $2,000/month per channel if the offer, audience, and tracking are ready. There is no hard ceiling. Once a channel proves it can acquire customers at the right CAC, payback period, or pipeline quality, we can scale from $10k to $100k+ and beyond. The real answer depends on your margins, sales cycle, conversion rate, market size, and how quickly you want useful data.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>How do you integrate AI into your design and creative workflow?</summary>
-      <div class="weflair-faq__answer">We use AI to enhance our workflows, never to replace the core strategic process. Our teams deploy AI tools across ideation, rapid prototyping, content generation, and performance analysis. Every AI execution at WeFlair is strictly human-guided to guarantee it aligns with your brand identity and performance objectives.</div>
+      <div class="weflair-faq__answer">AI helps us move faster, but it does not make the strategic calls. We use it for research, angle exploration, variant generation, prototyping, analysis, and production support. Humans still own positioning, taste, brand judgment, QA, and performance decisions. The value is not AI for show. It is more useful tests, faster creative cycles, and less time wasted on manual production work.</div>
     </details>
   </div>
   <div class="weflair-faq__col">
     <details class="weflair-faq__item">
       <summary>What's your pricing structure?</summary>
-      <div class="weflair-faq__answer">Our pricing model is rooted in transparency, flexibility, and incentive alignment. Our services are modular, meaning they can be engaged incrementally or as a fully integrated system. Clients typically start with one or two core services at the onset of our partnership?often beginning with a deep-dive audit?and expand our scope as we deliver performance and build mutual trust.</div>
+      <div class="weflair-faq__answer">Pricing depends on the scope, channels, pace, and operating load. Some clients start with a focused audit or one workstream. Others bring us in to run a fuller acquisition system across paid media, creative, CRO, outbound, content, and reporting. We scope the work around what has to get done, who needs to be involved, and how fast the business wants to move.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>I am a head of growth marketing within my company. Will your team replace my job?</summary>
-      <div class="weflair-faq__answer">Absolutely not. We actually prefer collaborating directly with internal marketing leaders to empower them to hit their KPIs and growth goals faster. Our senior growth operators manage the execution, strategies, and agency functions, acting as an elite extension of your in-house capabilities rather than a replacement.</div>
+      <div class="weflair-faq__answer">No. We are most useful when there is already someone internally who understands the business and cares about growth. We give you extra senior execution, specialist depth, cleaner reporting, and a faster operating cadence. You keep ownership of the company context and priorities. We help you get more done without hiring a full bench of channel, creative, CRO, and analytics specialists.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>What ROI can we expect?</summary>
-      <div class="weflair-faq__answer">As a performance-driven growth agency, we advocate for a rigorously data-led approach. Once we align on your target ROI, payback periods, and Customer Acquisition Cost limits during our initial dive, we assess the mathematical feasibility and build a customized execution strategy designed precisely to hit or exceed those unit economics.</div>
+      <div class="weflair-faq__answer">We do not give made-up ROI promises before seeing the math. We look at CAC, LTV, margins, payback period, close rate, average order value, funnel conversion, and current channel performance. If the targets are realistic, we build around them. If the economics do not work yet, we say that clearly and focus first on the constraint blocking scale.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>Do you have growth marketing experience with businesses in my industry?</summary>
-      <div class="weflair-faq__answer">We bring a highly diverse range of experience across both B2B and B2C markets. Our leadership team has a combined 20+ years of experience driving growth for eCommerce, SaaS, and core technology companies. Because we deploy senior-level operators on every account, we understand the nuances of different verticals and exactly how to adapt our growth frameworks to solve your specific industry challenges.</div>
+      <div class="weflair-faq__answer">Most likely, yes. We work across B2B, SaaS, tech, services, and e-commerce, so we have seen a lot of acquisition problems from both sales-led and checkout-led businesses. We still do the homework on your category, buyer, offer, margins, and sales process before recommending a plan. If your market needs niche expertise we do not have, we will say so instead of forcing a bad fit.</div>
     </details>
     <details class="weflair-faq__item">
       <summary>How can I get started working with WeFlair?</summary>
-      <div class="weflair-faq__answer">Getting started is simple. Request an audit or book a call via our site. We'll run a deep-dive into your current metrics, identify where revenue is leaking, and map out a custom growth strategy aligned with your targets. If it's a mutual fit, our onboarding is swift, allowing us to launch your first campaigns within 14 days.</div>
+      <div class="weflair-faq__answer">Book a call or request an audit and share what you can: your site, channels, goals, current numbers, and what is not working. We will diagnose the main leaks, explain what we would fix first, and recommend a scope if there is a real fit. From there, we agree the first sprint, get access, clean up the basics, and start shipping the highest-priority work.</div>
     </details>
   </div>
 </div>
@@ -14626,19 +14020,19 @@
               <div class="weflair-new-cta__left">
                 <div class="weflair-new-cta__label">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                  Next Step
+                  Free Audit
                 </div>
-                <h2 class="weflair-new-cta__h2">Let's find the leaks in your growth engine.</h2>
-                <p class="weflair-new-cta__p">Book a free discovery call. We'll show you exactly what's blocking your revenue, clear next steps, and whether there's a real fit to work together.</p>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
                 <div class="weflair-new-cta__features">
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero pitch</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable insights</div>
-                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Good fit analysis</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
                 </div>
               </div>
               <div class="weflair-new-cta__right">
                 <a href="/contact.html" class="weflair-new-cta__btn">
-                  <span class="weflair-new-cta__btn-text">Get your free audit</span>
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
                   <span class="weflair-new-cta__btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </span>
@@ -14878,37 +14272,11 @@
       }
 
       function renderAuditWidget() {
-        return '<div class="weflair-audit-widget" id="audit-widget"><button type="button" class="weflair-audit-widget__launcher" data-audit-toggle aria-expanded="false" aria-controls="weflair-audit-panel" aria-label="Open strategy call widget">' + DIAGONAL_ARROW_MARKUP + '</button><div class="weflair-audit-widget__panel" id="weflair-audit-panel"><div class="weflair-audit-widget__head"><div class="weflair-audit-widget__profile"><div class="weflair-audit-widget__avatar">SM</div><div class="weflair-audit-widget__meta"><span class="weflair-audit-widget__name">Sami Madi</span><span class="weflair-audit-widget__role">Founder, WeFlair</span></div></div><button type="button" class="weflair-audit-widget__close" data-audit-close aria-label="Close strategy call card">&times;</button></div><div class="weflair-audit-widget__eyebrow">Free 30 min strategy call</div><h3 class="weflair-audit-widget__title">See where your growth engine is leaking.</h3><p class="weflair-audit-widget__body">We&rsquo;ll review your funnel, channels, and follow-up, then show you the next 1-3 moves most likely to improve pipeline.</p><div class="weflair-audit-widget__proof"><span class="weflair-audit-widget__proof-pill">30 min</span><span class="weflair-audit-widget__proof-pill">Free</span><span class="weflair-audit-widget__proof-pill">No hard sell</span></div><div class="weflair-audit-widget__slots"><strong>Hands-on intro calls only</strong><span class="weflair-audit-widget__countdown">Limited each week</span></div><ul class="weflair-audit-widget__list"><li>Spot the biggest leak in paid, outbound, or CRM.</li><li>Leave with clear next steps, not a vague pitch.</li><li>Best for teams already investing in growth.</li></ul><div class="weflair-audit-widget__cta">' + calButtonHtml("Book your free strategy call", "hero-widget", "diagonal") + '</div><div class="weflair-audit-widget__foot">Takes you to the contact page so you can request the brief without leaving the site.</div></div></div>';
+        return "";
       }
 
       function wireAuditWidget() {
-        const widget = document.querySelector(".weflair-audit-widget");
-        if (!widget) return;
-        const launcher = widget.querySelector("[data-audit-toggle]");
-        const closer = widget.querySelector("[data-audit-close]");
-        const setCollapsed = function (collapsed) {
-          widget.classList.toggle("is-collapsed", collapsed);
-          if (launcher) launcher.setAttribute("aria-expanded", String(!collapsed));
-        };
-        if (launcher) launcher.addEventListener("click", function () {
-          setCollapsed(false);
-        });
-        if (closer) closer.addEventListener("click", function () {
-          setCollapsed(true);
-        });
-        var compactQuery = window.matchMedia("(max-width: 991px)");
-        setCollapsed(true);
-        var handleCompactChange = function (event) {
-          if (event.matches) setCollapsed(true);
-        };
-        if (typeof compactQuery.addEventListener === "function") {
-          compactQuery.addEventListener("change", handleCompactChange);
-        } else if (typeof compactQuery.addListener === "function") {
-          compactQuery.addListener(handleCompactChange);
-        }
-        document.addEventListener("weflair:navigation", function (event) {
-          if (event.detail && event.detail.active) setCollapsed(true);
-        });
+        document.querySelectorAll(".weflair-audit-widget, .weflair-hero-widget-wrap").forEach(function (node) { node.remove(); });
       }
 
       function htmlEscape(value) {
