@@ -1,0 +1,68 @@
+/* =========================================================
+   Weflair Decorative Stars — wf-stars.css
+   Sprinkle the star. No layout changes. Pointer-events:none.
+   ========================================================= */
+
+/* --- Keyframes --- */
+@keyframes wf-float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-12px) rotate(45deg); }
+}
+@keyframes wf-float-slow {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-8px) rotate(22deg); }
+}
+@keyframes wf-drift {
+  0%,100% { transform: translate(0,0) rotate(0deg); }
+  33%      { transform: translate(5px,-8px) rotate(30deg); }
+  66%      { transform: translate(-4px,-5px) rotate(-15deg); }
+}
+@keyframes wf-twinkle {
+  0%,100% { opacity: 0.15; transform: scale(0.82) rotate(0deg); }
+  50%      { opacity: 0.9;  transform: scale(1.12) rotate(45deg); }
+}
+@keyframes wf-glow-pulse {
+  0%,100% { filter: drop-shadow(0 0 3px rgba(62,255,104,0.25)); opacity: 0.55; }
+  50%      { filter: drop-shadow(0 0 14px rgba(62,255,104,0.85)); opacity: 1; }
+}
+@keyframes wf-bg-breathe {
+  0%,100% { opacity: 0.05; transform: scale(1) rotate(0deg); }
+  50%      { opacity: 0.13; transform: scale(1.06) rotate(22deg); }
+}
+@keyframes wf-spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --- Base --- */
+.wf-star {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  display: block;
+  line-height: 0;
+}
+.wf-star svg { display: block; }
+
+/* --- Animation classes --- */
+.wf-star--float      { animation: wf-float      7s ease-in-out infinite; }
+.wf-star--float-slow { animation: wf-float-slow 11s ease-in-out infinite; }
+.wf-star--drift      { animation: wf-drift      9s ease-in-out infinite; }
+.wf-star--twinkle    { animation: wf-twinkle    4s ease-in-out infinite; }
+.wf-star--glow       { animation: wf-glow-pulse 3.5s ease-in-out infinite; }
+.wf-star--spin       { animation: wf-spin-slow  22s linear infinite; }
+.wf-star--bg         { animation: wf-bg-breathe 8s ease-in-out infinite; opacity: 0.08; }
+
+/* --- Size helpers (override via style attr for precision) --- */
+.wf-star--xs  svg { width: 10px;  height: 10px; }
+.wf-star--sm  svg { width: 18px;  height: 18px; }
+.wf-star--md  svg { width: 28px;  height: 28px; }
+.wf-star--lg  svg { width: 44px;  height: 44px; }
+.wf-star--xl  svg { width: 64px;  height: 64px; }
+.wf-star--xxl svg { width: 110px; height: 110px; }
+
+/* Respect reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .wf-star { animation: none !important; }
+}
