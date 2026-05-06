@@ -193,7 +193,11 @@
     .pm-page .nav { height:auto !important; min-height:0 !important; background:transparent !important; border-bottom:0 !important; backdrop-filter:none !important; }
     .pm-page .nav-bar { pointer-events:auto; }
     .pm-page .weflair-footer > .weflair-new-cta-wrap { display:none !important; }
-    .pm-page .main { overflow:hidden; }
+    .pm-page .main {
+      overflow-x: clip;
+      overflow-y: visible;
+      overscroll-behavior: auto;
+    }
     .pm-hero {
       position:relative;
       min-height:clamp(44rem, 86vh, 58rem);

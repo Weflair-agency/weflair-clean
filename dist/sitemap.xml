@@ -111,6 +111,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://weflair.com/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://weflair.com/resources/guides/ai-search-visibility-guide.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -194,5 +199,30 @@
     <loc>https://weflair.com/case-studies/vip-vaping-turnaround.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://weflair.com/blog/114k-revenue-engine.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weflair.com/blog/cac-is-lying.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weflair.com/blog/death-of-the-funnel.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weflair.com/blog/gtm-stack-nobody-talks-about.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weflair.com/blog/outbound-is-not-dead.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

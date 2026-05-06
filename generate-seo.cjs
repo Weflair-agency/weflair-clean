@@ -17,6 +17,11 @@ const EXTRA_XML_DIRS = [
       absolutePath.endsWith(".html") && path.basename(absolutePath).toLowerCase() !== "index.html",
     priority: "0.75",
   },
+  {
+    dir: path.join(ROOT, "blog"),
+    include: (absolutePath) => absolutePath.endsWith(".html"),
+    priority: "0.7",
+  },
 ];
 
 function normalizePath(filePath) {
@@ -113,7 +118,7 @@ function writeXml(entries) {
 }
 
 function writeRobots() {
-  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${manifest.siteUrl}/sitemap.xml\n`;
+  const robots = `User-agent: *\nAllow: /\nDisallow: /handoff-cards/\n\nSitemap: ${manifest.siteUrl}/sitemap.xml\n`;
   fs.writeFileSync(path.join(DIST, "robots.txt"), robots);
 }
 

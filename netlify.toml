@@ -1,4 +1,4 @@
-﻿[[redirects]]
+[[redirects]]
   from = "/cases.html"
   to = "/case-studies/"
   status = 301
@@ -55,5 +55,17 @@
 [[redirects]]
   from = "/expertise/fintech.html"
   to = "/expertise/b2b-tech.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/guides.html"
+  to = "/resources/playbooks.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/playbook.html"
+  to = "/resources/playbooks.html"
   status = 301
   force = true

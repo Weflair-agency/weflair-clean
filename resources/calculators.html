@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Growth Calculators â€” WeFlair</title>
+  <title>GTM Calculators - WeFlair</title>
+  <meta name="description" content="Use WeFlair's GTM calculator to model B2B and B2C returns across cold email, LinkedIn, paid ads, and lifecycle email." />
   <meta name="theme-color" content="#151515" />
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
@@ -11,178 +12,1343 @@
   <link rel="stylesheet" href="../weflair-hero.css?v=20260504-logo-critical-01" />
   <script src="../foundation.js?v=20260504-dark-01" defer></script>
   <script src="../weflair-hero.js?v=20260504-home-stable-01" defer></script>
-  <style>
-    .pb-page { background: #151515; color: #f6f3ee; font-family: 'Inter', sans-serif; }
-    .dir-hero { position: relative; padding: clamp(8rem, 12vw, 12rem) 2rem clamp(4rem, 8vw, 6rem); text-align: center; border-bottom: 1px solid rgba(246,243,238,0.06); }
-    .dir-hero__inner { max-width: 58rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-    .dir-hero__title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.06em; margin: 0 0 1.5rem; text-wrap: balance; font-family: 'Space Grotesk', sans-serif;}
-    .dir-hero__sub { font-size: clamp(1.1rem, 1.4vw, 1.25rem); line-height: 1.6; color: rgba(246,243,238,0.7); max-width: 44rem; margin: 0 auto; text-wrap: balance; }
-    .dir-layout { max-width: 86rem; margin: 0 auto; display: flex; gap: 3rem; padding: clamp(4rem, 6vw, 6rem) 2rem; align-items: flex-start;}
-    .dir-sidebar { flex: 0 0 260px; position: sticky; top: 7rem; }
-    .dir-filter-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-    .dir-filter-btn { background: transparent; border: 1px solid transparent; color: rgba(246,243,238,0.6); padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer; transition: all 0.2s ease; width: 100%; display:flex; justify-content:space-between; align-items:center;}
-    .dir-filter-btn:hover { background: rgba(246,243,238,0.03); color: #f6f3ee; }
-    .dir-filter-btn.is-active { background: rgba(62,255,104,0.1); border: 1px solid rgba(62,255,104,0.2); color: #3eff68; }
-    .dir-grid { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; align-content: flex-start;}
-    @media(max-width: 991px) { .dir-layout { flex-direction: column; } .dir-sidebar { width: 100%; position: relative; top: 0; margin-bottom:2rem; } .dir-filter-list { flex-direction: row; flex-wrap: wrap; } .dir-filter-btn { width: auto; } }
-    @media(max-width: 768px) { .dir-grid { grid-template-columns: 1fr; } }
-    .weflair-pb-card { background: rgba(17,17,17,0.7); border: 1px solid rgba(246,243,238,0.08); border-radius: 1rem; padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease; }
-    .weflair-pb-card:hover { border-color: rgba(62,255,104,0.3); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-    .weflair-pb-badge { display:inline-block; align-self:flex-start; font-size: 0.75rem; font-weight: 700; color: #3eff68; background: rgba(62,255,104,0.1); padding: 0.25rem 0.75rem; border-radius: 999px; border: 1px solid rgba(62,255,104,0.2); margin-bottom: 1.25rem; letter-spacing:0.04em; text-transform:uppercase;}
-    .weflair-pb-h3 { font-size: 1.25rem; font-weight: 700; color: #f6f3ee; font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.75rem; line-height: 1.3; }
-    .weflair-pb-p { font-size: 0.95rem; color: rgba(246,243,238,0.6); line-height: 1.5; margin: 0; }
-    .weflair-pb-card.is-hidden { display: none !important; }
-  </style>
+  <style id="weflair-calculator-tool-css">
+
+    
+    .nav-bar__link-simple { color: #f6f3ee !important; text-decoration: none; }
+    .nav-bar__link-simple .nav-bar__link-text-span { color: #f6f3ee; }
+    .weflair-logo { display: inline-flex; align-items: center; gap: .58rem; color: #f6f3ee; text-decoration: none; }
+    .weflair-logo__mark { width: .85rem; height: .85rem; display: inline-flex; color: #3eff68; filter: drop-shadow(0 0 10px rgba(62,255,104,.3)); }
+    .weflair-logo__word { font-size: 1.6rem; font-weight: 700; letter-spacing: 0; color: #f6f3ee; }
+
+    
+    :root {
+      --g:        #3eff68;
+      --g-soft:   #74F5A1;
+      --g-tint:   rgba(62,255,104,.07);
+      --g-tint2:  rgba(62,255,104,.12);
+      --g-border: rgba(62,255,104,.22);
+      --g-glow:   rgba(62,255,104,.28);
+
+      --bg:       #111111;
+      --card:     #191919;
+      --card2:    #1d1d1d;
+
+      --ink:      #f6f3ee;
+      --ink-dim:  rgba(246,243,238,.55);
+      --ink-fade: rgba(246,243,238,.32);
+      --ink-ghost:rgba(246,243,238,.18);
+
+      --border:   rgba(246,243,238,.08);
+      --border-s: rgba(246,243,238,.05);
+
+      --font: 'Helvetica Now Display', 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'Courier New', 'Lucida Console', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg); font-family: var(--font);
+      color: var(--ink); -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    
+    
+    .c-hero {
+      max-width: 56rem; margin: 0 auto;
+      padding: 9rem 2rem 3rem; text-align: center;
+    }
+    .c-eyebrow {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .7rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-fade);
+      margin-bottom: 1.5rem;
+    }
+    .c-eyebrow-star { width: .68rem; height: .68rem; color: var(--g); }
+    .c-hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800; letter-spacing: 0; line-height: .94;
+      color: var(--ink); margin-bottom: 1.1rem;
+    }
+    .c-hero p {
+      font-size: 1rem; line-height: 1.65; color: var(--ink-dim);
+      max-width: 34rem; margin: 0 auto 2.8rem;
+    }
+
+    
+    .mode-wrap { display: flex; justify-content: center; margin-bottom: 2rem; }
+    .mode-pill {
+      display: inline-flex; align-items: center;
+      border: 1px solid var(--g-border);
+      border-radius: 999px; padding: 3px;
+      background: rgba(62,255,104,.03);
+    }
+    .mode-btn {
+      padding: .48rem 1.75rem; border-radius: 999px; border: none;
+      font-family: var(--font); font-size: .8rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      cursor: pointer; transition: all .2s; color: var(--ink-fade);
+      background: none;
+    }
+    .mode-btn.active { background: var(--g); color: #111; }
+    .mode-btn:hover:not(.active) { color: var(--ink); }
+
+    
+    .ch-tabs-wrap { display: flex; justify-content: center; margin-bottom: 0; }
+    .ch-tabs {
+      display: inline-flex; gap: 0;
+      border: 1px solid var(--border);
+      border-radius: .65rem; overflow: hidden;
+      background: rgba(246,243,238,.025);
+    }
+    .ch-tab {
+      padding: .7rem 1.5rem; border: none; border-right: 1px solid var(--border);
+      font-family: var(--font); font-size: .78rem; font-weight: 700;
+      letter-spacing: .04em; text-transform: uppercase;
+      color: var(--ink-fade); cursor: pointer; background: none;
+      transition: all .18s; white-space: nowrap;
+    }
+    .ch-tab:last-child { border-right: none; }
+    .ch-tab.active { background: var(--g-tint); color: var(--g); }
+    .ch-tab:hover:not(.active) { background: rgba(246,243,238,.04); color: var(--ink-dim); }
+
+    
+    .c-section { max-width: 62rem; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+
+    .c-panel {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 1.1rem; padding: 1.75rem 1.75rem 1.5rem;
+    }
+
+    
+    .slider-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+      margin-bottom: 1.75rem;
+    }
+    @media (max-width: 560px) { .slider-row { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    .slider-grp label {
+      display: block; font-size: .67rem; font-weight: 700;
+      letter-spacing: .11em; text-transform: uppercase;
+      color: var(--ink-fade); margin-bottom: .65rem;
+    }
+    .slider-display {
+      font-size: 1.9rem; font-weight: 800; letter-spacing: 0;
+      color: var(--ink); margin-bottom: .8rem; line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .slider-display .pre {
+      font-size: 1.1rem; color: var(--ink-ghost); font-weight: 600;
+      vertical-align: .18em;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 2px; border-radius: 1px;
+      outline: none; cursor: pointer;
+      background: linear-gradient(to right, var(--g) 0%, #2a2a2a 0%);
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--g); cursor: pointer;
+      border: 2px solid #111;
+      box-shadow: 0 0 8px var(--g-glow);
+      transition: box-shadow .15s, transform .15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 16px var(--g-glow); transform: scale(1.15);
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--g); border: 2px solid #111; cursor: pointer;
+    }
+    .slider-marks {
+      display: flex; justify-content: space-between;
+      font-size: .66rem; color: rgba(246,243,238,.24); margin-top: .45rem;
+    }
+
+    
+    .scen-tabs {
+      display: flex; margin-bottom: 1.75rem;
+      border: 1px solid var(--border); border-radius: .55rem;
+      overflow: hidden; background: rgba(246,243,238,.02);
+    }
+    .scen-tab {
+      flex: 1; padding: .65rem 1rem; background: none; border: none;
+      font-family: var(--font); font-size: .72rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      color: var(--ink-fade); cursor: pointer;
+      transition: all .18s; text-align: center;
+    }
+    .scen-tab:not(:last-child) { border-right: 1px solid var(--border); }
+    .scen-tab.active { background: var(--g-tint); color: var(--g); }
+    .scen-tab:hover:not(.active) { background: rgba(246,243,238,.04); color: var(--ink-dim); }
+
+    
+    .metric-row {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: .65rem;
+      margin-bottom: .65rem;
+    }
+    @media (max-width: 640px) { .metric-row { grid-template-columns: repeat(2,1fr); } }
+
+    .m-card {
+      background: rgba(246,243,238,.03); border: 1px solid var(--border-s);
+      border-radius: .75rem; padding: 1.05rem .95rem;
+    }
+    .m-card.hl {
+      background: var(--g-tint); border-color: var(--g-border);
+    }
+    .m-val {
+      font-size: 1.8rem; font-weight: 800;
+      letter-spacing: 0; line-height: 1; color: var(--ink);
+      margin-bottom: .24rem; font-variant-numeric: tabular-nums;
+    }
+    .m-card.hl .m-val { color: var(--g); }
+    .m-lbl {
+      font-size: .6rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-fade);
+    }
+    .m-note { font-size: .66rem; color: var(--ink-ghost); margin-top: .15rem; }
+    .m-bar {
+      height: 2px; background: rgba(246,243,238,.07);
+      border-radius: 1px; margin-top: .65rem; overflow: hidden;
+    }
+    .m-bar-fill {
+      height: 100%; background: rgba(246,243,238,.18);
+      border-radius: 1px; transition: width .35s ease;
+    }
+    .m-card.hl .m-bar-fill { background: rgba(62,255,104,.4); }
+
+    
+    .rev-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .65rem;
+      margin-bottom: .65rem;
+    }
+    @media (max-width: 520px) { .rev-row { grid-template-columns: 1fr 1fr; } }
+
+    .r-card {
+      background: rgba(246,243,238,.03); border: 1px solid var(--border-s);
+      border-radius: .75rem; padding: 1.3rem 1.1rem;
+    }
+    .r-card.hl { background: var(--g-tint); border-color: var(--g-border); }
+    .r-val {
+      font-size: 2.2rem; font-weight: 800;
+      letter-spacing: 0; line-height: 1; color: var(--ink);
+      margin-bottom: .28rem; font-variant-numeric: tabular-nums;
+    }
+    .r-card.hl .r-val { color: var(--g); }
+    .r-lbl {
+      font-size: .6rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-fade);
+    }
+
+    
+    .btm-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .65rem;
+      margin-bottom: 1.1rem;
+    }
+    @media (max-width: 500px) { .btm-grid { grid-template-columns: 1fr; } }
+
+    .i-card {
+      background: rgba(246,243,238,.03); border: 1px solid var(--border-s);
+      border-radius: .75rem; padding: 1.05rem 1.05rem .9rem;
+    }
+    .i-card h4 {
+      font-size: .6rem; font-weight: 700; letter-spacing: .11em;
+      text-transform: uppercase; color: var(--ink-ghost); margin-bottom: .8rem;
+    }
+    .i-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .36rem 0; border-bottom: 1px solid var(--border-s);
+    }
+    .i-row:last-child { border-bottom: none; }
+    .i-k { font-size: .78rem; color: var(--ink-dim); }
+    .i-v { font-size: .82rem; font-weight: 700; color: var(--ink); }
+
+    .fit-card {
+      background: rgba(246,243,238,.03); border: 1px solid var(--border-s);
+      border-radius: .75rem; padding: 1.05rem;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center;
+    }
+    .fit-card h4 {
+      font-size: .6rem; font-weight: 700; letter-spacing: .11em;
+      text-transform: uppercase; color: var(--ink-ghost); margin-bottom: .7rem;
+    }
+    .fit-lbl {
+      font-size: 1.5rem; font-weight: 800; letter-spacing: 0;
+      color: var(--g); margin-bottom: .4rem; line-height: 1;
+    }
+    .fit-lbl.mod  { color: #fbbf24; }
+    .fit-lbl.poor { color: #f87171; }
+    .fit-txt { font-size: .7rem; color: var(--ink-ghost); line-height: 1.55; }
+
+    
+    .c-table { width: 100%; border-collapse: collapse; font-size: .78rem; margin-bottom: .65rem; }
+    .c-table th {
+      font-size: .6rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--ink-ghost);
+      padding: .5rem .7rem; text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+    .c-table th:first-child { text-align: left; }
+    .c-table td {
+      padding: .55rem .7rem; border-bottom: 1px solid var(--border-s);
+      color: var(--ink-dim); text-align: right;
+    }
+    .c-table td:first-child { text-align: left; color: rgba(246,243,238,.38); }
+    .mid-col  { color: var(--g) !important; font-weight: 700; }
+    .mid-head { color: var(--g) !important; }
+
+    
+    .disclaimer {
+      font-size: .7rem; color: rgba(246,243,238,.26); text-align: center;
+      margin: .2rem 0 1.1rem; line-height: 1.6;
+    }
+
+    
+    .email-bar {
+      display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+      background: rgba(246,243,238,.03); border: 1px solid var(--border);
+      border-radius: .85rem; padding: 1.2rem 1.35rem; margin-top: .65rem;
+    }
+    .email-bar-txt { flex: 1; min-width: 12rem; }
+    .email-bar-txt h4 { font-size: .85rem; font-weight: 700; color: var(--ink); margin-bottom: .2rem; }
+    .email-bar-txt p { font-size: .7rem; color: var(--ink-ghost); line-height: 1.5; }
+    .email-form { display: flex; gap: .45rem; flex: 1; min-width: 18rem; flex-wrap: wrap; }
+    .email-inp {
+      flex: 1; min-width: 10rem; padding: .58rem .9rem;
+      background: rgba(246,243,238,.06); border: 1px solid var(--border);
+      border-radius: .45rem; color: var(--ink); font-family: var(--font);
+      font-size: .82rem; outline: none; transition: border-color .18s;
+    }
+    .email-inp::placeholder { color: rgba(246,243,238,.25); }
+    .email-inp:focus { border-color: var(--g-border); }
+    .btn-email {
+      padding: .58rem 1.1rem; background: var(--g-tint);
+      border: 1px solid var(--g-border); border-radius: .45rem;
+      font-family: var(--font); color: var(--g); font-size: .8rem;
+      font-weight: 700; cursor: pointer; transition: all .18s; white-space: nowrap;
+    }
+    .btn-email:hover { background: var(--g-tint2); border-color: var(--g); }
+    .btn-email.sent { background: rgba(62,255,104,.12); color: #2ed660; }
+    .btn-email:disabled { opacity: .65; cursor: default; }
+
+    
+    .sub-ch-row { display: flex; gap: .45rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+    .sub-ch-btn {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .45rem .95rem; border-radius: .45rem; cursor: pointer;
+      font-family: var(--font); font-size: .72rem; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      background: rgba(246,243,238,.04); border: 1px solid var(--border);
+      color: var(--ink-fade); transition: all .18s;
+    }
+    .sub-ch-btn:hover { background: rgba(246,243,238,.08); color: var(--ink-dim); }
+    .sub-ch-btn.active { background: var(--g-tint); border-color: var(--g-border); color: var(--g); }
+
+    
+    .cta-section {
+      max-width: 50rem; margin: 0 auto; padding: 1rem 2rem 6rem;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 2.8rem; font-weight: 800;
+      letter-spacing: 0; line-height: .97; color: var(--ink);
+      margin-bottom: .9rem;
+    }
+    .cta-section p {
+      font-size: .95rem; color: var(--ink-dim); line-height: 1.65;
+      max-width: 30rem; margin: 0 auto 2rem;
+    }
+    .btn-cta {
+      display: inline-block; padding: .88rem 2rem;
+      background: var(--ink); color: #111; font-family: var(--font);
+      font-size: .92rem; font-weight: 800; letter-spacing: 0;
+      border-radius: .55rem; text-decoration: none; transition: all .18s; border: none;
+    }
+    .btn-cta:hover { background: #fff; transform: translateY(-1px); }
+    .cta-fine { font-size: .7rem; color: var(--ink-ghost); margin-top: .65rem; }
+
+    
+    .c-footer {
+      padding: 1.75rem 2rem; border-top: 1px solid var(--border); text-align: center;
+    }
+    .c-footer p { color: rgba(246,243,238,.28); font-size: .72rem; }
+  
+
+@media (max-width: 768px) { .c-hero h1 { font-size: 3rem; } .r-val { font-size: 1.9rem; } }
+@media (max-width: 480px) { .c-hero h1 { font-size: 2.45rem; } .m-val { font-size: 1.55rem; } .r-val { font-size: 1.65rem; } }
+</style>
 </head>
 <body data-weflair-static="true" data-theme="dark" class="body pb-page">
   <div class="noise is--small" style="z-index:9999; pointer-events:none;"></div>
   <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound systems built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Content systems built for search and AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand systems built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="../resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="../resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About Us</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
-<main class="main" style="padding-top:4rem;">
-  <section class="dir-hero">
-    <div class="dir-hero__inner">
-      <div class="eyebrow" style="margin-bottom:1.5rem; justify-content:center;">
-        <span class="weflair-eyebrow-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg></span>
-        <p class="eyebrow__p">The Math</p>
-      </div>
-      <h1 class="dir-hero__title">Pipeline & Revenue Calculators.</h1>
-      <p class="dir-hero__sub">Stop guessing your LTV to CAC. We built interactive spreadsheets and calculators to prove marketing ROI with mathematical certainty.</p>
-    </div>
-  </section>
-  <section class="dir-layout">
-    <aside class="dir-sidebar">
-      <div class="dir-filter-title">Filter Calculators</div>
-      <ul class="dir-filter-list">
-        <li><button class="dir-filter-btn is-active" data-filter="all">All Calculators <span>8</span></button></li>
-        <li><button class="dir-filter-btn" data-filter="roi">ROI Modeling <span>2</span></button></li>
-        <li><button class="dir-filter-btn" data-filter="budget">Pipeline Planning <span>2</span></button></li>
-        <li><button class="dir-filter-btn" data-filter="metrics">SaaS Metrics <span>2</span></button></li>
-        <li><button class="dir-filter-btn" data-filter="cro">A/B Testing <span>2</span></button></li>
-      </ul>
-    </aside>
-    <div class="dir-grid" id="tools-grid">
-      
-    <div class="weflair-pb-card" data-category="roi">
-      <div class="weflair-pb-badge">ROI Modeling</div>
-      <h3 class="weflair-pb-h3">Outbound SDR Pipeline ROI</h3>
-      <p class="weflair-pb-p">Calculate true ROI of your SDR team based on meeting hold rates, SQL conversion, and AE close ratios.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
-      </div>
-    </div>
+<main class="main calculator-tool-main" style="padding-top:4rem;">
+<section class="c-hero" style="position:relative;overflow:hidden">
   
-    <div class="weflair-pb-card" data-category="roi">
-      <div class="weflair-pb-badge">ROI Modeling</div>
-      <h3 class="weflair-pb-h3">Paid Media LTV/CAC Modeler</h3>
-      <p class="weflair-pb-p">Input blended blended CAC, lead volume, and avg retention to calculate when a cohort breaks even.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+  <div style="pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(62,255,104,.13) 0%, transparent 70%);z-index:0"></div>
+  <div style="position:relative;z-index:1">
+  <div class="c-eyebrow">
+    <svg class="c-eyebrow-star" viewBox="0 0 34 45" fill="none"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"/></svg>
+    Free GTM calculator
+  </div>
+  <h1>Model your pipeline.<br>Pick the channel.</h1>
+  <p>Estimate what cold email, LinkedIn, paid ads, and lifecycle email could return before you commit spend. Switch between B2B and B2C, adjust the inputs, and pressure-test the channel math.</p>
+
+  
+  <div class="mode-wrap">
+    <div class="mode-pill">
+      <button class="mode-btn active" data-mode="b2b" onclick="switchMode('b2b')">B2B</button>
+      <button class="mode-btn" data-mode="b2c" onclick="switchMode('b2c')">B2C / DTC</button>
+    </div>
+  </div>
+
+  
+  <div class="ch-tabs-wrap">
+    <div class="ch-tabs" id="ch-tabs-row"></div>
+  </div>
+  </div>
+</section>
+
+
+<div class="c-section">
+
+  
+  <div id="calc-cold-email" class="c-panel">
+    <div class="slider-row">
+      <div class="slider-grp">
+        <label>Prospects Contacted / Month</label>
+        <div class="slider-display"><span id="ce-pros-val">15,000</span></div>
+        <input type="range" id="ce-pros" min="1000" max="100000" step="500" value="15000"
+          oninput="updateSlider(this); calcColdEmail()" />
+        <div class="slider-marks"><span>1,000</span><span>100,000</span></div>
+      </div>
+      <div class="slider-grp">
+        <label>Annual Contract Value (ACV)</label>
+        <div class="slider-display"><span class="pre">$&nbsp;</span><span id="ce-acv-val">10,000</span></div>
+        <input type="range" id="ce-acv" min="1000" max="500000" step="1000" value="10000"
+          oninput="updateSlider(this); calcColdEmail()" />
+        <div class="slider-marks"><span>$1K</span><span>$500K</span></div>
       </div>
     </div>
-  
-    <div class="weflair-pb-card" data-category="budget">
-      <div class="weflair-pb-badge">Pipeline Planning</div>
-      <h3 class="weflair-pb-h3">Reverse Pipeline Goal Calculator</h3>
-      <p class="weflair-pb-p">Input your $2M ARR target to calculate the exact traffic, MQL, and SQL quotas needed to hit it.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+    <div class="scen-tabs">
+      <button class="scen-tab" id="ce-s-cons" onclick="setScen('ce','conservative')">Conservative</button>
+      <button class="scen-tab active" id="ce-s-mid" onclick="setScen('ce','mid')">Mid</button>
+      <button class="scen-tab" id="ce-s-opt" onclick="setScen('ce','optimistic')">Optimistic</button>
+    </div>
+    <div class="metric-row">
+      <div class="m-card">
+        <div class="m-val" id="ce-c-pros">15.0K</div>
+        <div class="m-lbl">Contacted</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="ce-c-replied">150</div>
+        <div class="m-lbl">Replied</div>
+        <div class="m-note" id="ce-c-rrate">Reply 1.0%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:28%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="ce-c-calls">38</div>
+        <div class="m-lbl">Calls Booked</div>
+        <div class="m-note" id="ce-c-crate">Book 25%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:16%"></div></div>
+      </div>
+      <div class="m-card hl">
+        <div class="m-val" id="ce-c-deals">5.6</div>
+        <div class="m-lbl">Deals Closed</div>
+        <div class="m-note" id="ce-c-xrate">Close 15%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:8%"></div></div>
       </div>
     </div>
-  
-    <div class="weflair-pb-card" data-category="budget">
-      <div class="weflair-pb-badge">Pipeline Planning</div>
-      <h3 class="weflair-pb-h3">ABM Tier 1 Budget Allocator</h3>
-      <p class="weflair-pb-p">Distribute your marketing budget effectively across intent data, direct mail, and 1-to-1 paid social.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+    <div class="rev-row">
+      <div class="r-card">
+        <div class="r-val" id="ce-r-mo">$56K</div>
+        <div class="r-lbl">Monthly Revenue</div>
+      </div>
+      <div class="r-card">
+        <div class="r-val" id="ce-r-yr">$675K</div>
+        <div class="r-lbl">Annual Revenue</div>
+      </div>
+      <div class="r-card hl">
+        <div class="r-val" id="ce-r-roi">11.3x</div>
+        <div class="r-lbl">ROI on $5K/mo</div>
       </div>
     </div>
-  
-    <div class="weflair-pb-card" data-category="metrics">
-      <div class="weflair-pb-badge">SaaS Metrics</div>
-      <h3 class="weflair-pb-h3">True Win-Rate Analyzer</h3>
-      <p class="weflair-pb-p">Most CRMs calculate win-rate wrong. This models cohort-based closed-won against total created pipeline in timeframe.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+    <div class="btm-grid">
+      <div class="i-card">
+        <h4>Break-Even</h4>
+        <div class="i-row"><span class="i-k">Deals to break even / mo</span><span class="i-v" id="ce-be-d">0.5</span></div>
+        <div class="i-row"><span class="i-k">Months 1 deal covers</span><span class="i-v" id="ce-be-m">2.0</span></div>
+        <div class="i-row"><span class="i-k">Cost per call booked (mid)</span><span class="i-v" id="ce-be-c">$133</span></div>
+      </div>
+      <div class="fit-card">
+        <h4>Fit Assessment</h4>
+        <div class="fit-lbl" id="ce-fit-lbl">Excellent fit</div>
+        <p class="fit-txt" id="ce-fit-txt">Mid scenario - $10K ACV, 15K contacts/mo</p>
       </div>
     </div>
-  
-    <div class="weflair-pb-card" data-category="metrics">
-      <div class="weflair-pb-badge">SaaS Metrics</div>
-      <h3 class="weflair-pb-h3">SaaS Rule of 40 Grader</h3>
-      <p class="weflair-pb-p">Compare your growth rate and profit margin against top quartile enterprise software metrics.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+    <div style="overflow-x:auto">
+      <table class="c-table">
+        <thead><tr>
+          <th>Metric</th><th>Conservative</th><th class="mid-head">Mid</th><th>Optimistic</th>
+        </tr></thead>
+        <tbody id="ce-tbody"></tbody>
+      </table>
+    </div>
+    <p class="disclaimer">Conversion rates based on real cold email campaigns across our client portfolio. Results vary by offer, ICP fit, and copy.</p>
+    <div class="email-bar">
+      <div class="email-bar-txt">
+        <h4>Email my results</h4>
+        <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
+      </div>
+      <div class="email-form">
+        <input type="email" class="email-inp" id="ce-email" placeholder="your@email.com" />
+        <button class="btn-email" id="ce-email-btn" onclick="doEmail('ce')">Email This to Me</button>
       </div>
     </div>
+  </div>
+
   
-    <div class="weflair-pb-card" data-category="cro">
-      <div class="weflair-pb-badge">A/B Testing & CRO</div>
-      <h3 class="weflair-pb-h3">A/B Testing Significance Engine</h3>
-      <p class="weflair-pb-p">Bayesian probability calculator to determine exact traffic thresholds needed to call a definitive winner.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+  <div id="calc-linkedin" class="c-panel" style="display:none">
+    <div class="slider-row">
+      <div class="slider-grp">
+        <label>Connection Requests Sent / Month</label>
+        <div class="slider-display"><span id="li-conn-val">500</span></div>
+        <input type="range" id="li-conn" min="100" max="5000" step="50" value="500"
+          oninput="updateSlider(this); calcLinkedin()" />
+        <div class="slider-marks"><span>100</span><span>5,000</span></div>
+      </div>
+      <div class="slider-grp">
+        <label>Annual Contract Value (ACV)</label>
+        <div class="slider-display"><span class="pre">$&nbsp;</span><span id="li-acv-val">10,000</span></div>
+        <input type="range" id="li-acv" min="1000" max="500000" step="1000" value="10000"
+          oninput="updateSlider(this); calcLinkedin()" />
+        <div class="slider-marks"><span>$1K</span><span>$500K</span></div>
       </div>
     </div>
-  
-    <div class="weflair-pb-card" data-category="cro">
-      <div class="weflair-pb-badge">A/B Testing & CRO</div>
-      <h3 class="weflair-pb-h3">Funnel Drop-off Diagnostic</h3>
-      <p class="weflair-pb-p">Input your 4-step pipeline metrics to instantly locate the severest friction point costing you revenue.</p>
-      <div style="margin-top:auto; padding-top:1.5rem;">
-        <a href="../contact.html" class="btn w-inline-block weflair-btn weflair-btn--ghost" style="width:100%; justify-content:center;">
-          <div class="btn__bg"></div>
-          <div class="btn__text"><span class="btn__span" style="font-size:0.85rem;">Open Calculator</span></div>
-        </a>
+    <div class="scen-tabs">
+      <button class="scen-tab" id="li-s-cons" onclick="setScen('li','conservative')">Conservative</button>
+      <button class="scen-tab active" id="li-s-mid" onclick="setScen('li','mid')">Mid</button>
+      <button class="scen-tab" id="li-s-opt" onclick="setScen('li','optimistic')">Optimistic</button>
+    </div>
+    <div class="metric-row">
+      <div class="m-card">
+        <div class="m-val" id="li-c-sent">500</div>
+        <div class="m-lbl">Requests Sent</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="li-c-acc">175</div>
+        <div class="m-lbl">Accepted</div>
+        <div class="m-note" id="li-c-arate">Accept 35%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:35%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="li-c-meet">24</div>
+        <div class="m-lbl">Meetings</div>
+        <div class="m-note" id="li-c-mrate">Meet 14%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:18%"></div></div>
+      </div>
+      <div class="m-card hl">
+        <div class="m-val" id="li-c-deals">4.9</div>
+        <div class="m-lbl">Deals Closed</div>
+        <div class="m-note" id="li-c-xrate">Close 20%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:10%"></div></div>
       </div>
     </div>
-  
+    <div class="rev-row">
+      <div class="r-card">
+        <div class="r-val" id="li-r-mo">$49K</div>
+        <div class="r-lbl">Monthly Revenue</div>
+      </div>
+      <div class="r-card">
+        <div class="r-val" id="li-r-yr">$588K</div>
+        <div class="r-lbl">Annual Revenue</div>
+      </div>
+      <div class="r-card hl">
+        <div class="r-val" id="li-r-roi">9.8x</div>
+        <div class="r-lbl">ROI on $5K/mo</div>
+      </div>
     </div>
-  </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterBtns = document.querySelectorAll('.dir-filter-btn');
-      const cards = document.querySelectorAll('.weflair-pb-card');
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          const filterValue = btn.getAttribute('data-filter');
-          cards.forEach(card => {
-            if (filterValue === 'all') {
-              card.classList.remove('is-hidden');
-            } else {
-              if (card.getAttribute('data-category') === filterValue) {
-                card.classList.remove('is-hidden');
-              } else {
-                card.classList.add('is-hidden');
-              }
-            }
-          });
-        });
-      });
+    <div class="btm-grid">
+      <div class="i-card">
+        <h4>Break-Even</h4>
+        <div class="i-row"><span class="i-k">Deals to break even / mo</span><span class="i-v" id="li-be-d">0.5</span></div>
+        <div class="i-row"><span class="i-k">Months 1 deal covers</span><span class="i-v" id="li-be-m">2.0</span></div>
+        <div class="i-row"><span class="i-k">Cost per meeting (mid)</span><span class="i-v" id="li-be-c">$208</span></div>
+      </div>
+      <div class="fit-card">
+        <h4>Fit Assessment</h4>
+        <div class="fit-lbl" id="li-fit-lbl">Strong fit</div>
+        <p class="fit-txt" id="li-fit-txt">Mid scenario - $10K ACV, 500 connections/mo</p>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="c-table">
+        <thead><tr>
+          <th>Metric</th><th>Conservative</th><th class="mid-head">Mid</th><th>Optimistic</th>
+        </tr></thead>
+        <tbody id="li-tbody"></tbody>
+      </table>
+    </div>
+    <p class="disclaimer">LinkedIn outbound benchmarks based on B2B SaaS and services campaigns. Acceptance and reply rates vary significantly by ICP, headline, and connection note quality.</p>
+    <div class="email-bar">
+      <div class="email-bar-txt">
+        <h4>Email my results</h4>
+        <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
+      </div>
+      <div class="email-form">
+        <input type="email" class="email-inp" id="li-email" placeholder="your@email.com" />
+        <button class="btn-email" id="li-email-btn" onclick="doEmail('li')">Email This to Me</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="calc-paid" class="c-panel" style="display:none">
+    <div style="margin-bottom:1.6rem">
+      <div style="font-size:.67rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-ghost);margin-bottom:.65rem" id="pa-ch-lbl">Ad Channel</div>
+      <div class="sub-ch-row" id="pa-channels"></div>
+    </div>
+    <div class="slider-row">
+      <div class="slider-grp">
+        <label>Monthly Ad Budget</label>
+        <div class="slider-display"><span class="pre">$&nbsp;</span><span id="pa-bgt-val">5,000</span></div>
+        <input type="range" id="pa-bgt" min="500" max="50000" step="500" value="5000"
+          oninput="updateSlider(this); calcPaid()" />
+        <div class="slider-marks"><span>$500</span><span>$50K</span></div>
+      </div>
+      <div class="slider-grp" id="pa-deal-grp">
+        <label id="pa-deal-lbl">Annual Contract Value (ACV)</label>
+        <div class="slider-display"><span class="pre">$&nbsp;</span><span id="pa-deal-val">10,000</span></div>
+        <input type="range" id="pa-deal" min="1000" max="500000" step="1000" value="10000"
+          oninput="updateSlider(this); calcPaid()" />
+        <div class="slider-marks" id="pa-deal-marks"><span>$1K</span><span>$500K</span></div>
+      </div>
+    </div>
+    <div class="scen-tabs">
+      <button class="scen-tab" id="pa-s-cons" onclick="setScen('pa','conservative')">Conservative</button>
+      <button class="scen-tab active" id="pa-s-mid" onclick="setScen('pa','mid')">Mid</button>
+      <button class="scen-tab" id="pa-s-opt" onclick="setScen('pa','optimistic')">Optimistic</button>
+    </div>
+    <div class="metric-row">
+      <div class="m-card">
+        <div class="m-val" id="pa-c1-val">-</div>
+        <div class="m-lbl" id="pa-c1-lbl">Impressions</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="pa-c2-val">-</div>
+        <div class="m-lbl" id="pa-c2-lbl">Clicks</div>
+        <div class="m-note" id="pa-c2-note"></div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:22%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="pa-c3-val">-</div>
+        <div class="m-lbl" id="pa-c3-lbl">Leads</div>
+        <div class="m-note" id="pa-c3-note"></div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:12%"></div></div>
+      </div>
+      <div class="m-card hl">
+        <div class="m-val" id="pa-c4-val">-</div>
+        <div class="m-lbl" id="pa-c4-lbl">Deals / Purchases</div>
+        <div class="m-note" id="pa-c4-note"></div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:7%"></div></div>
+      </div>
+    </div>
+    <div class="rev-row">
+      <div class="r-card">
+        <div class="r-val" id="pa-r1-val">-</div>
+        <div class="r-lbl" id="pa-r1-lbl">Monthly Revenue</div>
+      </div>
+      <div class="r-card">
+        <div class="r-val" id="pa-r2-val">-</div>
+        <div class="r-lbl" id="pa-r2-lbl">Cost / Lead</div>
+      </div>
+      <div class="r-card hl">
+        <div class="r-val" id="pa-r3-val">-</div>
+        <div class="r-lbl" id="pa-r3-lbl">ROAS</div>
+      </div>
+    </div>
+    <div class="btm-grid">
+      <div class="i-card">
+        <h4>Cost Breakdown</h4>
+        <div class="i-row"><span class="i-k" id="pa-i1-k">Cost per click (est.)</span><span class="i-v" id="pa-i1-v">-</span></div>
+        <div class="i-row"><span class="i-k" id="pa-i2-k">Cost per lead</span><span class="i-v" id="pa-i2-v">-</span></div>
+        <div class="i-row"><span class="i-k" id="pa-i3-k">Cost per deal</span><span class="i-v" id="pa-i3-v">-</span></div>
+      </div>
+      <div class="fit-card">
+        <h4>Fit Assessment</h4>
+        <div class="fit-lbl" id="pa-fit-lbl">-</div>
+        <p class="fit-txt" id="pa-fit-txt"></p>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="c-table">
+        <thead><tr>
+          <th>Metric</th><th>Conservative</th><th class="mid-head">Mid</th><th>Optimistic</th>
+        </tr></thead>
+        <tbody id="pa-tbody"></tbody>
+      </table>
+    </div>
+    <p class="disclaimer" id="pa-disc">Projections use industry-standard CPMs/CPCs and conversion benchmarks. Results vary by creative quality, targeting, and landing page.</p>
+    <div class="email-bar">
+      <div class="email-bar-txt">
+        <h4>Email my results</h4>
+        <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
+      </div>
+      <div class="email-form">
+        <input type="email" class="email-inp" id="pa-email" placeholder="your@email.com" />
+        <button class="btn-email" id="pa-email-btn" onclick="doEmail('pa')">Email This to Me</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="calc-email" class="c-panel" style="display:none">
+    <div class="slider-row">
+      <div class="slider-grp">
+        <label>Email List Size</label>
+        <div class="slider-display"><span id="em-list-val">10,000</span></div>
+        <input type="range" id="em-list" min="1000" max="500000" step="1000" value="10000"
+          oninput="updateSlider(this); calcEmail()" />
+        <div class="slider-marks"><span>1,000</span><span>500,000</span></div>
+      </div>
+      <div class="slider-grp">
+        <label>Avg. Order Value (AOV)</label>
+        <div class="slider-display"><span class="pre">$&nbsp;</span><span id="em-aov-val">150</span></div>
+        <input type="range" id="em-aov" min="10" max="5000" step="10" value="150"
+          oninput="updateSlider(this); calcEmail()" />
+        <div class="slider-marks"><span>$10</span><span>$5,000</span></div>
+      </div>
+    </div>
+    <div style="font-size:.7rem;color:var(--ink-ghost);margin-bottom:1.6rem;padding:.6rem .9rem;background:rgba(246,243,238,.03);border-radius:.45rem;border:1px solid var(--border-s)">
+      Based on <strong style="color:var(--ink-dim)">4 sends / month</strong> to your full list. Adjust list size to match your active subscriber count.
+    </div>
+    <div class="scen-tabs">
+      <button class="scen-tab" id="em-s-cons" onclick="setScen('em','conservative')">Conservative</button>
+      <button class="scen-tab active" id="em-s-mid" onclick="setScen('em','mid')">Mid</button>
+      <button class="scen-tab" id="em-s-opt" onclick="setScen('em','optimistic')">Optimistic</button>
+    </div>
+    <div class="metric-row">
+      <div class="m-card">
+        <div class="m-val" id="em-c-sent">40.0K</div>
+        <div class="m-lbl">Emails Sent/mo</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:100%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="em-c-opens">8,800</div>
+        <div class="m-lbl">Opens</div>
+        <div class="m-note" id="em-c-orate">Open 22%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:28%"></div></div>
+      </div>
+      <div class="m-card">
+        <div class="m-val" id="em-c-clicks">1,584</div>
+        <div class="m-lbl">Clicks</div>
+        <div class="m-note" id="em-c-crate">Click 18%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:14%"></div></div>
+      </div>
+      <div class="m-card hl">
+        <div class="m-val" id="em-c-orders">127</div>
+        <div class="m-lbl">Orders</div>
+        <div class="m-note" id="em-c-prate">Conv 8%</div>
+        <div class="m-bar"><div class="m-bar-fill" style="width:7%"></div></div>
+      </div>
+    </div>
+    <div class="rev-row">
+      <div class="r-card">
+        <div class="r-val" id="em-r-mo">$19K</div>
+        <div class="r-lbl">Monthly Revenue</div>
+      </div>
+      <div class="r-card">
+        <div class="r-val" id="em-r-cpo">$39</div>
+        <div class="r-lbl">Cost / Order (retainer)</div>
+      </div>
+      <div class="r-card hl">
+        <div class="r-val" id="em-r-roi">3.8x</div>
+        <div class="r-lbl">Return on $5K/mo</div>
+      </div>
+    </div>
+    <div class="btm-grid">
+      <div class="i-card">
+        <h4>Cost Efficiency</h4>
+        <div class="i-row"><span class="i-k">Revenue per email sent</span><span class="i-v" id="em-rpe">$0.48</span></div>
+        <div class="i-row"><span class="i-k">Cost per order (mid)</span><span class="i-v" id="em-cpo">$39</span></div>
+        <div class="i-row"><span class="i-k">Orders to break even</span><span class="i-v" id="em-obe">33</span></div>
+      </div>
+      <div class="fit-card">
+        <h4>Fit Assessment</h4>
+        <div class="fit-lbl" id="em-fit-lbl">Good fit</div>
+        <p class="fit-txt" id="em-fit-txt">Mid scenario - $150 AOV, 10K list</p>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="c-table">
+        <thead><tr>
+          <th>Metric</th><th>Conservative</th><th class="mid-head">Mid</th><th>Optimistic</th>
+        </tr></thead>
+        <tbody id="em-tbody"></tbody>
+      </table>
+    </div>
+    <p class="disclaimer">Email benchmarks based on e-commerce and DTC clients. Open and click rates vary by list health, send frequency, and subject line quality.</p>
+    <div class="email-bar">
+      <div class="email-bar-txt">
+        <h4>Email my results</h4>
+        <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
+      </div>
+      <div class="email-form">
+        <input type="email" class="email-inp" id="em-email" placeholder="your@email.com" />
+        <button class="btn-email" id="em-email-btn" onclick="doEmail('em')">Email This to Me</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<script>
+
+var mode       = 'b2b';
+var activeCalc = 'cold-email';
+var paidCh     = 'google';
+var scenarios  = { ce:'mid', li:'mid', pa:'mid', em:'mid' };
+
+
+// Cold Email - reply  to  call book  to  close
+var CE = {
+  conservative: { reply:0.005, book:0.15, close:0.10 },
+  mid:          { reply:0.010, book:0.25, close:0.15 },  // 15K to 150 replied to 37.5 calls to 5.6 deals
+  optimistic:   { reply:0.020, book:0.32, close:0.22 },
+};
+var RETAINER = 5000;
+
+// LinkedIn Outbound - connect  to  accept  to  meeting  to  close
+var LI = {
+  conservative: { accept:0.22, meet:0.07, close:0.12 },
+  mid:          { accept:0.35, meet:0.14, close:0.20 },  // 500 to 175 acc to 24.5 meet to 4.9 deals
+  optimistic:   { accept:0.52, meet:0.24, close:0.30 },
+};
+
+// Paid B2B channels - higher CPCs, B2B intent audiences
+var PA_B2B = {
+  google: { type:'cpc', cpc:10,
+    conservative: { lpConv:0.030, close:0.07 },
+    mid:          { lpConv:0.055, close:0.12 },   // $5K to 500 clicks to 27.5 leads to 3.3 deals@$10K=$33K  to  ROAS 6.6x
+    optimistic:   { lpConv:0.090, close:0.20 },
+  },
+  linkedin: { type:'cpm', cpm:52,
+    conservative: { ctr:0.004, lpConv:0.030, close:0.10 },
+    mid:          { ctr:0.006, lpConv:0.055, close:0.18 },  // $5K to 96K impr to 577 clicks to 32 leads to 5.7 deals=$57K  to  ROAS 11.4x
+    optimistic:   { ctr:0.010, lpConv:0.090, close:0.28 },
+  },
+  meta: { type:'cpm', cpm:16,
+    conservative: { ctr:0.005, lpConv:0.010, close:0.04 },
+    mid:          { ctr:0.009, lpConv:0.022, close:0.07 },   // $5K to 312K impr to 2.8K clicks to 61 leads to 4.3 deals=$43K  to  ROAS 8.5x
+    optimistic:   { ctr:0.014, lpConv:0.038, close:0.12 },
+  },
+};
+
+// Paid B2C channels - lower CPCs, direct purchase conversion
+var PA_B2C = {
+  meta: { type:'cpm', cpm:10,
+    conservative: { ctr:0.012, conv:0.018 },   // $5K to 500K impr to 6K clicks to 108 purch
+    mid:          { ctr:0.020, conv:0.030 },   // $5K to 500K impr to 10K clicks to 300 purch  to  $45K@$150 AOV  to  ROAS 9x
+    optimistic:   { ctr:0.034, conv:0.052 },
+  },
+  google: { type:'cpc', cpc:0.65,
+    conservative: { conv:0.022 },    // $5K to 7.7K clicks to 169 purch
+    mid:          { conv:0.038 },    // $5K to 7.7K clicks to 293 purch  to  $44K@$150  to  ROAS 8.8x
+    optimistic:   { conv:0.065 },
+  },
+  tiktok: { type:'cpm', cpm:7,
+    conservative: { ctr:0.010, conv:0.012 },
+    mid:          { ctr:0.018, conv:0.026 },   // $5K to 714K impr to 12.9K clicks to 334 purch  to  $50K@$150  to  ROAS 10x
+    optimistic:   { ctr:0.030, conv:0.048 },
+  },
+};
+
+// Email Marketing (B2C) - open  to  click of opens  to  purchase of clicks
+var EM = {
+  conservative: { open:0.18, clickOfOpen:0.11, convOfClick:0.055 },
+  mid:          { open:0.22, clickOfOpen:0.18, convOfClick:0.090 },  // 10K list to 40K sent to 8.8K opens to 1.6K clicks to 144 orders  to  $21.6K@$150
+  optimistic:   { open:0.28, clickOfOpen:0.26, convOfClick:0.140 },
+};
+
+
+function $(id) { return document.getElementById(id); }
+
+function updateSlider(el) {
+  var pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+  el.style.background = 'linear-gradient(to right, #3eff68 '+pct+'%, #2a2a2a '+pct+'%)';
+}
+
+function fmtD(n) { // dollar
+  if (n >= 1e6)  return '$'+(n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+  if (n >= 1e3)  return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+Math.round(n).toLocaleString();
+}
+function fmtN(n) { // plain number
+  if (n >= 1e6)  return (n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+  if (n >= 1e3)  return (n/1e3).toFixed(1).replace(/\.0$/,'')+'K';
+  return Math.round(n).toLocaleString();
+}
+function row(lbl, a, b, c) {
+  return '<tr><td>'+lbl+'</td><td>'+a+'</td><td class="mid-col">'+b+'</td><td>'+c+'</td></tr>';
+}
+function fitAssess(roi, thresholds) {
+  // thresholds = [excellent, strong, good, moderate] - all below moderate = poor
+  if (roi >= thresholds[0]) return ['Excellent fit', ''];
+  if (roi >= thresholds[1]) return ['Strong fit',    ''];
+  if (roi >= thresholds[2]) return ['Good fit',      ''];      // green
+  if (roi >= thresholds[3]) return ['Moderate fit',  'mod'];   // yellow
+  return ['Low fit', 'poor'];                                   // red
+}
+
+
+function switchMode(m) {
+  mode = m;
+  document.querySelectorAll('.mode-btn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.mode === m);
+  });
+  // If current calc incompatible with new mode, reset
+  if (m === 'b2c' && (activeCalc === 'cold-email' || activeCalc === 'linkedin')) {
+    activeCalc = 'paid'; paidCh = 'meta';
+  }
+  if (m === 'b2b' && activeCalc === 'email') {
+    activeCalc = 'cold-email';
+  }
+  renderChTabs();
+  showPanel();
+  if (activeCalc === 'paid') {
+    renderPaidPanel();
+    calcPaid();
+  }
+}
+
+function renderChTabs() {
+  var tabs;
+  if (mode === 'b2b') {
+    tabs = [
+      { id:'cold-email', label:'Cold Email' },
+      { id:'linkedin',   label:'LinkedIn' },
+      { id:'paid',       label:'Paid Ads' },
+    ];
+  } else {
+    tabs = [
+      { id:'paid',  label:'Paid Ads' },
+      { id:'email', label:'Email Marketing' },
+    ];
+  }
+  var html = tabs.map(function(t){
+    return '<button class="ch-tab'+(activeCalc===t.id?' active':'')
+      +'" onclick="setCalc(\''+t.id+'\')">'+t.label+'</button>';
+  }).join('');
+  $('ch-tabs-row').innerHTML = html;
+}
+
+function setCalc(id) {
+  activeCalc = id;
+  renderChTabs();
+  showPanel();
+  if (id === 'paid') { renderPaidPanel(); calcPaid(); }
+  else if (id === 'cold-email') calcColdEmail();
+  else if (id === 'linkedin')   calcLinkedin();
+  else if (id === 'email')      calcEmail();
+}
+
+function showPanel() {
+  ['cold-email','linkedin','paid','email'].forEach(function(id){
+    $('calc-'+id).style.display = (id === activeCalc) ? '' : 'none';
+  });
+}
+
+function setScen(prefix, s) {
+  scenarios[prefix] = s;
+  ['cons','mid','opt'].forEach(function(k){
+    $(prefix+'-s-'+k).classList.toggle('active',
+      (k==='cons'&&s==='conservative')||(k==='mid'&&s==='mid')||(k==='opt'&&s==='optimistic'));
+  });
+  if (prefix==='ce') calcColdEmail();
+  else if (prefix==='li') calcLinkedin();
+  else if (prefix==='pa') calcPaid();
+  else if (prefix==='em') calcEmail();
+}
+
+
+function renderPaidPanel() {
+  var channels, dealLbl, dealMin, dealMax, dealStep, dealDef, dealMarks;
+  if (mode === 'b2b') {
+    channels = [
+      { id:'google',   label:'Google Search' },
+      { id:'linkedin', label:'LinkedIn Ads' },
+      { id:'meta',     label:'Meta (B2B)' },
+    ];
+    dealLbl = 'Annual Contract Value (ACV)';
+    dealMin=1000; dealMax=500000; dealStep=1000; dealDef=10000;
+    dealMarks = ['$1K','$500K'];
+    if (!PA_B2B[paidCh]) paidCh = 'google';
+  } else {
+    channels = [
+      { id:'meta',   label:'Meta / Instagram' },
+      { id:'google', label:'Google Shopping' },
+      { id:'tiktok', label:'TikTok' },
+    ];
+    dealLbl = 'Avg. Order Value (AOV)';
+    dealMin=10; dealMax=5000; dealStep=10; dealDef=150;
+    dealMarks = ['$10','$5K'];
+    if (!PA_B2C[paidCh]) paidCh = 'meta';
+  }
+  // Channel buttons
+  var chHtml = channels.map(function(c){
+    return '<button class="sub-ch-btn'+(paidCh===c.id?' active':'')
+      +'" onclick="setPaidCh(\''+c.id+'\')">'+c.label+'</button>';
+  }).join('');
+  $('pa-channels').innerHTML = chHtml;
+  // Deal slider
+  $('pa-deal-lbl').textContent = dealLbl;
+  var sl = $('pa-deal');
+  var currentDeal = parseFloat(sl.value);
+  var shouldResetDeal = currentDeal < dealMin || currentDeal > dealMax;
+  sl.min = dealMin; sl.max = dealMax; sl.step = dealStep;
+  if (shouldResetDeal) sl.value = dealDef;
+  $('pa-deal-marks').innerHTML = '<span>'+dealMarks[0]+'</span><span>'+dealMarks[1]+'</span>';
+  $('pa-deal-val').textContent = parseFloat(sl.value).toLocaleString();
+  updateSlider(sl);
+  // Metric labels
+  if (mode === 'b2b') {
+    $('pa-c3-lbl').textContent = 'Leads / MQLs';
+    $('pa-c4-lbl').textContent = 'Deals Closed';
+    $('pa-i2-k').textContent   = 'Cost per lead';
+    $('pa-i3-k').textContent   = 'Cost per deal';
+    $('pa-r2-lbl').textContent = 'Cost / Lead';
+    $('pa-r3-lbl').textContent = 'ROAS';
+    $('pa-disc').textContent   = 'B2B paid benchmarks. CPCs and CPMs for business-intent audiences are higher - but so are contract values.';
+  } else {
+    $('pa-c3-lbl').textContent = 'Purchases';
+    $('pa-c4-lbl').textContent = 'ROAS';
+    $('pa-i2-k').textContent   = 'Cost per purchase';
+    $('pa-i3-k').textContent   = 'ROAS (Revenue / Spend)';
+    $('pa-r2-lbl').textContent = 'Cost / Purchase';
+    $('pa-r3-lbl').textContent = 'ROAS';
+    $('pa-disc').textContent   = 'B2C / DTC paid benchmarks. Assumes optimised creatives and product-market fit. Results vary significantly by vertical.';
+  }
+}
+
+function setPaidCh(ch) {
+  paidCh = ch;
+  // Update channel buttons
+  document.querySelectorAll('#pa-channels .sub-ch-btn').forEach(function(b){
+    b.classList.toggle('active', b.textContent.toLowerCase().indexOf(ch) >= 0 || b.onclick.toString().indexOf("'"+ch+"'") >= 0);
+  });
+  // Simpler: re-render
+  renderPaidPanel();
+  calcPaid();
+}
+
+
+
+
+function calcColdEmail() {
+  var pros = parseFloat($('ce-pros').value);
+  var acv  = parseFloat($('ce-acv').value);
+  $('ce-pros-val').textContent = fmtN(pros);
+  $('ce-acv-val').textContent  = acv.toLocaleString();
+  $('ce-c-pros').textContent   = fmtN(pros);
+
+  var res = {};
+  ['conservative','mid','optimistic'].forEach(function(s){
+    var r = CE[s];
+    var rep   = pros * r.reply;
+    var calls = rep  * r.book;
+    var deals = calls * r.close;
+    var mo    = deals * acv;
+    res[s] = { rep:Math.round(rep), calls:parseFloat(calls.toFixed(1)),
+               deals:parseFloat(deals.toFixed(1)), mo:Math.round(mo),
+               annual:Math.round(mo*12), roi:parseFloat((mo/RETAINER).toFixed(1)) };
+  });
+
+  var cur = res[scenarios.ce]; var r = CE[scenarios.ce];
+  $('ce-c-replied').textContent = fmtN(cur.rep);
+  $('ce-c-rrate').textContent   = 'Reply '+(r.reply*100).toFixed(1)+'%';
+  $('ce-c-calls').textContent   = cur.calls;
+  $('ce-c-crate').textContent   = 'Book '+(r.book*100).toFixed(0)+'%';
+  $('ce-c-deals').textContent   = cur.deals.toFixed(1);
+  $('ce-c-xrate').textContent   = 'Close '+(r.close*100).toFixed(0)+'%';
+  $('ce-r-mo').textContent      = fmtD(cur.mo);
+  $('ce-r-yr').textContent      = fmtD(cur.annual);
+  $('ce-r-roi').textContent     = cur.roi.toFixed(1)+'x';
+
+  var beD  = parseFloat((RETAINER/acv).toFixed(1));
+  var beM  = parseFloat((acv/RETAINER).toFixed(1));
+  var midC = pros * CE.mid.reply * CE.mid.book;
+  $('ce-be-d').textContent = beD;
+  $('ce-be-m').textContent = beM;
+  $('ce-be-c').textContent = midC > 0 ? '$'+Math.round(RETAINER/midC).toLocaleString() : '-';
+
+  var fit = fitAssess(res.mid.roi, [10,5,2,1]);
+  var fl = $('ce-fit-lbl');
+  fl.textContent = fit[0]; fl.className = 'fit-lbl '+fit[1];
+  $('ce-fit-txt').textContent = 'Mid - '+fmtD(acv)+' ACV, '+fmtN(pros)+' contacts/mo';
+
+  $('ce-tbody').innerHTML =
+    row('Replied',      res.conservative.rep.toLocaleString(), res.mid.rep.toLocaleString(), res.optimistic.rep.toLocaleString()) +
+    row('Calls booked', res.conservative.calls, res.mid.calls, res.optimistic.calls) +
+    row('Deals / mo',   res.conservative.deals.toFixed(1), res.mid.deals.toFixed(1), res.optimistic.deals.toFixed(1)) +
+    row('Revenue / mo', fmtD(res.conservative.mo), fmtD(res.mid.mo), fmtD(res.optimistic.mo)) +
+    row('ROI',          res.conservative.roi.toFixed(1)+'x', res.mid.roi.toFixed(1)+'x', res.optimistic.roi.toFixed(1)+'x');
+}
+
+
+function calcLinkedin() {
+  var conn = parseFloat($('li-conn').value);
+  var acv  = parseFloat($('li-acv').value);
+  $('li-conn-val').textContent = conn.toLocaleString();
+  $('li-acv-val').textContent  = acv.toLocaleString();
+  $('li-c-sent').textContent   = conn.toLocaleString();
+
+  var res = {};
+  ['conservative','mid','optimistic'].forEach(function(s){
+    var r = LI[s];
+    var acc   = conn  * r.accept;
+    var meet  = acc   * r.meet;
+    var deals = meet  * r.close;
+    var mo    = deals * acv;
+    res[s] = { acc:Math.round(acc), meet:parseFloat(meet.toFixed(1)),
+               deals:parseFloat(deals.toFixed(1)), mo:Math.round(mo),
+               annual:Math.round(mo*12), roi:parseFloat((mo/RETAINER).toFixed(1)) };
+  });
+
+  var cur = res[scenarios.li]; var r = LI[scenarios.li];
+  $('li-c-acc').textContent    = Math.round(cur.acc).toLocaleString();
+  $('li-c-arate').textContent  = 'Accept '+(r.accept*100).toFixed(0)+'%';
+  $('li-c-meet').textContent   = cur.meet;
+  $('li-c-mrate').textContent  = 'Meet '+(r.meet*100).toFixed(0)+'%';
+  $('li-c-deals').textContent  = cur.deals.toFixed(1);
+  $('li-c-xrate').textContent  = 'Close '+(r.close*100).toFixed(0)+'%';
+  $('li-r-mo').textContent     = fmtD(cur.mo);
+  $('li-r-yr').textContent     = fmtD(cur.annual);
+  $('li-r-roi').textContent    = cur.roi.toFixed(1)+'x';
+
+  var beD = parseFloat((RETAINER/acv).toFixed(1));
+  var beM = parseFloat((acv/RETAINER).toFixed(1));
+  var midM = conn * LI.mid.accept * LI.mid.meet;
+  $('li-be-d').textContent = beD;
+  $('li-be-m').textContent = beM;
+  $('li-be-c').textContent = midM > 0 ? '$'+Math.round(RETAINER/midM).toLocaleString() : '-';
+
+  var fit = fitAssess(res.mid.roi, [10,5,2,1]);
+  var fl = $('li-fit-lbl');
+  fl.textContent = fit[0]; fl.className = 'fit-lbl '+fit[1];
+  $('li-fit-txt').textContent = 'Mid - '+fmtD(acv)+' ACV, '+conn.toLocaleString()+' connections/mo';
+
+  $('li-tbody').innerHTML =
+    row('Accepted',    res.conservative.acc.toLocaleString(), res.mid.acc.toLocaleString(), res.optimistic.acc.toLocaleString()) +
+    row('Meetings',    res.conservative.meet, res.mid.meet, res.optimistic.meet) +
+    row('Deals / mo',  res.conservative.deals.toFixed(1), res.mid.deals.toFixed(1), res.optimistic.deals.toFixed(1)) +
+    row('Revenue / mo',fmtD(res.conservative.mo), fmtD(res.mid.mo), fmtD(res.optimistic.mo)) +
+    row('ROI',         res.conservative.roi.toFixed(1)+'x', res.mid.roi.toFixed(1)+'x', res.optimistic.roi.toFixed(1)+'x');
+}
+
+
+function calcPaid() {
+  var bgt  = parseFloat($('pa-bgt').value);
+  var deal = parseFloat($('pa-deal').value);
+  $('pa-bgt-val').textContent  = bgt.toLocaleString();
+  $('pa-deal-val').textContent = deal.toLocaleString();
+
+  var res = {};
+  if (mode === 'b2b') {
+    var cfg = PA_B2B[paidCh];
+    ['conservative','mid','optimistic'].forEach(function(s){
+      var r = cfg[s];
+      var clicks, reach, leads, deals, cpcEst;
+      if (cfg.type === 'cpc') {
+        clicks = Math.round(bgt/cfg.cpc); reach = Math.round(clicks/0.05);
+        cpcEst = cfg.cpc;
+      } else {
+        reach  = Math.round((bgt/cfg.cpm)*1000);
+        clicks = Math.round(reach * r.ctr);
+        cpcEst = clicks>0 ? parseFloat((bgt/clicks).toFixed(2)) : 0;
+      }
+      leads = Math.round(clicks * r.lpConv);
+      deals = parseFloat((leads * r.close).toFixed(1));
+      var mo = Math.round(deals * deal);
+      res[s] = { reach, clicks, leads, deals, mo,
+        annual: Math.round(mo*12),
+        roas: parseFloat((mo/bgt).toFixed(1)),
+        cpl: leads>0 ? Math.round(bgt/leads) : 0,
+        cpd: deals>0 ? Math.round(bgt/deals) : 0,
+        cpc: cpcEst, ctr: cfg.type==='cpm'?r.ctr:null, lpConv:r.lpConv, close:r.close };
     });
-  </script>
+
+    var cur = res[scenarios.pa];
+    $('pa-c1-val').textContent = fmtN(cur.reach);   $('pa-c1-lbl').textContent = cfg.type==='cpc'?'Est. Reach':'Impressions';
+    $('pa-c2-val').textContent = fmtN(cur.clicks);  $('pa-c2-lbl').textContent = cfg.type==='cpc'?'Paid Clicks':'Clicks';
+    $('pa-c2-note').textContent = cfg.type==='cpc' ? 'CPC $'+cfg.cpc : 'CTR '+(cur.ctr*100).toFixed(1)+'%';
+    $('pa-c3-val').textContent = fmtN(cur.leads);
+    $('pa-c3-note').textContent = 'LP conv '+(cur.lpConv*100).toFixed(0)+'%';
+    $('pa-c4-val').textContent = cur.deals.toFixed(1);
+    $('pa-c4-note').textContent = 'Close '+(cur.close*100).toFixed(0)+'%';
+    $('pa-r1-val').textContent = fmtD(cur.mo);     $('pa-r1-lbl').textContent = 'Monthly Revenue';
+    $('pa-r2-val').textContent = cur.cpl>0?'$'+cur.cpl.toLocaleString():'-';
+    $('pa-r3-val').textContent = cur.roas.toFixed(1)+'x';
+    $('pa-i1-v').textContent = '$'+cur.cpc.toFixed(2);
+    $('pa-i2-v').textContent = cur.cpl>0?'$'+cur.cpl.toLocaleString():'-';
+    $('pa-i3-v').textContent = cur.cpd>0?'$'+cur.cpd.toLocaleString():'-';
+
+    var fit = fitAssess(res.mid.roas, [8,4,2,1]);
+    var fl = $('pa-fit-lbl'); fl.textContent = fit[0]; fl.className = 'fit-lbl '+fit[1];
+    var chName = {google:'Google Search', linkedin:'LinkedIn Ads', meta:'Meta Ads'};
+    $('pa-fit-txt').textContent = 'Mid - '+fmtD(deal)+' ACV, '+fmtD(bgt)+'/mo on '+chName[paidCh];
+
+    $('pa-tbody').innerHTML =
+      row('Clicks',      res.conservative.clicks.toLocaleString(), res.mid.clicks.toLocaleString(), res.optimistic.clicks.toLocaleString()) +
+      row('Leads',       res.conservative.leads.toLocaleString(),  res.mid.leads.toLocaleString(),  res.optimistic.leads.toLocaleString()) +
+      row('Deals / mo',  res.conservative.deals.toFixed(1), res.mid.deals.toFixed(1), res.optimistic.deals.toFixed(1)) +
+      row('Revenue / mo',fmtD(res.conservative.mo), fmtD(res.mid.mo), fmtD(res.optimistic.mo)) +
+      row('ROAS',        res.conservative.roas.toFixed(1)+'x', res.mid.roas.toFixed(1)+'x', res.optimistic.roas.toFixed(1)+'x') +
+      row('Cost / Lead', res.conservative.cpl>0?'$'+res.conservative.cpl.toLocaleString():'-', res.mid.cpl>0?'$'+res.mid.cpl.toLocaleString():'-', res.optimistic.cpl>0?'$'+res.optimistic.cpl.toLocaleString():'-');
+
+  } else {
+    // B2C paid
+    var cfg = PA_B2C[paidCh];
+    ['conservative','mid','optimistic'].forEach(function(s){
+      var r = cfg[s];
+      var clicks, reach, purch, cpcEst;
+      if (cfg.type === 'cpc') {
+        clicks = Math.round(bgt/cfg.cpc); reach = Math.round(clicks/0.05);
+        cpcEst = cfg.cpc;
+      } else {
+        reach  = Math.round((bgt/cfg.cpm)*1000);
+        clicks = Math.round(reach * r.ctr);
+        cpcEst = clicks>0 ? parseFloat((bgt/clicks).toFixed(2)) : 0;
+      }
+      purch = Math.round(clicks * r.conv);
+      var mo   = Math.round(purch * deal);
+      var cpp  = purch>0 ? Math.round(bgt/purch) : 0;
+      res[s] = { reach, clicks, purch, mo, roas: parseFloat((mo/bgt).toFixed(1)),
+        cpp, cpc: cpcEst, ctr: cfg.type==='cpm'?r.ctr:null, conv:r.conv };
+    });
+
+    var cur = res[scenarios.pa];
+    $('pa-c1-val').textContent = fmtN(cur.reach);   $('pa-c1-lbl').textContent = cfg.type==='cpc'?'Est. Reach':'Impressions';
+    $('pa-c2-val').textContent = fmtN(cur.clicks);  $('pa-c2-lbl').textContent = 'Clicks';
+    $('pa-c2-note').textContent = cfg.type==='cpc' ? 'CPC $'+cfg.cpc : 'CTR '+(cur.ctr*100).toFixed(1)+'%';
+    $('pa-c3-val').textContent  = fmtN(cur.purch);
+    $('pa-c3-note').textContent = 'Conv '+(cur.conv*100).toFixed(1)+'%';
+    $('pa-c4-val').textContent  = cur.roas.toFixed(1)+'x';
+    $('pa-c4-note').textContent = 'Return on spend';
+    $('pa-r1-val').textContent = fmtD(cur.mo);      $('pa-r1-lbl').textContent = 'Monthly Revenue';
+    $('pa-r2-val').textContent = cur.cpp>0?'$'+cur.cpp.toLocaleString():'-';
+    $('pa-r3-val').textContent = cur.roas.toFixed(1)+'x';
+    $('pa-i1-v').textContent = '$'+cur.cpc.toFixed(2);
+    $('pa-i2-v').textContent = cur.cpp>0?'$'+cur.cpp.toLocaleString():'-';
+    $('pa-i3-v').textContent = cur.roas.toFixed(1)+'x ROAS';
+
+    var fit = fitAssess(res.mid.roas, [8,4,2,1]);
+    var fl = $('pa-fit-lbl'); fl.textContent = fit[0]; fl.className = 'fit-lbl '+fit[1];
+    var chName = {meta:'Meta', google:'Google Shopping', tiktok:'TikTok'};
+    $('pa-fit-txt').textContent = 'Mid - '+fmtD(deal)+' AOV, '+fmtD(bgt)+'/mo on '+chName[paidCh];
+
+    $('pa-tbody').innerHTML =
+      row('Clicks',       res.conservative.clicks.toLocaleString(), res.mid.clicks.toLocaleString(), res.optimistic.clicks.toLocaleString()) +
+      row('Purchases',    res.conservative.purch.toLocaleString(),  res.mid.purch.toLocaleString(),  res.optimistic.purch.toLocaleString()) +
+      row('Revenue / mo', fmtD(res.conservative.mo), fmtD(res.mid.mo), fmtD(res.optimistic.mo)) +
+      row('ROAS',         res.conservative.roas.toFixed(1)+'x', res.mid.roas.toFixed(1)+'x', res.optimistic.roas.toFixed(1)+'x') +
+      row('Cost / Purch', res.conservative.cpp>0?'$'+res.conservative.cpp.toLocaleString():'-', res.mid.cpp>0?'$'+res.mid.cpp.toLocaleString():'-', res.optimistic.cpp>0?'$'+res.optimistic.cpp.toLocaleString():'-');
+  }
+}
+
+
+function calcEmail() {
+  var list = parseFloat($('em-list').value);
+  var aov  = parseFloat($('em-aov').value);
+  var sends = list * 4;
+  $('em-list-val').textContent = list.toLocaleString();
+  $('em-aov-val').textContent  = aov.toLocaleString();
+  $('em-c-sent').textContent   = fmtN(sends);
+
+  var res = {};
+  ['conservative','mid','optimistic'].forEach(function(s){
+    var r = EM[s];
+    var opens   = Math.round(sends * r.open);
+    var clicks  = Math.round(opens * r.clickOfOpen);
+    var orders  = Math.round(clicks * r.convOfClick);
+    var mo      = Math.round(orders * aov);
+    var cpo     = orders>0 ? Math.round(RETAINER/orders) : 0;
+    res[s] = { opens, clicks, orders, mo, annual:Math.round(mo*12),
+      roi: parseFloat((mo/RETAINER).toFixed(1)), cpo,
+      rpe: sends>0 ? parseFloat((mo/sends).toFixed(2)) : 0,
+      open:r.open, clio:r.clickOfOpen, conv:r.convOfClick };
+  });
+
+  var cur = res[scenarios.em]; var r = EM[scenarios.em];
+  $('em-c-opens').textContent  = fmtN(cur.opens);
+  $('em-c-orate').textContent  = 'Open '+(r.open*100).toFixed(0)+'%';
+  $('em-c-clicks').textContent = fmtN(cur.clicks);
+  $('em-c-crate').textContent  = 'Click '+(r.clickOfOpen*100).toFixed(0)+'%';
+  $('em-c-orders').textContent = fmtN(cur.orders);
+  $('em-c-prate').textContent  = 'Conv '+(r.convOfClick*100).toFixed(0)+'%';
+  $('em-r-mo').textContent     = fmtD(cur.mo);
+  $('em-r-cpo').textContent    = cur.cpo>0?'$'+cur.cpo.toLocaleString():'-';
+  $('em-r-roi').textContent    = cur.roi.toFixed(1)+'x';
+
+  var midObe = aov>0 ? Math.round(RETAINER/aov) : 0;
+  $('em-rpe').textContent = '$'+res.mid.rpe.toFixed(2);
+  $('em-cpo').textContent = res.mid.cpo>0?'$'+res.mid.cpo.toLocaleString():'-';
+  $('em-obe').textContent = midObe.toLocaleString();
+
+  var fit = fitAssess(res.mid.roi, [10,5,2,1]);
+  var fl = $('em-fit-lbl'); fl.textContent = fit[0]; fl.className = 'fit-lbl '+fit[1];
+  $('em-fit-txt').textContent = 'Mid - '+fmtD(aov)+' AOV, '+list.toLocaleString()+' subscribers';
+
+  $('em-tbody').innerHTML =
+    row('Opens / mo',   fmtN(res.conservative.opens), fmtN(res.mid.opens), fmtN(res.optimistic.opens)) +
+    row('Clicks / mo',  fmtN(res.conservative.clicks), fmtN(res.mid.clicks), fmtN(res.optimistic.clicks)) +
+    row('Orders / mo',  fmtN(res.conservative.orders), fmtN(res.mid.orders), fmtN(res.optimistic.orders)) +
+    row('Revenue / mo', fmtD(res.conservative.mo), fmtD(res.mid.mo), fmtD(res.optimistic.mo)) +
+    row('Return on $5K', res.conservative.roi.toFixed(1)+'x', res.mid.roi.toFixed(1)+'x', res.optimistic.roi.toFixed(1)+'x');
+}
+
+
+function doEmail(pfx) {
+  var inp = $(pfx+'-email'); var btn = $(pfx+'-email-btn');
+  var val = inp.value.trim();
+  if (!val || val.indexOf('@') < 0) {
+    inp.style.borderColor = 'rgba(248,113,113,.6)';
+    inp.focus();
+    setTimeout(function(){ inp.style.borderColor = ''; }, 1600);
+    return;
+  }
+  var sub  = encodeURIComponent('My WeFlair Calculator Results');
+  var body = encodeURIComponent('Please send my calculator results to: '+val);
+  window.location.href = 'mailto:hello@weflair.com?subject='+sub+'&body='+body;
+  btn.textContent = 'Done: Opening email...'; btn.classList.add('sent'); btn.disabled = true;
+  setTimeout(function(){ btn.textContent = 'Email This to Me'; btn.classList.remove('sent'); btn.disabled = false; }, 3500);
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type=range]').forEach(updateSlider);
+  renderChTabs();
+  showPanel();
+  calcColdEmail();
+  // Pre-render paid panel so it's ready when user clicks
+  renderPaidPanel();
+  calcPaid();
+  calcEmail();
+});
+</script>
 </main>
 <section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">

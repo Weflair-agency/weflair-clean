@@ -478,6 +478,17 @@ module.exports = {
       label: "Sitemap",
       includeInXml: false,
     },
+    {
+      file: "blog.html",
+      path: "/blog.html",
+      title: "Marketing Blog | WeFlair",
+      description: "Tactical insights on B2B growth, paid media, outbound, CRO, and revenue systems from the WeFlair team.",
+      pageType: "collection",
+      schemaType: "CollectionPage",
+      group: "Blog",
+      label: "Blog",
+      includeInXml: true,
+    },
   ],
   redirects: [
     {
@@ -512,8 +523,6 @@ module.exports = {
     },
   ],
   legacyExcluded: [
-    "/blog.html",
-    "/blog/",
     "/index-2026-04-15.html",
     "/index.tmp.html",
   ],

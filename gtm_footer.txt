@@ -1,0 +1,506 @@
+<!-- FOOTER -->
+    <section class="footer weflair-footer">
+      <div class="weflair-new-cta-wrap" id="audit">
+        <div class="container" style="position:relative; z-index: 5;">
+          <div class="weflair-new-cta">
+            <div class="weflair-new-cta__bg"></div>
+            <div class="weflair-new-cta__glow"></div>
+
+            <div class="weflair-new-cta__grid">
+              <div class="weflair-new-cta__left">
+                <div class="weflair-new-cta__label">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="weflair-new-cta__label-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Free Audit
+                </div>
+                <h2 class="weflair-new-cta__h2">Ready to drive pipeline and predictable growth?</h2>
+                <p class="weflair-new-cta__p">We'll walk through your goals, your current setup, and whether WeFlair is the right partner for you.</p>
+                <div class="weflair-new-cta__features">
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Project reviewed</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Actionable audit included</div>
+                   <div class="weflair-new-cta__feature"><svg viewBox="0 0 24 24" fill="none" stroke="#3eff68" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Fit checked honestly</div>
+                </div>
+              </div>
+              <div class="weflair-new-cta__right">
+                <a href="/contact.html" class="weflair-new-cta__btn">
+                  <span class="weflair-new-cta__btn-text">Book your free audit</span>
+                  <span class="weflair-new-cta__btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="weflair-footer__main">
+        <div class="container">
+          <div class="weflair-footer__top">
+            <div class="weflair-footer__info-row">
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Global remote</h4>
+                <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
+                <p class="weflair-footer__info-line">HQ: Distributed</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+                <p class="weflair-footer__info-line">WeFlair LLC</p>
+                <p class="weflair-footer__info-line">New York, United States</p>
+              </div>
+              <div class="weflair-footer__info-col">
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
+                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                  class="weflair-footer__contact-link">hello@weflair.co</a>
+              </div>
+            </div>
+            <div class="weflair-footer__nav-row">
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Services</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
+                      Performance</a></li>
+                  <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">Outbound
+                      Systems</a></li>
+                  <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
+                      Design &amp; CRO</a></li>
+                  <li><a href="/services/ai-visibility-seo.html" class="weflair-footer__nav-link">AI Visibility &amp; SEO</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Expertise</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/expertise/b2b-demand-generation.html" class="weflair-footer__nav-link">B2B Demand Generation</a></li>
+                  <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
+                  <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
+                  <li><a href="/expertise/b2b-tech.html" class="weflair-footer__nav-link">B2B Tech</a></li>
+                  <li><a href="/expertise/ecommerce.html" class="weflair-footer__nav-link">E-commerce</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Resources</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/resources/" class="weflair-footer__nav-link">Resource Hub</a></li>
+                  <li><a href="/resources/playbooks.html" class="weflair-footer__nav-link">Guides &amp; Playbooks</a></li>
+                  <li><a href="/resources/ai-seo-playbook.html" class="weflair-footer__nav-link">AISEO Playbook</a></li>
+                  <li><a href="/resources/calculators.html" class="weflair-footer__nav-link">Calculators</a></li>
+                  <li><a href="/resources/checklists.html" class="weflair-footer__nav-link">Ads Checklist</a></li>
+                  <li><a href="/resource-pack.html" class="weflair-footer__nav-link">Resource Pack</a></li>
+                  <li><a href="/case-studies/" class="weflair-footer__nav-link">Case Studies</a></li>
+                </ul>
+              </div>
+              <div class="weflair-footer__nav-col">
+                <h4 class="weflair-footer__col-heading">Company</h4>
+                <ul class="weflair-footer__nav-list">
+                  <li><a href="/about.html" class="weflair-footer__nav-link">About Us</a></li>
+                  <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
+                  <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
+                  <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="weflair-footer__divider"></div>
+          <div class="weflair-footer__bottom">
+            <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
+                href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
+                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
+                href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+            <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
+                class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
+                rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg></a><a href="https://linkedin.com/company/weflair" class="weflair-footer__social-link"
+                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a><a href="https://x.com/weflair" class="weflair-footer__social-link" aria-label="X"
+                target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                  </path>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+  <script>
+    (function () {
+      function initProofQuote() {
+        var root = document.querySelector("[data-proof-quote]");
+        if (!root || root.dataset.proofQuoteReady === "true") return;
+        root.dataset.proofQuoteReady = "true";
+
+        var slides = Array.prototype.slice.call(root.querySelectorAll("[data-proof-quote-slide]"));
+        var dots = Array.prototype.slice.call(root.querySelectorAll("[data-proof-quote-dot]"));
+        var prev = root.querySelector("[data-proof-quote-prev]");
+        var next = root.querySelector("[data-proof-quote-next]");
+        var activeIndex = 0;
+        var timer = null;
+
+        if (!slides.length) return;
+
+        function setActive(index) {
+          activeIndex = (index + slides.length) % slides.length;
+
+          slides.forEach(function (slideNode, slideIndex) {
+            slideNode.classList.toggle("is-active", slideIndex === activeIndex);
+          });
+
+          dots.forEach(function (dotNode, dotIndex) {
+            dotNode.classList.toggle("is-active", dotIndex === activeIndex);
+            dotNode.setAttribute("aria-pressed", dotIndex === activeIndex ? "true" : "false");
+          });
+        }
+
+        function stopTimer() {
+          if (timer) {
+            window.clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function startTimer() {
+          stopTimer();
+          timer = window.setInterval(function () {
+            setActive(activeIndex + 1);
+          }, 4600);
+        }
+
+        if (prev) {
+          prev.addEventListener("click", function () {
+            setActive(activeIndex - 1);
+            startTimer();
+          });
+        }
+
+        if (next) {
+          next.addEventListener("click", function () {
+            setActive(activeIndex + 1);
+            startTimer();
+          });
+        }
+
+        dots.forEach(function (dotNode, dotIndex) {
+          dotNode.addEventListener("click", function () {
+            setActive(dotIndex);
+            startTimer();
+          });
+        });
+
+        root.addEventListener("mouseenter", stopTimer);
+        root.addEventListener("mouseleave", startTimer);
+
+        setActive(0);
+        startTimer();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initProofQuote, { once: true });
+      } else {
+        initProofQuote();
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      const CAL_NAMESPACE = "contact";
+      const CAL_ORIGIN = "";
+      const CAL_LINK = "";
+      const CAL_DIRECT_URL = "/contact.html";
+      const CAL_CONFIG = '{"layout":"week_view","useSlotsViewOnSmallScreen":"true"}';
+      const CAL_CONFIG_OBJECT = {
+        layout: "week_view",
+        useSlotsViewOnSmallScreen: true
+      };
+      const ARROW_MARKUP = '<div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>';
+      const DIAGONAL_ARROW_MARKUP = '<div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M7 17L17 7" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M9 7H17V15" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>';
+
+      function ensureCalEmbed() {
+        return;
+      }
+
+      function applyCalAttrs(node, source) {
+        if (!node) return;
+        node.setAttribute("href", CAL_DIRECT_URL);
+        node.removeAttribute("data-cal-link");
+        node.removeAttribute("data-cal-namespace");
+        node.removeAttribute("data-cal-config");
+        node.removeAttribute("aria-haspopup");
+        if (source) node.setAttribute("data-cal-source", source);
+      }
+
+      function openCalModal(source) {
+        window.location.href = CAL_DIRECT_URL;
+        return true;
+      }
+
+      function bindCalTriggers(scope) {
+        const root = scope || document;
+        root.querySelectorAll("[data-cal-link]").forEach(function (node) {
+          if (node.dataset.calBound === "true") return;
+          node.dataset.calBound = "true";
+          node.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            openCalModal(node.getAttribute("data-cal-source") || "");
+          });
+        });
+      }
+
+      function calButtonHtml(label, source, arrowType) {
+        const arrowMarkup = arrowType === "diagonal" ? DIAGONAL_ARROW_MARKUP : ARROW_MARKUP;
+        return '<a data-hover="" data-btn-theme="primary" href="' + CAL_DIRECT_URL + '" data-cal-source="' + source + '" class="btn w-inline-block weflair-btn weflair-btn--primary"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">' + label + '</span></div>' + arrowMarkup + '</a>';
+      }
+
+      function renderAuditWidget() {
+        return "";
+      }
+
+      function wireAuditWidget() {
+        document.querySelectorAll(".weflair-audit-widget, .weflair-hero-widget-wrap").forEach(function (node) { node.remove(); });
+      }
+
+      function htmlEscape(value) {
+        return String(value).replace(/[&<>"']/g, function (char) {
+          switch (char) {
+            case "&":
+              return "&amp;";
+            case "<":
+              return "&lt;";
+            case ">":
+              return "&gt;";
+            case '"':
+              return "&quot;";
+            case "'":
+              return "&#39;";
+            default:
+              return char;
+          }
+        });
+      }
+
+      const TEAM_PODS = [{
+        name: "Paid Media & Performance",
+        icon: "performance",
+        tone: "performance",
+        eyebrow: "Paid Media Pod",
+        title: "Paid Media & Performance",
+        body: "Sharper targeting, tighter budgets, better creative - built to turn ad spend into revenue, not reports.",
+        linkLabel: "Discover details",
+        linkHref: "/services/paid-media-performance.html",
+        lead: {
+          name: "Performance Lead",
+          img: "/brand-assets/team/persona-01.svg"
+        },
+        roles: [{
+          label: "Media Buyer",
+          img: "/brand-assets/team/persona-05.svg"
+        }, {
+          label: "Creative Strategist",
+          img: "/brand-assets/team/persona-06.svg"
+        }, {
+          label: "Analytics Lead",
+          img: "/brand-assets/team/persona-07.svg"
+        }]
+      }, {
+        name: "GTM Engineering",
+        icon: "outbound",
+        tone: "outbound",
+        eyebrow: "GTM Pod",
+        title: "GTM Engineering",
+        body: "Signal-driven prospecting, enriched sequences, and pipeline automation - conversations that start because the timing and message are right.",
+        linkLabel: "Discover details",
+        linkHref: "/services/go-to-market-systems.html",
+        lead: {
+          name: "GTM Lead",
+          img: "/brand-assets/team/persona-02.svg"
+        },
+        roles: [{
+          label: "Data & Enrichment",
+          img: "/brand-assets/team/persona-08.svg"
+        }, {
+          label: "Sequence Writer",
+          img: "/brand-assets/team/persona-04.svg"
+        }, {
+          label: "Pipeline Ops",
+          img: "/brand-assets/team/persona-03.svg"
+        }]
+      }, {
+        name: "Operations & Automation",
+        icon: "revops",
+        tone: "revops",
+        eyebrow: "Ops Pod",
+        title: "Operations & Automation",
+        body: "Clean data, smart routing, and automation that runs without babysitting - so nothing leaks between marketing and sales.",
+        linkLabel: "Discover details",
+        linkHref: "/services/go-to-market-systems.html",
+        lead: {
+          name: "RevOps Lead",
+          img: "/brand-assets/team/persona-03.svg"
+        },
+        roles: [{
+          label: "CRM Architect",
+          img: "/brand-assets/team/persona-05.svg"
+        }, {
+          label: "Automation Engineer",
+          img: "/brand-assets/team/persona-08.svg"
+        }, {
+          label: "Data Analyst",
+          img: "/brand-assets/team/persona-07.svg"
+        }]
+      }, {
+        name: "Performance Design & CRO",
+        icon: "content",
+        tone: "content",
+        eyebrow: "Design & Content Pod",
+        title: "Performance Design & CRO",
+        body: "Creative, pages, and content designed to convert - then tested and iterated until the numbers prove it.",
+        linkLabel: "Discover details",
+        linkHref: "/services/performance-design.html",
+        lead: {
+          name: "Creative Director",
+          img: "/brand-assets/team/persona-04.svg"
+        },
+        roles: [{
+          label: "UX/UI Designer",
+          img: "/brand-assets/team/persona-06.svg"
+        }, {
+          label: "Copywriter",
+          img: "/brand-assets/team/persona-04.svg"
+        }, {
+          label: "Project Manager",
+          img: "/brand-assets/team/persona-02.svg"
+        }]
+      }];
+
+      function teamTabIcon(type) {
+        const icons = {
+          performance: '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M5 18H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M7.5 15L10.5 11.5L13 13.5L17 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 8H14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M17 8V10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>',
+          outbound: '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M4 12L20 4L15 20L11 13L4 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M11 13L20 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>',
+          revops: '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M7 7H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M7 17H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M7 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"></circle></svg>',
+          content: '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M8 7.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 11.5H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M8 15.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M6.5 4.5H17.5C18.0523 4.5 18.5 4.94772 18.5 5.5V18.5L15.5 16.5H6.5C5.94772 16.5 5.5 16.0523 5.5 15.5V5.5C5.5 4.94772 5.94772 4.5 6.5 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>'
+        };
+        return icons[type] || icons.performance;
+      }
+
+      function teamLinkMarkup(label, href) {
+        return '<a href="' + htmlEscape(href) + '" class="weflair-demand-team__link"><span class="weflair-demand-team__link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none"><path d="M7 12H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><path d="M12 7L17 12L12 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="weflair-demand-team__link-label">' + htmlEscape(label) + "</span></a>";
+      }
+
+      function teamShowcaseMarkup(pod) {
+        const rolesMarkup = pod.roles.map(function (role) {
+          return '<div class="weflair-org-node"><div class="weflair-org-avatar is-sm" style="background-image:url(\'' + htmlEscape(role.img) + '\')"></div><span class="weflair-org-label">' + htmlEscape(role.label) + "</span></div>";
+        }).join("");
+        return '<div class="weflair-demand-team__showcase is-' + htmlEscape(pod.tone) + '"><span class="weflair-demand-team__showcase-label">' + htmlEscape(pod.eyebrow) + '</span><div class="weflair-org-chart"><div class="weflair-org-lead"><div class="weflair-org-avatar" style="background-image:url(\'' + htmlEscape(pod.lead.img) + '\')"></div><span class="weflair-org-name">' + htmlEscape(pod.lead.name) + '</span></div><div class="weflair-org-connector"></div><div class="weflair-org-child-nodes">' + rolesMarkup + "</div></div></div>";
+      }
+
+      function teamPanelMarkup(pod) {
+        const avatarsMarkup = pod.roles.map(function (role) {
+          return '<span class="weflair-demand-team__avatar" style="background-image:url(\'' + htmlEscape(role.img) + '\')" title="' + htmlEscape(role.label) + '"></span>';
+        }).join("");
+        return '<div class="weflair-demand-team__detail-shell"><div class="weflair-demand-team__copy-block"><p class="weflair-demand-team__panel-eyebrow">' + htmlEscape(pod.eyebrow) + '</p><h3 class="h4">' + htmlEscape(pod.title) + '</h3><p class="weflair-demand-team__panel-body">' + htmlEscape(pod.body) + '</p><div class="weflair-demand-team__avatars">' + avatarsMarkup + '</div>' + teamLinkMarkup(pod.linkLabel, pod.linkHref) + '</div>' + teamShowcaseMarkup(pod) + "</div>";
+      }
+
+      function renderTeamPod(index) {
+        const detail = document.querySelector("[data-pod-detail]");
+        const pod = TEAM_PODS[index];
+        if (!detail || !pod) return;
+        document.querySelectorAll("[data-pod-index]").forEach(function (buttonNode, buttonIndex) {
+          const isActive = buttonIndex === index;
+          buttonNode.classList.toggle("is-active", isActive);
+          buttonNode.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
+        detail.innerHTML = teamPanelMarkup(pod);
+      }
+
+      function wireTeamTabs() {
+        const buttons = Array.from(document.querySelectorAll(".weflair-demand-team__tab[data-pod-index]"));
+        if (!buttons.length) return;
+        buttons.forEach(function (buttonNode) {
+          buttonNode.addEventListener("click", function () {
+            const index = Number(buttonNode.getAttribute("data-pod-index"));
+            if (Number.isNaN(index)) return;
+            renderTeamPod(index);
+          });
+        });
+      }
+
+      function upgradePage() {
+        ensureCalEmbed();
+
+        const widgetWrap = document.querySelector(".weflair-hero-widget-wrap");
+        if (widgetWrap) {
+          widgetWrap.innerHTML = renderAuditWidget();
+          wireAuditWidget();
+        }
+
+        applyCalAttrs(document.querySelector(".nav-bar__btn a"), "nav-talk");
+
+        const servicesCta = document.querySelector(".weflair-services-cta");
+        if (servicesCta && !servicesCta.classList.contains('weflair-questionnaire-hook')) {
+          servicesCta.innerHTML = '<div class="weflair-services-cta-text"><h3 class="h5">Not sure which service you need?</h3><p>Answer three quick questions and we&rsquo;ll recommend the right starting point.</p></div>';
+        }
+
+        bindCalTriggers(document);
+        document.querySelectorAll("#problems .growing-tile__end .growing-tile__text, #problems .growing-tile__end .p-s").forEach((node) => {
+          node.style.visibility = "visible";
+          node.style.opacity = "1";
+          node.style.transform = "none";
+        });
+        wireTeamTabs();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", upgradePage, {
+          once: true
+        });
+      } else {
+        upgradePage();
+      }
+    })();
+  </script>
+  <script>
+    /* --- SECTOR TAB SWITCHING --- */
+    (function(){
+      var tabs = document.querySelectorAll('.weflair-sectors__tab');
+      var panels = document.querySelectorAll('.weflair-sectors__panel');
+      if (!tabs.length) return;
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          var target = this.getAttribute('data-sector');
+          tabs.forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+          panels.forEach(function(p){ p.classList.remove('is-active'); });
+          this.classList.add('is-active');
+          this.setAttribute('aria-selected','true');
+          var panel = document.querySelector('[data-sector-panel="'+target+'"]');
+          if(panel) panel.classList.add('is-active');
+        });
+      });
+    })();
+
+    /* --- FIX CORRUPTED QUESTIONNAIRE LINE --- */
+    (function(){
+      var ctaText = document.querySelector('.weflair-questionnaire-hook .weflair-services-cta-text');
+      if (!ctaText) return;
+      var p = ctaText.querySelector('p');
+      if (p) {
+        p.textContent = 'Answer three quick questions and we will recommend the right starting point for your business.';
+        /* Remove any duplicate <p> siblings */
+        var ps = ctaText.querySelectorAll('p');
+        for (var i = 1; i < ps.length; i++) ps[i].remove();
+      }
+    })();
+  </script>
+</body>
+
+</html>
+

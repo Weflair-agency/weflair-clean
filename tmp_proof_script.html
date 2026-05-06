@@ -1,0 +1,1284 @@
+    <style id="weflair-proof-switcher-css">
+      #proof.weflair-proof--switcher {
+        padding: clamp(5.8rem, 8vw, 7.2rem) 0;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__layout {
+        width: min(100%, 80rem);
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head {
+        width: min(100%, 42rem);
+        gap: .9rem;
+      }
+
+      .weflair-proof__overline {
+        margin: 0;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: #3eff68;
+      }
+
+      #proof.weflair-proof--switcher .weflair-proof__head .h3 {
+        max-width: 20ch;
+      }
+
+      .weflair-proof-switcher {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .weflair-proof-switcher__nav {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 243, 238, .12);
+        background: rgba(246, 243, 238, .04);
+        color: #f6f3ee;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+
+      .weflair-proof-switcher__nav:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, .26);
+        background: rgba(62, 255, 104, .08);
+      }
+
+      .weflair-proof-switcher__nav svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      /* default desktop shell: feature card full-width, rails horizontal below */
+      .weflair-proof-switcher__shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.05rem;
+        align-items: stretch;
+      }
+
+      .weflair-proof-switcher__rails {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      /* -- proof feature card: shared shell -- */
+      .weflair-proof-feature {
+        border-radius: 1.65rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        background: linear-gradient(180deg, rgba(24, 24, 24, .98) 0%, rgba(15, 15, 15, .98) 100%);
+        box-shadow: 0 20px 38px rgba(0, 0, 0, .22);
+        overflow: hidden;
+        min-height: 22rem;
+        max-height: 34rem;
+      }
+
+      /* --- TYPE A: heydigital - info|visual 2-col --- */
+      .weflair-proof-feature[data-type="heydigital"] {
+        display: grid;
+        grid-template-columns: minmax(0, .46fr) minmax(0, .54fr);
+        grid-template-rows: 1fr auto;
+        gap: 0;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] {
+        grid-template-columns: minmax(0, .54fr) minmax(0, .46fr);
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__info {
+        order: 2;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__visual,
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__ad-grid {
+        order: 1;
+      }
+
+      .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__dots-row {
+        order: 3;
+      }
+
+      .weflair-proof-feature__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: clamp(1.4rem, 2.2vw, 2rem);
+        justify-content: center;
+      }
+
+      .weflair-proof-feature__logo {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.8rem;
+      }
+
+      .weflair-proof-feature__logo img {
+        max-width: 10rem;
+        max-height: 2.8rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-feature__headline {
+        margin: 0;
+        max-width: 18ch;
+        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+        line-height: 1.06;
+        letter-spacing: -.045em;
+        font-weight: 700;
+      }
+
+      .weflair-proof-feature__desc {
+        margin: 0;
+        max-width: 42ch;
+        font-size: .92rem;
+        line-height: 1.5;
+        color: rgba(246, 243, 238, .62);
+      }
+
+      .weflair-proof-feature__metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .4rem 1.8rem;
+        margin-top: .35rem;
+      }
+
+      .weflair-proof-feature__metric {
+        display: grid;
+        gap: .18rem;
+      }
+
+      .weflair-proof-feature__metric strong {
+        font-size: clamp(2rem, 3vw, 2.65rem);
+        line-height: .95;
+        letter-spacing: -.06em;
+        color: #3eff68;
+      }
+
+      .weflair-proof-feature__metric span {
+        font-size: .78rem;
+        line-height: 1.3;
+        color: rgba(246, 243, 238, .56);
+      }
+
+      .weflair-proof-feature__link {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        margin-top: .25rem;
+        font-size: .82rem;
+        font-weight: 700;
+        color: #3eff68;
+        text-decoration: none;
+        letter-spacing: -.01em;
+        transition: opacity .18s;
+      }
+
+      .weflair-proof-feature__link:hover {
+        opacity: .78;
+      }
+
+      .weflair-proof-feature__link svg {
+        width: .85rem;
+        height: .85rem;
+      }
+
+      /* -- photo visual (heydigital) -- */
+      .weflair-proof-feature__visual {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .weflair-proof-feature__photo {
+        position: absolute;
+        inset: 0;
+        background-color: #2a2a28;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: transform .35s ease;
+      }
+
+      .weflair-proof-feature:hover .weflair-proof-feature__photo {
+        transform: scale(1.04);
+      }
+
+      .weflair-proof-feature__photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 15, 15, .12) 0%, rgba(15, 15, 15, .38) 100%);
+      }
+
+      /* -- ad-showcase collage (heydigital) -- */
+      .weflair-proof-feature__ad-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: .65rem;
+        overflow: hidden;
+        background: linear-gradient(145deg, #0d3320 0%, #071a0e 100%);
+        padding: 1rem;
+        align-content: stretch;
+      }
+
+      .weflair-proof-feature__ad-frame {
+        border-radius: .6rem;
+        overflow: hidden;
+        background: #1a1a1a;
+        border: 1px solid rgba(246, 243, 238, .1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .35), 0 1px 4px rgba(0, 0, 0, .15);
+        transition: transform .25s ease, box-shadow .25s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .weflair-proof-feature__ad-frame:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .45), 0 2px 8px rgba(0, 0, 0, .2);
+      }
+
+      .weflair-proof-feature__ad-header {
+        display: flex; align-items: center; gap: .35rem;
+        padding: .4rem .55rem; background: #1c1c1c;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+      }
+      .weflair-proof-feature__ad-avatar { width: 1.4rem; height: 1.4rem; border-radius: 50%; background: rgba(255,255,255,.08); overflow: hidden; flex-shrink: 0; }
+      .weflair-proof-feature__ad-avatar img { width: 100%; height: 100%; object-fit: contain; }
+      .weflair-proof-feature__ad-name { font-size: .6rem; font-weight: 700; color: rgba(246,243,238,.88); line-height: 1; }
+      .weflair-proof-feature__ad-sponsored { font-size: .46rem; color: rgba(246,243,238,.4); line-height: 1; margin-top: .12rem; }
+
+      .weflair-proof-feature__ad-body {
+        aspect-ratio: 1.2 / 1; background-size: cover; background-position: center; background-color: #2a2a28; position: relative;
+      }
+      .weflair-proof-feature__ad-body-headline {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        padding: .45rem .55rem;
+        background: linear-gradient(0deg, rgba(0,0,0,.72) 0%, transparent 100%);
+        font-size: .58rem; font-weight: 700; line-height: 1.25; color: #fff;
+      }
+
+      .weflair-proof-feature__ad-footer {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: .38rem .55rem; background: #1c1c1c;
+        border-top: 1px solid rgba(255,255,255,.06);
+      }
+      .weflair-proof-feature__ad-cta { font-size: .52rem; font-weight: 600; color: rgba(246,243,238,.55); line-height: 1; }
+      .weflair-proof-feature__ad-action {
+        font-size: .5rem; font-weight: 700; color: #3eff68;
+        text-transform: uppercase; letter-spacing: .06em;
+        padding: .18rem .4rem; border: 1px solid rgba(62,255,104,.25); border-radius: .25rem; line-height: 1;
+      }
+
+      .weflair-proof-feature__ad-grid.is-studio-loop {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        place-items: center;
+        gap: 0;
+        padding: clamp(.95rem, 1.6vw, 1.25rem);
+        min-height: 23rem;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 12%, rgba(62, 255, 104, .2), transparent 18rem),
+          linear-gradient(145deg, #0a2817 0%, #07130c 100%);
+      }
+
+      .weflair-proof-studio {
+        position: relative;
+        width: min(100%, 28.5rem);
+        aspect-ratio: 1 / .98;
+        display: grid;
+        place-items: center;
+      }
+
+      .weflair-proof-studio.is-live-preview {
+        width: min(100%, 22.5rem);
+        aspect-ratio: 474 / 420;
+        overflow: visible;
+      }
+
+      .weflair-proof-studio__iframe {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: transparent;
+      }
+
+      .weflair-proof-studio__ghost,
+      .weflair-proof-studio__card {
+        position: absolute;
+        inset: 0;
+        border-radius: 1.25rem;
+      }
+
+      .weflair-proof-studio__ghost {
+        border: 1px solid rgba(246, 243, 238, .12);
+        background: rgba(246, 243, 238, .92);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .22);
+        pointer-events: none;
+      }
+
+      .weflair-proof-studio__ghost.is-one {
+        transform: rotate(-3deg) translate(-.7rem, .45rem) scale(.96);
+        opacity: .52;
+        animation: proofStudioGhostOne 7s ease-in-out infinite;
+      }
+
+      .weflair-proof-studio__ghost.is-two {
+        transform: rotate(2.4deg) translate(.65rem, .75rem) scale(.975);
+        opacity: .78;
+        animation: proofStudioGhostTwo 8s ease-in-out infinite;
+      }
+
+      .weflair-proof-studio__card {
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        padding: clamp(.8rem, 1.6vw, 1.05rem);
+        background: #eef0ff;
+        box-shadow: 0 1.4rem 2.8rem rgba(0, 0, 0, .28);
+      }
+
+      .weflair-proof-studio__preview {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        padding: clamp(.78rem, 1.3vw, .95rem);
+        border-radius: .95rem;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .weflair-proof-studio__top {
+        display: flex;
+        justify-content: space-between;
+        gap: .8rem;
+        align-items: center;
+        min-height: 1.35rem;
+        margin-bottom: .65rem;
+        color: #0f1729;
+      }
+
+      .weflair-proof-studio__label {
+        font-size: clamp(.78rem, 1vw, .9rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .weflair-proof-studio__meta {
+        font-size: clamp(.66rem, .85vw, .74rem);
+        font-weight: 650;
+        color: rgba(15, 23, 41, .48);
+        white-space: nowrap;
+      }
+
+      .weflair-proof-studio__viewport {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: .75rem;
+        background: #f2f2f5;
+      }
+
+      .weflair-proof-studio__track {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        width: max-content;
+        padding: .75rem;
+        animation: proofStudioTrack 18s cubic-bezier(.45, 0, .2, 1) infinite;
+        will-change: transform;
+      }
+
+      .weflair-proof-studio__slide {
+        position: relative;
+        flex: 0 0 auto;
+        width: clamp(12.6rem, 20vw, 15rem);
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: .7rem;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 .55rem 1.4rem rgba(15, 23, 41, .24);
+      }
+
+      .weflair-proof-studio__slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 34%, rgba(0, 0, 0, .76) 100%);
+      }
+
+      .weflair-proof-studio__slide span {
+        position: absolute;
+        z-index: 1;
+        left: .75rem;
+        right: .75rem;
+        bottom: .75rem;
+        color: #fff;
+        font-size: .78rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .weflair-proof-studio__dots {
+        display: flex;
+        justify-content: center;
+        gap: .42rem;
+        margin-top: .85rem;
+      }
+
+      .weflair-proof-studio__dot {
+        width: .38rem;
+        height: .38rem;
+        border-radius: 999px;
+        background: #c9cad8;
+      }
+
+      .weflair-proof-studio__dot.is-active {
+        width: 1.35rem;
+        background: #3a3ad1;
+      }
+
+      @keyframes proofStudioTrack {
+        0%, 16% { transform: translateX(0); }
+        24%, 40% { transform: translateX(-12.5%); }
+        48%, 64% { transform: translateX(-25%); }
+        72%, 88% { transform: translateX(-37.5%); }
+        100% { transform: translateX(0); }
+      }
+
+      @keyframes proofStudioGhostOne {
+        0%, 100% { transform: rotate(-3deg) translate(-.7rem, .45rem) scale(.96); }
+        50% { transform: rotate(-3.8deg) translate(-.95rem, .58rem) scale(.955); }
+      }
+
+      @keyframes proofStudioGhostTwo {
+        0%, 100% { transform: rotate(2.4deg) translate(.65rem, .75rem) scale(.975); }
+        50% { transform: rotate(3.1deg) translate(.9rem, .9rem) scale(.968); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .weflair-proof-studio__track,
+        .weflair-proof-studio__ghost {
+          animation: none;
+        }
+      }
+
+      /* hide elements based on type */
+      .weflair-proof-feature[data-type="heydigital"] .weflair-proof-feature__np-center,
+      .weflair-proof-feature[data-type="heydigital"] .weflair-proof-feature__np-stats,
+      .weflair-proof-feature[data-type="heydigital"] .weflair-proof-feature__np-logo {
+        display: none;
+      }
+
+      .weflair-proof-feature[data-type="netpeak"] .weflair-proof-feature__info,
+      .weflair-proof-feature[data-type="netpeak"] .weflair-proof-feature__visual,
+      .weflair-proof-feature[data-type="netpeak"] .weflair-proof-feature__ad-grid {
+        display: none;
+      }
+
+      /* --- TYPE B: netpeak - logo | center-content | stats --- */
+      .weflair-proof-feature[data-type="netpeak"] {
+        display: grid;
+        grid-template-columns: 12rem minmax(0, 1fr) 14rem;
+        grid-template-rows: 1fr auto;
+        gap: 0;
+      }
+
+      .weflair-proof-feature__np-logo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem 1rem;
+      }
+
+      .weflair-proof-feature__np-logo img {
+        max-width: 9rem;
+        max-height: 5rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-feature__np-center {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 1.5rem 1.5rem 0;
+        overflow-y: auto;
+      }
+
+      .weflair-proof-feature__np-photo {
+        width: 100%;
+        border-radius: .85rem;
+        overflow: hidden;
+        aspect-ratio: 16 / 7;
+        background-size: cover;
+        background-position: center;
+        background-color: #2a2a28;
+      }
+
+      .weflair-proof-feature__np-desc {
+        margin: 0;
+        font-size: .88rem;
+        line-height: 1.55;
+        color: rgba(246, 243, 238, .7);
+        max-width: 52ch;
+      }
+
+      .weflair-proof-feature__np-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding-top: .5rem;
+        border-top: 1px solid rgba(246, 243, 238, .08);
+      }
+
+      .weflair-proof-feature__np-meta-label {
+        font-size: .68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        color: rgba(246, 243, 238, .42);
+        margin-bottom: .3rem;
+      }
+
+      .weflair-proof-feature__np-meta-value {
+        font-size: .88rem;
+        font-weight: 700;
+        color: #3eff68;
+        line-height: 1.3;
+      }
+
+      .weflair-proof-feature__np-meta-duration {
+        font-size: .92rem;
+        font-weight: 700;
+        color: #f6f3ee;
+      }
+
+      .weflair-proof-feature__np-cta {
+        display: block;
+        width: 100%;
+        padding: .85rem 1.2rem;
+        border-radius: .65rem;
+        border: none;
+        background: #3eff68;
+        color: #0a0a0a;
+        font-size: .88rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: -.01em;
+        cursor: pointer;
+        transition: background .18s ease, transform .18s ease;
+      }
+
+      .weflair-proof-feature__np-cta:hover {
+        background: #2de85a;
+        transform: translateY(-1px);
+      }
+
+      .weflair-proof-feature__np-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.5rem 1.4rem;
+        justify-content: center;
+        border-left: 1px solid rgba(246, 243, 238, .06);
+      }
+
+      .weflair-proof-feature__np-photo.no-photo,
+      .weflair-proof-feature__photo.no-photo {
+        background: linear-gradient(135deg, rgba(62, 255, 104, .22) 0%, rgba(21, 21, 21, .9) 40%, rgba(62, 255, 104, .10) 100%);
+        border: 1px solid rgba(62, 255, 104, .18);
+      }
+
+      .weflair-proof-feature__np-stat {
+        display: grid;
+        gap: .2rem;
+      }
+
+      .weflair-proof-feature__np-stat strong {
+        font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+        line-height: .92;
+        letter-spacing: -.06em;
+        font-weight: 700;
+        color: #3eff68;
+      }
+
+      .weflair-proof-feature__np-stat span {
+        font-size: .76rem;
+        line-height: 1.35;
+        color: rgba(246, 243, 238, .56);
+        max-width: 10ch;
+      }
+
+      .weflair-proof-feature__dots-row {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        padding: .6rem 0 .85rem;
+      }
+
+      .weflair-proof-rail {
+        width: 100%;
+        padding: 1.2rem 1rem;
+        border-radius: 1.45rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        background: rgba(246, 243, 238, .03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .75rem;
+        color: #f6f3ee;
+        cursor: pointer;
+        transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+
+      .weflair-proof-rail:hover {
+        transform: translateY(-2px);
+        border-color: rgba(62, 255, 104, .22);
+        background: rgba(246, 243, 238, .05);
+      }
+
+      .weflair-proof-rail__logo {
+        display: grid;
+        place-items: center;
+        min-height: 3.2rem;
+        width: 100%;
+        padding: 0 .3rem;
+      }
+
+      .weflair-proof-rail__logo img {
+        max-width: 100%;
+        max-height: 2.8rem;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .weflair-proof-rail__meta {
+        font-size: .64rem;
+        line-height: 1;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: rgba(246, 243, 238, .46);
+        text-align: center;
+      }
+
+      .weflair-proof-rail__toggle {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: 1px solid rgba(246, 243, 238, .12);
+        display: grid;
+        place-items: center;
+        font-size: 1.2rem;
+        line-height: 1;
+        color: #8fa082;
+      }
+
+      .weflair-proof-switcher__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .55rem;
+      }
+
+      .weflair-proof-switcher__dot {
+        width: .78rem;
+        height: .78rem;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(246, 243, 238, .22);
+        cursor: pointer;
+      }
+
+      .weflair-proof-switcher__dot.is-active {
+        background: #3eff68;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(62, 255, 104, .04), transparent 24%),
+          radial-gradient(circle at 88% 14%, rgba(111, 136, 255, .06), transparent 26%),
+          linear-gradient(180deg, #f4f1ea 0%, #ece7dd 100%);
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof__head .weflair-section__body,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__desc,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__metric span,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-rail__meta {
+        color: rgba(23, 21, 17, .58);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature,
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-rail {
+        border-color: rgba(23, 21, 17, .09);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .92) 0%, rgba(250, 247, 241, .92) 100%);
+        box-shadow: 0 22px 38px rgba(88, 72, 50, .12);
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__metric strong {
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__link {
+        color: #167a36;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-stat strong {
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-stat span {
+        color: rgba(23, 21, 17, .58);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-desc {
+        color: rgba(23, 21, 17, .68);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-meta-value {
+        color: #167a36;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-meta-duration {
+        color: #171511;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-meta-label {
+        color: rgba(23, 21, 17, .46);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-stats {
+        border-left-color: rgba(23, 21, 17, .08);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-meta {
+        border-top-color: rgba(23, 21, 17, .08);
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-feature__np-cta {
+        background: #171511;
+        color: #f6f3ee;
+      }
+
+      html[data-theme="light"] #proof.weflair-proof--switcher .weflair-proof-switcher__nav {
+        border-color: rgba(23, 21, 17, .1);
+        background: rgba(255, 255, 255, .76);
+        color: #171511;
+      }
+
+      /* large screens - wider layout, more breathing room */
+      @media screen and (min-width: 1440px) {
+        .weflair-proof-feature[data-type="netpeak"] {
+          grid-template-columns: 14rem minmax(0, 1fr) 16rem;
+        }
+
+        .weflair-proof-feature__info {
+          padding: clamp(1.6rem, 2.4vw, 2.4rem);
+        }
+      }
+
+      /* mid-range - feature card full width, horizontal rails below */
+      @media screen and (max-width: 1199px) and (min-width: 992px) {
+        .weflair-proof-feature {
+          max-height: none;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        .weflair-proof-switcher {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-switcher__nav {
+          display: none;
+        }
+
+        .weflair-proof-feature {
+          min-height: auto;
+          max-height: none;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__info,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__visual,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__ad-grid,
+        .weflair-proof-feature[data-type="heydigital"][data-layout="reversed"] .weflair-proof-feature__dots-row {
+          order: unset;
+        }
+
+        .weflair-proof-feature[data-type="netpeak"] {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-feature__np-logo {
+          padding: 1.2rem;
+          justify-content: flex-start;
+        }
+
+        .weflair-proof-feature__np-center {
+          padding: 0 1.2rem 1.2rem;
+          overflow-y: visible;
+        }
+
+        .weflair-proof-feature__np-stats {
+          flex-direction: row;
+          flex-wrap: wrap;
+          border-left: none;
+          border-top: 1px solid rgba(246, 243, 238, .06);
+          padding: 1.2rem;
+          gap: 1.5rem;
+        }
+
+        .weflair-proof-feature__visual {
+          min-height: 16rem;
+        }
+
+        .weflair-proof-feature__ad-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .weflair-proof-feature__ad-grid.is-studio-loop {
+          grid-template-columns: 1fr;
+          min-height: 21rem;
+        }
+
+        .weflair-proof-feature__headline {
+          max-width: none;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .weflair-proof-feature__visual {
+          min-height: 13rem;
+        }
+
+        .weflair-proof-feature__ad-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, auto);
+          padding: .75rem;
+          gap: .5rem;
+        }
+
+        .weflair-proof-feature__ad-grid.is-studio-loop {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+          min-height: 19rem;
+          padding: .95rem;
+          gap: 0;
+        }
+
+        .weflair-proof-studio {
+          width: min(100%, 19rem);
+        }
+
+        .weflair-proof-feature__info {
+          padding: 1.2rem;
+          gap: .9rem;
+        }
+
+        .weflair-proof-feature__metrics {
+          grid-template-columns: 1fr;
+          gap: .6rem;
+        }
+
+        .weflair-proof-feature__np-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .weflair-proof-feature__np-meta {
+          grid-template-columns: 1fr;
+        }
+
+        .weflair-proof-switcher__rails {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .weflair-proof-rail__meta {
+          font-size: .58rem;
+        }
+      }
+    </style>
+    <section class="weflair-section weflair-proof weflair-proof--switcher" id="proof">
+      <div class="container">
+        <div class="weflair-proof__layout">
+          <div class="weflair-proof__head">
+            <p class="weflair-proof__overline">Case studies</p>
+            <h2 class="h3">Proven results.</h2>
+            <p class="weflair-section__body">Measurable growth across ecommerce, CRM, and paid media.</p>
+          </div>
+          <div class="weflair-proof-switcher" data-proof-switcher>
+            <button type="button" class="weflair-proof-switcher__nav is-prev" data-proof-nav-prev aria-label="Show previous case study">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <div class="weflair-proof-switcher__shell">
+              <article class="weflair-proof-feature" data-proof-type>
+                <!-- TYPE A: heydigital - info left, visual right -->
+                <div class="weflair-proof-feature__info">
+                  <div class="weflair-proof-feature__logo" data-proof-logo></div>
+                  <h3 class="weflair-proof-feature__headline" data-proof-headline></h3>
+                  <p class="weflair-proof-feature__desc" data-proof-desc></p>
+                  <div class="weflair-proof-feature__metrics" data-proof-metrics></div>
+                  <a href="/case-studies/" class="weflair-proof-feature__link" data-proof-link>
+                    Read full results <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                </div>
+                <div class="weflair-proof-feature__visual">
+                  <div class="weflair-proof-feature__photo" data-proof-photo></div>
+                </div>
+                <div class="weflair-proof-feature__ad-grid" data-proof-ad-grid></div>
+
+                <!-- TYPE B: netpeak - logo | center | stats -->
+                <div class="weflair-proof-feature__np-logo" data-proof-np-logo></div>
+                <div class="weflair-proof-feature__np-center">
+                  <div class="weflair-proof-feature__np-photo" data-proof-np-photo></div>
+                  <p class="weflair-proof-feature__np-desc" data-proof-np-desc></p>
+                  <div class="weflair-proof-feature__np-meta" data-proof-np-meta></div>
+                  <a href="/case-studies/" class="weflair-proof-feature__np-cta" data-proof-np-cta>Read full case &rarr;</a>
+                </div>
+                <div class="weflair-proof-feature__np-stats" data-proof-np-stats></div>
+
+                <!-- shared dots -->
+                <div class="weflair-proof-feature__dots-row">
+                  <div class="weflair-proof-switcher__dots" data-proof-dots></div>
+                </div>
+              </article>
+              <div class="weflair-proof-switcher__rails" data-proof-rails></div>
+            </div>
+            <button type="button" class="weflair-proof-switcher__nav is-next" data-proof-nav-next aria-label="Show next case study">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      (function () {
+        var root = document.querySelector("[data-proof-switcher]");
+        if (!root) return;
+
+        var proofCases = [
+          {
+            type: "netpeak",
+            logo: "/brand-assets/client-logos/farnell.png",
+            alt: "Farnell logo",
+            photo: "/brand-assets/cases/farnell.jpg",
+            desc: "Embedded as part of Farnell\u2019s personalization squad alongside McKinsey. Built and deployed a continuous experimentation programme spanning product roadmap, UX, and commercial features \u2014 generating \u00A34.5m in incremental revenue.",
+            metrics: [
+              { value: "\u00A34.5m", label: "Incremental revenue" },
+              { value: "+5%", label: "Conversion rate" },
+              { value: "40%", label: "Experiment win rate" }
+            ],
+            services: ["CRO", "Personalization", "A/B Testing"],
+            duration: "Ongoing",
+            link: "/case-studies/farnell-personalization-squad.html"
+          },
+          {
+            type: "heydigital",
+            layout: "reversed",
+            logo: "/brand-assets/client-logos/harrier-white.png",
+            alt: "Harrier logo",
+            headline: "8K subscribers at \u00A30.49 CPL. 5.53\u00D7 ROAS.",
+            desc: "Full-funnel paid social from zero. Launched a three-stage Meta and Google strategy that captured new audiences, nurtured intent, and converted at scale \u2014 delivering 336 paying customers and \u00A3154K projected LTV.",
+            visual: "ad-showcase",
+            adFrames: [
+              { body: "/brand-assets/cases/vip-vaping.jpg", brandName: "Harrier", headline: "Trail-tested. Race-ready.", cta: "harrier.co.uk", action: "Shop Now" },
+              { body: "/brand-assets/cases/pink-boutique.jpg", brandName: "Harrier", headline: "New season drop \u2014 20% off", cta: "harrier.co.uk", action: "Shop Now" },
+              { body: "/brand-assets/cases/molahin.jpg", brandName: "Harrier", headline: "Built for the trails you love", cta: "harrier.co.uk", action: "Learn More" },
+              { body: "/brand-assets/cases/yours.jpg", brandName: "Harrier", headline: "Subscribe & save 15%", cta: "Newsletter signup", action: "Sign Up" },
+              { body: "/brand-assets/cases/farnell.jpg", brandName: "Harrier", headline: "Your next PB starts here", cta: "harrier.co.uk", action: "Shop Now" },
+              { body: "/brand-assets/cases/vip-vaping.jpg", brandName: "Harrier", headline: "Free UK delivery over \u00A375", cta: "harrier.co.uk", action: "Shop Now" }
+            ],
+            metrics: [
+              { value: "8K", label: "New subscribers" },
+              { value: "5.53\u00D7", label: "ROAS" },
+              { value: "\u00A30.49", label: "CPL" },
+              { value: "121%", label: "ROI" }
+            ],
+            link: "/case-studies/harrier-performance-rebuild.html"
+          },
+          {
+            type: "netpeak",
+            logo: "/brand-assets/client-logos/cellpoint-digital.png",
+            alt: "CellPoint Digital logo",
+            photo: "/brand-assets/cases/cellpoint-digital.jpg",
+            desc: "Connected acquisition, TAM intelligence, buyer signals and playbooks into one GTM operating system for a $50M ARR payment orchestration platform\u2014turning scattered activity into a connected, repeatable commercial motion.",
+            metrics: [
+              { value: "\u20ac100M+", label: "Pipeline surfaced" },
+              { value: "60x+", label: "Estimated ROI" },
+              { value: "\u20ac24K+", label: "Ad waste removed" },
+              { value: "3x", label: "Qualified traffic" }
+            ],
+            services: ["GTM Engineering", "SignalSphere", "Sales Playbooks", "Paid Acquisition"],
+            duration: "9 months",
+            link: "/case-studies/cellpoint-digital-revops.html"
+          },
+          {
+            type: "heydigital",
+            layout: "default",
+            logo: "/brand-assets/client-logos/notcutts.svg",
+            alt: "Notcutts logo",
+            headline: "70% increase in conversion over 12 months.",
+            desc: "Transformed a traditional garden centre retailer into a digital performer. Made 100% of in-store stock available online and rebuilt the UX from browsing to checkout \u2014 driving a 70% YoY conversion increase.",
+            visual: "photo",
+            photo: "",
+            metrics: [
+              { value: "+70%", label: "Conversion rate" },
+              { value: "100%", label: "Stock online" }
+            ],
+            link: "/case-studies/notcutts-crm-conversion.html"
+          },
+          {
+            type: "netpeak",
+            logo: "/brand-assets/client-logos/travelsphere.svg",
+            alt: "Travelsphere logo",
+            photo: "",
+            desc: "End-to-end digital reset for two heritage travel brands. Redesigned destination pages, rebuilt the conversion funnel, and unified analytics \u2014 resulting in sustained double-digit growth across all commercial KPIs.",
+            metrics: [
+              { value: "+25%", label: "YoY revenue" },
+              { value: "+15%", label: "Conversion uplift" },
+              { value: "+10%", label: "Lead growth" }
+            ],
+            services: ["Ecommerce", "UX", "CRO"],
+            duration: "Ongoing",
+            link: "/case-studies/travelsphere-digital-reset.html"
+          }
+        ];
+
+        var activeIndex = 0;
+        var prevButton = root.querySelector("[data-proof-nav-prev]");
+        var nextButton = root.querySelector("[data-proof-nav-next]");
+        var featureEl = root.querySelector(".weflair-proof-feature");
+
+        // heydigital targets
+        var logoTarget = root.querySelector("[data-proof-logo]");
+        var headlineTarget = root.querySelector("[data-proof-headline]");
+        var descTarget = root.querySelector("[data-proof-desc]");
+        var photoTarget = root.querySelector("[data-proof-photo]");
+        var adGridTarget = root.querySelector("[data-proof-ad-grid]");
+        var metricsTarget = root.querySelector("[data-proof-metrics]");
+        var linkTarget = root.querySelector("[data-proof-link]");
+
+        // netpeak targets
+        var npLogoTarget = root.querySelector("[data-proof-np-logo]");
+        var npPhotoTarget = root.querySelector("[data-proof-np-photo]");
+        var npDescTarget = root.querySelector("[data-proof-np-desc]");
+        var npMetaTarget = root.querySelector("[data-proof-np-meta]");
+        var npStatsTarget = root.querySelector("[data-proof-np-stats]");
+        var npCtaTarget = root.querySelector("[data-proof-np-cta]");
+
+        // shared
+        var railsTarget = root.querySelector("[data-proof-rails]");
+        var dotsTarget = root.querySelector("[data-proof-dots]");
+
+        function logoHtml(item) {
+          return '<img src="' + item.logo + '" alt="' + item.alt + '" loading="lazy" decoding="async">';
+        }
+
+        function metricHtml(metric) {
+          return '<div class="weflair-proof-feature__metric"><strong>' + metric.value + '</strong><span>' + metric.label + '</span></div>';
+        }
+
+        function npStatHtml(metric) {
+          return '<div class="weflair-proof-feature__np-stat"><strong>' + metric.value + '</strong><span>' + metric.label + '</span></div>';
+        }
+
+        function adFrameHtml(frame, item) {
+          return '<div class="weflair-proof-feature__ad-frame">' +
+            '<div class="weflair-proof-feature__ad-header">' +
+              '<div class="weflair-proof-feature__ad-avatar"><img src="' + item.logo + '" alt=""></div>' +
+              '<div><div class="weflair-proof-feature__ad-name">' + frame.brandName + '</div>' +
+              '<div class="weflair-proof-feature__ad-sponsored">Sponsored</div></div>' +
+            '</div>' +
+            '<div class="weflair-proof-feature__ad-body" style="background-image:url(\'' + frame.body + '\')">' +
+              (frame.headline ? '<div class="weflair-proof-feature__ad-body-headline">' + frame.headline + '</div>' : '') +
+            '</div>' +
+            '<div class="weflair-proof-feature__ad-footer">' +
+              '<span class="weflair-proof-feature__ad-cta">' + frame.cta + '</span>' +
+              '<span class="weflair-proof-feature__ad-action">' + (frame.action || 'Shop Now') + '</span>' +
+            '</div>' +
+          '</div>';
+        }
+
+        function studioSlideHtml(frame) {
+          return '<div class="weflair-proof-studio__slide" style="background-image:url(\'' + frame.body + '\')">' +
+            '<span>' + (frame.headline || frame.action || 'Campaign creative') + '</span>' +
+          '</div>';
+        }
+
+        function studioLoopHtml(item) {
+          return '<div class="weflair-proof-studio is-live-preview">' +
+            '<iframe class="weflair-proof-studio__iframe" src="/handoff-cards/proof-design-loop.html" title="Creative preview loop" loading="lazy" scrolling="no"></iframe>' +
+          '</div>';
+        }
+
+        function railHtml(item, index) {
+          var label = item.alt.replace(" logo", "");
+          return '<button type="button" class="weflair-proof-rail" data-proof-select="' + index + '" aria-label="Show ' + label + ' case study"><span class="weflair-proof-rail__logo">' + logoHtml(item) + '</span><span class="weflair-proof-rail__meta">' + label + '</span><span class="weflair-proof-rail__toggle" aria-hidden="true">+</span></button>';
+        }
+
+        function dotHtml(index) {
+          return '<button type="button" class="weflair-proof-switcher__dot' + (index === activeIndex ? ' is-active' : '') + '" data-proof-dot="' + index + '" aria-label="Show case study ' + (index + 1) + '"></button>';
+        }
+
+        function nextIndexes(start) {
+          var indexes = [];
+          for (var offset = 1; offset <= 4; offset += 1) {
+            indexes.push((start + offset) % proofCases.length);
+          }
+          return indexes;
+        }
+
+        function render() {
+          var item = proofCases[activeIndex];
+
+          // set card type
+          featureEl.setAttribute("data-type", item.type);
+          featureEl.setAttribute("data-layout", item.layout || "default");
+
+          if (item.type === "heydigital") {
+            // populate heydigital elements
+            if (logoTarget) logoTarget.innerHTML = logoHtml(item);
+            if (headlineTarget) headlineTarget.textContent = item.headline || "";
+            if (descTarget) descTarget.textContent = item.desc;
+            if (metricsTarget) metricsTarget.innerHTML = item.metrics.map(metricHtml).join("");
+            if (linkTarget) linkTarget.setAttribute("href", item.link);
+
+            // photo or ad-showcase
+            if (item.visual === "photo" && photoTarget) {
+              if (item.photo) {
+                photoTarget.style.backgroundImage = 'url("' + item.photo + '")';
+                photoTarget.classList.remove('no-photo');
+              } else {
+                photoTarget.style.backgroundImage = 'none';
+                photoTarget.classList.add('no-photo');
+              }
+              photoTarget.style.backgroundPosition = item.photoPosition || "center center";
+              photoTarget.parentElement.style.display = "";
+              if (adGridTarget) {
+                adGridTarget.style.display = "none";
+                adGridTarget.innerHTML = "";
+                adGridTarget.classList.remove("is-studio-loop");
+              }
+            } else if (item.visual === "ad-showcase" && adGridTarget && item.adFrames) {
+              adGridTarget.innerHTML = studioLoopHtml(item);
+              adGridTarget.classList.add("is-studio-loop");
+              adGridTarget.style.display = "";
+              if (photoTarget) photoTarget.parentElement.style.display = "none";
+            }
+          } else if (item.type === "netpeak") {
+            // populate netpeak elements
+            if (npLogoTarget) npLogoTarget.innerHTML = logoHtml(item);
+            if (npPhotoTarget) {
+              if (item.photo) {
+                npPhotoTarget.style.backgroundImage = 'url("' + item.photo + '")';
+                npPhotoTarget.classList.remove('no-photo');
+              } else {
+                npPhotoTarget.style.backgroundImage = 'none';
+                npPhotoTarget.classList.add('no-photo');
+              }
+            }
+            if (npDescTarget) npDescTarget.textContent = item.desc;
+            if (npStatsTarget) npStatsTarget.innerHTML = item.metrics.map(npStatHtml).join("");
+            if (npCtaTarget) npCtaTarget.setAttribute("href", item.link);
+
+            // services + duration meta
+            if (npMetaTarget) {
+              var metaHtml = '';
+              if (item.services) {
+                metaHtml += '<div><div class="weflair-proof-feature__np-meta-label">Services delivered</div><div class="weflair-proof-feature__np-meta-value">' + item.services.join(', ') + '</div></div>';
+              }
+              if (item.duration) {
+                metaHtml += '<div><div class="weflair-proof-feature__np-meta-label">Partnership duration</div><div class="weflair-proof-feature__np-meta-duration">' + item.duration + '</div></div>';
+              }
+              npMetaTarget.innerHTML = metaHtml;
+            }
+          }
+
+          // rails
+          if (railsTarget) {
+            railsTarget.innerHTML = nextIndexes(activeIndex).map(function (index) {
+              return railHtml(proofCases[index], index);
+            }).join("");
+          }
+
+          // dots
+          if (dotsTarget) {
+            dotsTarget.innerHTML = proofCases.map(function (_, index) {
+              return dotHtml(index);
+            }).join("");
+          }
+
+          // bind rails
+          Array.prototype.forEach.call(root.querySelectorAll("[data-proof-select]"), function (button) {
+            button.addEventListener("click", function () {
+              activeIndex = Number(button.getAttribute("data-proof-select"));
+              render();
+            });
+          });
+
+          // bind dots
+          Array.prototype.forEach.call(root.querySelectorAll("[data-proof-dot]"), function (button) {
+            button.addEventListener("click", function () {
+              activeIndex = Number(button.getAttribute("data-proof-dot"));
+              render();
+            });
+          });
+        }
+
+        prevButton.addEventListener("click", function () {
+          activeIndex = (activeIndex - 1 + proofCases.length) % proofCases.length;
+          render();
+        });
+
+        nextButton.addEventListener("click", function () {
+          activeIndex = (activeIndex + 1) % proofCases.length;
+          render();
+        });
+
+        render();
+      })();
+    </script>

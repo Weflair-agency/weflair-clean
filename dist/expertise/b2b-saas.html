@@ -10881,9 +10881,9 @@
       .saas-capabilities {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
         width: 100%;
-        max-width: 900px; /* Restrict width! */
+        max-width: 52rem;
         margin: 0 auto;
         box-sizing: border-box;
       }
@@ -10895,38 +10895,39 @@
         box-sizing: border-box;
         overflow: hidden;
         height: auto;
-        background: linear-gradient(145deg, rgba(23, 23, 23, 0.4) 0%, rgba(13, 13, 13, 0.6) 100%);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        transition: border-color 0.3s ease;
+        background: rgba(17,17,17,.86);
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: 1rem;
+        transition: border-color .22s, transform .22s;
       }
       .b2b-capability-card:hover,
       .saas-capability-card:hover {
-        border-color: rgba(255, 255, 255, 0.15);
+        border-color: rgba(62, 255, 104, .18);
+        transform: translateY(-2px);
       }
 
       /* Summary (Header of the card) */
       .b2b-capability-card summary,
       .saas-capability-card summary {
-        padding: 1.2rem 1.5rem !important;
+        padding: 1.35rem 1.5rem !important;
         box-sizing: border-box;
         width: 100%;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        list-style: none; /* Remove default triangle */
+        list-style: none;
         outline: none;
       }
 
       /* <h3> inside Summary */
       .b2b-capability-card summary h3,
       .saas-capability-card summary h3 {
-        font-size: clamp(1.1rem, 2vw, 1.4rem) !important;
-        font-weight: 500 !important;
+        font-size: clamp(1rem, 1.2vw, 1.15rem) !important;
+        font-weight: 700 !important;
         margin: 0 !important;
-        line-height: 1.2 !important;
-        letter-spacing: -0.01em;
+        line-height: 1.25 !important;
+        letter-spacing: -.02em;
       }
 
       /* The Plus Icon */
@@ -10937,7 +10938,8 @@
         line-height: 1 !important;
         margin-left: 1rem;
         transition: transform 0.3s ease;
-        opacity: 0.6;
+        color: #3eff68;
+        opacity: .8;
       }
 
       /* When details is open, rotate the plus or style it */
@@ -10958,11 +10960,11 @@
       .saas-capability-content {
         padding: 0 1.5rem 1.5rem 1.5rem !important;
         box-sizing: border-box;
-        font-size: clamp(0.95rem, 1.5vw, 1.05rem) !important;
+        font-size: .92rem !important;
         max-width: 100%;
         word-wrap: break-word;
-        color: rgba(255,255,255,0.7);
-        line-height: 1.6;
+        color: rgba(246, 243, 238, .68);
+        line-height: 1.62;
         margin-top: -0.5rem;
       }
 
@@ -10980,7 +10982,7 @@
         .b2b-capabilities,
         .saas-capabilities {
           grid-template-columns: 1fr !important;
-          max-width: 800px;
+          max-width: 38rem;
           gap: 1rem;
         }
       }
@@ -10995,7 +10997,7 @@
         }
         .b2b-capability-card summary h3,
         .saas-capability-card summary h3 {
-          font-size: 1.1rem !important;
+          font-size: 1rem !important;
         }
       }
     </style>
@@ -11016,15 +11018,71 @@
     
     <style>
       :root {
-        --saas-brand: #22c55e;
-        --saas-bg: #000;
-        --saas-surface: #0a0a0a;
-        --saas-border: rgba(255, 255, 255, 0.1);
+        --saas-brand: #3eff68;
+        --saas-bg: #0A0A0F;
+        --saas-surface: rgba(17,17,17,.86);
+        --saas-border: rgba(246, 243, 238, .08);
+      }
+
+      /* --- UNIFIED BACKGROUND + RADIATING GLOW --- */
+      .saas-page {
+        background:
+          radial-gradient(ellipse 80% 60% at 70% 8%, rgba(62, 255, 104, .06), transparent 50%),
+          radial-gradient(ellipse 60% 50% at 20% 90%, rgba(62, 255, 104, .04), transparent 45%),
+          #0A0A0F !important;
+      }
+
+      /* --- WeFlair STAR DECORATIONS --- */
+      .wf-star-deco {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .wf-star-deco img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .wf-star-deco--sm { width: 2.4rem; height: 2.4rem; }
+      .wf-star-deco--md { width: 4rem; height: 4rem; opacity: .45; }
+      .wf-star-deco--lg { width: 7rem; height: 7rem; opacity: .2; }
+      .wf-star-deco--pulse { animation: wfStarPulse 4s ease-in-out infinite; }
+      .wf-star-deco--drift { animation: wfStarDrift 6s ease-in-out infinite; }
+      @keyframes wfStarPulse {
+        0%, 100% { opacity: .35; transform: scale(1); }
+        50% { opacity: .55; transform: scale(1.08); }
+      }
+      @keyframes wfStarDrift {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-6px) rotate(8deg); }
+      }
+
+      /* --- UNIFIED EYEBROW MATCHING INDEX.HTML --- */
+      .wf-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: .45rem;
+        color: #3eff68;
+        font-size: .74rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .wf-eyebrow__icon {
+        display: inline-flex;
+        align-items: center;
+        width: 1rem;
+        height: 1.3rem;
+        color: #3eff68;
+      }
+      .wf-eyebrow__icon svg {
+        width: 100%;
+        height: 100%;
       }
       .saas-page {
         font-family: inherit;
-        color: #fff;
-        background: var(--saas-bg);
+        color: #f6f3ee;
       }
       .expertise-container {
         max-width: 1400px;
@@ -11033,27 +11091,32 @@
       }
       /* Minimal Hero */
       .saas-hero {
+        position: relative;
         min-height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         padding: 8rem 0 4rem;
-        background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.15) 0%, transparent 60%);
+        background: radial-gradient(ellipse 70% 55% at 65% 10%, rgba(62, 255, 104, .1), transparent 55%);
       }
       .saas-hero h1 {
-        font-size: clamp(3.5rem, 5vw, 6rem);
-        line-height: 1.1;
-        letter-spacing: -0.04em;
-        margin-bottom: 2rem;
-        font-weight: 500;
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        line-height: .98;
+        letter-spacing: -.06em;
+        margin-bottom: 1.5rem;
+        font-weight: 800;
+        max-width: 16ch;
+        margin-left: auto;
+        margin-right: auto;
       }
+      .saas-hero h1 .wf-accent { color: #3eff68; }
       .saas-hero p {
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 0.7);
-        max-width: 800px;
-        margin: 0 auto 3rem;
-        line-height: 1.5;
+        font-size: 1.1rem;
+        color: rgba(246, 243, 238, .72);
+        max-width: 650px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.55;
       }
       .saas-hero-actions {
         display: flex;
@@ -11075,113 +11138,89 @@
         cursor: pointer;
       }
       .saas-btn-primary {
-        background: var(--saas-brand);
-        color: #000;
+        background: #3eff68;
+        color: #0A0A0F;
+        font-weight: 700;
+        border-radius: 999px;
+        box-shadow: 0 0 24px rgba(62, 255, 104, .15);
+        transition: transform .2s, box-shadow .2s, opacity .2s;
       }
       .saas-btn-primary:hover {
-        background: #fff;
-        color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 0 36px rgba(62, 255, 104, .28);
+        opacity: .92;
+        color: #0A0A0F;
       }
       .saas-btn-ghost {
         background: transparent;
-        color: #fff;
-        border: 1px solid var(--saas-border);
+        color: #f6f3ee;
+        border: 1px solid rgba(246, 243, 238, .18);
+        border-radius: 999px;
+        transition: border-color .2s, color .2s;
       }
       .saas-btn-ghost:hover {
-        border-color: #fff;
+        border-color: rgba(62, 255, 104, .4);
+        color: #3eff68;
       }
       .saas-section {
-        padding: 8rem 0;
-        border-bottom: 1px solid var(--saas-border);
+        padding: clamp(5.5rem, 8vw, 7.5rem) 0;
+        border-bottom: 1px solid rgba(246, 243, 238, .06);
+        position: relative;
       }
       .saas-eyebrow {
-        color: var(--saas-brand);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        display: block;
+        display: none;
       }
       .saas-section-header h2 {
-        font-size: 3rem;
-        max-width: 800px;
-        margin-bottom: 3rem;
-        line-height: 1.2;
+        font-size: clamp(1.85rem, 2.8vw, 2.65rem);
+        max-width: 22ch;
+        margin-bottom: 2rem;
+        line-height: 1.08;
+        letter-spacing: -.04em;
       }
       .saas-section-header p {
-        font-size: 1.2rem;
-        color: rgba(255,255,255,0.7);
-        max-width: 600px;
+        font-size: 1rem;
+        color: rgba(246,243,238,.7);
+        max-width: 38rem;
+        line-height: 1.62;
       }
       
       
       .b2b-process-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin-top: 3rem;
+        gap: 1.25rem;
+        margin-top: clamp(2rem, 3.5vw, 3rem);
       }
       .b2b-process-step {
-        padding: 2.5rem;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--saas-border);
+        padding: 2rem 1.75rem;
+        background: rgba(17,17,17,.86);
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: 1rem;
         border-top: 3px solid transparent;
-        transition: all 0.3s ease;
+        transition: border-color .22s, transform .22s;
       }
       .b2b-process-step:hover {
-        border-top-color: var(--saas-brand);
+        border-top-color: #3eff68;
+        transform: translateY(-2px);
       }
       .b2b-process-step span {
         display: block;
-        font-size: 0.85rem;
-        color: var(--saas-brand);
-        margin-bottom: 2rem;
-        letter-spacing: 0.1em;
+        font-size: .74rem;
+        color: #3eff68;
+        margin-bottom: 1.5rem;
+        letter-spacing: .08em;
+        font-weight: 700;
       }
       .b2b-process-step h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
+        font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+        margin-bottom: .85rem;
+        font-weight: 700;
+        letter-spacing: -.02em;
       }
       .b2b-process-step p {
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.6;
-      }
-      @media (max-width: 1024px) {
-        .b2b-process-grid { grid-template-columns: 1fr; }
-      }
-      
-      
-      /* Process grid (imported from B2B) */
-      .b2b-process-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-      .b2b-process-step {
-        padding: 2.5rem;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--saas-border);
-        border-top: 3px solid transparent;
-        transition: all 0.3s ease;
-      }
-      .b2b-process-step:hover {
-        border-top-color: var(--saas-brand);
-      }
-      .b2b-process-step span {
-        display: block;
-        font-size: 0.85rem;
-        color: var(--saas-brand);
-        margin-bottom: 2rem;
-        letter-spacing: 0.1em;
-      }
-      .b2b-process-step h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-      }
-      .b2b-process-step p {
-        color: rgba(255, 255, 255, 0.6);
-        line-height: 1.6;
+        color: rgba(246, 243, 238, .65);
+        line-height: 1.62;
+        font-size: .92rem;
       }
       @media (max-width: 1024px) {
         .b2b-process-grid { grid-template-columns: 1fr; }
@@ -11200,25 +11239,44 @@
       
 
       .saas-capability-card {
-        background: var(--saas-surface);
-        border: 1px solid var(--saas-border);
-        border-radius: 4px;
-        transition: all 0.3s ease;
+        background: rgba(17,17,17,.86);
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-radius: 1rem;
+        transition: border-color .22s, background .22s, transform .22s;
+      }
+      .saas-capability-card:hover {
+        border-color: rgba(62, 255, 104, .18);
+        transform: translateY(-2px);
       }
       .saas-capability-card summary {
-        padding: 1.5rem 2rem;
+        padding: 1.35rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        list-style: none;
+        cursor: pointer;
+      }
       .saas-capability-card summary::-webkit-details-marker { display: none; }
+      .saas-capability-card summary h3 {
+        margin: 0;
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -.02em;
+      }
       .saas-capability-card summary .plus {
         font-size: 1.5rem;
         font-weight: 300;
-        color: var(--saas-brand);
+        color: #3eff68;
         transition: transform 0.3s ease;
+        flex-shrink: 0;
       }
       .saas-capability-card[open] summary .plus {
         transform: rotate(45deg);
       }
       .saas-capability-content {
-        padding: 0 2rem 2rem;
+        padding: 0 1.5rem 1.5rem;
       @keyframes saasFadeIn {
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
@@ -11232,71 +11290,94 @@
 
       /* Why Partner (Benefits Grid) */
       .saas-benefits {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-        align-items: center;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: clamp(2rem, 4vw, 4rem);
+        align-items: start;
       }
       .saas-benefit-content h3 {
-        font-size: 2.5rem;
+        font-size: clamp(1.85rem, 2.8vw, 2.65rem);
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.08;
+        letter-spacing: -.04em;
       }
       .saas-benefit-content p {
-        font-size: 1.1rem;
-        color: rgba(255,255,255,0.7);
-        line-height: 1.7;
+        font-size: 1rem;
+        color: rgba(246,243,238,.7);
+        line-height: 1.62;
         margin-bottom: 1.5rem;
       }
       .saas-benefit-stats {
-        background: var(--saas-surface);
-        padding: 3rem;
-        border: 1px solid var(--saas-border);
-        border-left: 4px solid var(--saas-brand);
+        background: rgba(17,17,17,.86);
+        padding: 2.5rem;
+        border: 1px solid rgba(246, 243, 238, .08);
+        border-left: 3px solid #3eff68;
+        border-radius: 1rem;
       }
       .saas-stat-item {
         margin-bottom: 2rem;
       }
       .saas-stat-item:last-child { margin-bottom: 0; }
       .saas-stat-value {
-        font-size: 3rem;
-        font-weight: 500;
-        color: var(--saas-brand);
+        font-size: clamp(2rem, 3.6vw, 2.8rem);
+        font-weight: 800;
+        color: #3eff68;
         margin-bottom: 0.5rem;
+        letter-spacing: -.04em;
+        filter: drop-shadow(0 0 16px rgba(62, 255, 104, .18));
       }
       .saas-stat-label {
-        color: rgba(255,255,255,0.8);
+        color: rgba(246,243,238,.6);
+        font-size: .86rem;
+        font-weight: 600;
       }
 
       /* Accordion FAQ */
-      .saas-faq { max-width: 900px; margin: 0 auto; }
+      .saas-faq { max-width: 48rem; margin: 0 auto; }
       .saas-faq details {
-        border-bottom: 1px solid var(--saas-border);
-        padding: 2rem 0;
+        border-bottom: 1px solid rgba(246, 243, 238, .08);
+        padding: 0;
+      }
+      .saas-faq details:first-child {
+        border-top: 1px solid rgba(246, 243, 238, .08);
       }
       .saas-faq summary {
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        font-weight: 700;
         cursor: pointer;
         list-style: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 1.5rem;
+        padding: 1.35rem 0;
+        line-height: 1.25;
+        letter-spacing: -.02em;
+        color: #f6f3ee;
+        transition: color .2s;
       }
+      .saas-faq summary::-webkit-details-marker { display: none; }
       .saas-faq summary::after {
         content: '+';
-        font-size: 2rem;
-        color: var(--saas-brand);
-        transition: transform 0.3s ease;
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: #3eff68;
+        flex-shrink: 0;
+        width: 1.6rem;
+        text-align: center;
+        transition: transform .25s;
       }
       .saas-faq details[open] summary::after {
-        transform: rotate(45deg);
+        content: '\2212';
+        transform: rotate(180deg);
       }
+      .saas-faq summary:hover { color: #3eff68; }
       .saas-faq-content {
-        padding-top: 1.5rem;
-        color: rgba(255,255,255,0.6);
-        line-height: 1.6;
-        font-size: 1.1rem;
+        padding: 0 0 1.45rem;
+        color: rgba(246, 243, 238, .68);
+        line-height: 1.62;
+        font-size: .92rem;
+        max-width: 42rem;
       }
 
       @media (max-width: 1024px) {
@@ -11313,13 +11394,17 @@
     
     <!-- SECTION 1: HERO -->
     <section class="saas-hero expertise-container">
-      <div class="saas-eyebrow">SaaS Marketing Agency</div>
-      <h1>Scale your SaaS revenue with precision-led marketing</h1>
+      <div class="wf-eyebrow" style="justify-content:center;">
+        <span class="wf-eyebrow__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span>
+        <span>SaaS Marketing Agency</span>
+      </div>
+      <h1>Scale your <span class="wf-accent">SaaS revenue</span> with precision-led marketing</h1>
       <p>We are a performance-obsessed marketing agency that helps B2B SaaS companies drive qualified demos, lower CAC, and grow Annual Recurring Revenue.</p>
       <div class="saas-hero-actions">
-        <a href="../contact.html" class="saas-btn saas-btn-primary">Book a Discovery Call</a>
-        <a href="#services" class="saas-btn saas-btn-ghost">Explore Our Services</a>
+        <a href="../contact.html" class="saas-btn saas-btn-primary">Talk to us</a>
       </div>
+      <!-- Star decoration -->
+      <span class="wf-star-deco wf-star-deco--md wf-star-deco--pulse" style="top:18%;right:12%;"><img src="/brand-assets/star-glow.svg" alt="" aria-hidden="true"></span>
     </section>
 
     <!-- SECTION 2: LOGOS -->
@@ -11387,8 +11472,11 @@
     <!-- SECTION 3: SERVICES -->
     <section id="services" class="saas-section expertise-container">
       <div class="saas-section-header">
-        <span class="saas-eyebrow">Our Software Capabilities</span>
-        <h2>Full-funnel marketing services for B2B SaaS</h2>
+        <div class="wf-eyebrow">
+          <span class="wf-eyebrow__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span>
+          <span>Our Software Capabilities</span>
+        </div>
+        <h2>Full-funnel marketing services for <span class="wf-accent">B2B SaaS</span></h2>
       </div>
       
       <div class="saas-capabilities">
@@ -11422,22 +11510,25 @@
     
     <!-- SECTION 4: WHY SAAS AGENCIES -->
     <section class="saas-section expertise-container">
-      <div class="saas-benefits">
+      <div class="saas-benefits" style="display:grid !important; grid-template-columns:1fr 1fr !important; gap:clamp(2rem,4vw,4rem); align-items:start;">
         <div class="saas-benefit-content">
-          <span class="saas-eyebrow">The Partner You Need</span>
-          <h3>Why B2B SaaS demands specialized marketing</h3>
+          <div class="wf-eyebrow">
+            <span class="wf-eyebrow__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span>
+            <span>The Partner You Need</span>
+          </div>
+          <h3>Why B2B SaaS demands <span class="wf-accent">specialized</span> marketing</h3>
           <p>Selling software isn't like selling shoes. You need an agency that understands <strong>LTV, CAC payback periods, churn curves, and MRR bridging.</strong></p>
-          <p>We flair doesn't just run ads. We align horizontally with your product, sales, and customer success teams to unblock bottlenecks across the entire revenue funnel.</p>
+          <p>WeFlair doesn't just run ads. We align horizontally with your product, sales, and customer success teams to unblock bottlenecks across the entire revenue funnel.</p>
           <a href="../contact.html" class="saas-btn saas-btn-ghost" style="margin-top: 1rem;">Work With Us</a>
         </div>
-        <div class="saas-benefit-stats">
-          <div class="saas-stat-item">
-            <div class="saas-stat-value">3x</div>
-            <div class="saas-stat-label">Average increase in demo requests for our SaaS clients</div>
+        <div class="saas-benefit-stats" style="background:rgba(17,17,17,.86); padding:2.5rem; border:1px solid rgba(246,243,238,.08); border-left:3px solid #3eff68; border-radius:1rem;">
+          <div class="saas-stat-item" style="margin-bottom:2rem;">
+            <div class="saas-stat-value" style="font-size:clamp(2rem,3.6vw,2.8rem); font-weight:800; color:#3eff68; margin-bottom:.5rem; letter-spacing:-.04em;">3x</div>
+            <div class="saas-stat-label" style="color:rgba(246,243,238,.6); font-size:.86rem; font-weight:600;">Average increase in demo requests for our SaaS clients</div>
           </div>
           <div class="saas-stat-item">
-            <div class="saas-stat-value">35%</div>
-            <div class="saas-stat-label">Average reduction in Customer Acquisition Cost (CAC)</div>
+            <div class="saas-stat-value" style="font-size:clamp(2rem,3.6vw,2.8rem); font-weight:800; color:#3eff68; margin-bottom:.5rem; letter-spacing:-.04em;">35%</div>
+            <div class="saas-stat-label" style="color:rgba(246,243,238,.6); font-size:.86rem; font-weight:600;">Average reduction in Customer Acquisition Cost (CAC)</div>
           </div>
         </div>
       </div>
@@ -11483,11 +11574,16 @@
       </div>
     </section>
     <!-- SECTION 6: PROCESS -->
-    <section class="b2b-section expertise-container">
+    <section class="b2b-section expertise-container" style="position:relative;">
       <div class="b2b-section-header" style="text-align: center; margin: 0 auto 4rem auto;">
-        <div class="b2b-eyebrow">Our Process</div>
-        <h2>Our 3-step blueprint for SaaS growth</h2>
+        <div class="wf-eyebrow" style="justify-content:center;">
+          <span class="wf-eyebrow__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span>
+          <span>FLAIR Method</span>
+        </div>
+        <h2>Our 3-step blueprint for <span class="wf-accent">SaaS growth</span></h2>
       </div>
+      <!-- Star decoration -->
+      <span class="wf-star-deco wf-star-deco--sm wf-star-deco--drift" style="top:3rem;right:8%;"><img src="/brand-assets/star-solid.svg" alt="" aria-hidden="true"></span>
       <div class="b2b-process-grid">
         <div class="b2b-process-step">
           <span>01 / DATA COLLECTION</span>
@@ -11798,26 +11894,31 @@
       </div>
     </section>
 <!-- SECTION 9: SAAS FAQ -->
-    <section class="saas-section expertise-container">
-      <div class="saas-section-header" style="text-align: center; margin: 0 auto 4rem auto; display: flex; flex-direction: column; align-items: center;">
-        <span class="saas-eyebrow">FAQ</span>
-        <h2>Frequently Asked Questions</h2>
+    <section class="saas-section expertise-container" style="position:relative;">
+      <div class="saas-section-header" style="text-align: center; margin: 0 auto 3rem auto; display: flex; flex-direction: column; align-items: center;">
+        <div class="wf-eyebrow" style="justify-content:center;">
+          <span class="wf-eyebrow__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span>
+          <span>FAQ</span>
+        </div>
+        <h2>Frequently Asked <span class="wf-accent">Questions</span></h2>
       </div>
+      <!-- Star decoration -->
+      <span class="wf-star-deco wf-star-deco--md wf-star-deco--pulse" style="bottom:2rem;left:5%;"><img src="/brand-assets/star-glow.svg" alt="" aria-hidden="true"></span>
       <div class="saas-faq">
-        <details>
-          <summary>Do you specialize purely in B2B SaaS?</summary>
+        <details style="border-bottom:1px solid rgba(246,243,238,.08); border-top:1px solid rgba(246,243,238,.08); padding:0;">
+          <summary style="display:flex !important; justify-content:space-between; align-items:center; gap:1.5rem; padding:1.35rem 0; font-size:clamp(1rem,1.1vw,1.12rem); font-weight:700; cursor:pointer; list-style:none; color:#f6f3ee; letter-spacing:-.02em; line-height:1.25;">Do you specialize purely in B2B SaaS?<span style="color:#3eff68; font-size:1.6rem; font-weight:300; flex-shrink:0;" aria-hidden="true">+</span></summary>
           <div class="saas-faq-content">While we work with enterprise and e-commerce clients, we have a dedicated B2B SaaS team that understands MRR growth, lead nurturing, and specialized software sales cycles.</div>
         </details>
-        <details>
-          <summary>How long until we see an increase in ARR?</summary>
+        <details style="border-bottom:1px solid rgba(246,243,238,.08); padding:0;">
+          <summary style="display:flex !important; justify-content:space-between; align-items:center; gap:1.5rem; padding:1.35rem 0; font-size:clamp(1rem,1.1vw,1.12rem); font-weight:700; cursor:pointer; list-style:none; color:#f6f3ee; letter-spacing:-.02em; line-height:1.25;">How long until we see an increase in ARR?<span style="color:#3eff68; font-size:1.6rem; font-weight:300; flex-shrink:0;" aria-hidden="true">+</span></summary>
           <div class="saas-faq-content">Most of our SaaS clients see a noticeable lift in top-of-funnel MQLs within the first 60 days via Paid Search optimizations. Organic content and complex RevOps plays typically show ROI at the 4-6 month mark.</div>
         </details>
-        <details>
-          <summary>Will you write technical content for our blog?</summary>
+        <details style="border-bottom:1px solid rgba(246,243,238,.08); padding:0;">
+          <summary style="display:flex !important; justify-content:space-between; align-items:center; gap:1.5rem; padding:1.35rem 0; font-size:clamp(1rem,1.1vw,1.12rem); font-weight:700; cursor:pointer; list-style:none; color:#f6f3ee; letter-spacing:-.02em; line-height:1.25;">Will you write technical content for our blog?<span style="color:#3eff68; font-size:1.6rem; font-weight:300; flex-shrink:0;" aria-hidden="true">+</span></summary>
           <div class="saas-faq-content">Yes. We utilize Subject Matter Expert (SME) interviews to write incredibly in-depth, authoritative, and technically accurate content that outranks competitors and convinces developers or product managers to convert.</div>
         </details>
-        <details>
-          <summary>How do you measure success?</summary>
+        <details style="border-bottom:1px solid rgba(246,243,238,.08); padding:0;">
+          <summary style="display:flex !important; justify-content:space-between; align-items:center; gap:1.5rem; padding:1.35rem 0; font-size:clamp(1rem,1.1vw,1.12rem); font-weight:700; cursor:pointer; list-style:none; color:#f6f3ee; letter-spacing:-.02em; line-height:1.25;">How do you measure success?<span style="color:#3eff68; font-size:1.6rem; font-weight:300; flex-shrink:0;" aria-hidden="true">+</span></summary>
           <div class="saas-faq-content">We integrate directly with your CRM. We do not measure success based on traffic or clicks. We measure success based on Sales Qualified Leads (SQLs), Pipeline generated, and ultimately, closed-won ARR.</div>
         </details>
       </div>

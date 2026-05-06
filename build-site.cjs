@@ -17,6 +17,10 @@ const EXTRA_HTML_DIRS = [
     include: (absolutePath) =>
       absolutePath.endsWith(".html") && path.basename(absolutePath).toLowerCase() !== "index.html",
   },
+  {
+    dir: path.join(ROOT, "blog"),
+    include: (absolutePath) => absolutePath.endsWith(".html"),
+  },
 ];
 
 const STATIC_DIRS = ["brand-assets", "images", "resources", "case-studies", "services", "expertise", "legal"];

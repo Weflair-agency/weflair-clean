@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /handoff-cards/
 
 Sitemap: https://weflair.com/sitemap.xml
