@@ -59,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       .bt-hero__grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.06fr) minmax(22rem, 0.84fr);
+        grid-template-columns: 1fr;
         gap: clamp(1.4rem, 4vw, 4rem);
         align-items: center;
       }
@@ -80,9 +80,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .bt-kicker::before,
       .bt-section-kicker::before {
         content: "";
-        width: 0.5rem;
-        height: 0.5rem;
-        background: currentColor;
+        display: inline-block;
+        width: 0.82rem;
+        height: 0.82rem;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 130'%3E%3Cpath d='M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z' fill='%233eff68'/%3E%3C/svg%3E") no-repeat center / contain;
+        flex-shrink: 0;
       }
 
       .bt-hero h1,
@@ -96,7 +98,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
       .bt-hero h1 {
-        max-width: 15.8ch;
+        max-width: 28ch;
         font-size: clamp(3.35rem, 6.6vw, 6.7rem);
         line-height: 0.96;
       }
@@ -281,6 +283,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         margin: 0;
         color: var(--bt-muted);
         line-height: 1.62;
+      }
+      .bt-fit-card {
+        padding: clamp(1.05rem, 2vw, 1.5rem);
+      }
+      .bt-fit-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+      }
+      .bt-fit-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.55rem;
+        font-size: 0.92rem;
+        color: var(--bt-muted);
+        line-height: 1.5;
+      }
+      .bt-fit-list li::before {
+        content: "";
+        display: inline-block;
+        flex-shrink: 0;
+        margin-top: 0.2em;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 130'%3E%3Cpath d='M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z' fill='%233eff68'/%3E%3C/svg%3E") no-repeat center / contain;
+      }
+      .bt-fit-list--no li::before {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 6L6 18M6 6l12 12' stroke='%23ff4d4d' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
       }
 
       .bt-flow {
@@ -741,48 +774,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
             </div>
           </div>
-
-          <aside class="bt-console" aria-label="B2B tech growth diagnostic visual">
-            <div class="bt-console__top">
-              <span>Pipeline diagnostic</span>
-              <div class="bt-live">Audit view</div>
-            </div>
-            <div class="bt-console__body">
-              <div class="bt-score">
-                <div class="bt-score__number">3</div>
-                <div>
-                  <h2>Buyer demand leaks before sales sees it</h2>
-                  <p>Most teams do not have a traffic problem first. They have unclear pages, weak proof, disconnected follow-up, and no clean signal handoff.</p>
-                </div>
-              </div>
-              <div class="bt-flow">
-                <div class="bt-flow-row">
-                  <b>01</b>
-                  <div>
-                    <strong>Research stage</strong>
-                    <p>Category, problem, comparison, and AI-search visibility.</p>
-                  </div>
-                  <span aria-hidden="true">-></span>
-                </div>
-                <div class="bt-flow-row">
-                  <b>02</b>
-                  <div>
-                    <strong>Evaluation stage</strong>
-                    <p>Use cases, proof, objections, security, ROI, and sales assets.</p>
-                  </div>
-                  <span aria-hidden="true">-></span>
-                </div>
-                <div class="bt-flow-row">
-                  <b>03</b>
-                  <div>
-                    <strong>Revenue stage</strong>
-                    <p>Routing, lifecycle, CRM hygiene, alerts, attribution, and reporting.</p>
-                  </div>
-                  <span aria-hidden="true">-></span>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -1071,16 +1062,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="bt-fit__grid">
               <article class="bt-fit-card">
                 <h3>Good fit</h3>
-                <p>You sell a technical product with a considered purchase, sales involvement, and real need for education, proof, and qualification.</p>
+                <ul class="bt-fit-list">
+                  <li>Technical product with a considered, multi-stakeholder purchase process</li>
+                  <li>Long sales cycles where education and proof move deals forward</li>
+                  <li>Pipeline-quality focus — you track SQLs, not just traffic</li>
+                  <li>Buyers research independently before engaging sales</li>
+                  <li>Content, case studies, and trust signals are critical to winning</li>
+                </ul>
               </article>
               <article class="bt-fit-card">
                 <h3>Not a fit</h3>
-                <p>You only want rented lists, vanity traffic, or a campaign report that does not have to connect to pipeline quality.</p>
+                <ul class="bt-fit-list bt-fit-list--no">
+                  <li>You only want rented lists or spray-and-pray volume outreach</li>
+                  <li>Vanity metrics — impressions and clicks disconnected from pipeline</li>
+                  <li>Generic brand awareness with no connection to revenue</li>
+                  <li>Commodity play where lowest price wins regardless of positioning</li>
+                  <li>No intent to track and close the leads marketing generates</li>
+                </ul>
               </article>
             </div>
             <div class="bt-fit__actions">
-              <a class="bt-btn bt-btn--primary" href="/contact.html">Book the audit <span aria-hidden="true">-></span></a>
-              <a class="bt-btn bt-btn--ghost" href="#faq">Read the FAQ</a>
+              <a class="bt-btn bt-btn--primary" href="/contact.html">Book a call <span aria-hidden="true">-></span></a>
             </div>
           </div>
         </div>

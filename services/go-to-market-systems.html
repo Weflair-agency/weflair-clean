@@ -354,7 +354,7 @@
 
     .gtm-logo-grid {
       display: grid;
-      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-columns: repeat(9, minmax(0, 1fr));
       gap: .6rem;
     }
 
@@ -398,6 +398,43 @@
       border: 1px solid rgba(246, 243, 238, .095);
       border-radius: 8px;
       background: rgba(246, 243, 238, .038);
+    }
+
+    .gtm-cta-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .gtm-cta-card {
+      padding: 2rem 2rem 2rem;
+      border: 1px solid rgba(246, 243, 238, .095);
+      border-radius: 10px;
+      background: rgba(246, 243, 238, .038);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .gtm-cta-card h3 {
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-weight: 600;
+      color: #f6f3ee;
+      margin: 0;
+    }
+
+    .gtm-cta-card p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(246, 243, 238, .62);
+      margin: 0 0 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .gtm-cta-cards {
+        grid-template-columns: 1fr;
+      }
     }
 
     .gtm-problem-card {
@@ -1036,9 +1073,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h1 class="gtm-title">Build outbound and RevOps plays that turn the right accounts into real sales conversations.</h1>
             <p class="gtm-lede">We help B2B teams move past static lead lists and generic sequences. The work is market mapping, signal research, Clay enrichment, AI-assisted personalization, inbox setup, CRM routing, and the sales handoff needed to turn interest into pipeline.</p>
             <div class="gtm-hero__actions">
-              <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="#assessment" class="btn w-inline-block">
+              <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html" class="btn w-inline-block">
                 <div class="btn__bg"></div>
-                <div class="btn__text"><span class="btn__span">Take the quick assessment</span></div>
+                <div class="btn__text"><span class="btn__span">Book a Call</span></div>
                 <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
               </a>
               <a data-hover="" data-btn-theme="transparent" href="#deploy" class="btn w-inline-block weflair-btn weflair-btn--ghost">
@@ -1047,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </a>
             </div>
             <div class="gtm-proof-row" aria-label="GTM page proof points">
-              <div class="gtm-proof-pill"><strong>5-question</strong><span>assessment to pick the right first move</span></div>
+              <div class="gtm-proof-pill"><strong>Free</strong><span>consultation call to figure out the right first move</span></div>
               <div class="gtm-proof-pill"><strong>9-step</strong><span>deployment from ICP to compounding plays</span></div>
               <div class="gtm-proof-pill"><strong>200+</strong><span>playbook patterns for signals and workflows</span></div>
             </div>
@@ -1074,14 +1111,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="gtm-section gtm-logo-strip" aria-label="Modern GTM stack">
       <div class="gtm-container gtm-container--wide">
         <div class="gtm-logo-grid">
-          <div class="gtm-logo-card">Clay</div>
-          <div class="gtm-logo-card">Apollo</div>
+          <div class="gtm-logo-card"><img src="https://cdn.prod.website-files.com/61477f2c24a826836f969afe/6778506d788ebf16fef48551_Clay%20primary%20logo.avif" alt="Clay logo" loading="lazy" decoding="async"></div>
+          <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/apollo.svg" alt="Apollo.io logo" loading="lazy" decoding="async"></div>
           <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn logo" loading="lazy" decoding="async"></div>
-          <div class="gtm-logo-card">Smartlead</div>
-          <div class="gtm-logo-card">Instantly</div>
+          <div class="gtm-logo-card"><img src="https://cdn.prod.website-files.com/6204a703ff61516512c04f55/6462250d368a9e5c6eea28cc_smartlead-logo-main-1-p-500.png" alt="Smartlead logo" loading="lazy" decoding="async"></div>
+          <div class="gtm-logo-card"><img src="https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/63fcf43ca8cfc794df15c0f6_Instantly%20Logo.svg" alt="Instantly logo" loading="lazy" decoding="async"></div>
           <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot logo" loading="lazy" decoding="async"></div>
-          <div class="gtm-logo-card">Salesforce</div>
+          <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/salesforce.svg" alt="Salesforce logo" loading="lazy" decoding="async"></div>
           <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/googleanalytics.svg" alt="Google Analytics logo" loading="lazy" decoding="async"></div>
+          <div class="gtm-logo-card"><img src="/brand-assets/partner-logos/n8n.svg" alt="n8n logo" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -1168,89 +1206,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <section class="gtm-section" id="assessment">
+    <section class="gtm-section" id="book-a-call">
       <div class="gtm-container">
         <div class="gtm-head gtm-head--center">
-          <p class="gtm-kicker">Quick assessment</p>
-          <h2 class="gtm-section-title">Find the right first outbound or RevOps move in five steps.</h2>
-          <p class="gtm-copy">Answer the basics we need before recommending an outbound pilot, a RevOps sprint, or both. The result is directional, but it keeps the conversation focused.</p>
+          <p class="gtm-kicker">Let's talk</p>
+          <h2 class="gtm-section-title">Tell us what you're building. We'll show you what's possible.</h2>
+          <p class="gtm-copy">Whether you want to build out a signal-led outbound motion or fix the ops underneath your pipeline, one call is enough to figure out the right first move.</p>
         </div>
-        <div class="gtm-assessment" data-gtm-assessment>
-          <div class="gtm-assessment__panel">
-            <div class="gtm-assessment__top">
-              <span class="gtm-progress-label" data-step-label>Question 1 of 5</span>
-              <div class="gtm-progress" aria-hidden="true"><span data-progress></span></div>
-            </div>
-            <section class="gtm-question is-active" data-question-step>
-              <p class="gtm-question__label">Step 01</p>
-              <h3>Who are you trying to sell to?</h3>
-              <p class="gtm-question__help">The narrower the buyer and account type, the more useful signals and personalization become.</p>
-              <div class="gtm-options">
-                <button type="button" class="gtm-option" data-score="13" data-path="outbound">Defined B2B ICP with named roles</button>
-                <button type="button" class="gtm-option" data-score="16" data-path="both">Technical buyer or buying committee</button>
-                <button type="button" class="gtm-option" data-score="9" data-path="revops">Inbound leads from mixed segments</button>
-                <button type="button" class="gtm-option" data-score="6" data-path="outbound">Still figuring out the ICP</button>
-              </div>
-            </section>
-            <section class="gtm-question" data-question-step>
-              <p class="gtm-question__label">Step 02</p>
-              <h3>What is a normal deal worth?</h3>
-              <p class="gtm-question__help">Signal-led outbound works best when the deal is valuable enough to justify real research and setup.</p>
-              <div class="gtm-options">
-                <button type="button" class="gtm-option" data-score="6" data-path="outbound">Under $5k</button>
-                <button type="button" class="gtm-option" data-score="12" data-path="outbound">$5k to $20k</button>
-                <button type="button" class="gtm-option" data-score="17" data-path="both">$20k to $100k</button>
-                <button type="button" class="gtm-option" data-score="20" data-path="both">$100k+</button>
-              </div>
-            </section>
-            <section class="gtm-question" data-question-step>
-              <p class="gtm-question__label">Step 03</p>
-              <h3>What does outbound look like today?</h3>
-              <p class="gtm-question__help">This tells us whether the first sprint should prove a channel, replace a weak motion, or add better account logic.</p>
-              <div class="gtm-options">
-                <button type="button" class="gtm-option" data-score="9" data-path="outbound">Barely started</button>
-                <button type="button" class="gtm-option" data-score="10" data-path="outbound">Static lists and basic sequences</button>
-                <button type="button" class="gtm-option" data-score="15" data-path="both">Manual SDR research</button>
-                <button type="button" class="gtm-option" data-score="18" data-path="both">Some signal-led tests already running</button>
-              </div>
-            </section>
-            <section class="gtm-question" data-question-step>
-              <p class="gtm-question__label">Step 04</p>
-              <h3>Which signals can you act on?</h3>
-              <p class="gtm-question__help">The answer decides how much of the campaign is list building versus trigger detection and automation.</p>
-              <div class="gtm-options">
-                <button type="button" class="gtm-option" data-score="10" data-path="outbound">Basic firmographics only</button>
-                <button type="button" class="gtm-option" data-score="15" data-path="outbound">Tech stack, hiring, funding, or intent</button>
-                <button type="button" class="gtm-option" data-score="18" data-path="both">Website visitors and CRM history too</button>
-                <button type="button" class="gtm-option" data-score="14" data-path="revops">We have signals but no workflow</button>
-              </div>
-            </section>
-            <section class="gtm-question" data-question-step>
-              <p class="gtm-question__label">Step 05</p>
-              <h3>How clean is the CRM and sales handoff?</h3>
-              <p class="gtm-question__help">More volume makes messy routing worse. This decides how much RevOps needs to ship before scale.</p>
-              <div class="gtm-options">
-                <button type="button" class="gtm-option" data-score="8" data-path="revops">Spreadsheets, notes, and manual follow-up</button>
-                <button type="button" class="gtm-option" data-score="12" data-path="revops">CRM exists but fields and owners are messy</button>
-                <button type="button" class="gtm-option" data-score="17" data-path="both">CRM is workable but needs automation</button>
-                <button type="button" class="gtm-option" data-score="20" data-path="outbound">CRM is clean enough to launch</button>
-              </div>
-            </section>
-            <div class="gtm-assessment__controls">
-              <a href="#assessment" class="btn w-inline-block weflair-btn weflair-btn--ghost" data-prev aria-disabled="true"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Back</span></div></a>
-              <a href="#assessment" class="btn w-inline-block" data-next aria-disabled="true"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Next question</span></div></a>
-            </div>
-          </div>
-          <aside class="gtm-result" aria-live="polite">
-            <div class="gtm-score" data-score-ring><div class="gtm-score__inner"><strong data-score-value>--</strong><span>score</span></div></div>
-            <h3 data-path-title>Answer five questions to get your path.</h3>
-            <p data-path-copy>We will use the answers to point you toward an outbound pilot, a RevOps automation sprint, or a combined build.</p>
-            <ul class="gtm-result__tags" data-path-tags><li>ICP</li><li>Signals</li><li>CRM</li></ul>
-            <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html?service=gtm-pilot" class="btn w-inline-block" data-assessment-cta>
+        <div class="gtm-cta-cards">
+          <div class="gtm-cta-card">
+            <p class="gtm-kicker">Outbound</p>
+            <h3>Talk through outbound</h3>
+            <p>ICP mapping, signal research, Clay enrichment, AI-assisted copy, inbox setup, and campaign execution — built from scratch or layered on top of what you have.</p>
+            <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html?service=outbound" class="btn w-inline-block">
               <div class="btn__bg"></div>
-              <div class="btn__text"><span class="btn__span">Apply for a no-cost pilot campaign</span></div>
+              <div class="btn__text"><span class="btn__span">Book a Call</span></div>
+              <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
             </a>
-          </aside>
+          </div>
+          <div class="gtm-cta-card">
+            <p class="gtm-kicker">RevOps</p>
+            <h3>Talk through RevOps</h3>
+            <p>CRM cleanup, routing logic, automation workflows, handoff structure, and reporting — the ops layer that makes every lead worth something.</p>
+            <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html?service=revops" class="btn w-inline-block">
+              <div class="btn__bg"></div>
+              <div class="btn__text"><span class="btn__span">Book a Call</span></div>
+              <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
+            </a>
+          </div>
         </div>
       </div>
     </section>

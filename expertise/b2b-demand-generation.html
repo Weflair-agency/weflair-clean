@@ -74,10 +74,15 @@
       align-items: center;
       gap: 0.55rem;
       margin: 0 0 1rem;
+      padding: 0.42rem 0.64rem;
+      border: 1px solid rgba(62, 255, 104, 0.32);
+      border-radius: 999px;
+      background: rgba(62, 255, 104, 0.08);
       color: var(--dg-green);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0;
+      line-height: 1;
       text-transform: uppercase;
     }
 
@@ -87,7 +92,7 @@
       width: 0.55rem;
       height: 0.55rem;
       background: currentColor;
-      transform: rotate(45deg);
+      clip-path: polygon(50% 0, 62% 35%, 100% 50%, 62% 65%, 50% 100%, 38% 65%, 0 50%, 38% 35%);
     }
 
     .demand-page .dg-hero {
@@ -108,20 +113,22 @@
     }
 
     .demand-page .dg-hero__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(24rem, 0.82fr);
-      gap: 4rem;
-      align-items: center;
+      display: block;
+    }
+
+    .demand-page .dg-hero__copy {
+      max-width: 70rem;
     }
 
     .demand-page .dg-hero h1 {
-      max-width: 52rem;
+      max-width: 68rem;
       margin: 0;
       color: var(--dg-cream);
-      font-size: 5.1rem;
-      line-height: 0.96;
+      font-size: clamp(3.25rem, 7vw, 6.2rem);
+      line-height: 0.98;
       font-weight: 800;
       letter-spacing: 0;
+      text-wrap: balance;
     }
 
     .demand-page .dg-hero h1 span {
@@ -129,7 +136,7 @@
     }
 
     .demand-page .dg-hero__lead {
-      max-width: 43rem;
+      max-width: 50rem;
       margin: 1.45rem 0 0;
       color: var(--dg-muted);
       font-size: 1.18rem;
@@ -218,6 +225,38 @@
       border-radius: 50%;
       background: var(--dg-green);
       box-shadow: 0 0 0 0.35rem rgba(62, 255, 104, 0.12);
+    }
+
+    .demand-page .dg-hero-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem 2rem;
+      margin-top: 2.4rem;
+      max-width: 54rem;
+    }
+
+    .demand-page .dg-hero-logos span {
+      width: 100%;
+      color: rgba(246, 243, 238, 0.56);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .demand-page .dg-hero-logos img {
+      display: block;
+      width: auto;
+      max-width: 7.8rem;
+      height: 2rem;
+      object-fit: contain;
+      filter: saturate(0.92) brightness(1.08);
+    }
+
+    .demand-page .dg-hero-logos img[src*="linkedin"] {
+      filter: invert(1) brightness(1.14);
+      opacity: 0.88;
     }
 
     .demand-page .dg-command {
@@ -1098,7 +1137,7 @@
       }
 
       .demand-page .dg-hero h1 {
-        font-size: 4rem;
+        font-size: clamp(3rem, 10vw, 4.4rem);
       }
 
       .demand-page .dg-section-head {
@@ -1124,12 +1163,16 @@
         padding: 8rem 0 4rem;
       }
 
+      .demand-page .dg-hero .wf-star {
+        display: none;
+      }
+
       .demand-page .dg-section {
         padding: 4.5rem 0;
       }
 
       .demand-page .dg-hero h1 {
-        font-size: 3.05rem;
+        font-size: clamp(2.75rem, 13vw, 3.4rem);
         line-height: 1;
       }
 
@@ -1195,6 +1238,15 @@
         height: 1.9rem;
       }
 
+      .demand-page .dg-hero-logos {
+        gap: 1rem 1.3rem;
+      }
+
+      .demand-page .dg-hero-logos img {
+        max-width: 6.9rem;
+        height: 1.75rem;
+      }
+
       .demand-page .dg-cta {
         padding: 1.25rem;
       }
@@ -1238,92 +1290,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Book a demand audit
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
               </a>
-              <a href="#system" class="dg-btn">
-                See how it works
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-              </a>
             </div>
-            <div class="dg-proofline" aria-label="Operating principles">
-              <span><i></i>Paid, outbound, content, and CRM working from one plan</span>
-              <span><i></i>90-day build plan with weekly sprint decisions</span>
-              <span><i></i>Reporting tied to pipeline quality, not vanity metrics</span>
+            <div class="dg-hero-logos" aria-label="Demand generation platforms">
+              <span>Built around the platforms your revenue team already uses</span>
+              <img src="/brand-assets/partner-logos/google.svg" alt="Google" loading="lazy" decoding="async">
+              <img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async">
+              <img src="/brand-assets/partner-logos/meta.svg" alt="Meta" loading="lazy" decoding="async">
+              <img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot" loading="lazy" decoding="async">
+              <img src="/brand-assets/partner-logos/youtube.svg" alt="YouTube" loading="lazy" decoding="async">
+              <img src="/brand-assets/partner-logos/reddit.svg" alt="Reddit" loading="lazy" decoding="async">
             </div>
-          </div>
-
-          <div class="dg-command" aria-label="Demand generation command center preview" data-dg-reveal>
-            <div class="dg-command__top">
-              <span>Pipeline command center</span>
-              <strong>Weekly sprint live</strong>
-            </div>
-            <div class="dg-command__metrics">
-              <article class="dg-command__card">
-                <span>ICP fit</span>
-                <strong>Mapped</strong>
-                <p>Account tiers, buying triggers, and exclusion rules.</p>
-              </article>
-              <article class="dg-command__card">
-                <span>Active tests</span>
-                <strong>12</strong>
-                <p>Offers, angles, audiences, and landing page variants.</p>
-              </article>
-              <article class="dg-command__card">
-                <span>Sales handoff</span>
-                <strong>Live</strong>
-                <p>Lead routing, notes, and follow-up triggers.</p>
-              </article>
-            </div>
-            <div class="dg-command__route">
-              <div class="dg-route-node"><span>Create</span><strong>Account demand</strong></div>
-              <i class="dg-route-line"></i>
-              <div class="dg-route-node"><span>Capture</span><strong>High-intent traffic</strong></div>
-              <i class="dg-route-line"></i>
-              <div class="dg-route-node"><span>Convert</span><strong>Qualified pipeline</strong></div>
-            </div>
-            <div class="dg-command__flow">
-              <article class="dg-flow-item">
-                <strong>Paid capture</strong>
-                <p>Search, LinkedIn, retargeting, and proof-led creative.</p>
-                <span class="dg-flow-bar"><i style="width: 82%;"></i></span>
-              </article>
-              <article class="dg-flow-item">
-                <strong>Signal outbound</strong>
-                <p>Warm account triggers, sequences, and sales context.</p>
-                <span class="dg-flow-bar"><i style="width: 68%;"></i></span>
-              </article>
-              <article class="dg-flow-item">
-                <strong>CRM + reporting</strong>
-                <p>Attribution, routing, dashboards, and next actions.</p>
-                <span class="dg-flow-bar"><i style="width: 91%;"></i></span>
-              </article>
-            </div>
-            <div class="dg-command__decision">
-              <span>This week's decision</span>
-              <strong>Move budget into the strongest segment, ship landing page v2, and route warm accounts to sales with campaign context.</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dg-logo-band" aria-label="Demand generation platforms and client experience">
-      <div class="dg-container">
-        <div class="dg-logo-band__inner">
-          <p>Built around the platforms your revenue team already uses.</p>
-          <div class="dg-logo-row">
-            <img src="/brand-assets/partner-logos/google.svg" alt="Google" loading="lazy" decoding="async">
-            <img src="/brand-assets/partner-logos/linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async">
-            <img src="/brand-assets/partner-logos/meta.svg" alt="Meta" loading="lazy" decoding="async">
-            <img src="/brand-assets/partner-logos/hubspot.svg" alt="HubSpot" loading="lazy" decoding="async">
-            <img src="/brand-assets/partner-logos/youtube.svg" alt="YouTube" loading="lazy" decoding="async">
-            <img src="/brand-assets/partner-logos/reddit.svg" alt="Reddit" loading="lazy" decoding="async">
-          </div>
-          <p>Experience across B2B, SaaS, ecommerce, and performance teams.</p>
-          <div class="dg-logo-row dg-logo-row--clients">
-            <img src="/brand-assets/client-logos/clean/cellpoint-digital-official.svg" alt="CellPoint Digital" loading="lazy" decoding="async">
-            <img src="/brand-assets/client-logos/farnell.png" alt="Farnell" loading="lazy" decoding="async">
-            <img src="/brand-assets/client-logos/clean/hq-software-transparent.png" alt="HQ Software" loading="lazy" decoding="async">
-            <img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" loading="lazy" decoding="async">
-            <img src="/brand-assets/client-logos/clean/molahin-transparent.png" alt="Molahin" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -1608,28 +1584,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <section class="dg-section dg-section--tight" id="audit">
-      <div class="dg-container">
-        <div class="dg-cta" data-dg-reveal>
-          <div class="dg-cta__grid">
-            <div>
-              <p class="dg-eyebrow">Free audit</p>
-              <h2>Get a demand generation audit before you spend another quarter guessing.</h2>
-              <p>We will review your current demand setup, identify the biggest leaks, and give you a practical first-step plan for building a cleaner pipeline motion.</p>
-              <div class="dg-mini-stats">
-                <span>Channel and funnel review</span>
-                <span>90-day action plan</span>
-                <span>Fit checked honestly</span>
-              </div>
-            </div>
-            <a href="/contact.html" class="dg-btn dg-btn--primary">
-              Book your audit
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 44" fill="none">
+  <!-- Lightning bolt -->
+  <path d="M18 4 L10 22 L16 22 L12 40 L24 18 L18 18 Z" fill="white"/>
+  <!-- Wordmark -->
+  <text x="84" y="28" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="600" fill="white" text-anchor="middle" letter-spacing="-0.2">Instantly</text>
+</svg>

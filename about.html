@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About with Flair | WeFlair</title>
-  <meta name="description" content="About with Flair: the founder-led growth agency built around judgment, operating speed, and revenue accountability." />
-  <meta property="og:title" content="About with Flair | WeFlair" />
+  <title>About WeFlair | Founder-Led Growth Agency</title>
+  <meta name="description" content="WeFlair is a founder-led growth agency for B2B and ecommerce teams. We build acquisition systems, run campaigns, and fix what's leaking revenue." />nue accountability." />
+  <meta property="og:title" content="About WeFlair | Founder-Led Growth Agency" />
   <meta property="og:description" content="WeFlair is a founder-led growth agency for ecommerce and B2B teams that need acquisition work built, shipped, and tied to revenue." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About with Flair | WeFlair" />
+  <meta name="twitter:title" content="About WeFlair | Founder-Led Growth Agency" />
   <meta name="twitter:description" content="WeFlair is a founder-led growth agency for ecommerce and B2B teams that need acquisition work built, shipped, and tied to revenue." />
   <meta name="theme-color" content="#151515" />
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
@@ -101,9 +101,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     .wa-eyebrow::before {
       content: "";
-      width: 0.5rem;
-      height: 0.5rem;
-      background: currentColor;
+      display: inline-block;
+      flex-shrink: 0;
+      width: 0.82rem;
+      height: 0.82rem;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130 130'%3E%3Cpath d='M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z' fill='%233eff68'/%3E%3C/svg%3E") no-repeat center / contain;
     }
 
     .wa-hero {
@@ -112,10 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     .wa-hero__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.78fr);
-      gap: 4rem;
-      align-items: end;
+      display: block;
     }
 
     .wa-hero h1,
@@ -131,9 +130,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     .wa-hero h1 {
-      max-width: 10.8ch;
-      font-size: 7rem;
-      line-height: 0.96;
+      max-width: 18ch;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 1.05;
     }
 
     .wa-hero h1 span,
@@ -212,15 +211,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     .wa-founder-photo {
       display: grid;
-      width: 5.6rem;
-      height: 5.6rem;
+      width: 7rem;
+      height: 7rem;
+      flex-shrink: 0;
       place-items: center;
       overflow: hidden;
-      border: 1px solid rgba(62, 255, 104, 0.38);
+      border: 2px solid rgba(62, 255, 104, 0.45);
       border-radius: 999px;
-      background:
-        linear-gradient(135deg, rgba(62, 255, 104, 0.22), rgba(246, 243, 238, 0.05)),
-        #101110;
+      background: #101110;
       color: var(--wa-green);
       font-family: "Space Grotesk", "Onest", sans-serif;
       font-size: 1.15rem;
@@ -614,8 +612,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
       .wa-hero h1 {
-        max-width: 9.5ch;
-        font-size: 4rem;
+        max-width: 22ch;
+        font-size: 3rem;
       }
 
       .wa-proof-row,
@@ -647,31 +645,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="wa-container">
         <div class="wa-hero__grid">
           <div>
-            <div class="wa-eyebrow">About with Flair</div>
-            <h1>About with <span>Flair</span></h1>
-            <p class="wa-hero__lead">WeFlair builds and runs acquisition work for ecommerce and B2B teams that are done stitching together freelancers, ad accounts, landing pages, outbound tools, and messy CRM data. We come in where growth is leaking, clean up the moving parts, and ship the work that turns attention into qualified pipeline and sales.</p>
-            <div class="wa-actions" aria-label="About with Flair actions">
-              <a class="wa-btn wa-btn--primary" href="/contact.html">Book a growth audit <span aria-hidden="true">-></span></a>
-              <a class="wa-btn wa-btn--ghost" href="#philosophies">How we think</a>
+            <div class="wa-eyebrow">About WeFlair</div>
+            <h1>We do the work others <span>talk about</span></h1>
+            <p class="wa-hero__lead">WeFlair is a founder-led growth agency for B2B and ecommerce teams. We build the acquisition systems, run the campaigns, and clean up the parts that are quietly leaking revenue.</p>
+            <div class="wa-actions" aria-label="About WeFlair actions">
+              <a class="wa-btn wa-btn--primary" href="/contact.html">Book a call <span aria-hidden="true">-></span></a>
             </div>
           </div>
-
-          <aside class="wa-founder-card" aria-label="Founder note">
-            <div class="wa-founder-card__top">
-              <div class="wa-founder-photo" aria-label="Sami Madi, founder and CEO of WeFlair"><span>SM</span></div>
-              <div>
-                <div class="wa-founder-role">Founder &amp; CEO</div>
-                <h2>Sami Madi</h2>
-                <p>Sami started WeFlair after years of working inside the messy parts of growth: ads, outbound, CRO, email, CRM, automation, ecommerce fixes, investor campaigns, and sales handoffs that had to work in the real world.</p>
-              </div>
-            </div>
-            <div class="wa-founder-quote">"Good growth work has to survive contact with the CRM, the sales team, and the buyer. Otherwise it is just a nice-looking plan."</div>
-            <div class="wa-proof-row">
-              <div class="wa-proof"><strong>3X</strong><span>meeting velocity for CellPoint</span></div>
-              <div class="wa-proof"><strong>$114K</strong><span>new revenue for Molahin</span></div>
-              <div class="wa-proof"><strong>+36%</strong><span>ROAS lift for RCT</span></div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -702,6 +682,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>For CellPoint Digital, that meant operating like an embedded marketing operations team, consolidating a multi-agency stack, building signal-based workflows, and improving meeting velocity. For ecommerce teams, it means connecting ads, landing pages, lifecycle email, Shopify, feed cleanup, and creative so performance is not trapped inside one dashboard.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section class="wa-section" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+      <div class="wa-container">
+        <aside class="wa-founder-card" aria-label="Founder note">
+          <div class="wa-founder-card__top">
+            <div class="wa-founder-photo" aria-label="Sami Madi, founder and CEO of WeFlair"><img src="/brand-assets/team/sami.png" alt="Sami Madi" loading="eager" decoding="async"></div>
+            <div>
+              <div class="wa-founder-role">Founder &amp; CEO</div>
+              <h2>Sami Madi</h2>
+              <p>Sami started WeFlair after years of working inside the messy parts of growth: ads, outbound, CRO, email, CRM, automation, ecommerce fixes, investor campaigns, and sales handoffs that had to work in the real world.</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
