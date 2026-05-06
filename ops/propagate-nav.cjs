@@ -40,7 +40,7 @@ const NAV_GROUPS = {
     {
       title: "Outbound Systems",
       href: "services/go-to-market-systems.html",
-      body: "Outbound systems built for real sales conversations.",
+      body: "Outbound programs built for real sales conversations.",
     },
     {
       title: "Performance Design &amp; CRO",
@@ -50,14 +50,14 @@ const NAV_GROUPS = {
     {
       title: "AI Visibility &amp; SEO",
       href: "services/ai-visibility-seo.html",
-      body: "Content systems built for search and AI visibility.",
+      body: "Search content built for AI visibility.",
     },
   ],
   expertise: [
     {
       title: "B2B Demand Generation",
       href: "expertise/b2b-demand-generation.html",
-      body: "Demand systems built around qualified pipeline.",
+      body: "Demand generation built around qualified pipeline.",
     },
     {
       title: "B2B SaaS",
@@ -120,7 +120,7 @@ const NAV_GROUPS = {
   ],
   about: [
     {
-      title: "About Us",
+      title: "About with Flair",
       href: "about.html",
       body: "The growth agency built for operators.",
     },

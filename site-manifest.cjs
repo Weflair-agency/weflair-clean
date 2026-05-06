@@ -19,15 +19,15 @@ module.exports = {
     },
     {
       key: "outbound-gtm",
-      title: "GTM Systems",
+      title: "Outbound Systems",
       href: "/services/go-to-market-systems.html",
-      description: "Outbound systems, RevOps, and AI workflows built around qualified pipeline.",
+      description: "Outbound programs, RevOps, and AI-assisted workflows built around qualified pipeline.",
     },
     {
       key: "cro-performance-design",
       title: "Performance Design & CRO",
       href: "/services/performance-design.html",
-      description: "Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue.",
+      description: "Landing pages, UX, experimentation, and conversion work that turns more of your traffic into revenue.",
     },
     {
       key: "content-seo",
@@ -41,13 +41,13 @@ module.exports = {
       key: "b2b-demand-generation",
       title: "B2B Demand Generation",
       href: "/expertise/b2b-demand-generation.html",
-      description: "Full-funnel B2B demand generation systems for teams that need qualified pipeline from paid media, outbound, content, and CRM reporting.",
+      description: "Full-funnel B2B demand generation for teams that need qualified pipeline from paid media, outbound, content, and CRM reporting.",
     },
     {
       key: "b2b-saas",
       title: "B2B SaaS",
       href: "/expertise/b2b-saas.html",
-      description: "Growth systems for B2B SaaS teams that need qualified pipeline and cleaner revenue visibility.",
+      description: "Growth work for B2B SaaS teams that need qualified pipeline and cleaner revenue visibility.",
     },
     {
       key: "b2b-services",
@@ -59,13 +59,13 @@ module.exports = {
       key: "b2b-tech",
       title: "B2B Tech",
       href: "/expertise/b2b-tech.html",
-      description: "Marketing systems for technical B2B categories with complex buyers and longer buying cycles.",
+      description: "Marketing for technical B2B categories with complex buyers and longer buying cycles.",
     },
     {
       key: "ecommerce",
       title: "E-commerce",
       href: "/expertise/ecommerce.html",
-      description: "Paid, lifecycle, and conversion systems for e-commerce teams.",
+      description: "Paid, lifecycle, and conversion work for e-commerce teams.",
     },
   ],
   resources: [
@@ -115,7 +115,7 @@ module.exports = {
   companyLinks: [
     {
       key: "about",
-      title: "About Us",
+      title: "About with Flair",
       href: "/about.html",
       description: "How WeFlair is structured and what we care about.",
     },
@@ -137,7 +137,7 @@ module.exports = {
       title: "Services",
       items: [
         { label: "Paid Media & Performance", href: "/services/paid-media-performance.html" },
-        { label: "GTM Systems", href: "/services/go-to-market-systems.html" },
+        { label: "Outbound Systems", href: "/services/go-to-market-systems.html" },
         { label: "Performance Design & CRO", href: "/services/performance-design.html" },
         { label: "AI Search & SEO", href: "/services/ai-visibility-seo.html" },
       ],
@@ -167,7 +167,7 @@ module.exports = {
     {
       title: "Company",
       items: [
-        { label: "About Us", href: "/about.html" },
+        { label: "About with Flair", href: "/about.html" },
         { label: "Careers", href: "/careers.html" },
         { label: "Contact", href: "/contact.html" },
         { label: "Sitemap", href: "/sitemap.html" },
@@ -185,9 +185,9 @@ module.exports = {
     {
       file: "index.html",
       path: "/",
-      title: "WeFlair | Growth Marketing Systems for Ambitious Teams",
+      title: "WeFlair | Growth Marketing for Ambitious Teams",
       description:
-        "WeFlair builds paid media, GTM systems, performance design, and AI search engines that turn growth into a working system.",
+        "WeFlair builds paid media, outbound, RevOps, performance design, and AI search visibility work that turns attention into revenue.",
       pageType: "home",
       schemaType: "WebSite",
       group: "Core",
@@ -199,7 +199,7 @@ module.exports = {
       path: "/services/paid-media-performance.html",
       title: "Paid Media & Performance | WeFlair",
       description:
-        "Paid media systems built around qualified demand, clean measurement, and better revenue efficiency.",
+        "Paid media built around qualified demand, clean measurement, and better revenue efficiency.",
       pageType: "service",
       schemaType: "Service",
       group: "Services",
@@ -209,13 +209,13 @@ module.exports = {
     {
       file: "services/go-to-market-systems.html",
       path: "/services/go-to-market-systems.html",
-      title: "GTM Systems | WeFlair",
+      title: "Outbound Systems | WeFlair",
       description:
         "Outbound, RevOps, CRM automation, and AI workflows designed to create qualified conversations and cleaner pipeline flow.",
       pageType: "service",
       schemaType: "Service",
       group: "Services",
-      label: "GTM Systems",
+      label: "Outbound Systems",
       includeInXml: true,
     },
     {
@@ -223,7 +223,7 @@ module.exports = {
       path: "/services/performance-design.html",
       title: "Performance Design & CRO | WeFlair",
       description:
-        "Landing pages, UX, experimentation, and conversion systems built to turn more of your traffic into revenue.",
+        "Landing pages, UX, experimentation, and conversion work built to turn more of your traffic into revenue.",
       pageType: "service",
       schemaType: "Service",
       group: "Services",
@@ -259,7 +259,7 @@ module.exports = {
       path: "/expertise/b2b-saas.html",
       title: "B2B SaaS Expertise | WeFlair",
       description:
-        "Growth systems for B2B SaaS teams that need qualified pipeline, activation quality, and cleaner revenue visibility.",
+        "Growth work for B2B SaaS teams that need qualified pipeline, activation quality, and cleaner revenue visibility.",
       pageType: "expertise",
       schemaType: "Service",
       group: "Expertise",
@@ -271,7 +271,7 @@ module.exports = {
       path: "/expertise/b2b-services.html",
       title: "B2B Services Expertise | WeFlair",
       description:
-        "Demand generation systems for agencies, consultancies, and specialist B2B service teams.",
+        "Demand generation for agencies, consultancies, and specialist B2B service teams.",
       pageType: "expertise",
       schemaType: "Service",
       group: "Expertise",
@@ -283,7 +283,7 @@ module.exports = {
       path: "/expertise/b2b-tech.html",
       title: "B2B Tech Expertise | WeFlair",
       description:
-        "Marketing systems for technical B2B categories with complex buyers, longer buying cycles, and high-trust decisions.",
+        "Marketing for technical B2B categories with complex buyers, longer buying cycles, and high-trust decisions.",
       pageType: "expertise",
       schemaType: "Service",
       group: "Expertise",
@@ -295,7 +295,7 @@ module.exports = {
       path: "/expertise/ecommerce.html",
       title: "E-commerce Expertise | WeFlair",
       description:
-        "Paid, lifecycle, and conversion systems for e-commerce teams that need stronger revenue efficiency.",
+        "Paid, lifecycle, and conversion work for e-commerce teams that need stronger revenue efficiency.",
       pageType: "expertise",
       schemaType: "Service",
       group: "Expertise",
@@ -305,7 +305,7 @@ module.exports = {
     {
       file: "resources/index.html",
       path: "/resources/",
-      title: "Resources | WeFlair",
+      title: "Resources — Guides, Playbooks & Tools | WeFlair",
       description:
         "Browse WeFlair guides, playbooks, calculators, checklists, the free resource pack, and case studies from one clean resource hub.",
       pageType: "collection",
@@ -391,7 +391,7 @@ module.exports = {
       path: "/case-studies/",
       title: "Case Studies | WeFlair",
       description:
-        "A case study library covering paid media, GTM systems, performance design, and search visibility engagements.",
+        "A case study library covering paid media, outbound, RevOps, performance design, and search visibility engagements.",
       pageType: "collection",
       schemaType: "CollectionPage",
       group: "Case Studies",
@@ -401,21 +401,21 @@ module.exports = {
     {
       file: "about.html",
       path: "/about.html",
-      title: "About Us | WeFlair",
+      title: "About with Flair — The Growth Team Behind WeFlair",
       description:
-        "Meet the minority-founded growth team building accountable B2B marketing systems across strategy, execution, and RevOps.",
+        "Meet the minority-founded growth team building accountable B2B marketing across strategy, execution, and RevOps.",
       pageType: "about",
       schemaType: "AboutPage",
       group: "Company",
-      label: "About Us",
+      label: "About with Flair",
       includeInXml: true,
     },
     {
       file: "careers.html",
       path: "/careers.html",
-      title: "Careers | WeFlair",
+      title: "Careers — Join the WeFlair Growth Team",
       description:
-        "Join WeFlair to build growth systems with a distributed team that values output and clarity.",
+        "Join WeFlair to build growth work with a distributed team that values output and clarity. Remote roles in paid media, RevOps, and performance design.",
       pageType: "careers",
       schemaType: "WebPage",
       group: "Company",
@@ -425,8 +425,8 @@ module.exports = {
     {
       file: "resource-pack.html",
       path: "/resource-pack.html",
-      title: "Resource Pack | WeFlair",
-      description: "Get WeFlair's free GTM resource pack: AI agents, sales and marketing automations, templates, checklists, and operating tools for growth teams.",
+      title: "Free Growth Resource Pack | WeFlair",
+      description: "Get WeFlair's free resource pack: AI agents, sales and marketing automations, templates, checklists, and operating tools for growth teams.",
       pageType: "resource",
       schemaType: "CollectionPage",
       group: "Resources",
@@ -436,7 +436,7 @@ module.exports = {
     {
       file: "contact.html",
       path: "/contact.html",
-      title: "Contact | WeFlair",
+      title: "Contact WeFlair — Book a Growth Strategy Call",
       description:
         "Start with a 15 min call to see if WeFlair can help. If there is a fit, we build your 90-day growth roadmap.",
       pageType: "contact",
@@ -449,7 +449,7 @@ module.exports = {
       file: "legal/privacy.html",
       path: "/legal/privacy.html",
       title: "Privacy Policy | WeFlair",
-      description: "Read the WeFlair privacy policy.",
+      description: "Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR.",
       pageType: "legal",
       schemaType: "WebPage",
       group: "Legal",
@@ -460,7 +460,7 @@ module.exports = {
       file: "legal/terms.html",
       path: "/legal/terms.html",
       title: "Terms and Conditions | WeFlair",
-      description: "Read the WeFlair terms and conditions.",
+      description: "Read the WeFlair terms and conditions governing the use of our website, services, and growth marketing engagements.",
       pageType: "legal",
       schemaType: "WebPage",
       group: "Legal",
@@ -470,7 +470,7 @@ module.exports = {
     {
       file: "sitemap.html",
       path: "/sitemap.html",
-      title: "Sitemap | WeFlair",
+      title: "Sitemap & HTML Site Structure | WeFlair",
       description: "Browse the launch-ready WeFlair site map and canonical public routes.",
       pageType: "sitemap",
       schemaType: "CollectionPage",
@@ -482,7 +482,7 @@ module.exports = {
       file: "blog.html",
       path: "/blog.html",
       title: "Marketing Blog | WeFlair",
-      description: "Tactical insights on B2B growth, paid media, outbound, CRO, and revenue systems from the WeFlair team.",
+      description: "Tactical insights on B2B growth, paid media, outbound, CRO, and revenue from the WeFlair team.",
       pageType: "collection",
       schemaType: "CollectionPage",
       group: "Blog",
@@ -495,7 +495,7 @@ module.exports = {
       file: "services/go-to-market-systems.html",
       from: "/services/go-to-market-systems.html",
       to: "/services/go-to-market-systems.html",
-      title: "GTM Systems | WeFlair",
+      title: "Outbound Systems | WeFlair",
     },
     {
       file: "resources/ai-tools.html",

@@ -78,20 +78,20 @@ function extractTitle(html) {
 
 function extractMetaContent(html, attribute, value) {
   const pattern = new RegExp(
-    `<meta[^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*content=["']([^"']*)["'][^>]*>`,
+    `<meta[^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*content=(["'])([\\s\\S]*?)\\1[^>]*>`,
     "i"
   );
   const direct = html.match(pattern);
   if (direct) {
-    return direct[1].trim();
+    return direct[2].trim();
   }
 
   const reversedPattern = new RegExp(
-    `<meta[^>]*content=["']([^"']*)["'][^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*>`,
+    `<meta[^>]*content=(["'])([\\s\\S]*?)\\1[^>]*${attribute}=["']${escapeRegex(value)}["'][^>]*>`,
     "i"
   );
   const reversed = html.match(reversedPattern);
-  return reversed ? reversed[1].trim() : "";
+  return reversed ? reversed[2].trim() : "";
 }
 
 function injectSharedChrome(html) {
@@ -124,6 +124,7 @@ function upsertMetadata(html, publicPath, explicitTitle, explicitDescription) {
   const canonicalUrl = `${manifest.siteUrl}${publicPath}`;
   const title = explicitTitle || extractTitle(html);
   const description = explicitDescription || extractMetaContent(html, "name", "description");
+  const ogImage = `${manifest.siteUrl}${manifest.defaultOgImage}`;
 
   let next = html;
 
@@ -175,7 +176,153 @@ function upsertMetadata(html, publicPath, explicitTitle, explicitDescription) {
     `<meta name="twitter:card" content="summary_large_image" />`
   );
 
+  // og:image + twitter:image
+  next = upsertTag(
+    next,
+    /<meta[^>]*property=["']og:image["'][^>]*>/i,
+    `<meta property="og:image" content="${escapeAttr(ogImage)}" />`
+  );
+  next = upsertTag(
+    next,
+    /<meta[^>]*name=["']twitter:image["'][^>]*>/i,
+    `<meta name="twitter:image" content="${escapeAttr(ogImage)}" />`
+  );
+
+  // og:type
+  next = upsertTag(
+    next,
+    /<meta[^>]*property=["']og:type["'][^>]*>/i,
+    `<meta property="og:type" content="website" />`
+  );
+
+  // og:site_name
+  next = upsertTag(
+    next,
+    /<meta[^>]*property=["']og:site_name["'][^>]*>/i,
+    `<meta property="og:site_name" content="${escapeAttr(manifest.siteName)}" />`
+  );
+
+  // twitter:site
+  next = upsertTag(
+    next,
+    /<meta[^>]*name=["']twitter:site["'][^>]*>/i,
+    `<meta name="twitter:site" content="@weflair" />`
+  );
+
   return next;
+}
+
+function buildSchemaJson(routeMeta, canonicalUrl, title, description) {
+  const org = {
+    "@type": "Organization",
+    name: manifest.siteName,
+    url: manifest.siteUrl,
+    logo: `${manifest.siteUrl}/brand-assets/office.png`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: manifest.contactPrimaryEmail,
+      contactType: "sales",
+    },
+    sameAs: manifest.socialLinks.map((l) => l.href),
+  };
+
+  const schemas = [];
+
+  const schemaType = routeMeta?.schemaType || "WebPage";
+  const pageType = routeMeta?.pageType || "";
+
+  if (pageType === "home") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: manifest.siteName,
+      url: manifest.siteUrl,
+      description: description || "",
+      publisher: org,
+    });
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      ...org,
+    });
+  } else if (schemaType === "Service" || pageType === "service" || pageType === "expertise") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: title || "",
+      description: description || "",
+      url: canonicalUrl,
+      provider: org,
+    });
+  } else if (schemaType === "AboutPage" || pageType === "about") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: title || "",
+      description: description || "",
+      url: canonicalUrl,
+      mainEntity: org,
+    });
+  } else if (schemaType === "ContactPage" || pageType === "contact") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: title || "",
+      description: description || "",
+      url: canonicalUrl,
+      mainEntity: {
+        "@type": "Organization",
+        name: manifest.siteName,
+        email: manifest.contactPrimaryEmail,
+      },
+    });
+  } else if (schemaType === "CollectionPage" || pageType === "collection") {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: title || "",
+      description: description || "",
+      url: canonicalUrl,
+      provider: org,
+    });
+  } else {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title || "",
+      description: description || "",
+      url: canonicalUrl,
+      publisher: org,
+    });
+  }
+
+  return schemas;
+}
+
+function injectSchema(html, routeMeta, publicPath) {
+  // Skip if JSON-LD already exists
+  if (html.includes("application/ld+json")) {
+    return html;
+  }
+
+  const canonicalUrl = `${manifest.siteUrl}${publicPath}`;
+  const title = routeMeta?.title || extractTitle(html);
+  const description = routeMeta?.description || extractMetaContent(html, "name", "description");
+  const schemas = buildSchemaJson(routeMeta, canonicalUrl, title, description);
+
+  if (schemas.length === 0) {
+    return html;
+  }
+
+  const scriptTags = schemas
+    .map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+    .join("\n  ");
+
+  if (/<\/head>/i.test(html)) {
+    return html.replace(/<\/head>/i, `  ${scriptTags}\n</head>`);
+  }
+
+  return html;
 }
 
 function writeHtml(relativeFile, html) {
@@ -195,6 +342,12 @@ function buildPage(relativeFile, routeMeta) {
   const publicPath = routeMeta?.path || publicPathFromFile(relativeFile);
   html = injectSharedChrome(html);
   html = upsertMetadata(html, publicPath, routeMeta?.title, routeMeta?.description);
+  html = injectSchema(html, routeMeta, publicPath);
+
+  // Ensure lang="en" on <html>
+  if (/<html(?![^>]*lang=)/i.test(html)) {
+    html = html.replace(/<html/i, '<html lang="en"');
+  }
 
   if (publicPath !== "/") {
     html = html.replace(/<style id="weflair-runtime-css">[\s\S]*?<\/style>/i, "");
