@@ -1,6 +1,6 @@
 module.exports = {
   siteName: "WeFlair",
-  siteUrl: "https://weflair.com",
+  siteUrl: "https://weflair.co",
   defaultTheme: "dark",
   defaultOgImage: "/brand-assets/office.png",
   contactEmail: "hello@weflair.co",
@@ -170,7 +170,6 @@ module.exports = {
         { label: "About with Flair", href: "/about.html" },
         { label: "Careers", href: "/careers.html" },
         { label: "Contact", href: "/contact.html" },
-        { label: "Sitemap", href: "/sitemap.html" },
       ],
     },
     {

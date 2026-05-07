@@ -9,44 +9,328 @@
   <link rel="icon" href="../brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../foundation-styles.css" />
   <style>
-    .legal-content { max-width: 48rem; margin: 6rem auto; padding: 2rem; color: #f6f3ee; font-family: sans-serif; line-height: 1.6; }
-    .legal-content h1 { font-size: 2.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(246,243,238,0.1); padding-bottom: 1rem; }
-    .legal-content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
-    .legal-content p { color: rgba(246,243,238,0.7); margin-bottom: 1rem; }
+    body { background-color: #111; }
+    .legal-wrap { max-width: 52rem; margin: 0 auto; padding: 5rem 2rem 4rem; }
+    .legal-back { display: inline-flex; align-items: center; gap: .5rem; color: #3eff68; text-decoration: none; font-size: .875rem; font-family: sans-serif; margin-bottom: 3rem; opacity: .85; transition: opacity .15s; }
+    .legal-back:hover { opacity: 1; }
+    .legal-eyebrow { display: inline-block; font-size: .75rem; font-family: sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #3eff68; margin-bottom: 1rem; }
+    .legal-h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #f6f3ee; margin: 0 0 .5rem; line-height: 1.2; }
+    .legal-meta { font-size: .875rem; color: rgba(246,243,238,.45); font-family: sans-serif; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(246,243,238,.08); }
+    .legal-toc { background: rgba(255,255,255,.03); border: 1px solid rgba(246,243,238,.08); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 3rem; }
+    .legal-toc h3 { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(246,243,238,.4); font-family: sans-serif; margin: 0 0 1rem; }
+    .legal-toc ol { margin: 0; padding-left: 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: .35rem 2rem; }
+    .legal-toc li { font-size: .85rem; font-family: sans-serif; }
+    .legal-toc a { color: rgba(246,243,238,.7); text-decoration: none; transition: color .15s; }
+    .legal-toc a:hover { color: #3eff68; }
+    .legal-section { margin-bottom: 2.5rem; scroll-margin-top: 2rem; }
+    .legal-section h2 { font-size: 1.25rem; font-weight: 600; color: #f6f3ee; margin: 0 0 1rem; padding-bottom: .75rem; border-bottom: 1px solid rgba(246,243,238,.07); }
+    .legal-section h3 { font-size: 1rem; font-weight: 600; color: #f6f3ee; margin: 1.5rem 0 .6rem; }
+    .legal-section p { color: rgba(246,243,238,.7); font-family: sans-serif; font-size: .9375rem; line-height: 1.7; margin: 0 0 .875rem; }
+    .legal-section ul, .legal-section ol { color: rgba(246,243,238,.7); font-family: sans-serif; font-size: .9375rem; line-height: 1.7; margin: 0 0 .875rem; padding-left: 1.5rem; }
+    .legal-section li { margin-bottom: .4rem; }
+    .legal-section a { color: #3eff68; text-decoration: none; }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-section strong { color: #f6f3ee; font-weight: 600; }
+    .legal-table-wrap { overflow-x: auto; margin: 1rem 0 1.25rem; }
+    .legal-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: .875rem; }
+    .legal-table th { background: rgba(255,255,255,.05); color: rgba(246,243,238,.5); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; padding: .6rem .875rem; text-align: left; border-bottom: 1px solid rgba(246,243,238,.1); }
+    .legal-table td { padding: .7rem .875rem; color: rgba(246,243,238,.7); border-bottom: 1px solid rgba(246,243,238,.05); vertical-align: top; }
+    .legal-table tr:last-child td { border-bottom: none; }
+    .legal-highlight { background: rgba(62,255,104,.06); border: 1px solid rgba(62,255,104,.15); border-radius: 8px; padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .legal-highlight p { margin: 0; font-size: .875rem; color: rgba(246,243,238,.75); }
+    .legal-contact-card { background: rgba(255,255,255,.03); border: 1px solid rgba(246,243,238,.1); border-radius: 12px; padding: 1.5rem 2rem; margin-top: 1rem; }
+    .legal-contact-card p { margin: .25rem 0; }
+    @media (max-width: 600px) {
+      .legal-toc ol { grid-template-columns: 1fr; }
+      .legal-wrap { padding: 4rem 1.25rem 3rem; }
+    }
   </style>
   
   <link rel="stylesheet" href="/foundation-slater.css" />
   <link rel="stylesheet" href="/weflair-hero.css?v=20260504-logo-critical-01" />
   <script src="/foundation.js?v=20260504-dark-01" defer></script>
   <script src="/weflair-hero.js?v=20260504-home-stable-01" defer></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZZ6H9W9');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Sortlist Radar -->
+  <script>!function(e){"use strict";var a=e&&e.namespace;if(a&&e.profileId&&e.cdn){var r=window[a];if(r&&Array.isArray(r)||(r=window[a]=[]),!r.initialized&&!r._loaded)if(r._loaded)console&&console.warn("[Radar] Duplicate initialization attempted");else{r._loaded=!0;["track","page","identify","group","alias","ready","debug","on","off","once","trackClick","trackSubmit","trackLink","trackForm","pageview","screen","reset","register","setAnonymousId","addSourceMiddleware","addIntegrationMiddleware","addDestinationMiddleware"].forEach((function(e){var i;r[e]=(i=e,function(){var e=window[a];if(e.initialized)return e[i].apply(e,arguments);var r=[].slice.call(arguments);return r.unshift(i),e.push(r),e})})),r.bootstrap=function(){var a=document.createElement("script");a.async=!0,a.type="text/javascript",a.id="__radar__",a.dataset.settings=JSON.stringify(e),a.src="https://"+e.cdn+"/releases/latest/radar.min.js";var r=document.scripts[0];r.parentNode.insertBefore(a,r)},r.bootstrap()}}else"undefined"!=typeof console&&console.error("[Radar] Configuration incomplete")}({"cdn":"collector.sortlist.com","apiEndpoint":"radar.sortlist.com","profileId":"roFGQrevYGQ","namespace":"SortlistRadar",features:{sessionTracking:true,formTracking:true,clickTracking:true,downloadTracking:true}});</script>
+  <!-- Factors.ai -->
+  <script>window.faitracker=window.faitracker||function(){this.q=[];var t=new CustomEvent("FAITRACKER_QUEUED_EVENT");return this.init=function(t,e,a){this.TOKEN=t,this.INIT_PARAMS=e,this.INIT_CALLBACK=a,window.dispatchEvent(new CustomEvent("FAITRACKER_INIT_EVENT"))},this.call=function(){var e={k:"",a:[]};if(arguments&&arguments.length>=1){for(var a=1;a<arguments.length;a++)e.a.push(arguments[a]);e.k=arguments[0]}this.q.push(e),window.dispatchEvent(t)},this.message=function(){window.addEventListener("message",function(t){"faitracker"===t.data.origin&&this.call("message",t.data.type,t.data.message)})},this.message(),this.init("rzdm7qwtj4x5qjrtapu8z3k912rxol2w",{host:"https://api.factors.ai"}),this}(),function(){var t=document.createElement("script");t.type="text/javascript",t.src="https://app.factors.ai/assets/factors.js",t.async=!0,(d=document.getElementsByTagName("script")[0]).parentNode.insertBefore(t,d)}();</script>
+  <link rel="canonical" href="https://weflair.co/legal/privacy.html" />
+  <meta property="og:image" content="https://weflair.co/brand-assets/office.png" />
   <meta property="og:title" content="Privacy Policy | WeFlair" />
-  <meta name="twitter:title" content="Privacy Policy | WeFlair" />
   <meta property="og:description" content="Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR." />
-  <meta name="twitter:description" content="Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR." />
-  <link rel="canonical" href="https://weflair.com/legal/privacy.html" />
-  <meta property="og:url" content="https://weflair.com/legal/privacy.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta property="og:image" content="https://weflair.com/brand-assets/office.png" />
-  <meta name="twitter:image" content="https://weflair.com/brand-assets/office.png" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://weflair.co/legal/privacy.html" />
+  <meta property="og:image" content="https://weflair.co/brand-assets/weflair-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy | WeFlair" />
+  <meta name="twitter:description" content="Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR." />
+  <meta name="twitter:image" content="https://weflair.co/brand-assets/office.png" />
   <meta property="og:site_name" content="WeFlair" />
   <meta name="twitter:site" content="@weflair" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy | WeFlair","description":"Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR.","url":"https://weflair.com/legal/privacy.html","publisher":{"@type":"Organization","name":"WeFlair","url":"https://weflair.com","logo":"https://weflair.com/brand-assets/office.png","contactPoint":{"@type":"ContactPoint","email":"sam@weflair.com","contactType":"sales"},"sameAs":["https://instagram.com/weflair","https://linkedin.com/company/weflair","https://x.com/weflair"]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy | WeFlair","description":"Read the WeFlair privacy policy covering data collection, usage, cookies, and your rights under GDPR.","url":"https://weflair.co/legal/privacy.html","publisher":{"@type":"Organization","name":"WeFlair","url":"https://weflair.co","logo":"https://weflair.co/brand-assets/office.png","contactPoint":{"@type":"ContactPoint","email":"sam@weflair.com","contactType":"sales"},"sameAs":["https://instagram.com/weflair","https://linkedin.com/company/weflair","https://x.com/weflair"]}}</script>
 </head>
 <body class="body" style="background-color: #111;" data-navigation-status="not-active" data-theme="dark">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZZ6H9W9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="/index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound programs built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Search content built for AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand generation built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="/resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="/resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="/resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="/resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="/resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="/case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="/about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About with Flair</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="/careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="/contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
-  <div class="legal-content">
-    <a href="../index.html" style="color:#3eff68; text-decoration:none; margin-bottom:2rem; display:inline-block;">&larr; Back to Home</a>
-    <h1>Privacy Policy</h1>
-    <p>Last updated: April 10, 2026</p>
-    <h2>1. Introduction</h2>
-    <p>Welcome to WeFlair. This document outlines our standard Privacy Policy for engaging with our agency services.</p>
-    <h2>2. Interpretation and Definitions</h2>
-    <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-    <h2>3. Acknowledgment</h2>
-    <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and WeFlair. These conditions set out the rights and obligations of all users regarding the use of the Service.</p>
-    <h2>4. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, You can contact us at hello@weflair.co</p>
+  <div class="legal-wrap">
+    <a href="../index.html" class="legal-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Home
+    </a>
+
+    <span class="legal-eyebrow">Legal</span>
+    <h1 class="legal-h1">Privacy Policy</h1>
+    <p class="legal-meta">Last updated: May 7, 2026 &nbsp;·&nbsp; Effective date: May 7, 2026 &nbsp;·&nbsp; WeFlair LLC, New York, United States</p>
+
+    <nav class="legal-toc" aria-label="Table of contents">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#data-we-collect">Data We Collect</a></li>
+        <li><a href="#how-we-collect">How We Collect It</a></li>
+        <li><a href="#why-we-process">Why We Process Your Data</a></li>
+        <li><a href="#third-parties">Third-Party Tools & Processors</a></li>
+        <li><a href="#cookies">Cookies & Tracking</a></li>
+        <li><a href="#retention">Data Retention</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#international-transfers">International Transfers</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <div class="legal-highlight">
+      <p><strong>Plain-English summary:</strong> We collect only what we need to respond to enquiries and improve our site. We don't sell your data. We use standard B2B analytics tools. If you're in the EU/UK, GDPR applies. If you're in California, CCPA applies. You can always email <a href="mailto:hello@weflair.co">hello@weflair.co</a> to access, correct, or delete your data.</p>
+    </div>
+
+    <!-- 1 -->
+    <section class="legal-section" id="who-we-are">
+      <h2>1. Who We Are</h2>
+      <p><strong>WeFlair LLC</strong> ("WeFlair", "we", "us", "our") is a B2B growth marketing agency. Our registered address is in New York, United States. We operate globally and serve clients primarily in the B2B SaaS, B2B tech, e-commerce, and professional services sectors.</p>
+      <p>For the purposes of applicable data protection law (including the EU General Data Protection Regulation 2016/679 ("GDPR"), UK GDPR, and the California Consumer Privacy Act ("CCPA") as amended by the CPRA), WeFlair LLC is the <strong>data controller</strong> of the personal data described in this policy.</p>
+      <p>Our primary contact for privacy matters: <a href="mailto:hello@weflair.co">hello@weflair.co</a></p>
+    </section>
+
+    <!-- 2 -->
+    <section class="legal-section" id="data-we-collect">
+      <h2>2. Data We Collect</h2>
+      <h3>2.1 Information you give us directly</h3>
+      <ul>
+        <li><strong>Contact enquiries:</strong> Name, business email address, company name, and a description of your marketing challenges or project brief submitted via our contact form.</li>
+        <li><strong>Newsletter / lead magnet sign-ups:</strong> Email address and (where provided) first name when you subscribe to our content.</li>
+        <li><strong>Gated content downloads:</strong> Email address and (where provided) company name when requesting case studies, playbooks, or the resource pack.</li>
+        <li><strong>Booking a call:</strong> When you book via cal.com/weflair, Cal.com collects your name, email, and calendar availability on our behalf.</li>
+      </ul>
+      <h3>2.2 Information collected automatically</h3>
+      <ul>
+        <li><strong>Usage data:</strong> Pages visited, time spent, scroll depth, click interactions, referral source, browser type, operating system, and approximate geographic location (city/country level, derived from IP address).</li>
+        <li><strong>Device data:</strong> Screen resolution, device type (desktop/mobile/tablet), language settings.</li>
+        <li><strong>Cookies and similar technologies:</strong> Session identifiers, persistent analytics cookies, and marketing pixels. See Section 6 for details.</li>
+        <li><strong>IP address:</strong> Collected temporarily for security and analytics purposes. We do not store raw IP addresses beyond what our analytics tools retain.</li>
+      </ul>
+      <h3>2.3 Information from third parties</h3>
+      <ul>
+        <li><strong>Sortlist Radar:</strong> If you visit our Sortlist profile and are referred to our website, Sortlist may share referral and profile-view data with us.</li>
+        <li><strong>LinkedIn / Meta / Google Ads:</strong> If you click a paid advertisement, the respective ad platform shares anonymised conversion data with us. We do not receive your personal profile data from these platforms.</li>
+        <li><strong>Factors.ai:</strong> Our intent-data and visitor identification tool may enrich visitor data with company-level firmographic information derived from IP address (e.g., company name, industry, estimated size). This is B2B intent data and typically does not constitute personal data under GDPR, but we disclose it here for full transparency.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="legal-section" id="how-we-collect">
+      <h2>3. How We Collect It</h2>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr><th>Collection point</th><th>What is collected</th><th>When</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Contact form (contact.html)</td><td>Name, email, company, challenges, message</td><td>When you submit the form</td></tr>
+            <tr><td>Newsletter sign-up (blog, resource pages)</td><td>Email address</td><td>When you subscribe</td></tr>
+            <tr><td>Gated content / case study gate</td><td>Email address</td><td>When you request a download</td></tr>
+            <tr><td>Cal.com booking</td><td>Name, email, meeting details</td><td>When you book a call</td></tr>
+            <tr><td>Google Tag Manager</td><td>Behavioural / analytics data</td><td>On every page load</td></tr>
+            <tr><td>Factors.ai</td><td>Company-level intent data</td><td>On every page load</td></tr>
+            <tr><td>Sortlist Radar</td><td>Session, form, click tracking</td><td>On every page load</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="legal-section" id="why-we-process">
+      <h2>4. Why We Process Your Data (Legal Basis)</h2>
+      <p>We only process personal data where we have a lawful basis. Under GDPR/UK GDPR, those bases are:</p>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr><th>Purpose</th><th>Legal basis (GDPR)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Responding to your enquiry or booking request</td><td>Performance of a contract / pre-contractual steps (Art. 6(1)(b))</td></tr>
+            <tr><td>Sending marketing emails or newsletters you signed up for</td><td>Consent (Art. 6(1)(a)) — you may unsubscribe at any time</td></tr>
+            <tr><td>Analytics and site performance monitoring</td><td>Legitimate interests (Art. 6(1)(f)) — understanding how our site is used to improve it</td></tr>
+            <tr><td>B2B intent data / firmographic enrichment via Factors.ai</td><td>Legitimate interests (Art. 6(1)(f)) — identifying potential B2B clients</td></tr>
+            <tr><td>Fraud prevention and website security</td><td>Legitimate interests (Art. 6(1)(f))</td></tr>
+            <tr><td>Compliance with legal obligations</td><td>Legal obligation (Art. 6(1)(c))</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For California residents, the above purposes correspond to the CCPA categories of "business purposes" and do not constitute "selling" or "sharing" personal information for cross-context behavioural advertising beyond what is described in Section 6.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="legal-section" id="third-parties">
+      <h2>5. Third-Party Tools &amp; Processors</h2>
+      <p>We use the following sub-processors and third-party services. Each processes data only on our behalf and under contractual obligations consistent with applicable data protection law:</p>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr><th>Service</th><th>Purpose</th><th>Data shared</th><th>Privacy policy</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Netlify</strong></td><td>Website hosting; form submission storage</td><td>Form data (name, email, company, message), IP address</td><td><a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a></td></tr>
+            <tr><td><strong>Google Tag Manager / Google Analytics</strong></td><td>Tag management; website analytics</td><td>Anonymised usage data, cookies</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+            <tr><td><strong>Factors.ai</strong></td><td>B2B visitor intent data; company identification</td><td>IP address, page behaviour (company-level, not individual-level)</td><td><a href="https://www.factors.ai/privacy-policy" target="_blank" rel="noopener">factors.ai/privacy-policy</a></td></tr>
+            <tr><td><strong>Sortlist Radar</strong></td><td>Session and interaction tracking; Sortlist profile attribution</td><td>Session data, clicks, form interactions</td><td><a href="https://www.sortlist.com/privacy-policy" target="_blank" rel="noopener">sortlist.com/privacy-policy</a></td></tr>
+            <tr><td><strong>Cal.com</strong></td><td>Meeting scheduling</td><td>Name, email, calendar availability</td><td><a href="https://cal.com/privacy" target="_blank" rel="noopener">cal.com/privacy</a></td></tr>
+            <tr><td><strong>Google Ads / Meta Ads / LinkedIn Ads</strong></td><td>Paid advertising; conversion tracking</td><td>Anonymised conversion events via pixels/tags</td><td>Google, Meta, LinkedIn privacy policies</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We do not sell, rent, or trade your personal data to any third party for their own marketing purposes.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="legal-section" id="cookies">
+      <h2>6. Cookies &amp; Tracking Technologies</h2>
+      <p>We use cookies and similar tracking technologies on our website. Below is a summary of the cookie categories we use:</p>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr><th>Category</th><th>Purpose</th><th>Examples</th><th>Duration</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Strictly necessary</strong></td><td>Required for the site to function (form CSRF tokens, session management)</td><td>Netlify session</td><td>Session</td></tr>
+            <tr><td><strong>Analytics</strong></td><td>Understanding how visitors use our site (pages viewed, time on site, traffic sources)</td><td>_ga, _gid (Google Analytics via GTM)</td><td>Up to 2 years</td></tr>
+            <tr><td><strong>Intent / identification</strong></td><td>Identifying the company of anonymous visitors for B2B outreach</td><td>Factors.ai cookies, Sortlist Radar cookies</td><td>Up to 1 year</td></tr>
+            <tr><td><strong>Marketing / retargeting</strong></td><td>Measuring ad performance and enabling retargeting on Google, Meta, and LinkedIn</td><td>_fbp, li_sugr, Google Ads conversion cookie</td><td>Up to 90 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can control or disable cookies through your browser settings. Disabling analytics or marketing cookies will not prevent you from using the website. For EU/UK residents, non-essential cookies are only activated following your consent where a consent mechanism is deployed.</p>
+      <p>To opt out of Google Analytics across the web, you can install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="legal-section" id="retention">
+      <h2>7. Data Retention</h2>
+      <p>We retain personal data only for as long as necessary for the purpose for which it was collected, or as required by law:</p>
+      <ul>
+        <li><strong>Contact form submissions:</strong> Retained for up to 3 years to allow us to follow up and maintain a record of client enquiries. Submissions are stored in Netlify Forms and, where applicable, exported to our CRM.</li>
+        <li><strong>Email marketing subscribers:</strong> Until you unsubscribe or request deletion. We honour unsubscribe requests within 10 business days.</li>
+        <li><strong>Analytics data:</strong> Aggregated and anonymised data may be retained indefinitely. Individual-level analytics data is subject to the retention settings of the respective tool (Google Analytics default: 14 months).</li>
+        <li><strong>B2B intent / firmographic data:</strong> Subject to the retention policies of Factors.ai and Sortlist. WeFlair does not independently store raw visitor-level intent data beyond what appears in those platforms.</li>
+        <li><strong>Financial/billing records:</strong> Retained for 7 years in accordance with US tax and accounting regulations.</li>
+      </ul>
+      <p>When data is no longer required, it is securely deleted or anonymised.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="legal-section" id="your-rights">
+      <h2>8. Your Rights</h2>
+      <h3>EU &amp; UK residents (GDPR / UK GDPR)</h3>
+      <p>You have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to rectification:</strong> Request correction of inaccurate or incomplete data.</li>
+        <li><strong>Right to erasure ("right to be forgotten"):</strong> Request deletion of your personal data where there is no compelling reason for us to continue processing it.</li>
+        <li><strong>Right to restriction of processing:</strong> Request that we limit how we use your data in certain circumstances.</li>
+        <li><strong>Right to data portability:</strong> Receive a copy of data you provided to us in a structured, machine-readable format.</li>
+        <li><strong>Right to object:</strong> Object to processing based on legitimate interests (including direct marketing). We will stop unless we have compelling legitimate grounds.</li>
+        <li><strong>Rights related to automated decision-making:</strong> We do not use solely automated decision-making that produces legal or similarly significant effects on individuals.</li>
+        <li><strong>Right to withdraw consent:</strong> Where processing is based on consent (e.g., marketing emails), you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</li>
+      </ul>
+      <p>To exercise any of these rights, email <a href="mailto:hello@weflair.co">hello@weflair.co</a> with the subject line "Data Subject Request". We will respond within 30 days (extendable by 2 further months for complex requests). We may need to verify your identity before actioning your request.</p>
+      <p>You also have the right to lodge a complaint with your local supervisory authority. In the EU, this is your national data protection authority. In the UK, this is the <a href="https://ico.org.uk" target="_blank" rel="noopener">Information Commissioner's Office (ICO)</a>.</p>
+
+      <h3>California residents (CCPA / CPRA)</h3>
+      <p>If you are a California resident, you have the following additional rights:</p>
+      <ul>
+        <li><strong>Right to know:</strong> Request disclosure of the categories and specific pieces of personal information we have collected about you in the past 12 months.</li>
+        <li><strong>Right to delete:</strong> Request deletion of personal information we have collected about you, subject to certain exceptions.</li>
+        <li><strong>Right to correct:</strong> Request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out of sale/sharing:</strong> We do not sell personal information. We do not share personal information for cross-context behavioural advertising beyond standard ad-network pixels described in Section 6.</li>
+        <li><strong>Right to non-discrimination:</strong> We will not discriminate against you for exercising your CCPA rights.</li>
+      </ul>
+      <p>To submit a CCPA request, email <a href="mailto:hello@weflair.co">hello@weflair.co</a> with "CCPA Request" in the subject line. We will respond within 45 days (extendable by an additional 45 days where reasonably necessary).</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="legal-section" id="international-transfers">
+      <h2>9. International Data Transfers</h2>
+      <p>WeFlair LLC is based in the United States. If you are located in the European Economic Area (EEA), the United Kingdom, or another jurisdiction with data transfer restrictions, your personal data will be transferred to and processed in the United States.</p>
+      <p>We rely on the following safeguards for such transfers:</p>
+      <ul>
+        <li><strong>EU-US Data Privacy Framework:</strong> Where our processors are certified under the EU-US Data Privacy Framework (DPF), we rely on that adequacy decision.</li>
+        <li><strong>Standard Contractual Clauses (SCCs):</strong> Where DPF certification is not available, we use the European Commission's Standard Contractual Clauses as the transfer mechanism.</li>
+        <li><strong>UK International Data Transfer Agreements (IDTAs):</strong> Used for transfers from the UK where applicable.</li>
+      </ul>
+      <p>All major processors listed in Section 5 (Google, Meta, LinkedIn, Netlify, Cal.com) are either DPF-certified or operate under SCCs.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="legal-section" id="security">
+      <h2>10. Security</h2>
+      <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, accidental loss, destruction, or disclosure. These include:</p>
+      <ul>
+        <li>HTTPS encryption across all pages of the website</li>
+        <li>Netlify Forms honeypot and reCAPTCHA spam protection on our contact form</li>
+        <li>Access controls limiting who within WeFlair can access personal data</li>
+        <li>Contractual data protection obligations with all sub-processors</li>
+      </ul>
+      <p>No method of internet transmission or electronic storage is 100% secure. In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify relevant supervisory authorities and affected individuals in accordance with applicable law.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="legal-section" id="children">
+      <h2>11. Children's Privacy</h2>
+      <p>Our website and services are directed exclusively at business professionals and are not intended for, nor do we knowingly collect personal data from, children under the age of 16 (or 13 in the United States). If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:hello@weflair.co">hello@weflair.co</a> and we will delete it promptly.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="legal-section" id="changes">
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. When we do, we will update the "Last updated" date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. For material changes, we will make reasonable efforts to notify you (for example, by posting a prominent notice on our website or, where we hold your email address, by sending you a notification).</p>
+      <p>Your continued use of our website after any changes constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <!-- 13 -->
+    <section class="legal-section" id="contact">
+      <h2>13. Contact Us</h2>
+      <p>If you have any questions, requests, or complaints regarding this Privacy Policy or our data practices, please contact us:</p>
+      <div class="legal-contact-card">
+        <p><strong>WeFlair LLC</strong></p>
+        <p>New York, United States</p>
+        <p>Email: <a href="mailto:hello@weflair.co">hello@weflair.co</a></p>
+        <p>For data subject requests (GDPR / CCPA): include "Privacy Request" in your subject line and describe your request.</p>
+      </div>
+      <p style="margin-top:1.5rem;">We aim to respond to all privacy-related enquiries within <strong>10 business days</strong> and to complete data subject requests within the applicable statutory timeframe (30 days for GDPR, 45 days for CCPA).</p>
+    </section>
+
   </div>
 <section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">
@@ -142,7 +426,6 @@
                   <li><a href="/about.html" class="weflair-footer__nav-link">About with Flair</a></li>
                   <li><a href="/careers.html" class="weflair-footer__nav-link">Careers</a></li>
                   <li><a href="/contact.html" class="weflair-footer__nav-link">Contact</a></li>
-                  <li><a href="/sitemap.html" class="weflair-footer__nav-link">Sitemap</a></li>
                 </ul>
               </div>
             </div>
@@ -151,8 +434,7 @@
           <div class="weflair-footer__bottom">
             <div class="weflair-footer__legal"><span class="weflair-footer__copyright">&copy; 2026 WeFlair</span><a
                 href="/legal/privacy.html" class="weflair-footer__legal-link">Privacy Policy</a><a
-                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a><a
-                href="/sitemap.html" class="weflair-footer__legal-link">Sitemap</a></div>
+                href="/legal/terms.html" class="weflair-footer__legal-link">Terms and Conditions</a></div>
             <div class="weflair-footer__social"><a href="https://instagram.com/weflair"
                 class="weflair-footer__social-link" aria-label="Instagram" target="_blank"
                 rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"

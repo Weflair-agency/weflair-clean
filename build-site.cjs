@@ -430,6 +430,17 @@ function copyStaticAssets() {
     );
   }
 
+  // Copy root-level CSS and JS files (e.g. wf-stars.css, services-shared.css)
+  for (const entry of fs.readdirSync(ROOT, { withFileTypes: true })) {
+    if (!entry.isFile()) continue;
+    const name = entry.name.toLowerCase();
+    if (name.endsWith(".css") || name.endsWith(".js")) {
+      const src = path.join(ROOT, entry.name);
+      const dest = path.join(DIST, entry.name);
+      fs.copyFileSync(src, dest);
+    }
+  }
+
   const netlifyConfig = path.join(ROOT, "netlify.toml");
   if (fs.existsSync(netlifyConfig)) {
     fs.copyFileSync(netlifyConfig, path.join(DIST, "netlify.toml"));

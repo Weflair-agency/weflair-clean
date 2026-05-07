@@ -1,10 +1,10 @@
-/* ═══════════════════════════════════════════════════════════
-   WEFLAIR — SHARED SERVICE PAGE STYLES
+/* -----------------------------------------------------------
+   WEFLAIR � SHARED SERVICE PAGE STYLES
    Unified design system for all /services/ pages.
    Link this AFTER foundation-styles.css, foundation-slater.css, weflair-hero.css
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
-/* ── DESIGN TOKENS ─────────────────────────────────────── */
+/* -- DESIGN TOKENS --------------------------------------- */
 :root {
   --sv-bg:          #151515;
   --sv-bg-alt:      #0e100e;
@@ -31,7 +31,7 @@
 }
 
 
-/* ── PAGE BASE ─────────────────────────────────────────── */
+/* -- PAGE BASE ------------------------------------------- */
 .sv-page {
   background: var(--sv-bg);
   color: var(--sv-text);
@@ -41,7 +41,7 @@
 }
 
 
-/* ── HERO ──────────────────────────────────────────────── */
+/* -- HERO ------------------------------------------------ */
 .sv-hero {
   position: relative;
   padding: clamp(10rem, 16vw, 15rem) 2rem clamp(6rem, 10vw, 8rem);
@@ -151,7 +151,7 @@
 .sv-pill svg { width: 10px; height: 10px; }
 
 
-/* ── STAT RIBBON ───────────────────────────────────────── */
+/* -- STAT RIBBON ----------------------------------------- */
 .sv-stats {
   position: relative;
   z-index: 2;
@@ -191,7 +191,7 @@
 }
 
 
-/* ── SECTION BASE ──────────────────────────────────────── */
+/* -- SECTION BASE ---------------------------------------- */
 .sv-section {
   padding: var(--sv-section-pad);
   border-top: 1px solid var(--sv-border);
@@ -227,7 +227,7 @@
 }
 
 
-/* ── FEATURE CARD GRID ─────────────────────────────────── */
+/* -- FEATURE CARD GRID ----------------------------------- */
 .sv-card-grid {
   max-width: var(--sv-max-w);
   margin: 0 auto;
@@ -308,7 +308,7 @@
 .sv-card--grid > * { position: relative; z-index: 1; }
 
 
-/* ── PAIN/PROBLEM CARDS ────────────────────────────────── */
+/* -- PAIN/PROBLEM CARDS ---------------------------------- */
 .sv-pain-grid {
   max-width: var(--sv-max-w);
   margin: 0 auto;
@@ -340,7 +340,7 @@
 }
 
 
-/* ── BEFORE/AFTER TRANSFORM SPLIT ──────────────────────── */
+/* -- BEFORE/AFTER TRANSFORM SPLIT ------------------------ */
 .sv-transform {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -399,7 +399,7 @@
 .sv-transform__col--good .sv-transform__list li svg { color: var(--sv-green); }
 
 
-/* ── NUMBERED STEPS ────────────────────────────────────── */
+/* -- NUMBERED STEPS -------------------------------------- */
 .sv-steps {
   max-width: 64rem;
   margin: 0 auto;
@@ -459,7 +459,7 @@
 }
 
 
-/* ── SPLIT SECTION (text + visual) ─────────────────────── */
+/* -- SPLIT SECTION (text + visual) ----------------------- */
 .sv-split {
   max-width: 76rem;
   margin: 0 auto;
@@ -481,7 +481,7 @@
 }
 
 
-/* ── CALLOUT / CROSSLINK PANEL ─────────────────────────── */
+/* -- CALLOUT / CROSSLINK PANEL --------------------------- */
 .sv-callout {
   max-width: 64rem;
   margin: 0 auto;
@@ -540,7 +540,7 @@
 }
 
 
-/* ── CHECKLIST (in callouts) ───────────────────────────── */
+/* -- CHECKLIST (in callouts) ----------------------------- */
 .sv-checklist {
   list-style: none;
   padding: 0;
@@ -563,7 +563,7 @@
 }
 
 
-/* ── PRICING TIERS ─────────────────────────────────────── */
+/* -- PRICING TIERS --------------------------------------- */
 .sv-pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -667,7 +667,7 @@
 }
 
 
-/* ── FAQ ACCORDION ─────────────────────────────────────── */
+/* -- FAQ ACCORDION --------------------------------------- */
 .sv-faq {
   max-width: 48rem;
   margin: 0 auto;
@@ -680,7 +680,7 @@
 }
 
 
-/* ── TABLE (RevOps stage table etc.) ───────────────────── */
+/* -- TABLE (RevOps stage table etc.) --------------------- */
 .sv-table {
   width: 100%;
   border-collapse: collapse;
@@ -710,7 +710,7 @@
 }
 
 
-/* ── ORBIT VISUAL (RevOps) ─────────────────────────────── */
+/* -- ORBIT VISUAL (RevOps) ------------------------------- */
 .sv-orbit {
   position: relative;
   width: 100%;
@@ -761,7 +761,7 @@
 }
 
 
-/* ── MOCK BROWSER (Content/AEO) ────────────────────────── */
+/* -- MOCK BROWSER (Content/AEO) -------------------------- */
 .sv-mock {
   background: rgba(17, 19, 17, 0.86);
   border: 1px solid rgba(246, 243, 238, 0.1);
@@ -777,7 +777,7 @@
 .sv-mock__dot:nth-child(3) { background: #27c93f; }
 
 
-/* ── WHY-US CARDS (large icon-left cards) ──────────────── */
+/* -- WHY-US CARDS (large icon-left cards) ---------------- */
 .sv-why-grid {
   max-width: 64rem;
   margin: 0 auto;
@@ -829,7 +829,7 @@
 }
 
 
-/* ── SUBNAV (Other Services links) ─────────────────────── */
+/* -- SUBNAV (Other Services links) ----------------------- */
 .sv-subnav {
   padding: 4rem 2rem;
   background: var(--sv-bg);
@@ -878,7 +878,7 @@
 }
 
 
-/* ── FOOTER ────────────────────────────────────────────── */
+/* -- FOOTER ---------------------------------------------- */
 .sv-footer {
   background: var(--sv-bg-alt);
   border-top: 1px solid var(--sv-border);
@@ -944,7 +944,7 @@
 .sv-footer__legal a:hover { color: var(--sv-text-muted); }
 
 
-/* ── INTERACTIVE TABS (Content/AEO pillars) ────────────── */
+/* -- INTERACTIVE TABS (Content/AEO pillars) -------------- */
 .sv-tabs {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -1021,7 +1021,7 @@
 }
 
 
-/* ── ENGAGEMENT MODES (Outbound 2-col pricing) ─────────── */
+/* -- ENGAGEMENT MODES (Outbound 2-col pricing) ----------- */
 .sv-modes {
   max-width: 64rem;
   margin: 0 auto;
@@ -1072,7 +1072,7 @@
 }
 
 
-/* ── CTA BAND (full-width green gradient) ──────────────── */
+/* -- CTA BAND (full-width green gradient) ---------------- */
 .sv-cta-band {
   padding: clamp(4rem, 8vw, 6rem) 2rem;
   background: linear-gradient(135deg, rgba(62,255,104,0.08) 0%, rgba(62,255,104,0.02) 100%);
@@ -1096,7 +1096,7 @@
 }
 
 
-/* ── WORKFLOW BOARD (Outbound) ──────────────────────────── */
+/* -- WORKFLOW BOARD (Outbound) ---------------------------- */
 .sv-workflow {
   display: grid;
   grid-template-columns: minmax(0,1.7fr) minmax(18rem,.92fr);
@@ -1128,18 +1128,18 @@
 }
 
 
-/* ── UTILITY ───────────────────────────────────────────── */
+/* -- UTILITY --------------------------------------------- */
 .sv-max-w { max-width: var(--sv-max-w); margin-inline: auto; }
 .sv-ta-center { text-align: center; }
 .sv-mb-0 { margin-bottom: 0 !important; }
 
 
-/* ═══════════════════════════════════════════════════════════
-   VISUAL POLISH — PHASE 2
+/* -----------------------------------------------------------
+   VISUAL POLISH � PHASE 2
    Grain, scroll-reveal, glow effects, enhanced depth
-   ═══════════════════════════════════════════════════════════ */
+   ----------------------------------------------------------- */
 
-/* ── NOISE / GRAIN TEXTURE ─────────────────────────────── */
+/* -- NOISE / GRAIN TEXTURE ------------------------------- */
 .sv-page::before {
   content: "";
   position: fixed;
@@ -1153,7 +1153,7 @@
 }
 
 
-/* ── SCROLL REVEAL ANIMATIONS ──────────────────────────── */
+/* -- SCROLL REVEAL ANIMATIONS ---------------------------- */
 [data-sv-reveal] {
   opacity: 0;
   transform: translateY(30px);
@@ -1221,7 +1221,7 @@
 }
 
 
-/* ── ENHANCED SECTION DIVIDERS ─────────────────────────── */
+/* -- ENHANCED SECTION DIVIDERS --------------------------- */
 .sv-section {
   border-top: none;
   position: relative;
@@ -1264,7 +1264,7 @@
 }
 
 
-/* ── ENHANCED CARD GLOW + GLASS ────────────────────────── */
+/* -- ENHANCED CARD GLOW + GLASS -------------------------- */
 .sv-card {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -1288,7 +1288,7 @@
 }
 
 
-/* ── ENHANCED HERO ─────────────────────────────────────── */
+/* -- ENHANCED HERO --------------------------------------- */
 .sv-hero__title em,
 .sv-hero__title span.accent {
   text-shadow: 0 0 60px rgba(62,255,104,0.35), 0 0 120px rgba(62,255,104,0.12);
@@ -1318,7 +1318,7 @@
 }
 
 
-/* ── ENHANCED STATS RIBBON ─────────────────────────────── */
+/* -- ENHANCED STATS RIBBON ------------------------------- */
 .sv-stats {
   animation: sv-statsFloat 6s ease-in-out infinite alternate;
 }
@@ -1331,7 +1331,7 @@
 }
 
 
-/* ── ENHANCED CTA BUTTONS ──────────────────────────────── */
+/* -- ENHANCED CTA BUTTONS -------------------------------- */
 .sv-hero .sv-btn-primary,
 .sv-hero .btn,
 .sv-hero [class*="booked-btn"],
@@ -1362,7 +1362,7 @@
 }
 
 
-/* ── ENHANCED CALLOUT PANEL ────────────────────────────── */
+/* -- ENHANCED CALLOUT PANEL ------------------------------ */
 .sv-callout {
   backdrop-filter: blur(12px);
 }
@@ -1372,7 +1372,7 @@
 }
 
 
-/* ── STATS NUMBER COUNTING FEEL ────────────────────────── */
+/* -- STATS NUMBER COUNTING FEEL -------------------------- */
 .sv-stat {
   transition: transform 0.3s ease;
 }
@@ -1384,13 +1384,13 @@
 }
 
 
-/* ── STEP HOVER ENHANCEMENT ────────────────────────────── */
+/* -- STEP HOVER ENHANCEMENT ------------------------------ */
 .sv-step:hover .sv-step__num {
   text-shadow: 0 0 20px rgba(62,255,104,0.4);
 }
 
 
-/* ── WHY-CARD GLOW TRAIL ──────────────────────────────── */
+/* -- WHY-CARD GLOW TRAIL -------------------------------- */
 .sv-why-card {
   position: relative;
   overflow: hidden;
@@ -1409,7 +1409,7 @@
   left: 100%;
 }
 
-/* ── PRICING TIER HOVER GLOW ──────────────────────────── */
+/* -- PRICING TIER HOVER GLOW ---------------------------- */
 .sv-tier:hover {
   box-shadow: 0 8px 40px rgba(0,0,0,0.3);
 }
@@ -1420,7 +1420,7 @@
 }
 
 
-/* ── SUBNAV LINK HOVER ANIMATION ──────────────────────── */
+/* -- SUBNAV LINK HOVER ANIMATION ------------------------ */
 .sv-subnav__link {
   overflow: hidden;
   position: relative;
@@ -1438,7 +1438,7 @@
 }
 
 
-/* ── PAIN CARD PULSE ──────────────────────────────────── */
+/* -- PAIN CARD PULSE ------------------------------------ */
 .sv-pain {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1448,14 +1448,14 @@
 }
 
 
-/* ── EYEBROW ANIMATION ────────────────────────────────── */
+/* -- EYEBROW ANIMATION ---------------------------------- */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
 .eyebrow::before {
-  content: "✦";
+  content: "?";
   color: var(--sv-green);
   animation: sv-eyebrowSpin 4s linear infinite;
 }
@@ -1465,7 +1465,7 @@
 }
 
 
-/* ── SECTION TITLE UNDERLINE ACCENT ───────────────────── */
+/* -- SECTION TITLE UNDERLINE ACCENT --------------------- */
 .sv-section__title::after {
   content: "";
   display: block;
@@ -1478,7 +1478,7 @@
 }
 
 
-/* ── TRANSFORM COLUMN HOVER ───────────────────────────── */
+/* -- TRANSFORM COLUMN HOVER ----------------------------- */
 .sv-transform__col {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1493,7 +1493,7 @@
 }
 
 
-/* ── BUTTON SYSTEM ────────────────────────────────────── */
+/* -- BUTTON SYSTEM -------------------------------------- */
 .weflair-btn--primary {
   display: inline-flex;
   align-items: center;
