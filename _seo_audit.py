@@ -24,6 +24,14 @@ def add_issue(page, issue):
 for p in sorted(pages):
     fp = os.path.join(DIST, p)
     html = read(fp)
+    head_match = re.search(r"<head[^>]*>(.*?)</head>", html, re.I | re.S)
+    head_html = head_match.group(1) if head_match else html
+    indexable = not re.search(
+        r'<meta[^>]*name=["\']robots["\'][^>]*content=["\'][^"\']*noindex',
+        head_html,
+        re.I | re.S,
+    )
+    visible_html = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", "", html, flags=re.I | re.S)
     
     # 1. Title tag
     title_match = re.search(r"<title>(.*?)</title>", html, re.I|re.S)
@@ -82,19 +90,20 @@ for p in sorted(pages):
         add_issue(p, "NO lang='en' ON <html>")
     
     # 9. H1 tag
-    h1_matches = re.findall(r"<h1[^>]*>", html, re.I)
-    if len(h1_matches) == 0:
-        add_issue(p, "NO H1 TAG")
-    elif len(h1_matches) > 1:
-        add_issue(p, f"MULTIPLE H1 TAGS ({len(h1_matches)})")
+    h1_matches = re.findall(r"<h1[^>]*>", visible_html, re.I)
+    if indexable:
+        if len(h1_matches) == 0:
+            add_issue(p, "NO H1 TAG")
+        elif len(h1_matches) > 1:
+            add_issue(p, f"MULTIPLE H1 TAGS ({len(h1_matches)})")
     
     # 10. Images without alt
-    imgs_no_alt = re.findall(r'<img(?![^>]*alt=)[^>]*>', html, re.I)
+    imgs_no_alt = re.findall(r'<img(?![^>]*alt=)[^>]*>', visible_html, re.I)
     if imgs_no_alt:
         add_issue(p, f"{len(imgs_no_alt)} IMAGES WITHOUT ALT TEXT")
     
     # 11. Favicon
-    if 'favicon' not in html and 'icon' not in html.split('</head>')[0] if '</head>' in html else True:
+    if "favicon" not in html and "icon" not in head_html:
         add_issue(p, "NO FAVICON LINK")
     
     # 12. Charset

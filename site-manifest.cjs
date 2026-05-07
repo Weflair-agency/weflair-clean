@@ -115,7 +115,7 @@ module.exports = {
   companyLinks: [
     {
       key: "about",
-      title: "About with Flair",
+      title: "About WeFlair",
       href: "/about.html",
       description: "How WeFlair is structured and what we care about.",
     },
@@ -167,7 +167,7 @@ module.exports = {
     {
       title: "Company",
       items: [
-        { label: "About with Flair", href: "/about.html" },
+        { label: "About WeFlair", href: "/about.html" },
         { label: "Careers", href: "/careers.html" },
         { label: "Contact", href: "/contact.html" },
       ],
@@ -400,13 +400,13 @@ module.exports = {
     {
       file: "about.html",
       path: "/about.html",
-      title: "About with Flair — The Growth Team Behind WeFlair",
+      title: "About WeFlair — The Growth Team Behind WeFlair",
       description:
         "Meet the minority-founded growth team building accountable B2B marketing across strategy, execution, and RevOps.",
       pageType: "about",
       schemaType: "AboutPage",
       group: "Company",
-      label: "About with Flair",
+      label: "About WeFlair",
       includeInXml: true,
     },
     {

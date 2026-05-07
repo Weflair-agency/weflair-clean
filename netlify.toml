@@ -21,12 +21,6 @@
   force = true
 
 [[redirects]]
-  from = "/resources/playbook.html"
-  to = "/resources/playbooks.html"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/services/cro-performance-design.html"
   to = "/services/performance-design.html"
   status = 301
@@ -64,12 +58,6 @@
 
 [[redirects]]
   from = "/resources/guides.html"
-  to = "/resources/playbooks.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/resources/playbook.html"
   to = "/resources/playbooks.html"
   status = 301
   force = true

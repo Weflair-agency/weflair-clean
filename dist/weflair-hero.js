@@ -47,7 +47,7 @@
     ],
   ];
 
-  const SITE_ORIGIN = "https://weflair.com";
+  const SITE_ORIGIN = "https://weflair.co";
   const ROUTES = {
     home: "/index.html",
     about: "/about.html",
@@ -56,13 +56,13 @@
     blog: "/blog.html",
     results: "/case-studies/",
     sitemap: "/sitemap.html",
-    tools: "/tools.html",
+    tools: "/resource-pack.html",
     servicesPaid: "/services/paid-media-performance.html",
     servicesOutbound: "/services/go-to-market-systems.html",
     servicesRevops: "/services/go-to-market-systems.html",
     servicesContent: "/services/ai-visibility-seo.html",
     servicesCro: "/services/performance-design.html",
-    servicesStrategy: "/services/strategy-creative.html",
+    servicesStrategy: "/services/performance-design.html",
     expertiseDemand: "/expertise/b2b-demand-generation.html",
     expertiseSaas: "/expertise/b2b-saas.html",
     expertiseServices: "/expertise/b2b-services.html",
@@ -70,7 +70,7 @@
     expertiseEcommerce: "/expertise/ecommerce.html",
     resourcesGuides: "/resources/playbooks.html",
     resourcesPlaybooks: "/resources/playbooks.html",
-    resourcesAiTools: "/tools.html",
+    resourcesAiTools: "/resource-pack.html",
     resourcesCalculators: "/resources/calculators.html",
     resourcesChecklists: "/resources/checklists.html",
     legalPrivacy: "/legal/privacy.html",
@@ -87,10 +87,10 @@
     hero: {
       eyebrow: "Growth Marketing Agency",
       titleHtml:
-        'Your Allbound Marketing Partner to <span class="weflair-section-accent weflair-section-accent--solid">Drive Ambitious Growth.</span>',
+        'We build <span class="weflair-section-accent weflair-section-accent--solid">hyper-relevant marketing engines</span> for today\'s customers.',
       body:
-        "We deliver end-to-end marketing solutions - from strategy to revenue.",
-      primary: "Discover more",
+        "For ambitious companies facing real growth and revenue challenges, we build end-to-end marketing engines that drive measurable growth.",
+      primary: "See services",
     },
     logos: {
       title: "Sales and marketing leaders in ambitious companies worldwide trust WeFlair.",
@@ -192,7 +192,7 @@
       ],
     },
     method: {
-      eyebrow: "The FLAIR Loop\u2122",
+      eyebrow: "The FLAIR Method\u2122",
       title: "We build your growth engine. Then we run it with you.",
       body: "Most agencies hand you a strategy deck and disappear. We embed with your team, build the systems that actually produce pipeline, and run them until they compound. Here\u2019s what that looks like.",
       stages: [
@@ -326,7 +326,7 @@
             "Sharpened demo and executive follow-up infrastructure.",
             "Turned disconnected ops work into a growth foundation.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/cellpoint-digital-revops.html",
         },
         {
           company: "Harrier Trail Running",
@@ -352,7 +352,7 @@
             "Connected acquisition to lifecycle capture and follow-up.",
             "Scaled revenue without letting spend drift.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/harrier-performance-rebuild.html",
         },
         {
           company: "Molahin",
@@ -378,7 +378,7 @@
             "Improved signup efficiency without muddying the offer.",
             "Turned media learning into measurable revenue growth.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/molahin-demand-gen.html",
         },
         {
           company: "RCT",
@@ -404,7 +404,7 @@
             "Reduced waste without shrinking commercial intent.",
             "Lifted efficiency while improving total deals.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/rct-paid-search-efficiency.html",
         },
         {
           company: "Merna for Shipping",
@@ -429,7 +429,7 @@
             "Sharpened messaging for higher-quality replies.",
             "Moved outreach from activity to real pipeline.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/merna-outbound-pipeline.html",
         },
         {
           company: "Meta Estate Empire",
@@ -479,7 +479,7 @@
             "Optimized APAC performance without breaking the wider system.",
             "Shifted more revenue through the web channel.",
           ],
-          href: ROUTES.results,
+          href: "/case-studies/farnell-personalization-squad.html",
         },
       ],
       testimonials: [
@@ -697,7 +697,7 @@
           { label: "Calculators", href: ROUTES.resourcesCalculators },
           { label: "Ads Checklist", href: ROUTES.resourcesChecklists },
           { label: "Guides & Playbooks", href: ROUTES.resourcesPlaybooks },
-          { label: "AI Tools", href: ROUTES.resourcesAiTools },
+          { label: "Resource Pack", href: ROUTES.resourcesAiTools },
           { label: "Marketing Blog", href: ROUTES.blog },
         ],
       },
