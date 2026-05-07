@@ -326,7 +326,7 @@
             "Sharpened demo and executive follow-up infrastructure.",
             "Turned disconnected ops work into a growth foundation.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Harrier Trail Running",
@@ -352,7 +352,7 @@
             "Connected acquisition to lifecycle capture and follow-up.",
             "Scaled revenue without letting spend drift.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Molahin",
@@ -378,7 +378,7 @@
             "Improved signup efficiency without muddying the offer.",
             "Turned media learning into measurable revenue growth.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
         {
           company: "RCT",
@@ -404,7 +404,7 @@
             "Reduced waste without shrinking commercial intent.",
             "Lifted efficiency while improving total deals.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Merna for Shipping",
@@ -429,7 +429,7 @@
             "Sharpened messaging for higher-quality replies.",
             "Moved outreach from activity to real pipeline.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
         {
           company: "Meta Estate Empire",
@@ -479,7 +479,7 @@
             "Optimized APAC performance without breaking the wider system.",
             "Shifted more revenue through the web channel.",
           ],
-          href: "/cases.html",
+          href: ROUTES.results,
         },
       ],
       testimonials: [
