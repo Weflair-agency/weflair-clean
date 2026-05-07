@@ -646,56 +646,64 @@
 
     .aseo-photo-card {
       position: relative;
-      min-height: 28rem;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.95rem;
+      align-items: center;
+      min-height: 0;
+      padding: 1.1rem;
       overflow: hidden;
-      border: 1px solid rgba(62, 255, 104, 0.16);
-      border-radius: 8px;
-      background: rgba(12, 14, 12, 0.86);
+      border: 1px solid rgba(62, 255, 104, 0.22);
+      border-radius: 0.75rem;
+      background:
+        linear-gradient(180deg, rgba(246, 243, 238, 0.06), rgba(246, 243, 238, 0.022)),
+        rgba(12, 14, 12, 0.86);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
     }
 
     .aseo-photo-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 28rem;
+      width: 5.75rem;
+      height: 5.75rem;
+      min-height: 0;
       display: block;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 2px solid rgba(62, 255, 104, 0.45);
+      border-radius: 999px;
       object-fit: cover;
-      object-position: 68% 50%;
-      filter: saturate(0.95) contrast(1.08);
-    }
-
-    .aseo-photo-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, transparent 35%, rgba(7, 8, 7, 0.84)),
-        radial-gradient(circle at 70% 20%, rgba(62, 255, 104, 0.16), transparent 22rem);
-      pointer-events: none;
+      object-position: center;
+      background: #101110;
     }
 
     .aseo-photo-card__label {
-      position: absolute;
-      left: 1rem;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 1;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: end;
+      display: grid;
+      gap: 0.2rem;
       color: var(--aseo-ink);
     }
 
     .aseo-photo-card__label strong {
       display: block;
-      color: var(--aseo-green);
-      font-size: 0.85rem;
-      text-transform: uppercase;
+      color: var(--aseo-ink);
+      font-size: 1.75rem;
+      letter-spacing: 0;
+      line-height: 1;
     }
 
     .aseo-photo-card__label span {
-      color: rgba(246, 243, 238, 0.72);
-      font-size: 0.78rem;
+      color: var(--aseo-green);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .aseo-photo-card__label p {
+      margin: 0.18rem 0 0;
+      max-width: 32rem;
+      color: var(--aseo-muted);
+      font-size: 0.95rem;
+      line-height: 1.58;
     }
 
     .aseo-mini-footer {
@@ -736,9 +744,9 @@
         grid-template-columns: 1fr;
       }
 
-      .aseo-photo-card,
       .aseo-photo-card img {
-        min-height: 23rem;
+        width: 5rem;
+        height: 5rem;
       }
     }
   </style>
@@ -867,13 +875,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="aseo-section aseo-builder">
       <div class="aseo-shell aseo-builder__grid">
         <div class="aseo-photo-card">
-          <img src="/brand-assets/office.png" alt="WeFlair workspace for AI search and growth systems" />
+          <img src="/brand-assets/team/sami.png" alt="Sami Madi" loading="lazy" decoding="async" />
           <div class="aseo-photo-card__label">
-            <div>
-              <strong>Sami Mahdi</strong>
-              <span>CEO & founder, WeFlair</span>
-            </div>
-            <span>@weflair</span>
+            <span>Founder &amp; CEO</span>
+            <strong>Sami Madi</strong>
+            <p>Sami started WeFlair after years of working inside the messy parts of growth and handoffs that had to work in the real world.</p>
           </div>
         </div>
         <div>

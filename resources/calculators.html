@@ -526,7 +526,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tbody id="ce-tbody"></tbody>
       </table>
     </div>
-    <p class="disclaimer">Conversion rates based on real cold email campaigns across our client portfolio. Results vary by offer, ICP fit, and copy.</p>
+    <p class="disclaimer">Cold outbound benchmarks are directional and model replies, qualified calls, and closed-won deals separately. Results vary by deliverability, ICP fit, offer, and sales follow-up.</p>
     <div class="email-bar">
       <div class="email-bar-txt">
         <h4>Email my results</h4>
@@ -622,7 +622,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tbody id="li-tbody"></tbody>
       </table>
     </div>
-    <p class="disclaimer">LinkedIn outbound benchmarks based on B2B SaaS and services campaigns. Acceptance and reply rates vary significantly by ICP, headline, and connection note quality.</p>
+    <p class="disclaimer">LinkedIn outbound benchmarks model accepted connections, qualified meetings, and closed-won deals separately. Results vary by profile strength, ICP, follow-up quality, and offer relevance.</p>
     <div class="email-bar">
       <div class="email-bar-txt">
         <h4>Email my results</h4>
@@ -821,7 +821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tbody id="em-tbody"></tbody>
       </table>
     </div>
-    <p class="disclaimer">Email benchmarks based on e-commerce and DTC clients. Open and click rates vary by list health, send frequency, and subject line quality.</p>
+    <p class="disclaimer">Email benchmarks are based on ecommerce campaign averages. Flows and automations can outperform full-list campaigns when segmentation and timing are strong.</p>
     <div class="email-bar">
       <div class="email-bar-txt">
         <h4>Email my results</h4>
@@ -849,64 +849,64 @@ var paidCh     = 'google';
 var scenarios  = { ce:'mid', li:'mid', pa:'mid', em:'mid' };
 
 
-// Cold Email - reply  to  call book  to  close
+// Cold Email - reply to qualified call to closed-won
 var CE = {
-  conservative: { reply:0.005, book:0.15, close:0.10 },
-  mid:          { reply:0.010, book:0.25, close:0.15 },  // 15K to 150 replied to 37.5 calls to 5.6 deals
-  optimistic:   { reply:0.020, book:0.32, close:0.22 },
+  conservative: { reply:0.025, book:0.08, close:0.04 },
+  mid:          { reply:0.045, book:0.12, close:0.055 },
+  optimistic:   { reply:0.075, book:0.16, close:0.075 },
 };
 var RETAINER = 5000;
 
-// LinkedIn Outbound - connect  to  accept  to  meeting  to  close
+// LinkedIn Outbound - request to accepted connection to qualified meeting to closed-won
 var LI = {
-  conservative: { accept:0.22, meet:0.07, close:0.12 },
-  mid:          { accept:0.35, meet:0.14, close:0.20 },  // 500 to 175 acc to 24.5 meet to 4.9 deals
-  optimistic:   { accept:0.52, meet:0.24, close:0.30 },
+  conservative: { accept:0.25, meet:0.035, close:0.045 },
+  mid:          { accept:0.35, meet:0.055, close:0.08 },
+  optimistic:   { accept:0.50, meet:0.08, close:0.11 },
 };
 
-// Paid B2B channels - higher CPCs, B2B intent audiences
+// Paid B2B channels - click/lead costs with lead-to-won conversion kept separate
 var PA_B2B = {
-  google: { type:'cpc', cpc:10,
-    conservative: { lpConv:0.030, close:0.07 },
-    mid:          { lpConv:0.055, close:0.12 },   // $5K to 500 clicks to 27.5 leads to 3.3 deals@$10K=$33K  to  ROAS 6.6x
-    optimistic:   { lpConv:0.090, close:0.20 },
+  google: { type:'cpc', cpc:8.50,
+    conservative: { lpConv:0.040, close:0.025 },
+    mid:          { lpConv:0.060, close:0.040 },
+    optimistic:   { lpConv:0.085, close:0.060 },
   },
-  linkedin: { type:'cpm', cpm:52,
-    conservative: { ctr:0.004, lpConv:0.030, close:0.10 },
-    mid:          { ctr:0.006, lpConv:0.055, close:0.18 },  // $5K to 96K impr to 577 clicks to 32 leads to 5.7 deals=$57K  to  ROAS 11.4x
-    optimistic:   { ctr:0.010, lpConv:0.090, close:0.28 },
+  linkedin: { type:'cpm', cpm:42,
+    conservative: { ctr:0.0045, lpConv:0.025, close:0.030 },
+    mid:          { ctr:0.0060, lpConv:0.040, close:0.050 },
+    optimistic:   { ctr:0.0080, lpConv:0.065, close:0.075 },
   },
-  meta: { type:'cpm', cpm:16,
-    conservative: { ctr:0.005, lpConv:0.010, close:0.04 },
-    mid:          { ctr:0.009, lpConv:0.022, close:0.07 },   // $5K to 312K impr to 2.8K clicks to 61 leads to 4.3 deals=$43K  to  ROAS 8.5x
-    optimistic:   { ctr:0.014, lpConv:0.038, close:0.12 },
+  meta: { type:'cpm', cpm:18,
+    conservative: { ctr:0.006, lpConv:0.010, close:0.010 },
+    mid:          { ctr:0.009, lpConv:0.018, close:0.020 },
+    optimistic:   { ctr:0.012, lpConv:0.030, close:0.035 },
   },
 };
 
-// Paid B2C channels - lower CPCs, direct purchase conversion
+// Paid B2C channels - direct purchase conversion
 var PA_B2C = {
-  meta: { type:'cpm', cpm:10,
-    conservative: { ctr:0.012, conv:0.018 },   // $5K to 500K impr to 6K clicks to 108 purch
-    mid:          { ctr:0.020, conv:0.030 },   // $5K to 500K impr to 10K clicks to 300 purch  to  $45K@$150 AOV  to  ROAS 9x
-    optimistic:   { ctr:0.034, conv:0.052 },
+  meta: { type:'cpm', cpm:14.20,
+    conservative: { ctr:0.016, conv:0.012 },
+    mid:          { ctr:0.022, conv:0.016 },
+    optimistic:   { ctr:0.030, conv:0.022 },
   },
   google: { type:'cpc', cpc:0.65,
-    conservative: { conv:0.022 },    // $5K to 7.7K clicks to 169 purch
-    mid:          { conv:0.038 },    // $5K to 7.7K clicks to 293 purch  to  $44K@$150  to  ROAS 8.8x
-    optimistic:   { conv:0.065 },
+    conservative: { conv:0.012 },
+    mid:          { conv:0.019 },
+    optimistic:   { conv:0.030 },
   },
-  tiktok: { type:'cpm', cpm:7,
-    conservative: { ctr:0.010, conv:0.012 },
-    mid:          { ctr:0.018, conv:0.026 },   // $5K to 714K impr to 12.9K clicks to 334 purch  to  $50K@$150  to  ROAS 10x
-    optimistic:   { ctr:0.030, conv:0.048 },
+  tiktok: { type:'cpm', cpm:9.50,
+    conservative: { ctr:0.007, conv:0.012 },
+    mid:          { ctr:0.010, conv:0.018 },
+    optimistic:   { ctr:0.014, conv:0.028 },
   },
 };
 
-// Email Marketing (B2C) - open  to  click of opens  to  purchase of clicks
+// Email Marketing (B2C) - open to click of opens to purchase of clicks
 var EM = {
-  conservative: { open:0.18, clickOfOpen:0.11, convOfClick:0.055 },
-  mid:          { open:0.22, clickOfOpen:0.18, convOfClick:0.090 },  // 10K list to 40K sent to 8.8K opens to 1.6K clicks to 144 orders  to  $21.6K@$150
-  optimistic:   { open:0.28, clickOfOpen:0.26, convOfClick:0.140 },
+  conservative: { open:0.30, clickOfOpen:0.045, convOfClick:0.035 },
+  mid:          { open:0.38, clickOfOpen:0.065, convOfClick:0.055 },
+  optimistic:   { open:0.46, clickOfOpen:0.095, convOfClick:0.075 },
 };
 
 
@@ -1071,11 +1071,6 @@ function renderPaidPanel() {
 
 function setPaidCh(ch) {
   paidCh = ch;
-  // Update channel buttons
-  document.querySelectorAll('#pa-channels .sub-ch-btn').forEach(function(b){
-    b.classList.toggle('active', b.textContent.toLowerCase().indexOf(ch) >= 0 || b.onclick.toString().indexOf("'"+ch+"'") >= 0);
-  });
-  // Simpler: re-render
   renderPaidPanel();
   calcPaid();
 }
