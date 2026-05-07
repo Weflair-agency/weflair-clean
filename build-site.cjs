@@ -4,7 +4,7 @@ const manifest = require("./site-manifest.cjs");
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, "dist");
-const HEADER = fs.readFileSync(path.join(ROOT, "src", "partials", "header.html"), "utf8").trim();
+const HEADER = enhanceSharedHeader(fs.readFileSync(path.join(ROOT, "src", "partials", "header.html"), "utf8").trim());
 const FOOTER = fs.readFileSync(path.join(ROOT, "src", "partials", "footer.html"), "utf8").trim();
 
 const EXTRA_HTML_DIRS = [
@@ -64,11 +64,67 @@ function insertIntoHead(html, tag) {
   return html;
 }
 
+function enhanceSharedHeader(html) {
+  return html
+    .replace('<nav class="nav">', '<nav class="nav" aria-label="Primary navigation">')
+    .replace(
+      'data-navigation-toggle="toggle" class="hamburger"',
+      'data-navigation-toggle="toggle" class="hamburger" role="button" tabindex="0" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"'
+    )
+    .replace(
+      'data-lenis-prevent="" class="nav-bar__links"',
+      'data-lenis-prevent="" class="nav-bar__links" id="primary-navigation"'
+    )
+    .replace(
+      /data-dropdown-click="" class="nav-bar__link-inner"/g,
+      'data-dropdown-click="" class="nav-bar__link-inner" role="button" tabindex="0" aria-expanded="false"'
+    );
+}
+
 function upsertTag(html, pattern, tag) {
   if (pattern.test(html)) {
     return html.replace(pattern, tag);
   }
   return insertIntoHead(html, tag);
+}
+
+function dedupeHeadPattern(head, pattern) {
+  let seen = false;
+  return head.replace(pattern, (tag) => {
+    if (seen) {
+      return "";
+    }
+    seen = true;
+    return tag;
+  });
+}
+
+function dedupeHeadTags(html) {
+  return html.replace(/<head([^>]*)>([\s\S]*?)<\/head>/i, (match, attrs, head) => {
+    const patterns = [
+      /<title>[\s\S]*?<\/title>/gi,
+      /<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:title["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:description["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:type["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:image["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bproperty=["']og:site_name["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']twitter:card["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']twitter:title["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']twitter:description["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']twitter:image["'])[^>]*>/gi,
+      /<meta\b(?=[^>]*\bname=["']twitter:site["'])[^>]*>/gi,
+    ];
+
+    let nextHead = head;
+    for (const pattern of patterns) {
+      nextHead = dedupeHeadPattern(nextHead, pattern);
+    }
+    nextHead = nextHead.replace(/\n{3,}/g, "\n\n");
+    return `<head${attrs}>${nextHead}</head>`;
+  });
 }
 
 function extractTitle(html) {
@@ -125,6 +181,7 @@ function upsertMetadata(html, publicPath, explicitTitle, explicitDescription) {
   const title = explicitTitle || extractTitle(html);
   const description = explicitDescription || extractMetaContent(html, "name", "description");
   const ogImage = `${manifest.siteUrl}${manifest.defaultOgImage}`;
+  const ogType = publicPath.startsWith("/blog/") ? "article" : "website";
 
   let next = html;
 
@@ -192,7 +249,7 @@ function upsertMetadata(html, publicPath, explicitTitle, explicitDescription) {
   next = upsertTag(
     next,
     /<meta[^>]*property=["']og:type["'][^>]*>/i,
-    `<meta property="og:type" content="website" />`
+    `<meta property="og:type" content="${ogType}" />`
   );
 
   // og:site_name
@@ -343,6 +400,7 @@ function buildPage(relativeFile, routeMeta) {
   html = injectSharedChrome(html);
   html = upsertMetadata(html, publicPath, routeMeta?.title, routeMeta?.description);
   html = injectSchema(html, routeMeta, publicPath);
+  html = dedupeHeadTags(html);
 
   // Ensure lang="en" on <html>
   if (/<html(?![^>]*lang=)/i.test(html)) {

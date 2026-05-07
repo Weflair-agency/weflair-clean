@@ -122,8 +122,73 @@ function writeRobots() {
   fs.writeFileSync(path.join(DIST, "robots.txt"), robots);
 }
 
+function outputFileFromPublicPath(publicPath) {
+  if (publicPath === "/") {
+    return path.join(DIST, "index.html");
+  }
+  const localPath = publicPath.replace(/^\/+/, "");
+  if (publicPath.endsWith("/")) {
+    return path.join(DIST, localPath, "index.html");
+  }
+  return path.join(DIST, localPath);
+}
+
+function extractTagContent(html, selector) {
+  const match = html.match(selector);
+  return match ? match[1].replace(/\s+/g, " ").trim() : "";
+}
+
+function extractMetaDescription(html) {
+  const direct = html.match(/<meta[^>]*name=["']description["'][^>]*content=(["'])([\s\S]*?)\1[^>]*>/i);
+  if (direct) {
+    return direct[2].replace(/\s+/g, " ").trim();
+  }
+
+  const reversed = html.match(/<meta[^>]*content=(["'])([\s\S]*?)\1[^>]*name=["']description["'][^>]*>/i);
+  return reversed ? reversed[2].replace(/\s+/g, " ").trim() : "";
+}
+
+function pageSummary(publicPath) {
+  const htmlPath = outputFileFromPublicPath(publicPath);
+  if (!fs.existsSync(htmlPath)) {
+    return {};
+  }
+
+  const html = fs.readFileSync(htmlPath, "utf8");
+  return {
+    title: extractTagContent(html, /<title>([\s\S]*?)<\/title>/i),
+    description: extractMetaDescription(html),
+  };
+}
+
+function writeLlmsTxt(entries) {
+  const lines = [
+    "# WeFlair",
+    "",
+    "> WeFlair is a growth marketing agency for paid media, outbound systems, performance design, AI visibility, SEO, and RevOps.",
+    "",
+    "## Public pages",
+  ];
+
+  for (const entry of entries) {
+    const summary = pageSummary(entry.path);
+    const title = summary.title || manifest.siteName;
+    const description = summary.description ? ` - ${summary.description}` : "";
+    lines.push(`- [${title}](${manifest.siteUrl}${entry.path})${description}`);
+  }
+
+  lines.push("");
+  lines.push("## Crawling notes");
+  lines.push("- Canonical domain: https://weflair.co");
+  lines.push("- Sitemap: https://weflair.co/sitemap.xml");
+  lines.push("- Utility handoff card pages are excluded from search indexing in robots.txt.");
+
+  fs.writeFileSync(path.join(DIST, "llms.txt"), `${lines.join("\n")}\n`);
+}
+
 const entries = buildEntries();
 writeXml(entries);
 writeRobots();
+writeLlmsTxt(entries);
 
 console.log("SEO artifacts generated -> dist");

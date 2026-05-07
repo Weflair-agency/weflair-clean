@@ -61,3 +61,8 @@
   to = "/resources/playbooks.html"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/resources/playbook"
+  to = "/resources/playbook.html"
+  status = 200

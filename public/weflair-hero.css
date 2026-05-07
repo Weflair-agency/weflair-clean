@@ -3,6 +3,24 @@
   align-items: center;
 }
 
+.btn:focus-visible,
+.nav-bar__logo-a:focus-visible,
+.nav-bar__link-inner:focus-visible,
+.hamburger:focus-visible,
+.weflair-new-cta__btn:focus-visible,
+.weflair-footer a:focus-visible,
+.wf-contact-submit:focus-visible,
+.btn-email:focus-visible,
+.mode-btn:focus-visible,
+.scen-tab:focus-visible,
+.chk-toggle-btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(62, 255, 104, .9);
+  outline-offset: 4px;
+}
+
 /* Critical first-paint styles for the homepage logo rail.
    These mirror the runtime styles so logos never render at native image size before JS loads. */
 .weflair-logos-shell {

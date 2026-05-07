@@ -35,12 +35,12 @@
           if (res.ok) {
             window.location.href = 'https://cal.com/weflair';
           } else {
-            if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'Send'; }
-            alert('Something went wrong. Please try again or email us at hello@weflair.co');
+            if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'Send request'; }
+            alert('We could not send the form. Please try again or email hello@weflair.co.');
           }
         }).catch(function () {
-          if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'Send'; }
-          alert('Something went wrong. Please try again or email us at hello@weflair.co');
+          if (btn) { btn.disabled = false; btn.querySelector('span').textContent = 'Send request'; }
+          alert('We could not send the form. Please try again or email hello@weflair.co.');
         });
       });
     });
@@ -163,7 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
 
               <button class="wf-contact-submit" type="submit">
-                <span>Send</span>
+                <span>Send request</span>
                 
 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
   <path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>

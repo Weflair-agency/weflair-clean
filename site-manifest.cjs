@@ -4,7 +4,7 @@ module.exports = {
   defaultTheme: "dark",
   defaultOgImage: "/brand-assets/office.png",
   contactEmail: "hello@weflair.co",
-  contactPrimaryEmail: "sam@weflair.com",
+  contactPrimaryEmail: "sam@weflair.co",
   socialLinks: [
     { label: "Instagram", href: "https://instagram.com/weflair" },
     { label: "LinkedIn", href: "https://linkedin.com/company/weflair" },

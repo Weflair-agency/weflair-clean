@@ -326,7 +326,7 @@
             "Sharpened demo and executive follow-up infrastructure.",
             "Turned disconnected ops work into a growth foundation.",
           ],
-          href: "/case-studies/cellpoint-digital-revops.html",
+          href: "/cases.html",
         },
         {
           company: "Harrier Trail Running",
@@ -352,7 +352,7 @@
             "Connected acquisition to lifecycle capture and follow-up.",
             "Scaled revenue without letting spend drift.",
           ],
-          href: "/case-studies/harrier-performance-rebuild.html",
+          href: "/cases.html",
         },
         {
           company: "Molahin",
@@ -378,7 +378,7 @@
             "Improved signup efficiency without muddying the offer.",
             "Turned media learning into measurable revenue growth.",
           ],
-          href: "/case-studies/molahin-demand-gen.html",
+          href: "/cases.html",
         },
         {
           company: "RCT",
@@ -404,7 +404,7 @@
             "Reduced waste without shrinking commercial intent.",
             "Lifted efficiency while improving total deals.",
           ],
-          href: "/case-studies/rct-paid-search-efficiency.html",
+          href: "/cases.html",
         },
         {
           company: "Merna for Shipping",
@@ -429,7 +429,7 @@
             "Sharpened messaging for higher-quality replies.",
             "Moved outreach from activity to real pipeline.",
           ],
-          href: "/case-studies/merna-outbound-pipeline.html",
+          href: "/cases.html",
         },
         {
           company: "Meta Estate Empire",
@@ -479,7 +479,7 @@
             "Optimized APAC performance without breaking the wider system.",
             "Shifted more revenue through the web channel.",
           ],
-          href: "/case-studies/farnell-personalization-squad.html",
+          href: "/cases.html",
         },
       ],
       testimonials: [
@@ -666,7 +666,7 @@
         {
           heading: "Talk to an expert",
           links: [
-            { label: "sam@weflair.com", href: "mailto:sam@weflair.com" },
+            { label: "sam@weflair.co", href: "mailto:sam@weflair.co" },
             { label: "hello@weflair.co", href: "mailto:hello@weflair.co" },
           ],
         },

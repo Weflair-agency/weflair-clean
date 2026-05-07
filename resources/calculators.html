@@ -447,14 +447,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="calc-cold-email" class="c-panel">
     <div class="slider-row">
       <div class="slider-grp">
-        <label>Prospects Contacted / Month</label>
+        <label for="ce-pros">Prospects Contacted / Month</label>
         <div class="slider-display"><span id="ce-pros-val">15,000</span></div>
         <input type="range" id="ce-pros" min="1000" max="100000" step="500" value="15000"
           oninput="updateSlider(this); calcColdEmail()" />
         <div class="slider-marks"><span>1,000</span><span>100,000</span></div>
       </div>
       <div class="slider-grp">
-        <label>Annual Contract Value (ACV)</label>
+        <label for="ce-acv">Annual Contract Value (ACV)</label>
         <div class="slider-display"><span class="pre">$&nbsp;</span><span id="ce-acv-val">10,000</span></div>
         <input type="range" id="ce-acv" min="1000" max="500000" step="1000" value="10000"
           oninput="updateSlider(this); calcColdEmail()" />
@@ -533,8 +533,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
       </div>
       <div class="email-form">
-        <input type="email" class="email-inp" id="ce-email" placeholder="your@email.com" />
-        <button class="btn-email" id="ce-email-btn" onclick="doEmail('ce')">Email This to Me</button>
+        <input type="email" class="email-inp" id="ce-email" placeholder="your@email.com" aria-label="Email address for cold email results" />
+        <button class="btn-email" id="ce-email-btn" onclick="doEmail('ce')">Email my results</button>
       </div>
     </div>
   </div>
@@ -543,14 +543,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="calc-linkedin" class="c-panel" style="display:none">
     <div class="slider-row">
       <div class="slider-grp">
-        <label>Connection Requests Sent / Month</label>
+        <label for="li-conn">Connection Requests Sent / Month</label>
         <div class="slider-display"><span id="li-conn-val">500</span></div>
         <input type="range" id="li-conn" min="100" max="5000" step="50" value="500"
           oninput="updateSlider(this); calcLinkedin()" />
         <div class="slider-marks"><span>100</span><span>5,000</span></div>
       </div>
       <div class="slider-grp">
-        <label>Annual Contract Value (ACV)</label>
+        <label for="li-acv">Annual Contract Value (ACV)</label>
         <div class="slider-display"><span class="pre">$&nbsp;</span><span id="li-acv-val">10,000</span></div>
         <input type="range" id="li-acv" min="1000" max="500000" step="1000" value="10000"
           oninput="updateSlider(this); calcLinkedin()" />
@@ -629,8 +629,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
       </div>
       <div class="email-form">
-        <input type="email" class="email-inp" id="li-email" placeholder="your@email.com" />
-        <button class="btn-email" id="li-email-btn" onclick="doEmail('li')">Email This to Me</button>
+        <input type="email" class="email-inp" id="li-email" placeholder="your@email.com" aria-label="Email address for LinkedIn results" />
+        <button class="btn-email" id="li-email-btn" onclick="doEmail('li')">Email my results</button>
       </div>
     </div>
   </div>
@@ -643,14 +643,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="slider-row">
       <div class="slider-grp">
-        <label>Monthly Ad Budget</label>
+        <label for="pa-bgt">Monthly Ad Budget</label>
         <div class="slider-display"><span class="pre">$&nbsp;</span><span id="pa-bgt-val">5,000</span></div>
         <input type="range" id="pa-bgt" min="500" max="50000" step="500" value="5000"
           oninput="updateSlider(this); calcPaid()" />
         <div class="slider-marks"><span>$500</span><span>$50K</span></div>
       </div>
       <div class="slider-grp" id="pa-deal-grp">
-        <label id="pa-deal-lbl">Annual Contract Value (ACV)</label>
+        <label id="pa-deal-lbl" for="pa-deal">Annual Contract Value (ACV)</label>
         <div class="slider-display"><span class="pre">$&nbsp;</span><span id="pa-deal-val">10,000</span></div>
         <input type="range" id="pa-deal" min="1000" max="500000" step="1000" value="10000"
           oninput="updateSlider(this); calcPaid()" />
@@ -729,8 +729,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
       </div>
       <div class="email-form">
-        <input type="email" class="email-inp" id="pa-email" placeholder="your@email.com" />
-        <button class="btn-email" id="pa-email-btn" onclick="doEmail('pa')">Email This to Me</button>
+        <input type="email" class="email-inp" id="pa-email" placeholder="your@email.com" aria-label="Email address for paid media results" />
+        <button class="btn-email" id="pa-email-btn" onclick="doEmail('pa')">Email my results</button>
       </div>
     </div>
   </div>
@@ -739,14 +739,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="calc-email" class="c-panel" style="display:none">
     <div class="slider-row">
       <div class="slider-grp">
-        <label>Email List Size</label>
+        <label for="em-list">Email List Size</label>
         <div class="slider-display"><span id="em-list-val">10,000</span></div>
         <input type="range" id="em-list" min="1000" max="500000" step="1000" value="10000"
           oninput="updateSlider(this); calcEmail()" />
         <div class="slider-marks"><span>1,000</span><span>500,000</span></div>
       </div>
       <div class="slider-grp">
-        <label>Avg. Order Value (AOV)</label>
+        <label for="em-aov">Avg. Order Value (AOV)</label>
         <div class="slider-display"><span class="pre">$&nbsp;</span><span id="em-aov-val">150</span></div>
         <input type="range" id="em-aov" min="10" max="5000" step="10" value="150"
           oninput="updateSlider(this); calcEmail()" />
@@ -828,8 +828,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Get a snapshot of your projections - no pitch, just the numbers.</p>
       </div>
       <div class="email-form">
-        <input type="email" class="email-inp" id="em-email" placeholder="your@email.com" />
-        <button class="btn-email" id="em-email-btn" onclick="doEmail('em')">Email This to Me</button>
+        <input type="email" class="email-inp" id="em-email" placeholder="your@email.com" aria-label="Email address for email results" />
+        <button class="btn-email" id="em-email-btn" onclick="doEmail('em')">Email my results</button>
       </div>
     </div>
   </div>
@@ -1359,7 +1359,7 @@ function doEmail(pfx) {
   var body = encodeURIComponent('Please send my calculator results to: '+val);
   window.location.href = 'mailto:hello@weflair.co?subject='+sub+'&body='+body;
   btn.textContent = 'Done: Opening email...'; btn.classList.add('sent'); btn.disabled = true;
-  setTimeout(function(){ btn.textContent = 'Email This to Me'; btn.classList.remove('sent'); btn.disabled = false; }, 3500);
+  setTimeout(function(){ btn.textContent = 'Email my results'; btn.classList.remove('sent'); btn.disabled = false; }, 3500);
 }
 
 
