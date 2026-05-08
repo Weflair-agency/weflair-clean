@@ -10,7 +10,8 @@
 
 .wf-contact-main {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   padding-top: var(--nav-bar-height, 5rem);
   background:
     radial-gradient(circle at 18% 8%, rgba(62, 255, 104, .12), transparent 28rem),
@@ -38,6 +39,7 @@
 }
 
 .wf-contact-hero {
+  overflow: visible;
   padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
 }
 

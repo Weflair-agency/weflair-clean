@@ -1,4 +1,4 @@
-/* -- Scroll Reveal for Service Pages -- */
+/* ── Scroll Reveal for Service Pages ── */
 (function () {
   /* Auto-tag sections that should animate */
   var revealSelectors = [

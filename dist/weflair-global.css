@@ -132,8 +132,19 @@
     }
 
     #hero .weflair-headline {
-      max-width: 13.8ch;
+      max-width: 17.2ch;
+      letter-spacing: 0;
       text-wrap: balance
+    }
+
+    #hero .weflair-headline__base,
+    #hero .weflair-headline__accent {
+      display: block;
+      text-wrap: balance
+    }
+
+    #hero .weflair-headline__accent {
+      white-space: normal
     }
 
     #hero .home-header__col-text {

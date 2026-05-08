@@ -238,6 +238,21 @@ textarea:focus-visible {
   text-decoration: none !important;
 }
 
+@media screen and (min-width: 992px) {
+  .nav-bar {
+    width: max-content;
+    max-width: calc(100vw - (var(--container-padding, 3em) * 2));
+  }
+
+  .nav-bar__links {
+    min-width: max-content;
+  }
+
+  .nav-bar__btn {
+    flex: 0 0 auto;
+  }
+}
+
 .nav-bar__logo-wrap .nav-bar__logo-svg {
   display: none !important;
 }
@@ -2983,6 +2998,39 @@ textarea:focus-visible {
 }
 
 @media (max-width: 767px) {
+  .nav {
+    bottom: auto;
+    max-height: calc(100dvh - 1.5rem);
+    overflow: visible;
+  }
+
+  .nav-bar {
+    height: auto;
+    max-height: inherit;
+    overflow: visible;
+  }
+
+  body[data-navigation-status="active"] .nav-bar__links {
+    max-height: calc(100dvh - 10.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body[data-navigation-status="active"] .nav-bar__btn {
+    display: flex !important;
+    overflow: visible;
+    padding: 0.5em;
+  }
+
+  .nav-bar__btn .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-bar__btn .btn__span {
+    font-size: 1.15em;
+  }
+
   body[data-navigation-status="not-active"] .nav-bar__links,
   body[data-navigation-status="not-active"] .nav-bar__btn {
     display: none !important;
@@ -2993,7 +3041,7 @@ textarea:focus-visible {
   }
 
   body[data-navigation-status="active"] .nav-bar__btn {
-    display: block !important;
+    display: flex !important;
   }
 
   .home-header__row-title .eyebrow-wrap {

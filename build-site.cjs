@@ -24,6 +24,30 @@ const EXTRA_HTML_DIRS = [
 ];
 
 const STATIC_DIRS = ["brand-assets", "images", "resources", "case-studies", "services", "expertise", "legal"];
+const STATIC_ASSET_EXTENSIONS = new Set([
+  ".avif",
+  ".css",
+  ".gif",
+  ".ico",
+  ".jpeg",
+  ".jpg",
+  ".js",
+  ".json",
+  ".mp4",
+  ".pdf",
+  ".png",
+  ".svg",
+  ".txt",
+  ".webm",
+  ".webp",
+  ".woff",
+  ".woff2",
+  ".xml",
+]);
+
+function isPublishableStaticAsset(absolutePath) {
+  return !absolutePath.toLowerCase().endsWith(".html") && STATIC_ASSET_EXTENSIONS.has(path.extname(absolutePath).toLowerCase());
+}
 
 function cleanDist() {
   fs.mkdirSync(DIST, { recursive: true });
@@ -484,15 +508,16 @@ function copyStaticAssets() {
     copyDirectory(
       path.join(ROOT, directory),
       path.join(DIST, directory),
-      (absolutePath) => !absolutePath.toLowerCase().endsWith(".html")
+      isPublishableStaticAsset
     );
   }
 
-  // Copy root-level CSS and JS files (e.g. wf-stars.css, services-shared.css)
+  // Copy only root-level CSS files. Root JS files are build/debug helpers and
+  // should not be published as static assets.
   for (const entry of fs.readdirSync(ROOT, { withFileTypes: true })) {
     if (!entry.isFile()) continue;
     const name = entry.name.toLowerCase();
-    if (name.endsWith(".css") || name.endsWith(".js")) {
+    if (name.endsWith(".css")) {
       const src = path.join(ROOT, entry.name);
       const dest = path.join(DIST, entry.name);
       fs.copyFileSync(src, dest);
