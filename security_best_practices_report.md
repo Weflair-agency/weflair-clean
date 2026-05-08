@@ -87,4 +87,6 @@ Important residual risk: `/handoff-cards/*.html` are still public because the ho
 
 ## Deployment Note
 
-The local Netlify CLI is not authenticated in this environment. `npx --yes netlify-cli@latest status` returned: `Not logged in. Please log in to see project status.` The hardened build is ready locally, but production Netlify still needs either a Netlify login/token for direct deploy or a Git push to the repository/branch connected to the Netlify site.
+The hardening commit was pushed to the GitHub repository connected to Netlify and Netlify created deploy `69fe66ed05ca3d0008f34461` for commit `3560c014aa7ad7c16443ad2ee282d8f8a77204ce`, but Netlify skipped it with: `Skipped due to account credit usage exceeded`.
+
+Production is therefore still serving the previous deploy until the Netlify account credit/billing issue is resolved and the deploy is retried.
