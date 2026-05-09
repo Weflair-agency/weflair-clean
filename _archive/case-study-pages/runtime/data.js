@@ -1,36 +1,5 @@
 export const CASE_STUDIES = [
   {
-    slug: "cellpoint-digital-revops",
-    name: "CellPoint Digital",
-    logo: "/brand-assets/client-logos/cellpoint-digital.png",
-    logoAlt: "CellPoint Digital logo",
-    industries: ["Fintech", "B2B SaaS"],
-    companyType: "B2B",
-    companySize: "Scale-up",
-    services: ["RevOps & AI", "Outbound GTM"],
-    vertical: "Payments infrastructure",
-    headline: "Zero-to-one GTM infrastructure for a payments brand scaling beyond vendor support.",
-    summary: "Signal workflows, lead scoring, Apollo enrichment, HubSpot revops, and executive demo infrastructure built from scratch.",
-    whatWeDid: "We designed the operating system behind the sales motion: data, scoring, enrichment, CRM structure, and executive-ready follow-up.",
-    metrics: [
-      { value: "0->1", label: "GTM stack" },
-      { value: "HubSpot", label: "revops core" },
-      { value: "Apollo", label: "enrichment live" }
-    ],
-    challenge: "The commercial motion existed, but the systems behind it did not. There was no CRM structure, no signal workflow layer, no lead scoring, and no repeatable way to support executive-level demos and follow-up.",
-    approach: [
-      "Mapped the journey from signal capture through demo follow-up so the team could work from one connected process.",
-      "Connected Apollo enrichment, HubSpot, and lead scoring into one shared operating layer instead of separate tools.",
-      "Built a tighter demo and executive follow-up workflow so commercial conversations could move with less manual stitching."
-    ],
-    results: [
-      "The team moved from disconnected execution to a usable GTM foundation.",
-      "Lead scoring and enrichment became part of the live workflow instead of a side project.",
-      "Commercial ops work shifted from tactical support into a strategic partnership."
-    ],
-    stack: ["HubSpot", "Apollo", "Lead scoring", "Signal workflows", "Executive demo flow"]
-  },
-  {
     slug: "harrier-performance-rebuild",
     name: "Harrier",
     logo: "/brand-assets/client-logos/harrier-white.png",
@@ -95,7 +64,7 @@ export const CASE_STUDIES = [
   {
     slug: "vip-vaping-turnaround",
     name: "VIP Vaping",
-    logo: "/brand-assets/client-logos/vip-vaping.svg",
+    logo: "/brand-assets/client-logos/clean/vip-vaping-original.png",
     logoAlt: "VIP Vaping logo",
     industries: ["E-commerce"],
     companyType: "B2C",

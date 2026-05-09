@@ -19,6 +19,114 @@
     Cache-Control = "no-store"
 
 [[redirects]]
+  from = "/case-studies/cellpoint-digital-revops.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/cellpoint-digital-revops"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/farnell-personalization-squad.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/farnell-personalization-squad"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/harrier-performance-rebuild.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/harrier-performance-rebuild"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/merna-outbound-pipeline.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/merna-outbound-pipeline"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/molahin-demand-gen.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/molahin-demand-gen"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/notcutts-crm-conversion.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/notcutts-crm-conversion"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/rct-paid-search-efficiency.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/rct-paid-search-efficiency"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/travelsphere-digital-reset.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/travelsphere-digital-reset"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/vip-vaping-turnaround.html"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies/vip-vaping-turnaround"
+  to = "/case-studies/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/cases.html"
   to = "/case-studies/"
   status = 301

@@ -5,7 +5,7 @@
   const LOGO_ROWS = [
     [
       { label: "Farnell", src: "./logo-ci-4.svg", size: "wide", width: "162%", height: "124%", scale: "1.2" },
-      { label: "CellPoint Digital", src: "/brand-assets/client-logos/clean/cellpoint-digital-official.svg", size: "wide", width: "104%", height: "88%", scale: ".98" },
+      { label: "JDW", src: "/brand-assets/client-logos/jdw.png", size: "square", width: "86%", height: "86%", scale: ".82" },
       { label: "Royal Mint", src: "./logo-ci-26.svg", size: "tiny", width: "176%", height: "132%", scale: "1.3" },
       { label: "Santander", src: "./logo-ci-19.svg", size: "tiny", width: "168%", height: "132%", scale: "1.28" },
       { label: "The Co-operative Bank", src: "./logo-ci-24.svg", size: "wide", width: "184%", height: "136%", scale: "1.34" },
@@ -19,7 +19,7 @@
     [
       { label: "The Conran Shop", src: "./logo-ci-7.svg", size: "tiny", width: "178%", height: "136%", scale: "1.34" },
       { label: "TOFS", src: "./logo-ci-8.svg", size: "wide", width: "162%", height: "124%", scale: "1.18" },
-      { label: "VIP Vaping", src: "./logo-ci-9.svg", size: "wide", tone: "lighten", width: "166%", height: "124%", scale: "1.24" },
+      { label: "VIP Vaping", src: "/brand-assets/client-logos/clean/vip-vaping-original.png", size: "wide", width: "110%", height: "78%", scale: ".95" },
       { label: "Simply Be", src: "./logo-ci-6.svg", size: "tiny", tone: "lighten", width: "154%", height: "118%", scale: "1.08" },
       { label: "Yours", src: "./logo-ci-11.svg", size: "tiny", tone: "lighten", width: "176%", height: "128%", scale: "1.32" },
       { label: "Pink Boutique", src: "./logo-ci-12.svg", size: "wide", width: "158%", height: "124%", scale: "1.16" },
@@ -304,27 +304,28 @@
       moreLabel: "See more success stories",
       cards: [
         {
-          company: "CellPoint Digital",
-          color: "#4d8af0",
+          company: "VIP Vaping",
+          color: "#22c55e",
           logo: {
-            type: "text",
-            label: "CellPoint Digital",
+            type: "image",
+            src: "/brand-assets/client-logos/clean/vip-vaping-original.png",
+            alt: "VIP Vaping logo",
           },
-          sector: "B2B Tech / Payments",
-          headline: "Zero-to-one GTM infrastructure for a payments brand scaling beyond vendor support.",
+          sector: "Retail / Vaping",
+          headline: "Retail turnaround across CRM, local search, and conversion.",
           body:
-            "Signal workflows, lead scoring, Apollo enrichment, HubSpot RevOps, and executive demo infrastructure were built from scratch and turned the relationship into a strategic anchor partnership.",
+            "Lifecycle CRM, local SEO, and the site experience were rebuilt across a 120+ location retail brand, moving new customers from -43% decline to +32% growth and increasing Google Maps visibility by 3,000%.",
           metrics: [
-            ["Zero-to-one", "GTM infra"],
-            ["C-suite", "platform demo"],
+            ["+32%", "new customers"],
+            ["3,000%", "Maps views"],
           ],
-          services: ["Apollo Enrichment", "HubSpot RevOps", "n8n Workflows"],
-          industries: ["B2B", "B2B Tech"],
+          services: ["CRM Segmentation", "Local SEO", "Website Redesign"],
+          industries: ["E-commerce"],
           highlights: [
-            "Built signal workflows and lead scoring from scratch.",
-            "Connected Apollo, HubSpot, and automation into one motion.",
-            "Sharpened demo and executive follow-up infrastructure.",
-            "Turned disconnected ops work into a growth foundation.",
+            "Rebuilt lifecycle CRM around acquisition, retention, and recovery.",
+            "Expanded local visibility across 120+ store locations.",
+            "Improved the mobile site experience for stronger conversion.",
+            "Turned a declining retail brand into a measurable growth program.",
           ],
           href: ROUTES.results,
         },
@@ -483,20 +484,6 @@
         },
       ],
       testimonials: [
-        {
-          mode: "quote",
-          color: "#4d8af0",
-          quote: "WeFlair is not our vendor. They are our marketing team.",
-          author: "Steven Osei",
-          role: "CMO, CellPoint Digital",
-          initials: "SO",
-          company: "CellPoint Digital",
-          label: "B2B Tech / GTM",
-          logo: {
-            type: "text",
-            label: "CellPoint Digital",
-          },
-        },
         {
           mode: "quote",
           color: "#14b8a6",
@@ -1184,13 +1171,14 @@
   const CASES_PER_VIEW = 1;
 
   function getFilteredResults() {
-    const cards = CONTENT.results.cards.filter(
+    const activeCards = CONTENT.results.cards.filter((card) => !card.archived);
+    const cards = activeCards.filter(
       (card) =>
         !_activeResultsFilter || card.industries.includes(_activeResultsFilter)
     );
     if (cards.length) return cards;
     _activeResultsFilter = "";
-    return CONTENT.results.cards;
+    return activeCards;
   }
 
   function resultsNavIcon(direction = "next") {

@@ -113,7 +113,7 @@ function featuredHtml(item) {
         '</div>' +
         '<div class="wfcs-featured-banner__footer">' +
           '<span class="wfcs-card__vertical">' + escapeHtml(item.vertical) + '</span>' +
-          '<a class="btn weflair-btn weflair-btn--primary" href="/case-studies/' + escapeHtml(item.slug) + '.html">' +
+          '<a class="btn weflair-btn weflair-btn--primary" href="/case-studies/">' +
             '<div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Read Full Case Study</span></div>' +
           '</a>' +
         '</div>' +
@@ -143,7 +143,7 @@ function cardHtml(item, index) {
       "</div>" +
       '<div class="wfcs-metric-row">' + metricsHtml(item.metrics, "wfcs-metric") + "</div>" +
       '<div class="wfcs-card__footer">' +
-        '<a class="wfcs-card__link" href="/case-studies/' + escapeHtml(item.slug) + '.html">Read Case Study &rarr;</a>' +
+        '<a class="wfcs-card__link" href="/case-studies/">Read Case Study &rarr;</a>' +
       "</div>" +
     "</article>"
   );

@@ -90,9 +90,7 @@ function relatedHtml(caseStudy) {
           "</p>" +
           '<h3>' + escapeHtml(entry.name) + "</h3>" +
           '<p>' + escapeHtml(entry.headline) + "</p>" +
-          '<a class="wfcs-card__link" href="/case-studies/' +
-            escapeHtml(entry.slug) +
-            '.html">Open case study &rarr;</a>' +
+          '<a class="wfcs-card__link" href="/case-studies/">Open case study &rarr;</a>' +
         "</article>"
       );
     })
