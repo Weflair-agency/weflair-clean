@@ -27,11 +27,11 @@
     audience: {
       kicker: "Question 1 of 4",
       title: "Who do you sell to?",
-      body: "This routes the rest of the assessment so we do not ask B2B questions to an e-commerce brand.",
+      body: "This routes the rest. We won't ask B2B questions of an e-commerce brand.",
       options: [
-        ["b2b", "B2B", "Businesses buy from us: SaaS, services, tech, APIs, platforms, or enterprise offers."],
-        ["b2c", "B2C", "Customers buy online: apparel, supplements, beauty, courses, subscriptions, or DTC products."],
-        ["b2b2c", "B2B2C", "We sell through businesses, marketplaces, partners, or a mixed B2B and consumer motion."],
+        ["b2b", "B2B", "Businesses buy from us. SaaS, services, tech, APIs, platforms, enterprise."],
+        ["b2c", "B2C", "Customers buy direct. Apparel, supplements, beauty, courses, subscriptions, DTC."],
+        ["b2b2c", "B2B2C", "We sell through partners, marketplaces, or a mix."],
       ],
     },
     modelB2B: {
@@ -236,7 +236,7 @@
 
   function resultCardMarkup() {
     if (state.step !== "result") {
-      return `<h5>What happens next</h5><strong>Recommendation unlocked after email.</strong><p>We use the answers to route you to one clear starting point, then send the audit notes to your inbox.</p>`;
+      return `<h5>What happens next</h5><strong>Recommendation unlocked after email.</strong><p>We use your answers to pick one starting point and send the audit notes to your inbox.</p>`;
     }
     const [title, body, href] = scoreRecommendation();
     return `<h5>Recommended starting point</h5><strong>${escapeHtml(title)}</strong><p>${escapeHtml(body)}</p><div class="wf-assessment__actions"><a class="wf-assessment__btn wf-assessment__btn--primary" href="${escapeHtml(href)}">Open page <span aria-hidden="true">-></span></a><a class="wf-assessment__btn" href="/contact.html">Book audit</a></div>`;
@@ -289,7 +289,7 @@
     root.innerHTML = `<section class="wf-assessment" id="service-assessment" aria-label="Service recommendation assessment">
       <div class="wf-assessment__intro">
         <h3>Not sure which service you need?</h3>
-        <p>Answer three quick questions and we will recommend the right starting point for your business.</p>
+        <p>Three quick questions and we'll point you to the right starting point.</p>
       </div>
       <div class="wf-assessment__shell">
         <div class="wf-assessment__bar">
