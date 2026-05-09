@@ -628,8 +628,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (() => {
   const frames = document.querySelectorAll('.frame');
   const dots = document.querySelectorAll('.dot');
-  const TIMING = [3800, 4400, 4600];
+  const TIMING = [2700, 3000, 3300];
   let current = 0;
+  let tickHandle = null;
   const timers = [];
 
   function clearTimers() {
@@ -744,13 +745,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   runSetup(frames[0]);
 
   function tick() {
-    setTimeout(() => {
-      current = (current + 1) % frames.length;
+    if (tickHandle) { clearTimeout(tickHandle); tickHandle = null; }
+    tickHandle = setTimeout(() => {
+      if (current >= frames.length - 1) return; // settle on final frame; parent will restart
+      current = current + 1;
       goToFrame(current);
       tick();
     }, TIMING[current]);
   }
   tick();
+
+  window.addEventListener('message', function (e) {
+    if (e && e.data === 'restart-handoff') {
+      clearTimers();
+      current = 0;
+      goToFrame(0);
+      tick();
+    }
+  });
 })();
 </script>
 

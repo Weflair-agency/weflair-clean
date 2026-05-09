@@ -770,14 +770,25 @@
 
   runDashboard(frames[0]);
 
+  let tickHandle = null;
   function tick() {
-    setTimeout(() => {
-      current = (current + 1) % frames.length;
+    if (tickHandle) { clearTimeout(tickHandle); tickHandle = null; }
+    tickHandle = setTimeout(() => {
+      if (current >= frames.length - 1) return; // settle on final frame; parent will restart
+      current = current + 1;
       goToFrame(current);
       tick();
     }, TIMING[current]);
   }
   tick();
+
+  window.addEventListener('message', function (e) {
+    if (e && e.data === 'restart-handoff') {
+      current = 0;
+      goToFrame(0);
+      tick();
+    }
+  });
 })();
 </script>
 

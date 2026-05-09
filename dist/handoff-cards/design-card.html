@@ -352,11 +352,11 @@
   const meta = document.getElementById('meta');
 
   const config = [
-    { label: 'Ad Creative',  meta: 'Carousel · 3 slides', duration: 3800 },
-    { label: 'Landing Page', meta: 'Scroll preview',          duration: 3600 },
-    { label: 'Newsletter',   meta: 'Email campaign',          duration: 3600 },
-    { label: 'Lead Magnet',  meta: 'Funnel page',             duration: 3600 },
-    { label: 'Promo Banners',meta: '2 variants',              duration: 3600 }
+    { label: 'Ad Creative',  meta: 'Carousel · 3 slides', duration: 2400 },
+    { label: 'Landing Page', meta: 'Scroll preview',          duration: 2200 },
+    { label: 'Newsletter',   meta: 'Email campaign',          duration: 2200 },
+    { label: 'Lead Magnet',  meta: 'Funnel page',             duration: 2200 },
+    { label: 'Promo Banners',meta: '2 variants',              duration: 2200 }
   ];
 
   let current = 0;
@@ -450,14 +450,26 @@
   // Kick off first frame
   setTimeout(runCarousel, 400);
 
+  let tickHandle = null;
   function tick() {
-    setTimeout(() => {
-      current = (current + 1) % frames.length;
+    if (tickHandle) { clearTimeout(tickHandle); tickHandle = null; }
+    tickHandle = setTimeout(() => {
+      if (current >= frames.length - 1) return; // settle on final frame; parent will restart
+      current = current + 1;
       goToFrame(current);
       tick();
     }, config[current].duration);
   }
   tick();
+
+  window.addEventListener('message', function (e) {
+    if (e && e.data === 'restart-handoff') {
+      resetAll();
+      current = 0;
+      goToFrame(0);
+      tick();
+    }
+  });
 })();
 </script>
 

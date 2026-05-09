@@ -566,8 +566,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const frames = document.querySelectorAll('.frame');
   const dots = document.querySelectorAll('.dot');
   // [ICP, StrategyMix, ChannelSelection, Budget]
-  const TIMING = [3400, 3600, 3600, 4000];
+  const TIMING = [2400, 2600, 2600, 3000];
   let current = 0;
+  let tickHandle = null;
 
   // Industry rotation
   const industries = ['B2B Tech', 'B2B SaaS'];
@@ -684,14 +685,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   startIndustryRotation();
 
   function tick() {
-    setTimeout(() => {
-      current = (current + 1) % frames.length;
+    if (tickHandle) { clearTimeout(tickHandle); tickHandle = null; }
+    tickHandle = setTimeout(() => {
+      if (current >= frames.length - 1) return; // settle on final frame; parent will restart
+      current = current + 1;
       goToFrame(current);
       tick();
     }, TIMING[current]);
   }
 
   tick();
+
+  // Parent (outer carousel) signals tab-activation to restart this iframe's cycle
+  window.addEventListener('message', function (e) {
+    if (e && e.data === 'restart-handoff') {
+      current = 0;
+      goToFrame(0);
+      tick();
+    }
+  });
 })();
 </script>
 
