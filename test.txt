@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
@@ -11320,7 +11320,7 @@
     <!-- SECTION 3: NINJA PROMO STYLE SERVICE SLIDER -->
     <section class="ninja-slider-section">
       <div class="ninja-slider-header">
-        <h2>Every marketing service you could wish for <br><span>— to help your B2B firm</span></h2>
+        <h2>Every marketing service you could wish for <br><span>ï¿½ to help your B2B firm</span></h2>
       </div>
       <div class="ninja-track-wrap">
         <div class="ninja-track">
@@ -11815,7 +11815,7 @@
             What is B2B professional services marketing? <span style="color: var(--b2b-brand)">+</span>
           </summary>
           <div style="padding-top: 1rem; color: rgba(255,255,255,0.7); line-height: 1.6;">
-            It focuses on building trust and proving expertise over a long sales cycle. Unlike product marketing, you are selling the invisible—your team's knowledge, process, and past results.
+            It focuses on building trust and proving expertise over a long sales cycle. Unlike product marketing, you are selling the invisibleï¿½your team's knowledge, process, and past results.
           </div>
         </details>
         <details class="weflair-faq__item" style="border-bottom: 1px solid var(--b2b-border); padding: 1.5rem 0;">
@@ -11894,8 +11894,8 @@
                 <p class="weflair-footer__info-line">New York, United States</p>
               </div>
               <div class="weflair-footer__info-col">
-                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
-                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.co"
+                  class="weflair-footer__contact-link">sam@weflair.co</a><a href="mailto:hello@weflair.co"
                   class="weflair-footer__contact-link">hello@weflair.co</a>
               </div>
             </div>

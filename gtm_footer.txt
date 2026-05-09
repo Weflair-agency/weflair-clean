@@ -1,4 +1,4 @@
-<!-- FOOTER -->
+﻿<!-- FOOTER -->
     <section class="footer weflair-footer">
       <div class="weflair-new-cta-wrap" id="audit">
         <div class="container" style="position:relative; z-index: 5;">
@@ -47,8 +47,8 @@
                 <p class="weflair-footer__info-line">New York, United States</p>
               </div>
               <div class="weflair-footer__info-col">
-                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.com"
-                  class="weflair-footer__contact-link">sam@weflair.com</a><a href="mailto:hello@weflair.co"
+                <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.co"
+                  class="weflair-footer__contact-link">sam@weflair.co</a><a href="mailto:hello@weflair.co"
                   class="weflair-footer__contact-link">hello@weflair.co</a>
               </div>
             </div>
