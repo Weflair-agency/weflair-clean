@@ -455,8 +455,8 @@
 .weflair-handoff .eyebrow{justify-content:flex-start}
 .weflair-handoff__title{margin:0;max-width:15.5ch;font-size:clamp(1.8rem,3vw,2.6rem);line-height:.96;letter-spacing:-.05em;text-wrap:balance}
 .weflair-handoff__lede{display:none}
-.weflair-handoff__track{position:relative}
-.weflair-handoff__sticky{display:grid;gap:.7rem}
+.weflair-handoff__track{position:relative;height:400vh}
+.weflair-handoff__sticky{position:sticky;top:clamp(4.5rem,6vw,5.5rem);display:grid;gap:.7rem}
 /* Tabs: vertical sidebar on the left */
 .weflair-handoff__tabs{display:grid;grid-template-columns:1fr;gap:0}
 .weflair-handoff__tab{appearance:none;border:none;border-left:3px solid transparent;background:transparent;border-radius:0;padding:.7rem .9rem;font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none;color:rgba(246,243,238,.5);cursor:pointer;text-align:left;transition:color .22s,border-color .22s,background .22s;display:flex;align-items:center;gap:.6rem}
@@ -544,7 +544,7 @@
 .weflair-handoff__lede.weflair-section__body{display:block;max-width:38rem;margin:0;color:rgba(246,243,238,.74);font-size:1rem;line-height:1.55}
 .weflair-handoff__track{position:relative;top:auto}
 .weflair-handoff__sticky{position:relative;height:auto;top:auto;display:grid;gap:0;align-self:start}
-@media(min-width:992px){.weflair-handoff__track{height:auto}}
+@media(min-width:992px){.weflair-handoff__track{height:400vh}}
 .weflair-handoff__panel{position:relative;z-index:1;grid-template-columns:1fr;gap:.85rem;width:min(100%,76rem);margin:0 auto;align-items:stretch}
 .weflair-handoff__tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;padding-top:0;align-self:auto}
 .weflair-handoff__tab{border:none;border-radius:.95rem;padding:1rem 1rem;font-size:.84rem;font-weight:700;letter-spacing:.08em;text-transform:none;color:rgba(246,243,238,.58);background:rgba(15,15,15,.72);border:1px solid rgba(246,243,238,.08);transition:color .22s,border-color .22s,background .22s,transform .22s}
@@ -4576,29 +4576,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <script>
 (function(){
-  /* Autoplay carousel — replaces the old 400vh scroll-driven activation.
-     Each card displays for AUTOPLAY_MS, then crossfades (CSS handles the .35s fade).
-     Pauses on hover or manual tab click; resumes after RESUME_MS of inactivity.
-     Only runs while the section is in the viewport, and respects prefers-reduced-motion. */
-  var AUTOPLAY_MS=11000;
-  var RESUME_MS=8000;
-
   function initWeFlairHandoff(){
     var section=document.querySelector('[data-handoff-section]');
     if(!section||section.dataset.handoffReady==='true')return;
     section.dataset.handoffReady='true';
-
     var tabs=[].slice.call(section.querySelectorAll('[data-handoff-tab]'));
     var panes=[].slice.call(section.querySelectorAll('[data-handoff-pane]'));
+    var track=section.querySelector('[data-handoff-track]');
+    var sticky=section.querySelector('.weflair-handoff__sticky');
     var TAB_COUNT=tabs.length;
-    if(!TAB_COUNT)return;
-
     var current=-1;
-    var timer=null;
-    var resumeTimer=null;
-    var inView=false;
-    var paused=false;
-    var reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var trackLeft=0,trackWidth=0;
 
     function syncVideo(pane,isActive){
       var video=pane.querySelector('video');
@@ -4613,7 +4601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     function activate(index){
-      var next=((index%TAB_COUNT)+TAB_COUNT)%TAB_COUNT;
+      var next=Math.max(0,Math.min(index,TAB_COUNT-1));
       if(next===current)return;
       current=next;
       section.setAttribute('data-handoff-active',String(next));
@@ -4627,6 +4615,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         pane.classList.toggle('is-active',a);
         pane.setAttribute('aria-hidden',a?'false':'true');
         syncVideo(pane,a);
+        /* When a tab activates, signal its iframe to replay its inner cycle
+           from the first sub-frame so the visitor always sees start -> end forward. */
         if(a){
           var iframe=pane.querySelector('iframe');
           if(iframe&&iframe.contentWindow){
@@ -4636,60 +4626,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
 
-    function stopTimer(){if(timer){clearTimeout(timer);timer=null;}}
-    function scheduleNext(){
-      stopTimer();
-      if(reducedMotion||paused||!inView)return;
-      timer=window.setTimeout(function(){
-        activate(current+1);
-        scheduleNext();
-      },AUTOPLAY_MS);
-    }
-    function pause(){
-      paused=true;
-      stopTimer();
-      if(resumeTimer){clearTimeout(resumeTimer);resumeTimer=null;}
-    }
-    function pauseThenResume(){
-      pause();
-      resumeTimer=window.setTimeout(function(){
-        paused=false;
-        scheduleNext();
-      },RESUME_MS);
-    }
-
     tabs.forEach(function(tab,i){
-      tab.addEventListener('click',function(){activate(i);pauseThenResume();});
+      tab.addEventListener('click',function(){activate(i);});
       tab.addEventListener('keydown',function(e){
         if(e.key!=='ArrowDown'&&e.key!=='ArrowUp'&&e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
         e.preventDefault();
         var dir=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1;
         var n=(i+dir+TAB_COUNT)%TAB_COUNT;
-        tabs[n].focus();activate(n);pauseThenResume();
+        tabs[n].focus();activate(n);
       });
     });
 
-    section.addEventListener('mouseenter',pause);
-    section.addEventListener('mouseleave',function(){paused=false;scheduleNext();});
-    section.addEventListener('focusin',pause);
-    section.addEventListener('focusout',function(){paused=false;scheduleNext();});
-
-    activate(0);
-
-    if('IntersectionObserver' in window){
-      var io=new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          inView=entry.isIntersecting;
-          if(inView)scheduleNext();else stopTimer();
-        });
-      },{threshold:0.25});
-      io.observe(section);
-    }else{
-      inView=true;
-      scheduleNext();
+    function cacheLayout(){
+      if(!track)return;
+      var r=track.getBoundingClientRect();
+      trackLeft=r.left;
+      trackWidth=track.offsetWidth;
     }
-  }
 
+    var STICKY_TOP=80;
+
+    function update(){
+      if(!track||!sticky)return;
+      var desktop=window.innerWidth>991;
+
+      /* Restore mobile: no JS positioning */
+      if(!desktop){sticky.style.cssText='';return;}
+
+      var trackRect=track.getBoundingClientRect();
+      var maxScroll=track.offsetHeight-window.innerHeight;
+
+      /* Drive tab index from scroll progress */
+      var progress=0;
+      if(maxScroll>0){
+        var scrolledIn=-trackRect.top;
+        progress=Math.max(0,Math.min(1,scrolledIn/maxScroll));
+        activate(Math.min(TAB_COUNT-1,Math.floor(progress*TAB_COUNT)));
+      }
+
+      /* JS-based sticky (handles overflow:clip ancestors blocking native sticky) */
+      var nativeSticky=getComputedStyle(sticky).position==='sticky';
+      if(!nativeSticky){
+        if(trackRect.top>STICKY_TOP){
+          /* Before section: keep the block in normal flow. */
+          sticky.style.cssText='';
+        }else if(trackRect.bottom<STICKY_TOP+sticky.offsetHeight){
+          /* Exit naturally with the bottom of the track instead of disappearing into empty space. */
+          sticky.style.cssText='position:absolute;top:auto;bottom:0;width:100%;left:0;z-index:1';
+        }else{
+          sticky.style.cssText='position:fixed;top:'+STICKY_TOP+'px;width:'+trackWidth+'px;left:'+trackLeft+'px;z-index:1';
+        }
+      }
+    }
+
+    window.addEventListener('scroll',function(){cacheLayout();update();},{passive:true});
+    window.addEventListener('resize',function(){cacheLayout();if(sticky)sticky.style.cssText='';update();});
+
+    cacheLayout();
+    activate(0);
+    update();
+  }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded',initWeFlairHandoff,{once:true});
   }else{
