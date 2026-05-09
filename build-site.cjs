@@ -6,6 +6,7 @@ const ROOT = __dirname;
 const DIST = path.join(ROOT, "dist");
 const HEADER = enhanceSharedHeader(fs.readFileSync(path.join(ROOT, "src", "partials", "header.html"), "utf8").trim());
 const FOOTER = fs.readFileSync(path.join(ROOT, "src", "partials", "footer.html"), "utf8").trim();
+const HOME_TRACKING_SCRIPT = '<script src="/weflair-engagement-tracking.js" defer></script>';
 
 const EXTRA_HTML_DIRS = [
   {
@@ -435,6 +436,10 @@ function buildPage(relativeFile, routeMeta) {
     html = html.replace(/<style id="weflair-runtime-css">[\s\S]*?<\/style>/i, "");
   }
 
+  if (publicPath === "/" && !html.includes("/weflair-engagement-tracking.js")) {
+    html = insertIntoHead(html, HOME_TRACKING_SCRIPT);
+  }
+
   writeHtml(relativeFile, html);
   console.log(`Compiled ${relativeFile}`);
 }
@@ -477,6 +482,28 @@ function copyDirectory(sourceDir, destDir, includeFile) {
       fs.mkdirSync(path.dirname(destPath), { recursive: true });
       fs.copyFileSync(sourcePath, destPath);
     }
+  }
+}
+
+function stripAnalyticsFromHandoffCards() {
+  const handoffDir = path.join(DIST, "handoff-cards");
+  if (!fs.existsSync(handoffDir)) {
+    return;
+  }
+
+  for (const entry of fs.readdirSync(handoffDir, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.toLowerCase().endsWith(".html")) {
+      continue;
+    }
+
+    const filePath = path.join(handoffDir, entry.name);
+    let html = fs.readFileSync(filePath, "utf8");
+    html = html
+      .replace(/\s*<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->/gi, "")
+      .replace(/\s*<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->/gi, "")
+      .replace(/\s*<!-- Sortlist Radar -->\s*<script>[\s\S]*?<\/script>/gi, "")
+      .replace(/\s*<!-- Factors\.ai -->\s*<script>[\s\S]*?<\/script>/gi, "");
+    fs.writeFileSync(filePath, html);
   }
 }
 
@@ -528,6 +555,8 @@ function copyStaticAssets() {
   if (fs.existsSync(netlifyConfig)) {
     fs.copyFileSync(netlifyConfig, path.join(DIST, "netlify.toml"));
   }
+
+  stripAnalyticsFromHandoffCards();
 }
 
 cleanDist();
