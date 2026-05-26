@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Performance Design &amp; CRO - WeFlair</title>
-  <link rel="canonical" href="https://weflair.co/services/performance-design.html" />
-  <meta name="description" content="Conversion-focused design for landing pages, websites, CRO experiments, paid social creative, pitch decks, sales collateral, and reusable brand templates." />
-  <meta property="og:title" content="Performance Design &amp; CRO - WeFlair" />
-  <meta property="og:description" content="Landing pages, websites, CRO experiments, paid social creative, decks, and design templates built to help more traffic take action." />
+  <title>Performance Design &amp; CRO Services | WeFlair</title>
+  <link rel="canonical" href="https://weflair.co/services/performance-design" />
+  <meta name="description" content="Performance design and CRO services for landing pages, service pages, campaign creative, forms, and sales assets that need to convert better." />
+  <meta property="og:title" content="Performance Design &amp; CRO Services | WeFlair" />
+  <meta property="og:description" content="We fix the copy, UX, proof, and design across the pages and assets your campaigns depend on." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://weflair.co/services/performance-design.html" />
+  <meta property="og:url" content="https://weflair.co/services/performance-design" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Performance Design &amp; CRO - WeFlair" />
-  <meta name="twitter:description" content="Performance design and CRO for every asset a buyer touches before they convert." />
+  <meta name="twitter:title" content="Performance Design &amp; CRO Services | WeFlair" />
+  <meta name="twitter:description" content="Landing pages, service pages, paid creative, forms, and sales assets rebuilt around clearer buying decisions." />
   <meta name="theme-color" content="#080907" />
   <link rel="icon" href="/brand-assets/star-solid.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/foundation-styles.css" />
@@ -22,959 +22,853 @@
   <script src="/foundation.js?v=20260504-dark-01" defer></script>
   <script src="/weflair-hero.js?v=20260504-home-stable-01" defer></script>
   <style>
-    html,
-    body {
-      min-height: 100%;
-      overflow-x: clip;
-      background: #080907;
+    /* === PERFORMANCE DESIGN & CRO · REDESIGNED MAY 2026 === */
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    .pd-page {
+      --pdc-bg: #0A0A0F;
+      --pdc-bg-elev: #101018;
+      --pdc-card: #13131C;
+      --pdc-card-2: #181823;
+      --pdc-line: #26262F;
+      --pdc-line-2: #1F1F28;
+      --pdc-green: #22C55E;
+      --pdc-green-soft: rgba(34,197,94,0.12);
+      --pdc-green-line: rgba(34,197,94,0.28);
+      --pdc-text: #F4F4F5;
+      --pdc-muted: #A1A1AA;
+      --pdc-muted-2: #71717A;
+      --pdc-warn: #F59E0B;
+      --pdc-warn-soft: rgba(245,158,11,0.10);
+      --pdc-warn-line: rgba(245,158,11,0.28);
     }
 
     body.pd-page {
-      margin: 0;
-      color: #f6f3ee;
       background:
-        radial-gradient(circle at 14% 8%, rgba(62, 255, 104, .12), transparent 30rem),
-        radial-gradient(circle at 86% 24%, rgba(45, 212, 191, .10), transparent 31rem),
-        radial-gradient(circle at 50% 92%, rgba(245, 158, 11, .07), transparent 34rem),
-        linear-gradient(180deg, #080907 0%, #10110f 40%, #090a09 100%);
+        radial-gradient(1200px 800px at 90% -10%, rgba(34,197,94,0.06), transparent 60%),
+        radial-gradient(900px 700px at -10% 30%, rgba(34,197,94,0.03), transparent 60%),
+        var(--pdc-bg) !important;
+      color: var(--pdc-text) !important;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif !important;
+      font-weight: 400;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .pd-page *,
-    .pd-page *::before,
-    .pd-page *::after {
-      box-sizing: border-box;
-    }
+    .pd-page main.pd-main { background: transparent; }
+    .pd-page .pd-section,
+    .pd-page .pd-hero,
+    .pd-page .pd-final,
+    .pd-page .pd-section--paper,
+    .pd-page .pd-section--tight { background: transparent !important; }
 
-    .pd-main {
-      position: relative;
-      overflow-x: clip;
-      overflow-y: visible;
-      overscroll-behavior: auto;
-    }
-
-    .pd-main *,
-    .pd-main *::before,
-    .pd-main *::after {
-      letter-spacing: 0;
-    }
-
-    .pd-main::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(246, 243, 238, .026) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(246, 243, 238, .026) 1px, transparent 1px);
-      background-size: 4rem 4rem;
-      mask-image: radial-gradient(circle at 50% 8%, #000 0, transparent 43rem);
-      opacity: .72;
-    }
-
-    .pd-main a {
-      color: inherit;
-    }
-
-    .pd-section {
-      position: relative;
-      z-index: 1;
-      padding: clamp(4.25rem, 8vw, 7.25rem) clamp(1.25rem, 4vw, 4rem);
-      border-top: 1px solid rgba(246, 243, 238, .075);
-    }
-
-    .pd-hero {
-      padding-top: clamp(8.5rem, 13vw, 12rem);
-      padding-bottom: clamp(4.5rem, 8vw, 7rem);
-      border-top: 0;
-    }
-
-    .pd-container {
-      width: min(100%, 76rem);
+    /* === HERO === */
+    .pdc-hero {
+      max-width: 1180px;
       margin: 0 auto;
-    }
-
-    .pd-container--wide {
-      width: min(100%, 88rem);
-    }
-
-    .pd-eyebrow,
-    .pd-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      width: fit-content;
-      margin: 0;
-      color: #3eff68;
-      font-size: .78rem;
-      line-height: 1.2;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .pd-eyebrow {
-      padding: .44rem .75rem;
-      border: 1px solid rgba(62, 255, 104, .24);
-      border-radius: 999px;
-      background: rgba(62, 255, 104, .07);
-    }
-
-    .pd-eyebrow svg,
-    .pd-kicker svg {
-      width: .86rem;
-      height: .86rem;
-      flex: 0 0 auto;
-    }
-
-    .pd-title {
-      max-width: 18ch;
-      margin: 0;
-      color: #f6f3ee;
-      font-size: clamp(3.05rem, 5.65vw, 5.8rem);
-      line-height: 1.02;
-      font-weight: 760;
-      text-wrap: balance;
-    }
-
-    .pd-section-title {
-      max-width: 21ch;
-      margin: 0;
-      color: #f6f3ee;
-      font-size: clamp(2.1rem, 4.3vw, 4.15rem);
-      line-height: 1.06;
-      font-weight: 760;
-      text-wrap: balance;
-    }
-
-    .pd-lede,
-    .pd-copy {
-      max-width: 45rem;
-      margin: 0;
-      color: rgba(246, 243, 238, .74);
-      font-size: clamp(1.02rem, 1.18vw, 1.18rem);
-      line-height: 1.66;
-      text-wrap: pretty;
-    }
-
-    .pd-copy--small {
-      font-size: .94rem;
-      line-height: 1.58;
-    }
-
-    .pd-head {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: clamp(2rem, 5vw, 3.5rem);
-    }
-
-    .pd-head--center {
-      justify-items: center;
-      text-align: center;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    .pd-head--center .pd-copy {
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    .pd-hero__grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(22rem, .86fr);
-      gap: clamp(2rem, 5vw, 4.5rem);
-      align-items: center;
-    }
-
-    .pd-hero__content {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .pd-hero__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-      align-items: center;
-      margin-top: .35rem;
-    }
-
-    .pd-text-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 3.25rem;
-      padding: .2rem .35rem;
-      color: rgba(246, 243, 238, .82);
-      font-size: .92rem;
-      font-weight: 800;
-      text-decoration: none;
-      transition: color .2s ease;
-    }
-
-    .pd-text-link:hover {
-      color: #3eff68;
-    }
-
-    .pd-hero__proof {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .65rem;
-      margin-top: .35rem;
-      padding: 0;
-      list-style: none;
-    }
-
-    .pd-hero__proof li {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      padding: .58rem .75rem;
-      border: 1px solid rgba(246, 243, 238, .12);
-      border-radius: 999px;
-      background: rgba(246, 243, 238, .045);
-      color: rgba(246, 243, 238, .78);
-      font-size: .82rem;
-      font-weight: 720;
-    }
-
-    .pd-hero__proof li::before {
-      content: "";
-      width: .42rem;
-      height: .42rem;
-      border-radius: 50%;
-      background: #3eff68;
-      box-shadow: 0 0 14px rgba(62, 255, 104, .42);
-    }
-
-    .pd-workbench {
+      padding: 160px 64px 96px;
       position: relative;
-      min-height: clamp(31rem, 46vw, 40rem);
-      isolation: isolate;
     }
-
-    .pd-workbench::before {
+    .pdc-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--pdc-green-line);
+      background: var(--pdc-green-soft);
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      width: fit-content;
+      margin-bottom: 36px;
+    }
+    .pdc-hero-tag::before {
       content: "";
-      position: absolute;
-      inset: 8% -6% 6% 7%;
-      z-index: -1;
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at 23% 23%, rgba(62, 255, 104, .22), transparent 12rem),
-        radial-gradient(circle at 82% 72%, rgba(45, 212, 191, .16), transparent 13rem);
-      filter: blur(18px);
-      opacity: .84;
+      width: 6px; height: 6px;
+      background: var(--pdc-green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--pdc-green);
+    }
+    .pdc-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3.2rem, 7.8vw, 6.2rem);
+      line-height: 0.96;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      margin: 0 0 28px;
+      max-width: 17ch;
+      color: var(--pdc-text);
+    }
+    .pdc-hero h1 .accent { color: var(--pdc-green); }
+    .pdc-hero .lede {
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      line-height: 1.5;
+      color: var(--pdc-muted);
+      max-width: 720px;
+      font-weight: 300;
+      margin: 0 0 40px;
+    }
+    .pdc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 28px;
+      background: var(--pdc-green);
+      color: var(--pdc-bg);
+      border-radius: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 16px 40px rgba(34,197,94,0.18);
+    }
+    .pdc-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 60px rgba(34,197,94,0.32);
+      color: var(--pdc-bg);
+    }
+    .pdc-cta svg { width: 16px; height: 16px; }
+
+    .pdc-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 80px;
+      padding-top: 36px;
+      border-top: 1px solid var(--pdc-line-2);
+    }
+    .pdc-hero-stat .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--pdc-text);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .pdc-hero-stat .num .accent { color: var(--pdc-green); }
+    .pdc-hero-stat .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pdc-muted-2);
+      margin-top: 14px;
+      line-height: 1.5;
     }
 
-    .pd-browser {
-      position: absolute;
-      inset: 4% 8% 16% 0;
-      overflow: hidden;
-      border: 1px solid rgba(246, 243, 238, .14);
-      border-radius: 8px;
-      background: linear-gradient(180deg, rgba(22, 25, 22, .98), rgba(9, 10, 9, .98));
-      box-shadow: 0 28px 70px rgba(0, 0, 0, .4);
+    /* === SECTION SHELL === */
+    .pdc-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 96px 64px;
+      position: relative;
     }
-
-    .pd-browser__bar {
+    .pdc-section + .pdc-section,
+    .pdc-section + .pdc-position,
+    .pdc-position + .pdc-section,
+    .pdc-section + .pdc-cta-section {
+      border-top: 1px solid var(--pdc-line-2);
+    }
+    .pdc-section h1,
+    .pdc-section h2,
+    .pdc-section h3,
+    .pdc-section h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--pdc-text);
+    }
+    .pdc-eyebrow {
       display: flex;
       align-items: center;
-      gap: .4rem;
-      height: 2.6rem;
-      padding: 0 .85rem;
-      border-bottom: 1px solid rgba(246, 243, 238, .08);
-      background: rgba(246, 243, 238, .045);
+      gap: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 24px;
+    }
+    .pdc-eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--pdc-green);
+    }
+    .pdc-section-h {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 24px;
+      max-width: 22ch;
+    }
+    .pdc-section-h .accent { color: var(--pdc-green); }
+    .pdc-section-sub {
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: var(--pdc-muted);
+      max-width: 780px;
+      line-height: 1.55;
+      font-weight: 300;
+      margin: 0 0 48px;
     }
 
-    .pd-dot {
-      width: .55rem;
-      height: .55rem;
-      border-radius: 50%;
-      background: rgba(246, 243, 238, .2);
+    /* === LOGO BAND === */
+    .pdc-logos {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 64px;
+      border-top: 1px solid var(--pdc-line-2);
+      border-bottom: 1px solid var(--pdc-line-2);
     }
-
-    .pd-dot:nth-child(1) {
-      background: #f59e0b;
+    .pdc-logos-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pdc-muted-2);
+      margin-bottom: 28px;
     }
-
-    .pd-dot:nth-child(2) {
-      background: #2dd4bf;
-    }
-
-    .pd-dot:nth-child(3) {
-      background: #3eff68;
-    }
-
-    .pd-browser__url {
-      flex: 1;
-      min-width: 0;
-      height: 1.15rem;
-      margin-left: .45rem;
-      border-radius: 999px;
-      background: rgba(246, 243, 238, .075);
-    }
-
-    .pd-browser__body {
+    .pdc-logos-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 1rem;
-      padding: clamp(1rem, 2vw, 1.35rem);
+      grid-template-columns: repeat(6, 1fr);
+      gap: 36px;
+      align-items: center;
     }
-
-    .pd-wire {
-      display: grid;
-      gap: .7rem;
-      min-width: 0;
+    .pdc-logos-grid .item {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--pdc-muted);
+      letter-spacing: -0.01em;
+      text-align: center;
+      opacity: 0.7;
+      transition: opacity 0.2s ease, color 0.2s ease;
     }
+    .pdc-logos-grid .item:hover { opacity: 1; color: var(--pdc-text); }
 
-    .pd-wire__eyebrow,
-    .pd-wire__line,
-    .pd-wire__copy,
-    .pd-wire__button,
-    .pd-wire__media,
-    .pd-wire__card {
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .08);
-    }
-
-    .pd-wire__eyebrow {
-      width: 48%;
-      height: .68rem;
-      background: rgba(62, 255, 104, .28);
-    }
-
-    .pd-wire__line {
-      height: 1.05rem;
-    }
-
-    .pd-wire__line:nth-child(3) {
-      width: 72%;
-    }
-
-    .pd-wire__copy {
-      width: 86%;
-      height: .72rem;
-      background: rgba(246, 243, 238, .12);
-    }
-
-    .pd-wire__button {
-      width: 46%;
-      height: 2rem;
-      margin-top: .3rem;
-      background: #3eff68;
-    }
-
-    .pd-wire__media {
-      min-height: 12rem;
-      background:
-        linear-gradient(135deg, rgba(62, 255, 104, .16), transparent 56%),
-        linear-gradient(180deg, rgba(246, 243, 238, .10), rgba(246, 243, 238, .04));
-    }
-
-    .pd-wire__cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .65rem;
-      margin-top: .35rem;
-    }
-
-    .pd-wire__card {
-      min-height: 5.4rem;
-      border: 1px solid rgba(246, 243, 238, .08);
-      background: rgba(246, 243, 238, .055);
-    }
-
-    .pd-review-panel {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: min(19rem, 54%);
+    /* === FINDINGS === */
+    .pdc-findings {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(62, 255, 104, .22);
-      border-radius: 8px;
-      background: rgba(12, 14, 12, .94);
-      box-shadow: 0 22px 55px rgba(0, 0, 0, .42);
     }
-
-    .pd-review-panel__head {
+    .pdc-findings-head {
+      padding: 22px 32px;
+      border-bottom: 1px solid var(--pdc-line);
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
-      padding: .9rem 1rem;
-      border-bottom: 1px solid rgba(246, 243, 238, .08);
-      color: rgba(246, 243, 238, .62);
-      font-size: .72rem;
-      font-weight: 850;
-      text-transform: uppercase;
-    }
-
-    .pd-review-panel__body {
-      display: grid;
-      gap: .75rem;
-      padding: 1rem;
-    }
-
-    .pd-test-row {
-      display: grid;
-      grid-template-columns: 2.25rem minmax(0, 1fr);
-      gap: .7rem;
-      align-items: start;
-    }
-
-    .pd-test-row__score {
-      display: grid;
-      place-items: center;
-      width: 2.25rem;
-      height: 2.25rem;
-      border: 1px solid rgba(62, 255, 104, .22);
-      border-radius: 8px;
-      background: rgba(62, 255, 104, .08);
-      color: #3eff68;
-      font-size: .78rem;
-      font-weight: 860;
-    }
-
-    .pd-test-row h3 {
-      margin: 0 0 .2rem;
-      color: #f6f3ee;
-      font-size: .88rem;
-      line-height: 1.22;
-    }
-
-    .pd-test-row p {
-      margin: 0;
-      color: rgba(246, 243, 238, .58);
-      font-size: .74rem;
-      line-height: 1.45;
-    }
-
-    .pd-ad-card {
-      position: absolute;
-      left: 5%;
-      bottom: 2%;
-      width: min(13.5rem, 42%);
-      overflow: hidden;
-      border: 1px solid rgba(246, 243, 238, .13);
-      border-radius: 8px;
-      background: rgba(17, 19, 17, .95);
-      box-shadow: 0 20px 44px rgba(0, 0, 0, .38);
-    }
-
-    .pd-ad-card__art {
-      min-height: 7rem;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(45, 212, 191, .45), transparent 33%),
-        linear-gradient(135deg, rgba(62, 255, 104, .36), rgba(246, 243, 238, .08));
-    }
-
-    .pd-ad-card__copy {
-      display: grid;
-      gap: .45rem;
-      padding: .8rem;
-    }
-
-    .pd-ad-card__copy span {
-      display: block;
-      height: .62rem;
-      border-radius: 999px;
-      background: rgba(246, 243, 238, .18);
-    }
-
-    .pd-ad-card__copy span:nth-child(2) {
-      width: 68%;
-    }
-
-    .pd-logo-row {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: .75rem;
-      margin-top: clamp(2rem, 4vw, 3.25rem);
-    }
-
-    .pd-logo-card {
-      display: grid;
-      place-items: center;
-      min-height: 4.25rem;
-      padding: .75rem 1rem;
-      border: 1px solid rgba(246, 243, 238, .12);
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .93);
-    }
-
-    .pd-logo-card--dark {
-      background: rgba(10, 12, 10, .82);
-      border-color: rgba(246, 243, 238, .15);
-    }
-
-    .pd-logo-card img {
-      display: block;
-      width: auto;
-      max-width: 9rem;
-      max-height: 2.1rem;
-      object-fit: contain;
-    }
-
-    .pd-logo-card--tall img {
-      max-height: 2.6rem;
-    }
-
-    .pd-problems {
-      background: linear-gradient(180deg, rgba(246, 243, 238, .025), rgba(246, 243, 238, 0));
-    }
-
-    .pd-problem-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .pd-problem-card {
-      min-height: 15rem;
-      padding: 1.35rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background:
-        linear-gradient(180deg, rgba(246, 243, 238, .065), rgba(246, 243, 238, .035));
-    }
-
-    .pd-problem-card__num {
-      display: grid;
-      place-items: center;
-      width: 2.35rem;
-      height: 2.35rem;
-      margin-bottom: 1.2rem;
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .09);
-      color: #3eff68;
-      font-size: .82rem;
-      font-weight: 860;
-    }
-
-    .pd-problem-card h3,
-    .pd-offer-card h3,
-    .pd-step h3,
-    .pd-library-card h3,
-    .pd-fit-card h3 {
-      margin: 0;
-      color: #f6f3ee;
-      font-size: clamp(1.2rem, 1.7vw, 1.55rem);
-      line-height: 1.18;
-      font-weight: 760;
-      text-wrap: balance;
-    }
-
-    .pd-problem-card p,
-    .pd-offer-card p,
-    .pd-step p,
-    .pd-library-card p,
-    .pd-fit-card p {
-      margin: .8rem 0 0;
-      color: rgba(246, 243, 238, .66);
-      font-size: .95rem;
-      line-height: 1.58;
-    }
-
-    .pd-surface-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: .75rem;
-      margin-top: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .pd-surface-tile {
-      display: grid;
-      gap: .65rem;
-      align-content: center;
-      min-height: 7.25rem;
-      padding: 1rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .045);
-    }
-
-    .pd-surface-tile svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      color: #3eff68;
-    }
-
-    .pd-surface-tile span {
-      color: #f6f3ee;
-      font-size: .9rem;
-      line-height: 1.26;
-      font-weight: 780;
-    }
-
-    .pd-offer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .pd-offer-card {
-      display: grid;
-      gap: 1rem;
-      min-height: 24rem;
-      padding: 1.35rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(12, 14, 12, .68);
-    }
-
-    .pd-offer-icon {
-      display: grid;
-      place-items: center;
-      width: 2.7rem;
-      height: 2.7rem;
-      border: 1px solid rgba(62, 255, 104, .2);
-      border-radius: 8px;
-      background: rgba(62, 255, 104, .07);
-      color: #3eff68;
-    }
-
-    .pd-offer-icon svg {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-
-    .pd-offer-list,
-    .pd-fit-list,
-    .pd-check-list {
-      display: grid;
-      gap: .68rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .pd-offer-list li,
-    .pd-fit-list li,
-    .pd-check-list li {
-      display: grid;
-      grid-template-columns: 1rem minmax(0, 1fr);
-      gap: .55rem;
-      align-items: start;
-      color: rgba(246, 243, 238, .74);
-      font-size: .9rem;
-      line-height: 1.45;
-    }
-
-    .pd-offer-list li::before,
-    .pd-fit-list li::before,
-    .pd-check-list li::before {
-      content: "";
-      width: .45rem;
-      height: .45rem;
-      margin-top: .44rem;
-      border-radius: 50%;
-      background: #3eff68;
-    }
-
-    .pd-process {
-      background:
-        radial-gradient(circle at 8% 22%, rgba(45, 212, 191, .08), transparent 26rem),
-        rgba(246, 243, 238, .02);
-    }
-
-    .pd-step-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: .9rem;
-    }
-
-    .pd-step {
-      position: relative;
-      min-height: 18rem;
-      padding: 1.2rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(10, 12, 10, .72);
-    }
-
-    .pd-step__num {
-      display: inline-flex;
-      margin-bottom: 1.4rem;
-      color: rgba(62, 255, 104, .92);
-      font-size: .78rem;
-      font-weight: 880;
-    }
-
-    .pd-library {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: clamp(1.25rem, 4vw, 3rem);
-      align-items: start;
-    }
-
-    .pd-library-card {
-      padding: 1.35rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: linear-gradient(180deg, rgba(246, 243, 238, .06), rgba(246, 243, 238, .035));
-    }
-
-    .pd-library-visual {
-      display: grid;
-      gap: .85rem;
-    }
-
-    .pd-asset-row {
-      display: grid;
-      grid-template-columns: 7rem minmax(0, 1fr) 5.4rem;
-      gap: .85rem;
       align-items: center;
-      padding: .95rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(11, 13, 11, .82);
+      gap: 24px;
+      background: var(--pdc-card-2);
     }
-
-    .pd-asset-row__type {
-      color: #3eff68;
-      font-size: .75rem;
-      font-weight: 850;
+    .pdc-findings-head .ttl {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--pdc-text);
+    }
+    .pdc-findings-head .stamp {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-    }
-
-    .pd-asset-row__body {
-      min-width: 0;
-    }
-
-    .pd-asset-row__body strong {
-      display: block;
-      color: #f6f3ee;
-      font-size: .95rem;
-      line-height: 1.25;
-    }
-
-    .pd-asset-row__body span {
-      display: block;
-      margin-top: .22rem;
-      color: rgba(246, 243, 238, .57);
-      font-size: .78rem;
-      line-height: 1.35;
-    }
-
-    .pd-asset-row__status {
-      justify-self: end;
-      padding: .35rem .55rem;
-      border: 1px solid rgba(62, 255, 104, .2);
-      border-radius: 999px;
-      color: #3eff68;
-      font-size: .68rem;
-      font-weight: 850;
-      text-transform: uppercase;
+      color: var(--pdc-green);
+      padding: 5px 12px;
+      border: 1px solid var(--pdc-green-line);
+      border-radius: 100px;
+      background: var(--pdc-green-soft);
       white-space: nowrap;
     }
-
-    .pd-assessment {
+    .pdc-findings-row {
       display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-      gap: clamp(1.25rem, 4vw, 3rem);
+      grid-template-columns: 64px 1fr 260px;
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--pdc-line-2);
       align-items: start;
+      gap: 32px;
+    }
+    .pdc-findings-row:last-child { border-bottom: none; }
+    .pdc-findings-row .num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--pdc-green);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+    .pdc-findings-row h4 {
+      font-size: 19px;
+      margin: 0 0 10px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .pdc-findings-row p {
+      color: var(--pdc-muted);
+      font-size: 14.5px;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .pdc-findings-row .impact {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--pdc-muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.7;
+      border-left: 1px solid var(--pdc-line);
+      padding-left: 20px;
+    }
+    .pdc-findings-row .impact b {
+      color: var(--pdc-text);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
+      letter-spacing: 0.14em;
     }
 
-    .pd-assessment-panel {
-      border: 1px solid rgba(246, 243, 238, .12);
-      border-radius: 8px;
-      background: rgba(12, 14, 12, .76);
+    /* === POSITION === */
+    .pdc-position {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 96px 64px;
+    }
+    .pdc-position-quote {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+      line-height: 1.22;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      color: var(--pdc-text);
+      max-width: 22ch;
+      margin: 0;
+    }
+    .pdc-position-quote .accent { color: var(--pdc-green); }
+    .pdc-position-quote .strike {
+      text-decoration: line-through;
+      text-decoration-color: rgba(244,244,245,0.35);
+      text-decoration-thickness: 2px;
+      color: var(--pdc-muted-2);
+    }
+    .pdc-position-foot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 56px;
+      padding-top: 36px;
+      border-top: 1px solid var(--pdc-line-2);
+    }
+    .pdc-position-foot .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 12px;
+    }
+    .pdc-position-foot p {
+      color: var(--pdc-muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* === PILLARS (what we fix) === */
+    .pdc-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .pdc-pillar {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 14px;
+      padding: 30px;
+      position: relative;
       overflow: hidden;
     }
+    .pdc-pillar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pdc-green) 0%, transparent 100%);
+      opacity: 0.5;
+    }
+    .pdc-pillar .step {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--pdc-green);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .pdc-pillar h3 {
+      font-size: 22px;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .pdc-pillar .desc {
+      color: var(--pdc-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+    .pdc-pillar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pdc-pillar li {
+      font-size: 13px;
+      color: var(--pdc-muted);
+      padding: 9px 0 9px 18px;
+      border-top: 1px solid var(--pdc-line-2);
+      position: relative;
+      line-height: 1.5;
+    }
+    .pdc-pillar li:first-child { border-top: none; }
+    .pdc-pillar li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--pdc-green);
+      font-weight: 600;
+    }
 
-    .pd-question {
+    /* === ENGAGEMENT TIERS === */
+    .pdc-tiers {
       display: grid;
-      grid-template-columns: 2.25rem minmax(0, 1fr);
-      gap: .95rem;
-      padding: 1.15rem;
-      border-top: 1px solid rgba(246, 243, 238, .08);
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pdc-tier {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 18px;
+      padding: 40px;
+      position: relative;
+    }
+    .pdc-tier.featured {
+      background: linear-gradient(180deg, rgba(34,197,94,0.08) 0%, var(--pdc-card) 30%);
+      border-color: var(--pdc-green-line);
+      box-shadow: 0 30px 80px -30px rgba(34,197,94,0.3);
+    }
+    .pdc-tier-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 14px;
+    }
+    .pdc-tier h3 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      line-height: 1.15;
+    }
+    .pdc-tier .tier-desc {
+      color: var(--pdc-muted);
+      font-size: 15px;
+      line-height: 1.55;
+      margin: 0 0 28px;
+    }
+    .pdc-tier .tier-section {
+      margin-bottom: 24px;
+    }
+    .pdc-tier .tier-section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pdc-tier .tier-section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--pdc-line);
+    }
+    .pdc-tier ul.tier-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pdc-tier ul.tier-list li {
+      font-size: 13.5px;
+      color: var(--pdc-text);
+      padding: 7px 0;
+      line-height: 1.5;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .pdc-tier ul.tier-list li::before {
+      content: "→";
+      color: var(--pdc-green);
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pdc-tier .tier-best {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--pdc-line);
+    }
+    .pdc-tier .tier-best .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 10px;
+    }
+    .pdc-tier .tier-best p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--pdc-text);
+      font-weight: 500;
+      margin: 0;
     }
 
-    .pd-question:first-child {
-      border-top: 0;
+    /* === PHASES === */
+    .pdc-phases {
+      display: grid;
+      gap: 14px;
+    }
+    .pdc-phase {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 14px;
+      padding: 28px 32px;
+      align-items: start;
+    }
+    .pdc-phase .when {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--pdc-green);
+      text-transform: uppercase;
+      padding-top: 4px;
+    }
+    .pdc-phase h3 {
+      font-size: 20px;
+      margin: 0 0 8px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .pdc-phase p {
+      color: var(--pdc-muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin: 0;
     }
 
-    .pd-question__num {
+    /* === COMPARE === */
+    .pdc-compare {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .pdc-compare-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--pdc-card-2);
+      border-bottom: 1px solid var(--pdc-line);
+    }
+    .pdc-compare-head > div {
+      padding: 22px 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .pdc-compare-head > div:first-child {
+      color: var(--pdc-warn);
+      border-right: 1px solid var(--pdc-line);
+    }
+    .pdc-compare-head > div:last-child {
+      color: var(--pdc-green);
+    }
+    .pdc-compare-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .pdc-compare-col {
+      padding: 12px 32px 32px;
+    }
+    .pdc-compare-col:first-child { border-right: 1px solid var(--pdc-line); }
+    .pdc-compare-col ul { list-style: none; padding: 0; margin: 0; }
+    .pdc-compare-col li {
+      font-size: 14.5px;
+      color: var(--pdc-muted);
+      padding: 14px 0 14px 28px;
+      border-top: 1px solid var(--pdc-line-2);
+      position: relative;
+      line-height: 1.55;
+    }
+    .pdc-compare-col li:first-child { border-top: none; }
+    .pdc-compare-col.bad li::before {
+      content: "×";
+      position: absolute;
+      left: 0;
+      top: 13px;
+      color: var(--pdc-warn);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .pdc-compare-col.good li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      color: var(--pdc-green);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .pdc-compare-col.good li { color: var(--pdc-text); }
+
+    /* === PROOF === */
+    .pdc-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pdc-proof-card {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pdc-proof-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--pdc-green), transparent);
+      opacity: 0.55;
+      z-index: 2;
+    }
+    .pdc-proof-card .img {
+      aspect-ratio: 16 / 10;
+      background: var(--pdc-card-2);
+      overflow: hidden;
+      border-bottom: 1px solid var(--pdc-line);
+    }
+    .pdc-proof-card .img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.4s ease, opacity 0.2s ease;
+    }
+    .pdc-proof-card:hover .img img { transform: scale(1.04); opacity: 1; }
+    .pdc-proof-card .body {
+      padding: 28px;
+    }
+    .pdc-proof-card .body .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pdc-green);
+      margin-bottom: 10px;
+    }
+    .pdc-proof-card .body h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .pdc-proof-card .body p {
+      color: var(--pdc-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* === FAQ === */
+    .pdc-faq {
+      background: var(--pdc-card);
+      border: 1px solid var(--pdc-line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .pdc-faq details { border-bottom: 1px solid var(--pdc-line-2); }
+    .pdc-faq details:last-child { border-bottom: none; }
+    .pdc-faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 26px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--pdc-text);
+      transition: background 0.15s ease;
+    }
+    .pdc-faq summary:hover { background: rgba(255,255,255,0.02); }
+    .pdc-faq summary::-webkit-details-marker { display: none; }
+    .pdc-faq summary::after {
+      content: "+";
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--pdc-green-soft);
+      border: 1px solid var(--pdc-green-line);
+      color: var(--pdc-green);
       display: grid;
       place-items: center;
-      width: 2.25rem;
-      height: 2.25rem;
-      border-radius: 8px;
-      background: rgba(62, 255, 104, .09);
-      color: #3eff68;
-      font-size: .78rem;
-      font-weight: 860;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .pdc-faq details[open] summary::after { content: "−"; }
+    .pdc-faq .body {
+      padding: 0 32px 28px;
+      color: var(--pdc-muted);
+      font-size: 14.5px;
+      line-height: 1.65;
     }
 
-    .pd-question h3 {
-      margin: 0;
-      color: #f6f3ee;
-      font-size: 1rem;
-      line-height: 1.3;
-      font-weight: 760;
+    /* === CTA === */
+    .pdc-cta-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 96px 64px 120px;
+    }
+    .pdc-cta-card {
+      background:
+        radial-gradient(800px 400px at 100% 0%, rgba(34,197,94,0.12), transparent 60%),
+        linear-gradient(180deg, rgba(34,197,94,0.04) 0%, var(--pdc-card) 70%);
+      border: 1px solid var(--pdc-green-line);
+      border-radius: 22px;
+      padding: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pdc-cta-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pdc-green), transparent);
+    }
+    .pdc-cta-card .step {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--pdc-green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .pdc-cta-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 20px;
+      max-width: 18ch;
+      color: var(--pdc-text);
+    }
+    .pdc-cta-card p {
+      font-size: 18px;
+      color: var(--pdc-muted);
+      max-width: 620px;
+      line-height: 1.55;
+      font-weight: 300;
+      margin: 0 0 40px;
     }
 
-    .pd-question p {
-      margin: .35rem 0 0;
-      color: rgba(246, 243, 238, .62);
-      font-size: .88rem;
-      line-height: 1.48;
-    }
-
-    .pd-fit-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .pd-fit-card {
-      padding: 1.35rem;
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .045);
-    }
-
-    .pd-fit-card--strong {
-      border-color: rgba(62, 255, 104, .22);
-      background: rgba(62, 255, 104, .06);
-    }
-
-    .pd-faq-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
-      gap: clamp(1.5rem, 4vw, 3.25rem);
-    }
-
-    .pd-faq-list {
-      display: grid;
-      gap: .8rem;
-    }
-
-    .pd-faq-list details {
-      border: 1px solid rgba(246, 243, 238, .11);
-      border-radius: 8px;
-      background: rgba(246, 243, 238, .04);
-    }
-
-    .pd-faq-list summary {
-      cursor: pointer;
-      padding: 1.1rem 1.2rem;
-      color: #f6f3ee;
-      font-size: 1rem;
-      line-height: 1.4;
-      font-weight: 760;
-    }
-
-    .pd-faq-list details p {
-      margin: 0;
-      padding: 0 1.2rem 1.2rem;
-      color: rgba(246, 243, 238, .66);
-      font-size: .94rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 1180px) {
-      .pd-step-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* === RESPONSIVE === */
+    @media (max-width: 991px) {
+      .pdc-section,
+      .pdc-hero,
+      .pdc-logos,
+      .pdc-position,
+      .pdc-cta-section {
+        padding-left: 32px;
+        padding-right: 32px;
       }
-
-      .pd-surface-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .pdc-section { padding-top: 72px; padding-bottom: 72px; }
+      .pdc-position { padding-top: 72px; padding-bottom: 72px; }
+      .pdc-cta-section { padding-top: 72px; padding-bottom: 96px; }
+      .pdc-hero { padding-top: 130px; padding-bottom: 72px; }
+      .pdc-logos-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+      .pdc-pillars { grid-template-columns: repeat(2, 1fr); }
+      .pdc-tiers { grid-template-columns: 1fr; }
+      .pdc-proof { grid-template-columns: 1fr; }
+      .pdc-position-foot { grid-template-columns: 1fr; gap: 24px; }
+      .pdc-phase { grid-template-columns: 1fr; gap: 8px; padding: 24px; }
+      .pdc-phase .when { padding-top: 0; margin-bottom: 4px; }
+      .pdc-cta-card { padding: 40px 28px; }
+      .pdc-findings-row {
+        grid-template-columns: 48px 1fr;
+        gap: 18px;
+        padding: 22px;
+      }
+      .pdc-findings-row .impact {
+        grid-column: 2 / -1;
+        border-left: none;
+        border-top: 1px solid var(--pdc-line-2);
+        padding-left: 0;
+        padding-top: 16px;
+        margin-top: 4px;
+      }
+      .pdc-findings-head { padding: 16px 22px; gap: 12px; flex-wrap: wrap; }
+      .pdc-findings-head .stamp { font-size: 9.5px; }
+      .pdc-hero-stats { grid-template-columns: 1fr; gap: 28px; }
+      .pdc-compare-head,
+      .pdc-compare-body { grid-template-columns: 1fr; }
+      .pdc-compare-head > div:first-child,
+      .pdc-compare-col:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--pdc-line);
       }
     }
-
-    @media (max-width: 980px) {
-      .pd-hero__grid,
-      .pd-library,
-      .pd-assessment,
-      .pd-faq-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 600px) {
+      .pdc-section,
+      .pdc-hero,
+      .pdc-logos,
+      .pdc-position,
+      .pdc-cta-section {
+        padding-left: 22px;
+        padding-right: 22px;
       }
-
-      .pd-workbench {
-        min-height: 35rem;
-      }
-
-      .pd-logo-row {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .pd-problem-grid,
-      .pd-offer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .pd-section {
-        padding-right: 1rem;
-        padding-left: 1rem;
-      }
-
-      .pd-title {
-        font-size: clamp(2.65rem, 13vw, 4rem);
-      }
-
-      .pd-hero__actions {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .pd-hero__actions .btn,
-      .pd-text-link {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .pd-workbench {
-        min-height: 31rem;
-      }
-
-      .pd-browser {
-        inset: 0;
-      }
-
-      .pd-browser__body {
-        grid-template-columns: 1fr;
-      }
-
-      .pd-wire__media {
-        min-height: 8.5rem;
-      }
-
-      .pd-review-panel {
-        right: .75rem;
-        bottom: -1rem;
-        width: calc(100% - 1.5rem);
-      }
-
-      .pd-ad-card {
-        display: none;
-      }
-
-      .pd-logo-row,
-      .pd-surface-grid,
-      .pd-step-grid,
-      .pd-fit-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pd-logo-card {
-        min-height: 4rem;
-      }
-
-      .pd-offer-card,
-      .pd-problem-card,
-      .pd-step {
-        min-height: auto;
-      }
-
-      .pd-asset-row {
-        grid-template-columns: 1fr;
-        align-items: start;
-      }
-
-      .pd-asset-row__status {
-        justify-self: start;
-      }
+      .pdc-logos-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .pdc-pillars { grid-template-columns: 1fr; }
+      .pdc-cta-card { padding: 32px 22px; }
+      .pdc-cta { padding: 16px 22px; font-size: 15px; width: 100%; justify-content: center; }
+      .pdc-tier { padding: 28px 24px; }
     }
   </style>
   <!-- Google Tag Manager -->
@@ -996,378 +890,345 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZZ6H9W9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound programs built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Search content built for AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Demand Generation</h3><p class="nav-dropdown-tile__p">Demand generation built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="../resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="../resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About WeFlair</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
+  <header class="header"><nav class="nav"><div class="nav-bar"><div class="nav-bar__bg"></div><div class="nav-bar__logo-and-hamburger"><a data-hover="flower" href="../index.html" class="nav-bar__logo-a w-inline-block" data-weflair-logo-applied="true"><span class="weflair-logo"><span class="weflair-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 45" fill="none" class="weflair-flare"><path d="M15.875 2.188c.102 0 .207.187.312.562.051.25.102.469.156.656.781 2.867 2.488 5.531 5.125 8 2.633 2.461 5.492 4.074 8.578 4.844.289.055.438.164.438.328 0 .188-.157.309-.47.36-3.218.7-6.214 2.452-8.984 5.265-2.773 2.812-4.453 5.625-5.047 8.438-.074.258-.18.39-.313.39-.167 0-.26-.148-.28-.437-.274-1.445-.856-2.957-1.75-4.532-.899-1.582-1.965-2.96-3.203-4.14-1.063-1.071-2.508-2.145-4.328-3.22-1.824-1.07-3.246-1.71-4.266-1.921-.293-.082-.438-.203-.438-.36 0-.187.395-.379 1.188-.577.789-.207 1.926-.688 3.406-1.438 1.488-.75 2.89-1.805 4.203-3.172 1.344-1.363 2.516-2.851 3.516-4.468s1.61-2.992 1.828-4.117c.051-.3.16-.453.328-.453Z" fill="currentColor"></path></svg></span><span class="weflair-logo__word">WeFlair</span></span></a><div class="nav-bar__hamburger"><div data-navigation-toggle="toggle" class="hamburger"><div class="hamburger__bar is--top"></div><div class="hamburger__bar"></div><div class="hamburger__bar is--bottom"></div></div></div></div><div data-lenis-prevent="" class="nav-bar__links"><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Services</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/paid-media-performance.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Paid Media &amp; Performance</h3><p class="nav-dropdown-tile__p">Data-backed ads that turn demand into pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/demand-generation.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Demand Generation</h3><p class="nav-dropdown-tile__p">Full-funnel demand built around qualified pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/go-to-market-systems.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Outbound Systems</h3><p class="nav-dropdown-tile__p">Outbound programs built for real sales conversations.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../services/performance-design.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Performance Design &amp; CRO</h3><p class="nav-dropdown-tile__p">Creative, pages, and content that convert more traffic.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../services/ai-visibility-seo.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">AI Visibility &amp; SEO</h3><p class="nav-dropdown-tile__p">Search content built for AI visibility.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Expertise</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-saas.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B SaaS</h3><p class="nav-dropdown-tile__p">Software teams under pressure to prove pipeline.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-services.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Services</h3><p class="nav-dropdown-tile__p">Service offers that need cleaner demand generation.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../expertise/b2b-tech.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">B2B Tech</h3><p class="nav-dropdown-tile__p">Technical B2B categories with complex buying journeys.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../expertise/ecommerce.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">E-commerce</h3><p class="nav-dropdown-tile__p">Paid, lifecycle, and storefront performance.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">Resources</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown nav-dropdown--mega"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="weflair-mega-grid"><a data-hover="" href="../resources/playbooks.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m10 13-2 2 2 2"/><path d="m14 17 2-2-2-2"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Guides &amp; Playbooks</h3><p class="weflair-mega-tile__p">Practical playbooks and deeper growth guides in one place.</p></div></a><a data-hover="" href="../resources/ai-seo-playbook.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">AISEO Playbook</h3><p class="weflair-mega-tile__p">A free AI search visibility playbook built for resource-led lead capture.</p></div></a><a data-hover="" href="../resource-pack.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Resource Pack</h3><p class="weflair-mega-tile__p">AI skills, templates, and tools for sales and marketing teams.</p></div></a><a data-hover="" href="../resources/calculators.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Calculators</h3><p class="weflair-mega-tile__p">ROI, CAC, and pipeline planning tools.</p></div></a><a data-hover="" href="../resources/checklists.html" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 18H3"/><path d="m15 18 2 2 4-4"/><path d="M16 12H3"/><path d="M16 6H3"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Ads Checklist</h3><p class="weflair-mega-tile__p">Paid media checklist for tracking, creative, and launch QA.</p></div></a><a data-hover="" href="../case-studies/" class="weflair-mega-tile w-inline-block"><div class="weflair-mega-tile__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="weflair-mega-tile__text"><h3 class="weflair-mega-tile__h">Case Studies</h3><p class="weflair-mega-tile__p">Real results from real engagements.</p></div></a></div></div></div></div></div></div><div data-dropdown-status="not-active" class="nav-bar__link"><div data-dropdown-click="" class="nav-bar__link-inner"><div class="nav-bar__link-bg"></div><div class="nav-bar__link-text"><span class="nav-bar__link-text-span">About</span><div class="nav-bar__link-chevron"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="nav-bar__link-chevron-svg"><path d="M5 9L12 16L19 9" stroke="currentColor" stroke-miterlimit="10" stroke-width="0.125em"></path></svg></div></div></div><div class="nav-dropdown"><div class="nav-dropdown__overflow"><div class="nav-dropdown__overflow-inner"><div class="nav-dropdown__grid"><div class="nav-dropdown__grid-row"><a data-hover="" data-arrow="diagonal" href="../about.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">About with Flair</h3><p class="nav-dropdown-tile__p">The growth agency built for operators.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a><a data-hover="" data-arrow="diagonal" href="../careers.html" class="nav-dropdown-tile w-inline-block"><div class="nav-dropdown-tile__bg"></div><div class="nav-dropdown-tile__text"><h3 class="nav-dropdown-tile__h">Careers</h3><p class="nav-dropdown-tile__p">Join our team of growth specialists.</p></div><div class="nav-dropdown-tile__arrow"><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></div></a></div></div></div></div></div></div></div><div class="nav-bar__btn"><a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="../contact.html" class="btn w-inline-block"><div class="btn__bg"></div><div class="btn__text"><span class="btn__span">Talk to us</span></div><div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div></a></div></div></nav></header>
 
   <main id="main" class="main pd-main">
-    <section class="pd-section pd-hero" style="position:relative;overflow:hidden;">
-<span class="wf-star wf-star--bg" style="top:5%;right:2%;opacity:0.08;" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z" fill="#3EFF68"/></svg></span><span class="wf-star wf-star--float" style="top:18%;right:7%;animation-delay:0s;" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z" fill="#3EFF68"/></svg></span><span class="wf-star wf-star--glow" style="top:50%;right:4%;animation-delay:1.6s;" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z" fill="#3EFF68"/></svg></span><span class="wf-star wf-star--float-slow" style="top:25%;left:1%;animation-delay:0.9s;opacity:0.35;" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z" fill="#3EFF68"/></svg></span><span class="wf-star wf-star--twinkle" style="bottom:12%;left:5%;animation-delay:2.4s;" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 0C65 35.8985 94.1015 65 130 65C94.1015 65 65 94.1015 65 130C65 94.1015 35.8985 65 0 65C35.8985 65 65 35.8985 65 0Z" fill="#3EFF68"/></svg></span>
-      <div class="pd-container pd-container--wide">
-        <div class="pd-hero__grid">
-          <div class="pd-hero__content">
-            <p class="pd-eyebrow">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m17 14 1.4 2.8 3.1.45-2.25 2.2.53 3.1L17 21.1l-2.78 1.46.53-3.1-2.25-2.2 3.1-.45L17 14Z" fill="currentColor"/></svg>
-              Performance Design &amp; CRO
-            </p>
-            <h1 class="pd-title">Design that turns every click into a clearer next step.</h1>
-            <p class="pd-lede">We design the assets buyers actually touch: landing pages, websites, CRO tests, paid social creative, pitch decks, one-pagers, email graphics, and reusable templates your team can keep shipping.</p>
-            <div class="pd-hero__actions">
-              <a data-arrow="diagonal" data-hover="" data-btn-theme="default" href="#audit" class="btn w-inline-block">
-                <div class="btn__bg"></div>
-                <div class="btn__text"><span class="btn__span">Get a design and CRO audit</span></div>
-                <div class="arrow"><div class="arrow__bg"></div><div class="arrow__box is--duplicate"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div><div class="arrow__box"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" class="arrow__svg"><path d="M11.999 18.334L11.999 5.00071" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M5.99902 13.0007L11.999 19.0007" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path><path d="M17.9995 13L11.9995 19" stroke="currentColor" stroke-width="0.125em" stroke-linecap="square" stroke-linejoin="round"></path></svg></div></div>
-              </a>
-              <a href="#what-we-design" class="pd-text-link">See what we design</a>
-            </div>
-            <ul class="pd-hero__proof" aria-label="Performance design surfaces">
-              <li>Landing pages</li>
-              <li>Websites</li>
-              <li>CRO tests</li>
-              <li>Social creative</li>
-              <li>Pitch decks</li>
-            </ul>
-          </div>
+  <!-- HERO -->
+  <section class="pdc-hero">
+    <div class="pdc-hero-tag">Performance Design &amp; CRO</div>
+    <h1>Make your paid traffic <span class="accent">easier to buy from.</span></h1>
+    <p class="lede">We rebuild the pages, ads, forms, and sales assets that sit between attention and revenue. Less decoration, sharper buying argument. Built to be tested, then turned into a reusable system.</p>
+    <a href="/contact.html" class="pdc-cta">
+      Book a conversion audit
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <div class="pdc-hero-stats">
+      <div class="pdc-hero-stat">
+        <div class="num"><span class="accent">4</span> surfaces</div>
+        <div class="label">Pages &middot; Creative &middot; Forms &middot; Sales assets</div>
+      </div>
+      <div class="pdc-hero-stat">
+        <div class="num"><span class="accent">2-4</span> weeks</div>
+        <div class="label">From audit to first version live</div>
+      </div>
+    </div>
+  </section>
 
-          <div class="pd-workbench" aria-label="Performance design workspace preview">
-            <div class="pd-browser">
-              <div class="pd-browser__bar">
-                <span class="pd-dot"></span>
-                <span class="pd-dot"></span>
-                <span class="pd-dot"></span>
-                <span class="pd-browser__url"></span>
-              </div>
-              <div class="pd-browser__body">
-                <div class="pd-wire">
-                  <span class="pd-wire__eyebrow"></span>
-                  <span class="pd-wire__line"></span>
-                  <span class="pd-wire__line"></span>
-                  <span class="pd-wire__copy"></span>
-                  <span class="pd-wire__copy"></span>
-                  <span class="pd-wire__button"></span>
-                  <div class="pd-wire__cards">
-                    <span class="pd-wire__card"></span>
-                    <span class="pd-wire__card"></span>
-                  </div>
-                </div>
-                <div class="pd-wire">
-                  <span class="pd-wire__media"></span>
-                  <span class="pd-wire__copy"></span>
-                  <span class="pd-wire__copy"></span>
-                  <div class="pd-wire__cards">
-                    <span class="pd-wire__card"></span>
-                    <span class="pd-wire__card"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pd-ad-card" aria-hidden="true">
-              <div class="pd-ad-card__art"></div>
-              <div class="pd-ad-card__copy"><span></span><span></span></div>
-            </div>
-            <div class="pd-review-panel">
-              <div class="pd-review-panel__head"><span>CRO queue</span><span>Live</span></div>
-              <div class="pd-review-panel__body">
-                <div class="pd-test-row">
-                  <span class="pd-test-row__score">01</span>
-                  <div><h3>Message match</h3><p>Ad promise, hero copy, proof, and CTA aligned before traffic arrives.</p></div>
-                </div>
-                <div class="pd-test-row">
-                  <span class="pd-test-row__score">02</span>
-                  <div><h3>Friction removed</h3><p>Mobile layout, form fields, trust gaps, and unclear sections tightened.</p></div>
-                </div>
-                <div class="pd-test-row">
-                  <span class="pd-test-row__score">03</span>
-                  <div><h3>Assets reused</h3><p>Winning blocks become templates for ads, decks, sales pages, and posts.</p></div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- LOGO BAND -->
+  <section class="pdc-logos">
+    <div class="pdc-logos-label">Work shipped for teams including</div>
+    <div class="pdc-logos-grid">
+      <div class="item">Farnell</div>
+      <div class="item">Harrier</div>
+      <div class="item">RCT</div>
+      <div class="item">Molahin</div>
+      <div class="item">HQ Software</div>
+      <div class="item">VIP Vaping</div>
+    </div>
+  </section>
+
+  <!-- 01 · WHERE CONVERSION BREAKS -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">01 · Where conversion breaks</div>
+    <h2 class="pdc-section-h">Most pages don't need more decoration. They need a stronger <span class="accent">buying argument.</span></h2>
+    <p class="pdc-section-sub">A beautiful page still leaks revenue if the headline is vague, the proof is late, the form feels expensive, or the creative drops people into a mismatched experience. We fix the path — not just the surface.</p>
+
+    <div class="pdc-findings">
+      <div class="pdc-findings-head">
+        <div class="ttl">Three failure modes we see in almost every audit</div>
+        <div class="stamp">From 100+ conversion audits</div>
+      </div>
+      <div class="pdc-findings-row">
+        <div class="num">01</div>
+        <div>
+          <h4>The page doesn't match the promise.</h4>
+          <p>Your ad, outreach, or search result created an expectation. If the landing experience starts somewhere else, the buyer has to re-orient before they can trust you. Most don't.</p>
         </div>
+        <div class="impact"><b>Impact</b>Bounce before scroll. Paid traffic burned at the door.</div>
+      </div>
+      <div class="pdc-findings-row">
+        <div class="num">02</div>
+        <div>
+          <h4>The proof arrives too late.</h4>
+          <p>Case numbers, screenshots, customer language, risk reducers, specifics — they belong while the buyer is still deciding. Putting them below a long features list is the same as not having them.</p>
+        </div>
+        <div class="impact"><b>Impact</b>Doubt compounds. CTA gets ignored.</div>
+      </div>
+      <div class="pdc-findings-row">
+        <div class="num">03</div>
+        <div>
+          <h4>The next step feels heavier than the value.</h4>
+          <p>Form length, CTA copy, mobile spacing, page weight, ambiguous offer — every one adds perceived cost. Good performance design lowers that cost until the action feels obvious.</p>
+        </div>
+        <div class="impact"><b>Impact</b>Lead form abandoned. Demo never booked.</div>
+      </div>
+    </div>
+  </section>
 
-        <div class="pd-logo-row" aria-label="Selected client logos">
-          <div class="pd-logo-card pd-logo-card--dark"><img src="/brand-assets/client-logos/farnell.png" alt="Farnell" /></div>
-          <div class="pd-logo-card pd-logo-card--dark"><img src="/brand-assets/client-logos/clean/hq-software-transparent.png" alt="HQ Software" /></div>
-          <div class="pd-logo-card pd-logo-card--dark pd-logo-card--tall"><img src="/brand-assets/client-logos/clean/harrier-horizontal-white.png" alt="Harrier Trail Running" /></div>
-          <div class="pd-logo-card"><img src="/brand-assets/client-logos/clean/molahin-transparent.png" alt="Molahin" /></div>
-          <div class="pd-logo-card pd-logo-card--tall"><img src="/brand-assets/client-logos/clean/rct-transparent.png" alt="RCT" /></div>
+  <!-- 02 · POSITION -->
+  <section class="pdc-position">
+    <div class="pdc-eyebrow">02 · Position</div>
+    <div class="pdc-position-quote">
+      Most agencies are still selling <span class="strike">prettier templates</span>. We rebuild the <span class="accent">argument the page is making</span> — then the layout, the proof order, the form, and the creative that feeds it.
+    </div>
+    <div class="pdc-position-foot">
+      <div>
+        <div class="label">What this isn't</div>
+        <p>A redesign refresh, a Figma deliverable with no build, or a template handed off without thinking about how buyers scan it.</p>
+      </div>
+      <div>
+        <div class="label">What this is</div>
+        <p>Copy, UX, design, and production tied to one question: what does a buyer need to understand before they act?</p>
+      </div>
+      <div>
+        <div class="label">Who it's for</div>
+        <p>B2B, ecommerce, and growth teams where paid traffic already exists, but the page or sales asset is making the decision harder than it should be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · WHAT WE FIX -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">03 · What we fix</div>
+    <h2 class="pdc-section-h">Four surfaces. The ones that decide whether traffic converts.</h2>
+    <p class="pdc-section-sub">Narrow service on purpose. Pages, creative, forms, and sales assets — the places where sharper copy and UX measurably move revenue. Everything else is out of scope.</p>
+    <div class="pdc-pillars">
+      <div class="pdc-pillar">
+        <div class="step">01 · Landing pages</div>
+        <h3>Pages that continue the ad.</h3>
+        <p class="desc">Message-matched landings for paid search, paid social, lead magnets, webinars, demos, offers, and competitor traffic.</p>
+        <ul>
+          <li>Hero &amp; offer clarity</li>
+          <li>Proof &amp; objection order</li>
+          <li>CTA &amp; form friction</li>
+          <li>Mobile-first scan path</li>
+        </ul>
+      </div>
+      <div class="pdc-pillar">
+        <div class="step">02 · Website paths</div>
+        <h3>Service pages that make the offer obvious.</h3>
+        <p class="desc">Homepages, service pages, comparison pages, resource pages, and forms that need sharper hierarchy and a clearer mechanism story.</p>
+        <ul>
+          <li>Navigation &amp; section flow</li>
+          <li>Copy that explains the mechanism</li>
+          <li>Reusable proof modules</li>
+          <li>Conversion-readable analytics</li>
+        </ul>
+      </div>
+      <div class="pdc-pillar">
+        <div class="step">03 · Paid creative</div>
+        <h3>Ads built to test angles, not impress.</h3>
+        <p class="desc">Static ads, LinkedIn posts, carousels, hooks, and visual systems that match the landing page experience — not contradict it.</p>
+        <ul>
+          <li>Problem &amp; proof-led hooks</li>
+          <li>Variant systems, not one-offs</li>
+          <li>Creative matched to LPs</li>
+          <li>Angle / audience testing</li>
+        </ul>
+      </div>
+      <div class="pdc-pillar">
+        <div class="step">04 · Sales assets</div>
+        <h3>Decks and one-pagers that speed up trust.</h3>
+        <p class="desc">Pitch decks, sales one-pagers, follow-up PDFs, and proposal sections that make the offer easier for prospects to explain internally.</p>
+        <ul>
+          <li>Clear story structure</li>
+          <li>Better proof &amp; use-case framing</li>
+          <li>Editable templates for the team</li>
+          <li>Built for the buying committee</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · ENGAGEMENT TIERS -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">04 · How to engage</div>
+    <h2 class="pdc-section-h">A sprint when you need a fix. A lane when you need momentum.</h2>
+    <p class="pdc-section-sub">Some teams need one urgent page rebuilt. Others need a steady performance-design lane that keeps campaigns, tests, and sales assets moving without every request becoming a new project.</p>
+    <div class="pdc-tiers">
+      <div class="pdc-tier">
+        <div class="pdc-tier-label">01 · Sprint</div>
+        <h3>Conversion sprint</h3>
+        <p class="tier-desc">A focused engagement when a single page, funnel, or campaign has an obvious problem and needs a stronger version shipped fast.</p>
+        <div class="tier-section">
+          <div class="tier-section-label">Included</div>
+          <ul class="tier-list">
+            <li>Conversion audit of the path</li>
+            <li>Copy rebuild (headline · proof · CTA)</li>
+            <li>Design &amp; production-ready build</li>
+            <li>Handoff or direct ship</li>
+          </ul>
+        </div>
+        <div class="tier-best">
+          <div class="label">Best for</div>
+          <p>A specific page, ad, or asset that needs a stronger version shipped within 2–4 weeks.</p>
         </div>
       </div>
-    </section>
-
-    <section class="pd-section pd-problems" style="position:relative;overflow:hidden;">
-      <div class="pd-container">
-        <div class="pd-head">
-          <p class="pd-kicker">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-            Where conversion breaks
-          </p>
-          <h2 class="pd-section-title">Traffic does not fail in one place. It leaks across every asset.</h2>
-          <p class="pd-copy">Most teams treat pages, ads, decks, and templates as separate jobs. Buyers do not. They move through it as one buying journey, and every unclear screen gives them another reason to pause.</p>
+      <div class="pdc-tier featured">
+        <div class="pdc-tier-label">02 · Ongoing</div>
+        <h3>Performance design lane</h3>
+        <p class="tier-desc">An always-on stream of landing pages, creative variants, CRO tests, and sales assets. Sized to your campaign velocity, not a fixed retainer.</p>
+        <div class="tier-section">
+          <div class="tier-section-label">Included</div>
+          <ul class="tier-list">
+            <li>Quarterly conversion roadmap</li>
+            <li>Test pipeline &amp; learnings library</li>
+            <li>Page &amp; creative templates</li>
+            <li>Async reporting cadence</li>
+          </ul>
         </div>
-        <div class="pd-problem-grid">
-          <article class="pd-problem-card">
-            <span class="pd-problem-card__num">01</span>
-            <h3>Paid clicks land on pages that do not match the promise.</h3>
-            <p>The ad says one thing, the page says another, and the buyer has to work out the connection for themselves.</p>
-          </article>
-          <article class="pd-problem-card">
-            <span class="pd-problem-card__num">02</span>
-            <h3>The website looks finished, but the buying path is soft.</h3>
-            <p>Sections are polished without enough proof, sharp CTAs, offer clarity, comparison, or reasons to act now.</p>
-          </article>
-          <article class="pd-problem-card">
-            <span class="pd-problem-card__num">03</span>
-            <h3>Every new campaign starts from a blank design file.</h3>
-            <p>Social posts, deck slides, one-pagers, and landing page blocks get rebuilt instead of improved from what already works.</p>
-          </article>
+        <div class="tier-best">
+          <div class="label">Best for</div>
+          <p>Teams running paid media or outbound continuously who need pages and creative to keep up.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="pd-section" id="what-we-design">
-      <div class="pd-container pd-container--wide">
-        <div class="pd-head pd-head--center">
-          <p class="pd-eyebrow">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 13h5M8 17h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-            What we design
-          </p>
-          <h2 class="pd-section-title">Performance design across the surfaces that drive revenue.</h2>
-          <p class="pd-copy">This is not a decorative design package. We take the assets that carry your offer and make them clearer, faster to understand, easier to trust, and easier to act on.</p>
-        </div>
-
-        <div class="pd-surface-grid" aria-label="Design surfaces">
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.7"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Landing pages</span></div>
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M6 10h12M7 14h10M9 18h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Websites</span></div>
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19V5h14v14H5Z" stroke="currentColor" stroke-width="1.7"/><path d="m8 14 3-3 2 2 3-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>CRO tests</span></div>
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M9 8h6M9 12h4M9 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Social posts</span></div>
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.7"/><path d="M8 10h5M8 14h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Pitch decks</span></div>
-          <div class="pd-surface-tile"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7z" stroke="currentColor" stroke-width="1.7"/><path d="M10 8h4M10 12h4M10 16h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Sales assets</span></div>
-        </div>
-
-        <div class="pd-offer-grid" style="margin-top: clamp(1rem, 2vw, 1.5rem);">
-          <article class="pd-offer-card">
-            <div class="pd-offer-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.8"/><path d="M7 9h10M7 13h6M7 17h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div>
-              <h3>Landing pages and funnel pages</h3>
-              <p>Campaign pages, advertorials, lead magnets, demo pages, pricing pages, webinar pages, and product-specific offer pages.</p>
-            </div>
-            <ul class="pd-offer-list">
-              <li>Message match from ad to page</li>
-              <li>Hero, proof, offer, CTA, and form structure</li>
-              <li>Mobile-first layouts built for fast decisions</li>
-            </ul>
-          </article>
-          <article class="pd-offer-card">
-            <div class="pd-offer-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div>
-              <h3>Websites and conversion paths</h3>
-              <p>Service pages, homepage sections, comparison pages, resource pages, form flows, and the proof blocks that make a buyer believe you.</p>
-            </div>
-            <ul class="pd-offer-list">
-              <li>Navigation, hierarchy, content flow, and CTA review</li>
-              <li>Proof modules, objection handling, and page speed discipline</li>
-              <li>Fewer vague sections, stronger reasons to act</li>
-            </ul>
-          </article>
-          <article class="pd-offer-card">
-            <div class="pd-offer-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M6 11h12M8 15h8M10 19h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div>
-              <h3>Creative, decks, and templates</h3>
-              <p>Paid social variants, LinkedIn posts, pitch decks, one-pagers, sales slides, email graphics, and reusable templates for the team.</p>
-            </div>
-            <ul class="pd-offer-list">
-              <li>Hooks, layouts, and proof angles built for testing</li>
-              <li>Deck sections that sell the offer clearly</li>
-              <li>Editable templates instead of one-off static files</li>
-            </ul>
-          </article>
+  <!-- 05 · HOW IT WORKS -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">05 · How it works</div>
+    <h2 class="pdc-section-h">From audit to argument to live page.</h2>
+    <p class="pdc-section-sub">Same four-step rhythm whether it's a one-off sprint or an always-on lane. Copy first. Design second. Test third.</p>
+    <div class="pdc-phases">
+      <div class="pdc-phase">
+        <div class="when">Step 01 · Audit</div>
+        <div>
+          <h3>Map the path the way a buyer hits it.</h3>
+          <p>Traffic source, page intent, offer clarity, proof, form weight, mobile scan, creative match — pulled apart and rated against the actual decision the page is asking for.</p>
         </div>
       </div>
-    </section>
-
-    <section class="pd-section pd-process">
-      <div class="pd-container pd-container--wide">
-        <div class="pd-head">
-          <p class="pd-kicker">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            How we work
-          </p>
-          <h2 class="pd-section-title">A practical design process built around decisions, not decoration.</h2>
-          <p class="pd-copy">We do the strategic work before the visual work. The goal is not just a better-looking page. The goal is a clearer buyer path, sharper assets, and a repeatable way to improve what ships next.</p>
-        </div>
-        <div class="pd-step-grid">
-          <article class="pd-step">
-            <span class="pd-step__num">01</span>
-            <h3>Audit the path</h3>
-            <p>We review traffic source, page intent, offer clarity, proof, forms, mobile flow, creative, decks, and where people hesitate.</p>
-          </article>
-          <article class="pd-step">
-            <span class="pd-step__num">02</span>
-            <h3>Sharpen the message</h3>
-            <p>We turn the offer into clear page copy, hooks, claims, proof points, and objections that the design can carry.</p>
-          </article>
-          <article class="pd-step">
-            <span class="pd-step__num">03</span>
-            <h3>Map the asset set</h3>
-            <p>We decide what needs to exist: the page, the ad variants, the deck slides, the proof blocks, the social templates, and the handoff files.</p>
-          </article>
-          <article class="pd-step">
-            <span class="pd-step__num">04</span>
-            <h3>Design the first version</h3>
-            <p>We build high-conviction layouts with clean hierarchy, fast scanning, strong contrast, and sections that answer real buying questions.</p>
-          </article>
-          <article class="pd-step">
-            <span class="pd-step__num">05</span>
-            <h3>Test and learn</h3>
-            <p>We turn opinions into testable changes: hero angles, proof order, CTA framing, form friction, creative hooks, and page depth.</p>
-          </article>
-          <article class="pd-step">
-            <span class="pd-step__num">06</span>
-            <h3>Compound the winners</h3>
-            <p>Winning sections become reusable blocks, social templates, deck modules, and campaign assets so every launch starts ahead.</p>
-          </article>
+      <div class="pdc-phase">
+        <div class="when">Step 02 · Rewrite</div>
+        <div>
+          <h3>Fix the argument before the layout.</h3>
+          <p>Headline, offer, proof sequence, objections, CTA copy, and section order get rebuilt as a wireframe argument. Visual design doesn't start until the copy is winning on its own.</p>
         </div>
       </div>
-    </section>
-
-    <section class="pd-section">
-      <div class="pd-container">
-        <div class="pd-library">
-          <div class="pd-library-card">
-            <p class="pd-eyebrow">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              Asset library
-            </p>
-            <h2 class="pd-section-title" style="margin-top: 1rem;">Stop rebuilding the same design decisions.</h2>
-            <p class="pd-copy" style="margin-top: 1rem;">We package the useful parts after the first push: page blocks, creative treatments, deck layouts, CTA variants, form patterns, proof sections, and brand-safe templates. Your next campaign moves faster because the best parts are already ready.</p>
-          </div>
-          <div class="pd-library-visual" aria-label="Reusable design asset examples">
-            <div class="pd-asset-row">
-              <span class="pd-asset-row__type">Page block</span>
-              <div class="pd-asset-row__body"><strong>Offer proof stack</strong><span>Claim, metric, short proof, customer language, CTA.</span></div>
-              <span class="pd-asset-row__status">Ready</span>
-            </div>
-            <div class="pd-asset-row">
-              <span class="pd-asset-row__type">Social</span>
-              <div class="pd-asset-row__body"><strong>Problem-led carousel</strong><span>Seven-slide post structure for paid and organic LinkedIn.</span></div>
-              <span class="pd-asset-row__status">Ready</span>
-            </div>
-            <div class="pd-asset-row">
-              <span class="pd-asset-row__type">Deck</span>
-              <div class="pd-asset-row__body"><strong>Sales narrative kit</strong><span>Problem, stakes, mechanism, proof, rollout, and next-step slides.</span></div>
-              <span class="pd-asset-row__status">Ready</span>
-            </div>
-            <div class="pd-asset-row">
-              <span class="pd-asset-row__type">CRO</span>
-              <div class="pd-asset-row__body"><strong>Experiment backlog</strong><span>Prioritized hypotheses for hero, proof, form, CTA, and mobile flow.</span></div>
-              <span class="pd-asset-row__status">Active</span>
-            </div>
-          </div>
+      <div class="pdc-phase">
+        <div class="when">Step 03 · Build</div>
+        <div>
+          <h3>Design and ship production-ready.</h3>
+          <p>Argument becomes a page, asset, or template with sharper hierarchy, cleaner mobile flow, and clean handoff to your stack (Webflow, Framer, WordPress, Shopify, raw HTML).</p>
         </div>
       </div>
-    </section>
-
-    <section class="pd-section">
-      <div class="pd-container">
-        <div class="pd-assessment">
-          <div class="pd-head" style="margin-bottom: 0;">
-            <p class="pd-kicker">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l2 2 4-5M5 4h14v16H5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Quick assessment
-            </p>
-            <h2 class="pd-section-title">The questions we use to find the real design problem.</h2>
-            <p class="pd-copy">Before we touch the layout, we need to know what the asset is supposed to make someone believe, what traffic is seeing it, and where the decision is getting stuck.</p>
-          </div>
-          <div class="pd-assessment-panel">
-            <div class="pd-question">
-              <span class="pd-question__num">01</span>
-              <div><h3>What decision should this asset create?</h3><p>Book a call, start a trial, request pricing, understand the offer, trust the brand, or move a sales conversation forward.</p></div>
-            </div>
-            <div class="pd-question">
-              <span class="pd-question__num">02</span>
-              <div><h3>Where does the traffic or audience come from?</h3><p>Paid social, search, outbound, referrals, sales follow-up, organic social, events, or a mixed funnel.</p></div>
-            </div>
-            <div class="pd-question">
-              <span class="pd-question__num">03</span>
-              <div><h3>What does the buyer need to believe before they act?</h3><p>The pain is urgent, the offer fits, the team is credible, the result is plausible, and the next step is worth it.</p></div>
-            </div>
-            <div class="pd-question">
-              <span class="pd-question__num">04</span>
-              <div><h3>Where is the current asset creating friction?</h3><p>Weak hero, vague claims, missing proof, slow mobile reading, confusing form, poor hierarchy, or a deck that takes too long to get to the point.</p></div>
-            </div>
-            <div class="pd-question">
-              <span class="pd-question__num">05</span>
-              <div><h3>What can we reuse after the first version wins?</h3><p>Templates, page modules, slide sections, ad layouts, social post structures, proof blocks, and CTA patterns.</p></div>
-            </div>
-          </div>
+      <div class="pdc-phase">
+        <div class="when">Step 04 · Compound</div>
+        <div>
+          <h3>Keep what works. Templatise it.</h3>
+          <p>Winning blocks become reusable: proof sections, creative angles, form patterns, sales modules. Next campaign starts ahead of the last one.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="pd-section">
-      <div class="pd-container">
-        <div class="pd-head pd-head--center">
-          <p class="pd-eyebrow">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7 10 17l-5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Fit check
-          </p>
-          <h2 class="pd-section-title">Best for teams that want design tied to performance.</h2>
+  <!-- 06 · BEFORE / AFTER -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">06 · Before vs after</div>
+    <h2 class="pdc-section-h">What changes when the page is built for the decision?</h2>
+    <p class="pdc-section-sub">The line between a leaking page and a converting one is rarely visual polish — it's hierarchy, sequence, and how cleanly the page makes the buyer's case.</p>
+    <div class="pdc-compare">
+      <div class="pdc-compare-head">
+        <div>Typical page problem</div>
+        <div>Performance design version</div>
+      </div>
+      <div class="pdc-compare-body">
+        <div class="pdc-compare-col bad">
+          <ul>
+            <li>Headline describes the service but not the reason to care.</li>
+            <li>Proof sits below the fold or feels disconnected from the claim.</li>
+            <li>CTA asks for commitment before enough value has been built.</li>
+            <li>Mobile layout stacks every section into a long, heavy read.</li>
+            <li>Design assets are one-off files with no reusable system.</li>
+          </ul>
         </div>
-        <div class="pd-fit-grid">
-          <article class="pd-fit-card pd-fit-card--strong">
-            <h3>Strong fit</h3>
-            <p>There is already an offer, product, or campaign worth improving, and the design work needs to help revenue move.</p>
-            <ul class="pd-fit-list" style="margin-top: 1rem;">
-              <li>You run paid traffic and need pages or creative that convert better.</li>
-              <li>Your website is live, but the buying path needs sharper hierarchy and proof.</li>
-              <li>Your sales team needs decks, one-pagers, and follow-up assets that actually explain the offer.</li>
-              <li>Your team needs reusable templates instead of endless one-off design requests.</li>
-            </ul>
-          </article>
-          <article class="pd-fit-card">
-            <h3>Weak fit</h3>
-            <p>We can help with early positioning, but this is not a pure branding or moodboard engagement.</p>
-            <ul class="pd-fit-list" style="margin-top: 1rem;">
-              <li>No clear offer, audience, or conversion goal exists yet.</li>
-              <li>The main requirement is a brand exploration with no performance target.</li>
-              <li>There is no way to review results, traffic quality, buyer feedback, or campaign data.</li>
-              <li>You only need a prettier file, not a stronger decision path.</li>
-            </ul>
-          </article>
+        <div class="pdc-compare-col good">
+          <ul>
+            <li>Hero states the promise, audience, and next step inside one scan.</li>
+            <li>Proof supports the claim before skepticism builds.</li>
+            <li>CTA copy matches the buyer's stage and reduces perceived risk.</li>
+            <li>Mobile flow is edited for scanning — not just resized.</li>
+            <li>Winning blocks become templates the team reuses on every campaign.</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="pd-section">
-      <div class="pd-container">
-        <div class="pd-faq-grid">
-          <div class="pd-head" style="margin-bottom: 0;">
-            <p class="pd-kicker">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17h.01M9.1 9a3 3 0 1 1 5.2 2c-.8.7-1.4 1.2-1.8 2.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-              FAQ
-            </p>
-            <h2 class="pd-section-title">Common questions before we start.</h2>
-          </div>
-          <div class="pd-faq-list">
-            <details open>
-              <summary>Can you design and build the page?</summary>
-              <p>Yes. We can deliver Figma designs, production-ready page builds, or work with your developer. The right handoff depends on the stack, speed needed, and who owns the site.</p>
-            </details>
-            <details>
-              <summary>Do you only work on landing pages?</summary>
-              <p>No. Landing pages are part of it, but performance design also covers websites, ads, social templates, decks, one-pagers, email graphics, forms, and CRO experiments.</p>
-            </details>
-            <details>
-              <summary>How do you decide what to test?</summary>
-              <p>We prioritize changes by likely impact and speed: message match, offer clarity, proof strength, CTA friction, page structure, form effort, mobile readability, and creative angle.</p>
-            </details>
-            <details>
-              <summary>Can you work within our existing brand?</summary>
-              <p>Yes. We keep what makes the brand recognizable and tighten the parts that hurt clarity, trust, or conversion. If the brand system is thin, we create practical rules and templates as we go.</p>
-            </details>
-          </div>
+  <!-- 07 · PROOF -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">07 · Selected proof</div>
+    <h2 class="pdc-section-h">Real surfaces. Real buyer journeys.</h2>
+    <p class="pdc-section-sub">The work changes by client. The standard doesn't: make the offer easier to understand, easier to trust, and easier to act on.</p>
+    <div class="pdc-proof">
+      <article class="pdc-proof-card">
+        <div class="img"><img src="/brand-assets/cases/farnell.jpg" alt="Farnell campaign and ecommerce work" loading="lazy" decoding="async" /></div>
+        <div class="body">
+          <div class="tag">Ecommerce · Acquisition</div>
+          <h3>Farnell</h3>
+          <p>Sharper campaign paths, clearer merchandising, and performance-led assets for a complex catalogue environment.</p>
         </div>
-      </div>
-    </section>
+      </article>
+      <article class="pdc-proof-card">
+        <div class="img"><img src="/brand-assets/cases/travelsphere.webp" alt="Travelsphere travel campaign work" loading="lazy" decoding="async" /></div>
+        <div class="body">
+          <div class="tag">Travel · Demand capture</div>
+          <h3>Travelsphere</h3>
+          <p>Buyer-facing pages and campaign assets built around clarity, offer confidence, and lower-friction enquiry paths.</p>
+        </div>
+      </article>
+      <article class="pdc-proof-card">
+        <div class="img"><img src="/brand-assets/cases/notcutts.jpg" alt="Notcutts conversion and ecommerce work" loading="lazy" decoding="async" /></div>
+        <div class="body">
+          <div class="tag">Ecommerce &middot; Conversion</div>
+          <h3>Notcutts</h3>
+          <p>Reachability, proof hierarchy, and ecommerce experience treated as one buying path &mdash; +70% conversion growth across rebuilt journeys.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 08 · FAQ -->
+  <section class="pdc-section">
+    <div class="pdc-eyebrow">08 · Common questions</div>
+    <h2 class="pdc-section-h">The practical questions, answered straight.</h2>
+    <p class="pdc-section-sub">No brand theatre. No mystery process. The work starts with the buyer path and ends with assets your team can ship and reuse.</p>
+    <div class="pdc-faq">
+      <details open>
+        <summary>Can you design AND build the page?</summary>
+        <div class="body">Yes. We deliver copy, design, and production-ready build — or hand off cleanly to your existing developer or CMS workflow (Webflow, Framer, WordPress, Shopify, custom).</div>
+      </details>
+      <details>
+        <summary>Is this just landing page design?</summary>
+        <div class="body">No. Landing pages are a common starting point, but the same engagement applies to service pages, paid creative, forms, sales decks, one-pagers, and post-click flows. We pick the surface with the most commercial leverage.</div>
+      </details>
+      <details>
+        <summary>What do you need before starting?</summary>
+        <div class="body">The page or asset, the traffic source feeding it, the conversion goal, any existing analytics or qualitative data, and a short read on the offer and sales context behind it.</div>
+      </details>
+      <details>
+        <summary>How fast can we ship?</summary>
+        <div class="body">A focused sprint can move in 2–4 weeks when the page and offer already exist. Bigger site paths, multi-template systems, or ongoing testing lanes need a roadmap so speed doesn't turn into random changes.</div>
+      </details>
+      <details>
+        <summary>Do you handle A/B testing?</summary>
+        <div class="body">Yes, as part of the lane — not as a side project. We run tests where there's enough traffic to learn something inside a sensible window, and skip them where the audit work alone is the bigger lever.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 09 · CTA -->
+  <section class="pdc-cta-section">
+    <div class="pdc-cta-card">
+      <div class="step">09 · Next step</div>
+      <h2>Send the page that should be converting better.</h2>
+      <p>We'll review the path the buyer walks, identify the biggest clarity and friction issues, and tell you what we'd fix first. No deck. No retainer pitch.</p>
+      <a href="/contact.html" class="pdc-cta">
+        Book a conversion audit
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
   </main>
 
   <section class="footer weflair-footer">
@@ -1408,14 +1269,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="weflair-footer__top">
             <div class="weflair-footer__info-row">
               <div class="weflair-footer__info-col">
-                <h4 class="weflair-footer__col-heading">Global remote</h4>
-                <p class="weflair-footer__info-line">Growth operators sitting all over the world</p>
-                <p class="weflair-footer__info-line">HQ: Distributed</p>
+                <h4 class="weflair-footer__col-heading">Spain HQ</h4>
+                <p class="weflair-footer__info-line">WeFlair</p>
+                <p class="weflair-footer__info-line">Castellon Falco 8-1</p>
+                <p class="weflair-footer__info-line">Valencia, Spain</p>
               </div>
               <div class="weflair-footer__info-col">
-                <h4 class="weflair-footer__col-heading">WeFlair HQ</h4>
+                <h4 class="weflair-footer__col-heading">US Office</h4>
                 <p class="weflair-footer__info-line">WeFlair LLC</p>
-                <p class="weflair-footer__info-line">New York, United States</p>
+                <p class="weflair-footer__info-line">131 Continental Dr, Suite 305</p>
+                <p class="weflair-footer__info-line">Newark, DE 19713</p>
               </div>
               <div class="weflair-footer__info-col">
                 <h4 class="weflair-footer__col-heading">Talk to an expert</h4><a href="mailto:sam@weflair.co"
@@ -1429,6 +1292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <ul class="weflair-footer__nav-list">
                   <li><a href="/services/paid-media-performance.html" class="weflair-footer__nav-link">Paid Media &amp;
                       Performance</a></li>
+                  <li><a href="/services/demand-generation.html" class="weflair-footer__nav-link">Demand Generation</a></li>
                   <li><a href="/services/go-to-market-systems.html" class="weflair-footer__nav-link">Outbound
                       Systems</a></li>
                   <li><a href="/services/performance-design.html" class="weflair-footer__nav-link">Performance
@@ -1439,7 +1303,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="weflair-footer__nav-col">
                 <h4 class="weflair-footer__col-heading">Expertise</h4>
                 <ul class="weflair-footer__nav-list">
-                  <li><a href="/expertise/b2b-demand-generation.html" class="weflair-footer__nav-link">B2B Demand Generation</a></li>
                   <li><a href="/expertise/b2b-saas.html" class="weflair-footer__nav-link">B2B SaaS</a></li>
                   <li><a href="/expertise/b2b-services.html" class="weflair-footer__nav-link">B2B Services</a></li>
                   <li><a href="/expertise/b2b-tech.html" class="weflair-footer__nav-link">B2B Tech</a></li>

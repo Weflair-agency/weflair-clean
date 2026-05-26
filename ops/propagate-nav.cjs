@@ -38,6 +38,11 @@ const NAV_GROUPS = {
       body: "Data-backed ads that turn demand into pipeline.",
     },
     {
+      title: "Demand Generation",
+      href: "services/demand-generation.html",
+      body: "Full-funnel demand built around qualified pipeline.",
+    },
+    {
       title: "Outbound Systems",
       href: "services/go-to-market-systems.html",
       body: "Outbound programs built for real sales conversations.",
@@ -54,11 +59,6 @@ const NAV_GROUPS = {
     },
   ],
   expertise: [
-    {
-      title: "B2B Demand Generation",
-      href: "expertise/b2b-demand-generation.html",
-      body: "Demand generation built around qualified pipeline.",
-    },
     {
       title: "B2B SaaS",
       href: "expertise/b2b-saas.html",

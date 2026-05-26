@@ -439,6 +439,6 @@ const html = `<!DOCTYPE html>
 </html>
 `;
 
-const outPath = path.join(ROOT, "expertise", "b2b-demand-generation.html");
+const outPath = path.join(ROOT, "services", "demand-generation.html");
 fs.writeFileSync(outPath, html);
 console.log(`Wrote ${path.relative(ROOT, outPath)}`);

@@ -18,6 +18,12 @@ module.exports = {
       description: "Data-backed paid media that turns active demand into pipeline.",
     },
     {
+      key: "demand-generation",
+      title: "Demand Generation",
+      href: "/services/demand-generation.html",
+      description: "Full-funnel B2B demand generation built around paid media, content, signal-based outbound, and pipeline conversion.",
+    },
+    {
       key: "outbound-gtm",
       title: "Outbound Systems",
       href: "/services/go-to-market-systems.html",
@@ -37,12 +43,6 @@ module.exports = {
     },
   ],
   expertise: [
-    {
-      key: "b2b-demand-generation",
-      title: "B2B Demand Generation",
-      href: "/expertise/b2b-demand-generation.html",
-      description: "Full-funnel B2B demand generation for teams that need qualified pipeline from paid media, outbound, content, and CRM reporting.",
-    },
     {
       key: "b2b-saas",
       title: "B2B SaaS",
@@ -137,6 +137,7 @@ module.exports = {
       title: "Services",
       items: [
         { label: "Paid Media & Performance", href: "/services/paid-media-performance.html" },
+        { label: "Demand Generation", href: "/services/demand-generation.html" },
         { label: "Outbound Systems", href: "/services/go-to-market-systems.html" },
         { label: "Performance Design & CRO", href: "/services/performance-design.html" },
         { label: "AI Search & SEO", href: "/services/ai-visibility-seo.html" },
@@ -145,7 +146,6 @@ module.exports = {
     {
       title: "Expertise",
       items: [
-        { label: "B2B Demand Generation", href: "/expertise/b2b-demand-generation.html" },
         { label: "B2B SaaS", href: "/expertise/b2b-saas.html" },
         { label: "B2B Services", href: "/expertise/b2b-services.html" },
         { label: "B2B Tech", href: "/expertise/b2b-tech.html" },
@@ -206,6 +206,18 @@ module.exports = {
       includeInXml: true,
     },
     {
+      file: "services/demand-generation.html",
+      path: "/services/demand-generation.html",
+      title: "B2B Demand Generation Agency | WeFlair",
+      description:
+        "Full-funnel B2B demand generation built around paid media, content, signal-based outbound, and pipeline conversion.",
+      pageType: "service",
+      schemaType: "Service",
+      group: "Services",
+      label: "Demand Generation",
+      includeInXml: true,
+    },
+    {
       file: "services/go-to-market-systems.html",
       path: "/services/go-to-market-systems.html",
       title: "Outbound Systems | WeFlair",
@@ -219,10 +231,10 @@ module.exports = {
     },
     {
       file: "services/performance-design.html",
-      path: "/services/performance-design.html",
-      title: "Performance Design & CRO | WeFlair",
+      path: "/services/performance-design",
+      title: "Performance Design & CRO Services | WeFlair",
       description:
-        "Landing pages, UX, experimentation, and conversion work built to turn more of your traffic into revenue.",
+        "Performance design and CRO services for landing pages, service pages, campaign creative, forms, and sales assets that need to convert better.",
       pageType: "service",
       schemaType: "Service",
       group: "Services",
@@ -239,18 +251,6 @@ module.exports = {
       schemaType: "Service",
       group: "Services",
       label: "AI Search & SEO",
-      includeInXml: true,
-    },
-    {
-      file: "expertise/b2b-demand-generation.html",
-      path: "/expertise/b2b-demand-generation.html",
-      title: "B2B Demand Generation | WeFlair",
-      description:
-        "Full-funnel B2B demand generation for B2B teams that need qualified pipeline, cleaner attribution, and faster campaign learning.",
-      pageType: "expertise",
-      schemaType: "Service",
-      group: "Expertise",
-      label: "B2B Demand Generation",
       includeInXml: true,
     },
     {
@@ -490,6 +490,12 @@ module.exports = {
     },
   ],
   redirects: [
+    {
+      file: "expertise/b2b-demand-generation.html",
+      from: "/expertise/b2b-demand-generation.html",
+      to: "/services/demand-generation.html",
+      title: "Demand Generation | WeFlair",
+    },
     {
       file: "services/go-to-market-systems.html",
       from: "/services/go-to-market-systems.html",

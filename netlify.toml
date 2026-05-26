@@ -10,10 +10,28 @@
     X-Permitted-Cross-Domain-Policies = "none"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "accelerometer=(), bluetooth=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://collector.sortlist.com https://app.factors.ai https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://collector.sortlist.com https://radar.sortlist.com https://api.factors.ai https://app.factors.ai https://www.google.com https://www.gstatic.com https://formspree.io; frame-src 'self' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://cal.com; form-action 'self' https://formspree.io; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://collector.sortlist.com https://app.factors.ai https://js-eu1.hs-scripts.com https://www.google.com https://www.gstatic.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://collector.sortlist.com https://radar.sortlist.com https://api.factors.ai https://app.factors.ai https://js-eu1.hs-scripts.com https://*.hubspot.com https://*.hubapi.com https://www.google.com https://www.gstatic.com https://formspree.io https://www.clarity.ms https://*.clarity.ms; frame-src 'self' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://cal.com; form-action 'self' https://formspree.io; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests"
 
 [[headers]]
   for = "/handoff-cards/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/proposals/cpd-visibility-system/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/proposals/flexis-creative-routes/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/audits/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
     Cache-Control = "no-store"
@@ -165,6 +183,18 @@
 [[redirects]]
   from = "/services/revops-ai.html"
   to = "/services/go-to-market-systems.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/expertise/b2b-demand-generation.html"
+  to = "/services/demand-generation.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/expertise/b2b-demand-generation"
+  to = "/services/demand-generation.html"
   status = 301
   force = true
 
